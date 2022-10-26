@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>记录一些常用LINUX指令</title>
+      <link href="/2022/10/linuxcommand.html"/>
+      <url>/2022/10/linuxcommand.html</url>
+      
+        <content type="html"><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h2 id="iptables"><a href="#iptables" class="headerlink" title="iptables"></a>iptables</h2><blockquote><p>基本格式：iptables [-t table] COMMAND [chain] CRETIRIA -j ACTION</p><p>参数含义：</p><ul><li>-t 指定需要维护的防火墙规则表 filter、nat、mangle或raw。在不使用 -t 时则默认使用 filter 表</li><li>COMMAND：子命令，定义对规则的管理</li><li>chain：指明链表</li><li>CRETIRIA：匹配参数</li><li>ACTION：触发动作</li></ul></blockquote><p>常用 COMMAND：</p><table><thead><tr><th align="center">命令</th><th align="center">功能</th></tr></thead><tbody><tr><td align="center">-A</td><td align="center">添加防火墙规则</td></tr><tr><td align="center">-D</td><td align="center">删除防火墙规则</td></tr><tr><td align="center">-I</td><td align="center">插入防火墙规则</td></tr><tr><td align="center">-F</td><td align="center">清空防火墙规则</td></tr><tr><td align="center">-L</td><td align="center">列出添加防火墙规则</td></tr></tbody></table><p>使用 -A 选项添加防火墙规则会将该规则追加到整个链的最后，而使用 -I 选项添加的防火墙规则则会默认插入到链中作为第一条规则</p><p>常用匹配规则</p><table><thead><tr><th align="center">参数</th><th align="center">功能</th></tr></thead><tbody><tr><td align="center">-p</td><td align="center">匹配协议</td></tr><tr><td align="center">–dport</td><td align="center">匹配目标端口</td></tr><tr><td align="center">–dports</td><td align="center">匹配目标端口</td></tr></tbody></table><p>触发动作</p><table><thead><tr><th align="center">触发动作</th><th align="center">功能</th></tr></thead><tbody><tr><td align="center">ACCEPT</td><td align="center">允许数据包通过</td></tr><tr><td align="center">DROP</td><td align="center">丢弃数据包</td></tr><tr><td align="center">REJECT</td><td align="center">拒绝数据包通过</td></tr></tbody></table><p>查看规则（需要 root 权限）：<code>iptables -nvL</code></p><blockquote><p>各参数的含义为：</p><ul><li>-L 表示查看当前表的所有规则，默认查看的是 filter 表，如果要查看 nat 表，可以加上 -t nat 参数。</li><li>-n 表示不对 IP 地址进行反查，加上这个参数显示速度将会加快。</li><li>-v 表示输出详细信息，包含通过该规则的数据包数量、总字节数以及相应的网络接口。</li></ul></blockquote><p>例子：</p><p>开启端口：<code>iptables -A INPUT -p tcp --dport 端口号 -j ACCEPT</code></p><p>关闭端口：<code>iptables -A INPUT -p tcp --dport 端口号 -j REJECT</code></p><p>开启范围端口：<code>iptables -A INPUT -p tcp --dport 端口号:端口号 -j ACCEPT</code></p><p>防火墙备份：使用 iptables-persistent 永久保存 iptables 规则</p><p>iptables-persistent 安装指令 <code>sudo apt install iptables-persistent</code></p><p>保存指令 <code>netfilter-persistent  save</code></p><h2 id="Nginx"><a href="#Nginx" class="headerlink" title="Nginx"></a>Nginx</h2><p>更新软件列表 <code>sudo apt update</code><br>安装指令 <code>sudo apt install nginx</code></p><details class="toggle" ><summary class="toggle-button" style="">绑定域名的方法</summary><div class="toggle-content"><ol><li>进入 <code>/etc/nginx/conf.d/</code>，在该文件夹下建立 <code>domain.conf</code>，<code>domain</code> 为方便记忆的名称，一般写域名</li><li>编辑 <code>domain.conf</code>，为每一个域名建立一个单独的配置文件时输入以下内容</li></ol><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">server</span><br><span class="line">    &#123;</span><br><span class="line">    listen   80;                            #监听端口设为 80。</span><br><span class="line">    server_name  mikufans.ink;         #绑定您的域名。</span><br><span class="line">    index index.htm index.html index.php;   #指定默认文件。</span><br><span class="line">    root /home/www/mikufans.ink;           #指定网站根目录。</span><br><span class="line">    include location.conf;                  #当您需要调用其他配置文件时才粘贴此项，如无需要，请删除此项。</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure><p>若写多个域名规则则写多个 server 块即可</p><p>若需要强制 www 永久跳转（301跳转）则在 server 块中加入 <code>rewrite ^/(.*) http://www.mikufans.ink/$1 permanent;</code></p><ol start="3"><li>保存后使用 <code>nginx -t</code> 检查配置是否有误</li><li>执行 <code>systemctl restart nginx</code> 重启 nginx 服务，执行 <code>systemctl reload nginx</code> 重新载入 Nginx 服务</li></ol></div></details><h2 id="查看架构"><a href="#查看架构" class="headerlink" title="查看架构"></a>查看架构</h2><p>指令：<code>uname -a</code></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 技术 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Linux </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>人最大的敌人是自己</title>
       <link href="/2022/09/tekihajibun.html"/>
       <url>/2022/09/tekihajibun.html</url>
