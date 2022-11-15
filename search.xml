@@ -4,6 +4,33 @@
   
     
     <entry>
+      <title>服务器Ubuntu配置ftp</title>
+      <link href="/2022/11/ubuntuftp.html"/>
+      <url>/2022/11/ubuntuftp.html</url>
+      
+        <content type="html"><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p>更新软件包</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt upgrade</span><br></pre></td></tr></table></figure><p>安装 vsftpd</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install vsftpd</span><br></pre></td></tr></table></figure><p>ftp 启动，停止，重启，查看状态指令</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">systemctl start vsftpd #启动</span><br><span class="line"></span><br><span class="line">systemctl stop vsftpd #停止</span><br><span class="line"></span><br><span class="line">systemctl restart vsftpd #重启</span><br><span class="line"></span><br><span class="line">systemctl status vsftpd #查看状态</span><br></pre></td></tr></table></figure><h2 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h2><p>编辑 &#x2F;etc&#x2F;vsftpd.conf 文件</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo vi /etc/vsftpd.conf</span><br></pre></td></tr></table></figure><p>FTP 配置文件部分说明<sup id="fnref:1"><a href="#fn:1" rel="footnote"><span class="hint--top hint--error hint--medium hint--rounded hint--bounce" aria-label="参考文章：https://chloneda.github.io/blog/ftp/">[1]</span></a></sup>（需要修改的部分）：</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line"># 设置登录 FTP 欢迎信息</span><br><span class="line">ftpd_banner=Welcome to CHL FTP service. </span><br><span class="line"></span><br><span class="line">listen=YES               # 服务器监听</span><br><span class="line">local_enable=YES         # 是否允许本地用户访问</span><br><span class="line">write_enable=YES         # 是否允许上传文件，不开启会报 550 permission denied</span><br><span class="line">anonymous_enable=NO      # 匿名访问允许，默认不要开启</span><br><span class="line">anon_upload_enable=YES   # 匿名上传允许，默认是 NO</span><br><span class="line">anon_mkdir_write_enable=YES  # 匿名创建文件夹允许 </span><br><span class="line"></span><br><span class="line">local_umask=022　　# FTP 上本地的文件权限，默认是 077。此时 umask 为 022，则目录为 777-022=755，文件为 666-022=644。</span><br><span class="line">connect_from_port_20=YES   # 启用 20 号端口作为数据传送的端口 </span><br><span class="line">data_connection_timeout=120# 设置数据连接超时时间</span><br><span class="line"></span><br><span class="line">utf8_filesystem=YES# vsftpd使用 utf8 文件系统</span><br><span class="line">use_localtime=YES</span><br><span class="line">xferlog_enable=YES         # 激活上传和下传的日志 </span><br><span class="line">xferlog_file=/var/log/vsftpd.log# 设定系统维护记录FTP服务器上传和下载情况的日志文件</span><br><span class="line">xferlog_std_format=YES     # 使用标准的日志格式 </span><br><span class="line"></span><br><span class="line">local_root=/home/ftp# 设置自定义的 ftp 根目录的位置</span><br><span class="line"></span><br><span class="line">allow_writeable_chroot=YES# 解决 &quot;500 OOPS: vsftpd: refusing to run with writable root inside chroot()&quot; 问题</span><br><span class="line">write_enable=YES# 允许向 FTP 服务器写入权限</span><br><span class="line">chown_uploads=YES# 设定是否允许改变上传文件的属主，与下面一个设定项配合使用</span><br><span class="line">chown_username=whoever# 设置想要改变的上传文件的属主，可设为 ftp</span><br><span class="line"></span><br><span class="line">ascii_upload_enable=YES　# 允许服务器以 ASCII 方式传输数据,但引起 &quot;SIZE /big/file&quot; 方式的 DoS 攻击</span><br><span class="line">ascii_download_enable=YES</span><br><span class="line"></span><br><span class="line"># 在默认配置下，本地用户登入FTP后可以使用 cd 命令切换到其他目录，这样会对系统带来安全隐患,可配置如下</span><br><span class="line">chroot_list_enable=YES     # 设置是否启用 chroot_list_file 配置项指定的用户列表文件。默认值为NO。</span><br><span class="line">chroot_local_user=YES      # 用于指定用户列表文件中的用户是否允许切换到上级目录。默认值为NO。</span><br><span class="line">chroot_list_file=/etc/vsftpd.chroot_list# 禁用名单，用于指定用户列表，该文件用于控制哪些用户可以切换到 home 目录的上级目录。</span><br><span class="line"></span><br><span class="line">listen_port=6666 #修改 ftp 服务器端口</span><br><span class="line"></span><br><span class="line"># 配置为被动模式</span><br><span class="line">pasv_enable=YES</span><br><span class="line">pasv_min_port=6000 #最小端口</span><br><span class="line">pasv_max_port=7000 #最大端口</span><br></pre></td></tr></table></figure><p><code>chroot_list_enable</code> <code>chroot_local_user</code> <code>chroot_list_file</code> 通过搭配能实现以下几种效果：</p><ul><li>当 chroot_list_enable&#x3D;YES，chroot_local_user&#x3D;YES 时，在 &#x2F;etc&#x2F;vsftpd.chroot_list 文件中列出的用户，可以切换到其他目录；未在文件中列出的用户，不能切换到其他目录。</li><li>当 chroot_list_enable&#x3D;YES，chroot_local_user&#x3D;NO 时，在 &#x2F;etc&#x2F;vsftpd.chroot_list 文件中列出的用户，不能切换到其他目录；未在文件中列出的用户，可以切换到其他目录。</li><li>当 chroot_list_enable&#x3D;NO，chroot_local_user&#x3D;YES 时，所有的用户均不能切换到其他目录。</li><li>当 chroot_list_enable&#x3D;NO，chroot_local_user&#x3D;NO 时，所有的用户均可以切换到其他目录。</li></ul><p>通过终端访问 ftp（由于浏览器访问 ftp 在新版 chrome 与 edge 中皆已失效，在这里便不再列出）</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ftp ip 端口</span><br></pre></td></tr></table></figure><h2 id="创建-ftp-上传目录"><a href="#创建-ftp-上传目录" class="headerlink" title="创建 ftp 上传目录"></a>创建 ftp 上传目录</h2><p>需要与配置文件中的 <code>local_root</code> 指定的路径一致</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mkdir -p /home/ftp</span><br></pre></td></tr></table></figure><h2 id="创建-ftp-用户"><a href="#创建-ftp-用户" class="headerlink" title="创建 ftp 用户"></a>创建 ftp 用户</h2><p>创建 vsftpd 用户组（若已存在请跳过该步）</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo groupadd vsftpd</span><br></pre></td></tr></table></figure><p>创建 ftp 用户</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo useradd -g vsftpd -d /home/ftp -M username</span><br></pre></td></tr></table></figure><p>参数说明：</p><ul><li>g：指定用户所属的组</li><li>d：指定用户登入时的起始目录，这里即为 ftp 上传目录</li><li>M：不创建用户的家目录</li></ul><p>设置 ftp 用户的密码：</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo passwd username</span><br></pre></td></tr></table></figure><p>由于设置了 <code>chroot_list_enable</code> 这几个选项，需要将用户名写入 <code>/etc/vsftpd.chroot_list</code> 文件，并重启 ftp 服务</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo vi /etc/vsftpd.chroot_list</span><br></pre></td></tr></table></figure><h2 id="连接-ftp"><a href="#连接-ftp" class="headerlink" title="连接 ftp"></a>连接 ftp</h2><p>这里推荐使用 XFTP 连接 ftp，上传下载文件非常方便。XFTP 官方提供了教育版，只需要点击下方链接填写邮箱就会受到包含下载链接的邮件：</p><p><a href="https://www.xshell.com/zh/free-for-home-school/">https://www.xshell.com/zh/free-for-home-school/</a></p><div id="footnotes"><hr><div id="footnotelist"><ol style="list-style: none; padding-left: 0; margin-left: 40px"><li id="fn:1"><span style="display: inline-block; vertical-align: top; padding-right: 10px; margin-left: -40px">1.</span><span style="display: inline-block; vertical-align: top; margin-left: 10px;">参考文章：https://chloneda.github.io/blog/ftp/<a href="#fnref:1" rev="footnote"> ↩</a></span></li></ol></div></div>]]></content>
+      
+      
+      <categories>
+          
+          <category> 技术 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Linux </tag>
+            
+            <tag> Ubuntu </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>记录一些常用LINUX指令</title>
       <link href="/2022/10/linuxcommand.html"/>
       <url>/2022/10/linuxcommand.html</url>
@@ -263,9 +290,9 @@
       
         <tags>
             
-            <tag> JavaScript </tag>
-            
             <tag> 笔记 </tag>
+            
+            <tag> JavaScript </tag>
             
         </tags>
       
@@ -290,9 +317,9 @@
       
         <tags>
             
-            <tag> JavaScript </tag>
-            
             <tag> 笔记 </tag>
+            
+            <tag> JavaScript </tag>
             
         </tags>
       
@@ -317,9 +344,9 @@
       
         <tags>
             
-            <tag> JavaScript </tag>
-            
             <tag> 笔记 </tag>
+            
+            <tag> JavaScript </tag>
             
         </tags>
       
@@ -344,9 +371,9 @@
       
         <tags>
             
-            <tag> JavaScript </tag>
-            
             <tag> 笔记 </tag>
+            
+            <tag> JavaScript </tag>
             
         </tags>
       
@@ -371,9 +398,9 @@
       
         <tags>
             
-            <tag> JavaScript </tag>
-            
             <tag> 笔记 </tag>
+            
+            <tag> JavaScript </tag>
             
         </tags>
       
