@@ -4,6 +4,33 @@
   
     
     <entry>
+      <title>博客建立一周年纪念</title>
+      <link href="/2022/12/blogtfa.html"/>
+      <url>/2022/12/blogtfa.html</url>
+      
+        <content type="html"><![CDATA[<div class="timeline undefined"><div class='timeline-item headline'><div class='timeline-item-title'><div class='item-circle'><p>2021</p></div></div></div><div class='timeline-item'><div class='timeline-item-title'><div class='item-circle'><p>12-05</p></div></div><div class='timeline-item-content'><p>成功建立第一个以 wordpress 为框架的博客</p></div></div></div><div class="timeline undefined"><div class='timeline-item headline'><div class='timeline-item-title'><div class='item-circle'><p>2022</p></div></div></div><div class='timeline-item'><div class='timeline-item-title'><div class='item-circle'><p>2月中旬</p></div></div><div class='timeline-item-content'><p>更换到 typecho 框架，并购买了人均的 handsome 主题</p></div></div><div class='timeline-item'><div class='timeline-item-title'><div class='item-circle'><p>9月初</p></div></div><div class='timeline-item-content'><p>更换到 halo 框架，并使用了 joe2 主题</p></div></div><div class='timeline-item'><div class='timeline-item-title'><div class='item-circle'><p>10月初</p></div></div><div class='timeline-item-content'><p>遭遇某群中 8t 狗攻击黑洞了两天，更换博客为 hexo 框架，将全部网页变为静态网页</p></div></div></div><p>虽然建站路上荆棘丛生，不过我还是在摸索中学习到了很多东西，从原来不知道前端三剑客到现在能够略微看懂，从以前不会 linux 的基本操作，需要依靠宝塔面板操作服务器，到现在能够脱离宝塔的依赖了。虽然原来写了很多东西，也删除了很多东西，不过我还是保持着记录的热情，小站也会一直开下去，像一朵小花一样，在互联网无人问津的、小小的一片角落默默地绽放。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 日常 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 生活 </tag>
+            
+            <tag> 网络 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>糟了，我也遇到「爷新」了</title>
       <link href="/2022/12/genshinyexinau.html"/>
       <url>/2022/12/genshinyexinau.html</url>
@@ -560,9 +587,9 @@
       
         <tags>
             
-            <tag> 计算机 </tag>
-            
             <tag> 网络 </tag>
+            
+            <tag> 计算机 </tag>
             
         </tags>
       
