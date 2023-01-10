@@ -1,0 +1,68 @@
+/* 侧边栏修改 */
+#aside-content .card-info #card-info-btn {
+    border-radius: 15px;
+}
+
+/* 鼠标修改 */
+body {
+    cursor:url("/img/cursor.cur"), auto !important; /*更改鼠标指针*/
+}
+
+/* 导航栏悬浮窗去圆角 */
+#nav .menus_items .menus_item .menus_item_child li:first-child {
+    border-top-left-radius: 0px !important;
+    border-top-right-radius: 0px !important;
+    border-bottom-right-radius: 0px !important;
+    border-bottom-left-radius: 0px !important;
+}
+
+#nav .menus_items .menus_item .menus_item_child li:last-child {
+    border-top-left-radius: 0px !important;
+    border-top-right-radius: 0px !important;
+    border-bottom-right-radius: 0px !important;
+    border-bottom-left-radius: 0px !important;
+}
+
+#nav .menus_items .menus_item .menus_item_child {
+    border-radius: 0px;
+}
+
+/* 全背景磨砂效果 */
+.cardHover, .error404 #error-wrap .error-content, .layout > div:first-child:not(.recent-posts), #recent-posts > .recent-post-item, #aside-content .card-widget, .layout > .recent-posts .pagination > *:not(.space) {
+    background: rgba(255, 255, 255, .9);
+}
+
+/* 修复全背景磨砂效果导致打赏页表格处背景一起变化的问题 */
+#article-container .tabs > .tab-contents .tab-item-content {
+    background: white;
+}
+
+/* 夜间模式适配 */
+
+/* 夜间模式卡片 */
+[data-theme='dark'] .cardHover, [data-theme='dark'] .error404 #error-wrap .error-content, [data-theme='dark'] .layout > div:first-child:not(.recent-posts), [data-theme='dark'] #recent-posts > .recent-post-item, [data-theme='dark'] #aside-content .card-widget, [data-theme='dark'] .layout > .recent-posts .pagination > *:not(.space) {
+    background: #121212;
+    border: 1px solid white;
+}
+
+/* 夜间模式背景 */
+[data-theme='dark'] #web_bg {
+    background: #121212;
+    position: fixed;
+    z-index: -999;
+    width: 100%;
+    height: 100%;
+    background-attachment: local;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+/* 夜间模式顶部图 */
+[data-theme='dark'] #web_bg:before, [data-theme='dark'] #footer:before, [data-theme='dark'] #page-header:before {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #121212;
+    content: '';
+}
