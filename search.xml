@@ -68,36 +68,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Next 主题部分图片禁用 FancyBox</title>
-    <url>/2023/04/nextthemefancyboxdisabled.html</url>
-    <content><![CDATA[<p>之前用的主题有 fancybox 功能的都有部分图片禁用 fancybox 的功能，看了一遍文档却发现没有这个选项，去 issue 中和 discusstion 中也没找到相关的信息。<span id="more"></span>于是 google 了一下，发现真有<a href="https://blog.csdn.net/cddchina/article/details/79764432">相关教程</a>，不过是 18 年的了，现在 next 主题已经变了很多，fancybox 的 js 代码也没在 utils.js 文件中了。找了一下，发现 fancybox 的相关 js 代码已经单独写在了主题文件夹下的 <code>\source\js\third-party\fancybox.js</code> 中了。</p>
-<p>接着又在网上找到了一篇博客，发现插入的代码较也改进了一下，修改了当鼠标悬浮在已经被禁用 fancybox 效果的图片上时的状态，原文链接：<a href="https://kevin1061517.github.io/blog/posts/Hexo/2721/">https://kevin1061517.github.io/blog/posts/Hexo/2721/</a></p>
-<p>结合两篇博文，最终即为在 <code>\source\js\third-party\fancybox.js</code> 文件中的 <code>const $image = $(element);</code> 这一行与 <code>const imageLink = $image.attr(&#39;data-src&#39;) || $image.attr(&#39;src&#39;);</code> 之间添加以下代码</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">     <span class="keyword">const</span> $image = $(element);</span><br><span class="line">+    <span class="keyword">if</span> ($(element).<span class="title function_">hasClass</span>(<span class="string">&#x27;nofancybox&#x27;</span>))&#123;  <span class="comment">//是否有包含自己定义的nofancybox属性，有就return true</span></span><br><span class="line">+        $(element).<span class="title function_">css</span>(<span class="string">&quot;cursor&quot;</span>,<span class="string">&quot;default&quot;</span>);    <span class="comment">//将碰到图片的鼠标从放大镜变成default模式</span></span><br><span class="line">+        <span class="keyword">return</span>;	<span class="comment">//不进行下面的fancybox的配置</span></span><br><span class="line">+      &#125;</span><br><span class="line">     <span class="keyword">const</span> imageLink = $image.<span class="title function_">attr</span>(<span class="string">&#x27;data-src&#x27;</span>) || $image.<span class="title function_">attr</span>(<span class="string">&#x27;src&#x27;</span>);</span><br></pre></td></tr></table></figure>
-
-<p>以下为方便复制的代码</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">if</span> ($(element).<span class="title function_">hasClass</span>(<span class="string">&#x27;nofancybox&#x27;</span>))&#123;  <span class="comment">//是否有包含自己定义的nofancybox属性，有就return true</span></span><br><span class="line">    $(element).<span class="title function_">css</span>(<span class="string">&quot;cursor&quot;</span>,<span class="string">&quot;default&quot;</span>);    <span class="comment">//将碰到图片的鼠标从放大镜变成default模式</span></span><br><span class="line">    <span class="keyword">return</span>;	<span class="comment">//不进行下面的fancybox的配置</span></span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
-
-<p>之后只要给不想有 fancybox 效果的 <code>&lt;img&gt;</code> 元素增加 <code>class=&quot;nofancybox&quot;</code> 即可。</p>
-<hr>
-<p>后续更新来了，上面的代码是 jQuery 版的 Fancybox 的，现主题最新版本已完全去除 jQuery 的依赖且更新到了 Fancybox 5，上面的代码自然也就失效了。虽然不会 js，还是试着在 Google 和 Chatgpt 的帮助下改了一下代码。可以适配最新版本了。</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="variable language_">document</span>.<span class="title function_">querySelectorAll</span>(<span class="string">&#x27;.post-body :not(a) &gt; img, .post-body &gt; img&#x27;</span>).<span class="title function_">forEach</span>(<span class="function"><span class="params">image</span> =&gt;</span> &#123;</span><br><span class="line">+    <span class="keyword">if</span> (image.<span class="property">classList</span>.<span class="title function_">contains</span>(<span class="string">&#x27;nofancybox&#x27;</span>))&#123;  <span class="comment">//是否有包含自己定义的nofancybox属性，有就return true</span></span><br><span class="line">+      image.<span class="property">style</span>.<span class="property">cursor</span> = <span class="string">&#x27;default&#x27;</span>;    <span class="comment">//将碰到图片的鼠标从放大镜变成default模式</span></span><br><span class="line">+      <span class="keyword">return</span>;	<span class="comment">//不进行下面的fancybox的配置</span></span><br><span class="line">+    &#125;</span><br><span class="line">    <span class="keyword">const</span> imageLink = image.<span class="property">dataset</span>.<span class="property">src</span> || image.<span class="property">src</span>;</span><br></pre></td></tr></table></figure>
-
-<p>方便复制的版本</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">if</span> (image.<span class="property">classList</span>.<span class="title function_">contains</span>(<span class="string">&#x27;nofancybox&#x27;</span>))&#123;  <span class="comment">//是否有包含自己定义的nofancybox属性，有就return true</span></span><br><span class="line">  image.<span class="property">style</span>.<span class="property">cursor</span> = <span class="string">&#x27;default&#x27;</span>;    <span class="comment">//将碰到图片的鼠标从放大镜变成default模式</span></span><br><span class="line">  <span class="keyword">return</span>;	<span class="comment">//不进行下面的fancybox的配置</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>同样的，只要给不想有 fancybox 效果的 <code>&lt;img&gt;</code> 元素增加 <code>class=&quot;nofancybox&quot;</code> 即可。</p>
-]]></content>
-      <categories>
-        <category>技术</category>
-      </categories>
-      <tags>
-        <tag>技术</tag>
-        <tag>Hexo</tag>
-        <tag>JavaScript</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Next 文章顶部添加波浪效果</title>
     <url>/2023/08/nextwave.html</url>
     <content><![CDATA[<blockquote>
@@ -158,6 +128,36 @@
         <tag>技术</tag>
         <tag>Hexo</tag>
         <tag>CSS</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Next 主题部分图片禁用 FancyBox</title>
+    <url>/2023/04/nextthemefancyboxdisabled.html</url>
+    <content><![CDATA[<p>之前用的主题有 fancybox 功能的都有部分图片禁用 fancybox 的功能，看了一遍文档却发现没有这个选项，去 issue 中和 discusstion 中也没找到相关的信息。<span id="more"></span>于是 google 了一下，发现真有<a href="https://blog.csdn.net/cddchina/article/details/79764432">相关教程</a>，不过是 18 年的了，现在 next 主题已经变了很多，fancybox 的 js 代码也没在 utils.js 文件中了。找了一下，发现 fancybox 的相关 js 代码已经单独写在了主题文件夹下的 <code>\source\js\third-party\fancybox.js</code> 中了。</p>
+<p>接着又在网上找到了一篇博客，发现插入的代码较也改进了一下，修改了当鼠标悬浮在已经被禁用 fancybox 效果的图片上时的状态，原文链接：<a href="https://kevin1061517.github.io/blog/posts/Hexo/2721/">https://kevin1061517.github.io/blog/posts/Hexo/2721/</a></p>
+<p>结合两篇博文，最终即为在 <code>\source\js\third-party\fancybox.js</code> 文件中的 <code>const $image = $(element);</code> 这一行与 <code>const imageLink = $image.attr(&#39;data-src&#39;) || $image.attr(&#39;src&#39;);</code> 之间添加以下代码</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">     <span class="keyword">const</span> $image = $(element);</span><br><span class="line">+    <span class="keyword">if</span> ($(element).<span class="title function_">hasClass</span>(<span class="string">&#x27;nofancybox&#x27;</span>))&#123;  <span class="comment">//是否有包含自己定义的nofancybox属性，有就return true</span></span><br><span class="line">+        $(element).<span class="title function_">css</span>(<span class="string">&quot;cursor&quot;</span>,<span class="string">&quot;default&quot;</span>);    <span class="comment">//将碰到图片的鼠标从放大镜变成default模式</span></span><br><span class="line">+        <span class="keyword">return</span>;	<span class="comment">//不进行下面的fancybox的配置</span></span><br><span class="line">+      &#125;</span><br><span class="line">     <span class="keyword">const</span> imageLink = $image.<span class="title function_">attr</span>(<span class="string">&#x27;data-src&#x27;</span>) || $image.<span class="title function_">attr</span>(<span class="string">&#x27;src&#x27;</span>);</span><br></pre></td></tr></table></figure>
+
+<p>以下为方便复制的代码</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">if</span> ($(element).<span class="title function_">hasClass</span>(<span class="string">&#x27;nofancybox&#x27;</span>))&#123;  <span class="comment">//是否有包含自己定义的nofancybox属性，有就return true</span></span><br><span class="line">    $(element).<span class="title function_">css</span>(<span class="string">&quot;cursor&quot;</span>,<span class="string">&quot;default&quot;</span>);    <span class="comment">//将碰到图片的鼠标从放大镜变成default模式</span></span><br><span class="line">    <span class="keyword">return</span>;	<span class="comment">//不进行下面的fancybox的配置</span></span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+
+<p>之后只要给不想有 fancybox 效果的 <code>&lt;img&gt;</code> 元素增加 <code>class=&quot;nofancybox&quot;</code> 即可。</p>
+<hr>
+<p>后续更新来了，上面的代码是 jQuery 版的 Fancybox 的，现主题最新版本已完全去除 jQuery 的依赖且更新到了 Fancybox 5，上面的代码自然也就失效了。虽然不会 js，还是试着在 Google 和 Chatgpt 的帮助下改了一下代码。可以适配最新版本了。</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="variable language_">document</span>.<span class="title function_">querySelectorAll</span>(<span class="string">&#x27;.post-body :not(a) &gt; img, .post-body &gt; img&#x27;</span>).<span class="title function_">forEach</span>(<span class="function"><span class="params">image</span> =&gt;</span> &#123;</span><br><span class="line">+    <span class="keyword">if</span> (image.<span class="property">classList</span>.<span class="title function_">contains</span>(<span class="string">&#x27;nofancybox&#x27;</span>))&#123;  <span class="comment">//是否有包含自己定义的nofancybox属性，有就return true</span></span><br><span class="line">+      image.<span class="property">style</span>.<span class="property">cursor</span> = <span class="string">&#x27;default&#x27;</span>;    <span class="comment">//将碰到图片的鼠标从放大镜变成default模式</span></span><br><span class="line">+      <span class="keyword">return</span>;	<span class="comment">//不进行下面的fancybox的配置</span></span><br><span class="line">+    &#125;</span><br><span class="line">    <span class="keyword">const</span> imageLink = image.<span class="property">dataset</span>.<span class="property">src</span> || image.<span class="property">src</span>;</span><br></pre></td></tr></table></figure>
+
+<p>方便复制的版本</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">if</span> (image.<span class="property">classList</span>.<span class="title function_">contains</span>(<span class="string">&#x27;nofancybox&#x27;</span>))&#123;  <span class="comment">//是否有包含自己定义的nofancybox属性，有就return true</span></span><br><span class="line">  image.<span class="property">style</span>.<span class="property">cursor</span> = <span class="string">&#x27;default&#x27;</span>;    <span class="comment">//将碰到图片的鼠标从放大镜变成default模式</span></span><br><span class="line">  <span class="keyword">return</span>;	<span class="comment">//不进行下面的fancybox的配置</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>同样的，只要给不想有 fancybox 效果的 <code>&lt;img&gt;</code> 元素增加 <code>class=&quot;nofancybox&quot;</code> 即可。</p>
+]]></content>
+      <categories>
+        <category>技术</category>
+      </categories>
+      <tags>
+        <tag>技术</tag>
+        <tag>Hexo</tag>
+        <tag>JavaScript</tag>
       </tags>
   </entry>
   <entry>
@@ -510,6 +510,64 @@
       </tags>
   </entry>
   <entry>
+    <title>不断变强的万达</title>
+    <url>/2023/08/genshinwandatsuyoi.html</url>
+    <content><![CDATA[<p>去年垫池子抽到了达达鸭，今年 1 月份开始练万达国际，入坑一年以来首次打通了深渊（<a href="/2023/01/genshinshenyuanfirst.html">见『纪念第一次打通深渊』</a>），当时的面板没有截图。</p>
+<p>之后一直在水本坐牢，妄图给达达鸭刷一套好的 2 件套，其中最想要的当属水套的水伤杯，可惜一直没出货（刷出来的狗粮用来合水套也没出）。</p>
+<p>这是 5 月 12 日的面板，当时应该是常驻出了风鹰剑，换掉了原来的暗巷闪光。<span id="more"></span></p>
+<p><img data-src="https://img.fufu.ink/MOUy69.webp" alt="5月12日"></p>
+<p>后来<a href="/2023/05/genshinxgderu.html">出了宵宫</a>，就把鸭子的武器给她，鸭子自己用天空弓。</p>
+<p>武器主词条从爆伤换成了暴击，圣遗物暴击词条的压力也就减轻了许多。虽然白值变低了一点，队伍 dps 降了一点，不过问题不大。</p>
+<p><img data-src="https://img.fufu.ink/NRj97x.webp" alt="6月2日"></p>
+<p>几天后想办法把万叶的精通堆到了 1000+，dps 又提高了 4w。</p>
+<p><img data-src="https://img.fufu.ink/wpXCNv.webp" alt="6月13日"></p>
+<p>因为一直不出货，还想提伤害的我把目光转移到了香菱的大招上，毕竟<del>万达的伤害都是香菱打的</del>。将其大招升到 13 级后，dps 高了 2w。</p>
+<p><img data-src="https://img.fufu.ink/3zvva3.webp" alt="6月16日"></p>
+<p>这也是我的万达的 dps 第一次达到 ACE。</p>
+<p>接下来想要再提升就只能指望香菱和达达鸭的圣遗物以及班爷的 6 命了。</p>
+<p>在压了达达鸭的暴击后，配出了以下面板。</p>
+<p><img data-src="https://img.fufu.ink/RMVORk.webp" alt="7月19日"></p>
+<p>可能有人奇怪为什么双爆降低了，伤害却变高了。原因是我把鸭子的精通拉到了 320+，这精通正好弥补了双爆的不足。</p>
+<p>然后今天水米游社的时候突发奇想，搜了一下「达达利亚是否必须带 2 水套」，结果发现只要有水伤杯，即使不带二水套也可以。</p>
+<p>这段时间一直没有较大提升就是因为局限于需要保证 2 水套的情况下更换圣遗物，现在得知那 15% 的水伤其实不太重要，只要不带明显与水属性不合的套装效果的圣遗物就行。于是换成了所有圣遗物里双爆较好的，最后得出的面板如下。</p>
+<p><img data-src="https://img.fufu.ink/h6vQha.webp" alt="8月26日"></p>
+<p>暴击也压得刚刚好，精通也有 250 左右，伤害也明显地提高了。</p>
+<p>乘兴打了个散兵本，打出了 53w 的核爆。</p>
+<p><img data-src="https://img.fufu.ink/ZUZ9V9.webp" alt="核爆53w"></p>
+<p>再过几天活动就送一只班尼特，有了 6 命的火伤加成，估计还能再提几万 dps。</p>
+<p>不断变强的达达鸭，不断变强的万达国际！</p>
+<p><img data-src="https://img.fufu.ink/ad1AMs.webp" alt="万达国际"></p>
+<hr>
+<p>今天活动更新了，班爷终于 6 命了，测出来最新的 dps 如下。</p>
+<p><img data-src="https://img.fufu.ink/gq7SDw.webp" alt="8月28日"></p>
+<p>接下来的时间里应该很难再有大的提升了，如果想要再提，就要去抽 2 命万叶了。</p>
+<p>不过现在的目标是攒满命草神，就先不考虑继续提升万达的 dps 了，反正现在的也足够乱杀深渊了。</p>
+]]></content>
+      <categories>
+        <category>游戏</category>
+      </categories>
+      <tags>
+        <tag>原神</tag>
+        <tag>游戏</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>什么！买基岩版 Minecraft 送 Java 版？白嫖党的胜利！</title>
+    <url>/2022/06/mcokuru.html</url>
+    <content><![CDATA[<p>原文链接：<a href="https://help.minecraft.net/hc/en-us/articles/4607523809933-Buy-Minecraft-PC-Bundle-Get-Both-Games-">https://help.minecraft.net/hc/en-us/articles/4607523809933-Buy-Minecraft-PC-Bundle-Get-Both-Games-</a></p>
+<p>今天，Minecraft 夏季活动开始了，只要拥有 PC 平台的任意一个版本（Windows 版&#x2F;Java 版），即可免费获得另一个版本。即，PC 平台玩家如果拥有 Windows 版的 Minecraft，即可免费获得 Java 版，反之亦然。<span id="more"></span></p>
+<p>另一个版本会自动推送到你的游戏仓库中，当你打开 Minecraft Launcher 时，会发现游戏已经在列表中了。</p>
+<p><img data-src="https://img.fufu.ink/epXnLi.webp" alt="Minecraft Launcher"></p>
+]]></content>
+      <categories>
+        <category>游戏</category>
+      </categories>
+      <tags>
+        <tag>Minecraft</tag>
+        <tag>资讯</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>使用油猴插件实现百度网盘不限速下载</title>
     <url>/2022/09/baiducloudpan.html</url>
     <content><![CDATA[<p>需要下载的工具如下：</p>
@@ -548,70 +606,12 @@
       </tags>
   </entry>
   <entry>
-    <title>什么！买基岩版 Minecraft 送 Java 版？白嫖党的胜利！</title>
-    <url>/2022/06/mcokuru.html</url>
-    <content><![CDATA[<p>原文链接：<a href="https://help.minecraft.net/hc/en-us/articles/4607523809933-Buy-Minecraft-PC-Bundle-Get-Both-Games-">https://help.minecraft.net/hc/en-us/articles/4607523809933-Buy-Minecraft-PC-Bundle-Get-Both-Games-</a></p>
-<p>今天，Minecraft 夏季活动开始了，只要拥有 PC 平台的任意一个版本（Windows 版&#x2F;Java 版），即可免费获得另一个版本。即，PC 平台玩家如果拥有 Windows 版的 Minecraft，即可免费获得 Java 版，反之亦然。<span id="more"></span></p>
-<p>另一个版本会自动推送到你的游戏仓库中，当你打开 Minecraft Launcher 时，会发现游戏已经在列表中了。</p>
-<p><img data-src="https://img.fufu.ink/epXnLi.webp" alt="Minecraft Launcher"></p>
-]]></content>
-      <categories>
-        <category>游戏</category>
-      </categories>
-      <tags>
-        <tag>Minecraft</tag>
-        <tag>资讯</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>出宵宫啦！</title>
     <url>/2023/05/genshinxgderu.html</url>
     <content><![CDATA[<p>虽说抽完 2 命纳西妲后已经没有抽其他角色的欲望了，但池子还是要垫的，出什么都无所谓了。</p>
 <p>因为这 14 天搞<a href="/2023/05/improvefdlinks.html">「博客的友链的更优雅的书写方式」</a>去了，就没怎么上线，还白白浪费了 14 天的月卡，趁着今天第 15 天上线领了回归奖励以及版本更新补偿，让朋友抽了 2 抽，没歪！<span id="more"></span></p>
 <p><img data-src="https://img.fufu.ink/blTnOx.webp" alt="手机截图，画质有点差"></p>
 <p>接下来就是继续垫池子了~</p>
-]]></content>
-      <categories>
-        <category>游戏</category>
-      </categories>
-      <tags>
-        <tag>原神</tag>
-        <tag>游戏</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>不断变强的万达</title>
-    <url>/2023/08/genshinwandatsuyoi.html</url>
-    <content><![CDATA[<p>去年垫池子抽到了达达鸭，今年 1 月份开始练万达国际，入坑一年以来首次打通了深渊（<a href="/2023/01/genshinshenyuanfirst.html">见『纪念第一次打通深渊』</a>），当时的面板没有截图。</p>
-<p>之后一直在水本坐牢，妄图给达达鸭刷一套好的 2 件套，其中最想要的当属水套的水伤杯，可惜一直没出货（刷出来的狗粮用来合水套也没出）。</p>
-<p>这是 5 月 12 日的面板，当时应该是常驻出了风鹰剑，换掉了原来的暗巷闪光。<span id="more"></span></p>
-<p><img data-src="https://img.fufu.ink/MOUy69.webp" alt="5月12日"></p>
-<p>后来<a href="/2023/05/genshinxgderu.html">出了宵宫</a>，就把鸭子的武器给她，鸭子自己用天空弓。</p>
-<p>武器主词条从爆伤换成了暴击，圣遗物暴击词条的压力也就减轻了许多。虽然白值变低了一点，队伍 dps 降了一点，不过问题不大。</p>
-<p><img data-src="https://img.fufu.ink/NRj97x.webp" alt="6月2日"></p>
-<p>几天后想办法把万叶的精通堆到了 1000+，dps 又提高了 4w。</p>
-<p><img data-src="https://img.fufu.ink/wpXCNv.webp" alt="6月13日"></p>
-<p>因为一直不出货，还想提伤害的我把目光转移到了香菱的大招上，毕竟<del>万达的伤害都是香菱打的</del>。将其大招升到 13 级后，dps 高了 2w。</p>
-<p><img data-src="https://img.fufu.ink/3zvva3.webp" alt="6月16日"></p>
-<p>这也是我的万达的 dps 第一次达到 ACE。</p>
-<p>接下来想要再提升就只能指望香菱和达达鸭的圣遗物以及班爷的 6 命了。</p>
-<p>在压了达达鸭的暴击后，配出了以下面板。</p>
-<p><img data-src="https://img.fufu.ink/RMVORk.webp" alt="7月19日"></p>
-<p>可能有人奇怪为什么双爆降低了，伤害却变高了。原因是我把鸭子的精通拉到了 320+，这精通正好弥补了双爆的不足。</p>
-<p>然后今天水米游社的时候突发奇想，搜了一下「达达利亚是否必须带 2 水套」，结果发现只要有水伤杯，即使不带二水套也可以。</p>
-<p>这段时间一直没有较大提升就是因为局限于需要保证 2 水套的情况下更换圣遗物，现在得知那 15% 的水伤其实不太重要，只要不带明显与水属性不合的套装效果的圣遗物就行。于是换成了所有圣遗物里双爆较好的，最后得出的面板如下。</p>
-<p><img data-src="https://img.fufu.ink/h6vQha.webp" alt="8月26日"></p>
-<p>暴击也压得刚刚好，精通也有 250 左右，伤害也明显地提高了。</p>
-<p>乘兴打了个散兵本，打出了 53w 的核爆。</p>
-<p><img data-src="https://img.fufu.ink/ZUZ9V9.webp" alt="核爆53w"></p>
-<p>再过几天活动就送一只班尼特，有了 6 命的火伤加成，估计还能再提几万 dps。</p>
-<p>不断变强的达达鸭，不断变强的万达国际！</p>
-<p><img data-src="https://img.fufu.ink/ad1AMs.webp" alt="万达国际"></p>
-<hr>
-<p>今天活动更新了，班爷终于 6 命了，测出来最新的 dps 如下。</p>
-<p><img data-src="https://img.fufu.ink/gq7SDw.webp" alt="8月28日"></p>
-<p>接下来的时间里应该很难再有大的提升了，如果想要再提，就要去抽 2 命万叶了。</p>
-<p>不过现在的目标是攒满命草神，就先不考虑继续提升万达的 dps 了，反正现在的也足够乱杀深渊了。</p>
 ]]></content>
       <categories>
         <category>游戏</category>
@@ -1145,64 +1145,6 @@
       </tags>
   </entry>
   <entry>
-    <title>计算机网络结课作业</title>
-    <url>/2022/05/computerhomework.html</url>
-    <content><![CDATA[<h2 id="第一题——家庭拓扑结构"><a href="#第一题——家庭拓扑结构" class="headerlink" title="第一题——家庭拓扑结构"></a>第一题——家庭拓扑结构</h2><p>一、结构规划</p>
-<ul>
-<li>确定小区网线接入点（控制中心）：书房</li>
-<li>规划每个房间布置 3 个网点，共 18 个网点</li>
-<li>联网设备：书房一台电脑，客厅，卧室各一台有线电视，卧室各一台电脑等</li>
-</ul>
-<p>二、材料规划<span id="more"></span></p>
-<ul>
-<li>每个网点需要水晶头、网点模块各 1 个，共计水晶头 18 个，网点模块 18 个。</li>
-<li>需要超七类网线 18 条，长度共计 50m 左右</li>
-<li>路由器：斐讯 K2P</li>
-</ul>
-<p>三、接线与路由器设置</p>
-<ol>
-<li><p>接线：将小区网线接在路由器的 LAN 上，路由器的 WAN 口分别接上交换机与书房电脑。其余网线都接在交换机上</p>
-<p>拓扑布线结构图：</p>
-</li>
-</ol>
-<p><img data-src="https://pic.mikupan.com/54Bfco.webp" alt="家庭网络拓扑"></p>
-<ol start="2">
-<li>路由器配置<ul>
-<li>开启内网 IP</li>
-<li>配置防火墙</li>
-</ul>
-</li>
-</ol>
-<h2 id="第二题——设想"><a href="#第二题——设想" class="headerlink" title="第二题——设想"></a>第二题——设想</h2><p>一、物联网</p>
-<p>物联网，即万物互联，指的是只需有限的人工干预即可通过无线网络接收和传输数据的任何物理设备系统。设想一下，当你疲惫地从公司上班回家后，打开门时，不需要你摸黑寻找电灯开关，电灯会自动打开，当你在换衣服时，热水壶已经开始加热热水，准备好温度合适的热水，电视机自动开机，并播放这个时间点你平时观看次数最多的节目。这就是万物互联中一个典型的例子，无需人的过多干涉，它会为你规划好一切。</p>
-<p>我们现在的生活中已经隐约出现了物联网的轮廓了，虽然还有很多不足，但证明了物联网在未来是可行的。小米家居就是一个很好的例子，比如进入家门的第一步——开锁，现在还有很多地方使用的门锁还是传统的门锁，而小米的智能门锁除了支持指纹识别开锁、密码开锁、还支持 NFC 开锁，即使用支持 NFC 功能的小米手机靠一下门锁即可打开，并且无需手动旋&#x2F;推拉把手的动作，锁舌会自动打开与关上，若家主人装上了相应软件，还能够在手机上查看门锁的状态，通过摄像头能够实时看到门前的状况。</p>
-<p>上面的只是一个小例子，即以现在的技术能实现的让物品与互联网相接的程度，还有将来的无人驾驶等，都是证明物联网的可行性的证据。</p>
-<p>二、元宇宙</p>
-<p>元宇宙，即一个持久化和去中心化的在线三维虚拟环境。”Metaverse”一词最早见于尼尔·斯蒂芬森1992年的科幻小说《雪崩》，Metaverse是一个虚拟的城市环境，沿着一条100米宽的道路发展，覆盖了一个无特征的、黑色的、完美球形星球上整个65536公里周长。这个虚拟世界中的土地可以被购买，并在上面开发建筑。而这个概念在 2021 年突然就火了，Facebook 的扎克伯格在 Facebook Connect 演讲中展示了 Meta 在未来的应用场景和业内的方案雏形，各大巨头也相继开始宣称进军该领域。</p>
-<p>元宇宙是一个虚拟的世界，虚拟就意味着可复制，因此如果要将现实世界映射到这个虚拟世界中，这就是一个巨大的问题，于是可以运用区块链技术与去中心化技术，再具体点就是非同质化代币，即利用其无法互换的特性，可以将其作为虚拟商品所有权的电子认证或证书，虽然作品本身是可以无限复制的，但这些代表它们的代币在其底层区块链上能被完整追踪，故能为买家提供所有权证明。这样就解决了在元宇宙中，无法证明资产所属的问题了。</p>
-<p>但现在的元宇宙还只是一个概念，虽然有很多东西都应用到了其原理，比如 VR（虚拟现实）、AR（增强现实）技术，带上 VR 眼镜就能在虚拟世界中有身临其境的感觉，而 AR 眼镜又能看到虚拟世界与现实相结合的视角，但如果把元宇宙技术的发展比作100米长跑，现在最顶级的运用到该概念的技术也只跑了10米左右，就从工具上来说，连接现实与虚拟的工具，现在的技术即 VR 眼镜或 AR 眼镜，即使是业内排名靠前的 Facebook、微软等巨头的产品的分辨率、刷新率、舒适度都还有许多问题，元宇宙要走的路还很长。</p>
-<p>三、区块链</p>
-<p>是借由密码学与共识机制等技术创建与存储庞大交易资料区块链的点对点网络系统。每一个区块包含了前一个区块的加密散列、相应时间戳记以及交易资料（通常用默克尔树（Merkle tree）算法计算的散列值表示），这样的设计使得区块内容具有难以篡改的特性。</p>
-<p>区块链最大的特点是去中心化、不可篡改，因此其可用于各种领域。在现在最大的应用是数字货币，比如「比特币」等虚拟货币和运用了区块链部分技术的「数字人名币」。也可用于物源追踪，产品从起源地到终点所在的过程都可以通过区块链来追踪。而且，这类准确的溯源方式，可以用来检测供应链中的缺陷。还可用于教育领域，将区块链技术应用到学历证书上，即可有效防止伪造学历等事情的发生，将学生成绩以区块链形式记录，从而形成不可更改不可否认的学习记录，保证了公平性。</p>
-<h2 id="第三题——感想和建议"><a href="#第三题——感想和建议" class="headerlink" title="第三题——感想和建议"></a>第三题——感想和建议</h2><p>一、感想</p>
-<p>本课程教学方式与传统的集中于知识点的讲解的教学方式不同，旨在通过将生活中熟悉的事物和抽象的计算机网络相关专业知识结合起来讲解的方式来使学生能够容易地理解、消化知识点，不仅增加了学习的乐趣，也能够增加我们对生活的感悟。</p>
-<p>计算机是抽象的，但也是具体的。说它是抽象的，是因为它的运作方式，内部结构都很复杂，很难在大脑中形成一个完整地架构。说它是具体的，是因为「艺术来源于生活，高于生活」，同理，我们也可以说「科技来源于生活而高于生活」，计算机的抽象展现了它高于生活的一面，而它具体的一面则体现在它的设计原理来源于生活，它的设计都是以「人」和「世界」等为参照的，因此也符合人的思维方式，比如，二进制的产生就来源于中国的古老的太极八卦图。</p>
-<p>本门课程名为《计算机网络及互联网技术》，在开篇中老师就提到，计算机之间的通信构成了计算机网络，无论计算机网络的内容多么复杂，其最终目的都是为了实现资源的共享，因此全课程的内容，从根本上讲，都是围绕其展开的。由于疫情原因，我们的课程只能以网课的形式进行，无法通过实践操作加深对这些知识点的理解，老师也尽力通过具体的讲解来让我们理解这些知识点。尽管我是一个文科生，但我对计算机感兴趣，因此对这门课程也有浓厚的兴趣，当然，由于我没有涉及过理科相关的知识（即使学习过也由于时间较长忘记了），对于 PPT 中一些较为专业的公式，计算方法不能够很好的理解，但这已经脱离我选修该门课程的初衷了，我选择该门课程，最主要是想提高自己的能力，同时在生活中我也在着手使用服务器搭建个人网站等与互联网有关的事情，因此该门课程对我很有帮助，以前我只知道在域名解析处填写好对应的数据就可以通过域名访问网站，却不知其中原理，经过老师的讲解后，我才知道在其之后运作机制。因此，只要该门课程对我来说是有用的，我从中受益了，我的选择就没有错误。</p>
-<p>二、建议</p>
-<ol>
-<li>适当增加课堂互动，不知是否是线上教学的原因，上课过程中缺少课堂互动，学生很难获得反馈，长时间保持这样的状态注意力容易分散</li>
-<li>适当增加课堂演示，或者相关演示视频，将一些知识点通过现场演示的方式展示给同学，不仅可以加深同学对该知识点的印象，也能够提高同学们对该门课程的兴趣</li>
-</ol>
-]]></content>
-      <categories>
-        <category>技术</category>
-      </categories>
-      <tags>
-        <tag>计算机</tag>
-        <tag>网络</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>记录一些常用 LINUX 指令</title>
     <url>/2022/10/linuxcommand.html</url>
     <content><![CDATA[<h2 id="iptables"><a href="#iptables" class="headerlink" title="iptables"></a>iptables</h2><blockquote>
@@ -1325,6 +1267,64 @@
       </categories>
       <tags>
         <tag>Linux</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>计算机网络结课作业</title>
+    <url>/2022/05/computerhomework.html</url>
+    <content><![CDATA[<h2 id="第一题——家庭拓扑结构"><a href="#第一题——家庭拓扑结构" class="headerlink" title="第一题——家庭拓扑结构"></a>第一题——家庭拓扑结构</h2><p>一、结构规划</p>
+<ul>
+<li>确定小区网线接入点（控制中心）：书房</li>
+<li>规划每个房间布置 3 个网点，共 18 个网点</li>
+<li>联网设备：书房一台电脑，客厅，卧室各一台有线电视，卧室各一台电脑等</li>
+</ul>
+<p>二、材料规划<span id="more"></span></p>
+<ul>
+<li>每个网点需要水晶头、网点模块各 1 个，共计水晶头 18 个，网点模块 18 个。</li>
+<li>需要超七类网线 18 条，长度共计 50m 左右</li>
+<li>路由器：斐讯 K2P</li>
+</ul>
+<p>三、接线与路由器设置</p>
+<ol>
+<li><p>接线：将小区网线接在路由器的 LAN 上，路由器的 WAN 口分别接上交换机与书房电脑。其余网线都接在交换机上</p>
+<p>拓扑布线结构图：</p>
+</li>
+</ol>
+<p><img data-src="https://pic.mikupan.com/54Bfco.webp" alt="家庭网络拓扑"></p>
+<ol start="2">
+<li>路由器配置<ul>
+<li>开启内网 IP</li>
+<li>配置防火墙</li>
+</ul>
+</li>
+</ol>
+<h2 id="第二题——设想"><a href="#第二题——设想" class="headerlink" title="第二题——设想"></a>第二题——设想</h2><p>一、物联网</p>
+<p>物联网，即万物互联，指的是只需有限的人工干预即可通过无线网络接收和传输数据的任何物理设备系统。设想一下，当你疲惫地从公司上班回家后，打开门时，不需要你摸黑寻找电灯开关，电灯会自动打开，当你在换衣服时，热水壶已经开始加热热水，准备好温度合适的热水，电视机自动开机，并播放这个时间点你平时观看次数最多的节目。这就是万物互联中一个典型的例子，无需人的过多干涉，它会为你规划好一切。</p>
+<p>我们现在的生活中已经隐约出现了物联网的轮廓了，虽然还有很多不足，但证明了物联网在未来是可行的。小米家居就是一个很好的例子，比如进入家门的第一步——开锁，现在还有很多地方使用的门锁还是传统的门锁，而小米的智能门锁除了支持指纹识别开锁、密码开锁、还支持 NFC 开锁，即使用支持 NFC 功能的小米手机靠一下门锁即可打开，并且无需手动旋&#x2F;推拉把手的动作，锁舌会自动打开与关上，若家主人装上了相应软件，还能够在手机上查看门锁的状态，通过摄像头能够实时看到门前的状况。</p>
+<p>上面的只是一个小例子，即以现在的技术能实现的让物品与互联网相接的程度，还有将来的无人驾驶等，都是证明物联网的可行性的证据。</p>
+<p>二、元宇宙</p>
+<p>元宇宙，即一个持久化和去中心化的在线三维虚拟环境。”Metaverse”一词最早见于尼尔·斯蒂芬森1992年的科幻小说《雪崩》，Metaverse是一个虚拟的城市环境，沿着一条100米宽的道路发展，覆盖了一个无特征的、黑色的、完美球形星球上整个65536公里周长。这个虚拟世界中的土地可以被购买，并在上面开发建筑。而这个概念在 2021 年突然就火了，Facebook 的扎克伯格在 Facebook Connect 演讲中展示了 Meta 在未来的应用场景和业内的方案雏形，各大巨头也相继开始宣称进军该领域。</p>
+<p>元宇宙是一个虚拟的世界，虚拟就意味着可复制，因此如果要将现实世界映射到这个虚拟世界中，这就是一个巨大的问题，于是可以运用区块链技术与去中心化技术，再具体点就是非同质化代币，即利用其无法互换的特性，可以将其作为虚拟商品所有权的电子认证或证书，虽然作品本身是可以无限复制的，但这些代表它们的代币在其底层区块链上能被完整追踪，故能为买家提供所有权证明。这样就解决了在元宇宙中，无法证明资产所属的问题了。</p>
+<p>但现在的元宇宙还只是一个概念，虽然有很多东西都应用到了其原理，比如 VR（虚拟现实）、AR（增强现实）技术，带上 VR 眼镜就能在虚拟世界中有身临其境的感觉，而 AR 眼镜又能看到虚拟世界与现实相结合的视角，但如果把元宇宙技术的发展比作100米长跑，现在最顶级的运用到该概念的技术也只跑了10米左右，就从工具上来说，连接现实与虚拟的工具，现在的技术即 VR 眼镜或 AR 眼镜，即使是业内排名靠前的 Facebook、微软等巨头的产品的分辨率、刷新率、舒适度都还有许多问题，元宇宙要走的路还很长。</p>
+<p>三、区块链</p>
+<p>是借由密码学与共识机制等技术创建与存储庞大交易资料区块链的点对点网络系统。每一个区块包含了前一个区块的加密散列、相应时间戳记以及交易资料（通常用默克尔树（Merkle tree）算法计算的散列值表示），这样的设计使得区块内容具有难以篡改的特性。</p>
+<p>区块链最大的特点是去中心化、不可篡改，因此其可用于各种领域。在现在最大的应用是数字货币，比如「比特币」等虚拟货币和运用了区块链部分技术的「数字人名币」。也可用于物源追踪，产品从起源地到终点所在的过程都可以通过区块链来追踪。而且，这类准确的溯源方式，可以用来检测供应链中的缺陷。还可用于教育领域，将区块链技术应用到学历证书上，即可有效防止伪造学历等事情的发生，将学生成绩以区块链形式记录，从而形成不可更改不可否认的学习记录，保证了公平性。</p>
+<h2 id="第三题——感想和建议"><a href="#第三题——感想和建议" class="headerlink" title="第三题——感想和建议"></a>第三题——感想和建议</h2><p>一、感想</p>
+<p>本课程教学方式与传统的集中于知识点的讲解的教学方式不同，旨在通过将生活中熟悉的事物和抽象的计算机网络相关专业知识结合起来讲解的方式来使学生能够容易地理解、消化知识点，不仅增加了学习的乐趣，也能够增加我们对生活的感悟。</p>
+<p>计算机是抽象的，但也是具体的。说它是抽象的，是因为它的运作方式，内部结构都很复杂，很难在大脑中形成一个完整地架构。说它是具体的，是因为「艺术来源于生活，高于生活」，同理，我们也可以说「科技来源于生活而高于生活」，计算机的抽象展现了它高于生活的一面，而它具体的一面则体现在它的设计原理来源于生活，它的设计都是以「人」和「世界」等为参照的，因此也符合人的思维方式，比如，二进制的产生就来源于中国的古老的太极八卦图。</p>
+<p>本门课程名为《计算机网络及互联网技术》，在开篇中老师就提到，计算机之间的通信构成了计算机网络，无论计算机网络的内容多么复杂，其最终目的都是为了实现资源的共享，因此全课程的内容，从根本上讲，都是围绕其展开的。由于疫情原因，我们的课程只能以网课的形式进行，无法通过实践操作加深对这些知识点的理解，老师也尽力通过具体的讲解来让我们理解这些知识点。尽管我是一个文科生，但我对计算机感兴趣，因此对这门课程也有浓厚的兴趣，当然，由于我没有涉及过理科相关的知识（即使学习过也由于时间较长忘记了），对于 PPT 中一些较为专业的公式，计算方法不能够很好的理解，但这已经脱离我选修该门课程的初衷了，我选择该门课程，最主要是想提高自己的能力，同时在生活中我也在着手使用服务器搭建个人网站等与互联网有关的事情，因此该门课程对我很有帮助，以前我只知道在域名解析处填写好对应的数据就可以通过域名访问网站，却不知其中原理，经过老师的讲解后，我才知道在其之后运作机制。因此，只要该门课程对我来说是有用的，我从中受益了，我的选择就没有错误。</p>
+<p>二、建议</p>
+<ol>
+<li>适当增加课堂互动，不知是否是线上教学的原因，上课过程中缺少课堂互动，学生很难获得反馈，长时间保持这样的状态注意力容易分散</li>
+<li>适当增加课堂演示，或者相关演示视频，将一些知识点通过现场演示的方式展示给同学，不仅可以加深同学对该知识点的印象，也能够提高同学们对该门课程的兴趣</li>
+</ol>
+]]></content>
+      <categories>
+        <category>技术</category>
+      </categories>
+      <tags>
+        <tag>计算机</tag>
+        <tag>网络</tag>
       </tags>
   </entry>
   <entry>

@@ -470,13 +470,6 @@
   </url>
   
   <url>
-    <loc>https://blog.fufu.ink/tags/JavaScript/</loc>
-    <lastmod>2023-11-07</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://blog.fufu.ink/tags/CSS/</loc>
     <lastmod>2023-11-07</lastmod>
     <changefreq>weekly</changefreq>
@@ -491,21 +484,14 @@
   </url>
   
   <url>
+    <loc>https://blog.fufu.ink/tags/JavaScript/</loc>
+    <lastmod>2023-11-07</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>https://blog.fufu.ink/tags/%E6%97%A5%E8%AF%AD/</loc>
-    <lastmod>2023-11-07</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.fufu.ink/tags/%E7%99%BE%E5%BA%A6%E7%BD%91%E7%9B%98/</loc>
-    <lastmod>2023-11-07</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.fufu.ink/tags/%E8%B5%84%E8%AE%AF/</loc>
     <lastmod>2023-11-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -520,6 +506,20 @@
   
   <url>
     <loc>https://blog.fufu.ink/tags/%E6%B8%B8%E6%88%8F/</loc>
+    <lastmod>2023-11-07</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.fufu.ink/tags/%E8%B5%84%E8%AE%AF/</loc>
+    <lastmod>2023-11-07</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.fufu.ink/tags/%E7%99%BE%E5%BA%A6%E7%BD%91%E7%9B%98/</loc>
     <lastmod>2023-11-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
