@@ -2,7 +2,160 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://blog.fufu.ink/about/index.html</loc>
+    
+    <lastmod>2023-11-21</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.fufu.ink/2023/07/natsuyasumijyoutai.html</loc>
+    
+    <lastmod>2023-11-21</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://blog.fufu.ink/2022/05/dachuangzuoye.html</loc>
+    
+    <lastmod>2023-11-21</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.fufu.ink/2022/05/computerhomework.html</loc>
+    
+    <lastmod>2023-11-21</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.fufu.ink/2023/04/nahidaniinochi.html</loc>
+    
+    <lastmod>2023-11-21</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.fufu.ink/2023/08/miku16sai.html</loc>
+    
+    <lastmod>2023-11-21</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.fufu.ink/2023/05/genshinchangzhuxiaoti.html</loc>
+    
+    <lastmod>2023-11-21</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.fufu.ink/2023/04/watanukitanjyoubi.html</loc>
+    
+    <lastmod>2023-11-21</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.fufu.ink/2023/06/genshinkamikoaru.html</loc>
+    
+    <lastmod>2023-11-21</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.fufu.ink/2023/08/genshinwandatsuyoi.html</loc>
+    
+    <lastmod>2023-11-21</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.fufu.ink/2023/05/mnnhgbp4.html</loc>
+    
+    <lastmod>2023-11-21</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.fufu.ink/2023/04/mnnhgbp3.html</loc>
+    
+    <lastmod>2023-11-21</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.fufu.ink/2023/05/mnnhgbp5.html</loc>
+    
+    <lastmod>2023-11-21</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.fufu.ink/2023/04/mnnhgbp2.html</loc>
+    
+    <lastmod>2023-11-21</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.fufu.ink/2023/04/mnnhgbp1.html</loc>
+    
+    <lastmod>2023-11-21</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.fufu.ink/2023/04/walinedecoration.html</loc>
+    
+    <lastmod>2023-11-21</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.fufu.ink/2022/07/mcbdsbeautify.html</loc>
+    
+    <lastmod>2023-11-21</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.fufu.ink/2023/03/sankyuomedetou.html</loc>
     
     <lastmod>2023-11-21</lastmod>
     
@@ -14,15 +167,6 @@
     <loc>https://blog.fufu.ink/2023/11/nahidac6plan.html</loc>
     
     <lastmod>2023-11-21</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.fufu.ink/about/index.html</loc>
-    
-    <lastmod>2023-11-06</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -74,15 +218,6 @@
   </url>
   
   <url>
-    <loc>https://blog.fufu.ink/2023/04/nahidaniinochi.html</loc>
-    
-    <lastmod>2023-09-21</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://blog.fufu.ink/2022/11/ubuntuftp.html</loc>
     
     <lastmod>2023-09-21</lastmod>
@@ -119,15 +254,6 @@
   </url>
   
   <url>
-    <loc>https://blog.fufu.ink/2022/07/mcbdsbeautify.html</loc>
-    
-    <lastmod>2023-09-21</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://blog.fufu.ink/2023/08/nextwave.html</loc>
     
     <lastmod>2023-09-21</lastmod>
@@ -146,42 +272,6 @@
   </url>
   
   <url>
-    <loc>https://blog.fufu.ink/2023/04/walinedecoration.html</loc>
-    
-    <lastmod>2023-09-21</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.fufu.ink/2023/03/sankyuomedetou.html</loc>
-    
-    <lastmod>2023-09-21</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.fufu.ink/2023/06/genshinkamikoaru.html</loc>
-    
-    <lastmod>2023-09-21</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.fufu.ink/2023/07/natsuyasumijyoutai.html</loc>
-    
-    <lastmod>2023-09-21</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://blog.fufu.ink/2023/05/fastjidaidedousurebaii.html</loc>
     
     <lastmod>2023-09-21</lastmod>
@@ -191,25 +281,7 @@
   </url>
   
   <url>
-    <loc>https://blog.fufu.ink/2023/05/genshinchangzhuxiaoti.html</loc>
-    
-    <lastmod>2023-09-21</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://blog.fufu.ink/2022/11/genshicaoshen.html</loc>
-    
-    <lastmod>2023-09-21</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.fufu.ink/2023/04/watanukitanjyoubi.html</loc>
     
     <lastmod>2023-09-21</lastmod>
     
@@ -236,15 +308,6 @@
   </url>
   
   <url>
-    <loc>https://blog.fufu.ink/2023/08/miku16sai.html</loc>
-    
-    <lastmod>2023-09-21</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://blog.fufu.ink/2023/08/kemuerpass.html</loc>
     
     <lastmod>2023-09-21</lastmod>
@@ -263,15 +326,6 @@
   </url>
   
   <url>
-    <loc>https://blog.fufu.ink/2022/05/computerhomework.html</loc>
-    
-    <lastmod>2023-09-21</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://blog.fufu.ink/2023/02/genshinshenyuanmanxing.html</loc>
     
     <lastmod>2023-09-21</lastmod>
@@ -282,60 +336,6 @@
   
   <url>
     <loc>https://blog.fufu.ink/2023/05/genshinxgderu.html</loc>
-    
-    <lastmod>2023-09-21</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.fufu.ink/2023/08/genshinwandatsuyoi.html</loc>
-    
-    <lastmod>2023-09-21</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.fufu.ink/2023/04/mnnhgbp2.html</loc>
-    
-    <lastmod>2023-09-21</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.fufu.ink/2023/04/mnnhgbp1.html</loc>
-    
-    <lastmod>2023-09-21</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.fufu.ink/2023/05/mnnhgbp4.html</loc>
-    
-    <lastmod>2023-09-21</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.fufu.ink/2023/05/mnnhgbp5.html</loc>
-    
-    <lastmod>2023-09-21</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.fufu.ink/2023/04/mnnhgbp3.html</loc>
     
     <lastmod>2023-09-21</lastmod>
     
@@ -477,13 +477,6 @@
   </url>
   
   <url>
-    <loc>https://blog.fufu.ink/tags/%E6%97%A5%E8%AF%AD/</loc>
-    <lastmod>2023-11-21</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://blog.fufu.ink/tags/CSS/</loc>
     <lastmod>2023-11-21</lastmod>
     <changefreq>weekly</changefreq>
@@ -492,6 +485,13 @@
   
   <url>
     <loc>https://blog.fufu.ink/tags/Next/</loc>
+    <lastmod>2023-11-21</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.fufu.ink/tags/%E6%97%A5%E8%AF%AD/</loc>
     <lastmod>2023-11-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -533,20 +533,6 @@
   </url>
   
   <url>
-    <loc>https://blog.fufu.ink/tags/%E7%B1%BB%E5%8E%9F%E7%94%9F/</loc>
-    <lastmod>2023-11-21</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.fufu.ink/tags/Android/</loc>
-    <lastmod>2023-11-21</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://blog.fufu.ink/tags/Linux/</loc>
     <lastmod>2023-11-21</lastmod>
     <changefreq>weekly</changefreq>
@@ -569,6 +555,20 @@
   
   <url>
     <loc>https://blog.fufu.ink/tags/%E9%A9%BE%E8%80%83/</loc>
+    <lastmod>2023-11-21</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.fufu.ink/tags/%E7%B1%BB%E5%8E%9F%E7%94%9F/</loc>
+    <lastmod>2023-11-21</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.fufu.ink/tags/Android/</loc>
     <lastmod>2023-11-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
