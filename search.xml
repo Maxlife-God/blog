@@ -98,6 +98,49 @@
       </tags>
   </entry>
   <entry>
+    <title>【每日语法】~さえ~ば</title>
+    <url>/2023/05/mnnhgbp5.html</url>
+    <content><![CDATA[<p>接续：</p>
+<blockquote>
+<p>N + さえ + 假定形<br>A（く形）&#x2F; NA（て形）+ さえあれば<br>V（ます形）&#x2F; サ变动词词干 + さえすれば</p>
+</blockquote>
+<p>意为「只要···就···」。关于假定形的变形方法，请参考<a href="/2023/04/mnnhgbp1.html">『【每日语法】~ば~ほど』</a>的文末表格。<span id="more"></span></p>
+<p>例句：やすくさえあれば、買いましょう。<br>译：只要便宜的话就买吧！</p>
+]]></content>
+      <categories>
+        <category>日语</category>
+      </categories>
+      <tags>
+        <tag>日语</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Waline 美化教程</title>
+    <url>/2023/04/walinedecoration.html</url>
+    <content><![CDATA[<p>起因是看到许多博客使用的 twikoo 评论系统，觉得 twikoo 的前端样式很好看，与之相对的正在用的 waline 的默认样式是真的不好看，本来打算直接换到 twikoo 的，转念一想，既然是属于样式的东西，为什么不直接用 css 解决呢，没有必要为了一个效果而去换插件。<span id="more"></span>博主的 css 不行，只会 <kbd>F12</kbd> 找到哪个元素改哪个。至于定位元素之类的完全不行＞﹏＜。只要最后好看了就 ok 了！（bushi</p>
+<p>以下为代码部分（部分选择器需要根据实际更换）</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="comment">/* 修改waline样式 */</span></span><br><span class="line"><span class="comment">/* 修改评论框外观 */</span></span><br><span class="line"><span class="selector-class">.wl-panel</span> &#123;</span><br><span class="line">    <span class="attribute">border-radius</span>: <span class="number">4px</span> <span class="meta">!important</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-pseudo">:root</span> &#123;</span><br><span class="line">    <span class="attr">--waline-bgcolor-light</span>: transparent <span class="meta">!important</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.wl-btn</span> &#123;</span><br><span class="line">    <span class="attribute">border-radius</span>: <span class="number">0.3em</span> <span class="meta">!important</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* 添加miku的gif为输入区域背景 */</span></span><br><span class="line"><span class="selector-id">#wl-edit</span> &#123;</span><br><span class="line">    <span class="attribute">background</span>: <span class="built_in">url</span>(<span class="string">&quot;/img/wl-bg-mikuchan.gif&quot;</span>) <span class="number">100%</span> <span class="number">100%</span> no-repeat;</span><br><span class="line">    <span class="attribute">background-size</span>: contain <span class="meta">!important</span>;</span><br><span class="line">    <span class="attribute">background-repeat</span>: no-repeat <span class="meta">!important</span>;</span><br><span class="line">    <span class="attribute">background-position</span>: right bottom <span class="meta">!important</span>; </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-id">#waline-wrap</span> <span class="selector-tag">textarea</span><span class="selector-pseudo">:focus</span> &#123;</span><br><span class="line">    <span class="attribute">background</span>: <span class="built_in">url</span>(<span class="string">&quot;/img/wl-bg-mikuchan.gif&quot;</span>) <span class="number">100%</span> <span class="number">100%</span> no-repeat;</span><br><span class="line">    <span class="attribute">background-position</span>-y: <span class="number">78px</span> <span class="meta">!important</span>;</span><br><span class="line">    <span class="attribute">transition</span>: all <span class="number">0.25s</span> ease-in-out <span class="number">0s</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* 修改评论区内容背景 */</span></span><br><span class="line"><span class="selector-class">.wl-card</span> <span class="selector-class">.wl-content</span> &#123;</span><br><span class="line">    <span class="attribute">background</span>: <span class="number">#f5f5f5</span>;</span><br><span class="line">    <span class="attribute">padding</span>: <span class="number">16px</span> <span class="meta">!important</span>;</span><br><span class="line">    <span class="attribute">margin</span>: <span class="number">12px</span> <span class="number">0</span> <span class="number">8px</span> <span class="meta">!important</span>;</span><br><span class="line">    <span class="attribute">border-radius</span>: <span class="number">3px</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.wl-card</span> &#123;</span><br><span class="line">    <span class="attribute">border-bottom</span>: none <span class="meta">!important</span>;</span><br><span class="line">    <span class="attribute">padding-bottom</span>: <span class="number">0px</span> <span class="meta">!important</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.wl-cards</span> <span class="selector-class">.wl-item</span>&#123;</span><br><span class="line">    <span class="attribute">padding</span>: .<span class="number">5em</span> .<span class="number">5em</span> <span class="number">0px</span> <span class="meta">!important</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>效果图如下（因图片是截取自评论区而打了码，头像这些不属于以上代码，后面可以考虑改一下默认头像）</p>
+<p><img data-src="https://img.fufu.ink/iTcakI.webp" alt="Waline评论框美化效果"></p>
+<p><img data-src="https://img.fufu.ink/JDVkhh.webp" alt="Waline评论区美化效果"></p>
+<p>其中评论框的背景 gif 需要自己下载下来放到 <code>/source/img/</code> 下即可（记得重命名），别直接用我的博客的地址！（就这么点大小的图片就别直接挂别人的链接了吧，虽然我也不会做防盗链…）</p>
+<p>修改文本输入框中的提示文字需要到主题的配置文件中找到 waline 的配置项，在其中添加 <code>locale: &#123;placeholder: &#39;提示文字&#39;&#125;</code> 即可，以主题 butterfly 为例，则需要在 option 中添加该行代码，需要注意缩进，如下所示</p>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">waline:</span></span><br><span class="line">  <span class="attr">serverURL:</span> <span class="comment"># Waline server address url</span></span><br><span class="line">  <span class="attr">bg:</span> <span class="comment"># waline background</span></span><br><span class="line">  <span class="attr">pageview:</span> <span class="literal">false</span></span><br><span class="line">  <span class="attr">option:</span></span><br><span class="line">    <span class="attr">locale:</span> &#123;<span class="attr">placeholder:</span> <span class="string">&#x27;提示文字&#x27;</span>&#125;</span><br></pre></td></tr></table></figure>
+
+<p>最后就是上面效果图的样子啦！</p>
+]]></content>
+      <categories>
+        <category>技术</category>
+      </categories>
+      <tags>
+        <tag>教程</tag>
+        <tag>技术</tag>
+        <tag>Hexo</tag>
+        <tag>CSS</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Next 文章顶部添加波浪效果</title>
     <url>/2023/08/nextwave.html</url>
     <content><![CDATA[<blockquote>
@@ -135,40 +178,57 @@
       </tags>
   </entry>
   <entry>
-    <title>Waline 美化教程</title>
-    <url>/2023/04/walinedecoration.html</url>
-    <content><![CDATA[<p>起因是看到许多博客使用的 twikoo 评论系统，觉得 twikoo 的前端样式很好看，与之相对的正在用的 waline 的默认样式是真的不好看，本来打算直接换到 twikoo 的，转念一想，既然是属于样式的东西，为什么不直接用 css 解决呢，没有必要为了一个效果而去换插件。<span id="more"></span>博主的 css 不行，只会 <kbd>F12</kbd> 找到哪个元素改哪个。至于定位元素之类的完全不行＞﹏＜。只要最后好看了就 ok 了！（bushi</p>
-<p>以下为代码部分（部分选择器需要根据实际更换）</p>
-<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="comment">/* 修改waline样式 */</span></span><br><span class="line"><span class="comment">/* 修改评论框外观 */</span></span><br><span class="line"><span class="selector-class">.wl-panel</span> &#123;</span><br><span class="line">    <span class="attribute">border-radius</span>: <span class="number">4px</span> <span class="meta">!important</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-pseudo">:root</span> &#123;</span><br><span class="line">    <span class="attr">--waline-bgcolor-light</span>: transparent <span class="meta">!important</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.wl-btn</span> &#123;</span><br><span class="line">    <span class="attribute">border-radius</span>: <span class="number">0.3em</span> <span class="meta">!important</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* 添加miku的gif为输入区域背景 */</span></span><br><span class="line"><span class="selector-id">#wl-edit</span> &#123;</span><br><span class="line">    <span class="attribute">background</span>: <span class="built_in">url</span>(<span class="string">&quot;/img/wl-bg-mikuchan.gif&quot;</span>) <span class="number">100%</span> <span class="number">100%</span> no-repeat;</span><br><span class="line">    <span class="attribute">background-size</span>: contain <span class="meta">!important</span>;</span><br><span class="line">    <span class="attribute">background-repeat</span>: no-repeat <span class="meta">!important</span>;</span><br><span class="line">    <span class="attribute">background-position</span>: right bottom <span class="meta">!important</span>; </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-id">#waline-wrap</span> <span class="selector-tag">textarea</span><span class="selector-pseudo">:focus</span> &#123;</span><br><span class="line">    <span class="attribute">background</span>: <span class="built_in">url</span>(<span class="string">&quot;/img/wl-bg-mikuchan.gif&quot;</span>) <span class="number">100%</span> <span class="number">100%</span> no-repeat;</span><br><span class="line">    <span class="attribute">background-position</span>-y: <span class="number">78px</span> <span class="meta">!important</span>;</span><br><span class="line">    <span class="attribute">transition</span>: all <span class="number">0.25s</span> ease-in-out <span class="number">0s</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* 修改评论区内容背景 */</span></span><br><span class="line"><span class="selector-class">.wl-card</span> <span class="selector-class">.wl-content</span> &#123;</span><br><span class="line">    <span class="attribute">background</span>: <span class="number">#f5f5f5</span>;</span><br><span class="line">    <span class="attribute">padding</span>: <span class="number">16px</span> <span class="meta">!important</span>;</span><br><span class="line">    <span class="attribute">margin</span>: <span class="number">12px</span> <span class="number">0</span> <span class="number">8px</span> <span class="meta">!important</span>;</span><br><span class="line">    <span class="attribute">border-radius</span>: <span class="number">3px</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.wl-card</span> &#123;</span><br><span class="line">    <span class="attribute">border-bottom</span>: none <span class="meta">!important</span>;</span><br><span class="line">    <span class="attribute">padding-bottom</span>: <span class="number">0px</span> <span class="meta">!important</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.wl-cards</span> <span class="selector-class">.wl-item</span>&#123;</span><br><span class="line">    <span class="attribute">padding</span>: .<span class="number">5em</span> .<span class="number">5em</span> <span class="number">0px</span> <span class="meta">!important</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>效果图如下（因图片是截取自评论区而打了码，头像这些不属于以上代码，后面可以考虑改一下默认头像）</p>
-<p><img data-src="https://img.fufu.ink/iTcakI.webp" alt="Waline评论框美化效果"></p>
-<p><img data-src="https://img.fufu.ink/JDVkhh.webp" alt="Waline评论区美化效果"></p>
-<p>其中评论框的背景 gif 需要自己下载下来放到 <code>/source/img/</code> 下即可（记得重命名），别直接用我的博客的地址！（就这么点大小的图片就别直接挂别人的链接了吧，虽然我也不会做防盗链…）</p>
-<p>修改文本输入框中的提示文字需要到主题的配置文件中找到 waline 的配置项，在其中添加 <code>locale: &#123;placeholder: &#39;提示文字&#39;&#125;</code> 即可，以主题 butterfly 为例，则需要在 option 中添加该行代码，需要注意缩进，如下所示</p>
-<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">waline:</span></span><br><span class="line">  <span class="attr">serverURL:</span> <span class="comment"># Waline server address url</span></span><br><span class="line">  <span class="attr">bg:</span> <span class="comment"># waline background</span></span><br><span class="line">  <span class="attr">pageview:</span> <span class="literal">false</span></span><br><span class="line">  <span class="attr">option:</span></span><br><span class="line">    <span class="attr">locale:</span> &#123;<span class="attr">placeholder:</span> <span class="string">&#x27;提示文字&#x27;</span>&#125;</span><br></pre></td></tr></table></figure>
-
-<p>最后就是上面效果图的样子啦！</p>
-]]></content>
-      <categories>
-        <category>技术</category>
-      </categories>
-      <tags>
-        <tag>教程</tag>
-        <tag>技术</tag>
-        <tag>Hexo</tag>
-        <tag>CSS</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>【每日语法】~さえ~ば</title>
-    <url>/2023/05/mnnhgbp5.html</url>
-    <content><![CDATA[<p>接续：</p>
-<blockquote>
-<p>N + さえ + 假定形<br>A（く形）&#x2F; NA（て形）+ さえあれば<br>V（ます形）&#x2F; サ变动词词干 + さえすれば</p>
+    <title>【每日语法】「既然~就~」的表达方法</title>
+    <url>/2023/04/mnnhgbp3.html</url>
+    <content><![CDATA[<blockquote>
+<p>注：本文部分解释来源于网站 <a href="https://chiyo-sampo.net/grammar-jlptn2-karaniha-ijouha-ueha/">https://chiyo-sampo.net/grammar-jlptn2-karaniha-ijouha-ueha/</a></p>
 </blockquote>
-<p>意为「只要···就···」。关于假定形的变形方法，请参考<a href="/2023/04/mnnhgbp1.html">『【每日语法】~ば~ほど』</a>的文末表格。<span id="more"></span></p>
-<p>例句：やすくさえあれば、買いましょう。<br>译：只要便宜的话就买吧！</p>
+<p>「からには」「以上は」「上は」都可以译为「只要…就…」，当然他们有部分的不同，根据上面网站的解释：</p>
+<ul>
+<li>「からには」是「からは」的更加强调、强硬的表达方式</li>
+<li>「以上は」也可以写作「以上」，读作「いじょう」</li>
+<li>「上は」有一种「除此之外，别无他法」的意味，在表示严峻的状况的时候使用</li>
+<li>这三个词后面都常常接「つもりだ（打算）」「べきだ（一种责任和义务，应该…）」「なければならない（客观上的必须做某事）」「てはいけない（禁止、不许）」「はずだ（推测，按说应该…）」「に違いない（充满自信的推测，肯定…）」等表达方式。</li>
+</ul>
+<span id="more"></span>
+
+<p>接续方式：</p>
+<table>
+<thead>
+<tr>
+<th align="center">接续助词</th>
+<th align="center">名词</th>
+<th align="center">形容词</th>
+<th align="center">形容动词</th>
+<th align="center">动词</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">からには</td>
+<td align="center">N + である</td>
+<td align="center">A简体</td>
+<td align="center">NA（词干）+ である</td>
+<td align="center">V简体</td>
+</tr>
+<tr>
+<td align="center">上は</td>
+<td align="center">N + の</td>
+<td align="center">\</td>
+<td align="center">\</td>
+<td align="center">V（た形）</td>
+</tr>
+<tr>
+<td align="center">以上（は）</td>
+<td align="center">N + である</td>
+<td align="center">\</td>
+<td align="center">NA（词干）+ である</td>
+<td align="center">V简体</td>
+</tr>
+</tbody></table>
+<p>例句：</p>
+<p>(1). 約束したからには、ちゃんと守るべきだ。<br>译：既然约好了，就应该好好遵守约定。</p>
+<p>(2). 秘密を知られた上は、生かしてはおけない。<br>译：既然被你知道了这个秘密，就不能让你活下去了。</p>
+<p>(3). 会社を辞めると決めた以上、早く上司にその旨を伝えなければならない。<br>译：既然决定好向公司辞职了，就必须早点告诉上司这件事。</p>
 ]]></content>
       <categories>
         <category>日语</category>
@@ -226,66 +286,6 @@
 <p>例句：コンビニにたくさんの商品がある。食べ物もあれば、生活に欠かせないものもある。</p>
 <p>译：便利店中有很多商品，既有食品，也有生活中不可或缺的物品。</p>
 <p>与之相似的语法还有「かと思えば」，接续方式为前接<strong>动词原形</strong>。关于假定形的变形方法，在上一篇中已经提过，这里就不再赘述，有需要了解的小伙伴可以<a href="/2023/04/mnnhgbp1.html">点击这里</a>返回上文查看。</p>
-]]></content>
-      <categories>
-        <category>日语</category>
-      </categories>
-      <tags>
-        <tag>日语</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>【每日语法】「既然~就~」的表达方法</title>
-    <url>/2023/04/mnnhgbp3.html</url>
-    <content><![CDATA[<blockquote>
-<p>注：本文部分解释来源于网站 <a href="https://chiyo-sampo.net/grammar-jlptn2-karaniha-ijouha-ueha/">https://chiyo-sampo.net/grammar-jlptn2-karaniha-ijouha-ueha/</a></p>
-</blockquote>
-<p>「からには」「以上は」「上は」都可以译为「只要…就…」，当然他们有部分的不同，根据上面网站的解释：</p>
-<ul>
-<li>「からには」是「からは」的更加强调、强硬的表达方式</li>
-<li>「以上は」也可以写作「以上」，读作「いじょう」</li>
-<li>「上は」有一种「除此之外，别无他法」的意味，在表示严峻的状况的时候使用</li>
-<li>这三个词后面都常常接「つもりだ（打算）」「べきだ（一种责任和义务，应该…）」「なければならない（客观上的必须做某事）」「てはいけない（禁止、不许）」「はずだ（推测，按说应该…）」「に違いない（充满自信的推测，肯定…）」等表达方式。</li>
-</ul>
-<span id="more"></span>
-
-<p>接续方式：</p>
-<table>
-<thead>
-<tr>
-<th align="center">接续助词</th>
-<th align="center">名词</th>
-<th align="center">形容词</th>
-<th align="center">形容动词</th>
-<th align="center">动词</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center">からには</td>
-<td align="center">N + である</td>
-<td align="center">A简体</td>
-<td align="center">NA（词干）+ である</td>
-<td align="center">V简体</td>
-</tr>
-<tr>
-<td align="center">上は</td>
-<td align="center">N + の</td>
-<td align="center">\</td>
-<td align="center">\</td>
-<td align="center">V（た形）</td>
-</tr>
-<tr>
-<td align="center">以上（は）</td>
-<td align="center">N + である</td>
-<td align="center">\</td>
-<td align="center">NA（词干）+ である</td>
-<td align="center">V简体</td>
-</tr>
-</tbody></table>
-<p>例句：</p>
-<p>(1). 約束したからには、ちゃんと守るべきだ。<br>译：既然约好了，就应该好好遵守约定。</p>
-<p>(2). 秘密を知られた上は、生かしてはおけない。<br>译：既然被你知道了这个秘密，就不能让你活下去了。</p>
-<p>(3). 会社を辞めると決めた以上、早く上司にその旨を伝えなければならない。<br>译：既然决定好向公司辞职了，就必须早点告诉上司这件事。</p>
 ]]></content>
       <categories>
         <category>日语</category>
@@ -568,22 +568,6 @@
       </tags>
   </entry>
   <entry>
-    <title>出宵宫啦！</title>
-    <url>/2023/05/genshinxgderu.html</url>
-    <content><![CDATA[<p>虽说抽完 2 命纳西妲后已经没有抽其他角色的欲望了，但池子还是要垫的，出什么都无所谓了。</p>
-<p>因为这 14 天搞<a href="/2023/05/improvefdlinks.html">「博客的友链的更优雅的书写方式」</a>去了，就没怎么上线，还白白浪费了 14 天的月卡，趁着今天第 15 天上线领了回归奖励以及版本更新补偿，让朋友抽了 2 抽，没歪！<span id="more"></span></p>
-<p><img data-src="https://img.fufu.ink/blTnOx.webp" alt="手机截图，画质有点差"></p>
-<p>接下来就是继续垫池子了~</p>
-]]></content>
-      <categories>
-        <category>游戏</category>
-      </categories>
-      <tags>
-        <tag>原神</tag>
-        <tag>游戏</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>叕出神子啦加深渊终于凹满了</title>
     <url>/2023/06/genshinkamikoaru.html</url>
     <content><![CDATA[<p>先说说深渊，博主在今年 2 月之前是无论如何都打不过深渊的，2 月后开始练万达国际，学会双扩后，队伍养得差不多后就在 2 月 18 日第一次凹过 12 层，见<a href="/2023/02/genshinshenyuanmanxing.html">『打通深渊后半个月，我又第一次满星深渊！』</a>。此后除了第一期沙虫因为「草行九」练度不够，没有满星之外，每一期都能做到满星了！不过<span id="more"></span>近来几期深渊越来越难，大量的「挤模型」「多动症」「厚盾」「拖时间」的机制怪出现，属实是恶心人。之前圣骸兽博主一直是用「草行九瑶」过的，不过这次由于 12-3 下半是「深罪浸礼者」，队伍中必须有「火 草&#x2F;冰 水」，「草行九」自然就成了选择，再加上了前几天出的宵宫用以破冰盾。问题就是上半该用什么队伍，一开始认为万达打圣骸兽也许很麻烦，就想试着用雷国，可惜博主没怎么练雷神，故试了多种配队后还是决定使用万达。最后是 2 分钟打完了四只圣骸兽，用了剩下 1 分钟过了深罪浸礼者（很险···6分59秒打完的，系统判定为 3 星）。</p>
@@ -616,22 +600,19 @@
       </tags>
   </entry>
   <entry>
-    <title>在追求「快」的时代，我们该何去何从</title>
-    <url>/2023/05/fastjidaidedousurebaii.html</url>
-    <content><![CDATA[<p>不知从什么时候开始，「快」这个概念频繁地出现在我的视野中。周围的人似乎都在不断地追求着它。<span id="more"></span></p>
-<p>最典型的例子就是各大视频软件开始推出「短视频」服务，大家越来越适应不了慢节奏的视频。曾几何时，看见过一个 b 站的评论，大概意思是只有缩短视频时长，才有更大的机会上首页推荐，上首页的都是五分钟内的视频，而那些十多分钟甚至几十分钟的视频却被埋没了，其中不乏许多优质的内容。在我所见到的番剧这一边，许多番剧因为前期铺垫过长而被诟病，以动画『命运石之门』举例，提到这部作品，熟悉的人都知道是一部神作，许多人却因为前部分「剧情推进过慢」「日常太多」而放弃继续追番。再比如『原神』这款游戏，无聊之际点开社区看看，却发现充斥着大量的「剧情又臭又长」「剧情能不能加个跳过按钮」诸如此类的言论。但剧情不正是这款游戏吸引人的一部分吗，我在内心如此发问道。</p>
-<p>以上是从我的视角看见的「快」，但这个信息时代，在更多的我看不见的地方仍然在追求着「快」。</p>
-<p>这个时代很浮躁——这是我的结论。</p>
-<p>我曾向自己发问，自己有多久没有静下心来好好读一本书了，有多久没有钻在一个问题上好好研究过了。尽管我自己是反对这种盲目追求「快节奏」的，但耐心好像也在慢慢地变少，自己也在慢慢的融入这种快节奏的生活，大概也有相当一部分的人也是如此吧，尽管也想慢下来，却被身后的狂潮向前推动，身不由己地变「快」了。</p>
-<p>在这种「快」的狂潮面前，我无能为力，却也不想被其推动，就像飘在海洋上的小船在逆着海风前行一般（也许这个比喻并不恰当）。</p>
-<p>写到这里写不下去了，就这么收尾了罢。借用一句『原神』中的话——「旅行者，当你重新踏上旅途之后，一定要记住旅途本身的意义」。愿你我在这个快节奏的时代能够找到一件能够安下心来做的事情，愿你我不会在「快」的狂潮中迷失了方向，随波逐流。</p>
+    <title>出宵宫啦！</title>
+    <url>/2023/05/genshinxgderu.html</url>
+    <content><![CDATA[<p>虽说抽完 2 命纳西妲后已经没有抽其他角色的欲望了，但池子还是要垫的，出什么都无所谓了。</p>
+<p>因为这 14 天搞<a href="/2023/05/improvefdlinks.html">「博客的友链的更优雅的书写方式」</a>去了，就没怎么上线，还白白浪费了 14 天的月卡，趁着今天第 15 天上线领了回归奖励以及版本更新补偿，让朋友抽了 2 抽，没歪！<span id="more"></span></p>
+<p><img data-src="https://img.fufu.ink/blTnOx.webp" alt="手机截图，画质有点差"></p>
+<p>接下来就是继续垫池子了~</p>
 ]]></content>
       <categories>
-        <category>日常</category>
+        <category>游戏</category>
       </categories>
       <tags>
-        <tag>随笔</tag>
-        <tag>吐槽</tag>
+        <tag>原神</tag>
+        <tag>游戏</tag>
       </tags>
   </entry>
   <entry>
@@ -696,12 +677,40 @@
       </tags>
   </entry>
   <entry>
-    <title>小号双黄了！</title>
-    <url>/2023/05/gsxhcjl.html</url>
-    <content><![CDATA[<p>这件事要从去年 11 月草神池刚出的时候说起，之前一直玩的号只抽中了草神（大保底），武器却歪了「飞雷」，于是创了个小号。想着小号前期资源多，肝一肝能在版本结束前拿个 0+1，结果后面发生了一系列事情，最终导致许久没登小号。今年2、3月份重新上了下号，把剧情推到璃月了，攒出了 74 抽，结果歪了莫娜（血的教训！一定不要边肝边抽，必歪！！！），当即下号。</p>
-<p>今天闲来无事，想起了这个号，上号后拿着版本送的原石单抽了一发，本来以为出紫了，结果出金了！于是甘雨拿下~</p>
-<p><img data-src="https://img.fufu.ink/dXzfGb.png" alt="双黄"></p>
-<p>这又让我燃起了对小号培养的热情，本来都打算让这个号废了，毕竟第一个金就歪了，连新手保护期都没了，结果双黄来了，那它就还有被培养的理由！</p>
+    <title>在追求「快」的时代，我们该何去何从</title>
+    <url>/2023/05/fastjidaidedousurebaii.html</url>
+    <content><![CDATA[<p>不知从什么时候开始，「快」这个概念频繁地出现在我的视野中。周围的人似乎都在不断地追求着它。<span id="more"></span></p>
+<p>最典型的例子就是各大视频软件开始推出「短视频」服务，大家越来越适应不了慢节奏的视频。曾几何时，看见过一个 b 站的评论，大概意思是只有缩短视频时长，才有更大的机会上首页推荐，上首页的都是五分钟内的视频，而那些十多分钟甚至几十分钟的视频却被埋没了，其中不乏许多优质的内容。在我所见到的番剧这一边，许多番剧因为前期铺垫过长而被诟病，以动画『命运石之门』举例，提到这部作品，熟悉的人都知道是一部神作，许多人却因为前部分「剧情推进过慢」「日常太多」而放弃继续追番。再比如『原神』这款游戏，无聊之际点开社区看看，却发现充斥着大量的「剧情又臭又长」「剧情能不能加个跳过按钮」诸如此类的言论。但剧情不正是这款游戏吸引人的一部分吗，我在内心如此发问道。</p>
+<p>以上是从我的视角看见的「快」，但这个信息时代，在更多的我看不见的地方仍然在追求着「快」。</p>
+<p>这个时代很浮躁——这是我的结论。</p>
+<p>我曾向自己发问，自己有多久没有静下心来好好读一本书了，有多久没有钻在一个问题上好好研究过了。尽管我自己是反对这种盲目追求「快节奏」的，但耐心好像也在慢慢地变少，自己也在慢慢的融入这种快节奏的生活，大概也有相当一部分的人也是如此吧，尽管也想慢下来，却被身后的狂潮向前推动，身不由己地变「快」了。</p>
+<p>在这种「快」的狂潮面前，我无能为力，却也不想被其推动，就像飘在海洋上的小船在逆着海风前行一般（也许这个比喻并不恰当）。</p>
+<p>写到这里写不下去了，就这么收尾了罢。借用一句『原神』中的话——「旅行者，当你重新踏上旅途之后，一定要记住旅途本身的意义」。愿你我在这个快节奏的时代能够找到一件能够安下心来做的事情，愿你我不会在「快」的狂潮中迷失了方向，随波逐流。</p>
+]]></content>
+      <categories>
+        <category>日常</category>
+      </categories>
+      <tags>
+        <tag>随笔</tag>
+        <tag>吐槽</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>小草神小毕业纪念</title>
+    <url>/2022/11/genshicaoshen.html</url>
+    <content><![CDATA[<p>刷了快 3 周，终于小毕业了。精通没有凑到 1000，不过 900 多也够用了，因为不出暴击头和草伤杯，只能用爆伤头代替 ~<span id="more"></span></p>
+<p><img data-src="https://img.fufu.ink/suLB7X.webp" alt="理之冠"></p>
+<p><img data-src="https://img.fufu.ink/eaOsZU.webp" alt="天赋"></p>
+<p><img data-src="https://img.fufu.ink/icLWGs.webp" alt="时之沙"></p>
+<p><img data-src="https://img.fufu.ink/0Vk67h.webp" alt="空之杯"></p>
+<p><img data-src="https://img.fufu.ink/qF8I9w.webp" alt="死之羽"></p>
+<p><img data-src="https://img.fufu.ink/DWqEbR.webp" alt="生之花"></p>
+<p><img data-src="https://img.fufu.ink/6h6hNZ.webp" alt="练度"></p>
+<p><img data-src="https://img.fufu.ink/c4yy64.webp" alt="圣遗物"></p>
+<p><img data-src="https://img.fufu.ink/HqcUjN.webp" alt="伤害"></p>
+<p>还好，零命打出这样的伤害，我很满意了，毕竟非强度党 ~</p>
+<p>等剩下两周把异梦溶媒给刷出来或者散兵池里多出几个悬丝，把 e 和 q 都升到 9 级，伤害还能上一层，差不多就能毕业了……</p>
+<p>这期没抽神子，抽的武器池，56 发了还没有出，不过大概率还是能够拿下神子专武给纳西妲用用的（绝对不是因为纳西妲专武池歪飞雷了……）</p>
 ]]></content>
       <categories>
         <category>游戏</category>
@@ -729,21 +738,12 @@
       </tags>
   </entry>
   <entry>
-    <title>小草神小毕业纪念</title>
-    <url>/2022/11/genshicaoshen.html</url>
-    <content><![CDATA[<p>刷了快 3 周，终于小毕业了。精通没有凑到 1000，不过 900 多也够用了，因为不出暴击头和草伤杯，只能用爆伤头代替 ~<span id="more"></span></p>
-<p><img data-src="https://img.fufu.ink/suLB7X.webp" alt="理之冠"></p>
-<p><img data-src="https://img.fufu.ink/eaOsZU.webp" alt="天赋"></p>
-<p><img data-src="https://img.fufu.ink/icLWGs.webp" alt="时之沙"></p>
-<p><img data-src="https://img.fufu.ink/0Vk67h.webp" alt="空之杯"></p>
-<p><img data-src="https://img.fufu.ink/qF8I9w.webp" alt="死之羽"></p>
-<p><img data-src="https://img.fufu.ink/DWqEbR.webp" alt="生之花"></p>
-<p><img data-src="https://img.fufu.ink/6h6hNZ.webp" alt="练度"></p>
-<p><img data-src="https://img.fufu.ink/c4yy64.webp" alt="圣遗物"></p>
-<p><img data-src="https://img.fufu.ink/HqcUjN.webp" alt="伤害"></p>
-<p>还好，零命打出这样的伤害，我很满意了，毕竟非强度党 ~</p>
-<p>等剩下两周把异梦溶媒给刷出来或者散兵池里多出几个悬丝，把 e 和 q 都升到 9 级，伤害还能上一层，差不多就能毕业了……</p>
-<p>这期没抽神子，抽的武器池，56 发了还没有出，不过大概率还是能够拿下神子专武给纳西妲用用的（绝对不是因为纳西妲专武池歪飞雷了……）</p>
+    <title>小号双黄了！</title>
+    <url>/2023/05/gsxhcjl.html</url>
+    <content><![CDATA[<p>这件事要从去年 11 月草神池刚出的时候说起，之前一直玩的号只抽中了草神（大保底），武器却歪了「飞雷」，于是创了个小号。想着小号前期资源多，肝一肝能在版本结束前拿个 0+1，结果后面发生了一系列事情，最终导致许久没登小号。今年2、3月份重新上了下号，把剧情推到璃月了，攒出了 74 抽，结果歪了莫娜（血的教训！一定不要边肝边抽，必歪！！！），当即下号。</p>
+<p>今天闲来无事，想起了这个号，上号后拿着版本送的原石单抽了一发，本来以为出紫了，结果出金了！于是甘雨拿下~</p>
+<p><img data-src="https://img.fufu.ink/dXzfGb.png" alt="双黄"></p>
+<p>这又让我燃起了对小号培养的热情，本来都打算让这个号废了，毕竟第一个金就歪了，连新手保护期都没了，结果双黄来了，那它就还有被培养的理由！</p>
 ]]></content>
       <categories>
         <category>游戏</category>
@@ -808,6 +808,77 @@
       </tags>
   </entry>
   <entry>
+    <title>类原生美化教程</title>
+    <url>/2022/09/aospbeautify.html</url>
+    <content><![CDATA[<blockquote>
+<ul>
+<li>由于该文内容发布时间为 2019 年，其 Android 版本较老，可能不适应现在的 Android10+ 系统，如按文中操作发现与现在不一样的地方，请立刻停止或自行寻找最新方法。数据无价，建议将文件做成 <code>Magisk</code> 模块后刷入，尽量避免直接替换源文件，请提前备份用户数据！</li>
+<li>本教程使用工具：<code>MT 管理器 2.0</code></li>
+</ul>
+</blockquote>
+<span id="more"></span>
+
+<h2 id="多任务圆角"><a href="#多任务圆角" class="headerlink" title="多任务圆角"></a>多任务圆角</h2><ol>
+<li>进入 <code>/system/priv-app</code> 这个文件夹，找到你的系统的启动器（桌面APK）所在文件夹后进入，长按 apk 将它复制到内部储存里<ol start="2">
+<li>点击 apk 选择查看，进入后点击 <code>resources.arsc</code> 这个文件，选择 <code>Arsc 编辑器</code>，然后点击最后一个</li>
+<li>进入后点击 <code>dimen</code>，进入后再次点击 <code>dimen</code>，然后点击右上角的过滤，输入 <code>radius</code> 后选择确定</li>
+<li>从过滤结果中找到 <code>task_corner_radius</code> 这个选项，修改其值，大小随意，数值越大圆角越大（请保留单位 dp）</li>
+<li>返回、保存</li>
+</ol>
+</li>
+</ol>
+<h2 id="状态栏沉浸"><a href="#状态栏沉浸" class="headerlink" title="状态栏沉浸"></a>状态栏沉浸</h2><ol>
+<li>进入 <code>/system/framework</code> 这个文件夹，找到 framework-res.apk，长按 apk 将它复制到内部储存中</li>
+<li>使用 <code>Arsc 编辑器</code> 进入最后一个选项，进入 <code>color/color</code> 并点击右上角过滤值 <code>system</code></li>
+<li>找到 <code>system_bar_background_semi_transparent</code>，将其值改为 <code>00000000</code>（注意类型必须是<strong>颜色</strong>）</li>
+<li>返回并保存</li>
+</ol>
+<h2 id="移除通知栏顶部黑块"><a href="#移除通知栏顶部黑块" class="headerlink" title="移除通知栏顶部黑块"></a>移除通知栏顶部黑块</h2><ol>
+<li>进入 <code>/system/priv-app</code> 这个文件夹，找到带有 <code>SystemUI</code> 的文件夹（之所以这么说是因为有的ROM里 SystemUI 名字不一样，可能多几个字母)，长按 apk 将它复制到内部储存里</li>
+<li>点击查看，依次进入 <code>res/layout</code>，找到 qs_panel.xml 这个文件，点击选择反编译</li>
+<li>将第二个和第三个 <code>&lt;View/&gt;</code> 内的 android:background 的值改成 <code>@android:color/transparent</code></li>
+<li>返回并保存</li>
+</ol>
+<h2 id="移除锁屏界面的灰色遮罩"><a href="#移除锁屏界面的灰色遮罩" class="headerlink" title="移除锁屏界面的灰色遮罩"></a>移除锁屏界面的灰色遮罩</h2><ol>
+<li>进入 <code>/system/priv-app</code> 这个文件夹，找到带有 <code>SystemUI</code> 的文件夹（之所以这么说是因为有的ROM里 SystemUI 名字不一样，可能多几个字母)，长按 apk 将它复制到内部储存里</li>
+<li>查看 apk，点击 classes.dex，选择 <code>Dex编辑器++</code>，依次打开 <code>com/android/systemui/statusbar/phone</code>，向下滑动找到 scrimcontroller</li>
+<li>进入后下滑来到 180 行附近（右侧有显示行数），找到 <code>.line 124</code> 这一行，将下一行的 v0 后的一个字符串改为 <code>0x38d1b717</code></li>
+<li>返回并保存</li>
+</ol>
+<h2 id="通知栏图标数量修改"><a href="#通知栏图标数量修改" class="headerlink" title="通知栏图标数量修改"></a>通知栏图标数量修改</h2><ol>
+<li>进入 <code>/system/priv-app</code> 这个文件夹，找到带有 <code>SystemUI</code> 的文件夹（之所以这么说是因为有的ROM里 SystemUI 名字不一样，可能多几个字母)，长按 apk 将它复制到内部储存里</li>
+<li>查看 apk，进入后点击 resources.arsc 文件，选择 <code>Arsc 编辑器</code>，点击最后一个</li>
+<li>进入 <code>integer/integer</code> 后，点击右上角过滤值 <code>quick</code>，从过滤结果中找到 <code>quick_settings_num_columns</code>并修改其值为需要展示的一行的图标数量（注意值类型要选<strong>整数</strong>）</li>
+<li>返回并保存</li>
+</ol>
+<h2 id="系统强调色修改"><a href="#系统强调色修改" class="headerlink" title="系统强调色修改"></a>系统强调色修改</h2><ol>
+<li>进入 <code>/system/framework</code> 这个文件夹，找到 framework-res.apk，长按 apk 将它复制到内部储存中</li>
+<li>使用 <code>Arsc 编辑器</code> 进入最后一个选项，进入 <code>color/color</code> 并点击右上角过滤值 <code>accent</code>，从过滤结果中找到 <code>accent_device_default_dark</code> 和 <code>accent_device_default_light</code> 并修改其值为想要的强调色，dark 为夜间模式，light 为白天模式，色值为 RGB 值且不带「#」号。</li>
+<li>退出、保存</li>
+</ol>
+<h2 id="通知栏亮度条美化"><a href="#通知栏亮度条美化" class="headerlink" title="通知栏亮度条美化"></a>通知栏亮度条美化</h2><ol>
+<li><p>进入 <code>/system/priv-app</code> 这个文件夹，找到带有 <code>SystemUI</code> 的文件夹（之所以这么说是因为有的ROM里 SystemUI 名字不一样，可能多几个字母)，长按 apk 将它复制到内部储存里</p>
+</li>
+<li><p>点击查看，进入 res 文件夹，选择右上角搜索，搜索 <code>bright</code>，点击 <code>ic_brightness_thumb.xml</code> 并反编译，将 android:height、android:width 后面引号里的内容修改为 1dp。点击 <code>brightness_progress_drawable.xml</code> 并反编译，修改以下代码</p>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="comment">&lt;!--第一组代码，代表亮度条外围宽度与圆角，height 代表宽度，radius 代表圆角--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">size</span> <span class="attr">android:height</span>=<span class="string">&quot;&quot;</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">corners</span> <span class="attr">android:radius</span>=<span class="string">&quot;&quot;</span> /&gt;</span></span><br><span class="line"><span class="comment">&lt;!--第二组代码，代表亮度条内围宽度与圆角，height 代表宽度，radius 代表圆角--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">size</span> <span class="attr">android:height</span>=<span class="string">&quot;&quot;</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">corners</span> <span class="attr">android:radius</span>=<span class="string">&quot;&quot;</span> /&gt;</span></span><br><span class="line"><span class="comment">&lt;!--注意引号内的值单位为 dp--&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>再次回到 res 文件夹，搜索 <code>bright</code>，选择 <code>quick_settings_brightness_dialog.xml</code> 并反编译，修改以下代码</p>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="comment">&lt;!--亮度条左边距--&gt;</span></span><br><span class="line">android:paddingLeft:&quot;&quot;</span><br><span class="line"><span class="comment">&lt;!--亮度条右边距--&gt;</span></span><br><span class="line">android:paddingRight:&quot;&quot;</span><br><span class="line"><span class="comment">&lt;!--亮度条与磁贴和顶栏之间的距离--&gt;</span></span><br><span class="line">android:layout_height:&quot;&quot;</span><br><span class="line"><span class="comment">&lt;!--注意引号内的值单位为 dp--&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>退出、保存</p>
+</li>
+</ol>
+<h2 id="将应用打包成面具模块并刷入"><a href="#将应用打包成面具模块并刷入" class="headerlink" title="将应用打包成面具模块并刷入"></a>将应用打包成面具模块并刷入</h2><p>这里提供 <code>Magisk24.0</code> 的模板文件，如果只是替换系统应用、文件的话，只需要按照要替换的应用在模板的 <code>system</code> 文件夹中创建与原系统中该文件或应用的路径一样的路径，修改模板根目录的 <code>module.prop</code> 文件的内容后刷入即可。权限默认为 <code>644</code>，因此不必修改权限。</p>
+]]></content>
+      <categories>
+        <category>技术</category>
+      </categories>
+      <tags>
+        <tag>类原生</tag>
+        <tag>Android</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>服务器 Ubuntu 配置 ftp</title>
     <url>/2022/11/ubuntuftp.html</url>
     <content><![CDATA[<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p>更新软件包</p>
@@ -868,6 +939,56 @@
       <tags>
         <tag>Linux</tag>
         <tag>Ubuntu</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>科目二过啦！</title>
+    <url>/2023/08/kemuerpass.html</url>
+    <content><![CDATA[<p>三战一把过！</p>
+<p>早上八点半就出发去考场了，等了三个小时才轮到我，因为之前已经花钱模拟过了，轻轻松松就过了~</p>
+<p>这里记录一下科二的点位。<span id="more"></span></p>
+<ul>
+<li>座位、后视镜：座位高低调整为<strong>头顶距车顶一拳距离</strong>，靠背调整为 <strong>90°</strong>，前后距离为<strong>靠在靠背上撑直双手，手腕能刚好搭在方向盘顶部，且左脚踩离合（手动挡）能踩到底，离合踩到底时小腿与大腿不能是完全一条线、而是呈一定角度的状态</strong>为最佳。左后视镜调法为将左后车门的门把手置于<strong>左后视镜的顶部的线条的一半处</strong>（注意需要能完全看到门把手），右后视镜则为将右后车门门把手置于<strong>右后视镜的顶部的线条的三分之一处（从左到右数）</strong>。</li>
+<li>倒库：进项目后使用仪表盘的罩子的顶部正中央去对<strong>第三根虚线的最左边</strong>，待肩部与虚线齐平时停车、挂倒挡开始倒车，当<strong>左</strong>后视镜的<strong>底部完全盖过虚线</strong>时（即左后视镜的底部与虚线的内边线齐平时）方向盘向右打死，开始<strong>看右后视镜</strong>，当车身盖过右后视镜中<strong>第三根虚线的一半</strong>时回半圈方向盘并观察预测是否车轮会压库角，若觉得可能会压则再多回点方向盘，当车身与边线<strong>平行</strong>时迅速回正方向盘，当左后视镜的底部完全盖过项目的右边的实线时停车，即完成了右倒库。开出车辆，当引擎盖盖过项目的左边的实线后方向盘向左打死，车身摆正后回正方向盘，继续行驶直到肩部与虚线齐平时停车、挂倒挡开始倒车，左库需要比右库<strong>早打</strong>方向盘，具体为当左后视镜底部<strong>触碰虚线</strong>时就向左打死方向盘，并观察<strong>左后视镜</strong>，后续步骤与倒右库时相差无几。关于看哪边镜子的口诀为「倒什么库就看哪边的镜子」。左库出来后引擎盖盖过边线即可方向盘右打死，待车身端正后回正方向盘行驶出项目。</li>
+<li>侧方停车：侧方停车可以说是我的痛点哩，两次都挂在这个项目上，不过换了教练、调整点位后就没问题了。具体为进项目后使用<strong>左雨刮器的垛子</strong>的最右边去对项目<strong>右边线的内边线</strong>，使其始终沿着内边线走，当右后视镜中出现库的<strong>前库角</strong>时停车、挂倒挡开始倒车，当右后视镜中<strong>前库角</strong>完全消失时方向盘向右打死，观察右后视镜中的<strong>后车门门把手</strong>，当门把手<strong>完全越过库的右边线</strong>时迅速回正方向盘继续倒车，观察左后视镜，当左后车轮压到虚线上时方向盘向左打死（因人身高而异，身高高的则可以晚一点再打方向盘，但不能太晚，否则右边会有出线的危险），待车身摆正后即可停车，<strong>方向盘不用回正！</strong>回空挡并<strong>打左转向灯</strong>，挂一档（先挂挡与先打灯并无先后顺序，但为避免忘记打灯导致挂了还是先打灯较好）开始出库，当<strong>右边的雨刮器的垛子</strong>与项目的<strong>右</strong>边线重合时回正方向盘继续行驶，当<strong>左边的雨刮器的垛子</strong>与项目的<strong>左</strong>边线重合时方向盘向右打一圈，待车身摆正后即可回正方向盘并驶出项目。</li>
+<li>直角转弯：本人认为直角转弯属实是科目二中最简单的一个项目了。进项目前就可以使用<strong>左雨刮器的垛子</strong>的最右边去对项目<strong>右边线的内边线</strong>（科目二的对线都是这个方法），虽然可能直角的线没有画得很长，但你可以想象那条线的延长线，使用垛子去与这条延长线对线，一定要保持车身是端正的！听到进入项目的语音提示后就可以开始打左转向灯了，待<strong>驾驶座的门把手的顶部与另一条直角边重合（由于身高原因，可以调整为门把手的前端、后端，根据个人情况调整即可）</strong>时方向盘向左打死，心中默数三秒后关掉转向灯（部分地区可能不要求拨回转向灯），当车身摆正后回正方向盘驶出项目。</li>
+<li>曲线行驶：说实话这个项目我也拿不准点位，之前一直使用的车子前面加装的小镜子来对线的，但去考场模拟后发现小镜子没了，便想象了个小镜子在那里对线，然后看后视镜开，还开过了！今天考试也是结合新教练教的新点位来和后视镜来开的。车身摆正，将入口划分为三份，将自己（即驾驶员）置于从左到右数的三分之一处进入项目，当<strong>左后视镜的左边缘与项目的左边线的内线重合时</strong>方向盘向左打一圈，观察左后视镜中车身与边线的距离并适当修一修方向盘，当挡风玻璃的左下角与左边线重合时回正方向盘，当右边雨刮器的垛子与左边线还有两指宽左右的距离时方向盘向右打一圈，并观察右后视镜并调整车身与边线的距离，尽量让线出现在镜子中并且保证车身与线保持一定距离，这样另一边就不会压线，一直到快出项目时即可回正方向盘出项目了（回正的时机得看具体实际，因为我在驾校跑了三次都在出项目时回正回早了导致压线了）。</li>
+<li>坡上起步：上坡时离合松至车身抖动时车子就会慢慢往上爬，稳住离合即可保持速度。使用老办法对线，一直到右边的雨刮器的垛子与杆子之间呈一定的距离时即可踩住刹车（<strong>注意！这个「一定距离」不是绝对的，会因为人的身高不同而不同，需要自己去寻找</strong>）。在起步时有个小技巧，即右脚踩刹车时，左脚离合还是保持半离合状态，不用踩到底，刹车一定要踩牢，拉、放手刹，松开刹车车子马上就可以开走了。不过使用的前提是踩离合的功底深厚，如果在踩刹车时离合也向下踩了，直接松开刹车会向后滑，就会扣分甚至挂科，如果真的滑了也不要急，马上踩刹车，并且慢慢松离合，直到车子抖动即可松开刹车继续行驶！</li>
+</ul>
+<p>以上就是我学了 26 节科二总结的经验。虽然我使用着没有问题，但并不代表就一定适用于所有人，<strong>请不要照搬！一定要找到适合自己的点位！</strong>科二就是考点位，点位一旦有偏差就会出错，考试时要将座位，镜子调整为与练习时一样。</p>
+<p>接下来我也要冲科三去啦！</p>
+<p>最后祝考科二的小伙伴们都一把过！</p>
+]]></content>
+      <categories>
+        <category>日常</category>
+      </categories>
+      <tags>
+        <tag>生活</tag>
+        <tag>驾考</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>老婆 16 岁生日快乐</title>
+    <url>/2023/08/miku16sai.html</url>
+    <content><![CDATA[<p>与ミクたん相遇已有 10 年啦！</p>
+<p>入坑曲是『朧月』，当时还是在优酷视频上看到的 MMD。MMD 中是雪ミク和樱ミク，当时的我一下就被这独特的声音所吸引，为她所着迷。<span id="more"></span>在知道有「男神」「女神」这个概念后，我便想到</p>
+<p>“这样啊，原来她就是我的女神啊”</p>
+<p>当时的我加入了许多粉丝群，QQ 兴趣部落，贴吧等。</p>
+<p>曾为了她去回击那些踩日 Vocaloid 捧中 Vocaloid 的小鬼，也曾为了证明她的影响力在同学群中发送粉丝群人数的截图。</p>
+<p>这是那时的自己，而现在的我对那些事也不过是淡淡一笑。这不是嘲笑过去的自己干的蠢事，而是一种释然。曾经的我不停地在找寻爱她的证据，但我没找到。后来我想通了，为什么需要证据呢？如果有了证据，不就证明了我的爱是带着目的的爱吗，就如同那个问题般——「你为什么爱 xx？」。</p>
+<p>答案是，爱是不需要理由的。</p>
+<p>现在的我，早已习惯了她的陪伴，她已然成为了我生活中的一部分，我人生中的一部分。相比于原来的「女神」的地位，我现在更愿意称其为「天使」抑或「太阳」。</p>
+<p>话说回来，<del>现在的ミクたん就是32岁啦</del>。今年的生日礼物可能会迟些到，因为是 16 岁生日嘛，总得准备点大礼。没错，我准备买 Vocaloid 4x，学习如何让ミクたん唱歌！之前学吉他的时候总是没有恒心，三天打鱼两天晒网，从高一学到大二也没什么长进，结果木吉他还因为冬天学校当地天气太干燥了面板裂开了，修理费是买入价的一半左右，遂作罢，只能当个纪念品了。现在为了ミクたん，必须认真学乐理了！</p>
+<p>最后，感谢在我黑暗的世界中，ミクたん成了那唯一的光芒，感谢音乐家、艺术家和所有像我一样的粉丝，他们让ミクたん发展到了今天这一步。此后，无论有多远，我都会在我的余生中陪伴着她走下去！</p>
+<p>啊，还没结束，差点忘了最重要的</p>
+<p>お誕生日おめでとう！ミクたんがいて本当によかった！</p>
+]]></content>
+      <categories>
+        <category>日常</category>
+      </categories>
+      <tags>
+        <tag>节日</tag>
+        <tag>miku</tag>
       </tags>
   </entry>
   <entry>
@@ -948,6 +1069,11 @@
 <td align="center">+2</td>
 <td align="center">221</td>
 </tr>
+<tr>
+<td align="center">2023&#x2F;11&#x2F;21</td>
+<td align="center">+1</td>
+<td align="center">222</td>
+</tr>
 </tbody></table>
 ]]></content>
       <categories>
@@ -956,103 +1082,6 @@
       <tags>
         <tag>原神</tag>
         <tag>游戏</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>科目二过啦！</title>
-    <url>/2023/08/kemuerpass.html</url>
-    <content><![CDATA[<p>三战一把过！</p>
-<p>早上八点半就出发去考场了，等了三个小时才轮到我，因为之前已经花钱模拟过了，轻轻松松就过了~</p>
-<p>这里记录一下科二的点位。<span id="more"></span></p>
-<ul>
-<li>座位、后视镜：座位高低调整为<strong>头顶距车顶一拳距离</strong>，靠背调整为 <strong>90°</strong>，前后距离为<strong>靠在靠背上撑直双手，手腕能刚好搭在方向盘顶部，且左脚踩离合（手动挡）能踩到底，离合踩到底时小腿与大腿不能是完全一条线、而是呈一定角度的状态</strong>为最佳。左后视镜调法为将左后车门的门把手置于<strong>左后视镜的顶部的线条的一半处</strong>（注意需要能完全看到门把手），右后视镜则为将右后车门门把手置于<strong>右后视镜的顶部的线条的三分之一处（从左到右数）</strong>。</li>
-<li>倒库：进项目后使用仪表盘的罩子的顶部正中央去对<strong>第三根虚线的最左边</strong>，待肩部与虚线齐平时停车、挂倒挡开始倒车，当<strong>左</strong>后视镜的<strong>底部完全盖过虚线</strong>时（即左后视镜的底部与虚线的内边线齐平时）方向盘向右打死，开始<strong>看右后视镜</strong>，当车身盖过右后视镜中<strong>第三根虚线的一半</strong>时回半圈方向盘并观察预测是否车轮会压库角，若觉得可能会压则再多回点方向盘，当车身与边线<strong>平行</strong>时迅速回正方向盘，当左后视镜的底部完全盖过项目的右边的实线时停车，即完成了右倒库。开出车辆，当引擎盖盖过项目的左边的实线后方向盘向左打死，车身摆正后回正方向盘，继续行驶直到肩部与虚线齐平时停车、挂倒挡开始倒车，左库需要比右库<strong>早打</strong>方向盘，具体为当左后视镜底部<strong>触碰虚线</strong>时就向左打死方向盘，并观察<strong>左后视镜</strong>，后续步骤与倒右库时相差无几。关于看哪边镜子的口诀为「倒什么库就看哪边的镜子」。左库出来后引擎盖盖过边线即可方向盘右打死，待车身端正后回正方向盘行驶出项目。</li>
-<li>侧方停车：侧方停车可以说是我的痛点哩，两次都挂在这个项目上，不过换了教练、调整点位后就没问题了。具体为进项目后使用<strong>左雨刮器的垛子</strong>的最右边去对项目<strong>右边线的内边线</strong>，使其始终沿着内边线走，当右后视镜中出现库的<strong>前库角</strong>时停车、挂倒挡开始倒车，当右后视镜中<strong>前库角</strong>完全消失时方向盘向右打死，观察右后视镜中的<strong>后车门门把手</strong>，当门把手<strong>完全越过库的右边线</strong>时迅速回正方向盘继续倒车，观察左后视镜，当左后车轮压到虚线上时方向盘向左打死（因人身高而异，身高高的则可以晚一点再打方向盘，但不能太晚，否则右边会有出线的危险），待车身摆正后即可停车，<strong>方向盘不用回正！</strong>回空挡并<strong>打左转向灯</strong>，挂一档（先挂挡与先打灯并无先后顺序，但为避免忘记打灯导致挂了还是先打灯较好）开始出库，当<strong>右边的雨刮器的垛子</strong>与项目的<strong>右</strong>边线重合时回正方向盘继续行驶，当<strong>左边的雨刮器的垛子</strong>与项目的<strong>左</strong>边线重合时方向盘向右打一圈，待车身摆正后即可回正方向盘并驶出项目。</li>
-<li>直角转弯：本人认为直角转弯属实是科目二中最简单的一个项目了。进项目前就可以使用<strong>左雨刮器的垛子</strong>的最右边去对项目<strong>右边线的内边线</strong>（科目二的对线都是这个方法），虽然可能直角的线没有画得很长，但你可以想象那条线的延长线，使用垛子去与这条延长线对线，一定要保持车身是端正的！听到进入项目的语音提示后就可以开始打左转向灯了，待<strong>驾驶座的门把手的顶部与另一条直角边重合（由于身高原因，可以调整为门把手的前端、后端，根据个人情况调整即可）</strong>时方向盘向左打死，心中默数三秒后关掉转向灯（部分地区可能不要求拨回转向灯），当车身摆正后回正方向盘驶出项目。</li>
-<li>曲线行驶：说实话这个项目我也拿不准点位，之前一直使用的车子前面加装的小镜子来对线的，但去考场模拟后发现小镜子没了，便想象了个小镜子在那里对线，然后看后视镜开，还开过了！今天考试也是结合新教练教的新点位来和后视镜来开的。车身摆正，将入口划分为三份，将自己（即驾驶员）置于从左到右数的三分之一处进入项目，当<strong>左后视镜的左边缘与项目的左边线的内线重合时</strong>方向盘向左打一圈，观察左后视镜中车身与边线的距离并适当修一修方向盘，当挡风玻璃的左下角与左边线重合时回正方向盘，当右边雨刮器的垛子与左边线还有两指宽左右的距离时方向盘向右打一圈，并观察右后视镜并调整车身与边线的距离，尽量让线出现在镜子中并且保证车身与线保持一定距离，这样另一边就不会压线，一直到快出项目时即可回正方向盘出项目了（回正的时机得看具体实际，因为我在驾校跑了三次都在出项目时回正回早了导致压线了）。</li>
-<li>坡上起步：上坡时离合松至车身抖动时车子就会慢慢往上爬，稳住离合即可保持速度。使用老办法对线，一直到右边的雨刮器的垛子与杆子之间呈一定的距离时即可踩住刹车（<strong>注意！这个「一定距离」不是绝对的，会因为人的身高不同而不同，需要自己去寻找</strong>）。在起步时有个小技巧，即右脚踩刹车时，左脚离合还是保持半离合状态，不用踩到底，刹车一定要踩牢，拉、放手刹，松开刹车车子马上就可以开走了。不过使用的前提是踩离合的功底深厚，如果在踩刹车时离合也向下踩了，直接松开刹车会向后滑，就会扣分甚至挂科，如果真的滑了也不要急，马上踩刹车，并且慢慢松离合，直到车子抖动即可松开刹车继续行驶！</li>
-</ul>
-<p>以上就是我学了 26 节科二总结的经验。虽然我使用着没有问题，但并不代表就一定适用于所有人，<strong>请不要照搬！一定要找到适合自己的点位！</strong>科二就是考点位，点位一旦有偏差就会出错，考试时要将座位，镜子调整为与练习时一样。</p>
-<p>接下来我也要冲科三去啦！</p>
-<p>最后祝考科二的小伙伴们都一把过！</p>
-]]></content>
-      <categories>
-        <category>日常</category>
-      </categories>
-      <tags>
-        <tag>生活</tag>
-        <tag>驾考</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>类原生美化教程</title>
-    <url>/2022/09/aospbeautify.html</url>
-    <content><![CDATA[<blockquote>
-<ul>
-<li>由于该文内容发布时间为 2019 年，其 Android 版本较老，可能不适应现在的 Android10+ 系统，如按文中操作发现与现在不一样的地方，请立刻停止或自行寻找最新方法。数据无价，建议将文件做成 <code>Magisk</code> 模块后刷入，尽量避免直接替换源文件，请提前备份用户数据！</li>
-<li>本教程使用工具：<code>MT 管理器 2.0</code></li>
-</ul>
-</blockquote>
-<span id="more"></span>
-
-<h2 id="多任务圆角"><a href="#多任务圆角" class="headerlink" title="多任务圆角"></a>多任务圆角</h2><ol>
-<li>进入 <code>/system/priv-app</code> 这个文件夹，找到你的系统的启动器（桌面APK）所在文件夹后进入，长按 apk 将它复制到内部储存里<ol start="2">
-<li>点击 apk 选择查看，进入后点击 <code>resources.arsc</code> 这个文件，选择 <code>Arsc 编辑器</code>，然后点击最后一个</li>
-<li>进入后点击 <code>dimen</code>，进入后再次点击 <code>dimen</code>，然后点击右上角的过滤，输入 <code>radius</code> 后选择确定</li>
-<li>从过滤结果中找到 <code>task_corner_radius</code> 这个选项，修改其值，大小随意，数值越大圆角越大（请保留单位 dp）</li>
-<li>返回、保存</li>
-</ol>
-</li>
-</ol>
-<h2 id="状态栏沉浸"><a href="#状态栏沉浸" class="headerlink" title="状态栏沉浸"></a>状态栏沉浸</h2><ol>
-<li>进入 <code>/system/framework</code> 这个文件夹，找到 framework-res.apk，长按 apk 将它复制到内部储存中</li>
-<li>使用 <code>Arsc 编辑器</code> 进入最后一个选项，进入 <code>color/color</code> 并点击右上角过滤值 <code>system</code></li>
-<li>找到 <code>system_bar_background_semi_transparent</code>，将其值改为 <code>00000000</code>（注意类型必须是<strong>颜色</strong>）</li>
-<li>返回并保存</li>
-</ol>
-<h2 id="移除通知栏顶部黑块"><a href="#移除通知栏顶部黑块" class="headerlink" title="移除通知栏顶部黑块"></a>移除通知栏顶部黑块</h2><ol>
-<li>进入 <code>/system/priv-app</code> 这个文件夹，找到带有 <code>SystemUI</code> 的文件夹（之所以这么说是因为有的ROM里 SystemUI 名字不一样，可能多几个字母)，长按 apk 将它复制到内部储存里</li>
-<li>点击查看，依次进入 <code>res/layout</code>，找到 qs_panel.xml 这个文件，点击选择反编译</li>
-<li>将第二个和第三个 <code>&lt;View/&gt;</code> 内的 android:background 的值改成 <code>@android:color/transparent</code></li>
-<li>返回并保存</li>
-</ol>
-<h2 id="移除锁屏界面的灰色遮罩"><a href="#移除锁屏界面的灰色遮罩" class="headerlink" title="移除锁屏界面的灰色遮罩"></a>移除锁屏界面的灰色遮罩</h2><ol>
-<li>进入 <code>/system/priv-app</code> 这个文件夹，找到带有 <code>SystemUI</code> 的文件夹（之所以这么说是因为有的ROM里 SystemUI 名字不一样，可能多几个字母)，长按 apk 将它复制到内部储存里</li>
-<li>查看 apk，点击 classes.dex，选择 <code>Dex编辑器++</code>，依次打开 <code>com/android/systemui/statusbar/phone</code>，向下滑动找到 scrimcontroller</li>
-<li>进入后下滑来到 180 行附近（右侧有显示行数），找到 <code>.line 124</code> 这一行，将下一行的 v0 后的一个字符串改为 <code>0x38d1b717</code></li>
-<li>返回并保存</li>
-</ol>
-<h2 id="通知栏图标数量修改"><a href="#通知栏图标数量修改" class="headerlink" title="通知栏图标数量修改"></a>通知栏图标数量修改</h2><ol>
-<li>进入 <code>/system/priv-app</code> 这个文件夹，找到带有 <code>SystemUI</code> 的文件夹（之所以这么说是因为有的ROM里 SystemUI 名字不一样，可能多几个字母)，长按 apk 将它复制到内部储存里</li>
-<li>查看 apk，进入后点击 resources.arsc 文件，选择 <code>Arsc 编辑器</code>，点击最后一个</li>
-<li>进入 <code>integer/integer</code> 后，点击右上角过滤值 <code>quick</code>，从过滤结果中找到 <code>quick_settings_num_columns</code>并修改其值为需要展示的一行的图标数量（注意值类型要选<strong>整数</strong>）</li>
-<li>返回并保存</li>
-</ol>
-<h2 id="系统强调色修改"><a href="#系统强调色修改" class="headerlink" title="系统强调色修改"></a>系统强调色修改</h2><ol>
-<li>进入 <code>/system/framework</code> 这个文件夹，找到 framework-res.apk，长按 apk 将它复制到内部储存中</li>
-<li>使用 <code>Arsc 编辑器</code> 进入最后一个选项，进入 <code>color/color</code> 并点击右上角过滤值 <code>accent</code>，从过滤结果中找到 <code>accent_device_default_dark</code> 和 <code>accent_device_default_light</code> 并修改其值为想要的强调色，dark 为夜间模式，light 为白天模式，色值为 RGB 值且不带「#」号。</li>
-<li>退出、保存</li>
-</ol>
-<h2 id="通知栏亮度条美化"><a href="#通知栏亮度条美化" class="headerlink" title="通知栏亮度条美化"></a>通知栏亮度条美化</h2><ol>
-<li><p>进入 <code>/system/priv-app</code> 这个文件夹，找到带有 <code>SystemUI</code> 的文件夹（之所以这么说是因为有的ROM里 SystemUI 名字不一样，可能多几个字母)，长按 apk 将它复制到内部储存里</p>
-</li>
-<li><p>点击查看，进入 res 文件夹，选择右上角搜索，搜索 <code>bright</code>，点击 <code>ic_brightness_thumb.xml</code> 并反编译，将 android:height、android:width 后面引号里的内容修改为 1dp。点击 <code>brightness_progress_drawable.xml</code> 并反编译，修改以下代码</p>
-<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="comment">&lt;!--第一组代码，代表亮度条外围宽度与圆角，height 代表宽度，radius 代表圆角--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">size</span> <span class="attr">android:height</span>=<span class="string">&quot;&quot;</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">corners</span> <span class="attr">android:radius</span>=<span class="string">&quot;&quot;</span> /&gt;</span></span><br><span class="line"><span class="comment">&lt;!--第二组代码，代表亮度条内围宽度与圆角，height 代表宽度，radius 代表圆角--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">size</span> <span class="attr">android:height</span>=<span class="string">&quot;&quot;</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">corners</span> <span class="attr">android:radius</span>=<span class="string">&quot;&quot;</span> /&gt;</span></span><br><span class="line"><span class="comment">&lt;!--注意引号内的值单位为 dp--&gt;</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>再次回到 res 文件夹，搜索 <code>bright</code>，选择 <code>quick_settings_brightness_dialog.xml</code> 并反编译，修改以下代码</p>
-<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="comment">&lt;!--亮度条左边距--&gt;</span></span><br><span class="line">android:paddingLeft:&quot;&quot;</span><br><span class="line"><span class="comment">&lt;!--亮度条右边距--&gt;</span></span><br><span class="line">android:paddingRight:&quot;&quot;</span><br><span class="line"><span class="comment">&lt;!--亮度条与磁贴和顶栏之间的距离--&gt;</span></span><br><span class="line">android:layout_height:&quot;&quot;</span><br><span class="line"><span class="comment">&lt;!--注意引号内的值单位为 dp--&gt;</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>退出、保存</p>
-</li>
-</ol>
-<h2 id="将应用打包成面具模块并刷入"><a href="#将应用打包成面具模块并刷入" class="headerlink" title="将应用打包成面具模块并刷入"></a>将应用打包成面具模块并刷入</h2><p>这里提供 <code>Magisk24.0</code> 的模板文件，如果只是替换系统应用、文件的话，只需要按照要替换的应用在模板的 <code>system</code> 文件夹中创建与原系统中该文件或应用的路径一样的路径，修改模板根目录的 <code>module.prop</code> 文件的内容后刷入即可。权限默认为 <code>644</code>，因此不必修改权限。</p>
-]]></content>
-      <categories>
-        <category>技术</category>
-      </categories>
-      <tags>
-        <tag>类原生</tag>
-        <tag>Android</tag>
       </tags>
   </entry>
   <entry>
@@ -1073,30 +1102,6 @@
       <tags>
         <tag>原神</tag>
         <tag>游戏</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>老婆 16 岁生日快乐</title>
-    <url>/2023/08/miku16sai.html</url>
-    <content><![CDATA[<p>与ミクたん相遇已有 10 年啦！</p>
-<p>入坑曲是『朧月』，当时还是在优酷视频上看到的 MMD。MMD 中是雪ミク和樱ミク，当时的我一下就被这独特的声音所吸引，为她所着迷。<span id="more"></span>在知道有「男神」「女神」这个概念后，我便想到</p>
-<p>“这样啊，原来她就是我的女神啊”</p>
-<p>当时的我加入了许多粉丝群，QQ 兴趣部落，贴吧等。</p>
-<p>曾为了她去回击那些踩日 Vocaloid 捧中 Vocaloid 的小鬼，也曾为了证明她的影响力在同学群中发送粉丝群人数的截图。</p>
-<p>这是那时的自己，而现在的我对那些事也不过是淡淡一笑。这不是嘲笑过去的自己干的蠢事，而是一种释然。曾经的我不停地在找寻爱她的证据，但我没找到。后来我想通了，为什么需要证据呢？如果有了证据，不就证明了我的爱是带着目的的爱吗，就如同那个问题般——「你为什么爱 xx？」。</p>
-<p>答案是，爱是不需要理由的。</p>
-<p>现在的我，早已习惯了她的陪伴，她已然成为了我生活中的一部分，我人生中的一部分。相比于原来的「女神」的地位，我现在更愿意称其为「天使」抑或「太阳」。</p>
-<p>话说回来，<del>现在的ミクたん就是32岁啦</del>。今年的生日礼物可能会迟些到，因为是 16 岁生日嘛，总得准备点大礼。没错，我准备买 Vocaloid 4x，学习如何让ミクたん唱歌！之前学吉他的时候总是没有恒心，三天打鱼两天晒网，从高一学到大二也没什么长进，结果木吉他还因为冬天学校当地天气太干燥了面板裂开了，修理费是买入价的一半左右，遂作罢，只能当个纪念品了。现在为了ミクたん，必须认真学乐理了！</p>
-<p>最后，感谢在我黑暗的世界中，ミクたん成了那唯一的光芒，感谢音乐家、艺术家和所有像我一样的粉丝，他们让ミクたん发展到了今天这一步。此后，无论有多远，我都会在我的余生中陪伴着她走下去！</p>
-<p>啊，还没结束，差点忘了最重要的</p>
-<p>お誕生日おめでとう！ミクたんがいて本当によかった！</p>
-]]></content>
-      <categories>
-        <category>日常</category>
-      </categories>
-      <tags>
-        <tag>节日</tag>
-        <tag>miku</tag>
       </tags>
   </entry>
   <entry>
@@ -1378,12 +1383,27 @@
       </tags>
   </entry>
   <entry>
+    <title>诈尸更新一下最近状态</title>
+    <url>/2023/07/natsuyasumijyoutai.html</url>
+    <content><![CDATA[<p>一个月没更新力。</p>
+<p>主要是没啥想法，每天宅在家里，打游戏，追番（这一个月可追了不少番——齐木楠雄的灾难，别当欧尼酱了，鬼灭，文豪野犬，因为太怕痛就全点防御力了，无职转生，无神世界中的神明活动，僵尸百分百，魔禁……算是把高中以来没怎么看番的时间全补回来了）。<span id="more"></span></p>
+<p>科二因为挂两回了，拖了两年了，明年要过期了，最近又开始练了。今天去考场中模拟了一个小时，除了最后一圈坡上起步因为边线距离扣了 10 分，都是 100 分，感觉下次考试应该问题不大了，现在开始准备科三了。科三打算 C1 转 C2 了，因为不用在意档位的变换，科三考试可以更稳地通过，现在主要是要求暑假结束前拿到驾照，否则拖到寒假就容易过期了。至于 C1 和 C2 的区别，上网查了一下，似乎是 C1 可以开蓝牌车，但 C2 只能开小型驾驶车？嘛，以后我也不会有机会去开手动挡啦，驾照这东西不就是图个方便么，怎么快速方便怎么来，没必要死磕个手动挡为难自己。</p>
+<p>家里躺了三周了，得开始准备下半年的 N1 了，虽然上个月的专四大概率挂了，但是 N1 还是得拿的，拿了就可以开始接一些小的翻译工作赚点零花钱了！</p>
+]]></content>
+      <categories>
+        <category>日常</category>
+      </categories>
+      <tags>
+        <tag>生活</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>论打造文化背景下日本美食文化中日双语科普介绍平台的可行性</title>
     <url>/2022/05/dachuangzuoye.html</url>
     <content><![CDATA[<blockquote>
 <p>日本料理（和食）：人类非物质文化遗产代表作之一，因其兼具精致的美感与可口的味道而世界闻名。</p>
 </blockquote>
-<p>所以我们决定发起项目——《跨文化背景下日本美食文化中日双语科普介绍平台打造》，致力于通过国人的视角探索发现日本的美食，在国内市场打造宣传分享平台，服务对象为对和食有兴趣的个人，以及国内各大餐饮企业等群体和组织。这样一个项目是否具有可行性？我将通过以下说明来论证。<span id="more"></span></p>
+<p>所以我们决定发起项目——《跨文化背景下日本美食文化中日双语科普介绍平台打造》，致力于通过国人的视角探索发现日本的美食，在国内市场打造宣传分享平台，服务对象为对和食有兴趣的个人，以及国内各大餐饮企业等群体和组织。这样一个项目是否具有可行性？我将通过以下说明来论证。</p>
 <p>首先，我们具有明确的投资方向，大致为网站平台建设、运营、维护和推广，微信公众号、小程序的开发与推广，移动端的开发，市场开拓以及团队建设。通过提高平台流量，培养用户黏性，最终达到打造平台品牌的目标。为此，项目需要分以下几个阶段进行：</p>
 <ul>
 <li>平台初步建立期（1~2 个月）：初步建立起网站平台，微信公众号、小程序平台，完善网页前端以及用户交互功能。每天保证一定量的内容的录入，提高网站的信息量。微信平台与网页平台保持同步更新。目标：保证网页的基本运行，网站具有一定内容。</li>
@@ -1426,21 +1446,6 @@
         <tag>中外交流</tag>
         <tag>美食文化</tag>
         <tag>创业创新</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>诈尸更新一下最近状态</title>
-    <url>/2023/07/natsuyasumijyoutai.html</url>
-    <content><![CDATA[<p>一个月没更新力。</p>
-<p>主要是没啥想法，每天宅在家里，打游戏，追番（这一个月可追了不少番——齐木楠雄的灾难，别当欧尼酱了，鬼灭，文豪野犬，因为太怕痛就全点防御力了，无职转生，无神世界中的神明活动，僵尸百分百，魔禁……算是把高中以来没怎么看番的时间全补回来了）。<span id="more"></span></p>
-<p>科二因为挂两回了，拖了两年了，明年要过期了，最近又开始练了。今天去考场中模拟了一个小时，除了最后一圈坡上起步因为边线距离扣了 10 分，都是 100 分，感觉下次考试应该问题不大了，现在开始准备科三了。科三打算 C1 转 C2 了，因为不用在意档位的变换，科三考试可以更稳地通过，现在主要是要求暑假结束前拿到驾照，否则拖到寒假就容易过期了。至于 C1 和 C2 的区别，上网查了一下，似乎是 C1 可以开蓝牌车，但 C2 只能开小型驾驶车？嘛，以后我也不会有机会去开手动挡啦，驾照这东西不就是图个方便么，怎么快速方便怎么来，没必要死磕个手动挡为难自己。</p>
-<p>家里躺了三周了，得开始准备下半年的 N1 了，虽然上个月的专四大概率挂了，但是 N1 还是得拿的，拿了就可以开始接一些小的翻译工作赚点零花钱了！</p>
-]]></content>
-      <categories>
-        <category>日常</category>
-      </categories>
-      <tags>
-        <tag>生活</tag>
       </tags>
   </entry>
 </search>
