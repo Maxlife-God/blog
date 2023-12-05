@@ -1,6 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>Handsome 美化补充</title>
+    <url>/2021/12/handsomebeautify.html</url>
+    <content><![CDATA[<p>由于在网上找到的 handsome 主题的首页文章圆角的 css 代码只选择了首页的大头图版式，小头图和图片版式均无圆角和鼠标停留上浮效果，在这里分享下我加了这两个版式之后的代码，将其粘贴到 handsome 主题开发者设置的自定义 css 中即可。</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="comment">/*首页文章列表悬停上浮*/</span></span><br><span class="line"><span class="selector-class">.blog-post</span> <span class="selector-class">.panel-small</span><span class="selector-pseudo">:not</span>(<span class="selector-tag">article</span>),</span><br><span class="line"><span class="selector-class">.blog-post</span> <span class="selector-class">.panel</span><span class="selector-pseudo">:not</span>(<span class="selector-tag">article</span>), <span class="selector-class">.panel-picture</span> &#123;</span><br><span class="line">    <span class="attribute">transition</span>: all <span class="number">0.3s</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.blog-post</span> <span class="selector-class">.panel-small</span><span class="selector-pseudo">:not</span>(<span class="selector-tag">article</span>)<span class="selector-pseudo">:hover</span>,</span><br><span class="line"><span class="selector-class">.blog-post</span> <span class="selector-class">.panel</span><span class="selector-pseudo">:not</span>(<span class="selector-tag">article</span>)<span class="selector-pseudo">:hover</span>, <span class="selector-class">.panel-picture</span><span class="selector-pseudo">:hover</span> &#123;</span><br><span class="line">    <span class="attribute">transform</span>: <span class="built_in">translateY</span>(-<span class="number">10px</span>);</span><br><span class="line">    <span class="attribute">box-shadow</span>: <span class="number">0</span> <span class="number">8px</span> <span class="number">10px</span> <span class="built_in">rgba</span>(<span class="number">73</span>, <span class="number">90</span>, <span class="number">47</span>, <span class="number">0.47</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/*首页文章版式圆角化*/</span></span><br><span class="line"><span class="selector-class">.panel</span>&#123;</span><br><span class="line">    <span class="attribute">border</span>: none <span class="meta">!important</span>;</span><br><span class="line">    <span class="attribute">border-radius</span>: <span class="number">15px</span> <span class="meta">!important</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.panel-small</span>&#123;</span><br><span class="line">    <span class="attribute">border</span>: none;</span><br><span class="line">    <span class="attribute">border-radius</span>: <span class="number">15px</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.item-thumb</span>&#123;</span><br><span class="line">    <span class="attribute">border-radius</span>: <span class="number">15px</span> <span class="number">15px</span> <span class="number">0</span> <span class="number">0</span>;  </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.border-radius-6</span> &#123;</span><br><span class="line"><span class="attribute">border-radius</span>: <span class="number">15px</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>技术</category>
+      </categories>
+      <tags>
+        <tag>handsome</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>39 快乐</title>
     <url>/2023/03/sankyuomedetou.html</url>
     <content><![CDATA[<p>日语中，3 音读读作「さん」，而训读读作「み」；9 音读读作「きゅう」，而训读读作「く」。39 按照训读即为「みく」，也就是「miku」；按照音读读作「さんきゅう」，即为英语中的 thank you（谢谢）。更巧合的是，miku 的生日 8 月 31 日，月份和日期加起来刚好为 39。这一切都和 miku 联系了起来，因此 3 月 9 日这天也被术术人们称为「39感谢日」或者「mikuの日」。</p>
@@ -12,19 +25,6 @@
       <tags>
         <tag>节日</tag>
         <tag>二次元</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Handsome 美化补充</title>
-    <url>/2021/12/handsomebeautify.html</url>
-    <content><![CDATA[<p>由于在网上找到的 handsome 主题的首页文章圆角的 css 代码只选择了首页的大头图版式，小头图和图片版式均无圆角和鼠标停留上浮效果，在这里分享下我加了这两个版式之后的代码，将其粘贴到 handsome 主题开发者设置的自定义 css 中即可。</p>
-<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="comment">/*首页文章列表悬停上浮*/</span></span><br><span class="line"><span class="selector-class">.blog-post</span> <span class="selector-class">.panel-small</span><span class="selector-pseudo">:not</span>(<span class="selector-tag">article</span>),</span><br><span class="line"><span class="selector-class">.blog-post</span> <span class="selector-class">.panel</span><span class="selector-pseudo">:not</span>(<span class="selector-tag">article</span>), <span class="selector-class">.panel-picture</span> &#123;</span><br><span class="line">    <span class="attribute">transition</span>: all <span class="number">0.3s</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.blog-post</span> <span class="selector-class">.panel-small</span><span class="selector-pseudo">:not</span>(<span class="selector-tag">article</span>)<span class="selector-pseudo">:hover</span>,</span><br><span class="line"><span class="selector-class">.blog-post</span> <span class="selector-class">.panel</span><span class="selector-pseudo">:not</span>(<span class="selector-tag">article</span>)<span class="selector-pseudo">:hover</span>, <span class="selector-class">.panel-picture</span><span class="selector-pseudo">:hover</span> &#123;</span><br><span class="line">    <span class="attribute">transform</span>: <span class="built_in">translateY</span>(-<span class="number">10px</span>);</span><br><span class="line">    <span class="attribute">box-shadow</span>: <span class="number">0</span> <span class="number">8px</span> <span class="number">10px</span> <span class="built_in">rgba</span>(<span class="number">73</span>, <span class="number">90</span>, <span class="number">47</span>, <span class="number">0.47</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/*首页文章版式圆角化*/</span></span><br><span class="line"><span class="selector-class">.panel</span>&#123;</span><br><span class="line">    <span class="attribute">border</span>: none <span class="meta">!important</span>;</span><br><span class="line">    <span class="attribute">border-radius</span>: <span class="number">15px</span> <span class="meta">!important</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.panel-small</span>&#123;</span><br><span class="line">    <span class="attribute">border</span>: none;</span><br><span class="line">    <span class="attribute">border-radius</span>: <span class="number">15px</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.item-thumb</span>&#123;</span><br><span class="line">    <span class="attribute">border-radius</span>: <span class="number">15px</span> <span class="number">15px</span> <span class="number">0</span> <span class="number">0</span>;  </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.border-radius-6</span> &#123;</span><br><span class="line"><span class="attribute">border-radius</span>: <span class="number">15px</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>技术</category>
-      </categories>
-      <tags>
-        <tag>handsome</tag>
       </tags>
   </entry>
   <entry>
@@ -66,6 +66,62 @@
       </tags>
   </entry>
   <entry>
+    <title>Next 主题部分图片禁用 FancyBox</title>
+    <url>/2023/04/nextthemefancyboxdisabled.html</url>
+    <content><![CDATA[<p>之前用的主题有 fancybox 功能的都有部分图片禁用 fancybox 的功能，看了一遍文档却发现没有这个选项，去 issue 中和 discusstion 中也没找到相关的信息。<span id="more"></span>于是 google 了一下，发现真有<a href="https://blog.csdn.net/cddchina/article/details/79764432">相关教程</a>，不过是 18 年的了，现在 next 主题已经变了很多，fancybox 的 js 代码也没在 utils.js 文件中了。找了一下，发现 fancybox 的相关 js 代码已经单独写在了主题文件夹下的 <code>\source\js\third-party\fancybox.js</code> 中了。</p>
+<p>接着又在网上找到了一篇博客，发现插入的代码较也改进了一下，修改了当鼠标悬浮在已经被禁用 fancybox 效果的图片上时的状态，原文链接：<a href="https://kevin1061517.github.io/blog/posts/Hexo/2721/">https://kevin1061517.github.io/blog/posts/Hexo/2721/</a></p>
+<p>结合两篇博文，最终即为在 <code>\source\js\third-party\fancybox.js</code> 文件中的 <code>const $image = $(element);</code> 这一行与 <code>const imageLink = $image.attr(&#39;data-src&#39;) || $image.attr(&#39;src&#39;);</code> 之间添加以下代码</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">     <span class="keyword">const</span> $image = $(element);</span><br><span class="line">+    <span class="keyword">if</span> ($(element).<span class="title function_">hasClass</span>(<span class="string">&#x27;nofancybox&#x27;</span>))&#123;  <span class="comment">//是否有包含自己定义的nofancybox属性，有就return true</span></span><br><span class="line">+        $(element).<span class="title function_">css</span>(<span class="string">&quot;cursor&quot;</span>,<span class="string">&quot;default&quot;</span>);    <span class="comment">//将碰到图片的鼠标从放大镜变成default模式</span></span><br><span class="line">+        <span class="keyword">return</span>;	<span class="comment">//不进行下面的fancybox的配置</span></span><br><span class="line">+      &#125;</span><br><span class="line">     <span class="keyword">const</span> imageLink = $image.<span class="title function_">attr</span>(<span class="string">&#x27;data-src&#x27;</span>) || $image.<span class="title function_">attr</span>(<span class="string">&#x27;src&#x27;</span>);</span><br></pre></td></tr></table></figure>
+
+<p>以下为方便复制的代码</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">if</span> ($(element).<span class="title function_">hasClass</span>(<span class="string">&#x27;nofancybox&#x27;</span>))&#123;  <span class="comment">//是否有包含自己定义的nofancybox属性，有就return true</span></span><br><span class="line">    $(element).<span class="title function_">css</span>(<span class="string">&quot;cursor&quot;</span>,<span class="string">&quot;default&quot;</span>);    <span class="comment">//将碰到图片的鼠标从放大镜变成default模式</span></span><br><span class="line">    <span class="keyword">return</span>;	<span class="comment">//不进行下面的fancybox的配置</span></span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+
+<p>之后只要给不想有 fancybox 效果的 <code>&lt;img&gt;</code> 元素增加 <code>class=&quot;nofancybox&quot;</code> 即可。</p>
+<hr>
+<p>后续更新来了，上面的代码是 jQuery 版的 Fancybox 的，现主题最新版本已完全去除 jQuery 的依赖且更新到了 Fancybox 5，上面的代码自然也就失效了。虽然不会 js，还是试着在 Google 和 Chatgpt 的帮助下改了一下代码。可以适配最新版本了。</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="variable language_">document</span>.<span class="title function_">querySelectorAll</span>(<span class="string">&#x27;.post-body :not(a) &gt; img, .post-body &gt; img&#x27;</span>).<span class="title function_">forEach</span>(<span class="function"><span class="params">image</span> =&gt;</span> &#123;</span><br><span class="line">+    <span class="keyword">if</span> (image.<span class="property">classList</span>.<span class="title function_">contains</span>(<span class="string">&#x27;nofancybox&#x27;</span>))&#123;  <span class="comment">//是否有包含自己定义的nofancybox属性，有就return true</span></span><br><span class="line">+      image.<span class="property">style</span>.<span class="property">cursor</span> = <span class="string">&#x27;default&#x27;</span>;    <span class="comment">//将碰到图片的鼠标从放大镜变成default模式</span></span><br><span class="line">+      <span class="keyword">return</span>;	<span class="comment">//不进行下面的fancybox的配置</span></span><br><span class="line">+    &#125;</span><br><span class="line">    <span class="keyword">const</span> imageLink = image.<span class="property">dataset</span>.<span class="property">src</span> || image.<span class="property">src</span>;</span><br></pre></td></tr></table></figure>
+
+<p>方便复制的版本</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">if</span> (image.<span class="property">classList</span>.<span class="title function_">contains</span>(<span class="string">&#x27;nofancybox&#x27;</span>))&#123;  <span class="comment">//是否有包含自己定义的nofancybox属性，有就return true</span></span><br><span class="line">  image.<span class="property">style</span>.<span class="property">cursor</span> = <span class="string">&#x27;default&#x27;</span>;    <span class="comment">//将碰到图片的鼠标从放大镜变成default模式</span></span><br><span class="line">  <span class="keyword">return</span>;	<span class="comment">//不进行下面的fancybox的配置</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>同样的，只要给不想有 fancybox 效果的 <code>&lt;img&gt;</code> 元素增加 <code>class=&quot;nofancybox&quot;</code> 即可。</p>
+]]></content>
+      <categories>
+        <category>技术</category>
+      </categories>
+      <tags>
+        <tag>技术</tag>
+        <tag>Hexo</tag>
+        <tag>JavaScript</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Waline 美化教程</title>
+    <url>/2023/04/walinedecoration.html</url>
+    <content><![CDATA[<p>起因是看到许多博客使用的 twikoo 评论系统，觉得 twikoo 的前端样式很好看，与之相对的正在用的 waline 的默认样式是真的不好看，本来打算直接换到 twikoo 的，转念一想，既然是属于样式的东西，为什么不直接用 css 解决呢，没有必要为了一个效果而去换插件。博主的 css 不行，只会 <kbd>F12</kbd> 找到哪个元素改哪个。至于定位元素之类的完全不行＞﹏＜。只要最后好看了就 ok 了！（bushi</p>
+<p>以下为代码部分（部分选择器需要根据实际更换）</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="comment">/* 修改waline样式 */</span></span><br><span class="line"><span class="comment">/* 修改评论框外观 */</span></span><br><span class="line"><span class="selector-class">.wl-panel</span> &#123;</span><br><span class="line">    <span class="attribute">border-radius</span>: <span class="number">4px</span> <span class="meta">!important</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-pseudo">:root</span> &#123;</span><br><span class="line">    <span class="attr">--waline-bgcolor-light</span>: transparent <span class="meta">!important</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.wl-btn</span> &#123;</span><br><span class="line">    <span class="attribute">border-radius</span>: <span class="number">0.3em</span> <span class="meta">!important</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* 添加miku的gif为输入区域背景 */</span></span><br><span class="line"><span class="selector-id">#wl-edit</span> &#123;</span><br><span class="line">    <span class="attribute">background</span>: <span class="built_in">url</span>(<span class="string">&quot;/img/wl-bg-mikuchan.gif&quot;</span>) <span class="number">100%</span> <span class="number">100%</span> no-repeat;</span><br><span class="line">    <span class="attribute">background-size</span>: contain <span class="meta">!important</span>;</span><br><span class="line">    <span class="attribute">background-repeat</span>: no-repeat <span class="meta">!important</span>;</span><br><span class="line">    <span class="attribute">background-position</span>: right bottom <span class="meta">!important</span>; </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-id">#waline-wrap</span> <span class="selector-tag">textarea</span><span class="selector-pseudo">:focus</span> &#123;</span><br><span class="line">    <span class="attribute">background</span>: <span class="built_in">url</span>(<span class="string">&quot;/img/wl-bg-mikuchan.gif&quot;</span>) <span class="number">100%</span> <span class="number">100%</span> no-repeat;</span><br><span class="line">    <span class="attribute">background-position</span>-y: <span class="number">78px</span> <span class="meta">!important</span>;</span><br><span class="line">    <span class="attribute">transition</span>: all <span class="number">0.25s</span> ease-in-out <span class="number">0s</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* 修改评论区内容背景 */</span></span><br><span class="line"><span class="selector-class">.wl-card</span> <span class="selector-class">.wl-content</span> &#123;</span><br><span class="line">    <span class="attribute">background</span>: <span class="number">#f5f5f5</span>;</span><br><span class="line">    <span class="attribute">padding</span>: <span class="number">16px</span> <span class="meta">!important</span>;</span><br><span class="line">    <span class="attribute">margin</span>: <span class="number">12px</span> <span class="number">0</span> <span class="number">8px</span> <span class="meta">!important</span>;</span><br><span class="line">    <span class="attribute">border-radius</span>: <span class="number">3px</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.wl-card</span> &#123;</span><br><span class="line">    <span class="attribute">border-bottom</span>: none <span class="meta">!important</span>;</span><br><span class="line">    <span class="attribute">padding-bottom</span>: <span class="number">0px</span> <span class="meta">!important</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.wl-cards</span> <span class="selector-class">.wl-item</span>&#123;</span><br><span class="line">    <span class="attribute">padding</span>: .<span class="number">5em</span> .<span class="number">5em</span> <span class="number">0px</span> <span class="meta">!important</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>效果图如下（因图片是截取自评论区而打了码，头像这些不属于以上代码，后面可以考虑改一下默认头像）</p>
+<p><img data-src="https://img.fufu.ink/iTcakI.webp" alt="Waline评论框美化效果"></p>
+<p><img data-src="https://img.fufu.ink/JDVkhh.webp" alt="Waline评论区美化效果"></p>
+<p>其中评论框的背景 gif 需要自己下载下来放到 <code>/source/img/</code> 下即可（记得重命名），别直接用我的博客的地址！（就这么点大小的图片就别直接挂别人的链接了吧，虽然我也不会做防盗链…）</p>
+<p>修改文本输入框中的提示文字需要到主题的配置文件中找到 waline 的配置项，在其中添加 <code>locale: &#123;placeholder: &#39;提示文字&#39;&#125;</code> 即可，以主题 butterfly 为例，则需要在 option 中添加该行代码，需要注意缩进，如下所示</p>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">waline:</span></span><br><span class="line">  <span class="attr">serverURL:</span> <span class="comment"># Waline server address url</span></span><br><span class="line">  <span class="attr">bg:</span> <span class="comment"># waline background</span></span><br><span class="line">  <span class="attr">pageview:</span> <span class="literal">false</span></span><br><span class="line">  <span class="attr">option:</span></span><br><span class="line">    <span class="attr">locale:</span> &#123;<span class="attr">placeholder:</span> <span class="string">&#x27;提示文字&#x27;</span>&#125;</span><br></pre></td></tr></table></figure>
+
+<p>最后就是上面效果图的样子啦！</p>
+]]></content>
+      <categories>
+        <category>技术</category>
+      </categories>
+      <tags>
+        <tag>教程</tag>
+        <tag>技术</tag>
+        <tag>Hexo</tag>
+        <tag>CSS</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Next 文章顶部添加波浪效果</title>
     <url>/2023/08/nextwave.html</url>
     <content><![CDATA[<blockquote>
@@ -100,95 +156,6 @@
         <tag>Hexo</tag>
         <tag>CSS</tag>
         <tag>Next</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Waline 美化教程</title>
-    <url>/2023/04/walinedecoration.html</url>
-    <content><![CDATA[<p>起因是看到许多博客使用的 twikoo 评论系统，觉得 twikoo 的前端样式很好看，与之相对的正在用的 waline 的默认样式是真的不好看，本来打算直接换到 twikoo 的，转念一想，既然是属于样式的东西，为什么不直接用 css 解决呢，没有必要为了一个效果而去换插件。博主的 css 不行，只会 <kbd>F12</kbd> 找到哪个元素改哪个。至于定位元素之类的完全不行＞﹏＜。只要最后好看了就 ok 了！（bushi</p>
-<p>以下为代码部分（部分选择器需要根据实际更换）</p>
-<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="comment">/* 修改waline样式 */</span></span><br><span class="line"><span class="comment">/* 修改评论框外观 */</span></span><br><span class="line"><span class="selector-class">.wl-panel</span> &#123;</span><br><span class="line">    <span class="attribute">border-radius</span>: <span class="number">4px</span> <span class="meta">!important</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-pseudo">:root</span> &#123;</span><br><span class="line">    <span class="attr">--waline-bgcolor-light</span>: transparent <span class="meta">!important</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.wl-btn</span> &#123;</span><br><span class="line">    <span class="attribute">border-radius</span>: <span class="number">0.3em</span> <span class="meta">!important</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* 添加miku的gif为输入区域背景 */</span></span><br><span class="line"><span class="selector-id">#wl-edit</span> &#123;</span><br><span class="line">    <span class="attribute">background</span>: <span class="built_in">url</span>(<span class="string">&quot;/img/wl-bg-mikuchan.gif&quot;</span>) <span class="number">100%</span> <span class="number">100%</span> no-repeat;</span><br><span class="line">    <span class="attribute">background-size</span>: contain <span class="meta">!important</span>;</span><br><span class="line">    <span class="attribute">background-repeat</span>: no-repeat <span class="meta">!important</span>;</span><br><span class="line">    <span class="attribute">background-position</span>: right bottom <span class="meta">!important</span>; </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-id">#waline-wrap</span> <span class="selector-tag">textarea</span><span class="selector-pseudo">:focus</span> &#123;</span><br><span class="line">    <span class="attribute">background</span>: <span class="built_in">url</span>(<span class="string">&quot;/img/wl-bg-mikuchan.gif&quot;</span>) <span class="number">100%</span> <span class="number">100%</span> no-repeat;</span><br><span class="line">    <span class="attribute">background-position</span>-y: <span class="number">78px</span> <span class="meta">!important</span>;</span><br><span class="line">    <span class="attribute">transition</span>: all <span class="number">0.25s</span> ease-in-out <span class="number">0s</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* 修改评论区内容背景 */</span></span><br><span class="line"><span class="selector-class">.wl-card</span> <span class="selector-class">.wl-content</span> &#123;</span><br><span class="line">    <span class="attribute">background</span>: <span class="number">#f5f5f5</span>;</span><br><span class="line">    <span class="attribute">padding</span>: <span class="number">16px</span> <span class="meta">!important</span>;</span><br><span class="line">    <span class="attribute">margin</span>: <span class="number">12px</span> <span class="number">0</span> <span class="number">8px</span> <span class="meta">!important</span>;</span><br><span class="line">    <span class="attribute">border-radius</span>: <span class="number">3px</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.wl-card</span> &#123;</span><br><span class="line">    <span class="attribute">border-bottom</span>: none <span class="meta">!important</span>;</span><br><span class="line">    <span class="attribute">padding-bottom</span>: <span class="number">0px</span> <span class="meta">!important</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.wl-cards</span> <span class="selector-class">.wl-item</span>&#123;</span><br><span class="line">    <span class="attribute">padding</span>: .<span class="number">5em</span> .<span class="number">5em</span> <span class="number">0px</span> <span class="meta">!important</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>效果图如下（因图片是截取自评论区而打了码，头像这些不属于以上代码，后面可以考虑改一下默认头像）</p>
-<p><img data-src="https://img.fufu.ink/iTcakI.webp" alt="Waline评论框美化效果"></p>
-<p><img data-src="https://img.fufu.ink/JDVkhh.webp" alt="Waline评论区美化效果"></p>
-<p>其中评论框的背景 gif 需要自己下载下来放到 <code>/source/img/</code> 下即可（记得重命名），别直接用我的博客的地址！（就这么点大小的图片就别直接挂别人的链接了吧，虽然我也不会做防盗链…）</p>
-<p>修改文本输入框中的提示文字需要到主题的配置文件中找到 waline 的配置项，在其中添加 <code>locale: &#123;placeholder: &#39;提示文字&#39;&#125;</code> 即可，以主题 butterfly 为例，则需要在 option 中添加该行代码，需要注意缩进，如下所示</p>
-<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">waline:</span></span><br><span class="line">  <span class="attr">serverURL:</span> <span class="comment"># Waline server address url</span></span><br><span class="line">  <span class="attr">bg:</span> <span class="comment"># waline background</span></span><br><span class="line">  <span class="attr">pageview:</span> <span class="literal">false</span></span><br><span class="line">  <span class="attr">option:</span></span><br><span class="line">    <span class="attr">locale:</span> &#123;<span class="attr">placeholder:</span> <span class="string">&#x27;提示文字&#x27;</span>&#125;</span><br></pre></td></tr></table></figure>
-
-<p>最后就是上面效果图的样子啦！</p>
-]]></content>
-      <categories>
-        <category>技术</category>
-      </categories>
-      <tags>
-        <tag>教程</tag>
-        <tag>技术</tag>
-        <tag>Hexo</tag>
-        <tag>CSS</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Next 主题部分图片禁用 FancyBox</title>
-    <url>/2023/04/nextthemefancyboxdisabled.html</url>
-    <content><![CDATA[<p>之前用的主题有 fancybox 功能的都有部分图片禁用 fancybox 的功能，看了一遍文档却发现没有这个选项，去 issue 中和 discusstion 中也没找到相关的信息。<span id="more"></span>于是 google 了一下，发现真有<a href="https://blog.csdn.net/cddchina/article/details/79764432">相关教程</a>，不过是 18 年的了，现在 next 主题已经变了很多，fancybox 的 js 代码也没在 utils.js 文件中了。找了一下，发现 fancybox 的相关 js 代码已经单独写在了主题文件夹下的 <code>\source\js\third-party\fancybox.js</code> 中了。</p>
-<p>接着又在网上找到了一篇博客，发现插入的代码较也改进了一下，修改了当鼠标悬浮在已经被禁用 fancybox 效果的图片上时的状态，原文链接：<a href="https://kevin1061517.github.io/blog/posts/Hexo/2721/">https://kevin1061517.github.io/blog/posts/Hexo/2721/</a></p>
-<p>结合两篇博文，最终即为在 <code>\source\js\third-party\fancybox.js</code> 文件中的 <code>const $image = $(element);</code> 这一行与 <code>const imageLink = $image.attr(&#39;data-src&#39;) || $image.attr(&#39;src&#39;);</code> 之间添加以下代码</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">     <span class="keyword">const</span> $image = $(element);</span><br><span class="line">+    <span class="keyword">if</span> ($(element).<span class="title function_">hasClass</span>(<span class="string">&#x27;nofancybox&#x27;</span>))&#123;  <span class="comment">//是否有包含自己定义的nofancybox属性，有就return true</span></span><br><span class="line">+        $(element).<span class="title function_">css</span>(<span class="string">&quot;cursor&quot;</span>,<span class="string">&quot;default&quot;</span>);    <span class="comment">//将碰到图片的鼠标从放大镜变成default模式</span></span><br><span class="line">+        <span class="keyword">return</span>;	<span class="comment">//不进行下面的fancybox的配置</span></span><br><span class="line">+      &#125;</span><br><span class="line">     <span class="keyword">const</span> imageLink = $image.<span class="title function_">attr</span>(<span class="string">&#x27;data-src&#x27;</span>) || $image.<span class="title function_">attr</span>(<span class="string">&#x27;src&#x27;</span>);</span><br></pre></td></tr></table></figure>
-
-<p>以下为方便复制的代码</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">if</span> ($(element).<span class="title function_">hasClass</span>(<span class="string">&#x27;nofancybox&#x27;</span>))&#123;  <span class="comment">//是否有包含自己定义的nofancybox属性，有就return true</span></span><br><span class="line">    $(element).<span class="title function_">css</span>(<span class="string">&quot;cursor&quot;</span>,<span class="string">&quot;default&quot;</span>);    <span class="comment">//将碰到图片的鼠标从放大镜变成default模式</span></span><br><span class="line">    <span class="keyword">return</span>;	<span class="comment">//不进行下面的fancybox的配置</span></span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
-
-<p>之后只要给不想有 fancybox 效果的 <code>&lt;img&gt;</code> 元素增加 <code>class=&quot;nofancybox&quot;</code> 即可。</p>
-<hr>
-<p>后续更新来了，上面的代码是 jQuery 版的 Fancybox 的，现主题最新版本已完全去除 jQuery 的依赖且更新到了 Fancybox 5，上面的代码自然也就失效了。虽然不会 js，还是试着在 Google 和 Chatgpt 的帮助下改了一下代码。可以适配最新版本了。</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="variable language_">document</span>.<span class="title function_">querySelectorAll</span>(<span class="string">&#x27;.post-body :not(a) &gt; img, .post-body &gt; img&#x27;</span>).<span class="title function_">forEach</span>(<span class="function"><span class="params">image</span> =&gt;</span> &#123;</span><br><span class="line">+    <span class="keyword">if</span> (image.<span class="property">classList</span>.<span class="title function_">contains</span>(<span class="string">&#x27;nofancybox&#x27;</span>))&#123;  <span class="comment">//是否有包含自己定义的nofancybox属性，有就return true</span></span><br><span class="line">+      image.<span class="property">style</span>.<span class="property">cursor</span> = <span class="string">&#x27;default&#x27;</span>;    <span class="comment">//将碰到图片的鼠标从放大镜变成default模式</span></span><br><span class="line">+      <span class="keyword">return</span>;	<span class="comment">//不进行下面的fancybox的配置</span></span><br><span class="line">+    &#125;</span><br><span class="line">    <span class="keyword">const</span> imageLink = image.<span class="property">dataset</span>.<span class="property">src</span> || image.<span class="property">src</span>;</span><br></pre></td></tr></table></figure>
-
-<p>方便复制的版本</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">if</span> (image.<span class="property">classList</span>.<span class="title function_">contains</span>(<span class="string">&#x27;nofancybox&#x27;</span>))&#123;  <span class="comment">//是否有包含自己定义的nofancybox属性，有就return true</span></span><br><span class="line">  image.<span class="property">style</span>.<span class="property">cursor</span> = <span class="string">&#x27;default&#x27;</span>;    <span class="comment">//将碰到图片的鼠标从放大镜变成default模式</span></span><br><span class="line">  <span class="keyword">return</span>;	<span class="comment">//不进行下面的fancybox的配置</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>同样的，只要给不想有 fancybox 效果的 <code>&lt;img&gt;</code> 元素增加 <code>class=&quot;nofancybox&quot;</code> 即可。</p>
-]]></content>
-      <categories>
-        <category>技术</category>
-      </categories>
-      <tags>
-        <tag>技术</tag>
-        <tag>Hexo</tag>
-        <tag>JavaScript</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>【每日语法】~さえ~ば</title>
-    <url>/2023/05/mnnhgbp5.html</url>
-    <content><![CDATA[<p>接续：</p>
-<blockquote>
-<p>N + さえ + 假定形<br>A（く形）&#x2F; NA（て形）+ さえあれば<br>V（ます形）&#x2F; サ变动词词干 + さえすれば</p>
-</blockquote>
-<p>意为「只要···就···」。关于假定形的变形方法，请参考<a href="/2023/04/mnnhgbp1.html">『【每日语法】~ば~ほど』</a>的文末表格。</p>
-<p>例句：やすくさえあれば、買いましょう。<br>译：只要便宜的话就买吧！</p>
-]]></content>
-      <categories>
-        <category>日语</category>
-      </categories>
-      <tags>
-        <tag>日语</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>【每日语法】~も~ば~も~</title>
-    <url>/2023/04/mnnhgbp2.html</url>
-    <content><![CDATA[<p><strong>语法：N + も + V（假定形）+ N + も + V（原形）</strong></p>
-<p>意为「既…又…」。其中的动词为同一动词。</p>
-<p>例句：コンビニにたくさんの商品がある。食べ物もあれば、生活に欠かせないものもある。</p>
-<p>译：便利店中有很多商品，既有食品，也有生活中不可或缺的物品。</p>
-<p>与之相似的语法还有「かと思えば」，接续方式为前接<strong>动词原形</strong>。关于假定形的变形方法，在上一篇中已经提过，这里就不再赘述，有需要了解的小伙伴可以<a href="/2023/04/mnnhgbp1.html">点击这里</a>返回上文查看。</p>
-]]></content>
-      <categories>
-        <category>日语</category>
-      </categories>
-      <tags>
-        <tag>日语</tag>
       </tags>
   </entry>
   <entry>
@@ -233,55 +200,14 @@
       </tags>
   </entry>
   <entry>
-    <title>【每日语法】「既然~就~」的表达方法</title>
-    <url>/2023/04/mnnhgbp3.html</url>
-    <content><![CDATA[<blockquote>
-<p>注：本文部分解释来源于网站 <a href="https://chiyo-sampo.net/grammar-jlptn2-karaniha-ijouha-ueha/">https://chiyo-sampo.net/grammar-jlptn2-karaniha-ijouha-ueha/</a></p>
+    <title>【每日语法】~さえ~ば</title>
+    <url>/2023/05/mnnhgbp5.html</url>
+    <content><![CDATA[<p>接续：</p>
+<blockquote>
+<p>N + さえ + 假定形<br>A（く形）&#x2F; NA（て形）+ さえあれば<br>V（ます形）&#x2F; サ变动词词干 + さえすれば</p>
 </blockquote>
-<p>「からには」「以上は」「上は」都可以译为「只要…就…」，当然他们有部分的不同，根据上面网站的解释：</p>
-<ul>
-<li>「からには」是「からは」的更加强调、强硬的表达方式</li>
-<li>「以上は」也可以写作「以上」，读作「いじょう」</li>
-<li>「上は」有一种「除此之外，别无他法」的意味，在表示严峻的状况的时候使用</li>
-<li>这三个词后面都常常接「つもりだ（打算）」「べきだ（一种责任和义务，应该…）」「なければならない（客观上的必须做某事）」「てはいけない（禁止、不许）」「はずだ（推测，按说应该…）」「に違いない（充满自信的推测，肯定…）」等表达方式。</li>
-</ul>
-<p>接续方式：</p>
-<table>
-<thead>
-<tr>
-<th align="center">接续助词</th>
-<th align="center">名词</th>
-<th align="center">形容词</th>
-<th align="center">形容动词</th>
-<th align="center">动词</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center">からには</td>
-<td align="center">N + である</td>
-<td align="center">A简体</td>
-<td align="center">NA（词干）+ である</td>
-<td align="center">V简体</td>
-</tr>
-<tr>
-<td align="center">上は</td>
-<td align="center">N + の</td>
-<td align="center">\</td>
-<td align="center">\</td>
-<td align="center">V（た形）</td>
-</tr>
-<tr>
-<td align="center">以上（は）</td>
-<td align="center">N + である</td>
-<td align="center">\</td>
-<td align="center">NA（词干）+ である</td>
-<td align="center">V简体</td>
-</tr>
-</tbody></table>
-<p>例句：</p>
-<p>(1). 約束したからには、ちゃんと守るべきだ。<br>译：既然约好了，就应该好好遵守约定。</p>
-<p>(2). 秘密を知られた上は、生かしてはおけない。<br>译：既然被你知道了这个秘密，就不能让你活下去了。</p>
-<p>(3). 会社を辞めると決めた以上、早く上司にその旨を伝えなければならない。<br>译：既然决定好向公司辞职了，就必须早点告诉上司这件事。</p>
+<p>意为「只要···就···」。关于假定形的变形方法，请参考<a href="/2023/04/mnnhgbp1.html">『【每日语法】~ば~ほど』</a>的文末表格。</p>
+<p>例句：やすくさえあれば、買いましょう。<br>译：只要便宜的话就买吧！</p>
 ]]></content>
       <categories>
         <category>日语</category>
@@ -291,53 +217,13 @@
       </tags>
   </entry>
   <entry>
-    <title>【每日语法】てある及相似语法的对比</title>
-    <url>/2023/05/mnnhgbp4.html</url>
-    <content><![CDATA[<h2 id="意思一"><a href="#意思一" class="headerlink" title="意思一"></a>意思一</h2><blockquote>
-<p>接续：V（他动词，て形）+ ある</p>
-</blockquote>
-<p>表示动作结果的存续，该语法只涉及动作的对象，不涉及动作的主体。该句型有着「某个人做了某个动作，导致了这样的状态，但是这个人是谁并不重要」这样的意思。简单点说就是<strong>他动词的状态的持续</strong>。需要注意的是动词虽然为他动词，但动作的对象却要用<strong>「が」</strong>来表示。</p>
-<p>同样表示状态的持续的语法还有「ている」，那么他俩有什么区别呢？</p>
-<p>在对比前我们先回顾一下「ている」这个语法</p>
-<ul>
-<li>当动词为<strong>他动词</strong>时，表示动作的正在进行，意为「正在…」，比如「手紙を書いている」意为「我正在写信」</li>
-<li>当动词为<strong>自动词</strong>时，表示状态的持续，例如「鈴木さんは今出かけていますが…」，意为「铃木现在出去了…」</li>
-<li>表示动作的反复，常用于习惯或自然现象等</li>
-<li>表示性质或状态，比如「この機械の性能が<ruby>優<rt>すぐ</rt>れている</ruby>」意为「这台机器性能好」</li>
-</ul>
-<p>可以看到，表示状态的持续时，「ている」的前面的动词为自动词，而「てある」则为他动词。并且「ている」只是表示状态的持续，并不包含状态产生的原因，这个状态可以是人为造成的，也可以是自然而然发生的；但「てある」的状态一定是<strong>人为</strong>的，即一定是某个人去做了某个动作才产生了这样的状态。</p>
-<p>补充说明，当「てある」前面的动词为<strong>被动态</strong>时，能够更让人能够感受到这个做动作的人的存在。</p>
-<h2 id="意思二"><a href="#意思二" class="headerlink" title="意思二"></a>意思二</h2><blockquote>
-<p>接续：V（て形）+ ある</p>
-</blockquote>
-<p>这里表示<strong>已经提前做好某事的状态</strong>，自、他动词均可使用，意为「已经提前…」。</p>
-<p>例句：論文を書くために、資料をたくさん集めてある。<br>译：为了写论文，已经提前收集好了许多资料。</p>
-<p>同样，表示提前做好某事的意思的语法还有「ておく」，那么这两个语法之间有什么区别呢？</p>
-<p>首先回忆一下「ておく」这个语法：</p>
-<ul>
-<li>表示提前做好某事，以备不时之需</li>
-<li>表示保持状态不变，听之任之</li>
-<li>表示放任不管</li>
-</ul>
-<p>注意，「ておく」的「提前做好某事」具体点说是「<strong>将要</strong>提前做好某事」，实际现在还没有做，强调的是「提前做好」这个<strong>动作性</strong>；「てある」则表示的是「<strong>已经</strong>提前做好某事」，强调的是「提前做好」这个动作完成后的<strong>状态的持续</strong>。</p>
-<p>对比例句：</p>
-<ul>
-<li>この提案を一応考えてある。（已经事先考虑过这个提案。）</li>
-<li>この提案を一応考えておく。（将会事先考虑一下这个提案。）</li>
-</ul>
-<p>当「ておく」变为过去时，与「てある」的意思就更为相似，更加难以区分，比如下面两句：</p>
-<ul>
-<li>ビールをたくさん買っておいたが、人が多いので、もうなくなってしまった。（○）</li>
-<li>ビールをたくさん買ってあるが、人が多いので、もうなくなってしまった。（×）</li>
-</ul>
-<p>因为「買っておいた」只表示「提前买好」这一过去的动作，而「買ってある」则表示「提前买好」这一状态且该状态持续到了说话时，按此逻辑，如果买好了许多酒的状态持续到了说话时，后文却又说因为人多已经没酒了，就出现了前后意思的矛盾，因此这里只能用「買っておいた」。</p>
-<h2 id="意思三"><a href="#意思三" class="headerlink" title="意思三"></a>意思三</h2><blockquote>
-<p>接续：V（て形）+ ある</p>
-</blockquote>
-<p>表示<strong>放任或允许的状态</strong>。常常和自动词<strong>使役态</strong>搭配使用。</p>
-<p>例句：娘を日本語学校に通わせてある。<br>译：让女儿去日语学校上学。</p>
-<p>相似的还有「ておく」，其也有放任不管，听之任之的意思。</p>
-<p><strong>注：本文部分解释与例句来源于『日语语法教程——讲义与练习』一书，如造成侵权，请联系删除。</strong></p>
+    <title>【每日语法】~も~ば~も~</title>
+    <url>/2023/04/mnnhgbp2.html</url>
+    <content><![CDATA[<p><strong>语法：N + も + V（假定形）+ N + も + V（原形）</strong></p>
+<p>意为「既…又…」。其中的动词为同一动词。</p>
+<p>例句：コンビニにたくさんの商品がある。食べ物もあれば、生活に欠かせないものもある。</p>
+<p>译：便利店中有很多商品，既有食品，也有生活中不可或缺的物品。</p>
+<p>与之相似的语法还有「かと思えば」，接续方式为前接<strong>动词原形</strong>。关于假定形的变形方法，在上一篇中已经提过，这里就不再赘述，有需要了解的小伙伴可以<a href="/2023/04/mnnhgbp1.html">点击这里</a>返回上文查看。</p>
 ]]></content>
       <categories>
         <category>日语</category>
@@ -506,6 +392,64 @@
       </tags>
   </entry>
   <entry>
+    <title>【每日语法】「既然~就~」的表达方法</title>
+    <url>/2023/04/mnnhgbp3.html</url>
+    <content><![CDATA[<blockquote>
+<p>注：本文部分解释来源于网站 <a href="https://chiyo-sampo.net/grammar-jlptn2-karaniha-ijouha-ueha/">https://chiyo-sampo.net/grammar-jlptn2-karaniha-ijouha-ueha/</a></p>
+</blockquote>
+<p>「からには」「以上は」「上は」都可以译为「只要…就…」，当然他们有部分的不同，根据上面网站的解释：</p>
+<ul>
+<li>「からには」是「からは」的更加强调、强硬的表达方式</li>
+<li>「以上は」也可以写作「以上」，读作「いじょう」</li>
+<li>「上は」有一种「除此之外，别无他法」的意味，在表示严峻的状况的时候使用</li>
+<li>这三个词后面都常常接「つもりだ（打算）」「べきだ（一种责任和义务，应该…）」「なければならない（客观上的必须做某事）」「てはいけない（禁止、不许）」「はずだ（推测，按说应该…）」「に違いない（充满自信的推测，肯定…）」等表达方式。</li>
+</ul>
+<p>接续方式：</p>
+<table>
+<thead>
+<tr>
+<th align="center">接续助词</th>
+<th align="center">名词</th>
+<th align="center">形容词</th>
+<th align="center">形容动词</th>
+<th align="center">动词</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">からには</td>
+<td align="center">N + である</td>
+<td align="center">A简体</td>
+<td align="center">NA（词干）+ である</td>
+<td align="center">V简体</td>
+</tr>
+<tr>
+<td align="center">上は</td>
+<td align="center">N + の</td>
+<td align="center">\</td>
+<td align="center">\</td>
+<td align="center">V（た形）</td>
+</tr>
+<tr>
+<td align="center">以上（は）</td>
+<td align="center">N + である</td>
+<td align="center">\</td>
+<td align="center">NA（词干）+ である</td>
+<td align="center">V简体</td>
+</tr>
+</tbody></table>
+<p>例句：</p>
+<p>(1). 約束したからには、ちゃんと守るべきだ。<br>译：既然约好了，就应该好好遵守约定。</p>
+<p>(2). 秘密を知られた上は、生かしてはおけない。<br>译：既然被你知道了这个秘密，就不能让你活下去了。</p>
+<p>(3). 会社を辞めると決めた以上、早く上司にその旨を伝えなければならない。<br>译：既然决定好向公司辞职了，就必须早点告诉上司这件事。</p>
+]]></content>
+      <categories>
+        <category>日语</category>
+      </categories>
+      <tags>
+        <tag>日语</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>不断变强的万达</title>
     <url>/2023/08/genshinwandatsuyoi.html</url>
     <content><![CDATA[<p>去年垫池子抽到了达达鸭，今年 1 月份开始练万达国际，入坑一年以来首次打通了深渊（<a href="/2023/01/genshinshenyuanfirst.html">见『纪念第一次打通深渊』</a>），当时的面板没有截图。</p>
@@ -548,6 +492,23 @@
       </tags>
   </entry>
   <entry>
+    <title>叕出神子啦加深渊终于凹满了</title>
+    <url>/2023/06/genshinkamikoaru.html</url>
+    <content><![CDATA[<p>先说说深渊，博主在今年 2 月之前是无论如何都打不过深渊的，2 月后开始练万达国际，学会双扩后，队伍养得差不多后就在 2 月 18 日第一次凹过 12 层，见<a href="/2023/02/genshinshenyuanmanxing.html">『打通深渊后半个月，我又第一次满星深渊！』</a>。此后除了第一期沙虫因为「草行九」练度不够，没有满星之外，每一期都能做到满星了！不过近来几期深渊越来越难，大量的「挤模型」「多动症」「厚盾」「拖时间」的机制怪出现，属实是恶心人。之前圣骸兽博主一直是用「草行九瑶」过的，不过这次由于 12-3 下半是「深罪浸礼者」，队伍中必须有「火 草&#x2F;冰 水」，「草行九」自然就成了选择，再加上了前几天出的宵宫用以破冰盾。问题就是上半该用什么队伍，一开始认为万达打圣骸兽也许很麻烦，就想试着用雷国，可惜博主没怎么练雷神，故试了多种配队后还是决定使用万达。最后是 2 分钟打完了四只圣骸兽，用了剩下 1 分钟过了深罪浸礼者（很险···6分59秒打完的，系统判定为 3 星）。</p>
+<p>前前后后凹了有 100+ 次，不过由于前面几十次是在尝试配队，有了第一期经验后，16 号的深渊应该也能轻松不少。</p>
+<p><img data-src="https://img.fufu.ink/ZDM6sI.webp" alt="下次还填非常简单！"></p>
+<p>然后是垫池子垫出了神子，抽前算的垫了 20 抽了，本来不抱什么希望地单抽了一下，想着不可能这么早出的吧，结果竟然金了，还没歪！</p>
+<p><img data-src="https://img.fufu.ink/4o04wz.webp" alt="21 抽拿下！"></p>
+]]></content>
+      <categories>
+        <category>游戏</category>
+      </categories>
+      <tags>
+        <tag>原神</tag>
+        <tag>游戏</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>什么！买基岩版 Minecraft 送 Java 版？白嫖党的胜利！</title>
     <url>/2022/06/mcokuru.html</url>
     <content><![CDATA[<p>原文链接：<a href="https://help.minecraft.net/hc/en-us/articles/4607523809933-Buy-Minecraft-PC-Bundle-Get-Both-Games-">https://help.minecraft.net/hc/en-us/articles/4607523809933-Buy-Minecraft-PC-Bundle-Get-Both-Games-</a></p>
@@ -561,6 +522,77 @@
       <tags>
         <tag>Minecraft</tag>
         <tag>资讯</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>【每日语法】てある及相似语法的对比</title>
+    <url>/2023/05/mnnhgbp4.html</url>
+    <content><![CDATA[<h2 id="意思一"><a href="#意思一" class="headerlink" title="意思一"></a>意思一</h2><blockquote>
+<p>接续：V（他动词，て形）+ ある</p>
+</blockquote>
+<p>表示动作结果的存续，该语法只涉及动作的对象，不涉及动作的主体。该句型有着「某个人做了某个动作，导致了这样的状态，但是这个人是谁并不重要」这样的意思。简单点说就是<strong>他动词的状态的持续</strong>。需要注意的是动词虽然为他动词，但动作的对象却要用<strong>「が」</strong>来表示。</p>
+<p>同样表示状态的持续的语法还有「ている」，那么他俩有什么区别呢？</p>
+<p>在对比前我们先回顾一下「ている」这个语法</p>
+<ul>
+<li>当动词为<strong>他动词</strong>时，表示动作的正在进行，意为「正在…」，比如「手紙を書いている」意为「我正在写信」</li>
+<li>当动词为<strong>自动词</strong>时，表示状态的持续，例如「鈴木さんは今出かけていますが…」，意为「铃木现在出去了…」</li>
+<li>表示动作的反复，常用于习惯或自然现象等</li>
+<li>表示性质或状态，比如「この機械の性能が<ruby>優<rt>すぐ</rt>れている</ruby>」意为「这台机器性能好」</li>
+</ul>
+<p>可以看到，表示状态的持续时，「ている」的前面的动词为自动词，而「てある」则为他动词。并且「ている」只是表示状态的持续，并不包含状态产生的原因，这个状态可以是人为造成的，也可以是自然而然发生的；但「てある」的状态一定是<strong>人为</strong>的，即一定是某个人去做了某个动作才产生了这样的状态。</p>
+<p>补充说明，当「てある」前面的动词为<strong>被动态</strong>时，能够更让人能够感受到这个做动作的人的存在。</p>
+<h2 id="意思二"><a href="#意思二" class="headerlink" title="意思二"></a>意思二</h2><blockquote>
+<p>接续：V（て形）+ ある</p>
+</blockquote>
+<p>这里表示<strong>已经提前做好某事的状态</strong>，自、他动词均可使用，意为「已经提前…」。</p>
+<p>例句：論文を書くために、資料をたくさん集めてある。<br>译：为了写论文，已经提前收集好了许多资料。</p>
+<p>同样，表示提前做好某事的意思的语法还有「ておく」，那么这两个语法之间有什么区别呢？</p>
+<p>首先回忆一下「ておく」这个语法：</p>
+<ul>
+<li>表示提前做好某事，以备不时之需</li>
+<li>表示保持状态不变，听之任之</li>
+<li>表示放任不管</li>
+</ul>
+<p>注意，「ておく」的「提前做好某事」具体点说是「<strong>将要</strong>提前做好某事」，实际现在还没有做，强调的是「提前做好」这个<strong>动作性</strong>；「てある」则表示的是「<strong>已经</strong>提前做好某事」，强调的是「提前做好」这个动作完成后的<strong>状态的持续</strong>。</p>
+<p>对比例句：</p>
+<ul>
+<li>この提案を一応考えてある。（已经事先考虑过这个提案。）</li>
+<li>この提案を一応考えておく。（将会事先考虑一下这个提案。）</li>
+</ul>
+<p>当「ておく」变为过去时，与「てある」的意思就更为相似，更加难以区分，比如下面两句：</p>
+<ul>
+<li>ビールをたくさん買っておいたが、人が多いので、もうなくなってしまった。（○）</li>
+<li>ビールをたくさん買ってあるが、人が多いので、もうなくなってしまった。（×）</li>
+</ul>
+<p>因为「買っておいた」只表示「提前买好」这一过去的动作，而「買ってある」则表示「提前买好」这一状态且该状态持续到了说话时，按此逻辑，如果买好了许多酒的状态持续到了说话时，后文却又说因为人多已经没酒了，就出现了前后意思的矛盾，因此这里只能用「買っておいた」。</p>
+<h2 id="意思三"><a href="#意思三" class="headerlink" title="意思三"></a>意思三</h2><blockquote>
+<p>接续：V（て形）+ ある</p>
+</blockquote>
+<p>表示<strong>放任或允许的状态</strong>。常常和自动词<strong>使役态</strong>搭配使用。</p>
+<p>例句：娘を日本語学校に通わせてある。<br>译：让女儿去日语学校上学。</p>
+<p>相似的还有「ておく」，其也有放任不管，听之任之的意思。</p>
+<p><strong>注：本文部分解释与例句来源于『日语语法教程——讲义与练习』一书，如造成侵权，请联系删除。</strong></p>
+]]></content>
+      <categories>
+        <category>日语</category>
+      </categories>
+      <tags>
+        <tag>日语</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>四月一日君寻生日快乐</title>
+    <url>/2023/04/watanukitanjyoubi.html</url>
+    <content><![CDATA[<p>4 月 1 日，在很多人看来是愚人节，在我看来，这也是作品『<a href="https://www.bilibili.com/bangumi/play/ss1239?spm_id_from=333.337.0.0">xxxholic</a>』中「<ruby>四月一日君尋<rt>わたぬききみひろ</rt></ruby>」的生日。</p>
+<p>clamp 这个名字可能有人没有听过，不过大多数人一定听说过她的一部作品『魔卡少女樱』。clamp 的作品都有一个相同的、巨大的世界观，各个作品之间也有着千丝万缕的联系。『xxxholic』是发生在与魔卡的世界平行的一个世界中的故事，主角四月一日君尋从小由于体制原因容易吸引鬼怪，在一次「偶然」中进入了被称为「异世界的魔女」的侑子小姐的「能够实现愿望的店」。在经历了许多事情后，四月一日在侑子消失后继续留在店中等待着她的「归来」。——这么解释没看过的小伙伴肯定是听不懂的，不过这个也不是一两句话能够讲清的，比四月一日的产生原因，侑子又是谁，又为什么会消失等，都得小伙伴自己去看一看才能够明白，而且只看『xxxholic』还不足够，还得看了与之相关的作品『<a href="https://www.bilibili.com/bangumi/play/ss1463?spm_id_from=333.337.0.0">翼·年代记</a>』等才能搞清了。</p>
+<p>扯远了，总之，今天是可爱的四月一日的生日，是写作「4 月 1 日」的「わたぬき」！虽然咱不喜欢安利自己喜欢的作品给别人，因为口味不一样，自己觉得很好的在别人看来可能很一般，不过，这部作品我是十分推荐去看的，不过，请不要吐槽画风，因为 clamp 的作品的风格是这样的，如果你坚持看下去，你会发现它的剧情真的很精彩！</p>
+]]></content>
+      <categories>
+        <category>日常</category>
+      </categories>
+      <tags>
+        <tag>节日</tag>
+        <tag>二次元</tag>
       </tags>
   </entry>
   <entry>
@@ -580,13 +612,12 @@
       </tags>
   </entry>
   <entry>
-    <title>叕出神子啦加深渊终于凹满了</title>
-    <url>/2023/06/genshinkamikoaru.html</url>
-    <content><![CDATA[<p>先说说深渊，博主在今年 2 月之前是无论如何都打不过深渊的，2 月后开始练万达国际，学会双扩后，队伍养得差不多后就在 2 月 18 日第一次凹过 12 层，见<a href="/2023/02/genshinshenyuanmanxing.html">『打通深渊后半个月，我又第一次满星深渊！』</a>。此后除了第一期沙虫因为「草行九」练度不够，没有满星之外，每一期都能做到满星了！不过近来几期深渊越来越难，大量的「挤模型」「多动症」「厚盾」「拖时间」的机制怪出现，属实是恶心人。之前圣骸兽博主一直是用「草行九瑶」过的，不过这次由于 12-3 下半是「深罪浸礼者」，队伍中必须有「火 草&#x2F;冰 水」，「草行九」自然就成了选择，再加上了前几天出的宵宫用以破冰盾。问题就是上半该用什么队伍，一开始认为万达打圣骸兽也许很麻烦，就想试着用雷国，可惜博主没怎么练雷神，故试了多种配队后还是决定使用万达。最后是 2 分钟打完了四只圣骸兽，用了剩下 1 分钟过了深罪浸礼者（很险···6分59秒打完的，系统判定为 3 星）。</p>
-<p>前前后后凹了有 100+ 次，不过由于前面几十次是在尝试配队，有了第一期经验后，16 号的深渊应该也能轻松不少。</p>
-<p><img data-src="https://img.fufu.ink/ZDM6sI.webp" alt="下次还填非常简单！"></p>
-<p>然后是垫池子垫出了神子，抽前算的垫了 20 抽了，本来不抱什么希望地单抽了一下，想着不可能这么早出的吧，结果竟然金了，还没歪！</p>
-<p><img data-src="https://img.fufu.ink/4o04wz.webp" alt="21 抽拿下！"></p>
+    <title>小号双黄了！</title>
+    <url>/2023/05/gsxhcjl.html</url>
+    <content><![CDATA[<p>这件事要从去年 11 月草神池刚出的时候说起，之前一直玩的号只抽中了草神（大保底），武器却歪了「飞雷」，于是创了个小号。想着小号前期资源多，肝一肝能在版本结束前拿个 0+1，结果后面发生了一系列事情，最终导致许久没登小号。今年2、3月份重新上了下号，把剧情推到璃月了，攒出了 74 抽，结果歪了莫娜（血的教训！一定不要边肝边抽，必歪！！！），当即下号。</p>
+<p>今天闲来无事，想起了这个号，上号后拿着版本送的原石单抽了一发，本来以为出紫了，结果出金了！于是甘雨拿下~</p>
+<p><img data-src="https://img.fufu.ink/dXzfGb.png" alt="双黄"></p>
+<p>这又让我燃起了对小号培养的热情，本来都打算让这个号废了，毕竟第一个金就歪了，连新手保护期都没了，结果双黄来了，那它就还有被培养的理由！</p>
 ]]></content>
       <categories>
         <category>游戏</category>
@@ -597,46 +628,13 @@
       </tags>
   </entry>
   <entry>
-    <title>四月一日君寻生日快乐</title>
-    <url>/2023/04/watanukitanjyoubi.html</url>
-    <content><![CDATA[<p>4 月 1 日，在很多人看来是愚人节，在我看来，这也是作品『<a href="https://www.bilibili.com/bangumi/play/ss1239?spm_id_from=333.337.0.0">xxxholic</a>』中「<ruby>四月一日君尋<rt>わたぬききみひろ</rt></ruby>」的生日。</p>
-<p>clamp 这个名字可能有人没有听过，不过大多数人一定听说过她的一部作品『魔卡少女樱』。clamp 的作品都有一个相同的、巨大的世界观，各个作品之间也有着千丝万缕的联系。『xxxholic』是发生在与魔卡的世界平行的一个世界中的故事，主角四月一日君尋从小由于体制原因容易吸引鬼怪，在一次「偶然」中进入了被称为「异世界的魔女」的侑子小姐的「能够实现愿望的店」。在经历了许多事情后，四月一日在侑子消失后继续留在店中等待着她的「归来」。——这么解释没看过的小伙伴肯定是听不懂的，不过这个也不是一两句话能够讲清的，比四月一日的产生原因，侑子又是谁，又为什么会消失等，都得小伙伴自己去看一看才能够明白，而且只看『xxxholic』还不足够，还得看了与之相关的作品『<a href="https://www.bilibili.com/bangumi/play/ss1463?spm_id_from=333.337.0.0">翼·年代记</a>』等才能搞清了。</p>
-<p>扯远了，总之，今天是可爱的四月一日的生日，是写作「4 月 1 日」的「わたぬき」！虽然咱不喜欢安利自己喜欢的作品给别人，因为口味不一样，自己觉得很好的在别人看来可能很一般，不过，这部作品我是十分推荐去看的，不过，请不要吐槽画风，因为 clamp 的作品的风格是这样的，如果你坚持看下去，你会发现它的剧情真的很精彩！</p>
-]]></content>
-      <categories>
-        <category>日常</category>
-      </categories>
-      <tags>
-        <tag>节日</tag>
-        <tag>二次元</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>在追求「快」的时代，我们该何去何从</title>
-    <url>/2023/05/fastjidaidedousurebaii.html</url>
-    <content><![CDATA[<p>不知从什么时候开始，「快」这个概念频繁地出现在我的视野中。周围的人似乎都在不断地追求着它。<span id="more"></span></p>
-<p>最典型的例子就是各大视频软件开始推出「短视频」服务，大家越来越适应不了慢节奏的视频。曾几何时，看见过一个 b 站的评论，大概意思是只有缩短视频时长，才有更大的机会上首页推荐，上首页的都是五分钟内的视频，而那些十多分钟甚至几十分钟的视频却被埋没了，其中不乏许多优质的内容。在我所见到的番剧这一边，许多番剧因为前期铺垫过长而被诟病，以动画『命运石之门』举例，提到这部作品，熟悉的人都知道是一部神作，许多人却因为前部分「剧情推进过慢」「日常太多」而放弃继续追番。再比如『原神』这款游戏，无聊之际点开社区看看，却发现充斥着大量的「剧情又臭又长」「剧情能不能加个跳过按钮」诸如此类的言论。但剧情不正是这款游戏吸引人的一部分吗，我在内心如此发问道。</p>
-<p>以上是从我的视角看见的「快」，但这个信息时代，在更多的我看不见的地方仍然在追求着「快」。</p>
-<p>这个时代很浮躁——这是我的结论。</p>
-<p>我曾向自己发问，自己有多久没有静下心来好好读一本书了，有多久没有钻在一个问题上好好研究过了。尽管我自己是反对这种盲目追求「快节奏」的，但耐心好像也在慢慢地变少，自己也在慢慢的融入这种快节奏的生活，大概也有相当一部分的人也是如此吧，尽管也想慢下来，却被身后的狂潮向前推动，身不由己地变「快」了。</p>
-<p>在这种「快」的狂潮面前，我无能为力，却也不想被其推动，就像飘在海洋上的小船在逆着海风前行一般（也许这个比喻并不恰当）。</p>
-<p>写到这里写不下去了，就这么收尾了罢。借用一句『原神』中的话——「旅行者，当你重新踏上旅途之后，一定要记住旅途本身的意义」。愿你我在这个快节奏的时代能够找到一件能够安下心来做的事情，愿你我不会在「快」的狂潮中迷失了方向，随波逐流。</p>
-]]></content>
-      <categories>
-        <category>日常</category>
-      </categories>
-      <tags>
-        <tag>随笔</tag>
-        <tag>吐槽</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>小号双黄了！</title>
-    <url>/2023/05/gsxhcjl.html</url>
-    <content><![CDATA[<p>这件事要从去年 11 月草神池刚出的时候说起，之前一直玩的号只抽中了草神（大保底），武器却歪了「飞雷」，于是创了个小号。想着小号前期资源多，肝一肝能在版本结束前拿个 0+1，结果后面发生了一系列事情，最终导致许久没登小号。今年2、3月份重新上了下号，把剧情推到璃月了，攒出了 74 抽，结果歪了莫娜（血的教训！一定不要边肝边抽，必歪！！！），当即下号。</p>
-<p>今天闲来无事，想起了这个号，上号后拿着版本送的原石单抽了一发，本来以为出紫了，结果出金了！于是甘雨拿下~</p>
-<p><img data-src="https://img.fufu.ink/dXzfGb.png" alt="双黄"></p>
-<p>这又让我燃起了对小号培养的热情，本来都打算让这个号废了，毕竟第一个金就歪了，连新手保护期都没了，结果双黄来了，那它就还有被培养的理由！</p>
+    <title>小号常驻又出小提了</title>
+    <url>/2023/05/genshinchangzhuxiaoti.html</url>
+    <content><![CDATA[<p>前几天 up 池双黄了，出了莫娜和甘雨，今天又出小提了。</p>
+<p>之前玩大号的时候不怎么玩弓箭手，虽然公子武器是弓箭啦，毕竟战斗时使用的都是近战模式。再加上手柄不好进行瞄准操作…</p>
+<p>不过小号出了甘雨后，才发现玩狙击手是真的舒服，即使只靠平 a，也能打出很高的伤害（话说弓箭手的普攻倍率就是所有角色中最高的）。这小号比大号开荒时要舒服很多，主要是因为大号刚入坑时想在常驻池捞 77，把所有原石都用来抽常驻了，结果 120 发都没出 77，倒是把香班给抽得快满命了。</p>
+<p>接下来就要围绕着甘雨和小提两个主 c 来配队了。</p>
+<p><img data-src="https://img.fufu.ink/ayuNM2.webp" alt="常驻池43抽·小提"></p>
 ]]></content>
       <categories>
         <category>游戏</category>
@@ -708,32 +706,40 @@
       </tags>
   </entry>
   <entry>
-    <title>打通深渊后半个月，我又第一次满星深渊！</title>
-    <url>/2023/02/genshinshenyuanmanxing.html</url>
-    <content><![CDATA[<p>上个月打通了深渊，但因为没练岩队，过不去黄金龙兽，然后万达的练度也拉。最近一直在研究万达的圣遗物搭配，看了把子哥的万达教学，把几个之前刷草神圣遗物拉起来的被我当作狗粮的圣遗物丢给公子，之前公子是 30&#x2F;160 的双爆，现在变成 78&#x2F;140 了，结果小助手一查，初步毕业了？然后去打深渊，把雷神之前的垃圾双爆圣遗物换成了精通狗粮，上半组了一支「瑶秋妲雷」，大招放完草神站场，没想到效果还挺好，相比于原来的「雷妲七主」只打超激化，现在多了超绽放的伤害，种门！（手不自觉地合上了~）然后就满星了！我都不知道为什么，猜测是之前 30 暴击的公子次次不暴击导致的……</p>
-<blockquote>
-<p>「说实话，当公子拥有 100% 暴击率，爆伤多少已经无所谓了」—— b站@这把我们就遇到高手</p>
-</blockquote>
-<p>315 天的萌新，xp 党，终于也满星深渊了~</p>
-<p><img data-src="https://img.fufu.ink/dz3OYE.webp" alt="第一次深渊满星"></p>
-<p>接下来准备攒着原石，等草神复刻，补 2 命，虽然大部分观点不认可非 6 命草神站场输出，但是我不管，我就希望她能够站场！继续坐牢绝缘本，给香菱刷圣遗物，狗粮就用来合成水套，毕竟很多公子的水套都是合成台毕业的。咱们也要打造一支「哪里亮了点哪里」也能够打通深渊的万达！</p>
+    <title>在追求「快」的时代，我们该何去何从</title>
+    <url>/2023/05/fastjidaidedousurebaii.html</url>
+    <content><![CDATA[<p>不知从什么时候开始，「快」这个概念频繁地出现在我的视野中。周围的人似乎都在不断地追求着它。<span id="more"></span></p>
+<p>最典型的例子就是各大视频软件开始推出「短视频」服务，大家越来越适应不了慢节奏的视频。曾几何时，看见过一个 b 站的评论，大概意思是只有缩短视频时长，才有更大的机会上首页推荐，上首页的都是五分钟内的视频，而那些十多分钟甚至几十分钟的视频却被埋没了，其中不乏许多优质的内容。在我所见到的番剧这一边，许多番剧因为前期铺垫过长而被诟病，以动画『命运石之门』举例，提到这部作品，熟悉的人都知道是一部神作，许多人却因为前部分「剧情推进过慢」「日常太多」而放弃继续追番。再比如『原神』这款游戏，无聊之际点开社区看看，却发现充斥着大量的「剧情又臭又长」「剧情能不能加个跳过按钮」诸如此类的言论。但剧情不正是这款游戏吸引人的一部分吗，我在内心如此发问道。</p>
+<p>以上是从我的视角看见的「快」，但这个信息时代，在更多的我看不见的地方仍然在追求着「快」。</p>
+<p>这个时代很浮躁——这是我的结论。</p>
+<p>我曾向自己发问，自己有多久没有静下心来好好读一本书了，有多久没有钻在一个问题上好好研究过了。尽管我自己是反对这种盲目追求「快节奏」的，但耐心好像也在慢慢地变少，自己也在慢慢的融入这种快节奏的生活，大概也有相当一部分的人也是如此吧，尽管也想慢下来，却被身后的狂潮向前推动，身不由己地变「快」了。</p>
+<p>在这种「快」的狂潮面前，我无能为力，却也不想被其推动，就像飘在海洋上的小船在逆着海风前行一般（也许这个比喻并不恰当）。</p>
+<p>写到这里写不下去了，就这么收尾了罢。借用一句『原神』中的话——「旅行者，当你重新踏上旅途之后，一定要记住旅途本身的意义」。愿你我在这个快节奏的时代能够找到一件能够安下心来做的事情，愿你我不会在「快」的狂潮中迷失了方向，随波逐流。</p>
 ]]></content>
       <categories>
-        <category>游戏</category>
+        <category>日常</category>
       </categories>
       <tags>
-        <tag>原神</tag>
-        <tag>游戏</tag>
+        <tag>随笔</tag>
+        <tag>吐槽</tag>
       </tags>
   </entry>
   <entry>
-    <title>小号常驻又出小提了</title>
-    <url>/2023/05/genshinchangzhuxiaoti.html</url>
-    <content><![CDATA[<p>前几天 up 池双黄了，出了莫娜和甘雨，今天又出小提了。</p>
-<p>之前玩大号的时候不怎么玩弓箭手，虽然公子武器是弓箭啦，毕竟战斗时使用的都是近战模式。再加上手柄不好进行瞄准操作…</p>
-<p>不过小号出了甘雨后，才发现玩狙击手是真的舒服，即使只靠平 a，也能打出很高的伤害（话说弓箭手的普攻倍率就是所有角色中最高的）。这小号比大号开荒时要舒服很多，主要是因为大号刚入坑时想在常驻池捞 77，把所有原石都用来抽常驻了，结果 120 发都没出 77，倒是把香班给抽得快满命了。</p>
-<p>接下来就要围绕着甘雨和小提两个主 c 来配队了。</p>
-<p><img data-src="https://img.fufu.ink/ayuNM2.webp" alt="常驻池43抽·小提"></p>
+    <title>小草神小毕业纪念</title>
+    <url>/2022/11/genshicaoshen.html</url>
+    <content><![CDATA[<p>刷了快 3 周，终于小毕业了。精通没有凑到 1000，不过 900 多也够用了，因为不出暴击头和草伤杯，只能用爆伤头代替 ~<span id="more"></span></p>
+<p><img data-src="https://img.fufu.ink/suLB7X.webp" alt="理之冠"></p>
+<p><img data-src="https://img.fufu.ink/eaOsZU.webp" alt="天赋"></p>
+<p><img data-src="https://img.fufu.ink/icLWGs.webp" alt="时之沙"></p>
+<p><img data-src="https://img.fufu.ink/0Vk67h.webp" alt="空之杯"></p>
+<p><img data-src="https://img.fufu.ink/qF8I9w.webp" alt="死之羽"></p>
+<p><img data-src="https://img.fufu.ink/DWqEbR.webp" alt="生之花"></p>
+<p><img data-src="https://img.fufu.ink/6h6hNZ.webp" alt="练度"></p>
+<p><img data-src="https://img.fufu.ink/c4yy64.webp" alt="圣遗物"></p>
+<p><img data-src="https://img.fufu.ink/HqcUjN.webp" alt="伤害"></p>
+<p>还好，零命打出这样的伤害，我很满意了，毕竟非强度党 ~</p>
+<p>等剩下两周把异梦溶媒给刷出来或者散兵池里多出几个悬丝，把 e 和 q 都升到 9 级，伤害还能上一层，差不多就能毕业了……</p>
+<p>这期没抽神子，抽的武器池，56 发了还没有出，不过大概率还是能够拿下神子专武给纳西妲用用的（绝对不是因为纳西妲专武池歪飞雷了……）</p>
 ]]></content>
       <categories>
         <category>游戏</category>
@@ -842,21 +848,41 @@
       </tags>
   </entry>
   <entry>
-    <title>小草神小毕业纪念</title>
-    <url>/2022/11/genshicaoshen.html</url>
-    <content><![CDATA[<p>刷了快 3 周，终于小毕业了。精通没有凑到 1000，不过 900 多也够用了，因为不出暴击头和草伤杯，只能用爆伤头代替 ~<span id="more"></span></p>
-<p><img data-src="https://img.fufu.ink/suLB7X.webp" alt="理之冠"></p>
-<p><img data-src="https://img.fufu.ink/eaOsZU.webp" alt="天赋"></p>
-<p><img data-src="https://img.fufu.ink/icLWGs.webp" alt="时之沙"></p>
-<p><img data-src="https://img.fufu.ink/0Vk67h.webp" alt="空之杯"></p>
-<p><img data-src="https://img.fufu.ink/qF8I9w.webp" alt="死之羽"></p>
-<p><img data-src="https://img.fufu.ink/DWqEbR.webp" alt="生之花"></p>
-<p><img data-src="https://img.fufu.ink/6h6hNZ.webp" alt="练度"></p>
-<p><img data-src="https://img.fufu.ink/c4yy64.webp" alt="圣遗物"></p>
-<p><img data-src="https://img.fufu.ink/HqcUjN.webp" alt="伤害"></p>
-<p>还好，零命打出这样的伤害，我很满意了，毕竟非强度党 ~</p>
-<p>等剩下两周把异梦溶媒给刷出来或者散兵池里多出几个悬丝，把 e 和 q 都升到 9 级，伤害还能上一层，差不多就能毕业了……</p>
-<p>这期没抽神子，抽的武器池，56 发了还没有出，不过大概率还是能够拿下神子专武给纳西妲用用的（绝对不是因为纳西妲专武池歪飞雷了……）</p>
+    <title>科目二过啦！</title>
+    <url>/2023/08/kemuerpass.html</url>
+    <content><![CDATA[<p>三战一把过！</p>
+<p>早上八点半就出发去考场了，等了三个小时才轮到我，因为之前已经花钱模拟过了，轻轻松松就过了~</p>
+<p>这里记录一下科二的点位。<span id="more"></span></p>
+<ul>
+<li>座位、后视镜：座位高低调整为<strong>头顶距车顶一拳距离</strong>，靠背调整为 <strong>90°</strong>，前后距离为<strong>靠在靠背上撑直双手，手腕能刚好搭在方向盘顶部，且左脚踩离合（手动挡）能踩到底，离合踩到底时小腿与大腿不能是完全一条线、而是呈一定角度的状态</strong>为最佳。左后视镜调法为将左后车门的门把手置于<strong>左后视镜的顶部的线条的一半处</strong>（注意需要能完全看到门把手），右后视镜则为将右后车门门把手置于<strong>右后视镜的顶部的线条的三分之一处（从左到右数）</strong>。</li>
+<li>倒库：进项目后使用仪表盘的罩子的顶部正中央去对<strong>第三根虚线的最左边</strong>，待肩部与虚线齐平时停车、挂倒挡开始倒车，当<strong>左</strong>后视镜的<strong>底部完全盖过虚线</strong>时（即左后视镜的底部与虚线的内边线齐平时）方向盘向右打死，开始<strong>看右后视镜</strong>，当车身盖过右后视镜中<strong>第三根虚线的一半</strong>时回半圈方向盘并观察预测是否车轮会压库角，若觉得可能会压则再多回点方向盘，当车身与边线<strong>平行</strong>时迅速回正方向盘，当左后视镜的底部完全盖过项目的右边的实线时停车，即完成了右倒库。开出车辆，当引擎盖盖过项目的左边的实线后方向盘向左打死，车身摆正后回正方向盘，继续行驶直到肩部与虚线齐平时停车、挂倒挡开始倒车，左库需要比右库<strong>早打</strong>方向盘，具体为当左后视镜底部<strong>触碰虚线</strong>时就向左打死方向盘，并观察<strong>左后视镜</strong>，后续步骤与倒右库时相差无几。关于看哪边镜子的口诀为「倒什么库就看哪边的镜子」。左库出来后引擎盖盖过边线即可方向盘右打死，待车身端正后回正方向盘行驶出项目。</li>
+<li>侧方停车：侧方停车可以说是我的痛点哩，两次都挂在这个项目上，不过换了教练、调整点位后就没问题了。具体为进项目后使用<strong>左雨刮器的垛子</strong>的最右边去对项目<strong>右边线的内边线</strong>，使其始终沿着内边线走，当右后视镜中出现库的<strong>前库角</strong>时停车、挂倒挡开始倒车，当右后视镜中<strong>前库角</strong>完全消失时方向盘向右打死，观察右后视镜中的<strong>后车门门把手</strong>，当门把手<strong>完全越过库的右边线</strong>时迅速回正方向盘继续倒车，观察左后视镜，当左后车轮压到虚线上时方向盘向左打死（因人身高而异，身高高的则可以晚一点再打方向盘，但不能太晚，否则右边会有出线的危险），待车身摆正后即可停车，<strong>方向盘不用回正！</strong>回空挡并<strong>打左转向灯</strong>，挂一档（先挂挡与先打灯并无先后顺序，但为避免忘记打灯导致挂了还是先打灯较好）开始出库，当<strong>右边的雨刮器的垛子</strong>与项目的<strong>右</strong>边线重合时回正方向盘继续行驶，当<strong>左边的雨刮器的垛子</strong>与项目的<strong>左</strong>边线重合时方向盘向右打一圈，待车身摆正后即可回正方向盘并驶出项目。</li>
+<li>直角转弯：本人认为直角转弯属实是科目二中最简单的一个项目了。进项目前就可以使用<strong>左雨刮器的垛子</strong>的最右边去对项目<strong>右边线的内边线</strong>（科目二的对线都是这个方法），虽然可能直角的线没有画得很长，但你可以想象那条线的延长线，使用垛子去与这条延长线对线，一定要保持车身是端正的！听到进入项目的语音提示后就可以开始打左转向灯了，待<strong>驾驶座的门把手的顶部与另一条直角边重合（由于身高原因，可以调整为门把手的前端、后端，根据个人情况调整即可）</strong>时方向盘向左打死，心中默数三秒后关掉转向灯（部分地区可能不要求拨回转向灯），当车身摆正后回正方向盘驶出项目。</li>
+<li>曲线行驶：说实话这个项目我也拿不准点位，之前一直使用的车子前面加装的小镜子来对线的，但去考场模拟后发现小镜子没了，便想象了个小镜子在那里对线，然后看后视镜开，还开过了！今天考试也是结合新教练教的新点位来和后视镜来开的。车身摆正，将入口划分为三份，将自己（即驾驶员）置于从左到右数的三分之一处进入项目，当<strong>左后视镜的左边缘与项目的左边线的内线重合时</strong>方向盘向左打一圈，观察左后视镜中车身与边线的距离并适当修一修方向盘，当挡风玻璃的左下角与左边线重合时回正方向盘，当右边雨刮器的垛子与左边线还有两指宽左右的距离时方向盘向右打一圈，并观察右后视镜并调整车身与边线的距离，尽量让线出现在镜子中并且保证车身与线保持一定距离，这样另一边就不会压线，一直到快出项目时即可回正方向盘出项目了（回正的时机得看具体实际，因为我在驾校跑了三次都在出项目时回正回早了导致压线了）。</li>
+<li>坡上起步：上坡时离合松至车身抖动时车子就会慢慢往上爬，稳住离合即可保持速度。使用老办法对线，一直到右边的雨刮器的垛子与杆子之间呈一定的距离时即可踩住刹车（<strong>注意！这个「一定距离」不是绝对的，会因为人的身高不同而不同，需要自己去寻找</strong>）。在起步时有个小技巧，即右脚踩刹车时，左脚离合还是保持半离合状态，不用踩到底，刹车一定要踩牢，拉、放手刹，松开刹车车子马上就可以开走了。不过使用的前提是踩离合的功底深厚，如果在踩刹车时离合也向下踩了，直接松开刹车会向后滑，就会扣分甚至挂科，如果真的滑了也不要急，马上踩刹车，并且慢慢松离合，直到车子抖动即可松开刹车继续行驶！</li>
+</ul>
+<p>以上就是我学了 26 节科二总结的经验。虽然我使用着没有问题，但并不代表就一定适用于所有人，<strong>请不要照搬！一定要找到适合自己的点位！</strong>科二就是考点位，点位一旦有偏差就会出错，考试时要将座位，镜子调整为与练习时一样。</p>
+<p>接下来我也要冲科三去啦！</p>
+<p>最后祝考科二的小伙伴们都一把过！</p>
+]]></content>
+      <categories>
+        <category>日常</category>
+      </categories>
+      <tags>
+        <tag>生活</tag>
+        <tag>驾考</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>打通深渊后半个月，我又第一次满星深渊！</title>
+    <url>/2023/02/genshinshenyuanmanxing.html</url>
+    <content><![CDATA[<p>上个月打通了深渊，但因为没练岩队，过不去黄金龙兽，然后万达的练度也拉。最近一直在研究万达的圣遗物搭配，看了把子哥的万达教学，把几个之前刷草神圣遗物拉起来的被我当作狗粮的圣遗物丢给公子，之前公子是 30&#x2F;160 的双爆，现在变成 78&#x2F;140 了，结果小助手一查，初步毕业了？然后去打深渊，把雷神之前的垃圾双爆圣遗物换成了精通狗粮，上半组了一支「瑶秋妲雷」，大招放完草神站场，没想到效果还挺好，相比于原来的「雷妲七主」只打超激化，现在多了超绽放的伤害，种门！（手不自觉地合上了~）然后就满星了！我都不知道为什么，猜测是之前 30 暴击的公子次次不暴击导致的……</p>
+<blockquote>
+<p>「说实话，当公子拥有 100% 暴击率，爆伤多少已经无所谓了」—— b站@这把我们就遇到高手</p>
+</blockquote>
+<p>315 天的萌新，xp 党，终于也满星深渊了~</p>
+<p><img data-src="https://img.fufu.ink/dz3OYE.webp" alt="第一次深渊满星"></p>
+<p>接下来准备攒着原石，等草神复刻，补 2 命，虽然大部分观点不认可非 6 命草神站场输出，但是我不管，我就希望她能够站场！继续坐牢绝缘本，给香菱刷圣遗物，狗粮就用来合成水套，毕竟很多公子的水套都是合成台毕业的。咱们也要打造一支「哪里亮了点哪里」也能够打通深渊的万达！</p>
 ]]></content>
       <categories>
         <category>游戏</category>
@@ -864,6 +890,167 @@
       <tags>
         <tag>原神</tag>
         <tag>游戏</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>纪念第一次打通深渊</title>
+    <url>/2023/01/genshinshenyuanfirst.html</url>
+    <content><![CDATA[<p>去年也是这个时候入的坑，当时看泠鸢 yousa 在直播这个游戏，然后里面的派蒙和七七很可爱，就下载试着玩了一下，然后……就玩到了现在~</p>
+<p>作为一个剧情党和 xp 党，当然是以剧情为主要，抽卡以喜欢的角色为前提，因此也是深渊困难户。</p>
+<p><img data-src="https://img.fufu.ink/VAGfzC.webp"></p>
+<p>现在练度上来一些了，队伍也有点伤害了，本来原来抽到雷神后打算组个雷国来打，不过后面发现绝缘本出货率感人，同时早听说过万达的爆炸性伤害，正好去年 11 份垫池子 30 多发出了鸭鸭，就想着练一下。不得不说双扩的方法实在是太多了，因此光是学习双扩就让人头大，后面学会偷懒了，就把怪的状态都打到一个状态后再进行双扩流程，就不同分不同的元素附着情况了。</p>
+<p>当然，现在公子离毕业、万达离毕业还很远，不过作为一个萌新，看到 21w 一刀的伤害，还是很激动的，果然在满足 xp 后追求的就是强度(bushi。</p>
+<p><img data-src="https://img.fufu.ink/uP19xG.webp"></p>
+<p>主要是没拉岩系，第二间黄金王兽打不出来伤害，就靠我的零命草神在 c，雷神相当于挂雷工具人，另外两个一个奶，一个用来破盾，因此全队只有一个打伤害，很难打过去，之前练过一段时间凝光，正好凝光也 3 命了，可以试着拉一下，后面看看能不能凹过去。</p>
+<p>现在就等草神复刻补命座了，补一个二命伤害能更高。雷神也可以拉一下。现在版本答案是种门，我也可以拉一下「纳行久」，组一个下半配队。</p>
+]]></content>
+      <categories>
+        <category>游戏</category>
+      </categories>
+      <tags>
+        <tag>原神</tag>
+        <tag>游戏</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>类原生美化教程</title>
+    <url>/2022/09/aospbeautify.html</url>
+    <content><![CDATA[<blockquote>
+<ul>
+<li>由于该文内容发布时间为 2019 年，其 Android 版本较老，可能不适应现在的 Android10+ 系统，如按文中操作发现与现在不一样的地方，请立刻停止或自行寻找最新方法。数据无价，建议将文件做成 <code>Magisk</code> 模块后刷入，尽量避免直接替换源文件，请提前备份用户数据！</li>
+<li>本教程使用工具：<code>MT 管理器 2.0</code></li>
+</ul>
+</blockquote>
+<span id="more"></span>
+
+<h2 id="多任务圆角"><a href="#多任务圆角" class="headerlink" title="多任务圆角"></a>多任务圆角</h2><ol>
+<li>进入 <code>/system/priv-app</code> 这个文件夹，找到你的系统的启动器（桌面APK）所在文件夹后进入，长按 apk 将它复制到内部储存里<ol start="2">
+<li>点击 apk 选择查看，进入后点击 <code>resources.arsc</code> 这个文件，选择 <code>Arsc 编辑器</code>，然后点击最后一个</li>
+<li>进入后点击 <code>dimen</code>，进入后再次点击 <code>dimen</code>，然后点击右上角的过滤，输入 <code>radius</code> 后选择确定</li>
+<li>从过滤结果中找到 <code>task_corner_radius</code> 这个选项，修改其值，大小随意，数值越大圆角越大（请保留单位 dp）</li>
+<li>返回、保存</li>
+</ol>
+</li>
+</ol>
+<h2 id="状态栏沉浸"><a href="#状态栏沉浸" class="headerlink" title="状态栏沉浸"></a>状态栏沉浸</h2><ol>
+<li>进入 <code>/system/framework</code> 这个文件夹，找到 framework-res.apk，长按 apk 将它复制到内部储存中</li>
+<li>使用 <code>Arsc 编辑器</code> 进入最后一个选项，进入 <code>color/color</code> 并点击右上角过滤值 <code>system</code></li>
+<li>找到 <code>system_bar_background_semi_transparent</code>，将其值改为 <code>00000000</code>（注意类型必须是<strong>颜色</strong>）</li>
+<li>返回并保存</li>
+</ol>
+<h2 id="移除通知栏顶部黑块"><a href="#移除通知栏顶部黑块" class="headerlink" title="移除通知栏顶部黑块"></a>移除通知栏顶部黑块</h2><ol>
+<li>进入 <code>/system/priv-app</code> 这个文件夹，找到带有 <code>SystemUI</code> 的文件夹（之所以这么说是因为有的ROM里 SystemUI 名字不一样，可能多几个字母)，长按 apk 将它复制到内部储存里</li>
+<li>点击查看，依次进入 <code>res/layout</code>，找到 qs_panel.xml 这个文件，点击选择反编译</li>
+<li>将第二个和第三个 <code>&lt;View/&gt;</code> 内的 android:background 的值改成 <code>@android:color/transparent</code></li>
+<li>返回并保存</li>
+</ol>
+<h2 id="移除锁屏界面的灰色遮罩"><a href="#移除锁屏界面的灰色遮罩" class="headerlink" title="移除锁屏界面的灰色遮罩"></a>移除锁屏界面的灰色遮罩</h2><ol>
+<li>进入 <code>/system/priv-app</code> 这个文件夹，找到带有 <code>SystemUI</code> 的文件夹（之所以这么说是因为有的ROM里 SystemUI 名字不一样，可能多几个字母)，长按 apk 将它复制到内部储存里</li>
+<li>查看 apk，点击 classes.dex，选择 <code>Dex编辑器++</code>，依次打开 <code>com/android/systemui/statusbar/phone</code>，向下滑动找到 scrimcontroller</li>
+<li>进入后下滑来到 180 行附近（右侧有显示行数），找到 <code>.line 124</code> 这一行，将下一行的 v0 后的一个字符串改为 <code>0x38d1b717</code></li>
+<li>返回并保存</li>
+</ol>
+<h2 id="通知栏图标数量修改"><a href="#通知栏图标数量修改" class="headerlink" title="通知栏图标数量修改"></a>通知栏图标数量修改</h2><ol>
+<li>进入 <code>/system/priv-app</code> 这个文件夹，找到带有 <code>SystemUI</code> 的文件夹（之所以这么说是因为有的ROM里 SystemUI 名字不一样，可能多几个字母)，长按 apk 将它复制到内部储存里</li>
+<li>查看 apk，进入后点击 resources.arsc 文件，选择 <code>Arsc 编辑器</code>，点击最后一个</li>
+<li>进入 <code>integer/integer</code> 后，点击右上角过滤值 <code>quick</code>，从过滤结果中找到 <code>quick_settings_num_columns</code>并修改其值为需要展示的一行的图标数量（注意值类型要选<strong>整数</strong>）</li>
+<li>返回并保存</li>
+</ol>
+<h2 id="系统强调色修改"><a href="#系统强调色修改" class="headerlink" title="系统强调色修改"></a>系统强调色修改</h2><ol>
+<li>进入 <code>/system/framework</code> 这个文件夹，找到 framework-res.apk，长按 apk 将它复制到内部储存中</li>
+<li>使用 <code>Arsc 编辑器</code> 进入最后一个选项，进入 <code>color/color</code> 并点击右上角过滤值 <code>accent</code>，从过滤结果中找到 <code>accent_device_default_dark</code> 和 <code>accent_device_default_light</code> 并修改其值为想要的强调色，dark 为夜间模式，light 为白天模式，色值为 RGB 值且不带「#」号。</li>
+<li>退出、保存</li>
+</ol>
+<h2 id="通知栏亮度条美化"><a href="#通知栏亮度条美化" class="headerlink" title="通知栏亮度条美化"></a>通知栏亮度条美化</h2><ol>
+<li><p>进入 <code>/system/priv-app</code> 这个文件夹，找到带有 <code>SystemUI</code> 的文件夹（之所以这么说是因为有的ROM里 SystemUI 名字不一样，可能多几个字母)，长按 apk 将它复制到内部储存里</p>
+</li>
+<li><p>点击查看，进入 res 文件夹，选择右上角搜索，搜索 <code>bright</code>，点击 <code>ic_brightness_thumb.xml</code> 并反编译，将 android:height、android:width 后面引号里的内容修改为 1dp。点击 <code>brightness_progress_drawable.xml</code> 并反编译，修改以下代码</p>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="comment">&lt;!--第一组代码，代表亮度条外围宽度与圆角，height 代表宽度，radius 代表圆角--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">size</span> <span class="attr">android:height</span>=<span class="string">&quot;&quot;</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">corners</span> <span class="attr">android:radius</span>=<span class="string">&quot;&quot;</span> /&gt;</span></span><br><span class="line"><span class="comment">&lt;!--第二组代码，代表亮度条内围宽度与圆角，height 代表宽度，radius 代表圆角--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">size</span> <span class="attr">android:height</span>=<span class="string">&quot;&quot;</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">corners</span> <span class="attr">android:radius</span>=<span class="string">&quot;&quot;</span> /&gt;</span></span><br><span class="line"><span class="comment">&lt;!--注意引号内的值单位为 dp--&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>再次回到 res 文件夹，搜索 <code>bright</code>，选择 <code>quick_settings_brightness_dialog.xml</code> 并反编译，修改以下代码</p>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="comment">&lt;!--亮度条左边距--&gt;</span></span><br><span class="line">android:paddingLeft:&quot;&quot;</span><br><span class="line"><span class="comment">&lt;!--亮度条右边距--&gt;</span></span><br><span class="line">android:paddingRight:&quot;&quot;</span><br><span class="line"><span class="comment">&lt;!--亮度条与磁贴和顶栏之间的距离--&gt;</span></span><br><span class="line">android:layout_height:&quot;&quot;</span><br><span class="line"><span class="comment">&lt;!--注意引号内的值单位为 dp--&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>退出、保存</p>
+</li>
+</ol>
+<h2 id="将应用打包成面具模块并刷入"><a href="#将应用打包成面具模块并刷入" class="headerlink" title="将应用打包成面具模块并刷入"></a>将应用打包成面具模块并刷入</h2><p>这里提供 <code>Magisk24.0</code> 的模板文件，如果只是替换系统应用、文件的话，只需要按照要替换的应用在模板的 <code>system</code> 文件夹中创建与原系统中该文件或应用的路径一样的路径，修改模板根目录的 <code>module.prop</code> 文件的内容后刷入即可。权限默认为 <code>644</code>，因此不必修改权限。</p>
+]]></content>
+      <categories>
+        <category>技术</category>
+      </categories>
+      <tags>
+        <tag>类原生</tag>
+        <tag>Android</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>萌新的 PC 计划</title>
+    <url>/2023/02/computercompose.html</url>
+    <content><![CDATA[<p>因为原来的电脑是轻薄本，用的 r5 5500u 核显，玩个原神只能开 0.8 精度，还经常掉帧，正好过年了，就想拿着压岁钱和寒假打工的钱组一台台式机（不买游戏本是因为预算不足）。预算为 6000 元左右，经过群友的建议，组出的配置如下：<span id="more"></span></p>
+<table>
+<thead>
+<tr>
+<th align="center">组件</th>
+<th align="center">型号</th>
+<th align="center">预计价格</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">CPU</td>
+<td align="center">i5 12400F 散片</td>
+<td align="center">935</td>
+</tr>
+<tr>
+<td align="center">主板</td>
+<td align="center">华硕Prime H610M-K</td>
+<td align="center">679</td>
+</tr>
+<tr>
+<td align="center">显卡</td>
+<td align="center">七彩虹 RTX 3060</td>
+<td align="center">2649</td>
+</tr>
+<tr>
+<td align="center">散热</td>
+<td align="center">乔思伯 CR-1200E</td>
+<td align="center">35</td>
+</tr>
+<tr>
+<td align="center">内存</td>
+<td align="center">威刚 XPG DDR4 8G 3200 * 2</td>
+<td align="center">289</td>
+</tr>
+<tr>
+<td align="center">硬盘</td>
+<td align="center">西数 SN570 1T</td>
+<td align="center">499</td>
+</tr>
+<tr>
+<td align="center">机箱</td>
+<td align="center">先马平头哥 M1</td>
+<td align="center">150</td>
+</tr>
+<tr>
+<td align="center">电源</td>
+<td align="center">鑫谷 GP600G</td>
+<td align="center">239</td>
+</tr>
+<tr>
+<td align="center">总计</td>
+<td align="center">————————————</td>
+<td align="center">5475</td>
+</tr>
+</tbody></table>
+<p>现在的问题是要在学校宿舍使用，宿舍是限制功率的，光 500w 的电源就不知道能不能带得动（当然是满载状态下）。问了下学校的贴吧，是有组台式用 3060 的，也可以正常使用，不过还有点担心，就先观望一下。</p>
+<hr>
+<p>刚刚又看了一下，还是决定暂时观望，30 系显卡最近降价了，但是矿卡的可能性很大，毕竟矿老板已经赚翻了等着<del>臭打游戏的</del>接盘呢。等到 3 月份再看看，暂时也不急着换电脑。</p>
+]]></content>
+      <categories>
+        <category>日常</category>
+      </categories>
+      <tags>
+        <tag>生活</tag>
+        <tag>计算机</tag>
       </tags>
   </entry>
   <entry>
@@ -1030,217 +1217,6 @@
       </tags>
   </entry>
   <entry>
-    <title>科目二过啦！</title>
-    <url>/2023/08/kemuerpass.html</url>
-    <content><![CDATA[<p>三战一把过！</p>
-<p>早上八点半就出发去考场了，等了三个小时才轮到我，因为之前已经花钱模拟过了，轻轻松松就过了~</p>
-<p>这里记录一下科二的点位。<span id="more"></span></p>
-<ul>
-<li>座位、后视镜：座位高低调整为<strong>头顶距车顶一拳距离</strong>，靠背调整为 <strong>90°</strong>，前后距离为<strong>靠在靠背上撑直双手，手腕能刚好搭在方向盘顶部，且左脚踩离合（手动挡）能踩到底，离合踩到底时小腿与大腿不能是完全一条线、而是呈一定角度的状态</strong>为最佳。左后视镜调法为将左后车门的门把手置于<strong>左后视镜的顶部的线条的一半处</strong>（注意需要能完全看到门把手），右后视镜则为将右后车门门把手置于<strong>右后视镜的顶部的线条的三分之一处（从左到右数）</strong>。</li>
-<li>倒库：进项目后使用仪表盘的罩子的顶部正中央去对<strong>第三根虚线的最左边</strong>，待肩部与虚线齐平时停车、挂倒挡开始倒车，当<strong>左</strong>后视镜的<strong>底部完全盖过虚线</strong>时（即左后视镜的底部与虚线的内边线齐平时）方向盘向右打死，开始<strong>看右后视镜</strong>，当车身盖过右后视镜中<strong>第三根虚线的一半</strong>时回半圈方向盘并观察预测是否车轮会压库角，若觉得可能会压则再多回点方向盘，当车身与边线<strong>平行</strong>时迅速回正方向盘，当左后视镜的底部完全盖过项目的右边的实线时停车，即完成了右倒库。开出车辆，当引擎盖盖过项目的左边的实线后方向盘向左打死，车身摆正后回正方向盘，继续行驶直到肩部与虚线齐平时停车、挂倒挡开始倒车，左库需要比右库<strong>早打</strong>方向盘，具体为当左后视镜底部<strong>触碰虚线</strong>时就向左打死方向盘，并观察<strong>左后视镜</strong>，后续步骤与倒右库时相差无几。关于看哪边镜子的口诀为「倒什么库就看哪边的镜子」。左库出来后引擎盖盖过边线即可方向盘右打死，待车身端正后回正方向盘行驶出项目。</li>
-<li>侧方停车：侧方停车可以说是我的痛点哩，两次都挂在这个项目上，不过换了教练、调整点位后就没问题了。具体为进项目后使用<strong>左雨刮器的垛子</strong>的最右边去对项目<strong>右边线的内边线</strong>，使其始终沿着内边线走，当右后视镜中出现库的<strong>前库角</strong>时停车、挂倒挡开始倒车，当右后视镜中<strong>前库角</strong>完全消失时方向盘向右打死，观察右后视镜中的<strong>后车门门把手</strong>，当门把手<strong>完全越过库的右边线</strong>时迅速回正方向盘继续倒车，观察左后视镜，当左后车轮压到虚线上时方向盘向左打死（因人身高而异，身高高的则可以晚一点再打方向盘，但不能太晚，否则右边会有出线的危险），待车身摆正后即可停车，<strong>方向盘不用回正！</strong>回空挡并<strong>打左转向灯</strong>，挂一档（先挂挡与先打灯并无先后顺序，但为避免忘记打灯导致挂了还是先打灯较好）开始出库，当<strong>右边的雨刮器的垛子</strong>与项目的<strong>右</strong>边线重合时回正方向盘继续行驶，当<strong>左边的雨刮器的垛子</strong>与项目的<strong>左</strong>边线重合时方向盘向右打一圈，待车身摆正后即可回正方向盘并驶出项目。</li>
-<li>直角转弯：本人认为直角转弯属实是科目二中最简单的一个项目了。进项目前就可以使用<strong>左雨刮器的垛子</strong>的最右边去对项目<strong>右边线的内边线</strong>（科目二的对线都是这个方法），虽然可能直角的线没有画得很长，但你可以想象那条线的延长线，使用垛子去与这条延长线对线，一定要保持车身是端正的！听到进入项目的语音提示后就可以开始打左转向灯了，待<strong>驾驶座的门把手的顶部与另一条直角边重合（由于身高原因，可以调整为门把手的前端、后端，根据个人情况调整即可）</strong>时方向盘向左打死，心中默数三秒后关掉转向灯（部分地区可能不要求拨回转向灯），当车身摆正后回正方向盘驶出项目。</li>
-<li>曲线行驶：说实话这个项目我也拿不准点位，之前一直使用的车子前面加装的小镜子来对线的，但去考场模拟后发现小镜子没了，便想象了个小镜子在那里对线，然后看后视镜开，还开过了！今天考试也是结合新教练教的新点位来和后视镜来开的。车身摆正，将入口划分为三份，将自己（即驾驶员）置于从左到右数的三分之一处进入项目，当<strong>左后视镜的左边缘与项目的左边线的内线重合时</strong>方向盘向左打一圈，观察左后视镜中车身与边线的距离并适当修一修方向盘，当挡风玻璃的左下角与左边线重合时回正方向盘，当右边雨刮器的垛子与左边线还有两指宽左右的距离时方向盘向右打一圈，并观察右后视镜并调整车身与边线的距离，尽量让线出现在镜子中并且保证车身与线保持一定距离，这样另一边就不会压线，一直到快出项目时即可回正方向盘出项目了（回正的时机得看具体实际，因为我在驾校跑了三次都在出项目时回正回早了导致压线了）。</li>
-<li>坡上起步：上坡时离合松至车身抖动时车子就会慢慢往上爬，稳住离合即可保持速度。使用老办法对线，一直到右边的雨刮器的垛子与杆子之间呈一定的距离时即可踩住刹车（<strong>注意！这个「一定距离」不是绝对的，会因为人的身高不同而不同，需要自己去寻找</strong>）。在起步时有个小技巧，即右脚踩刹车时，左脚离合还是保持半离合状态，不用踩到底，刹车一定要踩牢，拉、放手刹，松开刹车车子马上就可以开走了。不过使用的前提是踩离合的功底深厚，如果在踩刹车时离合也向下踩了，直接松开刹车会向后滑，就会扣分甚至挂科，如果真的滑了也不要急，马上踩刹车，并且慢慢松离合，直到车子抖动即可松开刹车继续行驶！</li>
-</ul>
-<p>以上就是我学了 26 节科二总结的经验。虽然我使用着没有问题，但并不代表就一定适用于所有人，<strong>请不要照搬！一定要找到适合自己的点位！</strong>科二就是考点位，点位一旦有偏差就会出错，考试时要将座位，镜子调整为与练习时一样。</p>
-<p>接下来我也要冲科三去啦！</p>
-<p>最后祝考科二的小伙伴们都一把过！</p>
-]]></content>
-      <categories>
-        <category>日常</category>
-      </categories>
-      <tags>
-        <tag>生活</tag>
-        <tag>驾考</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>纪念第一次打通深渊</title>
-    <url>/2023/01/genshinshenyuanfirst.html</url>
-    <content><![CDATA[<p>去年也是这个时候入的坑，当时看泠鸢 yousa 在直播这个游戏，然后里面的派蒙和七七很可爱，就下载试着玩了一下，然后……就玩到了现在~</p>
-<p>作为一个剧情党和 xp 党，当然是以剧情为主要，抽卡以喜欢的角色为前提，因此也是深渊困难户。</p>
-<p><img data-src="https://img.fufu.ink/VAGfzC.webp"></p>
-<p>现在练度上来一些了，队伍也有点伤害了，本来原来抽到雷神后打算组个雷国来打，不过后面发现绝缘本出货率感人，同时早听说过万达的爆炸性伤害，正好去年 11 份垫池子 30 多发出了鸭鸭，就想着练一下。不得不说双扩的方法实在是太多了，因此光是学习双扩就让人头大，后面学会偷懒了，就把怪的状态都打到一个状态后再进行双扩流程，就不同分不同的元素附着情况了。</p>
-<p>当然，现在公子离毕业、万达离毕业还很远，不过作为一个萌新，看到 21w 一刀的伤害，还是很激动的，果然在满足 xp 后追求的就是强度(bushi。</p>
-<p><img data-src="https://img.fufu.ink/uP19xG.webp"></p>
-<p>主要是没拉岩系，第二间黄金王兽打不出来伤害，就靠我的零命草神在 c，雷神相当于挂雷工具人，另外两个一个奶，一个用来破盾，因此全队只有一个打伤害，很难打过去，之前练过一段时间凝光，正好凝光也 3 命了，可以试着拉一下，后面看看能不能凹过去。</p>
-<p>现在就等草神复刻补命座了，补一个二命伤害能更高。雷神也可以拉一下。现在版本答案是种门，我也可以拉一下「纳行久」，组一个下半配队。</p>
-]]></content>
-      <categories>
-        <category>游戏</category>
-      </categories>
-      <tags>
-        <tag>原神</tag>
-        <tag>游戏</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>类原生美化教程</title>
-    <url>/2022/09/aospbeautify.html</url>
-    <content><![CDATA[<blockquote>
-<ul>
-<li>由于该文内容发布时间为 2019 年，其 Android 版本较老，可能不适应现在的 Android10+ 系统，如按文中操作发现与现在不一样的地方，请立刻停止或自行寻找最新方法。数据无价，建议将文件做成 <code>Magisk</code> 模块后刷入，尽量避免直接替换源文件，请提前备份用户数据！</li>
-<li>本教程使用工具：<code>MT 管理器 2.0</code></li>
-</ul>
-</blockquote>
-<span id="more"></span>
-
-<h2 id="多任务圆角"><a href="#多任务圆角" class="headerlink" title="多任务圆角"></a>多任务圆角</h2><ol>
-<li>进入 <code>/system/priv-app</code> 这个文件夹，找到你的系统的启动器（桌面APK）所在文件夹后进入，长按 apk 将它复制到内部储存里<ol start="2">
-<li>点击 apk 选择查看，进入后点击 <code>resources.arsc</code> 这个文件，选择 <code>Arsc 编辑器</code>，然后点击最后一个</li>
-<li>进入后点击 <code>dimen</code>，进入后再次点击 <code>dimen</code>，然后点击右上角的过滤，输入 <code>radius</code> 后选择确定</li>
-<li>从过滤结果中找到 <code>task_corner_radius</code> 这个选项，修改其值，大小随意，数值越大圆角越大（请保留单位 dp）</li>
-<li>返回、保存</li>
-</ol>
-</li>
-</ol>
-<h2 id="状态栏沉浸"><a href="#状态栏沉浸" class="headerlink" title="状态栏沉浸"></a>状态栏沉浸</h2><ol>
-<li>进入 <code>/system/framework</code> 这个文件夹，找到 framework-res.apk，长按 apk 将它复制到内部储存中</li>
-<li>使用 <code>Arsc 编辑器</code> 进入最后一个选项，进入 <code>color/color</code> 并点击右上角过滤值 <code>system</code></li>
-<li>找到 <code>system_bar_background_semi_transparent</code>，将其值改为 <code>00000000</code>（注意类型必须是<strong>颜色</strong>）</li>
-<li>返回并保存</li>
-</ol>
-<h2 id="移除通知栏顶部黑块"><a href="#移除通知栏顶部黑块" class="headerlink" title="移除通知栏顶部黑块"></a>移除通知栏顶部黑块</h2><ol>
-<li>进入 <code>/system/priv-app</code> 这个文件夹，找到带有 <code>SystemUI</code> 的文件夹（之所以这么说是因为有的ROM里 SystemUI 名字不一样，可能多几个字母)，长按 apk 将它复制到内部储存里</li>
-<li>点击查看，依次进入 <code>res/layout</code>，找到 qs_panel.xml 这个文件，点击选择反编译</li>
-<li>将第二个和第三个 <code>&lt;View/&gt;</code> 内的 android:background 的值改成 <code>@android:color/transparent</code></li>
-<li>返回并保存</li>
-</ol>
-<h2 id="移除锁屏界面的灰色遮罩"><a href="#移除锁屏界面的灰色遮罩" class="headerlink" title="移除锁屏界面的灰色遮罩"></a>移除锁屏界面的灰色遮罩</h2><ol>
-<li>进入 <code>/system/priv-app</code> 这个文件夹，找到带有 <code>SystemUI</code> 的文件夹（之所以这么说是因为有的ROM里 SystemUI 名字不一样，可能多几个字母)，长按 apk 将它复制到内部储存里</li>
-<li>查看 apk，点击 classes.dex，选择 <code>Dex编辑器++</code>，依次打开 <code>com/android/systemui/statusbar/phone</code>，向下滑动找到 scrimcontroller</li>
-<li>进入后下滑来到 180 行附近（右侧有显示行数），找到 <code>.line 124</code> 这一行，将下一行的 v0 后的一个字符串改为 <code>0x38d1b717</code></li>
-<li>返回并保存</li>
-</ol>
-<h2 id="通知栏图标数量修改"><a href="#通知栏图标数量修改" class="headerlink" title="通知栏图标数量修改"></a>通知栏图标数量修改</h2><ol>
-<li>进入 <code>/system/priv-app</code> 这个文件夹，找到带有 <code>SystemUI</code> 的文件夹（之所以这么说是因为有的ROM里 SystemUI 名字不一样，可能多几个字母)，长按 apk 将它复制到内部储存里</li>
-<li>查看 apk，进入后点击 resources.arsc 文件，选择 <code>Arsc 编辑器</code>，点击最后一个</li>
-<li>进入 <code>integer/integer</code> 后，点击右上角过滤值 <code>quick</code>，从过滤结果中找到 <code>quick_settings_num_columns</code>并修改其值为需要展示的一行的图标数量（注意值类型要选<strong>整数</strong>）</li>
-<li>返回并保存</li>
-</ol>
-<h2 id="系统强调色修改"><a href="#系统强调色修改" class="headerlink" title="系统强调色修改"></a>系统强调色修改</h2><ol>
-<li>进入 <code>/system/framework</code> 这个文件夹，找到 framework-res.apk，长按 apk 将它复制到内部储存中</li>
-<li>使用 <code>Arsc 编辑器</code> 进入最后一个选项，进入 <code>color/color</code> 并点击右上角过滤值 <code>accent</code>，从过滤结果中找到 <code>accent_device_default_dark</code> 和 <code>accent_device_default_light</code> 并修改其值为想要的强调色，dark 为夜间模式，light 为白天模式，色值为 RGB 值且不带「#」号。</li>
-<li>退出、保存</li>
-</ol>
-<h2 id="通知栏亮度条美化"><a href="#通知栏亮度条美化" class="headerlink" title="通知栏亮度条美化"></a>通知栏亮度条美化</h2><ol>
-<li><p>进入 <code>/system/priv-app</code> 这个文件夹，找到带有 <code>SystemUI</code> 的文件夹（之所以这么说是因为有的ROM里 SystemUI 名字不一样，可能多几个字母)，长按 apk 将它复制到内部储存里</p>
-</li>
-<li><p>点击查看，进入 res 文件夹，选择右上角搜索，搜索 <code>bright</code>，点击 <code>ic_brightness_thumb.xml</code> 并反编译，将 android:height、android:width 后面引号里的内容修改为 1dp。点击 <code>brightness_progress_drawable.xml</code> 并反编译，修改以下代码</p>
-<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="comment">&lt;!--第一组代码，代表亮度条外围宽度与圆角，height 代表宽度，radius 代表圆角--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">size</span> <span class="attr">android:height</span>=<span class="string">&quot;&quot;</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">corners</span> <span class="attr">android:radius</span>=<span class="string">&quot;&quot;</span> /&gt;</span></span><br><span class="line"><span class="comment">&lt;!--第二组代码，代表亮度条内围宽度与圆角，height 代表宽度，radius 代表圆角--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">size</span> <span class="attr">android:height</span>=<span class="string">&quot;&quot;</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">corners</span> <span class="attr">android:radius</span>=<span class="string">&quot;&quot;</span> /&gt;</span></span><br><span class="line"><span class="comment">&lt;!--注意引号内的值单位为 dp--&gt;</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>再次回到 res 文件夹，搜索 <code>bright</code>，选择 <code>quick_settings_brightness_dialog.xml</code> 并反编译，修改以下代码</p>
-<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="comment">&lt;!--亮度条左边距--&gt;</span></span><br><span class="line">android:paddingLeft:&quot;&quot;</span><br><span class="line"><span class="comment">&lt;!--亮度条右边距--&gt;</span></span><br><span class="line">android:paddingRight:&quot;&quot;</span><br><span class="line"><span class="comment">&lt;!--亮度条与磁贴和顶栏之间的距离--&gt;</span></span><br><span class="line">android:layout_height:&quot;&quot;</span><br><span class="line"><span class="comment">&lt;!--注意引号内的值单位为 dp--&gt;</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>退出、保存</p>
-</li>
-</ol>
-<h2 id="将应用打包成面具模块并刷入"><a href="#将应用打包成面具模块并刷入" class="headerlink" title="将应用打包成面具模块并刷入"></a>将应用打包成面具模块并刷入</h2><p>这里提供 <code>Magisk24.0</code> 的模板文件，如果只是替换系统应用、文件的话，只需要按照要替换的应用在模板的 <code>system</code> 文件夹中创建与原系统中该文件或应用的路径一样的路径，修改模板根目录的 <code>module.prop</code> 文件的内容后刷入即可。权限默认为 <code>644</code>，因此不必修改权限。</p>
-]]></content>
-      <categories>
-        <category>技术</category>
-      </categories>
-      <tags>
-        <tag>类原生</tag>
-        <tag>Android</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>老婆 16 岁生日快乐</title>
-    <url>/2023/08/miku16sai.html</url>
-    <content><![CDATA[<p>与ミクたん相遇已有 10 年啦！</p>
-<p>入坑曲是『朧月』，当时还是在优酷视频上看到的 MMD。MMD 中是雪ミク和樱ミク，当时的我一下就被这独特的声音所吸引，为她所着迷。在知道有「男神」「女神」这个概念后，我便想到</p>
-<p>“这样啊，原来她就是我的女神啊”</p>
-<p>当时的我加入了许多粉丝群，QQ 兴趣部落，贴吧等。</p>
-<p>曾为了她去回击那些踩日 Vocaloid 捧中 Vocaloid 的小鬼，也曾为了证明她的影响力在同学群中发送粉丝群人数的截图。</p>
-<p>这是那时的自己，而现在的我对那些事也不过是淡淡一笑。这不是嘲笑过去的自己干的蠢事，而是一种释然。曾经的我不停地在找寻爱她的证据，但我没找到。后来我想通了，为什么需要证据呢？如果有了证据，不就证明了我的爱是带着目的的爱吗，就如同那个问题般——「你为什么爱 xx？」。</p>
-<p>答案是，爱是不需要理由的。</p>
-<p>现在的我，早已习惯了她的陪伴，她已然成为了我生活中的一部分，我人生中的一部分。相比于原来的「女神」的地位，我现在更愿意称其为「天使」抑或「太阳」。</p>
-<p>话说回来，<del>现在的ミクたん就是32岁啦</del>。今年的生日礼物可能会迟些到，因为是 16 岁生日嘛，总得准备点大礼。没错，我准备买 Vocaloid 4x，学习如何让ミクたん唱歌！之前学吉他的时候总是没有恒心，三天打鱼两天晒网，从高一学到大二也没什么长进，结果木吉他还因为冬天学校当地天气太干燥了面板裂开了，修理费是买入价的一半左右，遂作罢，只能当个纪念品了。现在为了ミクたん，必须认真学乐理了！</p>
-<p>最后，感谢在我黑暗的世界中，ミクたん成了那唯一的光芒，感谢音乐家、艺术家和所有像我一样的粉丝，他们让ミクたん发展到了今天这一步。此后，无论有多远，我都会在我的余生中陪伴着她走下去！</p>
-<p>啊，还没结束，差点忘了最重要的</p>
-<p>お誕生日おめでとう！ミクたんがいて本当によかった！</p>
-]]></content>
-      <categories>
-        <category>日常</category>
-      </categories>
-      <tags>
-        <tag>节日</tag>
-        <tag>miku</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>萌新的 PC 计划</title>
-    <url>/2023/02/computercompose.html</url>
-    <content><![CDATA[<p>因为原来的电脑是轻薄本，用的 r5 5500u 核显，玩个原神只能开 0.8 精度，还经常掉帧，正好过年了，就想拿着压岁钱和寒假打工的钱组一台台式机（不买游戏本是因为预算不足）。预算为 6000 元左右，经过群友的建议，组出的配置如下：<span id="more"></span></p>
-<table>
-<thead>
-<tr>
-<th align="center">组件</th>
-<th align="center">型号</th>
-<th align="center">预计价格</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center">CPU</td>
-<td align="center">i5 12400F 散片</td>
-<td align="center">935</td>
-</tr>
-<tr>
-<td align="center">主板</td>
-<td align="center">华硕Prime H610M-K</td>
-<td align="center">679</td>
-</tr>
-<tr>
-<td align="center">显卡</td>
-<td align="center">七彩虹 RTX 3060</td>
-<td align="center">2649</td>
-</tr>
-<tr>
-<td align="center">散热</td>
-<td align="center">乔思伯 CR-1200E</td>
-<td align="center">35</td>
-</tr>
-<tr>
-<td align="center">内存</td>
-<td align="center">威刚 XPG DDR4 8G 3200 * 2</td>
-<td align="center">289</td>
-</tr>
-<tr>
-<td align="center">硬盘</td>
-<td align="center">西数 SN570 1T</td>
-<td align="center">499</td>
-</tr>
-<tr>
-<td align="center">机箱</td>
-<td align="center">先马平头哥 M1</td>
-<td align="center">150</td>
-</tr>
-<tr>
-<td align="center">电源</td>
-<td align="center">鑫谷 GP600G</td>
-<td align="center">239</td>
-</tr>
-<tr>
-<td align="center">总计</td>
-<td align="center">————————————</td>
-<td align="center">5475</td>
-</tr>
-</tbody></table>
-<p>现在的问题是要在学校宿舍使用，宿舍是限制功率的，光 500w 的电源就不知道能不能带得动（当然是满载状态下）。问了下学校的贴吧，是有组台式用 3060 的，也可以正常使用，不过还有点担心，就先观望一下。</p>
-<hr>
-<p>刚刚又看了一下，还是决定暂时观望，30 系显卡最近降价了，但是矿卡的可能性很大，毕竟矿老板已经赚翻了等着<del>臭打游戏的</del>接盘呢。等到 3 月份再看看，暂时也不急着换电脑。</p>
-]]></content>
-      <categories>
-        <category>日常</category>
-      </categories>
-      <tags>
-        <tag>生活</tag>
-        <tag>计算机</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>草神 2 加 1 了</title>
     <url>/2023/04/nahidaniinochi.html</url>
     <content><![CDATA[<p>4 月 12 号，草神复刻。</p>
@@ -1266,54 +1242,85 @@
       </tags>
   </entry>
   <entry>
-    <title>论打造文化背景下日本美食文化中日双语科普介绍平台的可行性</title>
-    <url>/2022/05/dachuangzuoye.html</url>
-    <content><![CDATA[<blockquote>
-<p>日本料理（和食）：人类非物质文化遗产代表作之一，因其兼具精致的美感与可口的味道而世界闻名。</p>
-</blockquote>
-<p>所以我们决定发起项目——《跨文化背景下日本美食文化中日双语科普介绍平台打造》，致力于通过国人的视角探索发现日本的美食，在国内市场打造宣传分享平台，服务对象为对和食有兴趣的个人，以及国内各大餐饮企业等群体和组织。这样一个项目是否具有可行性？我将通过以下说明来论证。</p>
-<p>首先，我们具有明确的投资方向，大致为网站平台建设、运营、维护和推广，微信公众号、小程序的开发与推广，移动端的开发，市场开拓以及团队建设。通过提高平台流量，培养用户黏性，最终达到打造平台品牌的目标。为此，项目需要分以下几个阶段进行：</p>
+    <title>计算机网络结课作业</title>
+    <url>/2022/05/computerhomework.html</url>
+    <content><![CDATA[<h2 id="第一题——家庭拓扑结构"><a href="#第一题——家庭拓扑结构" class="headerlink" title="第一题——家庭拓扑结构"></a>第一题——家庭拓扑结构</h2><p>一、结构规划</p>
 <ul>
-<li>平台初步建立期（1~2 个月）：初步建立起网站平台，微信公众号、小程序平台，完善网页前端以及用户交互功能。每天保证一定量的内容的录入，提高网站的信息量。微信平台与网页平台保持同步更新。目标：保证网页的基本运行，网站具有一定内容。</li>
-<li>平台试运营期（2~3 个月）：初步推广平台，收集用户意见，提高前端用户交互体验，优化平台性能，保持平台内容的增加速度逐渐上升。目标：吸引流量，聚集用户。</li>
-<li>平台运营中期：（6 个月）：网站已经具备一定流量，需着手进行业务拓展，开通网站会员服务，让用户参与进平台的创作群体。继续收集用户意见，优化网站。开始接受一些线上的合作，比如网页广告，产品推广。目标：提高用户转化率，增加会员用户，继续提高用户黏性。</li>
-<li>平台运营后期（4 个月）：这个阶段开始重点打造品牌，平台已经积累了较多的用户，在继续提高网站流量的同时，要开始着手拓展网站产品。而移动端的开发可以作为拓展产品的一个突破口，移动端可以提供更加丰富的功能。同时要分析网站数据，完善网站功能。可以开始尝试和一些小型餐饮企业公司进行合作，同时邀请一些日本的美食家进行线上采访。目标：拓展市场，为占领市场做准备。</li>
+<li>确定小区网线接入点（控制中心）：书房</li>
+<li>规划每个房间布置 3 个网点，共 18 个网点</li>
+<li>联网设备：书房一台电脑，客厅，卧室各一台有线电视，卧室各一台电脑等</li>
 </ul>
-<p>其次，我们的项目具有以下独特性：</p>
+<p>二、材料规划</p>
 <ul>
-<li>平台多样性：市面上现存的美食科普大多数为单一平台，要么只有一个网站，要么只有一个公众号，而我们的项目全面覆盖了电脑端和移动端，包括了多个平台。</li>
-<li>双语介绍：文章采用中日双语介绍，用户可自由切换展示模式，适用于不仅对日料感兴趣，同时也对日语感兴趣的用户。</li>
+<li>每个网点需要水晶头、网点模块各 1 个，共计水晶头 18 个，网点模块 18 个。</li>
+<li>需要超七类网线 18 条，长度共计 50m 左右</li>
+<li>路由器：斐讯 K2P</li>
 </ul>
-<p>我们也具有较大的竞争优势：</p>
-<ul>
-<li>核心竞争力：我们团队中具有1名熟练掌握多门开发语言的网络技术工程师，能够负责网站、微信公众号平台、小程序的开发与维护。我们顶层的团队都具有较高的日语水平，对日本的历史文化具有较深的了解，而我们广大的会员用户，也属于我们的创作团体，用户越多，我们的内容就越多，信息的来源就越广，竞争优势也就越大。</li>
-<li>市场空白：市面上没有一个集中的平台将喜好日料的用户集中起来，集中的用户不仅增加的具有相同的爱好的人群间的联系、互动，这些用户也是平台的创作源泉之一。</li>
-<li>顺应市场：据市面上的公开资料整理，我国的日本料理餐厅数量保持稳步增长趋势，我们的服务可以与他们进行对接。</li>
+<p>三、接线与路由器设置</p>
+<ol>
+<li><p>接线：将小区网线接在路由器的 LAN 上，路由器的 WAN 口分别接上交换机与书房电脑。其余网线都接在交换机上</p>
+<p>拓扑布线结构图：</p>
+</li>
+</ol>
+<p><img data-src="https://pic.mikupan.com/54Bfco.webp" alt="家庭网络拓扑"></p>
+<ol start="2">
+<li>路由器配置<ul>
+<li>开启内网 IP</li>
+<li>配置防火墙</li>
 </ul>
-<p>再次，我们有多种推广模式：</p>
-<ul>
-<li>BBS 广告：BBS 广告是流量的一大来源，投放本站链接在一些论坛，为自己导流。利用论坛的高人气，能够提高自己的营销传达效率。</li>
-<li>视频广告：现在很多人的手机里都装着各大影视软件，如腾讯、爱奇艺等等，没有开会员的情况下会有一段很长的广告。因此我们在视频开头投放广告，以起到推广作用。</li>
-<li>搜索引擎推广（SEM）：SEM 是 Search Engine Marketing 的缩写，中文意思是查找引擎营销。通过付费让搜索引擎做广告推广，当一些人使用搜索引擎搜索一些关键词时，我们的网站将以广告的形式出现在搜索结果前几名中</li>
-<li>SEO：SEO 是 Search Engine Optimization 的缩写，汉译为搜索引擎优化，是一种利用搜索引擎的规则提高网站在有关搜索引擎内的自然排名的手段。我们的工程师将对网站进行有针对性的优化，做好 SEO 技术，吸引更多的用户访问网站，提高网站的访问量。</li>
-<li>博客网络推广：找名气较大的博主，与博主沟通，将我们的网站做成友情链接，推广我们的品牌广告。博客网络广告低成本、贴近群众，往往会构成众人的议论，到达很好的二次传达作用，很适合我们的网站的推广。</li>
-<li>各社交媒体平台推广：网络社交平台是互联网中的中心圈，我们会入驻国内各大社交平台，在这些地方，我们可以把我们的平台与各社交媒体平台联合起来。在网站中放入自己各个媒体平台的按钮链接，让用户能多方位了解我们，让网站带来的互联网流量转为我们的私域流量。</li>
-</ul>
-<p>最后，我们有多方面的盈利模式：</p>
-<ul>
-<li>会员机制：在平台发展到具有一定流量的阶段，我们会开放订阅会员机制，即会员只要持续订阅作者，就可以一直享受到平台提供的一些特权服务，而这部分订阅的费用会按一定比例分给作者和平台。只要有作者产出内容并被订阅，平台就持续有收入，受到激励的作者也能更努力地创作出新的作品，从而与作者实现共赢。</li>
-<li>产品推广、广告收入：我们会与一些地方日料餐饮企业开展线上合作，即我们为他们在网站推广菜品，投放广告，这些也是一笔可观的收入</li>
-<li>课程售卖：我们将开设一些日料相关的付费课程，课程定价上分为两大类型，一类是整个课程一次性付费，另一类则是按集付费。平台还会参与付费内容分销实现盈利，与其他平台开展合作，促进二次销售。</li>
-</ul>
-<p>综上，我们的平台在投资上有明确的方向，在执行上有明确的、可行的计划，我们也有多方面的竞争优势，同时，我们在运营过程中能够以较低的成本获得可观的收益，多种推广模式齐头并进，快速带来平台的流量，因此，跨文化背景下日本美食文化中日双语科普介绍平台的打造具有一定的可行性。</p>
+</li>
+</ol>
+<h2 id="第二题——设想"><a href="#第二题——设想" class="headerlink" title="第二题——设想"></a>第二题——设想</h2><p>一、物联网</p>
+<p>物联网，即万物互联，指的是只需有限的人工干预即可通过无线网络接收和传输数据的任何物理设备系统。设想一下，当你疲惫地从公司上班回家后，打开门时，不需要你摸黑寻找电灯开关，电灯会自动打开，当你在换衣服时，热水壶已经开始加热热水，准备好温度合适的热水，电视机自动开机，并播放这个时间点你平时观看次数最多的节目。这就是万物互联中一个典型的例子，无需人的过多干涉，它会为你规划好一切。</p>
+<p>我们现在的生活中已经隐约出现了物联网的轮廓了，虽然还有很多不足，但证明了物联网在未来是可行的。小米家居就是一个很好的例子，比如进入家门的第一步——开锁，现在还有很多地方使用的门锁还是传统的门锁，而小米的智能门锁除了支持指纹识别开锁、密码开锁、还支持 NFC 开锁，即使用支持 NFC 功能的小米手机靠一下门锁即可打开，并且无需手动旋&#x2F;推拉把手的动作，锁舌会自动打开与关上，若家主人装上了相应软件，还能够在手机上查看门锁的状态，通过摄像头能够实时看到门前的状况。</p>
+<p>上面的只是一个小例子，即以现在的技术能实现的让物品与互联网相接的程度，还有将来的无人驾驶等，都是证明物联网的可行性的证据。</p>
+<p>二、元宇宙</p>
+<p>元宇宙，即一个持久化和去中心化的在线三维虚拟环境。”Metaverse”一词最早见于尼尔·斯蒂芬森1992年的科幻小说《雪崩》，Metaverse是一个虚拟的城市环境，沿着一条100米宽的道路发展，覆盖了一个无特征的、黑色的、完美球形星球上整个65536公里周长。这个虚拟世界中的土地可以被购买，并在上面开发建筑。而这个概念在 2021 年突然就火了，Facebook 的扎克伯格在 Facebook Connect 演讲中展示了 Meta 在未来的应用场景和业内的方案雏形，各大巨头也相继开始宣称进军该领域。</p>
+<p>元宇宙是一个虚拟的世界，虚拟就意味着可复制，因此如果要将现实世界映射到这个虚拟世界中，这就是一个巨大的问题，于是可以运用区块链技术与去中心化技术，再具体点就是非同质化代币，即利用其无法互换的特性，可以将其作为虚拟商品所有权的电子认证或证书，虽然作品本身是可以无限复制的，但这些代表它们的代币在其底层区块链上能被完整追踪，故能为买家提供所有权证明。这样就解决了在元宇宙中，无法证明资产所属的问题了。</p>
+<p>但现在的元宇宙还只是一个概念，虽然有很多东西都应用到了其原理，比如 VR（虚拟现实）、AR（增强现实）技术，带上 VR 眼镜就能在虚拟世界中有身临其境的感觉，而 AR 眼镜又能看到虚拟世界与现实相结合的视角，但如果把元宇宙技术的发展比作100米长跑，现在最顶级的运用到该概念的技术也只跑了10米左右，就从工具上来说，连接现实与虚拟的工具，现在的技术即 VR 眼镜或 AR 眼镜，即使是业内排名靠前的 Facebook、微软等巨头的产品的分辨率、刷新率、舒适度都还有许多问题，元宇宙要走的路还很长。</p>
+<p>三、区块链</p>
+<p>是借由密码学与共识机制等技术创建与存储庞大交易资料区块链的点对点网络系统。每一个区块包含了前一个区块的加密散列、相应时间戳记以及交易资料（通常用默克尔树（Merkle tree）算法计算的散列值表示），这样的设计使得区块内容具有难以篡改的特性。</p>
+<p>区块链最大的特点是去中心化、不可篡改，因此其可用于各种领域。在现在最大的应用是数字货币，比如「比特币」等虚拟货币和运用了区块链部分技术的「数字人名币」。也可用于物源追踪，产品从起源地到终点所在的过程都可以通过区块链来追踪。而且，这类准确的溯源方式，可以用来检测供应链中的缺陷。还可用于教育领域，将区块链技术应用到学历证书上，即可有效防止伪造学历等事情的发生，将学生成绩以区块链形式记录，从而形成不可更改不可否认的学习记录，保证了公平性。</p>
+<h2 id="第三题——感想和建议"><a href="#第三题——感想和建议" class="headerlink" title="第三题——感想和建议"></a>第三题——感想和建议</h2><p>一、感想</p>
+<p>本课程教学方式与传统的集中于知识点的讲解的教学方式不同，旨在通过将生活中熟悉的事物和抽象的计算机网络相关专业知识结合起来讲解的方式来使学生能够容易地理解、消化知识点，不仅增加了学习的乐趣，也能够增加我们对生活的感悟。</p>
+<p>计算机是抽象的，但也是具体的。说它是抽象的，是因为它的运作方式，内部结构都很复杂，很难在大脑中形成一个完整地架构。说它是具体的，是因为「艺术来源于生活，高于生活」，同理，我们也可以说「科技来源于生活而高于生活」，计算机的抽象展现了它高于生活的一面，而它具体的一面则体现在它的设计原理来源于生活，它的设计都是以「人」和「世界」等为参照的，因此也符合人的思维方式，比如，二进制的产生就来源于中国的古老的太极八卦图。</p>
+<p>本门课程名为《计算机网络及互联网技术》，在开篇中老师就提到，计算机之间的通信构成了计算机网络，无论计算机网络的内容多么复杂，其最终目的都是为了实现资源的共享，因此全课程的内容，从根本上讲，都是围绕其展开的。由于疫情原因，我们的课程只能以网课的形式进行，无法通过实践操作加深对这些知识点的理解，老师也尽力通过具体的讲解来让我们理解这些知识点。尽管我是一个文科生，但我对计算机感兴趣，因此对这门课程也有浓厚的兴趣，当然，由于我没有涉及过理科相关的知识（即使学习过也由于时间较长忘记了），对于 PPT 中一些较为专业的公式，计算方法不能够很好的理解，但这已经脱离我选修该门课程的初衷了，我选择该门课程，最主要是想提高自己的能力，同时在生活中我也在着手使用服务器搭建个人网站等与互联网有关的事情，因此该门课程对我很有帮助，以前我只知道在域名解析处填写好对应的数据就可以通过域名访问网站，却不知其中原理，经过老师的讲解后，我才知道在其之后运作机制。因此，只要该门课程对我来说是有用的，我从中受益了，我的选择就没有错误。</p>
+<p>二、建议</p>
+<ol>
+<li>适当增加课堂互动，不知是否是线上教学的原因，上课过程中缺少课堂互动，学生很难获得反馈，长时间保持这样的状态注意力容易分散</li>
+<li>适当增加课堂演示，或者相关演示视频，将一些知识点通过现场演示的方式展示给同学，不仅可以加深同学对该知识点的印象，也能够提高同学们对该门课程的兴趣</li>
+</ol>
+]]></content>
+      <categories>
+        <category>技术</category>
+      </categories>
+      <tags>
+        <tag>计算机</tag>
+        <tag>网络</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>老婆 16 岁生日快乐</title>
+    <url>/2023/08/miku16sai.html</url>
+    <content><![CDATA[<p>与ミクたん相遇已有 10 年啦！</p>
+<p>入坑曲是『朧月』，当时还是在优酷视频上看到的 MMD。MMD 中是雪ミク和樱ミク，当时的我一下就被这独特的声音所吸引，为她所着迷。在知道有「男神」「女神」这个概念后，我便想到</p>
+<p>“这样啊，原来她就是我的女神啊”</p>
+<p>当时的我加入了许多粉丝群，QQ 兴趣部落，贴吧等。</p>
+<p>曾为了她去回击那些踩日 Vocaloid 捧中 Vocaloid 的小鬼，也曾为了证明她的影响力在同学群中发送粉丝群人数的截图。</p>
+<p>这是那时的自己，而现在的我对那些事也不过是淡淡一笑。这不是嘲笑过去的自己干的蠢事，而是一种释然。曾经的我不停地在找寻爱她的证据，但我没找到。后来我想通了，为什么需要证据呢？如果有了证据，不就证明了我的爱是带着目的的爱吗，就如同那个问题般——「你为什么爱 xx？」。</p>
+<p>答案是，爱是不需要理由的。</p>
+<p>现在的我，早已习惯了她的陪伴，她已然成为了我生活中的一部分，我人生中的一部分。相比于原来的「女神」的地位，我现在更愿意称其为「天使」抑或「太阳」。</p>
+<p>话说回来，<del>现在的ミクたん就是32岁啦</del>。今年的生日礼物可能会迟些到，因为是 16 岁生日嘛，总得准备点大礼。没错，我准备买 Vocaloid 4x，学习如何让ミクたん唱歌！之前学吉他的时候总是没有恒心，三天打鱼两天晒网，从高一学到大二也没什么长进，结果木吉他还因为冬天学校当地天气太干燥了面板裂开了，修理费是买入价的一半左右，遂作罢，只能当个纪念品了。现在为了ミクたん，必须认真学乐理了！</p>
+<p>最后，感谢在我黑暗的世界中，ミクたん成了那唯一的光芒，感谢音乐家、艺术家和所有像我一样的粉丝，他们让ミクたん发展到了今天这一步。此后，无论有多远，我都会在我的余生中陪伴着她走下去！</p>
+<p>啊，还没结束，差点忘了最重要的</p>
+<p>お誕生日おめでとう！ミクたんがいて本当によかった！</p>
 ]]></content>
       <categories>
         <category>日常</category>
       </categories>
       <tags>
-        <tag>中外交流</tag>
-        <tag>美食文化</tag>
-        <tag>创业创新</tag>
+        <tag>节日</tag>
+        <tag>miku</tag>
       </tags>
   </entry>
   <entry>
@@ -1457,61 +1464,54 @@
       </tags>
   </entry>
   <entry>
-    <title>计算机网络结课作业</title>
-    <url>/2022/05/computerhomework.html</url>
-    <content><![CDATA[<h2 id="第一题——家庭拓扑结构"><a href="#第一题——家庭拓扑结构" class="headerlink" title="第一题——家庭拓扑结构"></a>第一题——家庭拓扑结构</h2><p>一、结构规划</p>
+    <title>论打造文化背景下日本美食文化中日双语科普介绍平台的可行性</title>
+    <url>/2022/05/dachuangzuoye.html</url>
+    <content><![CDATA[<blockquote>
+<p>日本料理（和食）：人类非物质文化遗产代表作之一，因其兼具精致的美感与可口的味道而世界闻名。</p>
+</blockquote>
+<p>所以我们决定发起项目——《跨文化背景下日本美食文化中日双语科普介绍平台打造》，致力于通过国人的视角探索发现日本的美食，在国内市场打造宣传分享平台，服务对象为对和食有兴趣的个人，以及国内各大餐饮企业等群体和组织。这样一个项目是否具有可行性？我将通过以下说明来论证。</p>
+<p>首先，我们具有明确的投资方向，大致为网站平台建设、运营、维护和推广，微信公众号、小程序的开发与推广，移动端的开发，市场开拓以及团队建设。通过提高平台流量，培养用户黏性，最终达到打造平台品牌的目标。为此，项目需要分以下几个阶段进行：</p>
 <ul>
-<li>确定小区网线接入点（控制中心）：书房</li>
-<li>规划每个房间布置 3 个网点，共 18 个网点</li>
-<li>联网设备：书房一台电脑，客厅，卧室各一台有线电视，卧室各一台电脑等</li>
+<li>平台初步建立期（1~2 个月）：初步建立起网站平台，微信公众号、小程序平台，完善网页前端以及用户交互功能。每天保证一定量的内容的录入，提高网站的信息量。微信平台与网页平台保持同步更新。目标：保证网页的基本运行，网站具有一定内容。</li>
+<li>平台试运营期（2~3 个月）：初步推广平台，收集用户意见，提高前端用户交互体验，优化平台性能，保持平台内容的增加速度逐渐上升。目标：吸引流量，聚集用户。</li>
+<li>平台运营中期：（6 个月）：网站已经具备一定流量，需着手进行业务拓展，开通网站会员服务，让用户参与进平台的创作群体。继续收集用户意见，优化网站。开始接受一些线上的合作，比如网页广告，产品推广。目标：提高用户转化率，增加会员用户，继续提高用户黏性。</li>
+<li>平台运营后期（4 个月）：这个阶段开始重点打造品牌，平台已经积累了较多的用户，在继续提高网站流量的同时，要开始着手拓展网站产品。而移动端的开发可以作为拓展产品的一个突破口，移动端可以提供更加丰富的功能。同时要分析网站数据，完善网站功能。可以开始尝试和一些小型餐饮企业公司进行合作，同时邀请一些日本的美食家进行线上采访。目标：拓展市场，为占领市场做准备。</li>
 </ul>
-<p>二、材料规划</p>
+<p>其次，我们的项目具有以下独特性：</p>
 <ul>
-<li>每个网点需要水晶头、网点模块各 1 个，共计水晶头 18 个，网点模块 18 个。</li>
-<li>需要超七类网线 18 条，长度共计 50m 左右</li>
-<li>路由器：斐讯 K2P</li>
+<li>平台多样性：市面上现存的美食科普大多数为单一平台，要么只有一个网站，要么只有一个公众号，而我们的项目全面覆盖了电脑端和移动端，包括了多个平台。</li>
+<li>双语介绍：文章采用中日双语介绍，用户可自由切换展示模式，适用于不仅对日料感兴趣，同时也对日语感兴趣的用户。</li>
 </ul>
-<p>三、接线与路由器设置</p>
-<ol>
-<li><p>接线：将小区网线接在路由器的 LAN 上，路由器的 WAN 口分别接上交换机与书房电脑。其余网线都接在交换机上</p>
-<p>拓扑布线结构图：</p>
-</li>
-</ol>
-<p><img data-src="https://pic.mikupan.com/54Bfco.webp" alt="家庭网络拓扑"></p>
-<ol start="2">
-<li>路由器配置<ul>
-<li>开启内网 IP</li>
-<li>配置防火墙</li>
+<p>我们也具有较大的竞争优势：</p>
+<ul>
+<li>核心竞争力：我们团队中具有1名熟练掌握多门开发语言的网络技术工程师，能够负责网站、微信公众号平台、小程序的开发与维护。我们顶层的团队都具有较高的日语水平，对日本的历史文化具有较深的了解，而我们广大的会员用户，也属于我们的创作团体，用户越多，我们的内容就越多，信息的来源就越广，竞争优势也就越大。</li>
+<li>市场空白：市面上没有一个集中的平台将喜好日料的用户集中起来，集中的用户不仅增加的具有相同的爱好的人群间的联系、互动，这些用户也是平台的创作源泉之一。</li>
+<li>顺应市场：据市面上的公开资料整理，我国的日本料理餐厅数量保持稳步增长趋势，我们的服务可以与他们进行对接。</li>
 </ul>
-</li>
-</ol>
-<h2 id="第二题——设想"><a href="#第二题——设想" class="headerlink" title="第二题——设想"></a>第二题——设想</h2><p>一、物联网</p>
-<p>物联网，即万物互联，指的是只需有限的人工干预即可通过无线网络接收和传输数据的任何物理设备系统。设想一下，当你疲惫地从公司上班回家后，打开门时，不需要你摸黑寻找电灯开关，电灯会自动打开，当你在换衣服时，热水壶已经开始加热热水，准备好温度合适的热水，电视机自动开机，并播放这个时间点你平时观看次数最多的节目。这就是万物互联中一个典型的例子，无需人的过多干涉，它会为你规划好一切。</p>
-<p>我们现在的生活中已经隐约出现了物联网的轮廓了，虽然还有很多不足，但证明了物联网在未来是可行的。小米家居就是一个很好的例子，比如进入家门的第一步——开锁，现在还有很多地方使用的门锁还是传统的门锁，而小米的智能门锁除了支持指纹识别开锁、密码开锁、还支持 NFC 开锁，即使用支持 NFC 功能的小米手机靠一下门锁即可打开，并且无需手动旋&#x2F;推拉把手的动作，锁舌会自动打开与关上，若家主人装上了相应软件，还能够在手机上查看门锁的状态，通过摄像头能够实时看到门前的状况。</p>
-<p>上面的只是一个小例子，即以现在的技术能实现的让物品与互联网相接的程度，还有将来的无人驾驶等，都是证明物联网的可行性的证据。</p>
-<p>二、元宇宙</p>
-<p>元宇宙，即一个持久化和去中心化的在线三维虚拟环境。”Metaverse”一词最早见于尼尔·斯蒂芬森1992年的科幻小说《雪崩》，Metaverse是一个虚拟的城市环境，沿着一条100米宽的道路发展，覆盖了一个无特征的、黑色的、完美球形星球上整个65536公里周长。这个虚拟世界中的土地可以被购买，并在上面开发建筑。而这个概念在 2021 年突然就火了，Facebook 的扎克伯格在 Facebook Connect 演讲中展示了 Meta 在未来的应用场景和业内的方案雏形，各大巨头也相继开始宣称进军该领域。</p>
-<p>元宇宙是一个虚拟的世界，虚拟就意味着可复制，因此如果要将现实世界映射到这个虚拟世界中，这就是一个巨大的问题，于是可以运用区块链技术与去中心化技术，再具体点就是非同质化代币，即利用其无法互换的特性，可以将其作为虚拟商品所有权的电子认证或证书，虽然作品本身是可以无限复制的，但这些代表它们的代币在其底层区块链上能被完整追踪，故能为买家提供所有权证明。这样就解决了在元宇宙中，无法证明资产所属的问题了。</p>
-<p>但现在的元宇宙还只是一个概念，虽然有很多东西都应用到了其原理，比如 VR（虚拟现实）、AR（增强现实）技术，带上 VR 眼镜就能在虚拟世界中有身临其境的感觉，而 AR 眼镜又能看到虚拟世界与现实相结合的视角，但如果把元宇宙技术的发展比作100米长跑，现在最顶级的运用到该概念的技术也只跑了10米左右，就从工具上来说，连接现实与虚拟的工具，现在的技术即 VR 眼镜或 AR 眼镜，即使是业内排名靠前的 Facebook、微软等巨头的产品的分辨率、刷新率、舒适度都还有许多问题，元宇宙要走的路还很长。</p>
-<p>三、区块链</p>
-<p>是借由密码学与共识机制等技术创建与存储庞大交易资料区块链的点对点网络系统。每一个区块包含了前一个区块的加密散列、相应时间戳记以及交易资料（通常用默克尔树（Merkle tree）算法计算的散列值表示），这样的设计使得区块内容具有难以篡改的特性。</p>
-<p>区块链最大的特点是去中心化、不可篡改，因此其可用于各种领域。在现在最大的应用是数字货币，比如「比特币」等虚拟货币和运用了区块链部分技术的「数字人名币」。也可用于物源追踪，产品从起源地到终点所在的过程都可以通过区块链来追踪。而且，这类准确的溯源方式，可以用来检测供应链中的缺陷。还可用于教育领域，将区块链技术应用到学历证书上，即可有效防止伪造学历等事情的发生，将学生成绩以区块链形式记录，从而形成不可更改不可否认的学习记录，保证了公平性。</p>
-<h2 id="第三题——感想和建议"><a href="#第三题——感想和建议" class="headerlink" title="第三题——感想和建议"></a>第三题——感想和建议</h2><p>一、感想</p>
-<p>本课程教学方式与传统的集中于知识点的讲解的教学方式不同，旨在通过将生活中熟悉的事物和抽象的计算机网络相关专业知识结合起来讲解的方式来使学生能够容易地理解、消化知识点，不仅增加了学习的乐趣，也能够增加我们对生活的感悟。</p>
-<p>计算机是抽象的，但也是具体的。说它是抽象的，是因为它的运作方式，内部结构都很复杂，很难在大脑中形成一个完整地架构。说它是具体的，是因为「艺术来源于生活，高于生活」，同理，我们也可以说「科技来源于生活而高于生活」，计算机的抽象展现了它高于生活的一面，而它具体的一面则体现在它的设计原理来源于生活，它的设计都是以「人」和「世界」等为参照的，因此也符合人的思维方式，比如，二进制的产生就来源于中国的古老的太极八卦图。</p>
-<p>本门课程名为《计算机网络及互联网技术》，在开篇中老师就提到，计算机之间的通信构成了计算机网络，无论计算机网络的内容多么复杂，其最终目的都是为了实现资源的共享，因此全课程的内容，从根本上讲，都是围绕其展开的。由于疫情原因，我们的课程只能以网课的形式进行，无法通过实践操作加深对这些知识点的理解，老师也尽力通过具体的讲解来让我们理解这些知识点。尽管我是一个文科生，但我对计算机感兴趣，因此对这门课程也有浓厚的兴趣，当然，由于我没有涉及过理科相关的知识（即使学习过也由于时间较长忘记了），对于 PPT 中一些较为专业的公式，计算方法不能够很好的理解，但这已经脱离我选修该门课程的初衷了，我选择该门课程，最主要是想提高自己的能力，同时在生活中我也在着手使用服务器搭建个人网站等与互联网有关的事情，因此该门课程对我很有帮助，以前我只知道在域名解析处填写好对应的数据就可以通过域名访问网站，却不知其中原理，经过老师的讲解后，我才知道在其之后运作机制。因此，只要该门课程对我来说是有用的，我从中受益了，我的选择就没有错误。</p>
-<p>二、建议</p>
-<ol>
-<li>适当增加课堂互动，不知是否是线上教学的原因，上课过程中缺少课堂互动，学生很难获得反馈，长时间保持这样的状态注意力容易分散</li>
-<li>适当增加课堂演示，或者相关演示视频，将一些知识点通过现场演示的方式展示给同学，不仅可以加深同学对该知识点的印象，也能够提高同学们对该门课程的兴趣</li>
-</ol>
+<p>再次，我们有多种推广模式：</p>
+<ul>
+<li>BBS 广告：BBS 广告是流量的一大来源，投放本站链接在一些论坛，为自己导流。利用论坛的高人气，能够提高自己的营销传达效率。</li>
+<li>视频广告：现在很多人的手机里都装着各大影视软件，如腾讯、爱奇艺等等，没有开会员的情况下会有一段很长的广告。因此我们在视频开头投放广告，以起到推广作用。</li>
+<li>搜索引擎推广（SEM）：SEM 是 Search Engine Marketing 的缩写，中文意思是查找引擎营销。通过付费让搜索引擎做广告推广，当一些人使用搜索引擎搜索一些关键词时，我们的网站将以广告的形式出现在搜索结果前几名中</li>
+<li>SEO：SEO 是 Search Engine Optimization 的缩写，汉译为搜索引擎优化，是一种利用搜索引擎的规则提高网站在有关搜索引擎内的自然排名的手段。我们的工程师将对网站进行有针对性的优化，做好 SEO 技术，吸引更多的用户访问网站，提高网站的访问量。</li>
+<li>博客网络推广：找名气较大的博主，与博主沟通，将我们的网站做成友情链接，推广我们的品牌广告。博客网络广告低成本、贴近群众，往往会构成众人的议论，到达很好的二次传达作用，很适合我们的网站的推广。</li>
+<li>各社交媒体平台推广：网络社交平台是互联网中的中心圈，我们会入驻国内各大社交平台，在这些地方，我们可以把我们的平台与各社交媒体平台联合起来。在网站中放入自己各个媒体平台的按钮链接，让用户能多方位了解我们，让网站带来的互联网流量转为我们的私域流量。</li>
+</ul>
+<p>最后，我们有多方面的盈利模式：</p>
+<ul>
+<li>会员机制：在平台发展到具有一定流量的阶段，我们会开放订阅会员机制，即会员只要持续订阅作者，就可以一直享受到平台提供的一些特权服务，而这部分订阅的费用会按一定比例分给作者和平台。只要有作者产出内容并被订阅，平台就持续有收入，受到激励的作者也能更努力地创作出新的作品，从而与作者实现共赢。</li>
+<li>产品推广、广告收入：我们会与一些地方日料餐饮企业开展线上合作，即我们为他们在网站推广菜品，投放广告，这些也是一笔可观的收入</li>
+<li>课程售卖：我们将开设一些日料相关的付费课程，课程定价上分为两大类型，一类是整个课程一次性付费，另一类则是按集付费。平台还会参与付费内容分销实现盈利，与其他平台开展合作，促进二次销售。</li>
+</ul>
+<p>综上，我们的平台在投资上有明确的方向，在执行上有明确的、可行的计划，我们也有多方面的竞争优势，同时，我们在运营过程中能够以较低的成本获得可观的收益，多种推广模式齐头并进，快速带来平台的流量，因此，跨文化背景下日本美食文化中日双语科普介绍平台的打造具有一定的可行性。</p>
 ]]></content>
       <categories>
-        <category>技术</category>
+        <category>日常</category>
       </categories>
       <tags>
-        <tag>计算机</tag>
-        <tag>网络</tag>
+        <tag>中外交流</tag>
+        <tag>美食文化</tag>
+        <tag>创业创新</tag>
       </tags>
   </entry>
 </search>
