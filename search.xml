@@ -58,6 +58,69 @@
       </tags>
   </entry>
   <entry>
+    <title>Next 文章顶部添加波浪效果</title>
+    <url>/2023/08/nextwave.html</url>
+    <content><![CDATA[<blockquote>
+<p>参考文章：安知鱼 <a href="https://blog.anheyu.com/posts/98c4.html">butterfly文章顶部添加波浪效果</a></p>
+</blockquote>
+<p>之前用 butterfly 的时候就看过安知鱼大佬的文章顶部加波浪效果的教程，又好像在哪里看到过 Next 也有人做出来过，但已找不到相关博客。两个月前早已萌发了自己做出来的念头，奈何看不懂 Next 使用的 <code>njk</code> 语法。</p>
+<h2 id="折腾的过程"><a href="#折腾的过程" class="headerlink" title="折腾的过程"></a>折腾的过程</h2><p>将大佬的代码插入到 post 的生成模版的 <code>&lt;header&gt;</code> 标签末尾，添加 css 后却发现首页的文章卡片（下文简称为文章卡片）的 meta 信息部分和文章页的 meta 信息部分是同一个模版生成的。如果给文章页头部添加了波浪效果，文章卡片也会有波浪效果，这是我不希望看到的，于是放弃了一段时间。</p>
+<p>前两天又想起这个效果，于是想着再试一试，这次我发现文章卡片与文章页的头部的描述部分（description 部分）的字体大小不一致，查看 css 后发现文章页的 description 多了一个<strong>类</strong>用以区分首页的 description。于是去找模版中对应的部分，发现有个 if 语句判断当前是否非主页，true 的话就添加了一个类名。这给了我很大信心，感觉只要分离主页和文章页的 <code>&lt;header&gt;</code> 就可以轻松实现了。</p>
+<p>接下来遇到的问题是整个内容主体 <code>&lt;main&gt;</code> 有个 40px 的 <code>padding</code>，导致增加的波浪效果会变窄。想到的解决办法是把 <code>&lt;header&gt;</code> 放置在 <code>&lt;main&gt;</code> 上面，但尝试后遇到了文章卡片 <code>&lt;header&gt;</code> 结构同步变化、不能熟练使用 flex 布局达到使文章页 <code>&lt;header&gt;</code> 与 <code>&lt;main&gt;</code> 保持垂直分布且宽度一致的目的、由于 pjax 进入文章页后不能自动更新新的 <code>&lt;header&gt;</code> 的位置等阻碍。最终放弃把 <code>&lt;header&gt;</code> 与 <code>&lt;main&gt;</code> 分离这一想法。</p>
+<p>无奈之下查询 Google 是否有办法让子元素不受父元素的 padding 的影响，结果发现只需要使子元素的 margin 的值为负的父元素的 padding 值即可。一拍脑袋，不知道自己之前怎么想的，明明是 css 的问题，却要去改变结构，总结是自己没理解好 margin 相关的知识导致的。</p>
+<p>最后的方案就是给 <code>&lt;header&gt;</code> 加了个条件判断，如果是非主页就增加一个<strong>类</strong>，用以加 css 样式。这样就可以分开主页与文章页。至于大佬原来使用的是绝对定位来定位波浪位置，但 Next 的 <code>&lt;header&gt;</code> 的父元素没有使用相对定位，导致绝对定位参照的是 <code>&lt;main&gt;</code> 这个祖先元素，我将波浪改成了相对定位就解决了，虽然不知道有没有什么大的影响，不过测试下来没有什么问题。</p>
+<p>唠了这么多，接下来就上代码了！</p>
+<h2 id="教程"><a href="#教程" class="headerlink" title="教程"></a>教程</h2><p>打开 <code>themes/next/layout/_macro/post.njk</code> 并修改以下内容</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&#123;%- if post.header !== false %&#125;</span><br><span class="line">-      &lt;header class=&quot;post-header&quot;&gt;</span><br><span class="line">+      &lt;header class=&quot;post-header&#123;% if not is_index %&#125; insidepost-header&#123;% endif %&#125;&quot;&gt;</span><br><span class="line">        &lt;&#123;% if is_index %&#125;h2&#123;% else %&#125;h1&#123;% endif %&#125; class=&quot;post-title&#123;% if post.direction and post.direction.toLowerCase() === &#x27;rtl&#x27; %&#125; rtl&#123;% endif %&#125;&quot; itemprop=&quot;name headline&quot;&gt;</span><br><span class="line">          &#123;# Link posts #&#125;</span><br><span class="line"></span><br><span class="line">	...</span><br><span class="line"></span><br><span class="line">&lt;div class=&quot;post-description&quot;&gt;&#123;&#123; post.description &#125;&#125;&lt;/div&gt;</span><br><span class="line">          &#123;%- endif %&#125;</span><br><span class="line">        &lt;/div&gt;</span><br><span class="line">+        &#123;% if not is_index %&#125;</span><br><span class="line">+          &lt;section class=&quot;main-hero-waves-area waves-area&quot;&gt;</span><br><span class="line">+            &lt;svg class=&quot;waves-svg&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot; xlink=&quot;http://www.w3.org/1999/xlink&quot; viewBox=&quot;0 24 150 28&quot; preserveAspectRatio=&quot;none&quot; shape-rendering=&quot;auto&quot;&gt;</span><br><span class="line">+              &lt;defs&gt;</span><br><span class="line">+                &lt;path id=&quot;gentle-wave&quot; d=&quot;M -160 44 c 30 0 58 -18 88 -18 s 58 18 88 18 s 58 -18 88 -18 s 58 18 88 18 v 44 h -352 Z&quot;&gt;&lt;/path&gt;</span><br><span class="line">+              &lt;/defs&gt;</span><br><span class="line">+              &lt;g class=&quot;parallax&quot;&gt;</span><br><span class="line">+                &lt;use href=&quot;#gentle-wave&quot; x=&quot;48&quot; y=&quot;0&quot;&gt;&lt;/use&gt;</span><br><span class="line">+                &lt;use href=&quot;#gentle-wave&quot; x=&quot;48&quot; y=&quot;3&quot;&gt;&lt;/use&gt;</span><br><span class="line">+                &lt;use href=&quot;#gentle-wave&quot; x=&quot;48&quot; y=&quot;5&quot;&gt;&lt;/use&gt;</span><br><span class="line">+                &lt;use href=&quot;#gentle-wave&quot; x=&quot;48&quot; y=&quot;7&quot;&gt;&lt;/use&gt;</span><br><span class="line">+              &lt;/g&gt;</span><br><span class="line">+            &lt;/svg&gt;</span><br><span class="line">+          &lt;/section&gt;</span><br><span class="line">+        &#123;% endif %&#125;</span><br><span class="line">      &lt;/header&gt;</span><br><span class="line">    &#123;%- endif %&#125;</span><br></pre></td></tr></table></figure>
+
+<p>这里提供一份方便复制的版本</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;header class=&quot;post-header&#123;% if not is_index %&#125; insidepost-header&#123;% endif %&#125;&quot;&gt;</span><br><span class="line"></span><br><span class="line">		&#123;% if not is_index %&#125;</span><br><span class="line">          &lt;section class=&quot;main-hero-waves-area waves-area&quot;&gt;</span><br><span class="line">            &lt;svg class=&quot;waves-svg&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot; xlink=&quot;http://www.w3.org/1999/xlink&quot; viewBox=&quot;0 24 150 28&quot; preserveAspectRatio=&quot;none&quot; shape-rendering=&quot;auto&quot;&gt;</span><br><span class="line">              &lt;defs&gt;</span><br><span class="line">                &lt;path id=&quot;gentle-wave&quot; d=&quot;M -160 44 c 30 0 58 -18 88 -18 s 58 18 88 18 s 58 -18 88 -18 s 58 18 88 18 v 44 h -352 Z&quot;&gt;&lt;/path&gt;</span><br><span class="line">              &lt;/defs&gt;</span><br><span class="line">              &lt;g class=&quot;parallax&quot;&gt;</span><br><span class="line">                &lt;use href=&quot;#gentle-wave&quot; x=&quot;48&quot; y=&quot;0&quot;&gt;&lt;/use&gt;</span><br><span class="line">                &lt;use href=&quot;#gentle-wave&quot; x=&quot;48&quot; y=&quot;3&quot;&gt;&lt;/use&gt;</span><br><span class="line">                &lt;use href=&quot;#gentle-wave&quot; x=&quot;48&quot; y=&quot;5&quot;&gt;&lt;/use&gt;</span><br><span class="line">                &lt;use href=&quot;#gentle-wave&quot; x=&quot;48&quot; y=&quot;7&quot;&gt;&lt;/use&gt;</span><br><span class="line">              &lt;/g&gt;</span><br><span class="line">            &lt;/svg&gt;</span><br><span class="line">          &lt;/section&gt;</span><br><span class="line">        &#123;% endif %&#125;</span><br></pre></td></tr></table></figure>
+
+<p>接下来在 <code>_config.next.yml</code> 中取消 <code>custom_file_path</code> 的 <code>style: source/_data/styles.styl</code> 的注释，并在 <code>根目录/source/_data/</code> 下创建 <code>styles.styl</code>，粘贴以下内容</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="comment">/* 波浪css */</span></span><br><span class="line"><span class="selector-class">.main-hero-waves-area</span> &#123;</span><br><span class="line">  <span class="attribute">width</span>: <span class="number">100%</span>;</span><br><span class="line">  <span class="attribute">height</span>: <span class="number">5rem</span>;</span><br><span class="line">  <span class="attribute">position</span>: relative;</span><br><span class="line">  <span class="attribute">left</span>: <span class="number">0</span>;</span><br><span class="line">  <span class="attribute">z-index</span>: <span class="number">5</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.waves-area</span> <span class="selector-class">.waves-svg</span> &#123;</span><br><span class="line">  <span class="attribute">width</span>: <span class="number">100%</span>;</span><br><span class="line">  <span class="attribute">height</span>: <span class="number">5rem</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/* Animation */</span></span><br><span class="line"></span><br><span class="line"><span class="selector-class">.parallax</span> &gt; use &#123;</span><br><span class="line">  <span class="attribute">animation</span>: move-forever <span class="number">25s</span> <span class="built_in">cubic-bezier</span>(<span class="number">0.55</span>, <span class="number">0.5</span>, <span class="number">0.45</span>, <span class="number">0.5</span>) infinite;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.parallax</span> &gt; use<span class="selector-pseudo">:nth-child</span>(<span class="number">1</span>) &#123;</span><br><span class="line">  <span class="attribute">animation-delay</span>: -<span class="number">2s</span>;</span><br><span class="line">  <span class="attribute">animation-duration</span>: <span class="number">7s</span>;</span><br><span class="line">  fill: <span class="number">#f7f9febd</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.parallax</span> &gt; use<span class="selector-pseudo">:nth-child</span>(<span class="number">2</span>) &#123;</span><br><span class="line">  <span class="attribute">animation-delay</span>: -<span class="number">3s</span>;</span><br><span class="line">  <span class="attribute">animation-duration</span>: <span class="number">10s</span>;</span><br><span class="line">  fill: <span class="number">#f7f9fe82</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.parallax</span> &gt; use<span class="selector-pseudo">:nth-child</span>(<span class="number">3</span>) &#123;</span><br><span class="line">  <span class="attribute">animation-delay</span>: -<span class="number">4s</span>;</span><br><span class="line">  <span class="attribute">animation-duration</span>: <span class="number">13s</span>;</span><br><span class="line">  fill: <span class="number">#f7f9fe36</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.parallax</span> &gt; use<span class="selector-pseudo">:nth-child</span>(<span class="number">4</span>) &#123;</span><br><span class="line">  <span class="attribute">animation-delay</span>: -<span class="number">5s</span>;</span><br><span class="line">  <span class="attribute">animation-duration</span>: <span class="number">20s</span>;</span><br><span class="line">  fill: <span class="number">#f7f9fe</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/* 黑色模式背景 */</span></span><br><span class="line"><span class="selector-attr">[data-theme=<span class="string">&quot;dark&quot;</span>]</span> <span class="selector-class">.parallax</span> &gt; use<span class="selector-pseudo">:nth-child</span>(<span class="number">1</span>) &#123;</span><br><span class="line">  <span class="attribute">animation-delay</span>: -<span class="number">2s</span>;</span><br><span class="line">  <span class="attribute">animation-duration</span>: <span class="number">7s</span>;</span><br><span class="line">  fill: <span class="number">#18171dc8</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-attr">[data-theme=<span class="string">&quot;dark&quot;</span>]</span> <span class="selector-class">.parallax</span> &gt; use<span class="selector-pseudo">:nth-child</span>(<span class="number">2</span>) &#123;</span><br><span class="line">  <span class="attribute">animation-delay</span>: -<span class="number">3s</span>;</span><br><span class="line">  <span class="attribute">animation-duration</span>: <span class="number">10s</span>;</span><br><span class="line">  fill: <span class="number">#18171d80</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-attr">[data-theme=<span class="string">&quot;dark&quot;</span>]</span> <span class="selector-class">.parallax</span> &gt; use<span class="selector-pseudo">:nth-child</span>(<span class="number">3</span>) &#123;</span><br><span class="line">  <span class="attribute">animation-delay</span>: -<span class="number">4s</span>;</span><br><span class="line">  <span class="attribute">animation-duration</span>: <span class="number">13s</span>;</span><br><span class="line">  fill: <span class="number">#18171d3e</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-attr">[data-theme=<span class="string">&quot;dark&quot;</span>]</span> <span class="selector-class">.parallax</span> &gt; use<span class="selector-pseudo">:nth-child</span>(<span class="number">4</span>) &#123;</span><br><span class="line">  <span class="attribute">animation-delay</span>: -<span class="number">5s</span>;</span><br><span class="line">  <span class="attribute">animation-duration</span>: <span class="number">20s</span>;</span><br><span class="line">  fill: <span class="number">#18171d</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">@keyframes</span> move-forever &#123;</span><br><span class="line">  <span class="number">0%</span> &#123;</span><br><span class="line">    <span class="attribute">transform</span>: <span class="built_in">translate3d</span>(-<span class="number">90px</span>, <span class="number">0</span>, <span class="number">0</span>);</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="number">100%</span> &#123;</span><br><span class="line">    <span class="attribute">transform</span>: <span class="built_in">translate3d</span>(<span class="number">85px</span>, <span class="number">0</span>, <span class="number">0</span>);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/*Shrinking for mobile*/</span></span><br><span class="line"><span class="keyword">@media</span> (<span class="attribute">max-width</span>: <span class="number">768px</span>) &#123;</span><br><span class="line">  <span class="selector-class">.waves-area</span>, <span class="selector-class">.waves-area</span> <span class="selector-class">.waves-svg</span> &#123;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">40px</span>;</span><br><span class="line">    <span class="attribute">min-height</span>: <span class="number">40px</span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/* 修改postheader背景 */</span></span><br><span class="line"><span class="selector-class">.insidepost-header</span> &#123;</span><br><span class="line">    <span class="attribute">margin-left</span>: -<span class="number">40px</span>;</span><br><span class="line">    <span class="attribute">margin-right</span>: -<span class="number">40px</span>;</span><br><span class="line">    <span class="attribute">background</span>: <span class="built_in">var</span>(--theme-color);</span><br><span class="line">    <span class="attribute">margin-top</span>: -<span class="number">70px</span>;</span><br><span class="line">    <span class="attribute">padding-top</span>: <span class="number">40px</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.insidepost-header</span>, <span class="selector-class">.insidepost-header</span> <span class="selector-tag">a</span>, <span class="selector-class">.insidepost-header</span> <span class="selector-class">.post-meta-container</span> &#123;</span><br><span class="line">  <span class="attribute">color</span>: white;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.insidepost-header</span> <span class="selector-class">.post-meta-container</span> &#123;</span><br><span class="line">  <span class="attribute">margin-bottom</span>: <span class="number">40px</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.insidepost-header</span> <span class="selector-class">.post-description</span> &#123;</span><br><span class="line">    <span class="attribute">display</span>: none;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.insidepost-header</span> <span class="selector-tag">h1</span><span class="selector-class">.post-title</span>, <span class="selector-class">.insidepost-header</span> <span class="selector-class">.post-meta-container</span> &#123;</span><br><span class="line">    <span class="attribute">padding-left</span>: <span class="number">40px</span>;</span><br><span class="line">    <span class="attribute">padding-right</span>: <span class="number">40px</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">@media</span> (<span class="attribute">max-width</span>: <span class="number">991px</span>) &#123;</span><br><span class="line">  <span class="selector-class">.insidepost-header</span> &#123;</span><br><span class="line">    <span class="attribute">margin-left</span>: -<span class="number">20px</span>;</span><br><span class="line">    <span class="attribute">margin-right</span>: -<span class="number">20px</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="selector-class">.insidepost-header</span> <span class="selector-tag">h1</span><span class="selector-class">.post-title</span>, <span class="selector-class">.insidepost-header</span> <span class="selector-class">.post-meta-container</span> &#123;</span><br><span class="line">    <span class="attribute">padding-left</span>: <span class="number">20px</span>;</span><br><span class="line">    <span class="attribute">padding-right</span>: <span class="number">20px</span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>然后打开网站看看效果吧！</p>
+<p>效果图：</p>
+<p><img data-src="https://img.fufu.ink/6SevHQ.webp" alt="文章顶部波浪效果图"></p>
+]]></content>
+      <categories>
+        <category>技术</category>
+      </categories>
+      <tags>
+        <tag>Hexo</tag>
+        <tag>技术</tag>
+        <tag>教程</tag>
+        <tag>CSS</tag>
+        <tag>Next</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Waline 美化教程</title>
+    <url>/2023/04/walinedecoration.html</url>
+    <content><![CDATA[<p>起因是看到许多博客使用的 twikoo 评论系统，觉得 twikoo 的前端样式很好看，与之相对的正在用的 waline 的默认样式是真的不好看，本来打算直接换到 twikoo 的，转念一想，既然是属于样式的东西，为什么不直接用 css 解决呢，没有必要为了一个效果而去换插件。博主的 css 不行，只会 <kbd>F12</kbd> 找到哪个元素改哪个。至于定位元素之类的完全不行＞﹏＜。只要最后好看了就 ok 了！（bushi</p>
+<p>以下为代码部分（部分选择器需要根据实际更换）</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="comment">/* 修改waline样式 */</span></span><br><span class="line"><span class="comment">/* 修改评论框外观 */</span></span><br><span class="line"><span class="selector-class">.wl-panel</span> &#123;</span><br><span class="line">    <span class="attribute">border-radius</span>: <span class="number">4px</span> <span class="meta">!important</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-pseudo">:root</span> &#123;</span><br><span class="line">    <span class="attr">--waline-bgcolor-light</span>: transparent <span class="meta">!important</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.wl-btn</span> &#123;</span><br><span class="line">    <span class="attribute">border-radius</span>: <span class="number">0.3em</span> <span class="meta">!important</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* 添加miku的gif为输入区域背景 */</span></span><br><span class="line"><span class="selector-id">#wl-edit</span> &#123;</span><br><span class="line">    <span class="attribute">background</span>: <span class="built_in">url</span>(<span class="string">&quot;/img/wl-bg-mikuchan.gif&quot;</span>) <span class="number">100%</span> <span class="number">100%</span> no-repeat;</span><br><span class="line">    <span class="attribute">background-size</span>: contain <span class="meta">!important</span>;</span><br><span class="line">    <span class="attribute">background-repeat</span>: no-repeat <span class="meta">!important</span>;</span><br><span class="line">    <span class="attribute">background-position</span>: right bottom <span class="meta">!important</span>; </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-id">#waline-wrap</span> <span class="selector-tag">textarea</span><span class="selector-pseudo">:focus</span> &#123;</span><br><span class="line">    <span class="attribute">background</span>: <span class="built_in">url</span>(<span class="string">&quot;/img/wl-bg-mikuchan.gif&quot;</span>) <span class="number">100%</span> <span class="number">100%</span> no-repeat;</span><br><span class="line">    <span class="attribute">background-position</span>-y: <span class="number">78px</span> <span class="meta">!important</span>;</span><br><span class="line">    <span class="attribute">transition</span>: all <span class="number">0.25s</span> ease-in-out <span class="number">0s</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* 修改评论区内容背景 */</span></span><br><span class="line"><span class="selector-class">.wl-card</span> <span class="selector-class">.wl-content</span> &#123;</span><br><span class="line">    <span class="attribute">background</span>: <span class="number">#f5f5f5</span>;</span><br><span class="line">    <span class="attribute">padding</span>: <span class="number">16px</span> <span class="meta">!important</span>;</span><br><span class="line">    <span class="attribute">margin</span>: <span class="number">12px</span> <span class="number">0</span> <span class="number">8px</span> <span class="meta">!important</span>;</span><br><span class="line">    <span class="attribute">border-radius</span>: <span class="number">3px</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.wl-card</span> &#123;</span><br><span class="line">    <span class="attribute">border-bottom</span>: none <span class="meta">!important</span>;</span><br><span class="line">    <span class="attribute">padding-bottom</span>: <span class="number">0px</span> <span class="meta">!important</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.wl-cards</span> <span class="selector-class">.wl-item</span>&#123;</span><br><span class="line">    <span class="attribute">padding</span>: .<span class="number">5em</span> .<span class="number">5em</span> <span class="number">0px</span> <span class="meta">!important</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>效果图如下（因图片是截取自评论区而打了码，头像这些不属于以上代码，后面可以考虑改一下默认头像）</p>
+<p><img data-src="https://img.fufu.ink/iTcakI.webp" alt="Waline评论框美化效果"></p>
+<p><img data-src="https://img.fufu.ink/JDVkhh.webp" alt="Waline评论区美化效果"></p>
+<p>其中评论框的背景 gif 需要自己下载下来放到 <code>/source/img/</code> 下即可（记得重命名），别直接用我的博客的地址！（就这么点大小的图片就别直接挂别人的链接了吧，虽然我也不会做防盗链…）</p>
+<p>修改文本输入框中的提示文字需要到主题的配置文件中找到 waline 的配置项，在其中添加 <code>locale: &#123;placeholder: &#39;提示文字&#39;&#125;</code> 即可，以主题 butterfly 为例，则需要在 option 中添加该行代码，需要注意缩进，如下所示</p>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">waline:</span></span><br><span class="line">  <span class="attr">serverURL:</span> <span class="comment"># Waline server address url</span></span><br><span class="line">  <span class="attr">bg:</span> <span class="comment"># waline background</span></span><br><span class="line">  <span class="attr">pageview:</span> <span class="literal">false</span></span><br><span class="line">  <span class="attr">option:</span></span><br><span class="line">    <span class="attr">locale:</span> &#123;<span class="attr">placeholder:</span> <span class="string">&#x27;提示文字&#x27;</span>&#125;</span><br></pre></td></tr></table></figure>
+
+<p>最后就是上面效果图的样子啦！</p>
+]]></content>
+      <categories>
+        <category>技术</category>
+      </categories>
+      <tags>
+        <tag>Hexo</tag>
+        <tag>技术</tag>
+        <tag>教程</tag>
+        <tag>CSS</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>MinecraftBDS 修改材质包和行为包教程</title>
     <url>/2022/07/mcbdsbeautify.html</url>
     <content><![CDATA[<blockquote>
@@ -89,36 +152,10 @@
       </categories>
       <tags>
         <tag>技术</tag>
+        <tag>教程</tag>
         <tag>Minecraft</tag>
         <tag>材质包</tag>
         <tag>行为包</tag>
-        <tag>教程</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Waline 美化教程</title>
-    <url>/2023/04/walinedecoration.html</url>
-    <content><![CDATA[<p>起因是看到许多博客使用的 twikoo 评论系统，觉得 twikoo 的前端样式很好看，与之相对的正在用的 waline 的默认样式是真的不好看，本来打算直接换到 twikoo 的，转念一想，既然是属于样式的东西，为什么不直接用 css 解决呢，没有必要为了一个效果而去换插件。博主的 css 不行，只会 <kbd>F12</kbd> 找到哪个元素改哪个。至于定位元素之类的完全不行＞﹏＜。只要最后好看了就 ok 了！（bushi</p>
-<p>以下为代码部分（部分选择器需要根据实际更换）</p>
-<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="comment">/* 修改waline样式 */</span></span><br><span class="line"><span class="comment">/* 修改评论框外观 */</span></span><br><span class="line"><span class="selector-class">.wl-panel</span> &#123;</span><br><span class="line">    <span class="attribute">border-radius</span>: <span class="number">4px</span> <span class="meta">!important</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-pseudo">:root</span> &#123;</span><br><span class="line">    <span class="attr">--waline-bgcolor-light</span>: transparent <span class="meta">!important</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.wl-btn</span> &#123;</span><br><span class="line">    <span class="attribute">border-radius</span>: <span class="number">0.3em</span> <span class="meta">!important</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* 添加miku的gif为输入区域背景 */</span></span><br><span class="line"><span class="selector-id">#wl-edit</span> &#123;</span><br><span class="line">    <span class="attribute">background</span>: <span class="built_in">url</span>(<span class="string">&quot;/img/wl-bg-mikuchan.gif&quot;</span>) <span class="number">100%</span> <span class="number">100%</span> no-repeat;</span><br><span class="line">    <span class="attribute">background-size</span>: contain <span class="meta">!important</span>;</span><br><span class="line">    <span class="attribute">background-repeat</span>: no-repeat <span class="meta">!important</span>;</span><br><span class="line">    <span class="attribute">background-position</span>: right bottom <span class="meta">!important</span>; </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-id">#waline-wrap</span> <span class="selector-tag">textarea</span><span class="selector-pseudo">:focus</span> &#123;</span><br><span class="line">    <span class="attribute">background</span>: <span class="built_in">url</span>(<span class="string">&quot;/img/wl-bg-mikuchan.gif&quot;</span>) <span class="number">100%</span> <span class="number">100%</span> no-repeat;</span><br><span class="line">    <span class="attribute">background-position</span>-y: <span class="number">78px</span> <span class="meta">!important</span>;</span><br><span class="line">    <span class="attribute">transition</span>: all <span class="number">0.25s</span> ease-in-out <span class="number">0s</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* 修改评论区内容背景 */</span></span><br><span class="line"><span class="selector-class">.wl-card</span> <span class="selector-class">.wl-content</span> &#123;</span><br><span class="line">    <span class="attribute">background</span>: <span class="number">#f5f5f5</span>;</span><br><span class="line">    <span class="attribute">padding</span>: <span class="number">16px</span> <span class="meta">!important</span>;</span><br><span class="line">    <span class="attribute">margin</span>: <span class="number">12px</span> <span class="number">0</span> <span class="number">8px</span> <span class="meta">!important</span>;</span><br><span class="line">    <span class="attribute">border-radius</span>: <span class="number">3px</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.wl-card</span> &#123;</span><br><span class="line">    <span class="attribute">border-bottom</span>: none <span class="meta">!important</span>;</span><br><span class="line">    <span class="attribute">padding-bottom</span>: <span class="number">0px</span> <span class="meta">!important</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.wl-cards</span> <span class="selector-class">.wl-item</span>&#123;</span><br><span class="line">    <span class="attribute">padding</span>: .<span class="number">5em</span> .<span class="number">5em</span> <span class="number">0px</span> <span class="meta">!important</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>效果图如下（因图片是截取自评论区而打了码，头像这些不属于以上代码，后面可以考虑改一下默认头像）</p>
-<p><img data-src="https://img.fufu.ink/iTcakI.webp" alt="Waline评论框美化效果"></p>
-<p><img data-src="https://img.fufu.ink/JDVkhh.webp" alt="Waline评论区美化效果"></p>
-<p>其中评论框的背景 gif 需要自己下载下来放到 <code>/source/img/</code> 下即可（记得重命名），别直接用我的博客的地址！（就这么点大小的图片就别直接挂别人的链接了吧，虽然我也不会做防盗链…）</p>
-<p>修改文本输入框中的提示文字需要到主题的配置文件中找到 waline 的配置项，在其中添加 <code>locale: &#123;placeholder: &#39;提示文字&#39;&#125;</code> 即可，以主题 butterfly 为例，则需要在 option 中添加该行代码，需要注意缩进，如下所示</p>
-<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">waline:</span></span><br><span class="line">  <span class="attr">serverURL:</span> <span class="comment"># Waline server address url</span></span><br><span class="line">  <span class="attr">bg:</span> <span class="comment"># waline background</span></span><br><span class="line">  <span class="attr">pageview:</span> <span class="literal">false</span></span><br><span class="line">  <span class="attr">option:</span></span><br><span class="line">    <span class="attr">locale:</span> &#123;<span class="attr">placeholder:</span> <span class="string">&#x27;提示文字&#x27;</span>&#125;</span><br></pre></td></tr></table></figure>
-
-<p>最后就是上面效果图的样子啦！</p>
-]]></content>
-      <categories>
-        <category>技术</category>
-      </categories>
-      <tags>
-        <tag>Hexo</tag>
-        <tag>技术</tag>
-        <tag>教程</tag>
-        <tag>CSS</tag>
       </tags>
   </entry>
   <entry>
@@ -196,43 +233,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Next 文章顶部添加波浪效果</title>
-    <url>/2023/08/nextwave.html</url>
-    <content><![CDATA[<blockquote>
-<p>参考文章：安知鱼 <a href="https://blog.anheyu.com/posts/98c4.html">butterfly文章顶部添加波浪效果</a></p>
-</blockquote>
-<p>之前用 butterfly 的时候就看过安知鱼大佬的文章顶部加波浪效果的教程，又好像在哪里看到过 Next 也有人做出来过，但已找不到相关博客。两个月前早已萌发了自己做出来的念头，奈何看不懂 Next 使用的 <code>njk</code> 语法。</p>
-<h2 id="折腾的过程"><a href="#折腾的过程" class="headerlink" title="折腾的过程"></a>折腾的过程</h2><p>将大佬的代码插入到 post 的生成模版的 <code>&lt;header&gt;</code> 标签末尾，添加 css 后却发现首页的文章卡片（下文简称为文章卡片）的 meta 信息部分和文章页的 meta 信息部分是同一个模版生成的。如果给文章页头部添加了波浪效果，文章卡片也会有波浪效果，这是我不希望看到的，于是放弃了一段时间。</p>
-<p>前两天又想起这个效果，于是想着再试一试，这次我发现文章卡片与文章页的头部的描述部分（description 部分）的字体大小不一致，查看 css 后发现文章页的 description 多了一个<strong>类</strong>用以区分首页的 description。于是去找模版中对应的部分，发现有个 if 语句判断当前是否非主页，true 的话就添加了一个类名。这给了我很大信心，感觉只要分离主页和文章页的 <code>&lt;header&gt;</code> 就可以轻松实现了。</p>
-<p>接下来遇到的问题是整个内容主体 <code>&lt;main&gt;</code> 有个 40px 的 <code>padding</code>，导致增加的波浪效果会变窄。想到的解决办法是把 <code>&lt;header&gt;</code> 放置在 <code>&lt;main&gt;</code> 上面，但尝试后遇到了文章卡片 <code>&lt;header&gt;</code> 结构同步变化、不能熟练使用 flex 布局达到使文章页 <code>&lt;header&gt;</code> 与 <code>&lt;main&gt;</code> 保持垂直分布且宽度一致的目的、由于 pjax 进入文章页后不能自动更新新的 <code>&lt;header&gt;</code> 的位置等阻碍。最终放弃把 <code>&lt;header&gt;</code> 与 <code>&lt;main&gt;</code> 分离这一想法。</p>
-<p>无奈之下查询 Google 是否有办法让子元素不受父元素的 padding 的影响，结果发现只需要使子元素的 margin 的值为负的父元素的 padding 值即可。一拍脑袋，不知道自己之前怎么想的，明明是 css 的问题，却要去改变结构，总结是自己没理解好 margin 相关的知识导致的。</p>
-<p>最后的方案就是给 <code>&lt;header&gt;</code> 加了个条件判断，如果是非主页就增加一个<strong>类</strong>，用以加 css 样式。这样就可以分开主页与文章页。至于大佬原来使用的是绝对定位来定位波浪位置，但 Next 的 <code>&lt;header&gt;</code> 的父元素没有使用相对定位，导致绝对定位参照的是 <code>&lt;main&gt;</code> 这个祖先元素，我将波浪改成了相对定位就解决了，虽然不知道有没有什么大的影响，不过测试下来没有什么问题。</p>
-<p>唠了这么多，接下来就上代码了！</p>
-<h2 id="教程"><a href="#教程" class="headerlink" title="教程"></a>教程</h2><p>打开 <code>themes/next/layout/_macro/post.njk</code> 并修改以下内容</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&#123;%- if post.header !== false %&#125;</span><br><span class="line">-      &lt;header class=&quot;post-header&quot;&gt;</span><br><span class="line">+      &lt;header class=&quot;post-header&#123;% if not is_index %&#125; insidepost-header&#123;% endif %&#125;&quot;&gt;</span><br><span class="line">        &lt;&#123;% if is_index %&#125;h2&#123;% else %&#125;h1&#123;% endif %&#125; class=&quot;post-title&#123;% if post.direction and post.direction.toLowerCase() === &#x27;rtl&#x27; %&#125; rtl&#123;% endif %&#125;&quot; itemprop=&quot;name headline&quot;&gt;</span><br><span class="line">          &#123;# Link posts #&#125;</span><br><span class="line"></span><br><span class="line">	...</span><br><span class="line"></span><br><span class="line">&lt;div class=&quot;post-description&quot;&gt;&#123;&#123; post.description &#125;&#125;&lt;/div&gt;</span><br><span class="line">          &#123;%- endif %&#125;</span><br><span class="line">        &lt;/div&gt;</span><br><span class="line">+        &#123;% if not is_index %&#125;</span><br><span class="line">+          &lt;section class=&quot;main-hero-waves-area waves-area&quot;&gt;</span><br><span class="line">+            &lt;svg class=&quot;waves-svg&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot; xlink=&quot;http://www.w3.org/1999/xlink&quot; viewBox=&quot;0 24 150 28&quot; preserveAspectRatio=&quot;none&quot; shape-rendering=&quot;auto&quot;&gt;</span><br><span class="line">+              &lt;defs&gt;</span><br><span class="line">+                &lt;path id=&quot;gentle-wave&quot; d=&quot;M -160 44 c 30 0 58 -18 88 -18 s 58 18 88 18 s 58 -18 88 -18 s 58 18 88 18 v 44 h -352 Z&quot;&gt;&lt;/path&gt;</span><br><span class="line">+              &lt;/defs&gt;</span><br><span class="line">+              &lt;g class=&quot;parallax&quot;&gt;</span><br><span class="line">+                &lt;use href=&quot;#gentle-wave&quot; x=&quot;48&quot; y=&quot;0&quot;&gt;&lt;/use&gt;</span><br><span class="line">+                &lt;use href=&quot;#gentle-wave&quot; x=&quot;48&quot; y=&quot;3&quot;&gt;&lt;/use&gt;</span><br><span class="line">+                &lt;use href=&quot;#gentle-wave&quot; x=&quot;48&quot; y=&quot;5&quot;&gt;&lt;/use&gt;</span><br><span class="line">+                &lt;use href=&quot;#gentle-wave&quot; x=&quot;48&quot; y=&quot;7&quot;&gt;&lt;/use&gt;</span><br><span class="line">+              &lt;/g&gt;</span><br><span class="line">+            &lt;/svg&gt;</span><br><span class="line">+          &lt;/section&gt;</span><br><span class="line">+        &#123;% endif %&#125;</span><br><span class="line">      &lt;/header&gt;</span><br><span class="line">    &#123;%- endif %&#125;</span><br></pre></td></tr></table></figure>
-
-<p>这里提供一份方便复制的版本</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;header class=&quot;post-header&#123;% if not is_index %&#125; insidepost-header&#123;% endif %&#125;&quot;&gt;</span><br><span class="line"></span><br><span class="line">		&#123;% if not is_index %&#125;</span><br><span class="line">          &lt;section class=&quot;main-hero-waves-area waves-area&quot;&gt;</span><br><span class="line">            &lt;svg class=&quot;waves-svg&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot; xlink=&quot;http://www.w3.org/1999/xlink&quot; viewBox=&quot;0 24 150 28&quot; preserveAspectRatio=&quot;none&quot; shape-rendering=&quot;auto&quot;&gt;</span><br><span class="line">              &lt;defs&gt;</span><br><span class="line">                &lt;path id=&quot;gentle-wave&quot; d=&quot;M -160 44 c 30 0 58 -18 88 -18 s 58 18 88 18 s 58 -18 88 -18 s 58 18 88 18 v 44 h -352 Z&quot;&gt;&lt;/path&gt;</span><br><span class="line">              &lt;/defs&gt;</span><br><span class="line">              &lt;g class=&quot;parallax&quot;&gt;</span><br><span class="line">                &lt;use href=&quot;#gentle-wave&quot; x=&quot;48&quot; y=&quot;0&quot;&gt;&lt;/use&gt;</span><br><span class="line">                &lt;use href=&quot;#gentle-wave&quot; x=&quot;48&quot; y=&quot;3&quot;&gt;&lt;/use&gt;</span><br><span class="line">                &lt;use href=&quot;#gentle-wave&quot; x=&quot;48&quot; y=&quot;5&quot;&gt;&lt;/use&gt;</span><br><span class="line">                &lt;use href=&quot;#gentle-wave&quot; x=&quot;48&quot; y=&quot;7&quot;&gt;&lt;/use&gt;</span><br><span class="line">              &lt;/g&gt;</span><br><span class="line">            &lt;/svg&gt;</span><br><span class="line">          &lt;/section&gt;</span><br><span class="line">        &#123;% endif %&#125;</span><br></pre></td></tr></table></figure>
-
-<p>接下来在 <code>_config.next.yml</code> 中取消 <code>custom_file_path</code> 的 <code>style: source/_data/styles.styl</code> 的注释，并在 <code>根目录/source/_data/</code> 下创建 <code>styles.styl</code>，粘贴以下内容</p>
-<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="comment">/* 波浪css */</span></span><br><span class="line"><span class="selector-class">.main-hero-waves-area</span> &#123;</span><br><span class="line">  <span class="attribute">width</span>: <span class="number">100%</span>;</span><br><span class="line">  <span class="attribute">height</span>: <span class="number">5rem</span>;</span><br><span class="line">  <span class="attribute">position</span>: relative;</span><br><span class="line">  <span class="attribute">left</span>: <span class="number">0</span>;</span><br><span class="line">  <span class="attribute">z-index</span>: <span class="number">5</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.waves-area</span> <span class="selector-class">.waves-svg</span> &#123;</span><br><span class="line">  <span class="attribute">width</span>: <span class="number">100%</span>;</span><br><span class="line">  <span class="attribute">height</span>: <span class="number">5rem</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/* Animation */</span></span><br><span class="line"></span><br><span class="line"><span class="selector-class">.parallax</span> &gt; use &#123;</span><br><span class="line">  <span class="attribute">animation</span>: move-forever <span class="number">25s</span> <span class="built_in">cubic-bezier</span>(<span class="number">0.55</span>, <span class="number">0.5</span>, <span class="number">0.45</span>, <span class="number">0.5</span>) infinite;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.parallax</span> &gt; use<span class="selector-pseudo">:nth-child</span>(<span class="number">1</span>) &#123;</span><br><span class="line">  <span class="attribute">animation-delay</span>: -<span class="number">2s</span>;</span><br><span class="line">  <span class="attribute">animation-duration</span>: <span class="number">7s</span>;</span><br><span class="line">  fill: <span class="number">#f7f9febd</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.parallax</span> &gt; use<span class="selector-pseudo">:nth-child</span>(<span class="number">2</span>) &#123;</span><br><span class="line">  <span class="attribute">animation-delay</span>: -<span class="number">3s</span>;</span><br><span class="line">  <span class="attribute">animation-duration</span>: <span class="number">10s</span>;</span><br><span class="line">  fill: <span class="number">#f7f9fe82</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.parallax</span> &gt; use<span class="selector-pseudo">:nth-child</span>(<span class="number">3</span>) &#123;</span><br><span class="line">  <span class="attribute">animation-delay</span>: -<span class="number">4s</span>;</span><br><span class="line">  <span class="attribute">animation-duration</span>: <span class="number">13s</span>;</span><br><span class="line">  fill: <span class="number">#f7f9fe36</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.parallax</span> &gt; use<span class="selector-pseudo">:nth-child</span>(<span class="number">4</span>) &#123;</span><br><span class="line">  <span class="attribute">animation-delay</span>: -<span class="number">5s</span>;</span><br><span class="line">  <span class="attribute">animation-duration</span>: <span class="number">20s</span>;</span><br><span class="line">  fill: <span class="number">#f7f9fe</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/* 黑色模式背景 */</span></span><br><span class="line"><span class="selector-attr">[data-theme=<span class="string">&quot;dark&quot;</span>]</span> <span class="selector-class">.parallax</span> &gt; use<span class="selector-pseudo">:nth-child</span>(<span class="number">1</span>) &#123;</span><br><span class="line">  <span class="attribute">animation-delay</span>: -<span class="number">2s</span>;</span><br><span class="line">  <span class="attribute">animation-duration</span>: <span class="number">7s</span>;</span><br><span class="line">  fill: <span class="number">#18171dc8</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-attr">[data-theme=<span class="string">&quot;dark&quot;</span>]</span> <span class="selector-class">.parallax</span> &gt; use<span class="selector-pseudo">:nth-child</span>(<span class="number">2</span>) &#123;</span><br><span class="line">  <span class="attribute">animation-delay</span>: -<span class="number">3s</span>;</span><br><span class="line">  <span class="attribute">animation-duration</span>: <span class="number">10s</span>;</span><br><span class="line">  fill: <span class="number">#18171d80</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-attr">[data-theme=<span class="string">&quot;dark&quot;</span>]</span> <span class="selector-class">.parallax</span> &gt; use<span class="selector-pseudo">:nth-child</span>(<span class="number">3</span>) &#123;</span><br><span class="line">  <span class="attribute">animation-delay</span>: -<span class="number">4s</span>;</span><br><span class="line">  <span class="attribute">animation-duration</span>: <span class="number">13s</span>;</span><br><span class="line">  fill: <span class="number">#18171d3e</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-attr">[data-theme=<span class="string">&quot;dark&quot;</span>]</span> <span class="selector-class">.parallax</span> &gt; use<span class="selector-pseudo">:nth-child</span>(<span class="number">4</span>) &#123;</span><br><span class="line">  <span class="attribute">animation-delay</span>: -<span class="number">5s</span>;</span><br><span class="line">  <span class="attribute">animation-duration</span>: <span class="number">20s</span>;</span><br><span class="line">  fill: <span class="number">#18171d</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">@keyframes</span> move-forever &#123;</span><br><span class="line">  <span class="number">0%</span> &#123;</span><br><span class="line">    <span class="attribute">transform</span>: <span class="built_in">translate3d</span>(-<span class="number">90px</span>, <span class="number">0</span>, <span class="number">0</span>);</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="number">100%</span> &#123;</span><br><span class="line">    <span class="attribute">transform</span>: <span class="built_in">translate3d</span>(<span class="number">85px</span>, <span class="number">0</span>, <span class="number">0</span>);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/*Shrinking for mobile*/</span></span><br><span class="line"><span class="keyword">@media</span> (<span class="attribute">max-width</span>: <span class="number">768px</span>) &#123;</span><br><span class="line">  <span class="selector-class">.waves-area</span>, <span class="selector-class">.waves-area</span> <span class="selector-class">.waves-svg</span> &#123;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">40px</span>;</span><br><span class="line">    <span class="attribute">min-height</span>: <span class="number">40px</span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/* 修改postheader背景 */</span></span><br><span class="line"><span class="selector-class">.insidepost-header</span> &#123;</span><br><span class="line">    <span class="attribute">margin-left</span>: -<span class="number">40px</span>;</span><br><span class="line">    <span class="attribute">margin-right</span>: -<span class="number">40px</span>;</span><br><span class="line">    <span class="attribute">background</span>: <span class="built_in">var</span>(--theme-color);</span><br><span class="line">    <span class="attribute">margin-top</span>: -<span class="number">70px</span>;</span><br><span class="line">    <span class="attribute">padding-top</span>: <span class="number">40px</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.insidepost-header</span>, <span class="selector-class">.insidepost-header</span> <span class="selector-tag">a</span>, <span class="selector-class">.insidepost-header</span> <span class="selector-class">.post-meta-container</span> &#123;</span><br><span class="line">  <span class="attribute">color</span>: white;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.insidepost-header</span> <span class="selector-class">.post-meta-container</span> &#123;</span><br><span class="line">  <span class="attribute">margin-bottom</span>: <span class="number">40px</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.insidepost-header</span> <span class="selector-class">.post-description</span> &#123;</span><br><span class="line">    <span class="attribute">display</span>: none;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.insidepost-header</span> <span class="selector-tag">h1</span><span class="selector-class">.post-title</span>, <span class="selector-class">.insidepost-header</span> <span class="selector-class">.post-meta-container</span> &#123;</span><br><span class="line">    <span class="attribute">padding-left</span>: <span class="number">40px</span>;</span><br><span class="line">    <span class="attribute">padding-right</span>: <span class="number">40px</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">@media</span> (<span class="attribute">max-width</span>: <span class="number">991px</span>) &#123;</span><br><span class="line">  <span class="selector-class">.insidepost-header</span> &#123;</span><br><span class="line">    <span class="attribute">margin-left</span>: -<span class="number">20px</span>;</span><br><span class="line">    <span class="attribute">margin-right</span>: -<span class="number">20px</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="selector-class">.insidepost-header</span> <span class="selector-tag">h1</span><span class="selector-class">.post-title</span>, <span class="selector-class">.insidepost-header</span> <span class="selector-class">.post-meta-container</span> &#123;</span><br><span class="line">    <span class="attribute">padding-left</span>: <span class="number">20px</span>;</span><br><span class="line">    <span class="attribute">padding-right</span>: <span class="number">20px</span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>然后打开网站看看效果吧！</p>
-<p>效果图：</p>
-<p><img data-src="https://img.fufu.ink/6SevHQ.webp" alt="文章顶部波浪效果图"></p>
-]]></content>
-      <categories>
-        <category>技术</category>
-      </categories>
-      <tags>
-        <tag>Hexo</tag>
-        <tag>技术</tag>
-        <tag>教程</tag>
-        <tag>CSS</tag>
-        <tag>Next</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>【每日语法】「既然~就~」的表达方法</title>
     <url>/2023/04/mnnhgbp3.html</url>
     <content><![CDATA[<blockquote>
@@ -282,62 +282,6 @@
 <p>(1). 約束したからには、ちゃんと守るべきだ。<br>译：既然约好了，就应该好好遵守约定。</p>
 <p>(2). 秘密を知られた上は、生かしてはおけない。<br>译：既然被你知道了这个秘密，就不能让你活下去了。</p>
 <p>(3). 会社を辞めると決めた以上、早く上司にその旨を伝えなければならない。<br>译：既然决定好向公司辞职了，就必须早点告诉上司这件事。</p>
-]]></content>
-      <categories>
-        <category>日语</category>
-      </categories>
-      <tags>
-        <tag>日语</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>【每日语法】てある及相似语法的对比</title>
-    <url>/2023/05/mnnhgbp4.html</url>
-    <content><![CDATA[<h2 id="意思一"><a href="#意思一" class="headerlink" title="意思一"></a>意思一</h2><blockquote>
-<p>接续：V（他动词，て形）+ ある</p>
-</blockquote>
-<p>表示动作结果的存续，该语法只涉及动作的对象，不涉及动作的主体。该句型有着「某个人做了某个动作，导致了这样的状态，但是这个人是谁并不重要」这样的意思。简单点说就是<strong>他动词的状态的持续</strong>。需要注意的是动词虽然为他动词，但动作的对象却要用<strong>「が」</strong>来表示。</p>
-<p>同样表示状态的持续的语法还有「ている」，那么他俩有什么区别呢？</p>
-<p>在对比前我们先回顾一下「ている」这个语法</p>
-<ul>
-<li>当动词为<strong>他动词</strong>时，表示动作的正在进行，意为「正在…」，比如「手紙を書いている」意为「我正在写信」</li>
-<li>当动词为<strong>自动词</strong>时，表示状态的持续，例如「鈴木さんは今出かけていますが…」，意为「铃木现在出去了…」</li>
-<li>表示动作的反复，常用于习惯或自然现象等</li>
-<li>表示性质或状态，比如「この機械の性能が<ruby>優<rt>すぐ</rt>れている</ruby>」意为「这台机器性能好」</li>
-</ul>
-<p>可以看到，表示状态的持续时，「ている」的前面的动词为自动词，而「てある」则为他动词。并且「ている」只是表示状态的持续，并不包含状态产生的原因，这个状态可以是人为造成的，也可以是自然而然发生的；但「てある」的状态一定是<strong>人为</strong>的，即一定是某个人去做了某个动作才产生了这样的状态。</p>
-<p>补充说明，当「てある」前面的动词为<strong>被动态</strong>时，能够更让人能够感受到这个做动作的人的存在。</p>
-<h2 id="意思二"><a href="#意思二" class="headerlink" title="意思二"></a>意思二</h2><blockquote>
-<p>接续：V（て形）+ ある</p>
-</blockquote>
-<p>这里表示<strong>已经提前做好某事的状态</strong>，自、他动词均可使用，意为「已经提前…」。</p>
-<p>例句：論文を書くために、資料をたくさん集めてある。<br>译：为了写论文，已经提前收集好了许多资料。</p>
-<p>同样，表示提前做好某事的意思的语法还有「ておく」，那么这两个语法之间有什么区别呢？</p>
-<p>首先回忆一下「ておく」这个语法：</p>
-<ul>
-<li>表示提前做好某事，以备不时之需</li>
-<li>表示保持状态不变，听之任之</li>
-<li>表示放任不管</li>
-</ul>
-<p>注意，「ておく」的「提前做好某事」具体点说是「<strong>将要</strong>提前做好某事」，实际现在还没有做，强调的是「提前做好」这个<strong>动作性</strong>；「てある」则表示的是「<strong>已经</strong>提前做好某事」，强调的是「提前做好」这个动作完成后的<strong>状态的持续</strong>。</p>
-<p>对比例句：</p>
-<ul>
-<li>この提案を一応考えてある。（已经事先考虑过这个提案。）</li>
-<li>この提案を一応考えておく。（将会事先考虑一下这个提案。）</li>
-</ul>
-<p>当「ておく」变为过去时，与「てある」的意思就更为相似，更加难以区分，比如下面两句：</p>
-<ul>
-<li>ビールをたくさん買っておいたが、人が多いので、もうなくなってしまった。（○）</li>
-<li>ビールをたくさん買ってあるが、人が多いので、もうなくなってしまった。（×）</li>
-</ul>
-<p>因为「買っておいた」只表示「提前买好」这一过去的动作，而「買ってある」则表示「提前买好」这一状态且该状态持续到了说话时，按此逻辑，如果买好了许多酒的状态持续到了说话时，后文却又说因为人多已经没酒了，就出现了前后意思的矛盾，因此这里只能用「買っておいた」。</p>
-<h2 id="意思三"><a href="#意思三" class="headerlink" title="意思三"></a>意思三</h2><blockquote>
-<p>接续：V（て形）+ ある</p>
-</blockquote>
-<p>表示<strong>放任或允许的状态</strong>。常常和自动词<strong>使役态</strong>搭配使用。</p>
-<p>例句：娘を日本語学校に通わせてある。<br>译：让女儿去日语学校上学。</p>
-<p>相似的还有「ておく」，其也有放任不管，听之任之的意思。</p>
-<p><strong>注：本文部分解释与例句来源于『日语语法教程——讲义与练习』一书，如造成侵权，请联系删除。</strong></p>
 ]]></content>
       <categories>
         <category>日语</category>
@@ -506,38 +450,6 @@
       </tags>
   </entry>
   <entry>
-    <title>什么！买基岩版 Minecraft 送 Java 版？白嫖党的胜利！</title>
-    <url>/2022/06/mcokuru.html</url>
-    <content><![CDATA[<p>原文链接：<a href="https://help.minecraft.net/hc/en-us/articles/4607523809933-Buy-Minecraft-PC-Bundle-Get-Both-Games-">https://help.minecraft.net/hc/en-us/articles/4607523809933-Buy-Minecraft-PC-Bundle-Get-Both-Games-</a></p>
-<p>今天，Minecraft 夏季活动开始了，只要拥有 PC 平台的任意一个版本（Windows 版&#x2F;Java 版），即可免费获得另一个版本。即，PC 平台玩家如果拥有 Windows 版的 Minecraft，即可免费获得 Java 版，反之亦然。<span id="more"></span></p>
-<p>另一个版本会自动推送到你的游戏仓库中，当你打开 Minecraft Launcher 时，会发现游戏已经在列表中了。</p>
-<p><img data-src="https://img.fufu.ink/epXnLi.webp" alt="Minecraft Launcher"></p>
-]]></content>
-      <categories>
-        <category>游戏</category>
-      </categories>
-      <tags>
-        <tag>Minecraft</tag>
-        <tag>资讯</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>出宵宫啦！</title>
-    <url>/2023/05/genshinxgderu.html</url>
-    <content><![CDATA[<p>虽说抽完 2 命纳西妲后已经没有抽其他角色的欲望了，但池子还是要垫的，出什么都无所谓了。</p>
-<p>因为这 14 天搞<a href="/2023/05/improvefdlinks.html">「博客的友链的更优雅的书写方式」</a>去了，就没怎么上线，还白白浪费了 14 天的月卡，趁着今天第 15 天上线领了回归奖励以及版本更新补偿，让朋友抽了 2 抽，没歪！<span id="more"></span></p>
-<p><img data-src="https://img.fufu.ink/blTnOx.webp" alt="手机截图，画质有点差"></p>
-<p>接下来就是继续垫池子了~</p>
-]]></content>
-      <categories>
-        <category>游戏</category>
-      </categories>
-      <tags>
-        <tag>原神</tag>
-        <tag>游戏</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>不断变强的万达</title>
     <url>/2023/08/genshinwandatsuyoi.html</url>
     <content><![CDATA[<p>去年垫池子抽到了达达鸭，今年 1 月份开始练万达国际，入坑一年以来首次打通了深渊（<a href="/2023/01/genshinshenyuanfirst.html">见『纪念第一次打通深渊』</a>），当时的面板没有截图。</p>
@@ -570,6 +482,94 @@
 <p><img data-src="https://img.fufu.ink/gq7SDw.webp" alt="8月28日"></p>
 <p>接下来的时间里应该很难再有大的提升了，如果想要再提，就要去抽 2 命万叶了。</p>
 <p>不过现在的目标是攒满命草神，就先不考虑继续提升万达的 dps 了，反正现在的也足够乱杀深渊了。</p>
+]]></content>
+      <categories>
+        <category>游戏</category>
+      </categories>
+      <tags>
+        <tag>原神</tag>
+        <tag>游戏</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>【每日语法】てある及相似语法的对比</title>
+    <url>/2023/05/mnnhgbp4.html</url>
+    <content><![CDATA[<h2 id="意思一"><a href="#意思一" class="headerlink" title="意思一"></a>意思一</h2><blockquote>
+<p>接续：V（他动词，て形）+ ある</p>
+</blockquote>
+<p>表示动作结果的存续，该语法只涉及动作的对象，不涉及动作的主体。该句型有着「某个人做了某个动作，导致了这样的状态，但是这个人是谁并不重要」这样的意思。简单点说就是<strong>他动词的状态的持续</strong>。需要注意的是动词虽然为他动词，但动作的对象却要用<strong>「が」</strong>来表示。</p>
+<p>同样表示状态的持续的语法还有「ている」，那么他俩有什么区别呢？</p>
+<p>在对比前我们先回顾一下「ている」这个语法</p>
+<ul>
+<li>当动词为<strong>他动词</strong>时，表示动作的正在进行，意为「正在…」，比如「手紙を書いている」意为「我正在写信」</li>
+<li>当动词为<strong>自动词</strong>时，表示状态的持续，例如「鈴木さんは今出かけていますが…」，意为「铃木现在出去了…」</li>
+<li>表示动作的反复，常用于习惯或自然现象等</li>
+<li>表示性质或状态，比如「この機械の性能が<ruby>優<rt>すぐ</rt>れている</ruby>」意为「这台机器性能好」</li>
+</ul>
+<p>可以看到，表示状态的持续时，「ている」的前面的动词为自动词，而「てある」则为他动词。并且「ている」只是表示状态的持续，并不包含状态产生的原因，这个状态可以是人为造成的，也可以是自然而然发生的；但「てある」的状态一定是<strong>人为</strong>的，即一定是某个人去做了某个动作才产生了这样的状态。</p>
+<p>补充说明，当「てある」前面的动词为<strong>被动态</strong>时，能够更让人能够感受到这个做动作的人的存在。</p>
+<h2 id="意思二"><a href="#意思二" class="headerlink" title="意思二"></a>意思二</h2><blockquote>
+<p>接续：V（て形）+ ある</p>
+</blockquote>
+<p>这里表示<strong>已经提前做好某事的状态</strong>，自、他动词均可使用，意为「已经提前…」。</p>
+<p>例句：論文を書くために、資料をたくさん集めてある。<br>译：为了写论文，已经提前收集好了许多资料。</p>
+<p>同样，表示提前做好某事的意思的语法还有「ておく」，那么这两个语法之间有什么区别呢？</p>
+<p>首先回忆一下「ておく」这个语法：</p>
+<ul>
+<li>表示提前做好某事，以备不时之需</li>
+<li>表示保持状态不变，听之任之</li>
+<li>表示放任不管</li>
+</ul>
+<p>注意，「ておく」的「提前做好某事」具体点说是「<strong>将要</strong>提前做好某事」，实际现在还没有做，强调的是「提前做好」这个<strong>动作性</strong>；「てある」则表示的是「<strong>已经</strong>提前做好某事」，强调的是「提前做好」这个动作完成后的<strong>状态的持续</strong>。</p>
+<p>对比例句：</p>
+<ul>
+<li>この提案を一応考えてある。（已经事先考虑过这个提案。）</li>
+<li>この提案を一応考えておく。（将会事先考虑一下这个提案。）</li>
+</ul>
+<p>当「ておく」变为过去时，与「てある」的意思就更为相似，更加难以区分，比如下面两句：</p>
+<ul>
+<li>ビールをたくさん買っておいたが、人が多いので、もうなくなってしまった。（○）</li>
+<li>ビールをたくさん買ってあるが、人が多いので、もうなくなってしまった。（×）</li>
+</ul>
+<p>因为「買っておいた」只表示「提前买好」这一过去的动作，而「買ってある」则表示「提前买好」这一状态且该状态持续到了说话时，按此逻辑，如果买好了许多酒的状态持续到了说话时，后文却又说因为人多已经没酒了，就出现了前后意思的矛盾，因此这里只能用「買っておいた」。</p>
+<h2 id="意思三"><a href="#意思三" class="headerlink" title="意思三"></a>意思三</h2><blockquote>
+<p>接续：V（て形）+ ある</p>
+</blockquote>
+<p>表示<strong>放任或允许的状态</strong>。常常和自动词<strong>使役态</strong>搭配使用。</p>
+<p>例句：娘を日本語学校に通わせてある。<br>译：让女儿去日语学校上学。</p>
+<p>相似的还有「ておく」，其也有放任不管，听之任之的意思。</p>
+<p><strong>注：本文部分解释与例句来源于『日语语法教程——讲义与练习』一书，如造成侵权，请联系删除。</strong></p>
+]]></content>
+      <categories>
+        <category>日语</category>
+      </categories>
+      <tags>
+        <tag>日语</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>什么！买基岩版 Minecraft 送 Java 版？白嫖党的胜利！</title>
+    <url>/2022/06/mcokuru.html</url>
+    <content><![CDATA[<p>原文链接：<a href="https://help.minecraft.net/hc/en-us/articles/4607523809933-Buy-Minecraft-PC-Bundle-Get-Both-Games-">https://help.minecraft.net/hc/en-us/articles/4607523809933-Buy-Minecraft-PC-Bundle-Get-Both-Games-</a></p>
+<p>今天，Minecraft 夏季活动开始了，只要拥有 PC 平台的任意一个版本（Windows 版&#x2F;Java 版），即可免费获得另一个版本。即，PC 平台玩家如果拥有 Windows 版的 Minecraft，即可免费获得 Java 版，反之亦然。<span id="more"></span></p>
+<p>另一个版本会自动推送到你的游戏仓库中，当你打开 Minecraft Launcher 时，会发现游戏已经在列表中了。</p>
+<p><img data-src="https://img.fufu.ink/epXnLi.webp" alt="Minecraft Launcher"></p>
+]]></content>
+      <categories>
+        <category>游戏</category>
+      </categories>
+      <tags>
+        <tag>Minecraft</tag>
+        <tag>资讯</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>出宵宫啦！</title>
+    <url>/2023/05/genshinxgderu.html</url>
+    <content><![CDATA[<p>虽说抽完 2 命纳西妲后已经没有抽其他角色的欲望了，但池子还是要垫的，出什么都无所谓了。</p>
+<p>因为这 14 天搞<a href="/2023/05/improvefdlinks.html">「博客的友链的更优雅的书写方式」</a>去了，就没怎么上线，还白白浪费了 14 天的月卡，趁着今天第 15 天上线领了回归奖励以及版本更新补偿，让朋友抽了 2 抽，没歪！<span id="more"></span></p>
+<p><img data-src="https://img.fufu.ink/blTnOx.webp" alt="手机截图，画质有点差"></p>
+<p>接下来就是继续垫池子了~</p>
 ]]></content>
       <categories>
         <category>游戏</category>
@@ -631,22 +631,6 @@
       </tags>
   </entry>
   <entry>
-    <title>小号双黄了！</title>
-    <url>/2023/05/gsxhcjl.html</url>
-    <content><![CDATA[<p>这件事要从去年 11 月草神池刚出的时候说起，之前一直玩的号只抽中了草神（大保底），武器却歪了「飞雷」，于是创了个小号。想着小号前期资源多，肝一肝能在版本结束前拿个 0+1，结果后面发生了一系列事情，最终导致许久没登小号。今年2、3月份重新上了下号，把剧情推到璃月了，攒出了 74 抽，结果歪了莫娜（血的教训！一定不要边肝边抽，必歪！！！），当即下号。</p>
-<p>今天闲来无事，想起了这个号，上号后拿着版本送的原石单抽了一发，本来以为出紫了，结果出金了！于是甘雨拿下~</p>
-<p><img data-src="https://img.fufu.ink/dXzfGb.png" alt="双黄"></p>
-<p>这又让我燃起了对小号培养的热情，本来都打算让这个号废了，毕竟第一个金就歪了，连新手保护期都没了，结果双黄来了，那它就还有被培养的理由！</p>
-]]></content>
-      <categories>
-        <category>游戏</category>
-      </categories>
-      <tags>
-        <tag>原神</tag>
-        <tag>游戏</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>备份 hexo 方法</title>
     <url>/2023/02/hexobackuphouhou.html</url>
     <content><![CDATA[<p>最终还是入手游戏本了，而且是 3060。因为被你机革耍了，又因为网上机革翻车视频太多了，所以最终还是选择准一线的宏碁的暗影骑士了。</p>
@@ -705,6 +689,22 @@
       <tags>
         <tag>Hexo</tag>
         <tag>技术</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>小号双黄了！</title>
+    <url>/2023/05/gsxhcjl.html</url>
+    <content><![CDATA[<p>这件事要从去年 11 月草神池刚出的时候说起，之前一直玩的号只抽中了草神（大保底），武器却歪了「飞雷」，于是创了个小号。想着小号前期资源多，肝一肝能在版本结束前拿个 0+1，结果后面发生了一系列事情，最终导致许久没登小号。今年2、3月份重新上了下号，把剧情推到璃月了，攒出了 74 抽，结果歪了莫娜（血的教训！一定不要边肝边抽，必歪！！！），当即下号。</p>
+<p>今天闲来无事，想起了这个号，上号后拿着版本送的原石单抽了一发，本来以为出紫了，结果出金了！于是甘雨拿下~</p>
+<p><img data-src="https://img.fufu.ink/dXzfGb.png" alt="双黄"></p>
+<p>这又让我燃起了对小号培养的热情，本来都打算让这个号废了，毕竟第一个金就歪了，连新手保护期都没了，结果双黄来了，那它就还有被培养的理由！</p>
+]]></content>
+      <categories>
+        <category>游戏</category>
+      </categories>
+      <tags>
+        <tag>原神</tag>
+        <tag>游戏</tag>
       </tags>
   </entry>
   <entry>
