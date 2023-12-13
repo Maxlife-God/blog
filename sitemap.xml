@@ -4,7 +4,7 @@
   <url>
     <loc>https://blog.fufu.ink/2023/11/nahidac6plan.html</loc>
     
-    <lastmod>2023-12-11</lastmod>
+    <lastmod>2023-12-13</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -428,6 +428,27 @@
   </url>
   
   <url>
+    <loc>https://blog.fufu.ink/tags/Hexo/</loc>
+    <lastmod>2023-12-13</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.fufu.ink/tags/%E6%8A%80%E6%9C%AF/</loc>
+    <lastmod>2023-12-13</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.fufu.ink/tags/JavaScript/</loc>
+    <lastmod>2023-12-13</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>https://blog.fufu.ink/tags/Minecraft/</loc>
     <lastmod>2023-12-13</lastmod>
     <changefreq>weekly</changefreq>
@@ -456,27 +477,6 @@
   </url>
   
   <url>
-    <loc>https://blog.fufu.ink/tags/%E6%8A%80%E6%9C%AF/</loc>
-    <lastmod>2023-12-13</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.fufu.ink/tags/Hexo/</loc>
-    <lastmod>2023-12-13</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.fufu.ink/tags/JavaScript/</loc>
-    <lastmod>2023-12-13</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://blog.fufu.ink/tags/CSS/</loc>
     <lastmod>2023-12-13</lastmod>
     <changefreq>weekly</changefreq>
@@ -498,6 +498,13 @@
   </url>
   
   <url>
+    <loc>https://blog.fufu.ink/tags/%E8%B5%84%E8%AE%AF/</loc>
+    <lastmod>2023-12-13</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>https://blog.fufu.ink/tags/%E5%8E%9F%E7%A5%9E/</loc>
     <lastmod>2023-12-13</lastmod>
     <changefreq>weekly</changefreq>
@@ -506,13 +513,6 @@
   
   <url>
     <loc>https://blog.fufu.ink/tags/%E6%B8%B8%E6%88%8F/</loc>
-    <lastmod>2023-12-13</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.fufu.ink/tags/%E8%B5%84%E8%AE%AF/</loc>
     <lastmod>2023-12-13</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
