@@ -96,40 +96,20 @@
       </tags>
   </entry>
   <entry>
-    <title>Next 文章顶部添加波浪效果</title>
-    <url>/2023/08/nextwave.html</url>
-    <content><![CDATA[<blockquote>
-<p>参考文章：安知鱼 <a href="https://blog.anheyu.com/posts/98c4.html">butterfly文章顶部添加波浪效果</a></p>
+    <title>【每日语法】~さえ~ば</title>
+    <url>/2023/05/mnnhgbp5.html</url>
+    <content><![CDATA[<p>接续：</p>
+<blockquote>
+<p>N + さえ + 假定形<br>A（く形）&#x2F; NA（て形）+ さえあれば<br>V（ます形）&#x2F; サ变动词词干 + さえすれば</p>
 </blockquote>
-<p>之前用 butterfly 的时候就看过安知鱼大佬的文章顶部加波浪效果的教程，又好像在哪里看到过 Next 也有人做出来过，但已找不到相关博客。两个月前早已萌发了自己做出来的念头，奈何看不懂 Next 使用的 <code>njk</code> 语法。</p>
-<h2 id="折腾的过程"><a href="#折腾的过程" class="headerlink" title="折腾的过程"></a>折腾的过程</h2><p>将大佬的代码插入到 post 的生成模版的 <code>&lt;header&gt;</code> 标签末尾，添加 css 后却发现首页的文章卡片（下文简称为文章卡片）的 meta 信息部分和文章页的 meta 信息部分是同一个模版生成的。如果给文章页头部添加了波浪效果，文章卡片也会有波浪效果，这是我不希望看到的，于是放弃了一段时间。</p>
-<p>前两天又想起这个效果，于是想着再试一试，这次我发现文章卡片与文章页的头部的描述部分（description 部分）的字体大小不一致，查看 css 后发现文章页的 description 多了一个<strong>类</strong>用以区分首页的 description。于是去找模版中对应的部分，发现有个 if 语句判断当前是否非主页，true 的话就添加了一个类名。这给了我很大信心，感觉只要分离主页和文章页的 <code>&lt;header&gt;</code> 就可以轻松实现了。</p>
-<p>接下来遇到的问题是整个内容主体 <code>&lt;main&gt;</code> 有个 40px 的 <code>padding</code>，导致增加的波浪效果会变窄。想到的解决办法是把 <code>&lt;header&gt;</code> 放置在 <code>&lt;main&gt;</code> 上面，但尝试后遇到了文章卡片 <code>&lt;header&gt;</code> 结构同步变化、不能熟练使用 flex 布局达到使文章页 <code>&lt;header&gt;</code> 与 <code>&lt;main&gt;</code> 保持垂直分布且宽度一致的目的、由于 pjax 进入文章页后不能自动更新新的 <code>&lt;header&gt;</code> 的位置等阻碍。最终放弃把 <code>&lt;header&gt;</code> 与 <code>&lt;main&gt;</code> 分离这一想法。</p>
-<p>无奈之下查询 Google 是否有办法让子元素不受父元素的 padding 的影响，结果发现只需要使子元素的 margin 的值为负的父元素的 padding 值即可。一拍脑袋，不知道自己之前怎么想的，明明是 css 的问题，却要去改变结构，总结是自己没理解好 margin 相关的知识导致的。</p>
-<p>最后的方案就是给 <code>&lt;header&gt;</code> 加了个条件判断，如果是非主页就增加一个<strong>类</strong>，用以加 css 样式。这样就可以分开主页与文章页。至于大佬原来使用的是绝对定位来定位波浪位置，但 Next 的 <code>&lt;header&gt;</code> 的父元素没有使用相对定位，导致绝对定位参照的是 <code>&lt;main&gt;</code> 这个祖先元素，我将波浪改成了相对定位就解决了，虽然不知道有没有什么大的影响，不过测试下来没有什么问题。</p>
-<p>唠了这么多，接下来就上代码了！</p>
-<h2 id="教程"><a href="#教程" class="headerlink" title="教程"></a>教程</h2><p>打开 <code>themes/next/layout/_macro/post.njk</code> 并修改以下内容</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&#123;%- if post.header !== false %&#125;</span><br><span class="line">-      &lt;header class=&quot;post-header&quot;&gt;</span><br><span class="line">+      &lt;header class=&quot;post-header&#123;% if not is_index %&#125; insidepost-header&#123;% endif %&#125;&quot;&gt;</span><br><span class="line">        &lt;&#123;% if is_index %&#125;h2&#123;% else %&#125;h1&#123;% endif %&#125; class=&quot;post-title&#123;% if post.direction and post.direction.toLowerCase() === &#x27;rtl&#x27; %&#125; rtl&#123;% endif %&#125;&quot; itemprop=&quot;name headline&quot;&gt;</span><br><span class="line">          &#123;# Link posts #&#125;</span><br><span class="line"></span><br><span class="line">	...</span><br><span class="line"></span><br><span class="line">&lt;div class=&quot;post-description&quot;&gt;&#123;&#123; post.description &#125;&#125;&lt;/div&gt;</span><br><span class="line">          &#123;%- endif %&#125;</span><br><span class="line">        &lt;/div&gt;</span><br><span class="line">+        &#123;% if not is_index %&#125;</span><br><span class="line">+          &lt;section class=&quot;main-hero-waves-area waves-area&quot;&gt;</span><br><span class="line">+            &lt;svg class=&quot;waves-svg&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot; xlink=&quot;http://www.w3.org/1999/xlink&quot; viewBox=&quot;0 24 150 28&quot; preserveAspectRatio=&quot;none&quot; shape-rendering=&quot;auto&quot;&gt;</span><br><span class="line">+              &lt;defs&gt;</span><br><span class="line">+                &lt;path id=&quot;gentle-wave&quot; d=&quot;M -160 44 c 30 0 58 -18 88 -18 s 58 18 88 18 s 58 -18 88 -18 s 58 18 88 18 v 44 h -352 Z&quot;&gt;&lt;/path&gt;</span><br><span class="line">+              &lt;/defs&gt;</span><br><span class="line">+              &lt;g class=&quot;parallax&quot;&gt;</span><br><span class="line">+                &lt;use href=&quot;#gentle-wave&quot; x=&quot;48&quot; y=&quot;0&quot;&gt;&lt;/use&gt;</span><br><span class="line">+                &lt;use href=&quot;#gentle-wave&quot; x=&quot;48&quot; y=&quot;3&quot;&gt;&lt;/use&gt;</span><br><span class="line">+                &lt;use href=&quot;#gentle-wave&quot; x=&quot;48&quot; y=&quot;5&quot;&gt;&lt;/use&gt;</span><br><span class="line">+                &lt;use href=&quot;#gentle-wave&quot; x=&quot;48&quot; y=&quot;7&quot;&gt;&lt;/use&gt;</span><br><span class="line">+              &lt;/g&gt;</span><br><span class="line">+            &lt;/svg&gt;</span><br><span class="line">+          &lt;/section&gt;</span><br><span class="line">+        &#123;% endif %&#125;</span><br><span class="line">      &lt;/header&gt;</span><br><span class="line">    &#123;%- endif %&#125;</span><br></pre></td></tr></table></figure>
-
-<p>这里提供一份方便复制的版本</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;header class=&quot;post-header&#123;% if not is_index %&#125; insidepost-header&#123;% endif %&#125;&quot;&gt;</span><br><span class="line"></span><br><span class="line">		&#123;% if not is_index %&#125;</span><br><span class="line">          &lt;section class=&quot;main-hero-waves-area waves-area&quot;&gt;</span><br><span class="line">            &lt;svg class=&quot;waves-svg&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot; xlink=&quot;http://www.w3.org/1999/xlink&quot; viewBox=&quot;0 24 150 28&quot; preserveAspectRatio=&quot;none&quot; shape-rendering=&quot;auto&quot;&gt;</span><br><span class="line">              &lt;defs&gt;</span><br><span class="line">                &lt;path id=&quot;gentle-wave&quot; d=&quot;M -160 44 c 30 0 58 -18 88 -18 s 58 18 88 18 s 58 -18 88 -18 s 58 18 88 18 v 44 h -352 Z&quot;&gt;&lt;/path&gt;</span><br><span class="line">              &lt;/defs&gt;</span><br><span class="line">              &lt;g class=&quot;parallax&quot;&gt;</span><br><span class="line">                &lt;use href=&quot;#gentle-wave&quot; x=&quot;48&quot; y=&quot;0&quot;&gt;&lt;/use&gt;</span><br><span class="line">                &lt;use href=&quot;#gentle-wave&quot; x=&quot;48&quot; y=&quot;3&quot;&gt;&lt;/use&gt;</span><br><span class="line">                &lt;use href=&quot;#gentle-wave&quot; x=&quot;48&quot; y=&quot;5&quot;&gt;&lt;/use&gt;</span><br><span class="line">                &lt;use href=&quot;#gentle-wave&quot; x=&quot;48&quot; y=&quot;7&quot;&gt;&lt;/use&gt;</span><br><span class="line">              &lt;/g&gt;</span><br><span class="line">            &lt;/svg&gt;</span><br><span class="line">          &lt;/section&gt;</span><br><span class="line">        &#123;% endif %&#125;</span><br></pre></td></tr></table></figure>
-
-<p>接下来在 <code>_config.next.yml</code> 中取消 <code>custom_file_path</code> 的 <code>style: source/_data/styles.styl</code> 的注释，并在 <code>根目录/source/_data/</code> 下创建 <code>styles.styl</code>，粘贴以下内容</p>
-<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="comment">/* 波浪css */</span></span><br><span class="line"><span class="selector-class">.main-hero-waves-area</span> &#123;</span><br><span class="line">  <span class="attribute">width</span>: <span class="number">100%</span>;</span><br><span class="line">  <span class="attribute">height</span>: <span class="number">5rem</span>;</span><br><span class="line">  <span class="attribute">position</span>: relative;</span><br><span class="line">  <span class="attribute">left</span>: <span class="number">0</span>;</span><br><span class="line">  <span class="attribute">z-index</span>: <span class="number">5</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.waves-area</span> <span class="selector-class">.waves-svg</span> &#123;</span><br><span class="line">  <span class="attribute">width</span>: <span class="number">100%</span>;</span><br><span class="line">  <span class="attribute">height</span>: <span class="number">5rem</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/* Animation */</span></span><br><span class="line"></span><br><span class="line"><span class="selector-class">.parallax</span> &gt; use &#123;</span><br><span class="line">  <span class="attribute">animation</span>: move-forever <span class="number">25s</span> <span class="built_in">cubic-bezier</span>(<span class="number">0.55</span>, <span class="number">0.5</span>, <span class="number">0.45</span>, <span class="number">0.5</span>) infinite;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.parallax</span> &gt; use<span class="selector-pseudo">:nth-child</span>(<span class="number">1</span>) &#123;</span><br><span class="line">  <span class="attribute">animation-delay</span>: -<span class="number">2s</span>;</span><br><span class="line">  <span class="attribute">animation-duration</span>: <span class="number">7s</span>;</span><br><span class="line">  fill: <span class="number">#f7f9febd</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.parallax</span> &gt; use<span class="selector-pseudo">:nth-child</span>(<span class="number">2</span>) &#123;</span><br><span class="line">  <span class="attribute">animation-delay</span>: -<span class="number">3s</span>;</span><br><span class="line">  <span class="attribute">animation-duration</span>: <span class="number">10s</span>;</span><br><span class="line">  fill: <span class="number">#f7f9fe82</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.parallax</span> &gt; use<span class="selector-pseudo">:nth-child</span>(<span class="number">3</span>) &#123;</span><br><span class="line">  <span class="attribute">animation-delay</span>: -<span class="number">4s</span>;</span><br><span class="line">  <span class="attribute">animation-duration</span>: <span class="number">13s</span>;</span><br><span class="line">  fill: <span class="number">#f7f9fe36</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.parallax</span> &gt; use<span class="selector-pseudo">:nth-child</span>(<span class="number">4</span>) &#123;</span><br><span class="line">  <span class="attribute">animation-delay</span>: -<span class="number">5s</span>;</span><br><span class="line">  <span class="attribute">animation-duration</span>: <span class="number">20s</span>;</span><br><span class="line">  fill: <span class="number">#f7f9fe</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/* 黑色模式背景 */</span></span><br><span class="line"><span class="selector-attr">[data-theme=<span class="string">&quot;dark&quot;</span>]</span> <span class="selector-class">.parallax</span> &gt; use<span class="selector-pseudo">:nth-child</span>(<span class="number">1</span>) &#123;</span><br><span class="line">  <span class="attribute">animation-delay</span>: -<span class="number">2s</span>;</span><br><span class="line">  <span class="attribute">animation-duration</span>: <span class="number">7s</span>;</span><br><span class="line">  fill: <span class="number">#18171dc8</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-attr">[data-theme=<span class="string">&quot;dark&quot;</span>]</span> <span class="selector-class">.parallax</span> &gt; use<span class="selector-pseudo">:nth-child</span>(<span class="number">2</span>) &#123;</span><br><span class="line">  <span class="attribute">animation-delay</span>: -<span class="number">3s</span>;</span><br><span class="line">  <span class="attribute">animation-duration</span>: <span class="number">10s</span>;</span><br><span class="line">  fill: <span class="number">#18171d80</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-attr">[data-theme=<span class="string">&quot;dark&quot;</span>]</span> <span class="selector-class">.parallax</span> &gt; use<span class="selector-pseudo">:nth-child</span>(<span class="number">3</span>) &#123;</span><br><span class="line">  <span class="attribute">animation-delay</span>: -<span class="number">4s</span>;</span><br><span class="line">  <span class="attribute">animation-duration</span>: <span class="number">13s</span>;</span><br><span class="line">  fill: <span class="number">#18171d3e</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-attr">[data-theme=<span class="string">&quot;dark&quot;</span>]</span> <span class="selector-class">.parallax</span> &gt; use<span class="selector-pseudo">:nth-child</span>(<span class="number">4</span>) &#123;</span><br><span class="line">  <span class="attribute">animation-delay</span>: -<span class="number">5s</span>;</span><br><span class="line">  <span class="attribute">animation-duration</span>: <span class="number">20s</span>;</span><br><span class="line">  fill: <span class="number">#18171d</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">@keyframes</span> move-forever &#123;</span><br><span class="line">  <span class="number">0%</span> &#123;</span><br><span class="line">    <span class="attribute">transform</span>: <span class="built_in">translate3d</span>(-<span class="number">90px</span>, <span class="number">0</span>, <span class="number">0</span>);</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="number">100%</span> &#123;</span><br><span class="line">    <span class="attribute">transform</span>: <span class="built_in">translate3d</span>(<span class="number">85px</span>, <span class="number">0</span>, <span class="number">0</span>);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/*Shrinking for mobile*/</span></span><br><span class="line"><span class="keyword">@media</span> (<span class="attribute">max-width</span>: <span class="number">768px</span>) &#123;</span><br><span class="line">  <span class="selector-class">.waves-area</span>, <span class="selector-class">.waves-area</span> <span class="selector-class">.waves-svg</span> &#123;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">40px</span>;</span><br><span class="line">    <span class="attribute">min-height</span>: <span class="number">40px</span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/* 修改postheader背景 */</span></span><br><span class="line"><span class="selector-class">.insidepost-header</span> &#123;</span><br><span class="line">    <span class="attribute">margin-left</span>: -<span class="number">40px</span>;</span><br><span class="line">    <span class="attribute">margin-right</span>: -<span class="number">40px</span>;</span><br><span class="line">    <span class="attribute">background</span>: <span class="built_in">var</span>(--theme-color);</span><br><span class="line">    <span class="attribute">margin-top</span>: -<span class="number">70px</span>;</span><br><span class="line">    <span class="attribute">padding-top</span>: <span class="number">40px</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.insidepost-header</span>, <span class="selector-class">.insidepost-header</span> <span class="selector-tag">a</span>, <span class="selector-class">.insidepost-header</span> <span class="selector-class">.post-meta-container</span> &#123;</span><br><span class="line">  <span class="attribute">color</span>: white;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.insidepost-header</span> <span class="selector-class">.post-meta-container</span> &#123;</span><br><span class="line">  <span class="attribute">margin-bottom</span>: <span class="number">40px</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.insidepost-header</span> <span class="selector-class">.post-description</span> &#123;</span><br><span class="line">    <span class="attribute">display</span>: none;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.insidepost-header</span> <span class="selector-tag">h1</span><span class="selector-class">.post-title</span>, <span class="selector-class">.insidepost-header</span> <span class="selector-class">.post-meta-container</span> &#123;</span><br><span class="line">    <span class="attribute">padding-left</span>: <span class="number">40px</span>;</span><br><span class="line">    <span class="attribute">padding-right</span>: <span class="number">40px</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">@media</span> (<span class="attribute">max-width</span>: <span class="number">991px</span>) &#123;</span><br><span class="line">  <span class="selector-class">.insidepost-header</span> &#123;</span><br><span class="line">    <span class="attribute">margin-left</span>: -<span class="number">20px</span>;</span><br><span class="line">    <span class="attribute">margin-right</span>: -<span class="number">20px</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="selector-class">.insidepost-header</span> <span class="selector-tag">h1</span><span class="selector-class">.post-title</span>, <span class="selector-class">.insidepost-header</span> <span class="selector-class">.post-meta-container</span> &#123;</span><br><span class="line">    <span class="attribute">padding-left</span>: <span class="number">20px</span>;</span><br><span class="line">    <span class="attribute">padding-right</span>: <span class="number">20px</span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>然后打开网站看看效果吧！</p>
-<p>效果图：</p>
-<p><img data-src="https://img.fufu.ink/6SevHQ.webp" alt="文章顶部波浪效果图"></p>
+<p>意为「只要···就···」。关于假定形的变形方法，请参考<a href="/2023/04/mnnhgbp1.html">『【每日语法】~ば~ほど』</a>的文末表格。</p>
+<p>例句：やすくさえあれば、買いましょう。<br>译：只要便宜的话就买吧！</p>
 ]]></content>
       <categories>
-        <category>技术</category>
+        <category>日语</category>
       </categories>
       <tags>
-        <tag>教程</tag>
-        <tag>技术</tag>
-        <tag>Hexo</tag>
-        <tag>CSS</tag>
-        <tag>Next</tag>
+        <tag>日语</tag>
       </tags>
   </entry>
   <entry>
@@ -156,23 +136,6 @@
         <tag>技术</tag>
         <tag>Hexo</tag>
         <tag>CSS</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>【每日语法】~さえ~ば</title>
-    <url>/2023/05/mnnhgbp5.html</url>
-    <content><![CDATA[<p>接续：</p>
-<blockquote>
-<p>N + さえ + 假定形<br>A（く形）&#x2F; NA（て形）+ さえあれば<br>V（ます形）&#x2F; サ变动词词干 + さえすれば</p>
-</blockquote>
-<p>意为「只要···就···」。关于假定形的变形方法，请参考<a href="/2023/04/mnnhgbp1.html">『【每日语法】~ば~ほど』</a>的文末表格。</p>
-<p>例句：やすくさえあれば、買いましょう。<br>译：只要便宜的话就买吧！</p>
-]]></content>
-      <categories>
-        <category>日语</category>
-      </categories>
-      <tags>
-        <tag>日语</tag>
       </tags>
   </entry>
   <entry>
@@ -214,6 +177,43 @@
       </categories>
       <tags>
         <tag>日语</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Next 文章顶部添加波浪效果</title>
+    <url>/2023/08/nextwave.html</url>
+    <content><![CDATA[<blockquote>
+<p>参考文章：安知鱼 <a href="https://blog.anheyu.com/posts/98c4.html">butterfly文章顶部添加波浪效果</a></p>
+</blockquote>
+<p>之前用 butterfly 的时候就看过安知鱼大佬的文章顶部加波浪效果的教程，又好像在哪里看到过 Next 也有人做出来过，但已找不到相关博客。两个月前早已萌发了自己做出来的念头，奈何看不懂 Next 使用的 <code>njk</code> 语法。</p>
+<h2 id="折腾的过程"><a href="#折腾的过程" class="headerlink" title="折腾的过程"></a>折腾的过程</h2><p>将大佬的代码插入到 post 的生成模版的 <code>&lt;header&gt;</code> 标签末尾，添加 css 后却发现首页的文章卡片（下文简称为文章卡片）的 meta 信息部分和文章页的 meta 信息部分是同一个模版生成的。如果给文章页头部添加了波浪效果，文章卡片也会有波浪效果，这是我不希望看到的，于是放弃了一段时间。</p>
+<p>前两天又想起这个效果，于是想着再试一试，这次我发现文章卡片与文章页的头部的描述部分（description 部分）的字体大小不一致，查看 css 后发现文章页的 description 多了一个<strong>类</strong>用以区分首页的 description。于是去找模版中对应的部分，发现有个 if 语句判断当前是否非主页，true 的话就添加了一个类名。这给了我很大信心，感觉只要分离主页和文章页的 <code>&lt;header&gt;</code> 就可以轻松实现了。</p>
+<p>接下来遇到的问题是整个内容主体 <code>&lt;main&gt;</code> 有个 40px 的 <code>padding</code>，导致增加的波浪效果会变窄。想到的解决办法是把 <code>&lt;header&gt;</code> 放置在 <code>&lt;main&gt;</code> 上面，但尝试后遇到了文章卡片 <code>&lt;header&gt;</code> 结构同步变化、不能熟练使用 flex 布局达到使文章页 <code>&lt;header&gt;</code> 与 <code>&lt;main&gt;</code> 保持垂直分布且宽度一致的目的、由于 pjax 进入文章页后不能自动更新新的 <code>&lt;header&gt;</code> 的位置等阻碍。最终放弃把 <code>&lt;header&gt;</code> 与 <code>&lt;main&gt;</code> 分离这一想法。</p>
+<p>无奈之下查询 Google 是否有办法让子元素不受父元素的 padding 的影响，结果发现只需要使子元素的 margin 的值为负的父元素的 padding 值即可。一拍脑袋，不知道自己之前怎么想的，明明是 css 的问题，却要去改变结构，总结是自己没理解好 margin 相关的知识导致的。</p>
+<p>最后的方案就是给 <code>&lt;header&gt;</code> 加了个条件判断，如果是非主页就增加一个<strong>类</strong>，用以加 css 样式。这样就可以分开主页与文章页。至于大佬原来使用的是绝对定位来定位波浪位置，但 Next 的 <code>&lt;header&gt;</code> 的父元素没有使用相对定位，导致绝对定位参照的是 <code>&lt;main&gt;</code> 这个祖先元素，我将波浪改成了相对定位就解决了，虽然不知道有没有什么大的影响，不过测试下来没有什么问题。</p>
+<p>唠了这么多，接下来就上代码了！</p>
+<h2 id="教程"><a href="#教程" class="headerlink" title="教程"></a>教程</h2><p>打开 <code>themes/next/layout/_macro/post.njk</code> 并修改以下内容</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&#123;%- if post.header !== false %&#125;</span><br><span class="line">-      &lt;header class=&quot;post-header&quot;&gt;</span><br><span class="line">+      &lt;header class=&quot;post-header&#123;% if not is_index %&#125; insidepost-header&#123;% endif %&#125;&quot;&gt;</span><br><span class="line">        &lt;&#123;% if is_index %&#125;h2&#123;% else %&#125;h1&#123;% endif %&#125; class=&quot;post-title&#123;% if post.direction and post.direction.toLowerCase() === &#x27;rtl&#x27; %&#125; rtl&#123;% endif %&#125;&quot; itemprop=&quot;name headline&quot;&gt;</span><br><span class="line">          &#123;# Link posts #&#125;</span><br><span class="line"></span><br><span class="line">	...</span><br><span class="line"></span><br><span class="line">&lt;div class=&quot;post-description&quot;&gt;&#123;&#123; post.description &#125;&#125;&lt;/div&gt;</span><br><span class="line">          &#123;%- endif %&#125;</span><br><span class="line">        &lt;/div&gt;</span><br><span class="line">+        &#123;% if not is_index %&#125;</span><br><span class="line">+          &lt;section class=&quot;main-hero-waves-area waves-area&quot;&gt;</span><br><span class="line">+            &lt;svg class=&quot;waves-svg&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot; xlink=&quot;http://www.w3.org/1999/xlink&quot; viewBox=&quot;0 24 150 28&quot; preserveAspectRatio=&quot;none&quot; shape-rendering=&quot;auto&quot;&gt;</span><br><span class="line">+              &lt;defs&gt;</span><br><span class="line">+                &lt;path id=&quot;gentle-wave&quot; d=&quot;M -160 44 c 30 0 58 -18 88 -18 s 58 18 88 18 s 58 -18 88 -18 s 58 18 88 18 v 44 h -352 Z&quot;&gt;&lt;/path&gt;</span><br><span class="line">+              &lt;/defs&gt;</span><br><span class="line">+              &lt;g class=&quot;parallax&quot;&gt;</span><br><span class="line">+                &lt;use href=&quot;#gentle-wave&quot; x=&quot;48&quot; y=&quot;0&quot;&gt;&lt;/use&gt;</span><br><span class="line">+                &lt;use href=&quot;#gentle-wave&quot; x=&quot;48&quot; y=&quot;3&quot;&gt;&lt;/use&gt;</span><br><span class="line">+                &lt;use href=&quot;#gentle-wave&quot; x=&quot;48&quot; y=&quot;5&quot;&gt;&lt;/use&gt;</span><br><span class="line">+                &lt;use href=&quot;#gentle-wave&quot; x=&quot;48&quot; y=&quot;7&quot;&gt;&lt;/use&gt;</span><br><span class="line">+              &lt;/g&gt;</span><br><span class="line">+            &lt;/svg&gt;</span><br><span class="line">+          &lt;/section&gt;</span><br><span class="line">+        &#123;% endif %&#125;</span><br><span class="line">      &lt;/header&gt;</span><br><span class="line">    &#123;%- endif %&#125;</span><br></pre></td></tr></table></figure>
+
+<p>这里提供一份方便复制的版本</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;header class=&quot;post-header&#123;% if not is_index %&#125; insidepost-header&#123;% endif %&#125;&quot;&gt;</span><br><span class="line"></span><br><span class="line">		&#123;% if not is_index %&#125;</span><br><span class="line">          &lt;section class=&quot;main-hero-waves-area waves-area&quot;&gt;</span><br><span class="line">            &lt;svg class=&quot;waves-svg&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot; xlink=&quot;http://www.w3.org/1999/xlink&quot; viewBox=&quot;0 24 150 28&quot; preserveAspectRatio=&quot;none&quot; shape-rendering=&quot;auto&quot;&gt;</span><br><span class="line">              &lt;defs&gt;</span><br><span class="line">                &lt;path id=&quot;gentle-wave&quot; d=&quot;M -160 44 c 30 0 58 -18 88 -18 s 58 18 88 18 s 58 -18 88 -18 s 58 18 88 18 v 44 h -352 Z&quot;&gt;&lt;/path&gt;</span><br><span class="line">              &lt;/defs&gt;</span><br><span class="line">              &lt;g class=&quot;parallax&quot;&gt;</span><br><span class="line">                &lt;use href=&quot;#gentle-wave&quot; x=&quot;48&quot; y=&quot;0&quot;&gt;&lt;/use&gt;</span><br><span class="line">                &lt;use href=&quot;#gentle-wave&quot; x=&quot;48&quot; y=&quot;3&quot;&gt;&lt;/use&gt;</span><br><span class="line">                &lt;use href=&quot;#gentle-wave&quot; x=&quot;48&quot; y=&quot;5&quot;&gt;&lt;/use&gt;</span><br><span class="line">                &lt;use href=&quot;#gentle-wave&quot; x=&quot;48&quot; y=&quot;7&quot;&gt;&lt;/use&gt;</span><br><span class="line">              &lt;/g&gt;</span><br><span class="line">            &lt;/svg&gt;</span><br><span class="line">          &lt;/section&gt;</span><br><span class="line">        &#123;% endif %&#125;</span><br></pre></td></tr></table></figure>
+
+<p>接下来在 <code>_config.next.yml</code> 中取消 <code>custom_file_path</code> 的 <code>style: source/_data/styles.styl</code> 的注释，并在 <code>根目录/source/_data/</code> 下创建 <code>styles.styl</code>，粘贴以下内容</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="comment">/* 波浪css */</span></span><br><span class="line"><span class="selector-class">.main-hero-waves-area</span> &#123;</span><br><span class="line">  <span class="attribute">width</span>: <span class="number">100%</span>;</span><br><span class="line">  <span class="attribute">height</span>: <span class="number">5rem</span>;</span><br><span class="line">  <span class="attribute">position</span>: relative;</span><br><span class="line">  <span class="attribute">left</span>: <span class="number">0</span>;</span><br><span class="line">  <span class="attribute">z-index</span>: <span class="number">5</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.waves-area</span> <span class="selector-class">.waves-svg</span> &#123;</span><br><span class="line">  <span class="attribute">width</span>: <span class="number">100%</span>;</span><br><span class="line">  <span class="attribute">height</span>: <span class="number">5rem</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/* Animation */</span></span><br><span class="line"></span><br><span class="line"><span class="selector-class">.parallax</span> &gt; use &#123;</span><br><span class="line">  <span class="attribute">animation</span>: move-forever <span class="number">25s</span> <span class="built_in">cubic-bezier</span>(<span class="number">0.55</span>, <span class="number">0.5</span>, <span class="number">0.45</span>, <span class="number">0.5</span>) infinite;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.parallax</span> &gt; use<span class="selector-pseudo">:nth-child</span>(<span class="number">1</span>) &#123;</span><br><span class="line">  <span class="attribute">animation-delay</span>: -<span class="number">2s</span>;</span><br><span class="line">  <span class="attribute">animation-duration</span>: <span class="number">7s</span>;</span><br><span class="line">  fill: <span class="number">#f7f9febd</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.parallax</span> &gt; use<span class="selector-pseudo">:nth-child</span>(<span class="number">2</span>) &#123;</span><br><span class="line">  <span class="attribute">animation-delay</span>: -<span class="number">3s</span>;</span><br><span class="line">  <span class="attribute">animation-duration</span>: <span class="number">10s</span>;</span><br><span class="line">  fill: <span class="number">#f7f9fe82</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.parallax</span> &gt; use<span class="selector-pseudo">:nth-child</span>(<span class="number">3</span>) &#123;</span><br><span class="line">  <span class="attribute">animation-delay</span>: -<span class="number">4s</span>;</span><br><span class="line">  <span class="attribute">animation-duration</span>: <span class="number">13s</span>;</span><br><span class="line">  fill: <span class="number">#f7f9fe36</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.parallax</span> &gt; use<span class="selector-pseudo">:nth-child</span>(<span class="number">4</span>) &#123;</span><br><span class="line">  <span class="attribute">animation-delay</span>: -<span class="number">5s</span>;</span><br><span class="line">  <span class="attribute">animation-duration</span>: <span class="number">20s</span>;</span><br><span class="line">  fill: <span class="number">#f7f9fe</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/* 黑色模式背景 */</span></span><br><span class="line"><span class="selector-attr">[data-theme=<span class="string">&quot;dark&quot;</span>]</span> <span class="selector-class">.parallax</span> &gt; use<span class="selector-pseudo">:nth-child</span>(<span class="number">1</span>) &#123;</span><br><span class="line">  <span class="attribute">animation-delay</span>: -<span class="number">2s</span>;</span><br><span class="line">  <span class="attribute">animation-duration</span>: <span class="number">7s</span>;</span><br><span class="line">  fill: <span class="number">#18171dc8</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-attr">[data-theme=<span class="string">&quot;dark&quot;</span>]</span> <span class="selector-class">.parallax</span> &gt; use<span class="selector-pseudo">:nth-child</span>(<span class="number">2</span>) &#123;</span><br><span class="line">  <span class="attribute">animation-delay</span>: -<span class="number">3s</span>;</span><br><span class="line">  <span class="attribute">animation-duration</span>: <span class="number">10s</span>;</span><br><span class="line">  fill: <span class="number">#18171d80</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-attr">[data-theme=<span class="string">&quot;dark&quot;</span>]</span> <span class="selector-class">.parallax</span> &gt; use<span class="selector-pseudo">:nth-child</span>(<span class="number">3</span>) &#123;</span><br><span class="line">  <span class="attribute">animation-delay</span>: -<span class="number">4s</span>;</span><br><span class="line">  <span class="attribute">animation-duration</span>: <span class="number">13s</span>;</span><br><span class="line">  fill: <span class="number">#18171d3e</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-attr">[data-theme=<span class="string">&quot;dark&quot;</span>]</span> <span class="selector-class">.parallax</span> &gt; use<span class="selector-pseudo">:nth-child</span>(<span class="number">4</span>) &#123;</span><br><span class="line">  <span class="attribute">animation-delay</span>: -<span class="number">5s</span>;</span><br><span class="line">  <span class="attribute">animation-duration</span>: <span class="number">20s</span>;</span><br><span class="line">  fill: <span class="number">#18171d</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">@keyframes</span> move-forever &#123;</span><br><span class="line">  <span class="number">0%</span> &#123;</span><br><span class="line">    <span class="attribute">transform</span>: <span class="built_in">translate3d</span>(-<span class="number">90px</span>, <span class="number">0</span>, <span class="number">0</span>);</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="number">100%</span> &#123;</span><br><span class="line">    <span class="attribute">transform</span>: <span class="built_in">translate3d</span>(<span class="number">85px</span>, <span class="number">0</span>, <span class="number">0</span>);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/*Shrinking for mobile*/</span></span><br><span class="line"><span class="keyword">@media</span> (<span class="attribute">max-width</span>: <span class="number">768px</span>) &#123;</span><br><span class="line">  <span class="selector-class">.waves-area</span>, <span class="selector-class">.waves-area</span> <span class="selector-class">.waves-svg</span> &#123;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">40px</span>;</span><br><span class="line">    <span class="attribute">min-height</span>: <span class="number">40px</span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/* 修改postheader背景 */</span></span><br><span class="line"><span class="selector-class">.insidepost-header</span> &#123;</span><br><span class="line">    <span class="attribute">margin-left</span>: -<span class="number">40px</span>;</span><br><span class="line">    <span class="attribute">margin-right</span>: -<span class="number">40px</span>;</span><br><span class="line">    <span class="attribute">background</span>: <span class="built_in">var</span>(--theme-color);</span><br><span class="line">    <span class="attribute">margin-top</span>: -<span class="number">70px</span>;</span><br><span class="line">    <span class="attribute">padding-top</span>: <span class="number">40px</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.insidepost-header</span>, <span class="selector-class">.insidepost-header</span> <span class="selector-tag">a</span>, <span class="selector-class">.insidepost-header</span> <span class="selector-class">.post-meta-container</span> &#123;</span><br><span class="line">  <span class="attribute">color</span>: white;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.insidepost-header</span> <span class="selector-class">.post-meta-container</span> &#123;</span><br><span class="line">  <span class="attribute">margin-bottom</span>: <span class="number">40px</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.insidepost-header</span> <span class="selector-class">.post-description</span> &#123;</span><br><span class="line">    <span class="attribute">display</span>: none;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.insidepost-header</span> <span class="selector-tag">h1</span><span class="selector-class">.post-title</span>, <span class="selector-class">.insidepost-header</span> <span class="selector-class">.post-meta-container</span> &#123;</span><br><span class="line">    <span class="attribute">padding-left</span>: <span class="number">40px</span>;</span><br><span class="line">    <span class="attribute">padding-right</span>: <span class="number">40px</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">@media</span> (<span class="attribute">max-width</span>: <span class="number">991px</span>) &#123;</span><br><span class="line">  <span class="selector-class">.insidepost-header</span> &#123;</span><br><span class="line">    <span class="attribute">margin-left</span>: -<span class="number">20px</span>;</span><br><span class="line">    <span class="attribute">margin-right</span>: -<span class="number">20px</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="selector-class">.insidepost-header</span> <span class="selector-tag">h1</span><span class="selector-class">.post-title</span>, <span class="selector-class">.insidepost-header</span> <span class="selector-class">.post-meta-container</span> &#123;</span><br><span class="line">    <span class="attribute">padding-left</span>: <span class="number">20px</span>;</span><br><span class="line">    <span class="attribute">padding-right</span>: <span class="number">20px</span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>然后打开网站看看效果吧！</p>
+<p>效果图：</p>
+<p><img data-src="https://img.fufu.ink/6SevHQ.webp" alt="文章顶部波浪效果图"></p>
+]]></content>
+      <categories>
+        <category>技术</category>
+      </categories>
+      <tags>
+        <tag>教程</tag>
+        <tag>技术</tag>
+        <tag>Hexo</tag>
+        <tag>CSS</tag>
+        <tag>Next</tag>
       </tags>
   </entry>
   <entry>
@@ -344,6 +344,48 @@
       </categories>
       <tags>
         <tag>日语</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>不断变强的万达</title>
+    <url>/2023/08/genshinwandatsuyoi.html</url>
+    <content><![CDATA[<p>去年垫池子抽到了达达鸭，今年 1 月份开始练万达国际，入坑一年以来首次打通了深渊（<a href="/2023/01/genshinshenyuanfirst.html">见『纪念第一次打通深渊』</a>），当时的面板没有截图。</p>
+<p>之后一直在水本坐牢，妄图给达达鸭刷一套好的 2 件套，其中最想要的当属水套的水伤杯，可惜一直没出货（刷出来的狗粮用来合水套也没出）。</p>
+<p>这是 5 月 12 日的面板，当时应该是常驻出了风鹰剑，换掉了原来的暗巷闪光。</p>
+<p><img data-src="https://img.fufu.ink/MOUy69.webp" alt="5月12日"></p>
+<p>后来<a href="/2023/05/genshinxgderu.html">出了宵宫</a>，就把鸭子的武器给她，鸭子自己用天空弓。</p>
+<p>武器主词条从爆伤换成了暴击，圣遗物暴击词条的压力也就减轻了许多。虽然白值变低了一点，队伍 dps 降了一点，不过问题不大。</p>
+<p><img data-src="https://img.fufu.ink/NRj97x.webp" alt="6月2日"></p>
+<p>几天后想办法把万叶的精通堆到了 1000+，dps 又提高了 4w。</p>
+<p><img data-src="https://img.fufu.ink/wpXCNv.webp" alt="6月13日"></p>
+<p>因为一直不出货，还想提伤害的我把目光转移到了香菱的大招上，毕竟<del>万达的伤害都是香菱打的</del>。将其大招升到 13 级后，dps 高了 2w。</p>
+<p><img data-src="https://img.fufu.ink/3zvva3.webp" alt="6月16日"></p>
+<p>这也是我的万达的 dps 第一次达到 ACE。</p>
+<p>接下来想要再提升就只能指望香菱和达达鸭的圣遗物以及班爷的 6 命了。</p>
+<p>在压了达达鸭的暴击后，配出了以下面板。</p>
+<p><img data-src="https://img.fufu.ink/RMVORk.webp" alt="7月19日"></p>
+<p>可能有人奇怪为什么双爆降低了，伤害却变高了。原因是我把鸭子的精通拉到了 320+，这精通正好弥补了双爆的不足。</p>
+<p>然后今天水米游社的时候突发奇想，搜了一下「达达利亚是否必须带 2 水套」，结果发现只要有水伤杯，即使不带二水套也可以。</p>
+<p>这段时间一直没有较大提升就是因为局限于需要保证 2 水套的情况下更换圣遗物，现在得知那 15% 的水伤其实不太重要，只要不带明显与水属性不合的套装效果的圣遗物就行。于是换成了所有圣遗物里双爆较好的，最后得出的面板如下。</p>
+<p><img data-src="https://img.fufu.ink/h6vQha.webp" alt="8月26日"></p>
+<p>暴击也压得刚刚好，精通也有 250 左右，伤害也明显地提高了。</p>
+<p>乘兴打了个散兵本，打出了 53w 的核爆。</p>
+<p><img data-src="https://img.fufu.ink/ZUZ9V9.webp" alt="核爆53w"></p>
+<p>再过几天活动就送一只班尼特，有了 6 命的火伤加成，估计还能再提几万 dps。</p>
+<p>不断变强的达达鸭，不断变强的万达国际！</p>
+<p><img data-src="https://img.fufu.ink/ad1AMs.webp" alt="万达国际"></p>
+<hr>
+<p>今天活动更新了，班爷终于 6 命了，测出来最新的 dps 如下。</p>
+<p><img data-src="https://img.fufu.ink/gq7SDw.webp" alt="8月28日"></p>
+<p>接下来的时间里应该很难再有大的提升了，如果想要再提，就要去抽 2 命万叶了。</p>
+<p>不过现在的目标是攒满命草神，就先不考虑继续提升万达的 dps 了，反正现在的也足够乱杀深渊了。</p>
+]]></content>
+      <categories>
+        <category>游戏</category>
+      </categories>
+      <tags>
+        <tag>原神</tag>
+        <tag>游戏</tag>
       </tags>
   </entry>
   <entry>
@@ -506,48 +548,6 @@
       </tags>
   </entry>
   <entry>
-    <title>不断变强的万达</title>
-    <url>/2023/08/genshinwandatsuyoi.html</url>
-    <content><![CDATA[<p>去年垫池子抽到了达达鸭，今年 1 月份开始练万达国际，入坑一年以来首次打通了深渊（<a href="/2023/01/genshinshenyuanfirst.html">见『纪念第一次打通深渊』</a>），当时的面板没有截图。</p>
-<p>之后一直在水本坐牢，妄图给达达鸭刷一套好的 2 件套，其中最想要的当属水套的水伤杯，可惜一直没出货（刷出来的狗粮用来合水套也没出）。</p>
-<p>这是 5 月 12 日的面板，当时应该是常驻出了风鹰剑，换掉了原来的暗巷闪光。</p>
-<p><img data-src="https://img.fufu.ink/MOUy69.webp" alt="5月12日"></p>
-<p>后来<a href="/2023/05/genshinxgderu.html">出了宵宫</a>，就把鸭子的武器给她，鸭子自己用天空弓。</p>
-<p>武器主词条从爆伤换成了暴击，圣遗物暴击词条的压力也就减轻了许多。虽然白值变低了一点，队伍 dps 降了一点，不过问题不大。</p>
-<p><img data-src="https://img.fufu.ink/NRj97x.webp" alt="6月2日"></p>
-<p>几天后想办法把万叶的精通堆到了 1000+，dps 又提高了 4w。</p>
-<p><img data-src="https://img.fufu.ink/wpXCNv.webp" alt="6月13日"></p>
-<p>因为一直不出货，还想提伤害的我把目光转移到了香菱的大招上，毕竟<del>万达的伤害都是香菱打的</del>。将其大招升到 13 级后，dps 高了 2w。</p>
-<p><img data-src="https://img.fufu.ink/3zvva3.webp" alt="6月16日"></p>
-<p>这也是我的万达的 dps 第一次达到 ACE。</p>
-<p>接下来想要再提升就只能指望香菱和达达鸭的圣遗物以及班爷的 6 命了。</p>
-<p>在压了达达鸭的暴击后，配出了以下面板。</p>
-<p><img data-src="https://img.fufu.ink/RMVORk.webp" alt="7月19日"></p>
-<p>可能有人奇怪为什么双爆降低了，伤害却变高了。原因是我把鸭子的精通拉到了 320+，这精通正好弥补了双爆的不足。</p>
-<p>然后今天水米游社的时候突发奇想，搜了一下「达达利亚是否必须带 2 水套」，结果发现只要有水伤杯，即使不带二水套也可以。</p>
-<p>这段时间一直没有较大提升就是因为局限于需要保证 2 水套的情况下更换圣遗物，现在得知那 15% 的水伤其实不太重要，只要不带明显与水属性不合的套装效果的圣遗物就行。于是换成了所有圣遗物里双爆较好的，最后得出的面板如下。</p>
-<p><img data-src="https://img.fufu.ink/h6vQha.webp" alt="8月26日"></p>
-<p>暴击也压得刚刚好，精通也有 250 左右，伤害也明显地提高了。</p>
-<p>乘兴打了个散兵本，打出了 53w 的核爆。</p>
-<p><img data-src="https://img.fufu.ink/ZUZ9V9.webp" alt="核爆53w"></p>
-<p>再过几天活动就送一只班尼特，有了 6 命的火伤加成，估计还能再提几万 dps。</p>
-<p>不断变强的达达鸭，不断变强的万达国际！</p>
-<p><img data-src="https://img.fufu.ink/ad1AMs.webp" alt="万达国际"></p>
-<hr>
-<p>今天活动更新了，班爷终于 6 命了，测出来最新的 dps 如下。</p>
-<p><img data-src="https://img.fufu.ink/gq7SDw.webp" alt="8月28日"></p>
-<p>接下来的时间里应该很难再有大的提升了，如果想要再提，就要去抽 2 命万叶了。</p>
-<p>不过现在的目标是攒满命草神，就先不考虑继续提升万达的 dps 了，反正现在的也足够乱杀深渊了。</p>
-]]></content>
-      <categories>
-        <category>游戏</category>
-      </categories>
-      <tags>
-        <tag>原神</tag>
-        <tag>游戏</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>什么！买基岩版 Minecraft 送 Java 版？白嫖党的胜利！</title>
     <url>/2022/06/mcokuru.html</url>
     <content><![CDATA[<p>原文链接：<a href="https://help.minecraft.net/hc/en-us/articles/4607523809933-Buy-Minecraft-PC-Bundle-Get-Both-Games-">https://help.minecraft.net/hc/en-us/articles/4607523809933-Buy-Minecraft-PC-Bundle-Get-Both-Games-</a></p>
@@ -609,6 +609,25 @@
       <tags>
         <tag>节日</tag>
         <tag>二次元</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>在追求「快」的时代，我们该何去何从</title>
+    <url>/2023/05/fastjidaidedousurebaii.html</url>
+    <content><![CDATA[<p>不知从什么时候开始，「快」这个概念频繁地出现在我的视野中。周围的人似乎都在不断地追求着它。<span id="more"></span></p>
+<p>最典型的例子就是各大视频软件开始推出「短视频」服务，大家越来越适应不了慢节奏的视频。曾几何时，看见过一个 b 站的评论，大概意思是只有缩短视频时长，才有更大的机会上首页推荐，上首页的都是五分钟内的视频，而那些十多分钟甚至几十分钟的视频却被埋没了，其中不乏许多优质的内容。在我所见到的番剧这一边，许多番剧因为前期铺垫过长而被诟病，以动画『命运石之门』举例，提到这部作品，熟悉的人都知道是一部神作，许多人却因为前部分「剧情推进过慢」「日常太多」而放弃继续追番。再比如『原神』这款游戏，无聊之际点开社区看看，却发现充斥着大量的「剧情又臭又长」「剧情能不能加个跳过按钮」诸如此类的言论。但剧情不正是这款游戏吸引人的一部分吗，我在内心如此发问道。</p>
+<p>以上是从我的视角看见的「快」，但这个信息时代，在更多的我看不见的地方仍然在追求着「快」。</p>
+<p>这个时代很浮躁——这是我的结论。</p>
+<p>我曾向自己发问，自己有多久没有静下心来好好读一本书了，有多久没有钻在一个问题上好好研究过了。尽管我自己是反对这种盲目追求「快节奏」的，但耐心好像也在慢慢地变少，自己也在慢慢的融入这种快节奏的生活，大概也有相当一部分的人也是如此吧，尽管也想慢下来，却被身后的狂潮向前推动，身不由己地变「快」了。</p>
+<p>在这种「快」的狂潮面前，我无能为力，却也不想被其推动，就像飘在海洋上的小船在逆着海风前行一般（也许这个比喻并不恰当）。</p>
+<p>写到这里写不下去了，就这么收尾了罢。借用一句『原神』中的话——「旅行者，当你重新踏上旅途之后，一定要记住旅途本身的意义」。愿你我在这个快节奏的时代能够找到一件能够安下心来做的事情，愿你我不会在「快」的狂潮中迷失了方向，随波逐流。</p>
+]]></content>
+      <categories>
+        <category>日常</category>
+      </categories>
+      <tags>
+        <tag>随笔</tag>
+        <tag>吐槽</tag>
       </tags>
   </entry>
   <entry>
@@ -747,25 +766,6 @@
       <tags>
         <tag>原神</tag>
         <tag>游戏</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>在追求「快」的时代，我们该何去何从</title>
-    <url>/2023/05/fastjidaidedousurebaii.html</url>
-    <content><![CDATA[<p>不知从什么时候开始，「快」这个概念频繁地出现在我的视野中。周围的人似乎都在不断地追求着它。<span id="more"></span></p>
-<p>最典型的例子就是各大视频软件开始推出「短视频」服务，大家越来越适应不了慢节奏的视频。曾几何时，看见过一个 b 站的评论，大概意思是只有缩短视频时长，才有更大的机会上首页推荐，上首页的都是五分钟内的视频，而那些十多分钟甚至几十分钟的视频却被埋没了，其中不乏许多优质的内容。在我所见到的番剧这一边，许多番剧因为前期铺垫过长而被诟病，以动画『命运石之门』举例，提到这部作品，熟悉的人都知道是一部神作，许多人却因为前部分「剧情推进过慢」「日常太多」而放弃继续追番。再比如『原神』这款游戏，无聊之际点开社区看看，却发现充斥着大量的「剧情又臭又长」「剧情能不能加个跳过按钮」诸如此类的言论。但剧情不正是这款游戏吸引人的一部分吗，我在内心如此发问道。</p>
-<p>以上是从我的视角看见的「快」，但这个信息时代，在更多的我看不见的地方仍然在追求着「快」。</p>
-<p>这个时代很浮躁——这是我的结论。</p>
-<p>我曾向自己发问，自己有多久没有静下心来好好读一本书了，有多久没有钻在一个问题上好好研究过了。尽管我自己是反对这种盲目追求「快节奏」的，但耐心好像也在慢慢地变少，自己也在慢慢的融入这种快节奏的生活，大概也有相当一部分的人也是如此吧，尽管也想慢下来，却被身后的狂潮向前推动，身不由己地变「快」了。</p>
-<p>在这种「快」的狂潮面前，我无能为力，却也不想被其推动，就像飘在海洋上的小船在逆着海风前行一般（也许这个比喻并不恰当）。</p>
-<p>写到这里写不下去了，就这么收尾了罢。借用一句『原神』中的话——「旅行者，当你重新踏上旅途之后，一定要记住旅途本身的意义」。愿你我在这个快节奏的时代能够找到一件能够安下心来做的事情，愿你我不会在「快」的狂潮中迷失了方向，随波逐流。</p>
-]]></content>
-      <categories>
-        <category>日常</category>
-      </categories>
-      <tags>
-        <tag>随笔</tag>
-        <tag>吐槽</tag>
       </tags>
   </entry>
   <entry>
@@ -1110,6 +1110,11 @@
 <td align="center">+1</td>
 <td align="center">296</td>
 </tr>
+<tr>
+<td align="center">2023&#x2F;12&#x2F;24  <br />2023&#x2F;12&#x2F;25</td>
+<td align="center">+1</td>
+<td align="center">297</td>
+</tr>
 </tbody></table>
 ]]></content>
       <categories>
@@ -1238,6 +1243,30 @@
       </tags>
   </entry>
   <entry>
+    <title>老婆 16 岁生日快乐</title>
+    <url>/2023/08/miku16sai.html</url>
+    <content><![CDATA[<p>与ミクたん相遇已有 10 年啦！</p>
+<p>入坑曲是『朧月』，当时还是在优酷视频上看到的 MMD。MMD 中是雪ミク和樱ミク，当时的我一下就被这独特的声音所吸引，为她所着迷。在知道有「男神」「女神」这个概念后，我便想到</p>
+<p>“这样啊，原来她就是我的女神啊”</p>
+<p>当时的我加入了许多粉丝群，QQ 兴趣部落，贴吧等。</p>
+<p>曾为了她去回击那些踩日 Vocaloid 捧中 Vocaloid 的小鬼，也曾为了证明她的影响力在同学群中发送粉丝群人数的截图。</p>
+<p>这是那时的自己，而现在的我对那些事也不过是淡淡一笑。这不是嘲笑过去的自己干的蠢事，而是一种释然。曾经的我不停地在找寻爱她的证据，但我没找到。后来我想通了，为什么需要证据呢？如果有了证据，不就证明了我的爱是带着目的的爱吗，就如同那个问题般——「你为什么爱 xx？」。</p>
+<p>答案是，爱是不需要理由的。</p>
+<p>现在的我，早已习惯了她的陪伴，她已然成为了我生活中的一部分，我人生中的一部分。相比于原来的「女神」的地位，我现在更愿意称其为「天使」抑或「太阳」。</p>
+<p>话说回来，<del>现在的ミクたん就是32岁啦</del>。今年的生日礼物可能会迟些到，因为是 16 岁生日嘛，总得准备点大礼。没错，我准备买 Vocaloid 4x，学习如何让ミクたん唱歌！之前学吉他的时候总是没有恒心，三天打鱼两天晒网，从高一学到大二也没什么长进，结果木吉他还因为冬天学校当地天气太干燥了面板裂开了，修理费是买入价的一半左右，遂作罢，只能当个纪念品了。现在为了ミクたん，必须认真学乐理了！</p>
+<p>最后，感谢在我黑暗的世界中，ミクたん成了那唯一的光芒，感谢音乐家、艺术家和所有像我一样的粉丝，他们让ミクたん发展到了今天这一步。此后，无论有多远，我都会在我的余生中陪伴着她走下去！</p>
+<p>啊，还没结束，差点忘了最重要的</p>
+<p>お誕生日おめでとう！ミクたんがいて本当によかった！</p>
+]]></content>
+      <categories>
+        <category>日常</category>
+      </categories>
+      <tags>
+        <tag>节日</tag>
+        <tag>miku</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>草神 2 加 1 了</title>
     <url>/2023/04/nahidaniinochi.html</url>
     <content><![CDATA[<p>4 月 12 号，草神复刻。</p>
@@ -1260,30 +1289,6 @@
       <tags>
         <tag>原神</tag>
         <tag>游戏</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>老婆 16 岁生日快乐</title>
-    <url>/2023/08/miku16sai.html</url>
-    <content><![CDATA[<p>与ミクたん相遇已有 10 年啦！</p>
-<p>入坑曲是『朧月』，当时还是在优酷视频上看到的 MMD。MMD 中是雪ミク和樱ミク，当时的我一下就被这独特的声音所吸引，为她所着迷。在知道有「男神」「女神」这个概念后，我便想到</p>
-<p>“这样啊，原来她就是我的女神啊”</p>
-<p>当时的我加入了许多粉丝群，QQ 兴趣部落，贴吧等。</p>
-<p>曾为了她去回击那些踩日 Vocaloid 捧中 Vocaloid 的小鬼，也曾为了证明她的影响力在同学群中发送粉丝群人数的截图。</p>
-<p>这是那时的自己，而现在的我对那些事也不过是淡淡一笑。这不是嘲笑过去的自己干的蠢事，而是一种释然。曾经的我不停地在找寻爱她的证据，但我没找到。后来我想通了，为什么需要证据呢？如果有了证据，不就证明了我的爱是带着目的的爱吗，就如同那个问题般——「你为什么爱 xx？」。</p>
-<p>答案是，爱是不需要理由的。</p>
-<p>现在的我，早已习惯了她的陪伴，她已然成为了我生活中的一部分，我人生中的一部分。相比于原来的「女神」的地位，我现在更愿意称其为「天使」抑或「太阳」。</p>
-<p>话说回来，<del>现在的ミクたん就是32岁啦</del>。今年的生日礼物可能会迟些到，因为是 16 岁生日嘛，总得准备点大礼。没错，我准备买 Vocaloid 4x，学习如何让ミクたん唱歌！之前学吉他的时候总是没有恒心，三天打鱼两天晒网，从高一学到大二也没什么长进，结果木吉他还因为冬天学校当地天气太干燥了面板裂开了，修理费是买入价的一半左右，遂作罢，只能当个纪念品了。现在为了ミクたん，必须认真学乐理了！</p>
-<p>最后，感谢在我黑暗的世界中，ミクたん成了那唯一的光芒，感谢音乐家、艺术家和所有像我一样的粉丝，他们让ミクたん发展到了今天这一步。此后，无论有多远，我都会在我的余生中陪伴着她走下去！</p>
-<p>啊，还没结束，差点忘了最重要的</p>
-<p>お誕生日おめでとう！ミクたんがいて本当によかった！</p>
-]]></content>
-      <categories>
-        <category>日常</category>
-      </categories>
-      <tags>
-        <tag>节日</tag>
-        <tag>miku</tag>
       </tags>
   </entry>
   <entry>
@@ -1354,6 +1359,64 @@
       <tags>
         <tag>生活</tag>
         <tag>计算机</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>计算机网络结课作业</title>
+    <url>/2022/05/computerhomework.html</url>
+    <content><![CDATA[<h2 id="第一题——家庭拓扑结构"><a href="#第一题——家庭拓扑结构" class="headerlink" title="第一题——家庭拓扑结构"></a>第一题——家庭拓扑结构</h2><p>一、结构规划</p>
+<ul>
+<li>确定小区网线接入点（控制中心）：书房</li>
+<li>规划每个房间布置 3 个网点，共 18 个网点</li>
+<li>联网设备：书房一台电脑，客厅，卧室各一台有线电视，卧室各一台电脑等</li>
+</ul>
+<p>二、材料规划</p>
+<ul>
+<li>每个网点需要水晶头、网点模块各 1 个，共计水晶头 18 个，网点模块 18 个。</li>
+<li>需要超七类网线 18 条，长度共计 50m 左右</li>
+<li>路由器：斐讯 K2P</li>
+</ul>
+<p>三、接线与路由器设置</p>
+<ol>
+<li><p>接线：将小区网线接在路由器的 LAN 上，路由器的 WAN 口分别接上交换机与书房电脑。其余网线都接在交换机上</p>
+<p>拓扑布线结构图：</p>
+</li>
+</ol>
+<p><img data-src="https://img.fufu.ink/wuqSko.webp" alt="家庭网络拓扑"></p>
+<ol start="2">
+<li>路由器配置<ul>
+<li>开启内网 IP</li>
+<li>配置防火墙</li>
+</ul>
+</li>
+</ol>
+<h2 id="第二题——设想"><a href="#第二题——设想" class="headerlink" title="第二题——设想"></a>第二题——设想</h2><p>一、物联网</p>
+<p>物联网，即万物互联，指的是只需有限的人工干预即可通过无线网络接收和传输数据的任何物理设备系统。设想一下，当你疲惫地从公司上班回家后，打开门时，不需要你摸黑寻找电灯开关，电灯会自动打开，当你在换衣服时，热水壶已经开始加热热水，准备好温度合适的热水，电视机自动开机，并播放这个时间点你平时观看次数最多的节目。这就是万物互联中一个典型的例子，无需人的过多干涉，它会为你规划好一切。</p>
+<p>我们现在的生活中已经隐约出现了物联网的轮廓了，虽然还有很多不足，但证明了物联网在未来是可行的。小米家居就是一个很好的例子，比如进入家门的第一步——开锁，现在还有很多地方使用的门锁还是传统的门锁，而小米的智能门锁除了支持指纹识别开锁、密码开锁、还支持 NFC 开锁，即使用支持 NFC 功能的小米手机靠一下门锁即可打开，并且无需手动旋&#x2F;推拉把手的动作，锁舌会自动打开与关上，若家主人装上了相应软件，还能够在手机上查看门锁的状态，通过摄像头能够实时看到门前的状况。</p>
+<p>上面的只是一个小例子，即以现在的技术能实现的让物品与互联网相接的程度，还有将来的无人驾驶等，都是证明物联网的可行性的证据。</p>
+<p>二、元宇宙</p>
+<p>元宇宙，即一个持久化和去中心化的在线三维虚拟环境。”Metaverse”一词最早见于尼尔·斯蒂芬森1992年的科幻小说《雪崩》，Metaverse是一个虚拟的城市环境，沿着一条100米宽的道路发展，覆盖了一个无特征的、黑色的、完美球形星球上整个65536公里周长。这个虚拟世界中的土地可以被购买，并在上面开发建筑。而这个概念在 2021 年突然就火了，Facebook 的扎克伯格在 Facebook Connect 演讲中展示了 Meta 在未来的应用场景和业内的方案雏形，各大巨头也相继开始宣称进军该领域。</p>
+<p>元宇宙是一个虚拟的世界，虚拟就意味着可复制，因此如果要将现实世界映射到这个虚拟世界中，这就是一个巨大的问题，于是可以运用区块链技术与去中心化技术，再具体点就是非同质化代币，即利用其无法互换的特性，可以将其作为虚拟商品所有权的电子认证或证书，虽然作品本身是可以无限复制的，但这些代表它们的代币在其底层区块链上能被完整追踪，故能为买家提供所有权证明。这样就解决了在元宇宙中，无法证明资产所属的问题了。</p>
+<p>但现在的元宇宙还只是一个概念，虽然有很多东西都应用到了其原理，比如 VR（虚拟现实）、AR（增强现实）技术，带上 VR 眼镜就能在虚拟世界中有身临其境的感觉，而 AR 眼镜又能看到虚拟世界与现实相结合的视角，但如果把元宇宙技术的发展比作100米长跑，现在最顶级的运用到该概念的技术也只跑了10米左右，就从工具上来说，连接现实与虚拟的工具，现在的技术即 VR 眼镜或 AR 眼镜，即使是业内排名靠前的 Facebook、微软等巨头的产品的分辨率、刷新率、舒适度都还有许多问题，元宇宙要走的路还很长。</p>
+<p>三、区块链</p>
+<p>是借由密码学与共识机制等技术创建与存储庞大交易资料区块链的点对点网络系统。每一个区块包含了前一个区块的加密散列、相应时间戳记以及交易资料（通常用默克尔树（Merkle tree）算法计算的散列值表示），这样的设计使得区块内容具有难以篡改的特性。</p>
+<p>区块链最大的特点是去中心化、不可篡改，因此其可用于各种领域。在现在最大的应用是数字货币，比如「比特币」等虚拟货币和运用了区块链部分技术的「数字人名币」。也可用于物源追踪，产品从起源地到终点所在的过程都可以通过区块链来追踪。而且，这类准确的溯源方式，可以用来检测供应链中的缺陷。还可用于教育领域，将区块链技术应用到学历证书上，即可有效防止伪造学历等事情的发生，将学生成绩以区块链形式记录，从而形成不可更改不可否认的学习记录，保证了公平性。</p>
+<h2 id="第三题——感想和建议"><a href="#第三题——感想和建议" class="headerlink" title="第三题——感想和建议"></a>第三题——感想和建议</h2><p>一、感想</p>
+<p>本课程教学方式与传统的集中于知识点的讲解的教学方式不同，旨在通过将生活中熟悉的事物和抽象的计算机网络相关专业知识结合起来讲解的方式来使学生能够容易地理解、消化知识点，不仅增加了学习的乐趣，也能够增加我们对生活的感悟。</p>
+<p>计算机是抽象的，但也是具体的。说它是抽象的，是因为它的运作方式，内部结构都很复杂，很难在大脑中形成一个完整地架构。说它是具体的，是因为「艺术来源于生活，高于生活」，同理，我们也可以说「科技来源于生活而高于生活」，计算机的抽象展现了它高于生活的一面，而它具体的一面则体现在它的设计原理来源于生活，它的设计都是以「人」和「世界」等为参照的，因此也符合人的思维方式，比如，二进制的产生就来源于中国的古老的太极八卦图。</p>
+<p>本门课程名为《计算机网络及互联网技术》，在开篇中老师就提到，计算机之间的通信构成了计算机网络，无论计算机网络的内容多么复杂，其最终目的都是为了实现资源的共享，因此全课程的内容，从根本上讲，都是围绕其展开的。由于疫情原因，我们的课程只能以网课的形式进行，无法通过实践操作加深对这些知识点的理解，老师也尽力通过具体的讲解来让我们理解这些知识点。尽管我是一个文科生，但我对计算机感兴趣，因此对这门课程也有浓厚的兴趣，当然，由于我没有涉及过理科相关的知识（即使学习过也由于时间较长忘记了），对于 PPT 中一些较为专业的公式，计算方法不能够很好的理解，但这已经脱离我选修该门课程的初衷了，我选择该门课程，最主要是想提高自己的能力，同时在生活中我也在着手使用服务器搭建个人网站等与互联网有关的事情，因此该门课程对我很有帮助，以前我只知道在域名解析处填写好对应的数据就可以通过域名访问网站，却不知其中原理，经过老师的讲解后，我才知道在其之后运作机制。因此，只要该门课程对我来说是有用的，我从中受益了，我的选择就没有错误。</p>
+<p>二、建议</p>
+<ol>
+<li>适当增加课堂互动，不知是否是线上教学的原因，上课过程中缺少课堂互动，学生很难获得反馈，长时间保持这样的状态注意力容易分散</li>
+<li>适当增加课堂演示，或者相关演示视频，将一些知识点通过现场演示的方式展示给同学，不仅可以加深同学对该知识点的印象，也能够提高同学们对该门课程的兴趣</li>
+</ol>
+]]></content>
+      <categories>
+        <category>技术</category>
+      </categories>
+      <tags>
+        <tag>计算机</tag>
+        <tag>网络</tag>
       </tags>
   </entry>
   <entry>
@@ -1482,79 +1545,6 @@
       </tags>
   </entry>
   <entry>
-    <title>计算机网络结课作业</title>
-    <url>/2022/05/computerhomework.html</url>
-    <content><![CDATA[<h2 id="第一题——家庭拓扑结构"><a href="#第一题——家庭拓扑结构" class="headerlink" title="第一题——家庭拓扑结构"></a>第一题——家庭拓扑结构</h2><p>一、结构规划</p>
-<ul>
-<li>确定小区网线接入点（控制中心）：书房</li>
-<li>规划每个房间布置 3 个网点，共 18 个网点</li>
-<li>联网设备：书房一台电脑，客厅，卧室各一台有线电视，卧室各一台电脑等</li>
-</ul>
-<p>二、材料规划</p>
-<ul>
-<li>每个网点需要水晶头、网点模块各 1 个，共计水晶头 18 个，网点模块 18 个。</li>
-<li>需要超七类网线 18 条，长度共计 50m 左右</li>
-<li>路由器：斐讯 K2P</li>
-</ul>
-<p>三、接线与路由器设置</p>
-<ol>
-<li><p>接线：将小区网线接在路由器的 LAN 上，路由器的 WAN 口分别接上交换机与书房电脑。其余网线都接在交换机上</p>
-<p>拓扑布线结构图：</p>
-</li>
-</ol>
-<p><img data-src="https://img.fufu.ink/wuqSko.webp" alt="家庭网络拓扑"></p>
-<ol start="2">
-<li>路由器配置<ul>
-<li>开启内网 IP</li>
-<li>配置防火墙</li>
-</ul>
-</li>
-</ol>
-<h2 id="第二题——设想"><a href="#第二题——设想" class="headerlink" title="第二题——设想"></a>第二题——设想</h2><p>一、物联网</p>
-<p>物联网，即万物互联，指的是只需有限的人工干预即可通过无线网络接收和传输数据的任何物理设备系统。设想一下，当你疲惫地从公司上班回家后，打开门时，不需要你摸黑寻找电灯开关，电灯会自动打开，当你在换衣服时，热水壶已经开始加热热水，准备好温度合适的热水，电视机自动开机，并播放这个时间点你平时观看次数最多的节目。这就是万物互联中一个典型的例子，无需人的过多干涉，它会为你规划好一切。</p>
-<p>我们现在的生活中已经隐约出现了物联网的轮廓了，虽然还有很多不足，但证明了物联网在未来是可行的。小米家居就是一个很好的例子，比如进入家门的第一步——开锁，现在还有很多地方使用的门锁还是传统的门锁，而小米的智能门锁除了支持指纹识别开锁、密码开锁、还支持 NFC 开锁，即使用支持 NFC 功能的小米手机靠一下门锁即可打开，并且无需手动旋&#x2F;推拉把手的动作，锁舌会自动打开与关上，若家主人装上了相应软件，还能够在手机上查看门锁的状态，通过摄像头能够实时看到门前的状况。</p>
-<p>上面的只是一个小例子，即以现在的技术能实现的让物品与互联网相接的程度，还有将来的无人驾驶等，都是证明物联网的可行性的证据。</p>
-<p>二、元宇宙</p>
-<p>元宇宙，即一个持久化和去中心化的在线三维虚拟环境。”Metaverse”一词最早见于尼尔·斯蒂芬森1992年的科幻小说《雪崩》，Metaverse是一个虚拟的城市环境，沿着一条100米宽的道路发展，覆盖了一个无特征的、黑色的、完美球形星球上整个65536公里周长。这个虚拟世界中的土地可以被购买，并在上面开发建筑。而这个概念在 2021 年突然就火了，Facebook 的扎克伯格在 Facebook Connect 演讲中展示了 Meta 在未来的应用场景和业内的方案雏形，各大巨头也相继开始宣称进军该领域。</p>
-<p>元宇宙是一个虚拟的世界，虚拟就意味着可复制，因此如果要将现实世界映射到这个虚拟世界中，这就是一个巨大的问题，于是可以运用区块链技术与去中心化技术，再具体点就是非同质化代币，即利用其无法互换的特性，可以将其作为虚拟商品所有权的电子认证或证书，虽然作品本身是可以无限复制的，但这些代表它们的代币在其底层区块链上能被完整追踪，故能为买家提供所有权证明。这样就解决了在元宇宙中，无法证明资产所属的问题了。</p>
-<p>但现在的元宇宙还只是一个概念，虽然有很多东西都应用到了其原理，比如 VR（虚拟现实）、AR（增强现实）技术，带上 VR 眼镜就能在虚拟世界中有身临其境的感觉，而 AR 眼镜又能看到虚拟世界与现实相结合的视角，但如果把元宇宙技术的发展比作100米长跑，现在最顶级的运用到该概念的技术也只跑了10米左右，就从工具上来说，连接现实与虚拟的工具，现在的技术即 VR 眼镜或 AR 眼镜，即使是业内排名靠前的 Facebook、微软等巨头的产品的分辨率、刷新率、舒适度都还有许多问题，元宇宙要走的路还很长。</p>
-<p>三、区块链</p>
-<p>是借由密码学与共识机制等技术创建与存储庞大交易资料区块链的点对点网络系统。每一个区块包含了前一个区块的加密散列、相应时间戳记以及交易资料（通常用默克尔树（Merkle tree）算法计算的散列值表示），这样的设计使得区块内容具有难以篡改的特性。</p>
-<p>区块链最大的特点是去中心化、不可篡改，因此其可用于各种领域。在现在最大的应用是数字货币，比如「比特币」等虚拟货币和运用了区块链部分技术的「数字人名币」。也可用于物源追踪，产品从起源地到终点所在的过程都可以通过区块链来追踪。而且，这类准确的溯源方式，可以用来检测供应链中的缺陷。还可用于教育领域，将区块链技术应用到学历证书上，即可有效防止伪造学历等事情的发生，将学生成绩以区块链形式记录，从而形成不可更改不可否认的学习记录，保证了公平性。</p>
-<h2 id="第三题——感想和建议"><a href="#第三题——感想和建议" class="headerlink" title="第三题——感想和建议"></a>第三题——感想和建议</h2><p>一、感想</p>
-<p>本课程教学方式与传统的集中于知识点的讲解的教学方式不同，旨在通过将生活中熟悉的事物和抽象的计算机网络相关专业知识结合起来讲解的方式来使学生能够容易地理解、消化知识点，不仅增加了学习的乐趣，也能够增加我们对生活的感悟。</p>
-<p>计算机是抽象的，但也是具体的。说它是抽象的，是因为它的运作方式，内部结构都很复杂，很难在大脑中形成一个完整地架构。说它是具体的，是因为「艺术来源于生活，高于生活」，同理，我们也可以说「科技来源于生活而高于生活」，计算机的抽象展现了它高于生活的一面，而它具体的一面则体现在它的设计原理来源于生活，它的设计都是以「人」和「世界」等为参照的，因此也符合人的思维方式，比如，二进制的产生就来源于中国的古老的太极八卦图。</p>
-<p>本门课程名为《计算机网络及互联网技术》，在开篇中老师就提到，计算机之间的通信构成了计算机网络，无论计算机网络的内容多么复杂，其最终目的都是为了实现资源的共享，因此全课程的内容，从根本上讲，都是围绕其展开的。由于疫情原因，我们的课程只能以网课的形式进行，无法通过实践操作加深对这些知识点的理解，老师也尽力通过具体的讲解来让我们理解这些知识点。尽管我是一个文科生，但我对计算机感兴趣，因此对这门课程也有浓厚的兴趣，当然，由于我没有涉及过理科相关的知识（即使学习过也由于时间较长忘记了），对于 PPT 中一些较为专业的公式，计算方法不能够很好的理解，但这已经脱离我选修该门课程的初衷了，我选择该门课程，最主要是想提高自己的能力，同时在生活中我也在着手使用服务器搭建个人网站等与互联网有关的事情，因此该门课程对我很有帮助，以前我只知道在域名解析处填写好对应的数据就可以通过域名访问网站，却不知其中原理，经过老师的讲解后，我才知道在其之后运作机制。因此，只要该门课程对我来说是有用的，我从中受益了，我的选择就没有错误。</p>
-<p>二、建议</p>
-<ol>
-<li>适当增加课堂互动，不知是否是线上教学的原因，上课过程中缺少课堂互动，学生很难获得反馈，长时间保持这样的状态注意力容易分散</li>
-<li>适当增加课堂演示，或者相关演示视频，将一些知识点通过现场演示的方式展示给同学，不仅可以加深同学对该知识点的印象，也能够提高同学们对该门课程的兴趣</li>
-</ol>
-]]></content>
-      <categories>
-        <category>技术</category>
-      </categories>
-      <tags>
-        <tag>计算机</tag>
-        <tag>网络</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>诈尸更新一下最近状态</title>
-    <url>/2023/07/natsuyasumijyoutai.html</url>
-    <content><![CDATA[<p>一个月没更新力。</p>
-<p>主要是没啥想法，每天宅在家里，打游戏，追番（这一个月可追了不少番——齐木楠雄的灾难，别当欧尼酱了，鬼灭，文豪野犬，因为太怕痛就全点防御力了，无职转生，无神世界中的神明活动，僵尸百分百，魔禁……算是把高中以来没怎么看番的时间全补回来了）。</p>
-<p>科二因为挂两回了，拖了两年了，明年要过期了，最近又开始练了。今天去考场中模拟了一个小时，除了最后一圈坡上起步因为边线距离扣了 10 分，都是 100 分，感觉下次考试应该问题不大了，现在开始准备科三了。科三打算 C1 转 C2 了，因为不用在意档位的变换，科三考试可以更稳地通过，现在主要是要求暑假结束前拿到驾照，否则拖到寒假就容易过期了。至于 C1 和 C2 的区别，上网查了一下，似乎是 C1 可以开蓝牌车，但 C2 只能开小型驾驶车？嘛，以后我也不会有机会去开手动挡啦，驾照这东西不就是图个方便么，怎么快速方便怎么来，没必要死磕个手动挡为难自己。</p>
-<p>家里躺了三周了，得开始准备下半年的 N1 了，虽然上个月的专四大概率挂了，但是 N1 还是得拿的，拿了就可以开始接一些小的翻译工作赚点零花钱了！</p>
-]]></content>
-      <categories>
-        <category>日常</category>
-      </categories>
-      <tags>
-        <tag>生活</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>论打造文化背景下日本美食文化中日双语科普介绍平台的可行性</title>
     <url>/2022/05/dachuangzuoye.html</url>
     <content><![CDATA[<blockquote>
@@ -1603,6 +1593,21 @@
         <tag>中外交流</tag>
         <tag>美食文化</tag>
         <tag>创业创新</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>诈尸更新一下最近状态</title>
+    <url>/2023/07/natsuyasumijyoutai.html</url>
+    <content><![CDATA[<p>一个月没更新力。</p>
+<p>主要是没啥想法，每天宅在家里，打游戏，追番（这一个月可追了不少番——齐木楠雄的灾难，别当欧尼酱了，鬼灭，文豪野犬，因为太怕痛就全点防御力了，无职转生，无神世界中的神明活动，僵尸百分百，魔禁……算是把高中以来没怎么看番的时间全补回来了）。</p>
+<p>科二因为挂两回了，拖了两年了，明年要过期了，最近又开始练了。今天去考场中模拟了一个小时，除了最后一圈坡上起步因为边线距离扣了 10 分，都是 100 分，感觉下次考试应该问题不大了，现在开始准备科三了。科三打算 C1 转 C2 了，因为不用在意档位的变换，科三考试可以更稳地通过，现在主要是要求暑假结束前拿到驾照，否则拖到寒假就容易过期了。至于 C1 和 C2 的区别，上网查了一下，似乎是 C1 可以开蓝牌车，但 C2 只能开小型驾驶车？嘛，以后我也不会有机会去开手动挡啦，驾照这东西不就是图个方便么，怎么快速方便怎么来，没必要死磕个手动挡为难自己。</p>
+<p>家里躺了三周了，得开始准备下半年的 N1 了，虽然上个月的专四大概率挂了，但是 N1 还是得拿的，拿了就可以开始接一些小的翻译工作赚点零花钱了！</p>
+]]></content>
+      <categories>
+        <category>日常</category>
+      </categories>
+      <tags>
+        <tag>生活</tag>
       </tags>
   </entry>
 </search>
