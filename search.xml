@@ -1,6 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>Handsome 美化补充</title>
+    <url>/2021/12/handsomebeautify.html</url>
+    <content><![CDATA[<p>由于在网上找到的 handsome 主题的首页文章圆角的 css 代码只选择了首页的大头图版式，小头图和图片版式均无圆角和鼠标停留上浮效果，在这里分享下我加了这两个版式之后的代码，将其粘贴到 handsome 主题开发者设置的自定义 css 中即可。</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="comment">/*首页文章列表悬停上浮*/</span></span><br><span class="line"><span class="selector-class">.blog-post</span> <span class="selector-class">.panel-small</span><span class="selector-pseudo">:not</span>(<span class="selector-tag">article</span>),</span><br><span class="line"><span class="selector-class">.blog-post</span> <span class="selector-class">.panel</span><span class="selector-pseudo">:not</span>(<span class="selector-tag">article</span>), <span class="selector-class">.panel-picture</span> &#123;</span><br><span class="line">    <span class="attribute">transition</span>: all <span class="number">0.3s</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.blog-post</span> <span class="selector-class">.panel-small</span><span class="selector-pseudo">:not</span>(<span class="selector-tag">article</span>)<span class="selector-pseudo">:hover</span>,</span><br><span class="line"><span class="selector-class">.blog-post</span> <span class="selector-class">.panel</span><span class="selector-pseudo">:not</span>(<span class="selector-tag">article</span>)<span class="selector-pseudo">:hover</span>, <span class="selector-class">.panel-picture</span><span class="selector-pseudo">:hover</span> &#123;</span><br><span class="line">    <span class="attribute">transform</span>: <span class="built_in">translateY</span>(-<span class="number">10px</span>);</span><br><span class="line">    <span class="attribute">box-shadow</span>: <span class="number">0</span> <span class="number">8px</span> <span class="number">10px</span> <span class="built_in">rgba</span>(<span class="number">73</span>, <span class="number">90</span>, <span class="number">47</span>, <span class="number">0.47</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/*首页文章版式圆角化*/</span></span><br><span class="line"><span class="selector-class">.panel</span>&#123;</span><br><span class="line">    <span class="attribute">border</span>: none <span class="meta">!important</span>;</span><br><span class="line">    <span class="attribute">border-radius</span>: <span class="number">15px</span> <span class="meta">!important</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.panel-small</span>&#123;</span><br><span class="line">    <span class="attribute">border</span>: none;</span><br><span class="line">    <span class="attribute">border-radius</span>: <span class="number">15px</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.item-thumb</span>&#123;</span><br><span class="line">    <span class="attribute">border-radius</span>: <span class="number">15px</span> <span class="number">15px</span> <span class="number">0</span> <span class="number">0</span>;  </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.border-radius-6</span> &#123;</span><br><span class="line"><span class="attribute">border-radius</span>: <span class="number">15px</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>技术</category>
+      </categories>
+      <tags>
+        <tag>handsome</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>39 快乐</title>
     <url>/2023/03/sankyuomedetou.html</url>
     <content><![CDATA[<p>日语中，3 音读读作「さん」，而训读读作「み」；9 音读读作「きゅう」，而训读读作「く」。39 按照训读即为「みく」，也就是「miku」；按照音读读作「さんきゅう」，即为英语中的 thank you（谢谢）。更巧合的是，miku 的生日 8 月 31 日，月份和日期加起来刚好为 39。这一切都和 miku 联系了起来，因此 3 月 9 日这天也被术术人们称为「39感谢日」或者「mikuの日」。</p>
@@ -12,19 +25,6 @@
       <tags>
         <tag>节日</tag>
         <tag>二次元</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Handsome 美化补充</title>
-    <url>/2021/12/handsomebeautify.html</url>
-    <content><![CDATA[<p>由于在网上找到的 handsome 主题的首页文章圆角的 css 代码只选择了首页的大头图版式，小头图和图片版式均无圆角和鼠标停留上浮效果，在这里分享下我加了这两个版式之后的代码，将其粘贴到 handsome 主题开发者设置的自定义 css 中即可。</p>
-<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="comment">/*首页文章列表悬停上浮*/</span></span><br><span class="line"><span class="selector-class">.blog-post</span> <span class="selector-class">.panel-small</span><span class="selector-pseudo">:not</span>(<span class="selector-tag">article</span>),</span><br><span class="line"><span class="selector-class">.blog-post</span> <span class="selector-class">.panel</span><span class="selector-pseudo">:not</span>(<span class="selector-tag">article</span>), <span class="selector-class">.panel-picture</span> &#123;</span><br><span class="line">    <span class="attribute">transition</span>: all <span class="number">0.3s</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.blog-post</span> <span class="selector-class">.panel-small</span><span class="selector-pseudo">:not</span>(<span class="selector-tag">article</span>)<span class="selector-pseudo">:hover</span>,</span><br><span class="line"><span class="selector-class">.blog-post</span> <span class="selector-class">.panel</span><span class="selector-pseudo">:not</span>(<span class="selector-tag">article</span>)<span class="selector-pseudo">:hover</span>, <span class="selector-class">.panel-picture</span><span class="selector-pseudo">:hover</span> &#123;</span><br><span class="line">    <span class="attribute">transform</span>: <span class="built_in">translateY</span>(-<span class="number">10px</span>);</span><br><span class="line">    <span class="attribute">box-shadow</span>: <span class="number">0</span> <span class="number">8px</span> <span class="number">10px</span> <span class="built_in">rgba</span>(<span class="number">73</span>, <span class="number">90</span>, <span class="number">47</span>, <span class="number">0.47</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/*首页文章版式圆角化*/</span></span><br><span class="line"><span class="selector-class">.panel</span>&#123;</span><br><span class="line">    <span class="attribute">border</span>: none <span class="meta">!important</span>;</span><br><span class="line">    <span class="attribute">border-radius</span>: <span class="number">15px</span> <span class="meta">!important</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.panel-small</span>&#123;</span><br><span class="line">    <span class="attribute">border</span>: none;</span><br><span class="line">    <span class="attribute">border-radius</span>: <span class="number">15px</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.item-thumb</span>&#123;</span><br><span class="line">    <span class="attribute">border-radius</span>: <span class="number">15px</span> <span class="number">15px</span> <span class="number">0</span> <span class="number">0</span>;  </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.border-radius-6</span> &#123;</span><br><span class="line"><span class="attribute">border-radius</span>: <span class="number">15px</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>技术</category>
-      </categories>
-      <tags>
-        <tag>handsome</tag>
       </tags>
   </entry>
   <entry>
@@ -224,64 +224,6 @@
 <p>例句：コンビニにたくさんの商品がある。食べ物もあれば、生活に欠かせないものもある。</p>
 <p>译：便利店中有很多商品，既有食品，也有生活中不可或缺的物品。</p>
 <p>与之相似的语法还有「かと思えば」，接续方式为前接<strong>动词原形</strong>。关于假定形的变形方法，在上一篇中已经提过，这里就不再赘述，有需要了解的小伙伴可以<a href="/2023/04/mnnhgbp1.html">点击这里</a>返回上文查看。</p>
-]]></content>
-      <categories>
-        <category>日语</category>
-      </categories>
-      <tags>
-        <tag>日语</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>【每日语法】「既然~就~」的表达方法</title>
-    <url>/2023/04/mnnhgbp3.html</url>
-    <content><![CDATA[<blockquote>
-<p>注：本文部分解释来源于网站 <a href="https://chiyo-sampo.net/grammar-jlptn2-karaniha-ijouha-ueha/">https://chiyo-sampo.net/grammar-jlptn2-karaniha-ijouha-ueha/</a></p>
-</blockquote>
-<p>「からには」「以上は」「上は」都可以译为「既然…就…」，当然他们有部分的不同，根据上面网站的解释：</p>
-<ul>
-<li>「からには」是「からは」的更加强调、强硬的表达方式</li>
-<li>「以上は」也可以写作「以上」，读作「いじょう」</li>
-<li>「上は」有一种「除此之外，别无他法」的意味，在表示严峻的状况的时候使用</li>
-<li>这三个词后面都常常接「つもりだ（打算）」「べきだ（一种责任和义务，应该…）」「なければならない（客观上的必须做某事）」「てはいけない（禁止、不许）」「はずだ（推测，按说应该…）」「に違いない（充满自信的推测，肯定…）」等表达方式。</li>
-</ul>
-<p>接续方式：</p>
-<table>
-<thead>
-<tr>
-<th align="center">接续助词</th>
-<th align="center">名词</th>
-<th align="center">形容词</th>
-<th align="center">形容动词</th>
-<th align="center">动词</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center">からには</td>
-<td align="center">N + である</td>
-<td align="center">A简体</td>
-<td align="center">NA（词干）+ である</td>
-<td align="center">V简体</td>
-</tr>
-<tr>
-<td align="center">上は</td>
-<td align="center">N + の</td>
-<td align="center">\</td>
-<td align="center">\</td>
-<td align="center">V（た形）</td>
-</tr>
-<tr>
-<td align="center">以上（は）</td>
-<td align="center">N + である</td>
-<td align="center">\</td>
-<td align="center">NA（词干）+ である</td>
-<td align="center">V简体</td>
-</tr>
-</tbody></table>
-<p>例句：</p>
-<p>(1). 約束したからには、ちゃんと守るべきだ。<br>译：既然约好了，就应该好好遵守约定。</p>
-<p>(2). 秘密を知られた上は、生かしてはおけない。<br>译：既然被你知道了这个秘密，就不能让你活下去了。</p>
-<p>(3). 会社を辞めると決めた以上、早く上司にその旨を伝えなければならない。<br>译：既然决定好向公司辞职了，就必须早点告诉上司这件事。</p>
 ]]></content>
       <categories>
         <category>日语</category>
@@ -506,6 +448,64 @@
       </tags>
   </entry>
   <entry>
+    <title>【每日语法】「既然~就~」的表达方法</title>
+    <url>/2023/04/mnnhgbp3.html</url>
+    <content><![CDATA[<blockquote>
+<p>注：本文部分解释来源于网站 <a href="https://chiyo-sampo.net/grammar-jlptn2-karaniha-ijouha-ueha/">https://chiyo-sampo.net/grammar-jlptn2-karaniha-ijouha-ueha/</a></p>
+</blockquote>
+<p>「からには」「以上は」「上は」都可以译为「既然…就…」，当然他们有部分的不同，根据上面网站的解释：</p>
+<ul>
+<li>「からには」是「からは」的更加强调、强硬的表达方式</li>
+<li>「以上は」也可以写作「以上」，读作「いじょう」</li>
+<li>「上は」有一种「除此之外，别无他法」的意味，在表示严峻的状况的时候使用</li>
+<li>这三个词后面都常常接「つもりだ（打算）」「べきだ（一种责任和义务，应该…）」「なければならない（客观上的必须做某事）」「てはいけない（禁止、不许）」「はずだ（推测，按说应该…）」「に違いない（充满自信的推测，肯定…）」等表达方式。</li>
+</ul>
+<p>接续方式：</p>
+<table>
+<thead>
+<tr>
+<th align="center">接续助词</th>
+<th align="center">名词</th>
+<th align="center">形容词</th>
+<th align="center">形容动词</th>
+<th align="center">动词</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">からには</td>
+<td align="center">N + である</td>
+<td align="center">A简体</td>
+<td align="center">NA（词干）+ である</td>
+<td align="center">V简体</td>
+</tr>
+<tr>
+<td align="center">上は</td>
+<td align="center">N + の</td>
+<td align="center">\</td>
+<td align="center">\</td>
+<td align="center">V（た形）</td>
+</tr>
+<tr>
+<td align="center">以上（は）</td>
+<td align="center">N + である</td>
+<td align="center">\</td>
+<td align="center">NA（词干）+ である</td>
+<td align="center">V简体</td>
+</tr>
+</tbody></table>
+<p>例句：</p>
+<p>(1). 約束したからには、ちゃんと守るべきだ。<br>译：既然约好了，就应该好好遵守约定。</p>
+<p>(2). 秘密を知られた上は、生かしてはおけない。<br>译：既然被你知道了这个秘密，就不能让你活下去了。</p>
+<p>(3). 会社を辞めると決めた以上、早く上司にその旨を伝えなければならない。<br>译：既然决定好向公司辞职了，就必须早点告诉上司这件事。</p>
+]]></content>
+      <categories>
+        <category>日语</category>
+      </categories>
+      <tags>
+        <tag>日语</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>不断变强的万达</title>
     <url>/2023/08/genshinwandatsuyoi.html</url>
     <content><![CDATA[<p>去年垫池子抽到了达达鸭，今年 1 月份开始练万达国际，入坑一年以来首次打通了深渊（<a href="/2023/01/genshinshenyuanfirst.html">见『纪念第一次打通深渊』</a>），当时的面板没有截图。</p>
@@ -548,22 +548,6 @@
       </tags>
   </entry>
   <entry>
-    <title>什么！买基岩版 Minecraft 送 Java 版？白嫖党的胜利！</title>
-    <url>/2022/06/mcokuru.html</url>
-    <content><![CDATA[<p>原文链接：<a href="https://help.minecraft.net/hc/en-us/articles/4607523809933-Buy-Minecraft-PC-Bundle-Get-Both-Games-">https://help.minecraft.net/hc/en-us/articles/4607523809933-Buy-Minecraft-PC-Bundle-Get-Both-Games-</a></p>
-<p>今天，Minecraft 夏季活动开始了，只要拥有 PC 平台的任意一个版本（Windows 版&#x2F;Java 版），即可免费获得另一个版本。即，PC 平台玩家如果拥有 Windows 版的 Minecraft，即可免费获得 Java 版，反之亦然。<span id="more"></span></p>
-<p>另一个版本会自动推送到你的游戏仓库中，当你打开 Minecraft Launcher 时，会发现游戏已经在列表中了。</p>
-<p><img data-src="https://img.fufu.ink/epXnLi.webp" alt="Minecraft Launcher"></p>
-]]></content>
-      <categories>
-        <category>游戏</category>
-      </categories>
-      <tags>
-        <tag>Minecraft</tag>
-        <tag>资讯</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>出宵宫啦！</title>
     <url>/2023/05/genshinxgderu.html</url>
     <content><![CDATA[<p>虽说抽完 2 命纳西妲后已经没有抽其他角色的欲望了，但池子还是要垫的，出什么都无所谓了。</p>
@@ -577,6 +561,22 @@
       <tags>
         <tag>原神</tag>
         <tag>游戏</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>什么！买基岩版 Minecraft 送 Java 版？白嫖党的胜利！</title>
+    <url>/2022/06/mcokuru.html</url>
+    <content><![CDATA[<p>原文链接：<a href="https://help.minecraft.net/hc/en-us/articles/4607523809933-Buy-Minecraft-PC-Bundle-Get-Both-Games-">https://help.minecraft.net/hc/en-us/articles/4607523809933-Buy-Minecraft-PC-Bundle-Get-Both-Games-</a></p>
+<p>今天，Minecraft 夏季活动开始了，只要拥有 PC 平台的任意一个版本（Windows 版&#x2F;Java 版），即可免费获得另一个版本。即，PC 平台玩家如果拥有 Windows 版的 Minecraft，即可免费获得 Java 版，反之亦然。<span id="more"></span></p>
+<p>另一个版本会自动推送到你的游戏仓库中，当你打开 Minecraft Launcher 时，会发现游戏已经在列表中了。</p>
+<p><img data-src="https://img.fufu.ink/epXnLi.webp" alt="Minecraft Launcher"></p>
+]]></content>
+      <categories>
+        <category>游戏</category>
+      </categories>
+      <tags>
+        <tag>Minecraft</tag>
+        <tag>资讯</tag>
       </tags>
   </entry>
   <entry>
@@ -628,6 +628,83 @@
       <tags>
         <tag>随笔</tag>
         <tag>吐槽</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>小号双黄了！</title>
+    <url>/2023/05/gsxhcjl.html</url>
+    <content><![CDATA[<p>这件事要从去年 11 月草神池刚出的时候说起，之前一直玩的号只抽中了草神（大保底），武器却歪了「飞雷」，于是创了个小号。想着小号前期资源多，肝一肝能在版本结束前拿个 0+1，结果后面发生了一系列事情，最终导致许久没登小号。今年2、3月份重新上了下号，把剧情推到璃月了，攒出了 74 抽，结果歪了莫娜（血的教训！一定不要边肝边抽，必歪！！！），当即下号。</p>
+<p>今天闲来无事，想起了这个号，上号后拿着版本送的原石单抽了一发，本来以为出紫了，结果出金了！于是甘雨拿下~</p>
+<p><img data-src="https://img.fufu.ink/dXzfGb.png" alt="双黄"></p>
+<p>这又让我燃起了对小号培养的热情，本来都打算让这个号废了，毕竟第一个金就歪了，连新手保护期都没了，结果双黄来了，那它就还有被培养的理由！</p>
+]]></content>
+      <categories>
+        <category>游戏</category>
+      </categories>
+      <tags>
+        <tag>原神</tag>
+        <tag>游戏</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>小草神小毕业纪念</title>
+    <url>/2022/11/genshicaoshen.html</url>
+    <content><![CDATA[<p>刷了快 3 周，终于小毕业了。精通没有凑到 1000，不过 900 多也够用了，因为不出暴击头和草伤杯，只能用爆伤头代替 ~<span id="more"></span></p>
+<p><img data-src="https://img.fufu.ink/suLB7X.webp" alt="理之冠"></p>
+<p><img data-src="https://img.fufu.ink/eaOsZU.webp" alt="天赋"></p>
+<p><img data-src="https://img.fufu.ink/icLWGs.webp" alt="时之沙"></p>
+<p><img data-src="https://img.fufu.ink/0Vk67h.webp" alt="空之杯"></p>
+<p><img data-src="https://img.fufu.ink/qF8I9w.webp" alt="死之羽"></p>
+<p><img data-src="https://img.fufu.ink/DWqEbR.webp" alt="生之花"></p>
+<p><img data-src="https://img.fufu.ink/6h6hNZ.webp" alt="练度"></p>
+<p><img data-src="https://img.fufu.ink/c4yy64.webp" alt="圣遗物"></p>
+<p><img data-src="https://img.fufu.ink/HqcUjN.webp" alt="伤害"></p>
+<p>还好，零命打出这样的伤害，我很满意了，毕竟非强度党 ~</p>
+<p>等剩下两周把异梦溶媒给刷出来或者散兵池里多出几个悬丝，把 e 和 q 都升到 9 级，伤害还能上一层，差不多就能毕业了……</p>
+<p>这期没抽神子，抽的武器池，56 发了还没有出，不过大概率还是能够拿下神子专武给纳西妲用用的（绝对不是因为纳西妲专武池歪飞雷了……）</p>
+]]></content>
+      <categories>
+        <category>游戏</category>
+      </categories>
+      <tags>
+        <tag>原神</tag>
+        <tag>游戏</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>小号常驻又出小提了</title>
+    <url>/2023/05/genshinchangzhuxiaoti.html</url>
+    <content><![CDATA[<p>前几天 up 池双黄了，出了莫娜和甘雨，今天又出小提了。</p>
+<p>之前玩大号的时候不怎么玩弓箭手，虽然公子武器是弓箭啦，毕竟战斗时使用的都是近战模式。再加上手柄不好进行瞄准操作…</p>
+<p>不过小号出了甘雨后，才发现玩狙击手是真的舒服，即使只靠平 a，也能打出很高的伤害（话说弓箭手的普攻倍率就是所有角色中最高的）。这小号比大号开荒时要舒服很多，主要是因为大号刚入坑时想在常驻池捞 77，把所有原石都用来抽常驻了，结果 120 发都没出 77，倒是把香班给抽得快满命了。</p>
+<p>接下来就要围绕着甘雨和小提两个主 c 来配队了。</p>
+<p><img data-src="https://img.fufu.ink/ayuNM2.webp" alt="常驻池43抽·小提"></p>
+]]></content>
+      <categories>
+        <category>游戏</category>
+      </categories>
+      <tags>
+        <tag>原神</tag>
+        <tag>游戏</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>打通深渊后半个月，我又第一次满星深渊！</title>
+    <url>/2023/02/genshinshenyuanmanxing.html</url>
+    <content><![CDATA[<p>上个月打通了深渊，但因为没练岩队，过不去黄金龙兽，然后万达的练度也拉。最近一直在研究万达的圣遗物搭配，看了把子哥的万达教学，把几个之前刷草神圣遗物拉起来的被我当作狗粮的圣遗物丢给公子，之前公子是 30&#x2F;160 的双爆，现在变成 78&#x2F;140 了，结果小助手一查，初步毕业了？然后去打深渊，把雷神之前的垃圾双爆圣遗物换成了精通狗粮，上半组了一支「瑶秋妲雷」，大招放完草神站场，没想到效果还挺好，相比于原来的「雷妲七主」只打超激化，现在多了超绽放的伤害，种门！（手不自觉地合上了~）然后就满星了！我都不知道为什么，猜测是之前 30 暴击的公子次次不暴击导致的……</p>
+<blockquote>
+<p>「说实话，当公子拥有 100% 暴击率，爆伤多少已经无所谓了」—— b站@这把我们就遇到高手</p>
+</blockquote>
+<p>315 天的萌新，xp 党，终于也满星深渊了~</p>
+<p><img data-src="https://img.fufu.ink/dz3OYE.webp" alt="第一次深渊满星"></p>
+<p>接下来准备攒着原石，等草神复刻，补 2 命，虽然大部分观点不认可非 6 命草神站场输出，但是我不管，我就希望她能够站场！继续坐牢绝缘本，给香菱刷圣遗物，狗粮就用来合成水套，毕竟很多公子的水套都是合成台毕业的。咱们也要打造一支「哪里亮了点哪里」也能够打通深渊的万达！</p>
+]]></content>
+      <categories>
+        <category>游戏</category>
+      </categories>
+      <tags>
+        <tag>原神</tag>
+        <tag>游戏</tag>
       </tags>
   </entry>
   <entry>
@@ -692,83 +769,6 @@
       </tags>
   </entry>
   <entry>
-    <title>小号双黄了！</title>
-    <url>/2023/05/gsxhcjl.html</url>
-    <content><![CDATA[<p>这件事要从去年 11 月草神池刚出的时候说起，之前一直玩的号只抽中了草神（大保底），武器却歪了「飞雷」，于是创了个小号。想着小号前期资源多，肝一肝能在版本结束前拿个 0+1，结果后面发生了一系列事情，最终导致许久没登小号。今年2、3月份重新上了下号，把剧情推到璃月了，攒出了 74 抽，结果歪了莫娜（血的教训！一定不要边肝边抽，必歪！！！），当即下号。</p>
-<p>今天闲来无事，想起了这个号，上号后拿着版本送的原石单抽了一发，本来以为出紫了，结果出金了！于是甘雨拿下~</p>
-<p><img data-src="https://img.fufu.ink/dXzfGb.png" alt="双黄"></p>
-<p>这又让我燃起了对小号培养的热情，本来都打算让这个号废了，毕竟第一个金就歪了，连新手保护期都没了，结果双黄来了，那它就还有被培养的理由！</p>
-]]></content>
-      <categories>
-        <category>游戏</category>
-      </categories>
-      <tags>
-        <tag>原神</tag>
-        <tag>游戏</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>小号常驻又出小提了</title>
-    <url>/2023/05/genshinchangzhuxiaoti.html</url>
-    <content><![CDATA[<p>前几天 up 池双黄了，出了莫娜和甘雨，今天又出小提了。</p>
-<p>之前玩大号的时候不怎么玩弓箭手，虽然公子武器是弓箭啦，毕竟战斗时使用的都是近战模式。再加上手柄不好进行瞄准操作…</p>
-<p>不过小号出了甘雨后，才发现玩狙击手是真的舒服，即使只靠平 a，也能打出很高的伤害（话说弓箭手的普攻倍率就是所有角色中最高的）。这小号比大号开荒时要舒服很多，主要是因为大号刚入坑时想在常驻池捞 77，把所有原石都用来抽常驻了，结果 120 发都没出 77，倒是把香班给抽得快满命了。</p>
-<p>接下来就要围绕着甘雨和小提两个主 c 来配队了。</p>
-<p><img data-src="https://img.fufu.ink/ayuNM2.webp" alt="常驻池43抽·小提"></p>
-]]></content>
-      <categories>
-        <category>游戏</category>
-      </categories>
-      <tags>
-        <tag>原神</tag>
-        <tag>游戏</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>小草神小毕业纪念</title>
-    <url>/2022/11/genshicaoshen.html</url>
-    <content><![CDATA[<p>刷了快 3 周，终于小毕业了。精通没有凑到 1000，不过 900 多也够用了，因为不出暴击头和草伤杯，只能用爆伤头代替 ~<span id="more"></span></p>
-<p><img data-src="https://img.fufu.ink/suLB7X.webp" alt="理之冠"></p>
-<p><img data-src="https://img.fufu.ink/eaOsZU.webp" alt="天赋"></p>
-<p><img data-src="https://img.fufu.ink/icLWGs.webp" alt="时之沙"></p>
-<p><img data-src="https://img.fufu.ink/0Vk67h.webp" alt="空之杯"></p>
-<p><img data-src="https://img.fufu.ink/qF8I9w.webp" alt="死之羽"></p>
-<p><img data-src="https://img.fufu.ink/DWqEbR.webp" alt="生之花"></p>
-<p><img data-src="https://img.fufu.ink/6h6hNZ.webp" alt="练度"></p>
-<p><img data-src="https://img.fufu.ink/c4yy64.webp" alt="圣遗物"></p>
-<p><img data-src="https://img.fufu.ink/HqcUjN.webp" alt="伤害"></p>
-<p>还好，零命打出这样的伤害，我很满意了，毕竟非强度党 ~</p>
-<p>等剩下两周把异梦溶媒给刷出来或者散兵池里多出几个悬丝，把 e 和 q 都升到 9 级，伤害还能上一层，差不多就能毕业了……</p>
-<p>这期没抽神子，抽的武器池，56 发了还没有出，不过大概率还是能够拿下神子专武给纳西妲用用的（绝对不是因为纳西妲专武池歪飞雷了……）</p>
-]]></content>
-      <categories>
-        <category>游戏</category>
-      </categories>
-      <tags>
-        <tag>原神</tag>
-        <tag>游戏</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>打通深渊后半个月，我又第一次满星深渊！</title>
-    <url>/2023/02/genshinshenyuanmanxing.html</url>
-    <content><![CDATA[<p>上个月打通了深渊，但因为没练岩队，过不去黄金龙兽，然后万达的练度也拉。最近一直在研究万达的圣遗物搭配，看了把子哥的万达教学，把几个之前刷草神圣遗物拉起来的被我当作狗粮的圣遗物丢给公子，之前公子是 30&#x2F;160 的双爆，现在变成 78&#x2F;140 了，结果小助手一查，初步毕业了？然后去打深渊，把雷神之前的垃圾双爆圣遗物换成了精通狗粮，上半组了一支「瑶秋妲雷」，大招放完草神站场，没想到效果还挺好，相比于原来的「雷妲七主」只打超激化，现在多了超绽放的伤害，种门！（手不自觉地合上了~）然后就满星了！我都不知道为什么，猜测是之前 30 暴击的公子次次不暴击导致的……</p>
-<blockquote>
-<p>「说实话，当公子拥有 100% 暴击率，爆伤多少已经无所谓了」—— b站@这把我们就遇到高手</p>
-</blockquote>
-<p>315 天的萌新，xp 党，终于也满星深渊了~</p>
-<p><img data-src="https://img.fufu.ink/dz3OYE.webp" alt="第一次深渊满星"></p>
-<p>接下来准备攒着原石，等草神复刻，补 2 命，虽然大部分观点不认可非 6 命草神站场输出，但是我不管，我就希望她能够站场！继续坐牢绝缘本，给香菱刷圣遗物，狗粮就用来合成水套，毕竟很多公子的水套都是合成台毕业的。咱们也要打造一支「哪里亮了点哪里」也能够打通深渊的万达！</p>
-]]></content>
-      <categories>
-        <category>游戏</category>
-      </categories>
-      <tags>
-        <tag>原神</tag>
-        <tag>游戏</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>改进 Next 主题友链书写方式</title>
     <url>/2023/05/improvefdlinks.html</url>
     <content><![CDATA[<blockquote>
@@ -801,69 +801,6 @@
         <tag>技术</tag>
         <tag>Hexo</tag>
         <tag>CSS</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>服务器 Ubuntu 配置 ftp</title>
-    <url>/2022/11/ubuntuftp.html</url>
-    <content><![CDATA[<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p>更新软件包</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo apt upgrade</span><br></pre></td></tr></table></figure>
-
-<p>安装 vsftpd</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo apt-get install vsftpd</span><br></pre></td></tr></table></figure>
-
-<p>ftp 启动，停止，重启，查看状态指令</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">systemctl start vsftpd <span class="comment">#启动</span></span><br><span class="line"></span><br><span class="line">systemctl stop vsftpd <span class="comment">#停止</span></span><br><span class="line"></span><br><span class="line">systemctl restart vsftpd <span class="comment">#重启</span></span><br><span class="line"></span><br><span class="line">systemctl status vsftpd <span class="comment">#查看状态</span></span><br></pre></td></tr></table></figure>
-
-<h2 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h2><p>编辑 &#x2F;etc&#x2F;vsftpd.conf 文件</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo vi /etc/vsftpd.conf</span><br></pre></td></tr></table></figure>
-
-<p>FTP 配置文件部分说明（需要修改的部分）：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 设置登录 FTP 欢迎信息</span></span><br><span class="line">ftpd_banner=Welcome to CHL FTP service. </span><br><span class="line"></span><br><span class="line">listen=YES               <span class="comment"># 服务器监听</span></span><br><span class="line">local_enable=YES         <span class="comment"># 是否允许本地用户访问</span></span><br><span class="line">write_enable=YES         <span class="comment"># 是否允许上传文件，不开启会报 550 permission denied</span></span><br><span class="line">anonymous_enable=NO      <span class="comment"># 匿名访问允许，默认不要开启</span></span><br><span class="line">anon_upload_enable=YES   <span class="comment"># 匿名上传允许，默认是 NO</span></span><br><span class="line">anon_mkdir_write_enable=YES  <span class="comment"># 匿名创建文件夹允许 </span></span><br><span class="line"></span><br><span class="line">local_umask=022    　　<span class="comment"># FTP 上本地的文件权限，默认是 077。此时 umask 为 022，则目录为 777-022=755，文件为 666-022=644。</span></span><br><span class="line">connect_from_port_20=YES   <span class="comment"># 启用 20 号端口作为数据传送的端口 </span></span><br><span class="line">data_connection_timeout=120    <span class="comment"># 设置数据连接超时时间</span></span><br><span class="line"></span><br><span class="line">utf8_filesystem=YES    <span class="comment"># vsftpd使用 utf8 文件系统</span></span><br><span class="line">use_localtime=YES</span><br><span class="line">xferlog_enable=YES         <span class="comment"># 激活上传和下传的日志 </span></span><br><span class="line">xferlog_file=/var/log/vsftpd.log    <span class="comment"># 设定系统维护记录FTP服务器上传和下载情况的日志文件</span></span><br><span class="line">xferlog_std_format=YES     <span class="comment"># 使用标准的日志格式 </span></span><br><span class="line"></span><br><span class="line">local_root=/home/ftp    <span class="comment"># 设置自定义的 ftp 根目录的位置</span></span><br><span class="line"></span><br><span class="line">allow_writeable_chroot=YES    <span class="comment"># 解决 &quot;500 OOPS: vsftpd: refusing to run with writable root inside chroot()&quot; 问题</span></span><br><span class="line">write_enable=YES    <span class="comment"># 允许向 FTP 服务器写入权限</span></span><br><span class="line">chown_uploads=YES    <span class="comment"># 设定是否允许改变上传文件的属主，与下面一个设定项配合使用</span></span><br><span class="line">chown_username=whoever    <span class="comment"># 设置想要改变的上传文件的属主，可设为 ftp</span></span><br><span class="line"></span><br><span class="line">ascii_upload_enable=YES    　<span class="comment"># 允许服务器以 ASCII 方式传输数据,但引起 &quot;SIZE /big/file&quot; 方式的 DoS 攻击</span></span><br><span class="line">ascii_download_enable=YES</span><br><span class="line"></span><br><span class="line"><span class="comment"># 在默认配置下，本地用户登入FTP后可以使用 cd 命令切换到其他目录，这样会对系统带来安全隐患,可配置如下</span></span><br><span class="line">chroot_list_enable=YES     <span class="comment"># 设置是否启用 chroot_list_file 配置项指定的用户列表文件。默认值为NO。</span></span><br><span class="line">chroot_local_user=YES      <span class="comment"># 用于指定用户列表文件中的用户是否允许切换到上级目录。默认值为NO。</span></span><br><span class="line">chroot_list_file=/etc/vsftpd.chroot_list    <span class="comment"># 禁用名单，用于指定用户列表，该文件用于控制哪些用户可以切换到 home 目录的上级目录。</span></span><br><span class="line"></span><br><span class="line">listen_port=6666 <span class="comment">#修改 ftp 服务器端口</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 配置为被动模式</span></span><br><span class="line">pasv_enable=YES</span><br><span class="line">pasv_min_port=6000 <span class="comment">#最小端口</span></span><br><span class="line">pasv_max_port=7000 <span class="comment">#最大端口</span></span><br></pre></td></tr></table></figure>
-
-<p><code>chroot_list_enable</code> <code>chroot_local_user</code> <code>chroot_list_file</code> 通过搭配能实现以下几种效果：</p>
-<ul>
-<li>当 chroot_list_enable&#x3D;YES，chroot_local_user&#x3D;YES 时，在 &#x2F;etc&#x2F;vsftpd.chroot_list 文件中列出的用户，可以切换到其他目录；未在文件中列出的用户，不能切换到其他目录。</li>
-<li>当 chroot_list_enable&#x3D;YES，chroot_local_user&#x3D;NO 时，在 &#x2F;etc&#x2F;vsftpd.chroot_list 文件中列出的用户，不能切换到其他目录；未在文件中列出的用户，可以切换到其他目录。</li>
-<li>当 chroot_list_enable&#x3D;NO，chroot_local_user&#x3D;YES 时，所有的用户均不能切换到其他目录。</li>
-<li>当 chroot_list_enable&#x3D;NO，chroot_local_user&#x3D;NO 时，所有的用户均可以切换到其他目录。</li>
-</ul>
-<p>通过终端访问 ftp（由于浏览器访问 ftp 在新版 chrome 与 edge 中皆已失效，在这里便不再列出）</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">ftp ip 端口</span><br></pre></td></tr></table></figure>
-
-<h2 id="创建-ftp-上传目录"><a href="#创建-ftp-上传目录" class="headerlink" title="创建 ftp 上传目录"></a>创建 ftp 上传目录</h2><p>需要与配置文件中的 <code>local_root</code> 指定的路径一致</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">mkdir</span> -p /home/ftp</span><br></pre></td></tr></table></figure>
-
-<h2 id="创建-ftp-用户"><a href="#创建-ftp-用户" class="headerlink" title="创建 ftp 用户"></a>创建 ftp 用户</h2><p>创建 vsftpd 用户组（若已存在请跳过该步）</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo groupadd vsftpd</span><br></pre></td></tr></table></figure>
-
-<p>创建 ftp 用户</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo useradd -g vsftpd -d /home/ftp -M username</span><br></pre></td></tr></table></figure>
-
-<p>参数说明：</p>
-<ul>
-<li>g：指定用户所属的组</li>
-<li>d：指定用户登入时的起始目录，这里即为 ftp 上传目录</li>
-<li>M：不创建用户的家目录</li>
-</ul>
-<p>设置 ftp 用户的密码：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo passwd username</span><br></pre></td></tr></table></figure>
-
-<p>设置 ftp 用户权限</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo <span class="built_in">chown</span> -R username:vsftpd /home/ftp</span><br></pre></td></tr></table></figure>
-
-<p>由于设置了 <code>chroot_list_enable</code> 这几个选项，需要将用户名写入 <code>/etc/vsftpd.chroot_list</code> 文件，并重启 ftp 服务</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo vi /etc/vsftpd.chroot_list</span><br><span class="line">sudo systemctl restart vsftpd</span><br></pre></td></tr></table></figure>
-
-<h2 id="连接-ftp"><a href="#连接-ftp" class="headerlink" title="连接 ftp"></a>连接 ftp</h2><p>这里推荐使用 XFTP 连接 ftp，上传下载文件非常方便。XFTP 官方提供了教育版，只需要点击下方链接填写邮箱就会受到包含下载链接的邮件：</p>
-<p><a href="https://www.xshell.com/zh/free-for-home-school/">https://www.xshell.com/zh/free-for-home-school/</a></p>
-]]></content>
-      <categories>
-        <category>技术</category>
-      </categories>
-      <tags>
-        <tag>Linux</tag>
-        <tag>Ubuntu</tag>
       </tags>
   </entry>
   <entry>
@@ -1241,49 +1178,66 @@
       </tags>
   </entry>
   <entry>
-    <title>科目二过啦！</title>
-    <url>/2023/08/kemuerpass.html</url>
-    <content><![CDATA[<p>三战一把过！</p>
-<p>早上八点半就出发去考场了，等了三个小时才轮到我，因为之前已经花钱模拟过了，轻轻松松就过了~</p>
-<p>这里记录一下科二的点位。<span id="more"></span></p>
+    <title>服务器 Ubuntu 配置 ftp</title>
+    <url>/2022/11/ubuntuftp.html</url>
+    <content><![CDATA[<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p>更新软件包</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo apt upgrade</span><br></pre></td></tr></table></figure>
+
+<p>安装 vsftpd</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo apt-get install vsftpd</span><br></pre></td></tr></table></figure>
+
+<p>ftp 启动，停止，重启，查看状态指令</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">systemctl start vsftpd <span class="comment">#启动</span></span><br><span class="line"></span><br><span class="line">systemctl stop vsftpd <span class="comment">#停止</span></span><br><span class="line"></span><br><span class="line">systemctl restart vsftpd <span class="comment">#重启</span></span><br><span class="line"></span><br><span class="line">systemctl status vsftpd <span class="comment">#查看状态</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h2><p>编辑 &#x2F;etc&#x2F;vsftpd.conf 文件</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo vi /etc/vsftpd.conf</span><br></pre></td></tr></table></figure>
+
+<p>FTP 配置文件部分说明（需要修改的部分）：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 设置登录 FTP 欢迎信息</span></span><br><span class="line">ftpd_banner=Welcome to CHL FTP service. </span><br><span class="line"></span><br><span class="line">listen=YES               <span class="comment"># 服务器监听</span></span><br><span class="line">local_enable=YES         <span class="comment"># 是否允许本地用户访问</span></span><br><span class="line">write_enable=YES         <span class="comment"># 是否允许上传文件，不开启会报 550 permission denied</span></span><br><span class="line">anonymous_enable=NO      <span class="comment"># 匿名访问允许，默认不要开启</span></span><br><span class="line">anon_upload_enable=YES   <span class="comment"># 匿名上传允许，默认是 NO</span></span><br><span class="line">anon_mkdir_write_enable=YES  <span class="comment"># 匿名创建文件夹允许 </span></span><br><span class="line"></span><br><span class="line">local_umask=022    　　<span class="comment"># FTP 上本地的文件权限，默认是 077。此时 umask 为 022，则目录为 777-022=755，文件为 666-022=644。</span></span><br><span class="line">connect_from_port_20=YES   <span class="comment"># 启用 20 号端口作为数据传送的端口 </span></span><br><span class="line">data_connection_timeout=120    <span class="comment"># 设置数据连接超时时间</span></span><br><span class="line"></span><br><span class="line">utf8_filesystem=YES    <span class="comment"># vsftpd使用 utf8 文件系统</span></span><br><span class="line">use_localtime=YES</span><br><span class="line">xferlog_enable=YES         <span class="comment"># 激活上传和下传的日志 </span></span><br><span class="line">xferlog_file=/var/log/vsftpd.log    <span class="comment"># 设定系统维护记录FTP服务器上传和下载情况的日志文件</span></span><br><span class="line">xferlog_std_format=YES     <span class="comment"># 使用标准的日志格式 </span></span><br><span class="line"></span><br><span class="line">local_root=/home/ftp    <span class="comment"># 设置自定义的 ftp 根目录的位置</span></span><br><span class="line"></span><br><span class="line">allow_writeable_chroot=YES    <span class="comment"># 解决 &quot;500 OOPS: vsftpd: refusing to run with writable root inside chroot()&quot; 问题</span></span><br><span class="line">write_enable=YES    <span class="comment"># 允许向 FTP 服务器写入权限</span></span><br><span class="line">chown_uploads=YES    <span class="comment"># 设定是否允许改变上传文件的属主，与下面一个设定项配合使用</span></span><br><span class="line">chown_username=whoever    <span class="comment"># 设置想要改变的上传文件的属主，可设为 ftp</span></span><br><span class="line"></span><br><span class="line">ascii_upload_enable=YES    　<span class="comment"># 允许服务器以 ASCII 方式传输数据,但引起 &quot;SIZE /big/file&quot; 方式的 DoS 攻击</span></span><br><span class="line">ascii_download_enable=YES</span><br><span class="line"></span><br><span class="line"><span class="comment"># 在默认配置下，本地用户登入FTP后可以使用 cd 命令切换到其他目录，这样会对系统带来安全隐患,可配置如下</span></span><br><span class="line">chroot_list_enable=YES     <span class="comment"># 设置是否启用 chroot_list_file 配置项指定的用户列表文件。默认值为NO。</span></span><br><span class="line">chroot_local_user=YES      <span class="comment"># 用于指定用户列表文件中的用户是否允许切换到上级目录。默认值为NO。</span></span><br><span class="line">chroot_list_file=/etc/vsftpd.chroot_list    <span class="comment"># 禁用名单，用于指定用户列表，该文件用于控制哪些用户可以切换到 home 目录的上级目录。</span></span><br><span class="line"></span><br><span class="line">listen_port=6666 <span class="comment">#修改 ftp 服务器端口</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 配置为被动模式</span></span><br><span class="line">pasv_enable=YES</span><br><span class="line">pasv_min_port=6000 <span class="comment">#最小端口</span></span><br><span class="line">pasv_max_port=7000 <span class="comment">#最大端口</span></span><br></pre></td></tr></table></figure>
+
+<p><code>chroot_list_enable</code> <code>chroot_local_user</code> <code>chroot_list_file</code> 通过搭配能实现以下几种效果：</p>
 <ul>
-<li>座位、后视镜：座位高低调整为<strong>头顶距车顶一拳距离</strong>，靠背调整为 <strong>90°</strong>，前后距离为<strong>靠在靠背上撑直双手，手腕能刚好搭在方向盘顶部，且左脚踩离合（手动挡）能踩到底，离合踩到底时小腿与大腿不能是完全一条线、而是呈一定角度的状态</strong>为最佳。左后视镜调法为将左后车门的门把手置于<strong>左后视镜的顶部的线条的一半处</strong>（注意需要能完全看到门把手），右后视镜则为将右后车门门把手置于<strong>右后视镜的顶部的线条的三分之一处（从左到右数）</strong>。</li>
-<li>倒库：进项目后使用仪表盘的罩子的顶部正中央去对<strong>第三根虚线的最左边</strong>，待肩部与虚线齐平时停车、挂倒挡开始倒车，当<strong>左</strong>后视镜的<strong>底部完全盖过虚线</strong>时（即左后视镜的底部与虚线的内边线齐平时）方向盘向右打死，开始<strong>看右后视镜</strong>，当车身盖过右后视镜中<strong>第三根虚线的一半</strong>时回半圈方向盘并观察预测是否车轮会压库角，若觉得可能会压则再多回点方向盘，当车身与边线<strong>平行</strong>时迅速回正方向盘，当左后视镜的底部完全盖过项目的右边的实线时停车，即完成了右倒库。开出车辆，当引擎盖盖过项目的左边的实线后方向盘向左打死，车身摆正后回正方向盘，继续行驶直到肩部与虚线齐平时停车、挂倒挡开始倒车，左库需要比右库<strong>早打</strong>方向盘，具体为当左后视镜底部<strong>触碰虚线</strong>时就向左打死方向盘，并观察<strong>左后视镜</strong>，后续步骤与倒右库时相差无几。关于看哪边镜子的口诀为「倒什么库就看哪边的镜子」。左库出来后引擎盖盖过边线即可方向盘右打死，待车身端正后回正方向盘行驶出项目。</li>
-<li>侧方停车：侧方停车可以说是我的痛点哩，两次都挂在这个项目上，不过换了教练、调整点位后就没问题了。具体为进项目后使用<strong>左雨刮器的垛子</strong>的最右边去对项目<strong>右边线的内边线</strong>，使其始终沿着内边线走，当右后视镜中出现库的<strong>前库角</strong>时停车、挂倒挡开始倒车，当右后视镜中<strong>前库角</strong>完全消失时方向盘向右打死，观察右后视镜中的<strong>后车门门把手</strong>，当门把手<strong>完全越过库的右边线</strong>时迅速回正方向盘继续倒车，观察左后视镜，当左后车轮压到虚线上时方向盘向左打死（因人身高而异，身高高的则可以晚一点再打方向盘，但不能太晚，否则右边会有出线的危险），待车身摆正后即可停车，<strong>方向盘不用回正！</strong>回空挡并<strong>打左转向灯</strong>，挂一档（先挂挡与先打灯并无先后顺序，但为避免忘记打灯导致挂了还是先打灯较好）开始出库，当<strong>右边的雨刮器的垛子</strong>与项目的<strong>右</strong>边线重合时回正方向盘继续行驶，当<strong>左边的雨刮器的垛子</strong>与项目的<strong>左</strong>边线重合时方向盘向右打一圈，待车身摆正后即可回正方向盘并驶出项目。</li>
-<li>直角转弯：本人认为直角转弯属实是科目二中最简单的一个项目了。进项目前就可以使用<strong>左雨刮器的垛子</strong>的最右边去对项目<strong>右边线的内边线</strong>（科目二的对线都是这个方法），虽然可能直角的线没有画得很长，但你可以想象那条线的延长线，使用垛子去与这条延长线对线，一定要保持车身是端正的！听到进入项目的语音提示后就可以开始打左转向灯了，待<strong>驾驶座的门把手的顶部与另一条直角边重合（由于身高原因，可以调整为门把手的前端、后端，根据个人情况调整即可）</strong>时方向盘向左打死，心中默数三秒后关掉转向灯（部分地区可能不要求拨回转向灯），当车身摆正后回正方向盘驶出项目。</li>
-<li>曲线行驶：说实话这个项目我也拿不准点位，之前一直使用的车子前面加装的小镜子来对线的，但去考场模拟后发现小镜子没了，便想象了个小镜子在那里对线，然后看后视镜开，还开过了！今天考试也是结合新教练教的新点位来和后视镜来开的。车身摆正，将入口划分为三份，将自己（即驾驶员）置于从左到右数的三分之一处进入项目，当<strong>左后视镜的左边缘与项目的左边线的内线重合时</strong>方向盘向左打一圈，观察左后视镜中车身与边线的距离并适当修一修方向盘，当挡风玻璃的左下角与左边线重合时回正方向盘，当右边雨刮器的垛子与左边线还有两指宽左右的距离时方向盘向右打一圈，并观察右后视镜并调整车身与边线的距离，尽量让线出现在镜子中并且保证车身与线保持一定距离，这样另一边就不会压线，一直到快出项目时即可回正方向盘出项目了（回正的时机得看具体实际，因为我在驾校跑了三次都在出项目时回正回早了导致压线了）。</li>
-<li>坡上起步：上坡时离合松至车身抖动时车子就会慢慢往上爬，稳住离合即可保持速度。使用老办法对线，一直到右边的雨刮器的垛子与杆子之间呈一定的距离时即可踩住刹车（<strong>注意！这个「一定距离」不是绝对的，会因为人的身高不同而不同，需要自己去寻找</strong>）。在起步时有个小技巧，即右脚踩刹车时，左脚离合还是保持半离合状态，不用踩到底，刹车一定要踩牢，拉、放手刹，松开刹车车子马上就可以开走了。不过使用的前提是踩离合的功底深厚，如果在踩刹车时离合也向下踩了，直接松开刹车会向后滑，就会扣分甚至挂科，如果真的滑了也不要急，马上踩刹车，并且慢慢松离合，直到车子抖动即可松开刹车继续行驶！</li>
+<li>当 chroot_list_enable&#x3D;YES，chroot_local_user&#x3D;YES 时，在 &#x2F;etc&#x2F;vsftpd.chroot_list 文件中列出的用户，可以切换到其他目录；未在文件中列出的用户，不能切换到其他目录。</li>
+<li>当 chroot_list_enable&#x3D;YES，chroot_local_user&#x3D;NO 时，在 &#x2F;etc&#x2F;vsftpd.chroot_list 文件中列出的用户，不能切换到其他目录；未在文件中列出的用户，可以切换到其他目录。</li>
+<li>当 chroot_list_enable&#x3D;NO，chroot_local_user&#x3D;YES 时，所有的用户均不能切换到其他目录。</li>
+<li>当 chroot_list_enable&#x3D;NO，chroot_local_user&#x3D;NO 时，所有的用户均可以切换到其他目录。</li>
 </ul>
-<p>以上就是我学了 26 节科二总结的经验。虽然我使用着没有问题，但并不代表就一定适用于所有人，<strong>请不要照搬！一定要找到适合自己的点位！</strong>科二就是考点位，点位一旦有偏差就会出错，考试时要将座位，镜子调整为与练习时一样。</p>
-<p>接下来我也要冲科三去啦！</p>
-<p>最后祝考科二的小伙伴们都一把过！</p>
+<p>通过终端访问 ftp（由于浏览器访问 ftp 在新版 chrome 与 edge 中皆已失效，在这里便不再列出）</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">ftp ip 端口</span><br></pre></td></tr></table></figure>
+
+<h2 id="创建-ftp-上传目录"><a href="#创建-ftp-上传目录" class="headerlink" title="创建 ftp 上传目录"></a>创建 ftp 上传目录</h2><p>需要与配置文件中的 <code>local_root</code> 指定的路径一致</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">mkdir</span> -p /home/ftp</span><br></pre></td></tr></table></figure>
+
+<h2 id="创建-ftp-用户"><a href="#创建-ftp-用户" class="headerlink" title="创建 ftp 用户"></a>创建 ftp 用户</h2><p>创建 vsftpd 用户组（若已存在请跳过该步）</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo groupadd vsftpd</span><br></pre></td></tr></table></figure>
+
+<p>创建 ftp 用户</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo useradd -g vsftpd -d /home/ftp -M username</span><br></pre></td></tr></table></figure>
+
+<p>参数说明：</p>
+<ul>
+<li>g：指定用户所属的组</li>
+<li>d：指定用户登入时的起始目录，这里即为 ftp 上传目录</li>
+<li>M：不创建用户的家目录</li>
+</ul>
+<p>设置 ftp 用户的密码：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo passwd username</span><br></pre></td></tr></table></figure>
+
+<p>设置 ftp 用户权限</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo <span class="built_in">chown</span> -R username:vsftpd /home/ftp</span><br></pre></td></tr></table></figure>
+
+<p>由于设置了 <code>chroot_list_enable</code> 这几个选项，需要将用户名写入 <code>/etc/vsftpd.chroot_list</code> 文件，并重启 ftp 服务</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo vi /etc/vsftpd.chroot_list</span><br><span class="line">sudo systemctl restart vsftpd</span><br></pre></td></tr></table></figure>
+
+<h2 id="连接-ftp"><a href="#连接-ftp" class="headerlink" title="连接 ftp"></a>连接 ftp</h2><p>这里推荐使用 XFTP 连接 ftp，上传下载文件非常方便。XFTP 官方提供了教育版，只需要点击下方链接填写邮箱就会受到包含下载链接的邮件：</p>
+<p><a href="https://www.xshell.com/zh/free-for-home-school/">https://www.xshell.com/zh/free-for-home-school/</a></p>
 ]]></content>
       <categories>
-        <category>日常</category>
+        <category>技术</category>
       </categories>
       <tags>
-        <tag>生活</tag>
-        <tag>驾考</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>纪念第一次打通深渊</title>
-    <url>/2023/01/genshinshenyuanfirst.html</url>
-    <content><![CDATA[<p>去年也是这个时候入的坑，当时看泠鸢 yousa 在直播这个游戏，然后里面的派蒙和七七很可爱，就下载试着玩了一下，然后……就玩到了现在~</p>
-<p>作为一个剧情党和 xp 党，当然是以剧情为主要，抽卡以喜欢的角色为前提，因此也是深渊困难户。</p>
-<p><img data-src="https://img.fufu.ink/VAGfzC.webp"></p>
-<p>现在练度上来一些了，队伍也有点伤害了，本来原来抽到雷神后打算组个雷国来打，不过后面发现绝缘本出货率感人，同时早听说过万达的爆炸性伤害，正好去年 11 份垫池子 30 多发出了鸭鸭，就想着练一下。不得不说双扩的方法实在是太多了，因此光是学习双扩就让人头大，后面学会偷懒了，就把怪的状态都打到一个状态后再进行双扩流程，就不同分不同的元素附着情况了。</p>
-<p>当然，现在公子离毕业、万达离毕业还很远，不过作为一个萌新，看到 21w 一刀的伤害，还是很激动的，果然在满足 xp 后追求的就是强度(bushi。</p>
-<p><img data-src="https://img.fufu.ink/uP19xG.webp"></p>
-<p>主要是没拉岩系，第二间黄金王兽打不出来伤害，就靠我的零命草神在 c，雷神相当于挂雷工具人，另外两个一个奶，一个用来破盾，因此全队只有一个打伤害，很难打过去，之前练过一段时间凝光，正好凝光也 3 命了，可以试着拉一下，后面看看能不能凹过去。</p>
-<p>现在就等草神复刻补命座了，补一个二命伤害能更高。雷神也可以拉一下。现在版本答案是种门，我也可以拉一下「纳行久」，组一个下半配队。</p>
-]]></content>
-      <categories>
-        <category>游戏</category>
-      </categories>
-      <tags>
-        <tag>原神</tag>
-        <tag>游戏</tag>
+        <tag>Linux</tag>
+        <tag>Ubuntu</tag>
       </tags>
   </entry>
   <entry>
@@ -1358,6 +1312,26 @@
       </tags>
   </entry>
   <entry>
+    <title>纪念第一次打通深渊</title>
+    <url>/2023/01/genshinshenyuanfirst.html</url>
+    <content><![CDATA[<p>去年也是这个时候入的坑，当时看泠鸢 yousa 在直播这个游戏，然后里面的派蒙和七七很可爱，就下载试着玩了一下，然后……就玩到了现在~</p>
+<p>作为一个剧情党和 xp 党，当然是以剧情为主要，抽卡以喜欢的角色为前提，因此也是深渊困难户。</p>
+<p><img data-src="https://img.fufu.ink/VAGfzC.webp"></p>
+<p>现在练度上来一些了，队伍也有点伤害了，本来原来抽到雷神后打算组个雷国来打，不过后面发现绝缘本出货率感人，同时早听说过万达的爆炸性伤害，正好去年 11 份垫池子 30 多发出了鸭鸭，就想着练一下。不得不说双扩的方法实在是太多了，因此光是学习双扩就让人头大，后面学会偷懒了，就把怪的状态都打到一个状态后再进行双扩流程，就不同分不同的元素附着情况了。</p>
+<p>当然，现在公子离毕业、万达离毕业还很远，不过作为一个萌新，看到 21w 一刀的伤害，还是很激动的，果然在满足 xp 后追求的就是强度(bushi。</p>
+<p><img data-src="https://img.fufu.ink/uP19xG.webp"></p>
+<p>主要是没拉岩系，第二间黄金王兽打不出来伤害，就靠我的零命草神在 c，雷神相当于挂雷工具人，另外两个一个奶，一个用来破盾，因此全队只有一个打伤害，很难打过去，之前练过一段时间凝光，正好凝光也 3 命了，可以试着拉一下，后面看看能不能凹过去。</p>
+<p>现在就等草神复刻补命座了，补一个二命伤害能更高。雷神也可以拉一下。现在版本答案是种门，我也可以拉一下「纳行久」，组一个下半配队。</p>
+]]></content>
+      <categories>
+        <category>游戏</category>
+      </categories>
+      <tags>
+        <tag>原神</tag>
+        <tag>游戏</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>老婆 16 岁生日快乐</title>
     <url>/2023/08/miku16sai.html</url>
     <content><![CDATA[<p>与ミクたん相遇已有 10 年啦！</p>
@@ -1404,6 +1378,32 @@
       <tags>
         <tag>原神</tag>
         <tag>游戏</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>科目二过啦！</title>
+    <url>/2023/08/kemuerpass.html</url>
+    <content><![CDATA[<p>三战一把过！</p>
+<p>早上八点半就出发去考场了，等了三个小时才轮到我，因为之前已经花钱模拟过了，轻轻松松就过了~</p>
+<p>这里记录一下科二的点位。<span id="more"></span></p>
+<ul>
+<li>座位、后视镜：座位高低调整为<strong>头顶距车顶一拳距离</strong>，靠背调整为 <strong>90°</strong>，前后距离为<strong>靠在靠背上撑直双手，手腕能刚好搭在方向盘顶部，且左脚踩离合（手动挡）能踩到底，离合踩到底时小腿与大腿不能是完全一条线、而是呈一定角度的状态</strong>为最佳。左后视镜调法为将左后车门的门把手置于<strong>左后视镜的顶部的线条的一半处</strong>（注意需要能完全看到门把手），右后视镜则为将右后车门门把手置于<strong>右后视镜的顶部的线条的三分之一处（从左到右数）</strong>。</li>
+<li>倒库：进项目后使用仪表盘的罩子的顶部正中央去对<strong>第三根虚线的最左边</strong>，待肩部与虚线齐平时停车、挂倒挡开始倒车，当<strong>左</strong>后视镜的<strong>底部完全盖过虚线</strong>时（即左后视镜的底部与虚线的内边线齐平时）方向盘向右打死，开始<strong>看右后视镜</strong>，当车身盖过右后视镜中<strong>第三根虚线的一半</strong>时回半圈方向盘并观察预测是否车轮会压库角，若觉得可能会压则再多回点方向盘，当车身与边线<strong>平行</strong>时迅速回正方向盘，当左后视镜的底部完全盖过项目的右边的实线时停车，即完成了右倒库。开出车辆，当引擎盖盖过项目的左边的实线后方向盘向左打死，车身摆正后回正方向盘，继续行驶直到肩部与虚线齐平时停车、挂倒挡开始倒车，左库需要比右库<strong>早打</strong>方向盘，具体为当左后视镜底部<strong>触碰虚线</strong>时就向左打死方向盘，并观察<strong>左后视镜</strong>，后续步骤与倒右库时相差无几。关于看哪边镜子的口诀为「倒什么库就看哪边的镜子」。左库出来后引擎盖盖过边线即可方向盘右打死，待车身端正后回正方向盘行驶出项目。</li>
+<li>侧方停车：侧方停车可以说是我的痛点哩，两次都挂在这个项目上，不过换了教练、调整点位后就没问题了。具体为进项目后使用<strong>左雨刮器的垛子</strong>的最右边去对项目<strong>右边线的内边线</strong>，使其始终沿着内边线走，当右后视镜中出现库的<strong>前库角</strong>时停车、挂倒挡开始倒车，当右后视镜中<strong>前库角</strong>完全消失时方向盘向右打死，观察右后视镜中的<strong>后车门门把手</strong>，当门把手<strong>完全越过库的右边线</strong>时迅速回正方向盘继续倒车，观察左后视镜，当左后车轮压到虚线上时方向盘向左打死（因人身高而异，身高高的则可以晚一点再打方向盘，但不能太晚，否则右边会有出线的危险），待车身摆正后即可停车，<strong>方向盘不用回正！</strong>回空挡并<strong>打左转向灯</strong>，挂一档（先挂挡与先打灯并无先后顺序，但为避免忘记打灯导致挂了还是先打灯较好）开始出库，当<strong>右边的雨刮器的垛子</strong>与项目的<strong>右</strong>边线重合时回正方向盘继续行驶，当<strong>左边的雨刮器的垛子</strong>与项目的<strong>左</strong>边线重合时方向盘向右打一圈，待车身摆正后即可回正方向盘并驶出项目。</li>
+<li>直角转弯：本人认为直角转弯属实是科目二中最简单的一个项目了。进项目前就可以使用<strong>左雨刮器的垛子</strong>的最右边去对项目<strong>右边线的内边线</strong>（科目二的对线都是这个方法），虽然可能直角的线没有画得很长，但你可以想象那条线的延长线，使用垛子去与这条延长线对线，一定要保持车身是端正的！听到进入项目的语音提示后就可以开始打左转向灯了，待<strong>驾驶座的门把手的顶部与另一条直角边重合（由于身高原因，可以调整为门把手的前端、后端，根据个人情况调整即可）</strong>时方向盘向左打死，心中默数三秒后关掉转向灯（部分地区可能不要求拨回转向灯），当车身摆正后回正方向盘驶出项目。</li>
+<li>曲线行驶：说实话这个项目我也拿不准点位，之前一直使用的车子前面加装的小镜子来对线的，但去考场模拟后发现小镜子没了，便想象了个小镜子在那里对线，然后看后视镜开，还开过了！今天考试也是结合新教练教的新点位来和后视镜来开的。车身摆正，将入口划分为三份，将自己（即驾驶员）置于从左到右数的三分之一处进入项目，当<strong>左后视镜的左边缘与项目的左边线的内线重合时</strong>方向盘向左打一圈，观察左后视镜中车身与边线的距离并适当修一修方向盘，当挡风玻璃的左下角与左边线重合时回正方向盘，当右边雨刮器的垛子与左边线还有两指宽左右的距离时方向盘向右打一圈，并观察右后视镜并调整车身与边线的距离，尽量让线出现在镜子中并且保证车身与线保持一定距离，这样另一边就不会压线，一直到快出项目时即可回正方向盘出项目了（回正的时机得看具体实际，因为我在驾校跑了三次都在出项目时回正回早了导致压线了）。</li>
+<li>坡上起步：上坡时离合松至车身抖动时车子就会慢慢往上爬，稳住离合即可保持速度。使用老办法对线，一直到右边的雨刮器的垛子与杆子之间呈一定的距离时即可踩住刹车（<strong>注意！这个「一定距离」不是绝对的，会因为人的身高不同而不同，需要自己去寻找</strong>）。在起步时有个小技巧，即右脚踩刹车时，左脚离合还是保持半离合状态，不用踩到底，刹车一定要踩牢，拉、放手刹，松开刹车车子马上就可以开走了。不过使用的前提是踩离合的功底深厚，如果在踩刹车时离合也向下踩了，直接松开刹车会向后滑，就会扣分甚至挂科，如果真的滑了也不要急，马上踩刹车，并且慢慢松离合，直到车子抖动即可松开刹车继续行驶！</li>
+</ul>
+<p>以上就是我学了 26 节科二总结的经验。虽然我使用着没有问题，但并不代表就一定适用于所有人，<strong>请不要照搬！一定要找到适合自己的点位！</strong>科二就是考点位，点位一旦有偏差就会出错，考试时要将座位，镜子调整为与练习时一样。</p>
+<p>接下来我也要冲科三去啦！</p>
+<p>最后祝考科二的小伙伴们都一把过！</p>
+]]></content>
+      <categories>
+        <category>日常</category>
+      </categories>
+      <tags>
+        <tag>生活</tag>
+        <tag>驾考</tag>
       </tags>
   </entry>
   <entry>
@@ -1474,6 +1474,64 @@
       <tags>
         <tag>生活</tag>
         <tag>计算机</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>计算机网络结课作业</title>
+    <url>/2022/05/computerhomework.html</url>
+    <content><![CDATA[<h2 id="第一题——家庭拓扑结构"><a href="#第一题——家庭拓扑结构" class="headerlink" title="第一题——家庭拓扑结构"></a>第一题——家庭拓扑结构</h2><p>一、结构规划</p>
+<ul>
+<li>确定小区网线接入点（控制中心）：书房</li>
+<li>规划每个房间布置 3 个网点，共 18 个网点</li>
+<li>联网设备：书房一台电脑，客厅，卧室各一台有线电视，卧室各一台电脑等</li>
+</ul>
+<p>二、材料规划</p>
+<ul>
+<li>每个网点需要水晶头、网点模块各 1 个，共计水晶头 18 个，网点模块 18 个。</li>
+<li>需要超七类网线 18 条，长度共计 50m 左右</li>
+<li>路由器：斐讯 K2P</li>
+</ul>
+<p>三、接线与路由器设置</p>
+<ol>
+<li><p>接线：将小区网线接在路由器的 LAN 上，路由器的 WAN 口分别接上交换机与书房电脑。其余网线都接在交换机上</p>
+<p>拓扑布线结构图：</p>
+</li>
+</ol>
+<p><img data-src="https://img.fufu.ink/wuqSko.webp" alt="家庭网络拓扑"></p>
+<ol start="2">
+<li>路由器配置<ul>
+<li>开启内网 IP</li>
+<li>配置防火墙</li>
+</ul>
+</li>
+</ol>
+<h2 id="第二题——设想"><a href="#第二题——设想" class="headerlink" title="第二题——设想"></a>第二题——设想</h2><p>一、物联网</p>
+<p>物联网，即万物互联，指的是只需有限的人工干预即可通过无线网络接收和传输数据的任何物理设备系统。设想一下，当你疲惫地从公司上班回家后，打开门时，不需要你摸黑寻找电灯开关，电灯会自动打开，当你在换衣服时，热水壶已经开始加热热水，准备好温度合适的热水，电视机自动开机，并播放这个时间点你平时观看次数最多的节目。这就是万物互联中一个典型的例子，无需人的过多干涉，它会为你规划好一切。</p>
+<p>我们现在的生活中已经隐约出现了物联网的轮廓了，虽然还有很多不足，但证明了物联网在未来是可行的。小米家居就是一个很好的例子，比如进入家门的第一步——开锁，现在还有很多地方使用的门锁还是传统的门锁，而小米的智能门锁除了支持指纹识别开锁、密码开锁、还支持 NFC 开锁，即使用支持 NFC 功能的小米手机靠一下门锁即可打开，并且无需手动旋&#x2F;推拉把手的动作，锁舌会自动打开与关上，若家主人装上了相应软件，还能够在手机上查看门锁的状态，通过摄像头能够实时看到门前的状况。</p>
+<p>上面的只是一个小例子，即以现在的技术能实现的让物品与互联网相接的程度，还有将来的无人驾驶等，都是证明物联网的可行性的证据。</p>
+<p>二、元宇宙</p>
+<p>元宇宙，即一个持久化和去中心化的在线三维虚拟环境。”Metaverse”一词最早见于尼尔·斯蒂芬森1992年的科幻小说《雪崩》，Metaverse是一个虚拟的城市环境，沿着一条100米宽的道路发展，覆盖了一个无特征的、黑色的、完美球形星球上整个65536公里周长。这个虚拟世界中的土地可以被购买，并在上面开发建筑。而这个概念在 2021 年突然就火了，Facebook 的扎克伯格在 Facebook Connect 演讲中展示了 Meta 在未来的应用场景和业内的方案雏形，各大巨头也相继开始宣称进军该领域。</p>
+<p>元宇宙是一个虚拟的世界，虚拟就意味着可复制，因此如果要将现实世界映射到这个虚拟世界中，这就是一个巨大的问题，于是可以运用区块链技术与去中心化技术，再具体点就是非同质化代币，即利用其无法互换的特性，可以将其作为虚拟商品所有权的电子认证或证书，虽然作品本身是可以无限复制的，但这些代表它们的代币在其底层区块链上能被完整追踪，故能为买家提供所有权证明。这样就解决了在元宇宙中，无法证明资产所属的问题了。</p>
+<p>但现在的元宇宙还只是一个概念，虽然有很多东西都应用到了其原理，比如 VR（虚拟现实）、AR（增强现实）技术，带上 VR 眼镜就能在虚拟世界中有身临其境的感觉，而 AR 眼镜又能看到虚拟世界与现实相结合的视角，但如果把元宇宙技术的发展比作100米长跑，现在最顶级的运用到该概念的技术也只跑了10米左右，就从工具上来说，连接现实与虚拟的工具，现在的技术即 VR 眼镜或 AR 眼镜，即使是业内排名靠前的 Facebook、微软等巨头的产品的分辨率、刷新率、舒适度都还有许多问题，元宇宙要走的路还很长。</p>
+<p>三、区块链</p>
+<p>是借由密码学与共识机制等技术创建与存储庞大交易资料区块链的点对点网络系统。每一个区块包含了前一个区块的加密散列、相应时间戳记以及交易资料（通常用默克尔树（Merkle tree）算法计算的散列值表示），这样的设计使得区块内容具有难以篡改的特性。</p>
+<p>区块链最大的特点是去中心化、不可篡改，因此其可用于各种领域。在现在最大的应用是数字货币，比如「比特币」等虚拟货币和运用了区块链部分技术的「数字人名币」。也可用于物源追踪，产品从起源地到终点所在的过程都可以通过区块链来追踪。而且，这类准确的溯源方式，可以用来检测供应链中的缺陷。还可用于教育领域，将区块链技术应用到学历证书上，即可有效防止伪造学历等事情的发生，将学生成绩以区块链形式记录，从而形成不可更改不可否认的学习记录，保证了公平性。</p>
+<h2 id="第三题——感想和建议"><a href="#第三题——感想和建议" class="headerlink" title="第三题——感想和建议"></a>第三题——感想和建议</h2><p>一、感想</p>
+<p>本课程教学方式与传统的集中于知识点的讲解的教学方式不同，旨在通过将生活中熟悉的事物和抽象的计算机网络相关专业知识结合起来讲解的方式来使学生能够容易地理解、消化知识点，不仅增加了学习的乐趣，也能够增加我们对生活的感悟。</p>
+<p>计算机是抽象的，但也是具体的。说它是抽象的，是因为它的运作方式，内部结构都很复杂，很难在大脑中形成一个完整地架构。说它是具体的，是因为「艺术来源于生活，高于生活」，同理，我们也可以说「科技来源于生活而高于生活」，计算机的抽象展现了它高于生活的一面，而它具体的一面则体现在它的设计原理来源于生活，它的设计都是以「人」和「世界」等为参照的，因此也符合人的思维方式，比如，二进制的产生就来源于中国的古老的太极八卦图。</p>
+<p>本门课程名为《计算机网络及互联网技术》，在开篇中老师就提到，计算机之间的通信构成了计算机网络，无论计算机网络的内容多么复杂，其最终目的都是为了实现资源的共享，因此全课程的内容，从根本上讲，都是围绕其展开的。由于疫情原因，我们的课程只能以网课的形式进行，无法通过实践操作加深对这些知识点的理解，老师也尽力通过具体的讲解来让我们理解这些知识点。尽管我是一个文科生，但我对计算机感兴趣，因此对这门课程也有浓厚的兴趣，当然，由于我没有涉及过理科相关的知识（即使学习过也由于时间较长忘记了），对于 PPT 中一些较为专业的公式，计算方法不能够很好的理解，但这已经脱离我选修该门课程的初衷了，我选择该门课程，最主要是想提高自己的能力，同时在生活中我也在着手使用服务器搭建个人网站等与互联网有关的事情，因此该门课程对我很有帮助，以前我只知道在域名解析处填写好对应的数据就可以通过域名访问网站，却不知其中原理，经过老师的讲解后，我才知道在其之后运作机制。因此，只要该门课程对我来说是有用的，我从中受益了，我的选择就没有错误。</p>
+<p>二、建议</p>
+<ol>
+<li>适当增加课堂互动，不知是否是线上教学的原因，上课过程中缺少课堂互动，学生很难获得反馈，长时间保持这样的状态注意力容易分散</li>
+<li>适当增加课堂演示，或者相关演示视频，将一些知识点通过现场演示的方式展示给同学，不仅可以加深同学对该知识点的印象，也能够提高同学们对该门课程的兴趣</li>
+</ol>
+]]></content>
+      <categories>
+        <category>技术</category>
+      </categories>
+      <tags>
+        <tag>计算机</tag>
+        <tag>网络</tag>
       </tags>
   </entry>
   <entry>
@@ -1599,64 +1657,6 @@
       </categories>
       <tags>
         <tag>Linux</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>计算机网络结课作业</title>
-    <url>/2022/05/computerhomework.html</url>
-    <content><![CDATA[<h2 id="第一题——家庭拓扑结构"><a href="#第一题——家庭拓扑结构" class="headerlink" title="第一题——家庭拓扑结构"></a>第一题——家庭拓扑结构</h2><p>一、结构规划</p>
-<ul>
-<li>确定小区网线接入点（控制中心）：书房</li>
-<li>规划每个房间布置 3 个网点，共 18 个网点</li>
-<li>联网设备：书房一台电脑，客厅，卧室各一台有线电视，卧室各一台电脑等</li>
-</ul>
-<p>二、材料规划</p>
-<ul>
-<li>每个网点需要水晶头、网点模块各 1 个，共计水晶头 18 个，网点模块 18 个。</li>
-<li>需要超七类网线 18 条，长度共计 50m 左右</li>
-<li>路由器：斐讯 K2P</li>
-</ul>
-<p>三、接线与路由器设置</p>
-<ol>
-<li><p>接线：将小区网线接在路由器的 LAN 上，路由器的 WAN 口分别接上交换机与书房电脑。其余网线都接在交换机上</p>
-<p>拓扑布线结构图：</p>
-</li>
-</ol>
-<p><img data-src="https://img.fufu.ink/wuqSko.webp" alt="家庭网络拓扑"></p>
-<ol start="2">
-<li>路由器配置<ul>
-<li>开启内网 IP</li>
-<li>配置防火墙</li>
-</ul>
-</li>
-</ol>
-<h2 id="第二题——设想"><a href="#第二题——设想" class="headerlink" title="第二题——设想"></a>第二题——设想</h2><p>一、物联网</p>
-<p>物联网，即万物互联，指的是只需有限的人工干预即可通过无线网络接收和传输数据的任何物理设备系统。设想一下，当你疲惫地从公司上班回家后，打开门时，不需要你摸黑寻找电灯开关，电灯会自动打开，当你在换衣服时，热水壶已经开始加热热水，准备好温度合适的热水，电视机自动开机，并播放这个时间点你平时观看次数最多的节目。这就是万物互联中一个典型的例子，无需人的过多干涉，它会为你规划好一切。</p>
-<p>我们现在的生活中已经隐约出现了物联网的轮廓了，虽然还有很多不足，但证明了物联网在未来是可行的。小米家居就是一个很好的例子，比如进入家门的第一步——开锁，现在还有很多地方使用的门锁还是传统的门锁，而小米的智能门锁除了支持指纹识别开锁、密码开锁、还支持 NFC 开锁，即使用支持 NFC 功能的小米手机靠一下门锁即可打开，并且无需手动旋&#x2F;推拉把手的动作，锁舌会自动打开与关上，若家主人装上了相应软件，还能够在手机上查看门锁的状态，通过摄像头能够实时看到门前的状况。</p>
-<p>上面的只是一个小例子，即以现在的技术能实现的让物品与互联网相接的程度，还有将来的无人驾驶等，都是证明物联网的可行性的证据。</p>
-<p>二、元宇宙</p>
-<p>元宇宙，即一个持久化和去中心化的在线三维虚拟环境。”Metaverse”一词最早见于尼尔·斯蒂芬森1992年的科幻小说《雪崩》，Metaverse是一个虚拟的城市环境，沿着一条100米宽的道路发展，覆盖了一个无特征的、黑色的、完美球形星球上整个65536公里周长。这个虚拟世界中的土地可以被购买，并在上面开发建筑。而这个概念在 2021 年突然就火了，Facebook 的扎克伯格在 Facebook Connect 演讲中展示了 Meta 在未来的应用场景和业内的方案雏形，各大巨头也相继开始宣称进军该领域。</p>
-<p>元宇宙是一个虚拟的世界，虚拟就意味着可复制，因此如果要将现实世界映射到这个虚拟世界中，这就是一个巨大的问题，于是可以运用区块链技术与去中心化技术，再具体点就是非同质化代币，即利用其无法互换的特性，可以将其作为虚拟商品所有权的电子认证或证书，虽然作品本身是可以无限复制的，但这些代表它们的代币在其底层区块链上能被完整追踪，故能为买家提供所有权证明。这样就解决了在元宇宙中，无法证明资产所属的问题了。</p>
-<p>但现在的元宇宙还只是一个概念，虽然有很多东西都应用到了其原理，比如 VR（虚拟现实）、AR（增强现实）技术，带上 VR 眼镜就能在虚拟世界中有身临其境的感觉，而 AR 眼镜又能看到虚拟世界与现实相结合的视角，但如果把元宇宙技术的发展比作100米长跑，现在最顶级的运用到该概念的技术也只跑了10米左右，就从工具上来说，连接现实与虚拟的工具，现在的技术即 VR 眼镜或 AR 眼镜，即使是业内排名靠前的 Facebook、微软等巨头的产品的分辨率、刷新率、舒适度都还有许多问题，元宇宙要走的路还很长。</p>
-<p>三、区块链</p>
-<p>是借由密码学与共识机制等技术创建与存储庞大交易资料区块链的点对点网络系统。每一个区块包含了前一个区块的加密散列、相应时间戳记以及交易资料（通常用默克尔树（Merkle tree）算法计算的散列值表示），这样的设计使得区块内容具有难以篡改的特性。</p>
-<p>区块链最大的特点是去中心化、不可篡改，因此其可用于各种领域。在现在最大的应用是数字货币，比如「比特币」等虚拟货币和运用了区块链部分技术的「数字人名币」。也可用于物源追踪，产品从起源地到终点所在的过程都可以通过区块链来追踪。而且，这类准确的溯源方式，可以用来检测供应链中的缺陷。还可用于教育领域，将区块链技术应用到学历证书上，即可有效防止伪造学历等事情的发生，将学生成绩以区块链形式记录，从而形成不可更改不可否认的学习记录，保证了公平性。</p>
-<h2 id="第三题——感想和建议"><a href="#第三题——感想和建议" class="headerlink" title="第三题——感想和建议"></a>第三题——感想和建议</h2><p>一、感想</p>
-<p>本课程教学方式与传统的集中于知识点的讲解的教学方式不同，旨在通过将生活中熟悉的事物和抽象的计算机网络相关专业知识结合起来讲解的方式来使学生能够容易地理解、消化知识点，不仅增加了学习的乐趣，也能够增加我们对生活的感悟。</p>
-<p>计算机是抽象的，但也是具体的。说它是抽象的，是因为它的运作方式，内部结构都很复杂，很难在大脑中形成一个完整地架构。说它是具体的，是因为「艺术来源于生活，高于生活」，同理，我们也可以说「科技来源于生活而高于生活」，计算机的抽象展现了它高于生活的一面，而它具体的一面则体现在它的设计原理来源于生活，它的设计都是以「人」和「世界」等为参照的，因此也符合人的思维方式，比如，二进制的产生就来源于中国的古老的太极八卦图。</p>
-<p>本门课程名为《计算机网络及互联网技术》，在开篇中老师就提到，计算机之间的通信构成了计算机网络，无论计算机网络的内容多么复杂，其最终目的都是为了实现资源的共享，因此全课程的内容，从根本上讲，都是围绕其展开的。由于疫情原因，我们的课程只能以网课的形式进行，无法通过实践操作加深对这些知识点的理解，老师也尽力通过具体的讲解来让我们理解这些知识点。尽管我是一个文科生，但我对计算机感兴趣，因此对这门课程也有浓厚的兴趣，当然，由于我没有涉及过理科相关的知识（即使学习过也由于时间较长忘记了），对于 PPT 中一些较为专业的公式，计算方法不能够很好的理解，但这已经脱离我选修该门课程的初衷了，我选择该门课程，最主要是想提高自己的能力，同时在生活中我也在着手使用服务器搭建个人网站等与互联网有关的事情，因此该门课程对我很有帮助，以前我只知道在域名解析处填写好对应的数据就可以通过域名访问网站，却不知其中原理，经过老师的讲解后，我才知道在其之后运作机制。因此，只要该门课程对我来说是有用的，我从中受益了，我的选择就没有错误。</p>
-<p>二、建议</p>
-<ol>
-<li>适当增加课堂互动，不知是否是线上教学的原因，上课过程中缺少课堂互动，学生很难获得反馈，长时间保持这样的状态注意力容易分散</li>
-<li>适当增加课堂演示，或者相关演示视频，将一些知识点通过现场演示的方式展示给同学，不仅可以加深同学对该知识点的印象，也能够提高同学们对该门课程的兴趣</li>
-</ol>
-]]></content>
-      <categories>
-        <category>技术</category>
-      </categories>
-      <tags>
-        <tag>计算机</tag>
-        <tag>网络</tag>
       </tags>
   </entry>
   <entry>

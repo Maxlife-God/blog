@@ -407,6 +407,13 @@
 
   
   <url>
+    <loc>https://blog.fufu.ink/tags/handsome/</loc>
+    <lastmod>2024-01-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>https://blog.fufu.ink/tags/%E8%8A%82%E6%97%A5/</loc>
     <lastmod>2024-01-18</lastmod>
     <changefreq>weekly</changefreq>
@@ -415,13 +422,6 @@
   
   <url>
     <loc>https://blog.fufu.ink/tags/%E4%BA%8C%E6%AC%A1%E5%85%83/</loc>
-    <lastmod>2024-01-18</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.fufu.ink/tags/handsome/</loc>
     <lastmod>2024-01-18</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -547,20 +547,6 @@
   </url>
   
   <url>
-    <loc>https://blog.fufu.ink/tags/%E7%94%9F%E6%B4%BB/</loc>
-    <lastmod>2024-01-18</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.fufu.ink/tags/%E9%A9%BE%E8%80%83/</loc>
-    <lastmod>2024-01-18</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://blog.fufu.ink/tags/%E7%B1%BB%E5%8E%9F%E7%94%9F/</loc>
     <lastmod>2024-01-18</lastmod>
     <changefreq>weekly</changefreq>
@@ -576,6 +562,20 @@
   
   <url>
     <loc>https://blog.fufu.ink/tags/miku/</loc>
+    <lastmod>2024-01-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.fufu.ink/tags/%E7%94%9F%E6%B4%BB/</loc>
+    <lastmod>2024-01-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.fufu.ink/tags/%E9%A9%BE%E8%80%83/</loc>
     <lastmod>2024-01-18</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -619,14 +619,14 @@
 
   
   <url>
-    <loc>https://blog.fufu.ink/categories/%E6%97%A5%E5%B8%B8/</loc>
+    <loc>https://blog.fufu.ink/categories/%E6%8A%80%E6%9C%AF/</loc>
     <lastmod>2024-01-18</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://blog.fufu.ink/categories/%E6%8A%80%E6%9C%AF/</loc>
+    <loc>https://blog.fufu.ink/categories/%E6%97%A5%E5%B8%B8/</loc>
     <lastmod>2024-01-18</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
