@@ -66,49 +66,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Waline 美化教程</title>
-    <url>/2023/04/walinedecoration.html</url>
-    <content><![CDATA[<p>起因是看到许多博客使用的 twikoo 评论系统，觉得 twikoo 的前端样式很好看，与之相对的正在用的 waline 的默认样式是真的不好看，本来打算直接换到 twikoo 的，转念一想，既然是属于样式的东西，为什么不直接用 css 解决呢，没有必要为了一个效果而去换插件。博主的 css 不行，只会 <kbd>F12</kbd> 找到哪个元素改哪个。至于定位元素之类的完全不行＞﹏＜。只要最后好看了就 ok 了！（bushi</p>
-<p>以下为代码部分（部分选择器需要根据实际更换）</p>
-<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="comment">/* 修改waline样式 */</span></span><br><span class="line"><span class="comment">/* 修改评论框外观 */</span></span><br><span class="line"><span class="selector-class">.wl-panel</span> &#123;</span><br><span class="line">    <span class="attribute">border-radius</span>: <span class="number">4px</span> <span class="meta">!important</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-pseudo">:root</span> &#123;</span><br><span class="line">    <span class="attr">--waline-bgcolor-light</span>: transparent <span class="meta">!important</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.wl-btn</span> &#123;</span><br><span class="line">    <span class="attribute">border-radius</span>: <span class="number">0.3em</span> <span class="meta">!important</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* 添加miku的gif为输入区域背景 */</span></span><br><span class="line"><span class="selector-id">#wl-edit</span> &#123;</span><br><span class="line">    <span class="attribute">background</span>: <span class="built_in">url</span>(<span class="string">&quot;/img/wl-bg-mikuchan.gif&quot;</span>) <span class="number">100%</span> <span class="number">100%</span> no-repeat;</span><br><span class="line">    <span class="attribute">background-size</span>: contain <span class="meta">!important</span>;</span><br><span class="line">    <span class="attribute">background-repeat</span>: no-repeat <span class="meta">!important</span>;</span><br><span class="line">    <span class="attribute">background-position</span>: right bottom <span class="meta">!important</span>; </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-id">#waline-wrap</span> <span class="selector-tag">textarea</span><span class="selector-pseudo">:focus</span> &#123;</span><br><span class="line">    <span class="attribute">background</span>: <span class="built_in">url</span>(<span class="string">&quot;/img/wl-bg-mikuchan.gif&quot;</span>) <span class="number">100%</span> <span class="number">100%</span> no-repeat;</span><br><span class="line">    <span class="attribute">background-position</span>-y: <span class="number">78px</span> <span class="meta">!important</span>;</span><br><span class="line">    <span class="attribute">transition</span>: all <span class="number">0.25s</span> ease-in-out <span class="number">0s</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* 修改评论区内容背景 */</span></span><br><span class="line"><span class="selector-class">.wl-card</span> <span class="selector-class">.wl-content</span> &#123;</span><br><span class="line">    <span class="attribute">background</span>: <span class="number">#f5f5f5</span>;</span><br><span class="line">    <span class="attribute">padding</span>: <span class="number">16px</span> <span class="meta">!important</span>;</span><br><span class="line">    <span class="attribute">margin</span>: <span class="number">12px</span> <span class="number">0</span> <span class="number">8px</span> <span class="meta">!important</span>;</span><br><span class="line">    <span class="attribute">border-radius</span>: <span class="number">3px</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.wl-card</span> &#123;</span><br><span class="line">    <span class="attribute">border-bottom</span>: none <span class="meta">!important</span>;</span><br><span class="line">    <span class="attribute">padding-bottom</span>: <span class="number">0px</span> <span class="meta">!important</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.wl-cards</span> <span class="selector-class">.wl-item</span>&#123;</span><br><span class="line">    <span class="attribute">padding</span>: .<span class="number">5em</span> .<span class="number">5em</span> <span class="number">0px</span> <span class="meta">!important</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>效果图如下（因图片是截取自评论区而打了码，头像这些不属于以上代码，后面可以考虑改一下默认头像）</p>
-<p><img data-src="https://img.fufu.ink/iTcakI.webp" alt="Waline评论框美化效果"></p>
-<p><img data-src="https://img.fufu.ink/JDVkhh.webp" alt="Waline评论区美化效果"></p>
-<p>其中评论框的背景 gif 需要自己下载下来放到 <code>/source/img/</code> 下即可（记得重命名），别直接用我的博客的地址！（就这么点大小的图片就别直接挂别人的链接了吧，虽然我也不会做防盗链…）</p>
-<p>修改文本输入框中的提示文字需要到主题的配置文件中找到 waline 的配置项，在其中添加 <code>locale: &#123;placeholder: &#39;提示文字&#39;&#125;</code> 即可，以主题 butterfly 为例，则需要在 option 中添加该行代码，需要注意缩进，如下所示</p>
-<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">waline:</span></span><br><span class="line">  <span class="attr">serverURL:</span> <span class="comment"># Waline server address url</span></span><br><span class="line">  <span class="attr">bg:</span> <span class="comment"># waline background</span></span><br><span class="line">  <span class="attr">pageview:</span> <span class="literal">false</span></span><br><span class="line">  <span class="attr">option:</span></span><br><span class="line">    <span class="attr">locale:</span> &#123;<span class="attr">placeholder:</span> <span class="string">&#x27;提示文字&#x27;</span>&#125;</span><br></pre></td></tr></table></figure>
-
-<p>最后就是上面效果图的样子啦！</p>
-]]></content>
-      <categories>
-        <category>技术</category>
-      </categories>
-      <tags>
-        <tag>教程</tag>
-        <tag>技术</tag>
-        <tag>Hexo</tag>
-        <tag>CSS</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>【每日语法】~さえ~ば</title>
-    <url>/2023/05/mnnhgbp5.html</url>
-    <content><![CDATA[<p>接续：</p>
-<blockquote>
-<p>N + さえ + 假定形<br>A（く形）&#x2F; NA（て形）+ さえあれば<br>V（ます形）&#x2F; サ变动词词干 + さえすれば</p>
-</blockquote>
-<p>意为「只要···就···」。关于假定形的变形方法，请参考<a href="/2023/04/mnnhgbp1.html">『【每日语法】~ば~ほど』</a>的文末表格。</p>
-<p>例句：やすくさえあれば、買いましょう。<br>译：只要便宜的话就买吧！</p>
-]]></content>
-      <categories>
-        <category>日语</category>
-      </categories>
-      <tags>
-        <tag>日语</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Next 文章顶部添加波浪效果</title>
     <url>/2023/08/nextwave.html</url>
     <content><![CDATA[<blockquote>
@@ -176,6 +133,49 @@
       </tags>
   </entry>
   <entry>
+    <title>Waline 美化教程</title>
+    <url>/2023/04/walinedecoration.html</url>
+    <content><![CDATA[<p>起因是看到许多博客使用的 twikoo 评论系统，觉得 twikoo 的前端样式很好看，与之相对的正在用的 waline 的默认样式是真的不好看，本来打算直接换到 twikoo 的，转念一想，既然是属于样式的东西，为什么不直接用 css 解决呢，没有必要为了一个效果而去换插件。博主的 css 不行，只会 <kbd>F12</kbd> 找到哪个元素改哪个。至于定位元素之类的完全不行＞﹏＜。只要最后好看了就 ok 了！（bushi</p>
+<p>以下为代码部分（部分选择器需要根据实际更换）</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="comment">/* 修改waline样式 */</span></span><br><span class="line"><span class="comment">/* 修改评论框外观 */</span></span><br><span class="line"><span class="selector-class">.wl-panel</span> &#123;</span><br><span class="line">    <span class="attribute">border-radius</span>: <span class="number">4px</span> <span class="meta">!important</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-pseudo">:root</span> &#123;</span><br><span class="line">    <span class="attr">--waline-bgcolor-light</span>: transparent <span class="meta">!important</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.wl-btn</span> &#123;</span><br><span class="line">    <span class="attribute">border-radius</span>: <span class="number">0.3em</span> <span class="meta">!important</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* 添加miku的gif为输入区域背景 */</span></span><br><span class="line"><span class="selector-id">#wl-edit</span> &#123;</span><br><span class="line">    <span class="attribute">background</span>: <span class="built_in">url</span>(<span class="string">&quot;/img/wl-bg-mikuchan.gif&quot;</span>) <span class="number">100%</span> <span class="number">100%</span> no-repeat;</span><br><span class="line">    <span class="attribute">background-size</span>: contain <span class="meta">!important</span>;</span><br><span class="line">    <span class="attribute">background-repeat</span>: no-repeat <span class="meta">!important</span>;</span><br><span class="line">    <span class="attribute">background-position</span>: right bottom <span class="meta">!important</span>; </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-id">#waline-wrap</span> <span class="selector-tag">textarea</span><span class="selector-pseudo">:focus</span> &#123;</span><br><span class="line">    <span class="attribute">background</span>: <span class="built_in">url</span>(<span class="string">&quot;/img/wl-bg-mikuchan.gif&quot;</span>) <span class="number">100%</span> <span class="number">100%</span> no-repeat;</span><br><span class="line">    <span class="attribute">background-position</span>-y: <span class="number">78px</span> <span class="meta">!important</span>;</span><br><span class="line">    <span class="attribute">transition</span>: all <span class="number">0.25s</span> ease-in-out <span class="number">0s</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* 修改评论区内容背景 */</span></span><br><span class="line"><span class="selector-class">.wl-card</span> <span class="selector-class">.wl-content</span> &#123;</span><br><span class="line">    <span class="attribute">background</span>: <span class="number">#f5f5f5</span>;</span><br><span class="line">    <span class="attribute">padding</span>: <span class="number">16px</span> <span class="meta">!important</span>;</span><br><span class="line">    <span class="attribute">margin</span>: <span class="number">12px</span> <span class="number">0</span> <span class="number">8px</span> <span class="meta">!important</span>;</span><br><span class="line">    <span class="attribute">border-radius</span>: <span class="number">3px</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.wl-card</span> &#123;</span><br><span class="line">    <span class="attribute">border-bottom</span>: none <span class="meta">!important</span>;</span><br><span class="line">    <span class="attribute">padding-bottom</span>: <span class="number">0px</span> <span class="meta">!important</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.wl-cards</span> <span class="selector-class">.wl-item</span>&#123;</span><br><span class="line">    <span class="attribute">padding</span>: .<span class="number">5em</span> .<span class="number">5em</span> <span class="number">0px</span> <span class="meta">!important</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>效果图如下（因图片是截取自评论区而打了码，头像这些不属于以上代码，后面可以考虑改一下默认头像）</p>
+<p><img data-src="https://img.fufu.ink/iTcakI.webp" alt="Waline评论框美化效果"></p>
+<p><img data-src="https://img.fufu.ink/JDVkhh.webp" alt="Waline评论区美化效果"></p>
+<p>其中评论框的背景 gif 需要自己下载下来放到 <code>/source/img/</code> 下即可（记得重命名），别直接用我的博客的地址！（就这么点大小的图片就别直接挂别人的链接了吧，虽然我也不会做防盗链…）</p>
+<p>修改文本输入框中的提示文字需要到主题的配置文件中找到 waline 的配置项，在其中添加 <code>locale: &#123;placeholder: &#39;提示文字&#39;&#125;</code> 即可，以主题 butterfly 为例，则需要在 option 中添加该行代码，需要注意缩进，如下所示</p>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">waline:</span></span><br><span class="line">  <span class="attr">serverURL:</span> <span class="comment"># Waline server address url</span></span><br><span class="line">  <span class="attr">bg:</span> <span class="comment"># waline background</span></span><br><span class="line">  <span class="attr">pageview:</span> <span class="literal">false</span></span><br><span class="line">  <span class="attr">option:</span></span><br><span class="line">    <span class="attr">locale:</span> &#123;<span class="attr">placeholder:</span> <span class="string">&#x27;提示文字&#x27;</span>&#125;</span><br></pre></td></tr></table></figure>
+
+<p>最后就是上面效果图的样子啦！</p>
+]]></content>
+      <categories>
+        <category>技术</category>
+      </categories>
+      <tags>
+        <tag>教程</tag>
+        <tag>技术</tag>
+        <tag>Hexo</tag>
+        <tag>CSS</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>【每日语法】~さえ~ば</title>
+    <url>/2023/05/mnnhgbp5.html</url>
+    <content><![CDATA[<p>接续：</p>
+<blockquote>
+<p>N + さえ + 假定形<br>A（く形）&#x2F; NA（て形）+ さえあれば<br>V（ます形）&#x2F; サ变动词词干 + さえすれば</p>
+</blockquote>
+<p>意为「只要···就···」。关于假定形的变形方法，请参考<a href="/2023/04/mnnhgbp1.html">『【每日语法】~ば~ほど』</a>的文末表格。</p>
+<p>例句：やすくさえあれば、買いましょう。<br>译：只要便宜的话就买吧！</p>
+]]></content>
+      <categories>
+        <category>日语</category>
+      </categories>
+      <tags>
+        <tag>日语</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>【每日语法】~ば~ほど</title>
     <url>/2023/04/mnnhgbp1.html</url>
     <content><![CDATA[<p><strong>语法：V（假定形）+ V（原形）+ ほど</strong></p>
@@ -224,6 +224,120 @@
 <p>例句：コンビニにたくさんの商品がある。食べ物もあれば、生活に欠かせないものもある。</p>
 <p>译：便利店中有很多商品，既有食品，也有生活中不可或缺的物品。</p>
 <p>与之相似的语法还有「かと思えば」，接续方式为前接<strong>动词原形</strong>。关于假定形的变形方法，在上一篇中已经提过，这里就不再赘述，有需要了解的小伙伴可以<a href="/2023/04/mnnhgbp1.html">点击这里</a>返回上文查看。</p>
+]]></content>
+      <categories>
+        <category>日语</category>
+      </categories>
+      <tags>
+        <tag>日语</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>【每日语法】「既然~就~」的表达方法</title>
+    <url>/2023/04/mnnhgbp3.html</url>
+    <content><![CDATA[<blockquote>
+<p>注：本文部分解释来源于网站 <a href="https://chiyo-sampo.net/grammar-jlptn2-karaniha-ijouha-ueha/">https://chiyo-sampo.net/grammar-jlptn2-karaniha-ijouha-ueha/</a></p>
+</blockquote>
+<p>「からには」「以上は」「上は」都可以译为「既然…就…」，当然他们有部分的不同，根据上面网站的解释：</p>
+<ul>
+<li>「からには」是「からは」的更加强调、强硬的表达方式</li>
+<li>「以上は」也可以写作「以上」，读作「いじょう」</li>
+<li>「上は」有一种「除此之外，别无他法」的意味，在表示严峻的状况的时候使用</li>
+<li>这三个词后面都常常接「つもりだ（打算）」「べきだ（一种责任和义务，应该…）」「なければならない（客观上的必须做某事）」「てはいけない（禁止、不许）」「はずだ（推测，按说应该…）」「に違いない（充满自信的推测，肯定…）」等表达方式。</li>
+</ul>
+<p>接续方式：</p>
+<table>
+<thead>
+<tr>
+<th align="center">接续助词</th>
+<th align="center">名词</th>
+<th align="center">形容词</th>
+<th align="center">形容动词</th>
+<th align="center">动词</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">からには</td>
+<td align="center">N + である</td>
+<td align="center">A简体</td>
+<td align="center">NA（词干）+ である</td>
+<td align="center">V简体</td>
+</tr>
+<tr>
+<td align="center">上は</td>
+<td align="center">N + の</td>
+<td align="center">\</td>
+<td align="center">\</td>
+<td align="center">V（た形）</td>
+</tr>
+<tr>
+<td align="center">以上（は）</td>
+<td align="center">N + である</td>
+<td align="center">\</td>
+<td align="center">NA（词干）+ である</td>
+<td align="center">V简体</td>
+</tr>
+</tbody></table>
+<p>例句：</p>
+<p>(1). 約束したからには、ちゃんと守るべきだ。<br>译：既然约好了，就应该好好遵守约定。</p>
+<p>(2). 秘密を知られた上は、生かしてはおけない。<br>译：既然被你知道了这个秘密，就不能让你活下去了。</p>
+<p>(3). 会社を辞めると決めた以上、早く上司にその旨を伝えなければならない。<br>译：既然决定好向公司辞职了，就必须早点告诉上司这件事。</p>
+]]></content>
+      <categories>
+        <category>日语</category>
+      </categories>
+      <tags>
+        <tag>日语</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>【每日语法】てある及相似语法的对比</title>
+    <url>/2023/05/mnnhgbp4.html</url>
+    <content><![CDATA[<h2 id="意思一"><a href="#意思一" class="headerlink" title="意思一"></a>意思一</h2><blockquote>
+<p>接续：V（他动词，て形）+ ある</p>
+</blockquote>
+<p>表示动作结果的存续，该语法只涉及动作的对象，不涉及动作的主体。该句型有着「某个人做了某个动作，导致了这样的状态，但是这个人是谁并不重要」这样的意思。简单点说就是<strong>他动词的状态的持续</strong>。需要注意的是动词虽然为他动词，但动作的对象却要用<strong>「が」</strong>来表示。</p>
+<p>同样表示状态的持续的语法还有「ている」，那么他俩有什么区别呢？</p>
+<p>在对比前我们先回顾一下「ている」这个语法</p>
+<ul>
+<li>当动词为<strong>他动词</strong>时，表示动作的正在进行，意为「正在…」，比如「手紙を書いている」意为「我正在写信」</li>
+<li>当动词为<strong>自动词</strong>时，表示状态的持续，例如「鈴木さんは今出かけていますが…」，意为「铃木现在出去了…」</li>
+<li>表示动作的反复，常用于习惯或自然现象等</li>
+<li>表示性质或状态，比如「この機械の性能が<ruby>優<rt>すぐ</rt>れている</ruby>」意为「这台机器性能好」</li>
+</ul>
+<p>可以看到，表示状态的持续时，「ている」的前面的动词为自动词，而「てある」则为他动词。并且「ている」只是表示状态的持续，并不包含状态产生的原因，这个状态可以是人为造成的，也可以是自然而然发生的；但「てある」的状态一定是<strong>人为</strong>的，即一定是某个人去做了某个动作才产生了这样的状态。</p>
+<p>补充说明，当「てある」前面的动词为<strong>被动态</strong>时，能够更让人能够感受到这个做动作的人的存在。</p>
+<h2 id="意思二"><a href="#意思二" class="headerlink" title="意思二"></a>意思二</h2><blockquote>
+<p>接续：V（て形）+ ある</p>
+</blockquote>
+<p>这里表示<strong>已经提前做好某事的状态</strong>，自、他动词均可使用，意为「已经提前…」。</p>
+<p>例句：論文を書くために、資料をたくさん集めてある。<br>译：为了写论文，已经提前收集好了许多资料。</p>
+<p>同样，表示提前做好某事的意思的语法还有「ておく」，那么这两个语法之间有什么区别呢？</p>
+<p>首先回忆一下「ておく」这个语法：</p>
+<ul>
+<li>表示提前做好某事，以备不时之需</li>
+<li>表示保持状态不变，听之任之</li>
+<li>表示放任不管</li>
+</ul>
+<p>注意，「ておく」的「提前做好某事」具体点说是「<strong>将要</strong>提前做好某事」，实际现在还没有做，强调的是「提前做好」这个<strong>动作性</strong>；「てある」则表示的是「<strong>已经</strong>提前做好某事」，强调的是「提前做好」这个动作完成后的<strong>状态的持续</strong>。</p>
+<p>对比例句：</p>
+<ul>
+<li>この提案を一応考えてある。（已经事先考虑过这个提案。）</li>
+<li>この提案を一応考えておく。（将会事先考虑一下这个提案。）</li>
+</ul>
+<p>当「ておく」变为过去时，与「てある」的意思就更为相似，更加难以区分，比如下面两句：</p>
+<ul>
+<li>ビールをたくさん買っておいたが、人が多いので、もうなくなってしまった。（○）</li>
+<li>ビールをたくさん買ってあるが、人が多いので、もうなくなってしまった。（×）</li>
+</ul>
+<p>因为「買っておいた」只表示「提前买好」这一过去的动作，而「買ってある」则表示「提前买好」这一状态且该状态持续到了说话时，按此逻辑，如果买好了许多酒的状态持续到了说话时，后文却又说因为人多已经没酒了，就出现了前后意思的矛盾，因此这里只能用「買っておいた」。</p>
+<h2 id="意思三"><a href="#意思三" class="headerlink" title="意思三"></a>意思三</h2><blockquote>
+<p>接续：V（て形）+ ある</p>
+</blockquote>
+<p>表示<strong>放任或允许的状态</strong>。常常和自动词<strong>使役态</strong>搭配使用。</p>
+<p>例句：娘を日本語学校に通わせてある。<br>译：让女儿去日语学校上学。</p>
+<p>相似的还有「ておく」，其也有放任不管，听之任之的意思。</p>
+<p><strong>注：本文部分解释与例句来源于『日语语法教程——讲义与练习』一书，如造成侵权，请联系删除。</strong></p>
 ]]></content>
       <categories>
         <category>日语</category>
@@ -392,120 +506,6 @@
       </tags>
   </entry>
   <entry>
-    <title>【每日语法】「既然~就~」的表达方法</title>
-    <url>/2023/04/mnnhgbp3.html</url>
-    <content><![CDATA[<blockquote>
-<p>注：本文部分解释来源于网站 <a href="https://chiyo-sampo.net/grammar-jlptn2-karaniha-ijouha-ueha/">https://chiyo-sampo.net/grammar-jlptn2-karaniha-ijouha-ueha/</a></p>
-</blockquote>
-<p>「からには」「以上は」「上は」都可以译为「既然…就…」，当然他们有部分的不同，根据上面网站的解释：</p>
-<ul>
-<li>「からには」是「からは」的更加强调、强硬的表达方式</li>
-<li>「以上は」也可以写作「以上」，读作「いじょう」</li>
-<li>「上は」有一种「除此之外，别无他法」的意味，在表示严峻的状况的时候使用</li>
-<li>这三个词后面都常常接「つもりだ（打算）」「べきだ（一种责任和义务，应该…）」「なければならない（客观上的必须做某事）」「てはいけない（禁止、不许）」「はずだ（推测，按说应该…）」「に違いない（充满自信的推测，肯定…）」等表达方式。</li>
-</ul>
-<p>接续方式：</p>
-<table>
-<thead>
-<tr>
-<th align="center">接续助词</th>
-<th align="center">名词</th>
-<th align="center">形容词</th>
-<th align="center">形容动词</th>
-<th align="center">动词</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center">からには</td>
-<td align="center">N + である</td>
-<td align="center">A简体</td>
-<td align="center">NA（词干）+ である</td>
-<td align="center">V简体</td>
-</tr>
-<tr>
-<td align="center">上は</td>
-<td align="center">N + の</td>
-<td align="center">\</td>
-<td align="center">\</td>
-<td align="center">V（た形）</td>
-</tr>
-<tr>
-<td align="center">以上（は）</td>
-<td align="center">N + である</td>
-<td align="center">\</td>
-<td align="center">NA（词干）+ である</td>
-<td align="center">V简体</td>
-</tr>
-</tbody></table>
-<p>例句：</p>
-<p>(1). 約束したからには、ちゃんと守るべきだ。<br>译：既然约好了，就应该好好遵守约定。</p>
-<p>(2). 秘密を知られた上は、生かしてはおけない。<br>译：既然被你知道了这个秘密，就不能让你活下去了。</p>
-<p>(3). 会社を辞めると決めた以上、早く上司にその旨を伝えなければならない。<br>译：既然决定好向公司辞职了，就必须早点告诉上司这件事。</p>
-]]></content>
-      <categories>
-        <category>日语</category>
-      </categories>
-      <tags>
-        <tag>日语</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>【每日语法】てある及相似语法的对比</title>
-    <url>/2023/05/mnnhgbp4.html</url>
-    <content><![CDATA[<h2 id="意思一"><a href="#意思一" class="headerlink" title="意思一"></a>意思一</h2><blockquote>
-<p>接续：V（他动词，て形）+ ある</p>
-</blockquote>
-<p>表示动作结果的存续，该语法只涉及动作的对象，不涉及动作的主体。该句型有着「某个人做了某个动作，导致了这样的状态，但是这个人是谁并不重要」这样的意思。简单点说就是<strong>他动词的状态的持续</strong>。需要注意的是动词虽然为他动词，但动作的对象却要用<strong>「が」</strong>来表示。</p>
-<p>同样表示状态的持续的语法还有「ている」，那么他俩有什么区别呢？</p>
-<p>在对比前我们先回顾一下「ている」这个语法</p>
-<ul>
-<li>当动词为<strong>他动词</strong>时，表示动作的正在进行，意为「正在…」，比如「手紙を書いている」意为「我正在写信」</li>
-<li>当动词为<strong>自动词</strong>时，表示状态的持续，例如「鈴木さんは今出かけていますが…」，意为「铃木现在出去了…」</li>
-<li>表示动作的反复，常用于习惯或自然现象等</li>
-<li>表示性质或状态，比如「この機械の性能が<ruby>優<rt>すぐ</rt>れている</ruby>」意为「这台机器性能好」</li>
-</ul>
-<p>可以看到，表示状态的持续时，「ている」的前面的动词为自动词，而「てある」则为他动词。并且「ている」只是表示状态的持续，并不包含状态产生的原因，这个状态可以是人为造成的，也可以是自然而然发生的；但「てある」的状态一定是<strong>人为</strong>的，即一定是某个人去做了某个动作才产生了这样的状态。</p>
-<p>补充说明，当「てある」前面的动词为<strong>被动态</strong>时，能够更让人能够感受到这个做动作的人的存在。</p>
-<h2 id="意思二"><a href="#意思二" class="headerlink" title="意思二"></a>意思二</h2><blockquote>
-<p>接续：V（て形）+ ある</p>
-</blockquote>
-<p>这里表示<strong>已经提前做好某事的状态</strong>，自、他动词均可使用，意为「已经提前…」。</p>
-<p>例句：論文を書くために、資料をたくさん集めてある。<br>译：为了写论文，已经提前收集好了许多资料。</p>
-<p>同样，表示提前做好某事的意思的语法还有「ておく」，那么这两个语法之间有什么区别呢？</p>
-<p>首先回忆一下「ておく」这个语法：</p>
-<ul>
-<li>表示提前做好某事，以备不时之需</li>
-<li>表示保持状态不变，听之任之</li>
-<li>表示放任不管</li>
-</ul>
-<p>注意，「ておく」的「提前做好某事」具体点说是「<strong>将要</strong>提前做好某事」，实际现在还没有做，强调的是「提前做好」这个<strong>动作性</strong>；「てある」则表示的是「<strong>已经</strong>提前做好某事」，强调的是「提前做好」这个动作完成后的<strong>状态的持续</strong>。</p>
-<p>对比例句：</p>
-<ul>
-<li>この提案を一応考えてある。（已经事先考虑过这个提案。）</li>
-<li>この提案を一応考えておく。（将会事先考虑一下这个提案。）</li>
-</ul>
-<p>当「ておく」变为过去时，与「てある」的意思就更为相似，更加难以区分，比如下面两句：</p>
-<ul>
-<li>ビールをたくさん買っておいたが、人が多いので、もうなくなってしまった。（○）</li>
-<li>ビールをたくさん買ってあるが、人が多いので、もうなくなってしまった。（×）</li>
-</ul>
-<p>因为「買っておいた」只表示「提前买好」这一过去的动作，而「買ってある」则表示「提前买好」这一状态且该状态持续到了说话时，按此逻辑，如果买好了许多酒的状态持续到了说话时，后文却又说因为人多已经没酒了，就出现了前后意思的矛盾，因此这里只能用「買っておいた」。</p>
-<h2 id="意思三"><a href="#意思三" class="headerlink" title="意思三"></a>意思三</h2><blockquote>
-<p>接续：V（て形）+ ある</p>
-</blockquote>
-<p>表示<strong>放任或允许的状态</strong>。常常和自动词<strong>使役态</strong>搭配使用。</p>
-<p>例句：娘を日本語学校に通わせてある。<br>译：让女儿去日语学校上学。</p>
-<p>相似的还有「ておく」，其也有放任不管，听之任之的意思。</p>
-<p><strong>注：本文部分解释与例句来源于『日语语法教程——讲义与练习』一书，如造成侵权，请联系删除。</strong></p>
-]]></content>
-      <categories>
-        <category>日语</category>
-      </categories>
-      <tags>
-        <tag>日语</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>不断变强的万达</title>
     <url>/2023/08/genshinwandatsuyoi.html</url>
     <content><![CDATA[<p>去年垫池子抽到了达达鸭，今年 1 月份开始练万达国际，入坑一年以来首次打通了深渊（<a href="/2023/01/genshinshenyuanfirst.html">见『纪念第一次打通深渊』</a>），当时的面板没有截图。</p>
@@ -564,21 +564,6 @@
       </tags>
   </entry>
   <entry>
-    <title>四月一日君寻生日快乐</title>
-    <url>/2023/04/watanukitanjyoubi.html</url>
-    <content><![CDATA[<p>4 月 1 日，在很多人看来是愚人节，在我看来，这也是作品『<a href="https://www.bilibili.com/bangumi/play/ss1239?spm_id_from=333.337.0.0">xxxholic</a>』中「<ruby>四月一日君尋<rt>わたぬききみひろ</rt></ruby>」的生日。</p>
-<p>clamp 这个名字可能有人没有听过，不过大多数人一定听说过她的一部作品『魔卡少女樱』。clamp 的作品都有一个相同的、巨大的世界观，各个作品之间也有着千丝万缕的联系。『xxxholic』是发生在与魔卡的世界平行的一个世界中的故事，主角四月一日君尋从小由于体制原因容易吸引鬼怪，在一次「偶然」中进入了被称为「异世界的魔女」的侑子小姐的「能够实现愿望的店」。在经历了许多事情后，四月一日在侑子消失后继续留在店中等待着她的「归来」。——这么解释没看过的小伙伴肯定是听不懂的，不过这个也不是一两句话能够讲清的，比四月一日的产生原因，侑子又是谁，又为什么会消失等，都得小伙伴自己去看一看才能够明白，而且只看『xxxholic』还不足够，还得看了与之相关的作品『<a href="https://www.bilibili.com/bangumi/play/ss1463?spm_id_from=333.337.0.0">翼·年代记</a>』等才能搞清了。</p>
-<p>扯远了，总之，今天是可爱的四月一日的生日，是写作「4 月 1 日」的「わたぬき」！虽然咱不喜欢安利自己喜欢的作品给别人，因为口味不一样，自己觉得很好的在别人看来可能很一般，不过，这部作品我是十分推荐去看的，不过，请不要吐槽画风，因为 clamp 的作品的风格是这样的，如果你坚持看下去，你会发现它的剧情真的很精彩！</p>
-]]></content>
-      <categories>
-        <category>日常</category>
-      </categories>
-      <tags>
-        <tag>节日</tag>
-        <tag>二次元</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>出宵宫啦！</title>
     <url>/2023/05/genshinxgderu.html</url>
     <content><![CDATA[<p>虽说抽完 2 命纳西妲后已经没有抽其他角色的欲望了，但池子还是要垫的，出什么都无所谓了。</p>
@@ -609,6 +594,21 @@
       <tags>
         <tag>原神</tag>
         <tag>游戏</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>四月一日君寻生日快乐</title>
+    <url>/2023/04/watanukitanjyoubi.html</url>
+    <content><![CDATA[<p>4 月 1 日，在很多人看来是愚人节，在我看来，这也是作品『<a href="https://www.bilibili.com/bangumi/play/ss1239?spm_id_from=333.337.0.0">xxxholic</a>』中「<ruby>四月一日君尋<rt>わたぬききみひろ</rt></ruby>」的生日。</p>
+<p>clamp 这个名字可能有人没有听过，不过大多数人一定听说过她的一部作品『魔卡少女樱』。clamp 的作品都有一个相同的、巨大的世界观，各个作品之间也有着千丝万缕的联系。『xxxholic』是发生在与魔卡的世界平行的一个世界中的故事，主角四月一日君尋从小由于体制原因容易吸引鬼怪，在一次「偶然」中进入了被称为「异世界的魔女」的侑子小姐的「能够实现愿望的店」。在经历了许多事情后，四月一日在侑子消失后继续留在店中等待着她的「归来」。——这么解释没看过的小伙伴肯定是听不懂的，不过这个也不是一两句话能够讲清的，比四月一日的产生原因，侑子又是谁，又为什么会消失等，都得小伙伴自己去看一看才能够明白，而且只看『xxxholic』还不足够，还得看了与之相关的作品『<a href="https://www.bilibili.com/bangumi/play/ss1463?spm_id_from=333.337.0.0">翼·年代记</a>』等才能搞清了。</p>
+<p>扯远了，总之，今天是可爱的四月一日的生日，是写作「4 月 1 日」的「わたぬき」！虽然咱不喜欢安利自己喜欢的作品给别人，因为口味不一样，自己觉得很好的在别人看来可能很一般，不过，这部作品我是十分推荐去看的，不过，请不要吐槽画风，因为 clamp 的作品的风格是这样的，如果你坚持看下去，你会发现它的剧情真的很精彩！</p>
+]]></content>
+      <categories>
+        <category>日常</category>
+      </categories>
+      <tags>
+        <tag>节日</tag>
+        <tag>二次元</tag>
       </tags>
   </entry>
   <entry>
@@ -708,6 +708,23 @@
       </tags>
   </entry>
   <entry>
+    <title>小号常驻又出小提了</title>
+    <url>/2023/05/genshinchangzhuxiaoti.html</url>
+    <content><![CDATA[<p>前几天 up 池双黄了，出了莫娜和甘雨，今天又出小提了。</p>
+<p>之前玩大号的时候不怎么玩弓箭手，虽然公子武器是弓箭啦，毕竟战斗时使用的都是近战模式。再加上手柄不好进行瞄准操作…</p>
+<p>不过小号出了甘雨后，才发现玩狙击手是真的舒服，即使只靠平 a，也能打出很高的伤害（话说弓箭手的普攻倍率就是所有角色中最高的）。这小号比大号开荒时要舒服很多，主要是因为大号刚入坑时想在常驻池捞 77，把所有原石都用来抽常驻了，结果 120 发都没出 77，倒是把香班给抽得快满命了。</p>
+<p>接下来就要围绕着甘雨和小提两个主 c 来配队了。</p>
+<p><img data-src="https://img.fufu.ink/ayuNM2.webp" alt="常驻池43抽·小提"></p>
+]]></content>
+      <categories>
+        <category>游戏</category>
+      </categories>
+      <tags>
+        <tag>原神</tag>
+        <tag>游戏</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>小草神小毕业纪念</title>
     <url>/2022/11/genshicaoshen.html</url>
     <content><![CDATA[<p>刷了快 3 周，终于小毕业了。精通没有凑到 1000，不过 900 多也够用了，因为不出暴击头和草伤杯，只能用爆伤头代替 ~<span id="more"></span></p>
@@ -733,13 +750,15 @@
       </tags>
   </entry>
   <entry>
-    <title>小号常驻又出小提了</title>
-    <url>/2023/05/genshinchangzhuxiaoti.html</url>
-    <content><![CDATA[<p>前几天 up 池双黄了，出了莫娜和甘雨，今天又出小提了。</p>
-<p>之前玩大号的时候不怎么玩弓箭手，虽然公子武器是弓箭啦，毕竟战斗时使用的都是近战模式。再加上手柄不好进行瞄准操作…</p>
-<p>不过小号出了甘雨后，才发现玩狙击手是真的舒服，即使只靠平 a，也能打出很高的伤害（话说弓箭手的普攻倍率就是所有角色中最高的）。这小号比大号开荒时要舒服很多，主要是因为大号刚入坑时想在常驻池捞 77，把所有原石都用来抽常驻了，结果 120 发都没出 77，倒是把香班给抽得快满命了。</p>
-<p>接下来就要围绕着甘雨和小提两个主 c 来配队了。</p>
-<p><img data-src="https://img.fufu.ink/ayuNM2.webp" alt="常驻池43抽·小提"></p>
+    <title>打通深渊后半个月，我又第一次满星深渊！</title>
+    <url>/2023/02/genshinshenyuanmanxing.html</url>
+    <content><![CDATA[<p>上个月打通了深渊，但因为没练岩队，过不去黄金龙兽，然后万达的练度也拉。最近一直在研究万达的圣遗物搭配，看了把子哥的万达教学，把几个之前刷草神圣遗物拉起来的被我当作狗粮的圣遗物丢给公子，之前公子是 30&#x2F;160 的双爆，现在变成 78&#x2F;140 了，结果小助手一查，初步毕业了？然后去打深渊，把雷神之前的垃圾双爆圣遗物换成了精通狗粮，上半组了一支「瑶秋妲雷」，大招放完草神站场，没想到效果还挺好，相比于原来的「雷妲七主」只打超激化，现在多了超绽放的伤害，种门！（手不自觉地合上了~）然后就满星了！我都不知道为什么，猜测是之前 30 暴击的公子次次不暴击导致的……</p>
+<blockquote>
+<p>「说实话，当公子拥有 100% 暴击率，爆伤多少已经无所谓了」—— b站@这把我们就遇到高手</p>
+</blockquote>
+<p>315 天的萌新，xp 党，终于也满星深渊了~</p>
+<p><img data-src="https://img.fufu.ink/dz3OYE.webp" alt="第一次深渊满星"></p>
+<p>接下来准备攒着原石，等草神复刻，补 2 命，虽然大部分观点不认可非 6 命草神站场输出，但是我不管，我就希望她能够站场！继续坐牢绝缘本，给香菱刷圣遗物，狗粮就用来合成水套，毕竟很多公子的水套都是合成台毕业的。咱们也要打造一支「哪里亮了点哪里」也能够打通深渊的万达！</p>
 ]]></content>
       <categories>
         <category>游戏</category>
@@ -747,6 +766,41 @@
       <tags>
         <tag>原神</tag>
         <tag>游戏</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>改进 Next 主题友链书写方式</title>
+    <url>/2023/05/improvefdlinks.html</url>
+    <content><![CDATA[<blockquote>
+<p>声明：友链的设计源于主题 handsome，主题链接：<a href="https://www.ihewro.com/archives/489/">https://www.ihewro.com/archives/489/</a> 本文仅模仿了其风格，若造成侵权，请联系我删除。</p>
+</blockquote>
+<p>首先在 <code>next主题文件夹/layout/</code> 下新建 <code>links.njk</code>，写入以下内容：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">    &#123;##################&#125;</span><br><span class="line">    &#123;### LINKS BLOCK ###&#125;</span><br><span class="line">    &#123;##################&#125;</span><br><span class="line"></span><br><span class="line">&lt;style&gt;</span><br><span class="line">    @media (min-width: 768px) &#123;</span><br><span class="line">        .link-card &#123;</span><br><span class="line">            width: 50%;</span><br><span class="line">            float: left;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    .link-card&#123;</span><br><span class="line">        position: relative;</span><br><span class="line">        min-height: 1px;</span><br><span class="line">        padding-right: 15px;</span><br><span class="line">        padding-left: 15px;</span><br><span class="line">        box-sizing: border-box;</span><br><span class="line">    &#125;</span><br><span class="line">    .link-user-list&#123;</span><br><span class="line">        margin-bottom: 5px;</span><br><span class="line">        border-radius: 3px;</span><br><span class="line">        padding: 15px;</span><br><span class="line">        display: block;</span><br><span class="line">        box-shadow: 0 2px 6px rgba(0,0,0,.1);</span><br><span class="line">        position: relative;</span><br><span class="line">    &#125;</span><br><span class="line">    .link-user-list:hover&#123;</span><br><span class="line">        background-color: #f6f8f8;</span><br><span class="line">        text-decoration: none;</span><br><span class="line">    &#125;</span><br><span class="line">    #link-container a&#123;</span><br><span class="line">        border: none;</span><br><span class="line">    &#125;</span><br><span class="line">    .user-avatar img&#123;</span><br><span class="line">        border: 2px solid #fff;</span><br><span class="line">        height: auto;</span><br><span class="line">        vertical-align: middle;</span><br><span class="line">        width: 100%;</span><br><span class="line">        border-radius: 20%;</span><br><span class="line">        max-width: 100%!important;</span><br><span class="line">        margin: 0px !important;</span><br><span class="line">    &#125;</span><br><span class="line">    .clearfix:after&#123;</span><br><span class="line">        content: &#x27; &#x27;; </span><br><span class="line">        display: block; </span><br><span class="line">        height: 0; </span><br><span class="line">        clear: both; </span><br><span class="line">        visibility: hidden;</span><br><span class="line">    &#125;</span><br><span class="line">    .text-ellipsis&#123;</span><br><span class="line">        display: block;</span><br><span class="line">        text-overflow: ellipsis;</span><br><span class="line">        overflow: hidden;</span><br><span class="line">        white-space: nowrap;</span><br><span class="line">        font-size: 13px;</span><br><span class="line">    &#125;</span><br><span class="line">    .user-message&#123;</span><br><span class="line">        display: block;</span><br><span class="line">        overflow: hidden;</span><br><span class="line">    &#125;</span><br><span class="line">    .user-description&#123;</span><br><span class="line">        color: #a0a0a0;</span><br><span class="line">    &#125;</span><br><span class="line">    .user-avatar&#123;</span><br><span class="line">        display: inline-block;</span><br><span class="line">        width: 52px;</span><br><span class="line">        height: auto;</span><br><span class="line">        float: left !important;</span><br><span class="line">        margin-right: 15px;</span><br><span class="line">        position: relative;</span><br><span class="line">        white-space: nowrap;</span><br><span class="line">    &#125;</span><br><span class="line">&lt;/style&gt;</span><br><span class="line">&lt;div id=&quot;link-container&quot;&gt;</span><br><span class="line">    &#123;% for link_config in site.data.links %&#125;</span><br><span class="line">    &#123;% if link_config.class_name %&#125;</span><br><span class="line">    &lt;h2 id=&quot;&#123;&#123; link_config.class_name &#125;&#125;&quot;&gt;</span><br><span class="line">        &lt;a href=&quot;#&#123;&#123; link_config.class_name &#125;&#125;&quot; class=&quot;headerlink&quot; title=&quot;&#123;&#123; link_config.class_name &#125;&#125;&quot; data-pjax-state&gt;&lt;/a&gt;</span><br><span class="line">        &#123;&#123; link_config.class_name &#125;&#125;</span><br><span class="line">    &lt;/h2&gt;</span><br><span class="line">    &#123;% else %&#125;</span><br><span class="line">    &lt;hr&gt;</span><br><span class="line">    &#123;% endif %&#125;</span><br><span class="line">    &lt;div class=&quot;clearfix&quot;&gt;</span><br><span class="line">    &#123;% for link in link_config.link_list %&#125;</span><br><span class="line">    &lt;div class=&quot;link-card&quot;&gt;</span><br><span class="line">        &lt;a href=&quot;&#123;&#123; link.site &#125;&#125;&quot; target=&quot;_blank&quot; class=&quot;link-user-list&quot;&gt;</span><br><span class="line">            &lt;span class=&quot;user-avatar&quot;&gt;</span><br><span class="line">                &lt;img src=&quot;&#123;&#123; link.avatar &#125;&#125;&quot; class=&quot;nofancybox&quot;&gt;</span><br><span class="line">            &lt;/span&gt;</span><br><span class="line">            &lt;span class=&quot;user-message&quot;&gt;</span><br><span class="line">                &lt;span class=&quot;text-ellipsis&quot;&gt;&#123;&#123; link.nickname &#125;&#125;&lt;/span&gt;</span><br><span class="line">                &lt;span class=&quot;user-description text-ellipsis&quot;&gt;&#123;&#123; link.info &#125;&#125;&lt;/span&gt;</span><br><span class="line">            &lt;/span&gt;</span><br><span class="line">        &lt;/a&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">    &#123;% endfor %&#125;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">    &#123;% endfor %&#125;</span><br><span class="line"></span><br><span class="line">    &lt;div&gt;</span><br><span class="line">    &#123;&#123; page.content &#125;&#125;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line">    &#123;######################&#125;</span><br><span class="line">    &#123;### END LINKS BLOCK ###&#125;</span><br><span class="line">    &#123;######################&#125;</span><br></pre></td></tr></table></figure>
+
+<p>接下来打开 <code>next主题文件夹/layout/page.njk</code>，在 <code>block title</code> 区域中某个 <code>elif</code> 语句后添加上</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&#123;% block title %&#125;</span><br><span class="line">  &#123;%- set page_title_suffix = &#x27; | &#x27; + title %&#125;</span><br><span class="line"></span><br><span class="line">  &#123;%- if page.type === &#x27;categories&#x27; and not page.title %&#125;</span><br><span class="line">    &#123;&#123;- __(&#x27;title.category&#x27;) + page_title_suffix &#125;&#125;</span><br><span class="line">  &#123;%- elif page.type === &#x27;tags&#x27; and not page.title %&#125;</span><br><span class="line">    &#123;&#123;- __(&#x27;title.tag&#x27;) + page_title_suffix &#125;&#125;</span><br><span class="line">  &#123;%- elif page.type === &#x27;schedule&#x27; and not page.title %&#125;</span><br><span class="line">    &#123;&#123;- __(&#x27;title.schedule&#x27;) + page_title_suffix &#125;&#125;</span><br><span class="line">+  &#123;%- elif page.type === &#x27;links&#x27; and not page.title %&#125;</span><br><span class="line">+    &#123;&#123;- __(&#x27;title.links&#x27;) + page_title_suffix &#125;&#125;</span><br><span class="line">  &#123;%- else %&#125;</span><br><span class="line">    &#123;&#123;- page.title + page_title_suffix &#125;&#125;</span><br><span class="line">  &#123;%- endif %&#125;</span><br><span class="line">&#123;% endblock %&#125;</span><br></pre></td></tr></table></figure>
+
+<p>接下来在下面的 <code>PAGE BODY</code> 中添加</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&#123;### PAGE BODY ###&#125;</span><br><span class="line">      &#123;#################&#125;</span><br><span class="line">      &lt;div class=&quot;post-body&#123;% if page.direction and page.direction.toLowerCase() === &#x27;rtl&#x27; %&#125; rtl&#123;% endif %&#125;&quot;&gt;</span><br><span class="line">        &#123;%- if page.type === &#x27;tags&#x27; %&#125;</span><br><span class="line">          &#123;%- include &#x27;_partials/page/tags.njk&#x27; -%&#125;</span><br><span class="line">        &#123;% elif page.type === &#x27;categories&#x27; %&#125;</span><br><span class="line">          &#123;%- include &#x27;_partials/page/categories.njk&#x27; -%&#125;</span><br><span class="line">        &#123;% elif page.type === &#x27;schedule&#x27; %&#125;</span><br><span class="line">          &#123;%- include &#x27;_partials/page/schedule.njk&#x27; -%&#125;</span><br><span class="line">+        &#123;% elif page.type === &#x27;links&#x27; %&#125;</span><br><span class="line">+          &#123;%- include &#x27;links.njk&#x27; -%&#125;</span><br><span class="line">        &#123;% else %&#125;</span><br><span class="line">          &#123;&#123; page.content &#125;&#125;</span><br><span class="line">        &#123;%- endif %&#125;</span><br><span class="line">      &lt;/div&gt;</span><br><span class="line">      &#123;#####################&#125;</span><br><span class="line">      &#123;### END PAGE BODY ###&#125;</span><br><span class="line">      &#123;#####################&#125;</span><br></pre></td></tr></table></figure>
+
+<p>接下来就是创建 <code>source/links/index.md</code>，配置好里面的友链申请信息了（<strong>注意 <code>front-matter</code> 的 type 的值必须为 <code>links</code>！</strong>）。</p>
+<p>最后在 <code>hexo根目录/source/_data/</code> 下创建 <code>links.yml</code> 并填入以下内容：</p>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 参数说明</span></span><br><span class="line"><span class="comment"># class_name 选填，可以理解为友链组的名字，如果不填则会在顶部生成一个分割线</span></span><br><span class="line"><span class="comment"># nickname 博客名称</span></span><br><span class="line"><span class="comment"># site 博客地址</span></span><br><span class="line"><span class="comment"># info 博客简介</span></span><br><span class="line"><span class="comment"># avatar 博客logo</span></span><br><span class="line"><span class="comment"># 填写时注意缩进！</span></span><br><span class="line"></span><br><span class="line"><span class="bullet">-</span> <span class="attr">class_name:</span></span><br><span class="line">  <span class="attr">link_list:</span></span><br><span class="line">    <span class="bullet">-</span> <span class="attr">nickname:</span></span><br><span class="line">      <span class="attr">site:</span></span><br><span class="line">      <span class="attr">info:</span></span><br><span class="line">      <span class="attr">avatar:</span></span><br><span class="line">    <span class="bullet">-</span> <span class="attr">nickname:</span></span><br><span class="line">      <span class="attr">site:</span></span><br><span class="line">      <span class="attr">info:</span></span><br><span class="line">      <span class="attr">avatar:</span></span><br><span class="line"></span><br><span class="line"><span class="bullet">-</span> <span class="attr">class_name:</span></span><br><span class="line">  <span class="attr">link_list:</span></span><br><span class="line">    <span class="bullet">-</span> <span class="attr">nickname:</span></span><br><span class="line">      <span class="attr">site:</span></span><br><span class="line">      <span class="attr">info:</span></span><br><span class="line">      <span class="attr">avatar:</span></span><br><span class="line">    <span class="bullet">-</span> <span class="attr">nickname:</span></span><br><span class="line">      <span class="attr">site:</span></span><br><span class="line">      <span class="attr">info:</span></span><br><span class="line">      <span class="attr">avatar:</span></span><br></pre></td></tr></table></figure>
+
+<p>本文参考：</p>
+<ul>
+<li><a href="https://only_ann.gitee.io/next/archives/48141.html">next主题添加自定义友链</a></li>
+<li><a href="https://github.com/next-theme/hexo-theme-next/discussions/660">之前显示有问题，去问了主题作者，感谢作者的耐心回答</a></li>
+<li><a href="https://blog.csdn.net/qq_35479468/article/details/107454287">Hexo+next主题自定义友情链接页面</a></li>
+</ul>
+]]></content>
+      <categories>
+        <category>技术</category>
+      </categories>
+      <tags>
+        <tag>技术</tag>
+        <tag>Hexo</tag>
+        <tag>CSS</tag>
       </tags>
   </entry>
   <entry>
@@ -810,60 +864,6 @@
       <tags>
         <tag>Linux</tag>
         <tag>Ubuntu</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>打通深渊后半个月，我又第一次满星深渊！</title>
-    <url>/2023/02/genshinshenyuanmanxing.html</url>
-    <content><![CDATA[<p>上个月打通了深渊，但因为没练岩队，过不去黄金龙兽，然后万达的练度也拉。最近一直在研究万达的圣遗物搭配，看了把子哥的万达教学，把几个之前刷草神圣遗物拉起来的被我当作狗粮的圣遗物丢给公子，之前公子是 30&#x2F;160 的双爆，现在变成 78&#x2F;140 了，结果小助手一查，初步毕业了？然后去打深渊，把雷神之前的垃圾双爆圣遗物换成了精通狗粮，上半组了一支「瑶秋妲雷」，大招放完草神站场，没想到效果还挺好，相比于原来的「雷妲七主」只打超激化，现在多了超绽放的伤害，种门！（手不自觉地合上了~）然后就满星了！我都不知道为什么，猜测是之前 30 暴击的公子次次不暴击导致的……</p>
-<blockquote>
-<p>「说实话，当公子拥有 100% 暴击率，爆伤多少已经无所谓了」—— b站@这把我们就遇到高手</p>
-</blockquote>
-<p>315 天的萌新，xp 党，终于也满星深渊了~</p>
-<p><img data-src="https://img.fufu.ink/dz3OYE.webp" alt="第一次深渊满星"></p>
-<p>接下来准备攒着原石，等草神复刻，补 2 命，虽然大部分观点不认可非 6 命草神站场输出，但是我不管，我就希望她能够站场！继续坐牢绝缘本，给香菱刷圣遗物，狗粮就用来合成水套，毕竟很多公子的水套都是合成台毕业的。咱们也要打造一支「哪里亮了点哪里」也能够打通深渊的万达！</p>
-]]></content>
-      <categories>
-        <category>游戏</category>
-      </categories>
-      <tags>
-        <tag>原神</tag>
-        <tag>游戏</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>改进 Next 主题友链书写方式</title>
-    <url>/2023/05/improvefdlinks.html</url>
-    <content><![CDATA[<blockquote>
-<p>声明：友链的设计源于主题 handsome，主题链接：<a href="https://www.ihewro.com/archives/489/">https://www.ihewro.com/archives/489/</a> 本文仅模仿了其风格，若造成侵权，请联系我删除。</p>
-</blockquote>
-<p>首先在 <code>next主题文件夹/layout/</code> 下新建 <code>links.njk</code>，写入以下内容：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">    &#123;##################&#125;</span><br><span class="line">    &#123;### LINKS BLOCK ###&#125;</span><br><span class="line">    &#123;##################&#125;</span><br><span class="line"></span><br><span class="line">&lt;style&gt;</span><br><span class="line">    @media (min-width: 768px) &#123;</span><br><span class="line">        .link-card &#123;</span><br><span class="line">            width: 50%;</span><br><span class="line">            float: left;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    .link-card&#123;</span><br><span class="line">        position: relative;</span><br><span class="line">        min-height: 1px;</span><br><span class="line">        padding-right: 15px;</span><br><span class="line">        padding-left: 15px;</span><br><span class="line">        box-sizing: border-box;</span><br><span class="line">    &#125;</span><br><span class="line">    .link-user-list&#123;</span><br><span class="line">        margin-bottom: 5px;</span><br><span class="line">        border-radius: 3px;</span><br><span class="line">        padding: 15px;</span><br><span class="line">        display: block;</span><br><span class="line">        box-shadow: 0 2px 6px rgba(0,0,0,.1);</span><br><span class="line">        position: relative;</span><br><span class="line">    &#125;</span><br><span class="line">    .link-user-list:hover&#123;</span><br><span class="line">        background-color: #f6f8f8;</span><br><span class="line">        text-decoration: none;</span><br><span class="line">    &#125;</span><br><span class="line">    #link-container a&#123;</span><br><span class="line">        border: none;</span><br><span class="line">    &#125;</span><br><span class="line">    .user-avatar img&#123;</span><br><span class="line">        border: 2px solid #fff;</span><br><span class="line">        height: auto;</span><br><span class="line">        vertical-align: middle;</span><br><span class="line">        width: 100%;</span><br><span class="line">        border-radius: 20%;</span><br><span class="line">        max-width: 100%!important;</span><br><span class="line">        margin: 0px !important;</span><br><span class="line">    &#125;</span><br><span class="line">    .clearfix:after&#123;</span><br><span class="line">        content: &#x27; &#x27;; </span><br><span class="line">        display: block; </span><br><span class="line">        height: 0; </span><br><span class="line">        clear: both; </span><br><span class="line">        visibility: hidden;</span><br><span class="line">    &#125;</span><br><span class="line">    .text-ellipsis&#123;</span><br><span class="line">        display: block;</span><br><span class="line">        text-overflow: ellipsis;</span><br><span class="line">        overflow: hidden;</span><br><span class="line">        white-space: nowrap;</span><br><span class="line">        font-size: 13px;</span><br><span class="line">    &#125;</span><br><span class="line">    .user-message&#123;</span><br><span class="line">        display: block;</span><br><span class="line">        overflow: hidden;</span><br><span class="line">    &#125;</span><br><span class="line">    .user-description&#123;</span><br><span class="line">        color: #a0a0a0;</span><br><span class="line">    &#125;</span><br><span class="line">    .user-avatar&#123;</span><br><span class="line">        display: inline-block;</span><br><span class="line">        width: 52px;</span><br><span class="line">        height: auto;</span><br><span class="line">        float: left !important;</span><br><span class="line">        margin-right: 15px;</span><br><span class="line">        position: relative;</span><br><span class="line">        white-space: nowrap;</span><br><span class="line">    &#125;</span><br><span class="line">&lt;/style&gt;</span><br><span class="line">&lt;div id=&quot;link-container&quot;&gt;</span><br><span class="line">    &#123;% for link_config in site.data.links %&#125;</span><br><span class="line">    &#123;% if link_config.class_name %&#125;</span><br><span class="line">    &lt;h2 id=&quot;&#123;&#123; link_config.class_name &#125;&#125;&quot;&gt;</span><br><span class="line">        &lt;a href=&quot;#&#123;&#123; link_config.class_name &#125;&#125;&quot; class=&quot;headerlink&quot; title=&quot;&#123;&#123; link_config.class_name &#125;&#125;&quot; data-pjax-state&gt;&lt;/a&gt;</span><br><span class="line">        &#123;&#123; link_config.class_name &#125;&#125;</span><br><span class="line">    &lt;/h2&gt;</span><br><span class="line">    &#123;% else %&#125;</span><br><span class="line">    &lt;hr&gt;</span><br><span class="line">    &#123;% endif %&#125;</span><br><span class="line">    &lt;div class=&quot;clearfix&quot;&gt;</span><br><span class="line">    &#123;% for link in link_config.link_list %&#125;</span><br><span class="line">    &lt;div class=&quot;link-card&quot;&gt;</span><br><span class="line">        &lt;a href=&quot;&#123;&#123; link.site &#125;&#125;&quot; target=&quot;_blank&quot; class=&quot;link-user-list&quot;&gt;</span><br><span class="line">            &lt;span class=&quot;user-avatar&quot;&gt;</span><br><span class="line">                &lt;img src=&quot;&#123;&#123; link.avatar &#125;&#125;&quot; class=&quot;nofancybox&quot;&gt;</span><br><span class="line">            &lt;/span&gt;</span><br><span class="line">            &lt;span class=&quot;user-message&quot;&gt;</span><br><span class="line">                &lt;span class=&quot;text-ellipsis&quot;&gt;&#123;&#123; link.nickname &#125;&#125;&lt;/span&gt;</span><br><span class="line">                &lt;span class=&quot;user-description text-ellipsis&quot;&gt;&#123;&#123; link.info &#125;&#125;&lt;/span&gt;</span><br><span class="line">            &lt;/span&gt;</span><br><span class="line">        &lt;/a&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">    &#123;% endfor %&#125;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">    &#123;% endfor %&#125;</span><br><span class="line"></span><br><span class="line">    &lt;div&gt;</span><br><span class="line">    &#123;&#123; page.content &#125;&#125;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line">    &#123;######################&#125;</span><br><span class="line">    &#123;### END LINKS BLOCK ###&#125;</span><br><span class="line">    &#123;######################&#125;</span><br></pre></td></tr></table></figure>
-
-<p>接下来打开 <code>next主题文件夹/layout/page.njk</code>，在 <code>block title</code> 区域中某个 <code>elif</code> 语句后添加上</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&#123;% block title %&#125;</span><br><span class="line">  &#123;%- set page_title_suffix = &#x27; | &#x27; + title %&#125;</span><br><span class="line"></span><br><span class="line">  &#123;%- if page.type === &#x27;categories&#x27; and not page.title %&#125;</span><br><span class="line">    &#123;&#123;- __(&#x27;title.category&#x27;) + page_title_suffix &#125;&#125;</span><br><span class="line">  &#123;%- elif page.type === &#x27;tags&#x27; and not page.title %&#125;</span><br><span class="line">    &#123;&#123;- __(&#x27;title.tag&#x27;) + page_title_suffix &#125;&#125;</span><br><span class="line">  &#123;%- elif page.type === &#x27;schedule&#x27; and not page.title %&#125;</span><br><span class="line">    &#123;&#123;- __(&#x27;title.schedule&#x27;) + page_title_suffix &#125;&#125;</span><br><span class="line">+  &#123;%- elif page.type === &#x27;links&#x27; and not page.title %&#125;</span><br><span class="line">+    &#123;&#123;- __(&#x27;title.links&#x27;) + page_title_suffix &#125;&#125;</span><br><span class="line">  &#123;%- else %&#125;</span><br><span class="line">    &#123;&#123;- page.title + page_title_suffix &#125;&#125;</span><br><span class="line">  &#123;%- endif %&#125;</span><br><span class="line">&#123;% endblock %&#125;</span><br></pre></td></tr></table></figure>
-
-<p>接下来在下面的 <code>PAGE BODY</code> 中添加</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&#123;### PAGE BODY ###&#125;</span><br><span class="line">      &#123;#################&#125;</span><br><span class="line">      &lt;div class=&quot;post-body&#123;% if page.direction and page.direction.toLowerCase() === &#x27;rtl&#x27; %&#125; rtl&#123;% endif %&#125;&quot;&gt;</span><br><span class="line">        &#123;%- if page.type === &#x27;tags&#x27; %&#125;</span><br><span class="line">          &#123;%- include &#x27;_partials/page/tags.njk&#x27; -%&#125;</span><br><span class="line">        &#123;% elif page.type === &#x27;categories&#x27; %&#125;</span><br><span class="line">          &#123;%- include &#x27;_partials/page/categories.njk&#x27; -%&#125;</span><br><span class="line">        &#123;% elif page.type === &#x27;schedule&#x27; %&#125;</span><br><span class="line">          &#123;%- include &#x27;_partials/page/schedule.njk&#x27; -%&#125;</span><br><span class="line">+        &#123;% elif page.type === &#x27;links&#x27; %&#125;</span><br><span class="line">+          &#123;%- include &#x27;links.njk&#x27; -%&#125;</span><br><span class="line">        &#123;% else %&#125;</span><br><span class="line">          &#123;&#123; page.content &#125;&#125;</span><br><span class="line">        &#123;%- endif %&#125;</span><br><span class="line">      &lt;/div&gt;</span><br><span class="line">      &#123;#####################&#125;</span><br><span class="line">      &#123;### END PAGE BODY ###&#125;</span><br><span class="line">      &#123;#####################&#125;</span><br></pre></td></tr></table></figure>
-
-<p>接下来就是创建 <code>source/links/index.md</code>，配置好里面的友链申请信息了（<strong>注意 <code>front-matter</code> 的 type 的值必须为 <code>links</code>！</strong>）。</p>
-<p>最后在 <code>hexo根目录/source/_data/</code> 下创建 <code>links.yml</code> 并填入以下内容：</p>
-<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 参数说明</span></span><br><span class="line"><span class="comment"># class_name 选填，可以理解为友链组的名字，如果不填则会在顶部生成一个分割线</span></span><br><span class="line"><span class="comment"># nickname 博客名称</span></span><br><span class="line"><span class="comment"># site 博客地址</span></span><br><span class="line"><span class="comment"># info 博客简介</span></span><br><span class="line"><span class="comment"># avatar 博客logo</span></span><br><span class="line"><span class="comment"># 填写时注意缩进！</span></span><br><span class="line"></span><br><span class="line"><span class="bullet">-</span> <span class="attr">class_name:</span></span><br><span class="line">  <span class="attr">link_list:</span></span><br><span class="line">    <span class="bullet">-</span> <span class="attr">nickname:</span></span><br><span class="line">      <span class="attr">site:</span></span><br><span class="line">      <span class="attr">info:</span></span><br><span class="line">      <span class="attr">avatar:</span></span><br><span class="line">    <span class="bullet">-</span> <span class="attr">nickname:</span></span><br><span class="line">      <span class="attr">site:</span></span><br><span class="line">      <span class="attr">info:</span></span><br><span class="line">      <span class="attr">avatar:</span></span><br><span class="line"></span><br><span class="line"><span class="bullet">-</span> <span class="attr">class_name:</span></span><br><span class="line">  <span class="attr">link_list:</span></span><br><span class="line">    <span class="bullet">-</span> <span class="attr">nickname:</span></span><br><span class="line">      <span class="attr">site:</span></span><br><span class="line">      <span class="attr">info:</span></span><br><span class="line">      <span class="attr">avatar:</span></span><br><span class="line">    <span class="bullet">-</span> <span class="attr">nickname:</span></span><br><span class="line">      <span class="attr">site:</span></span><br><span class="line">      <span class="attr">info:</span></span><br><span class="line">      <span class="attr">avatar:</span></span><br></pre></td></tr></table></figure>
-
-<p>本文参考：</p>
-<ul>
-<li><a href="https://only_ann.gitee.io/next/archives/48141.html">next主题添加自定义友链</a></li>
-<li><a href="https://github.com/next-theme/hexo-theme-next/discussions/660">之前显示有问题，去问了主题作者，感谢作者的耐心回答</a></li>
-<li><a href="https://blog.csdn.net/qq_35479468/article/details/107454287">Hexo+next主题自定义友情链接页面</a></li>
-</ul>
-]]></content>
-      <categories>
-        <category>技术</category>
-      </categories>
-      <tags>
-        <tag>技术</tag>
-        <tag>Hexo</tag>
-        <tag>CSS</tag>
       </tags>
   </entry>
   <entry>
@@ -1227,8 +1227,8 @@
 </tr>
 <tr>
 <td align="center">2024&#x2F;1&#x2F;18</td>
-<td align="center">+4</td>
-<td align="center">396</td>
+<td align="center">+5</td>
+<td align="center">397</td>
 </tr>
 </tbody></table>
 ]]></content>
@@ -1264,6 +1264,26 @@
       <tags>
         <tag>生活</tag>
         <tag>驾考</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>纪念第一次打通深渊</title>
+    <url>/2023/01/genshinshenyuanfirst.html</url>
+    <content><![CDATA[<p>去年也是这个时候入的坑，当时看泠鸢 yousa 在直播这个游戏，然后里面的派蒙和七七很可爱，就下载试着玩了一下，然后……就玩到了现在~</p>
+<p>作为一个剧情党和 xp 党，当然是以剧情为主要，抽卡以喜欢的角色为前提，因此也是深渊困难户。</p>
+<p><img data-src="https://img.fufu.ink/VAGfzC.webp"></p>
+<p>现在练度上来一些了，队伍也有点伤害了，本来原来抽到雷神后打算组个雷国来打，不过后面发现绝缘本出货率感人，同时早听说过万达的爆炸性伤害，正好去年 11 份垫池子 30 多发出了鸭鸭，就想着练一下。不得不说双扩的方法实在是太多了，因此光是学习双扩就让人头大，后面学会偷懒了，就把怪的状态都打到一个状态后再进行双扩流程，就不同分不同的元素附着情况了。</p>
+<p>当然，现在公子离毕业、万达离毕业还很远，不过作为一个萌新，看到 21w 一刀的伤害，还是很激动的，果然在满足 xp 后追求的就是强度(bushi。</p>
+<p><img data-src="https://img.fufu.ink/uP19xG.webp"></p>
+<p>主要是没拉岩系，第二间黄金王兽打不出来伤害，就靠我的零命草神在 c，雷神相当于挂雷工具人，另外两个一个奶，一个用来破盾，因此全队只有一个打伤害，很难打过去，之前练过一段时间凝光，正好凝光也 3 命了，可以试着拉一下，后面看看能不能凹过去。</p>
+<p>现在就等草神复刻补命座了，补一个二命伤害能更高。雷神也可以拉一下。现在版本答案是种门，我也可以拉一下「纳行久」，组一个下半配队。</p>
+]]></content>
+      <categories>
+        <category>游戏</category>
+      </categories>
+      <tags>
+        <tag>原神</tag>
+        <tag>游戏</tag>
       </tags>
   </entry>
   <entry>
@@ -1335,26 +1355,6 @@
       <tags>
         <tag>类原生</tag>
         <tag>Android</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>纪念第一次打通深渊</title>
-    <url>/2023/01/genshinshenyuanfirst.html</url>
-    <content><![CDATA[<p>去年也是这个时候入的坑，当时看泠鸢 yousa 在直播这个游戏，然后里面的派蒙和七七很可爱，就下载试着玩了一下，然后……就玩到了现在~</p>
-<p>作为一个剧情党和 xp 党，当然是以剧情为主要，抽卡以喜欢的角色为前提，因此也是深渊困难户。</p>
-<p><img data-src="https://img.fufu.ink/VAGfzC.webp"></p>
-<p>现在练度上来一些了，队伍也有点伤害了，本来原来抽到雷神后打算组个雷国来打，不过后面发现绝缘本出货率感人，同时早听说过万达的爆炸性伤害，正好去年 11 份垫池子 30 多发出了鸭鸭，就想着练一下。不得不说双扩的方法实在是太多了，因此光是学习双扩就让人头大，后面学会偷懒了，就把怪的状态都打到一个状态后再进行双扩流程，就不同分不同的元素附着情况了。</p>
-<p>当然，现在公子离毕业、万达离毕业还很远，不过作为一个萌新，看到 21w 一刀的伤害，还是很激动的，果然在满足 xp 后追求的就是强度(bushi。</p>
-<p><img data-src="https://img.fufu.ink/uP19xG.webp"></p>
-<p>主要是没拉岩系，第二间黄金王兽打不出来伤害，就靠我的零命草神在 c，雷神相当于挂雷工具人，另外两个一个奶，一个用来破盾，因此全队只有一个打伤害，很难打过去，之前练过一段时间凝光，正好凝光也 3 命了，可以试着拉一下，后面看看能不能凹过去。</p>
-<p>现在就等草神复刻补命座了，补一个二命伤害能更高。雷神也可以拉一下。现在版本答案是种门，我也可以拉一下「纳行久」，组一个下半配队。</p>
-]]></content>
-      <categories>
-        <category>游戏</category>
-      </categories>
-      <tags>
-        <tag>原神</tag>
-        <tag>游戏</tag>
       </tags>
   </entry>
   <entry>
@@ -1474,115 +1474,6 @@
       <tags>
         <tag>生活</tag>
         <tag>计算机</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>论打造文化背景下日本美食文化中日双语科普介绍平台的可行性</title>
-    <url>/2022/05/dachuangzuoye.html</url>
-    <content><![CDATA[<blockquote>
-<p>日本料理（和食）：人类非物质文化遗产代表作之一，因其兼具精致的美感与可口的味道而世界闻名。</p>
-</blockquote>
-<p>所以我们决定发起项目——《跨文化背景下日本美食文化中日双语科普介绍平台打造》，致力于通过国人的视角探索发现日本的美食，在国内市场打造宣传分享平台，服务对象为对和食有兴趣的个人，以及国内各大餐饮企业等群体和组织。这样一个项目是否具有可行性？我将通过以下说明来论证。</p>
-<p>首先，我们具有明确的投资方向，大致为网站平台建设、运营、维护和推广，微信公众号、小程序的开发与推广，移动端的开发，市场开拓以及团队建设。通过提高平台流量，培养用户黏性，最终达到打造平台品牌的目标。为此，项目需要分以下几个阶段进行：</p>
-<ul>
-<li>平台初步建立期（1~2 个月）：初步建立起网站平台，微信公众号、小程序平台，完善网页前端以及用户交互功能。每天保证一定量的内容的录入，提高网站的信息量。微信平台与网页平台保持同步更新。目标：保证网页的基本运行，网站具有一定内容。</li>
-<li>平台试运营期（2~3 个月）：初步推广平台，收集用户意见，提高前端用户交互体验，优化平台性能，保持平台内容的增加速度逐渐上升。目标：吸引流量，聚集用户。</li>
-<li>平台运营中期：（6 个月）：网站已经具备一定流量，需着手进行业务拓展，开通网站会员服务，让用户参与进平台的创作群体。继续收集用户意见，优化网站。开始接受一些线上的合作，比如网页广告，产品推广。目标：提高用户转化率，增加会员用户，继续提高用户黏性。</li>
-<li>平台运营后期（4 个月）：这个阶段开始重点打造品牌，平台已经积累了较多的用户，在继续提高网站流量的同时，要开始着手拓展网站产品。而移动端的开发可以作为拓展产品的一个突破口，移动端可以提供更加丰富的功能。同时要分析网站数据，完善网站功能。可以开始尝试和一些小型餐饮企业公司进行合作，同时邀请一些日本的美食家进行线上采访。目标：拓展市场，为占领市场做准备。</li>
-</ul>
-<p>其次，我们的项目具有以下独特性：</p>
-<ul>
-<li>平台多样性：市面上现存的美食科普大多数为单一平台，要么只有一个网站，要么只有一个公众号，而我们的项目全面覆盖了电脑端和移动端，包括了多个平台。</li>
-<li>双语介绍：文章采用中日双语介绍，用户可自由切换展示模式，适用于不仅对日料感兴趣，同时也对日语感兴趣的用户。</li>
-</ul>
-<p>我们也具有较大的竞争优势：</p>
-<ul>
-<li>核心竞争力：我们团队中具有1名熟练掌握多门开发语言的网络技术工程师，能够负责网站、微信公众号平台、小程序的开发与维护。我们顶层的团队都具有较高的日语水平，对日本的历史文化具有较深的了解，而我们广大的会员用户，也属于我们的创作团体，用户越多，我们的内容就越多，信息的来源就越广，竞争优势也就越大。</li>
-<li>市场空白：市面上没有一个集中的平台将喜好日料的用户集中起来，集中的用户不仅增加的具有相同的爱好的人群间的联系、互动，这些用户也是平台的创作源泉之一。</li>
-<li>顺应市场：据市面上的公开资料整理，我国的日本料理餐厅数量保持稳步增长趋势，我们的服务可以与他们进行对接。</li>
-</ul>
-<p>再次，我们有多种推广模式：</p>
-<ul>
-<li>BBS 广告：BBS 广告是流量的一大来源，投放本站链接在一些论坛，为自己导流。利用论坛的高人气，能够提高自己的营销传达效率。</li>
-<li>视频广告：现在很多人的手机里都装着各大影视软件，如腾讯、爱奇艺等等，没有开会员的情况下会有一段很长的广告。因此我们在视频开头投放广告，以起到推广作用。</li>
-<li>搜索引擎推广（SEM）：SEM 是 Search Engine Marketing 的缩写，中文意思是查找引擎营销。通过付费让搜索引擎做广告推广，当一些人使用搜索引擎搜索一些关键词时，我们的网站将以广告的形式出现在搜索结果前几名中</li>
-<li>SEO：SEO 是 Search Engine Optimization 的缩写，汉译为搜索引擎优化，是一种利用搜索引擎的规则提高网站在有关搜索引擎内的自然排名的手段。我们的工程师将对网站进行有针对性的优化，做好 SEO 技术，吸引更多的用户访问网站，提高网站的访问量。</li>
-<li>博客网络推广：找名气较大的博主，与博主沟通，将我们的网站做成友情链接，推广我们的品牌广告。博客网络广告低成本、贴近群众，往往会构成众人的议论，到达很好的二次传达作用，很适合我们的网站的推广。</li>
-<li>各社交媒体平台推广：网络社交平台是互联网中的中心圈，我们会入驻国内各大社交平台，在这些地方，我们可以把我们的平台与各社交媒体平台联合起来。在网站中放入自己各个媒体平台的按钮链接，让用户能多方位了解我们，让网站带来的互联网流量转为我们的私域流量。</li>
-</ul>
-<p>最后，我们有多方面的盈利模式：</p>
-<ul>
-<li>会员机制：在平台发展到具有一定流量的阶段，我们会开放订阅会员机制，即会员只要持续订阅作者，就可以一直享受到平台提供的一些特权服务，而这部分订阅的费用会按一定比例分给作者和平台。只要有作者产出内容并被订阅，平台就持续有收入，受到激励的作者也能更努力地创作出新的作品，从而与作者实现共赢。</li>
-<li>产品推广、广告收入：我们会与一些地方日料餐饮企业开展线上合作，即我们为他们在网站推广菜品，投放广告，这些也是一笔可观的收入</li>
-<li>课程售卖：我们将开设一些日料相关的付费课程，课程定价上分为两大类型，一类是整个课程一次性付费，另一类则是按集付费。平台还会参与付费内容分销实现盈利，与其他平台开展合作，促进二次销售。</li>
-</ul>
-<p>综上，我们的平台在投资上有明确的方向，在执行上有明确的、可行的计划，我们也有多方面的竞争优势，同时，我们在运营过程中能够以较低的成本获得可观的收益，多种推广模式齐头并进，快速带来平台的流量，因此，跨文化背景下日本美食文化中日双语科普介绍平台的打造具有一定的可行性。</p>
-]]></content>
-      <categories>
-        <category>日常</category>
-      </categories>
-      <tags>
-        <tag>中外交流</tag>
-        <tag>美食文化</tag>
-        <tag>创业创新</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>计算机网络结课作业</title>
-    <url>/2022/05/computerhomework.html</url>
-    <content><![CDATA[<h2 id="第一题——家庭拓扑结构"><a href="#第一题——家庭拓扑结构" class="headerlink" title="第一题——家庭拓扑结构"></a>第一题——家庭拓扑结构</h2><p>一、结构规划</p>
-<ul>
-<li>确定小区网线接入点（控制中心）：书房</li>
-<li>规划每个房间布置 3 个网点，共 18 个网点</li>
-<li>联网设备：书房一台电脑，客厅，卧室各一台有线电视，卧室各一台电脑等</li>
-</ul>
-<p>二、材料规划</p>
-<ul>
-<li>每个网点需要水晶头、网点模块各 1 个，共计水晶头 18 个，网点模块 18 个。</li>
-<li>需要超七类网线 18 条，长度共计 50m 左右</li>
-<li>路由器：斐讯 K2P</li>
-</ul>
-<p>三、接线与路由器设置</p>
-<ol>
-<li><p>接线：将小区网线接在路由器的 LAN 上，路由器的 WAN 口分别接上交换机与书房电脑。其余网线都接在交换机上</p>
-<p>拓扑布线结构图：</p>
-</li>
-</ol>
-<p><img data-src="https://img.fufu.ink/wuqSko.webp" alt="家庭网络拓扑"></p>
-<ol start="2">
-<li>路由器配置<ul>
-<li>开启内网 IP</li>
-<li>配置防火墙</li>
-</ul>
-</li>
-</ol>
-<h2 id="第二题——设想"><a href="#第二题——设想" class="headerlink" title="第二题——设想"></a>第二题——设想</h2><p>一、物联网</p>
-<p>物联网，即万物互联，指的是只需有限的人工干预即可通过无线网络接收和传输数据的任何物理设备系统。设想一下，当你疲惫地从公司上班回家后，打开门时，不需要你摸黑寻找电灯开关，电灯会自动打开，当你在换衣服时，热水壶已经开始加热热水，准备好温度合适的热水，电视机自动开机，并播放这个时间点你平时观看次数最多的节目。这就是万物互联中一个典型的例子，无需人的过多干涉，它会为你规划好一切。</p>
-<p>我们现在的生活中已经隐约出现了物联网的轮廓了，虽然还有很多不足，但证明了物联网在未来是可行的。小米家居就是一个很好的例子，比如进入家门的第一步——开锁，现在还有很多地方使用的门锁还是传统的门锁，而小米的智能门锁除了支持指纹识别开锁、密码开锁、还支持 NFC 开锁，即使用支持 NFC 功能的小米手机靠一下门锁即可打开，并且无需手动旋&#x2F;推拉把手的动作，锁舌会自动打开与关上，若家主人装上了相应软件，还能够在手机上查看门锁的状态，通过摄像头能够实时看到门前的状况。</p>
-<p>上面的只是一个小例子，即以现在的技术能实现的让物品与互联网相接的程度，还有将来的无人驾驶等，都是证明物联网的可行性的证据。</p>
-<p>二、元宇宙</p>
-<p>元宇宙，即一个持久化和去中心化的在线三维虚拟环境。”Metaverse”一词最早见于尼尔·斯蒂芬森1992年的科幻小说《雪崩》，Metaverse是一个虚拟的城市环境，沿着一条100米宽的道路发展，覆盖了一个无特征的、黑色的、完美球形星球上整个65536公里周长。这个虚拟世界中的土地可以被购买，并在上面开发建筑。而这个概念在 2021 年突然就火了，Facebook 的扎克伯格在 Facebook Connect 演讲中展示了 Meta 在未来的应用场景和业内的方案雏形，各大巨头也相继开始宣称进军该领域。</p>
-<p>元宇宙是一个虚拟的世界，虚拟就意味着可复制，因此如果要将现实世界映射到这个虚拟世界中，这就是一个巨大的问题，于是可以运用区块链技术与去中心化技术，再具体点就是非同质化代币，即利用其无法互换的特性，可以将其作为虚拟商品所有权的电子认证或证书，虽然作品本身是可以无限复制的，但这些代表它们的代币在其底层区块链上能被完整追踪，故能为买家提供所有权证明。这样就解决了在元宇宙中，无法证明资产所属的问题了。</p>
-<p>但现在的元宇宙还只是一个概念，虽然有很多东西都应用到了其原理，比如 VR（虚拟现实）、AR（增强现实）技术，带上 VR 眼镜就能在虚拟世界中有身临其境的感觉，而 AR 眼镜又能看到虚拟世界与现实相结合的视角，但如果把元宇宙技术的发展比作100米长跑，现在最顶级的运用到该概念的技术也只跑了10米左右，就从工具上来说，连接现实与虚拟的工具，现在的技术即 VR 眼镜或 AR 眼镜，即使是业内排名靠前的 Facebook、微软等巨头的产品的分辨率、刷新率、舒适度都还有许多问题，元宇宙要走的路还很长。</p>
-<p>三、区块链</p>
-<p>是借由密码学与共识机制等技术创建与存储庞大交易资料区块链的点对点网络系统。每一个区块包含了前一个区块的加密散列、相应时间戳记以及交易资料（通常用默克尔树（Merkle tree）算法计算的散列值表示），这样的设计使得区块内容具有难以篡改的特性。</p>
-<p>区块链最大的特点是去中心化、不可篡改，因此其可用于各种领域。在现在最大的应用是数字货币，比如「比特币」等虚拟货币和运用了区块链部分技术的「数字人名币」。也可用于物源追踪，产品从起源地到终点所在的过程都可以通过区块链来追踪。而且，这类准确的溯源方式，可以用来检测供应链中的缺陷。还可用于教育领域，将区块链技术应用到学历证书上，即可有效防止伪造学历等事情的发生，将学生成绩以区块链形式记录，从而形成不可更改不可否认的学习记录，保证了公平性。</p>
-<h2 id="第三题——感想和建议"><a href="#第三题——感想和建议" class="headerlink" title="第三题——感想和建议"></a>第三题——感想和建议</h2><p>一、感想</p>
-<p>本课程教学方式与传统的集中于知识点的讲解的教学方式不同，旨在通过将生活中熟悉的事物和抽象的计算机网络相关专业知识结合起来讲解的方式来使学生能够容易地理解、消化知识点，不仅增加了学习的乐趣，也能够增加我们对生活的感悟。</p>
-<p>计算机是抽象的，但也是具体的。说它是抽象的，是因为它的运作方式，内部结构都很复杂，很难在大脑中形成一个完整地架构。说它是具体的，是因为「艺术来源于生活，高于生活」，同理，我们也可以说「科技来源于生活而高于生活」，计算机的抽象展现了它高于生活的一面，而它具体的一面则体现在它的设计原理来源于生活，它的设计都是以「人」和「世界」等为参照的，因此也符合人的思维方式，比如，二进制的产生就来源于中国的古老的太极八卦图。</p>
-<p>本门课程名为《计算机网络及互联网技术》，在开篇中老师就提到，计算机之间的通信构成了计算机网络，无论计算机网络的内容多么复杂，其最终目的都是为了实现资源的共享，因此全课程的内容，从根本上讲，都是围绕其展开的。由于疫情原因，我们的课程只能以网课的形式进行，无法通过实践操作加深对这些知识点的理解，老师也尽力通过具体的讲解来让我们理解这些知识点。尽管我是一个文科生，但我对计算机感兴趣，因此对这门课程也有浓厚的兴趣，当然，由于我没有涉及过理科相关的知识（即使学习过也由于时间较长忘记了），对于 PPT 中一些较为专业的公式，计算方法不能够很好的理解，但这已经脱离我选修该门课程的初衷了，我选择该门课程，最主要是想提高自己的能力，同时在生活中我也在着手使用服务器搭建个人网站等与互联网有关的事情，因此该门课程对我很有帮助，以前我只知道在域名解析处填写好对应的数据就可以通过域名访问网站，却不知其中原理，经过老师的讲解后，我才知道在其之后运作机制。因此，只要该门课程对我来说是有用的，我从中受益了，我的选择就没有错误。</p>
-<p>二、建议</p>
-<ol>
-<li>适当增加课堂互动，不知是否是线上教学的原因，上课过程中缺少课堂互动，学生很难获得反馈，长时间保持这样的状态注意力容易分散</li>
-<li>适当增加课堂演示，或者相关演示视频，将一些知识点通过现场演示的方式展示给同学，不仅可以加深同学对该知识点的印象，也能够提高同学们对该门课程的兴趣</li>
-</ol>
-]]></content>
-      <categories>
-        <category>技术</category>
-      </categories>
-      <tags>
-        <tag>计算机</tag>
-        <tag>网络</tag>
       </tags>
   </entry>
   <entry>
@@ -1711,6 +1602,64 @@
       </tags>
   </entry>
   <entry>
+    <title>计算机网络结课作业</title>
+    <url>/2022/05/computerhomework.html</url>
+    <content><![CDATA[<h2 id="第一题——家庭拓扑结构"><a href="#第一题——家庭拓扑结构" class="headerlink" title="第一题——家庭拓扑结构"></a>第一题——家庭拓扑结构</h2><p>一、结构规划</p>
+<ul>
+<li>确定小区网线接入点（控制中心）：书房</li>
+<li>规划每个房间布置 3 个网点，共 18 个网点</li>
+<li>联网设备：书房一台电脑，客厅，卧室各一台有线电视，卧室各一台电脑等</li>
+</ul>
+<p>二、材料规划</p>
+<ul>
+<li>每个网点需要水晶头、网点模块各 1 个，共计水晶头 18 个，网点模块 18 个。</li>
+<li>需要超七类网线 18 条，长度共计 50m 左右</li>
+<li>路由器：斐讯 K2P</li>
+</ul>
+<p>三、接线与路由器设置</p>
+<ol>
+<li><p>接线：将小区网线接在路由器的 LAN 上，路由器的 WAN 口分别接上交换机与书房电脑。其余网线都接在交换机上</p>
+<p>拓扑布线结构图：</p>
+</li>
+</ol>
+<p><img data-src="https://img.fufu.ink/wuqSko.webp" alt="家庭网络拓扑"></p>
+<ol start="2">
+<li>路由器配置<ul>
+<li>开启内网 IP</li>
+<li>配置防火墙</li>
+</ul>
+</li>
+</ol>
+<h2 id="第二题——设想"><a href="#第二题——设想" class="headerlink" title="第二题——设想"></a>第二题——设想</h2><p>一、物联网</p>
+<p>物联网，即万物互联，指的是只需有限的人工干预即可通过无线网络接收和传输数据的任何物理设备系统。设想一下，当你疲惫地从公司上班回家后，打开门时，不需要你摸黑寻找电灯开关，电灯会自动打开，当你在换衣服时，热水壶已经开始加热热水，准备好温度合适的热水，电视机自动开机，并播放这个时间点你平时观看次数最多的节目。这就是万物互联中一个典型的例子，无需人的过多干涉，它会为你规划好一切。</p>
+<p>我们现在的生活中已经隐约出现了物联网的轮廓了，虽然还有很多不足，但证明了物联网在未来是可行的。小米家居就是一个很好的例子，比如进入家门的第一步——开锁，现在还有很多地方使用的门锁还是传统的门锁，而小米的智能门锁除了支持指纹识别开锁、密码开锁、还支持 NFC 开锁，即使用支持 NFC 功能的小米手机靠一下门锁即可打开，并且无需手动旋&#x2F;推拉把手的动作，锁舌会自动打开与关上，若家主人装上了相应软件，还能够在手机上查看门锁的状态，通过摄像头能够实时看到门前的状况。</p>
+<p>上面的只是一个小例子，即以现在的技术能实现的让物品与互联网相接的程度，还有将来的无人驾驶等，都是证明物联网的可行性的证据。</p>
+<p>二、元宇宙</p>
+<p>元宇宙，即一个持久化和去中心化的在线三维虚拟环境。”Metaverse”一词最早见于尼尔·斯蒂芬森1992年的科幻小说《雪崩》，Metaverse是一个虚拟的城市环境，沿着一条100米宽的道路发展，覆盖了一个无特征的、黑色的、完美球形星球上整个65536公里周长。这个虚拟世界中的土地可以被购买，并在上面开发建筑。而这个概念在 2021 年突然就火了，Facebook 的扎克伯格在 Facebook Connect 演讲中展示了 Meta 在未来的应用场景和业内的方案雏形，各大巨头也相继开始宣称进军该领域。</p>
+<p>元宇宙是一个虚拟的世界，虚拟就意味着可复制，因此如果要将现实世界映射到这个虚拟世界中，这就是一个巨大的问题，于是可以运用区块链技术与去中心化技术，再具体点就是非同质化代币，即利用其无法互换的特性，可以将其作为虚拟商品所有权的电子认证或证书，虽然作品本身是可以无限复制的，但这些代表它们的代币在其底层区块链上能被完整追踪，故能为买家提供所有权证明。这样就解决了在元宇宙中，无法证明资产所属的问题了。</p>
+<p>但现在的元宇宙还只是一个概念，虽然有很多东西都应用到了其原理，比如 VR（虚拟现实）、AR（增强现实）技术，带上 VR 眼镜就能在虚拟世界中有身临其境的感觉，而 AR 眼镜又能看到虚拟世界与现实相结合的视角，但如果把元宇宙技术的发展比作100米长跑，现在最顶级的运用到该概念的技术也只跑了10米左右，就从工具上来说，连接现实与虚拟的工具，现在的技术即 VR 眼镜或 AR 眼镜，即使是业内排名靠前的 Facebook、微软等巨头的产品的分辨率、刷新率、舒适度都还有许多问题，元宇宙要走的路还很长。</p>
+<p>三、区块链</p>
+<p>是借由密码学与共识机制等技术创建与存储庞大交易资料区块链的点对点网络系统。每一个区块包含了前一个区块的加密散列、相应时间戳记以及交易资料（通常用默克尔树（Merkle tree）算法计算的散列值表示），这样的设计使得区块内容具有难以篡改的特性。</p>
+<p>区块链最大的特点是去中心化、不可篡改，因此其可用于各种领域。在现在最大的应用是数字货币，比如「比特币」等虚拟货币和运用了区块链部分技术的「数字人名币」。也可用于物源追踪，产品从起源地到终点所在的过程都可以通过区块链来追踪。而且，这类准确的溯源方式，可以用来检测供应链中的缺陷。还可用于教育领域，将区块链技术应用到学历证书上，即可有效防止伪造学历等事情的发生，将学生成绩以区块链形式记录，从而形成不可更改不可否认的学习记录，保证了公平性。</p>
+<h2 id="第三题——感想和建议"><a href="#第三题——感想和建议" class="headerlink" title="第三题——感想和建议"></a>第三题——感想和建议</h2><p>一、感想</p>
+<p>本课程教学方式与传统的集中于知识点的讲解的教学方式不同，旨在通过将生活中熟悉的事物和抽象的计算机网络相关专业知识结合起来讲解的方式来使学生能够容易地理解、消化知识点，不仅增加了学习的乐趣，也能够增加我们对生活的感悟。</p>
+<p>计算机是抽象的，但也是具体的。说它是抽象的，是因为它的运作方式，内部结构都很复杂，很难在大脑中形成一个完整地架构。说它是具体的，是因为「艺术来源于生活，高于生活」，同理，我们也可以说「科技来源于生活而高于生活」，计算机的抽象展现了它高于生活的一面，而它具体的一面则体现在它的设计原理来源于生活，它的设计都是以「人」和「世界」等为参照的，因此也符合人的思维方式，比如，二进制的产生就来源于中国的古老的太极八卦图。</p>
+<p>本门课程名为《计算机网络及互联网技术》，在开篇中老师就提到，计算机之间的通信构成了计算机网络，无论计算机网络的内容多么复杂，其最终目的都是为了实现资源的共享，因此全课程的内容，从根本上讲，都是围绕其展开的。由于疫情原因，我们的课程只能以网课的形式进行，无法通过实践操作加深对这些知识点的理解，老师也尽力通过具体的讲解来让我们理解这些知识点。尽管我是一个文科生，但我对计算机感兴趣，因此对这门课程也有浓厚的兴趣，当然，由于我没有涉及过理科相关的知识（即使学习过也由于时间较长忘记了），对于 PPT 中一些较为专业的公式，计算方法不能够很好的理解，但这已经脱离我选修该门课程的初衷了，我选择该门课程，最主要是想提高自己的能力，同时在生活中我也在着手使用服务器搭建个人网站等与互联网有关的事情，因此该门课程对我很有帮助，以前我只知道在域名解析处填写好对应的数据就可以通过域名访问网站，却不知其中原理，经过老师的讲解后，我才知道在其之后运作机制。因此，只要该门课程对我来说是有用的，我从中受益了，我的选择就没有错误。</p>
+<p>二、建议</p>
+<ol>
+<li>适当增加课堂互动，不知是否是线上教学的原因，上课过程中缺少课堂互动，学生很难获得反馈，长时间保持这样的状态注意力容易分散</li>
+<li>适当增加课堂演示，或者相关演示视频，将一些知识点通过现场演示的方式展示给同学，不仅可以加深同学对该知识点的印象，也能够提高同学们对该门课程的兴趣</li>
+</ol>
+]]></content>
+      <categories>
+        <category>技术</category>
+      </categories>
+      <tags>
+        <tag>计算机</tag>
+        <tag>网络</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>诈尸更新一下最近状态</title>
     <url>/2023/07/natsuyasumijyoutai.html</url>
     <content><![CDATA[<p>一个月没更新力。</p>
@@ -1723,6 +1672,57 @@
       </categories>
       <tags>
         <tag>生活</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>论打造文化背景下日本美食文化中日双语科普介绍平台的可行性</title>
+    <url>/2022/05/dachuangzuoye.html</url>
+    <content><![CDATA[<blockquote>
+<p>日本料理（和食）：人类非物质文化遗产代表作之一，因其兼具精致的美感与可口的味道而世界闻名。</p>
+</blockquote>
+<p>所以我们决定发起项目——《跨文化背景下日本美食文化中日双语科普介绍平台打造》，致力于通过国人的视角探索发现日本的美食，在国内市场打造宣传分享平台，服务对象为对和食有兴趣的个人，以及国内各大餐饮企业等群体和组织。这样一个项目是否具有可行性？我将通过以下说明来论证。</p>
+<p>首先，我们具有明确的投资方向，大致为网站平台建设、运营、维护和推广，微信公众号、小程序的开发与推广，移动端的开发，市场开拓以及团队建设。通过提高平台流量，培养用户黏性，最终达到打造平台品牌的目标。为此，项目需要分以下几个阶段进行：</p>
+<ul>
+<li>平台初步建立期（1~2 个月）：初步建立起网站平台，微信公众号、小程序平台，完善网页前端以及用户交互功能。每天保证一定量的内容的录入，提高网站的信息量。微信平台与网页平台保持同步更新。目标：保证网页的基本运行，网站具有一定内容。</li>
+<li>平台试运营期（2~3 个月）：初步推广平台，收集用户意见，提高前端用户交互体验，优化平台性能，保持平台内容的增加速度逐渐上升。目标：吸引流量，聚集用户。</li>
+<li>平台运营中期：（6 个月）：网站已经具备一定流量，需着手进行业务拓展，开通网站会员服务，让用户参与进平台的创作群体。继续收集用户意见，优化网站。开始接受一些线上的合作，比如网页广告，产品推广。目标：提高用户转化率，增加会员用户，继续提高用户黏性。</li>
+<li>平台运营后期（4 个月）：这个阶段开始重点打造品牌，平台已经积累了较多的用户，在继续提高网站流量的同时，要开始着手拓展网站产品。而移动端的开发可以作为拓展产品的一个突破口，移动端可以提供更加丰富的功能。同时要分析网站数据，完善网站功能。可以开始尝试和一些小型餐饮企业公司进行合作，同时邀请一些日本的美食家进行线上采访。目标：拓展市场，为占领市场做准备。</li>
+</ul>
+<p>其次，我们的项目具有以下独特性：</p>
+<ul>
+<li>平台多样性：市面上现存的美食科普大多数为单一平台，要么只有一个网站，要么只有一个公众号，而我们的项目全面覆盖了电脑端和移动端，包括了多个平台。</li>
+<li>双语介绍：文章采用中日双语介绍，用户可自由切换展示模式，适用于不仅对日料感兴趣，同时也对日语感兴趣的用户。</li>
+</ul>
+<p>我们也具有较大的竞争优势：</p>
+<ul>
+<li>核心竞争力：我们团队中具有1名熟练掌握多门开发语言的网络技术工程师，能够负责网站、微信公众号平台、小程序的开发与维护。我们顶层的团队都具有较高的日语水平，对日本的历史文化具有较深的了解，而我们广大的会员用户，也属于我们的创作团体，用户越多，我们的内容就越多，信息的来源就越广，竞争优势也就越大。</li>
+<li>市场空白：市面上没有一个集中的平台将喜好日料的用户集中起来，集中的用户不仅增加的具有相同的爱好的人群间的联系、互动，这些用户也是平台的创作源泉之一。</li>
+<li>顺应市场：据市面上的公开资料整理，我国的日本料理餐厅数量保持稳步增长趋势，我们的服务可以与他们进行对接。</li>
+</ul>
+<p>再次，我们有多种推广模式：</p>
+<ul>
+<li>BBS 广告：BBS 广告是流量的一大来源，投放本站链接在一些论坛，为自己导流。利用论坛的高人气，能够提高自己的营销传达效率。</li>
+<li>视频广告：现在很多人的手机里都装着各大影视软件，如腾讯、爱奇艺等等，没有开会员的情况下会有一段很长的广告。因此我们在视频开头投放广告，以起到推广作用。</li>
+<li>搜索引擎推广（SEM）：SEM 是 Search Engine Marketing 的缩写，中文意思是查找引擎营销。通过付费让搜索引擎做广告推广，当一些人使用搜索引擎搜索一些关键词时，我们的网站将以广告的形式出现在搜索结果前几名中</li>
+<li>SEO：SEO 是 Search Engine Optimization 的缩写，汉译为搜索引擎优化，是一种利用搜索引擎的规则提高网站在有关搜索引擎内的自然排名的手段。我们的工程师将对网站进行有针对性的优化，做好 SEO 技术，吸引更多的用户访问网站，提高网站的访问量。</li>
+<li>博客网络推广：找名气较大的博主，与博主沟通，将我们的网站做成友情链接，推广我们的品牌广告。博客网络广告低成本、贴近群众，往往会构成众人的议论，到达很好的二次传达作用，很适合我们的网站的推广。</li>
+<li>各社交媒体平台推广：网络社交平台是互联网中的中心圈，我们会入驻国内各大社交平台，在这些地方，我们可以把我们的平台与各社交媒体平台联合起来。在网站中放入自己各个媒体平台的按钮链接，让用户能多方位了解我们，让网站带来的互联网流量转为我们的私域流量。</li>
+</ul>
+<p>最后，我们有多方面的盈利模式：</p>
+<ul>
+<li>会员机制：在平台发展到具有一定流量的阶段，我们会开放订阅会员机制，即会员只要持续订阅作者，就可以一直享受到平台提供的一些特权服务，而这部分订阅的费用会按一定比例分给作者和平台。只要有作者产出内容并被订阅，平台就持续有收入，受到激励的作者也能更努力地创作出新的作品，从而与作者实现共赢。</li>
+<li>产品推广、广告收入：我们会与一些地方日料餐饮企业开展线上合作，即我们为他们在网站推广菜品，投放广告，这些也是一笔可观的收入</li>
+<li>课程售卖：我们将开设一些日料相关的付费课程，课程定价上分为两大类型，一类是整个课程一次性付费，另一类则是按集付费。平台还会参与付费内容分销实现盈利，与其他平台开展合作，促进二次销售。</li>
+</ul>
+<p>综上，我们的平台在投资上有明确的方向，在执行上有明确的、可行的计划，我们也有多方面的竞争优势，同时，我们在运营过程中能够以较低的成本获得可观的收益，多种推广模式齐头并进，快速带来平台的流量，因此，跨文化背景下日本美食文化中日双语科普介绍平台的打造具有一定的可行性。</p>
+]]></content>
+      <categories>
+        <category>日常</category>
+      </categories>
+      <tags>
+        <tag>中外交流</tag>
+        <tag>美食文化</tag>
+        <tag>创业创新</tag>
       </tags>
   </entry>
 </search>
