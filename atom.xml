@@ -6,7 +6,7 @@
   <link href="https://blog.fufu.ink/atom.xml" rel="self"/>
   
   <link href="https://blog.fufu.ink/"/>
-  <updated>2024-02-16T09:01:57.995Z</updated>
+  <updated>2024-03-02T11:16:40.177Z</updated>
   <id>https://blog.fufu.ink/</id>
   
   <author>
@@ -15,6 +15,27 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>【每日语法】N1 易混语法总结</title>
+    <link href="https://blog.fufu.ink/2024/03/mnnhgbp6.html"/>
+    <id>https://blog.fufu.ink/2024/03/mnnhgbp6.html</id>
+    <published>2024-03-02T11:02:04.000Z</published>
+    <updated>2024-03-02T11:16:40.177Z</updated>
+    
+    <content type="html"><![CDATA[<p><strong>自不必说</strong>的表达，后常续「も」「さえ」「まで」等</p><ul><li>～はもちろん、～</li><li>～は言うまでもなく、～</li><li>～は言わずもがな、～</li><li>～はどころか、～</li></ul><p><strong>姑且不论</strong>（也可译为**如果……的话，还情有可原，但……**）的表达</p><ul><li>～ならいざしらず、～</li><li>～なら&#x2F;はともかく、～</li><li>～なら&#x2F;は別だが、～</li><li>～なら&#x2F;はまだしも、～</li></ul>]]></content>
+    
+    
+    <summary type="html">总结日语 N1 易混语法，部分为个人观点，也许不标准，请见谅</summary>
+    
+    
+    
+    <category term="日语" scheme="https://blog.fufu.ink/categories/%E6%97%A5%E8%AF%AD/"/>
+    
+    
+    <category term="日语" scheme="https://blog.fufu.ink/tags/%E6%97%A5%E8%AF%AD/"/>
+    
+  </entry>
   
   <entry>
     <title>【书摘】无赖派太宰治充满颓废气息的作品</title>
@@ -466,29 +487,6 @@
     <category term="Hexo" scheme="https://blog.fufu.ink/tags/Hexo/"/>
     
     <category term="JavaScript" scheme="https://blog.fufu.ink/tags/JavaScript/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>草神 2 加 1 了</title>
-    <link href="https://blog.fufu.ink/2023/04/nahidaniinochi.html"/>
-    <id>https://blog.fufu.ink/2023/04/nahidaniinochi.html</id>
-    <published>2023-04-23T10:18:27.000Z</published>
-    <updated>2023-11-21T04:15:47.494Z</updated>
-    
-    <content type="html"><![CDATA[<p>4 月 12 号，草神复刻。</p><p>去年 11 月已经抽了一次了，准备攒二命，从 12 月的雷神池后就没下过池子了。准备了 250+ 的粉球。</p><p>由室友抽的，歪了 3 次，不过都是提前金，也不算亏吧，甚至有点欧~</p><p><img data-src="https://img.fufu.ink/aX68do.webp" alt="up池"></p><p><img data-src="https://img.fufu.ink/xjn9oQ.webp" alt="武器池"></p><p>第一个小保底歪了一个刻晴，不过种门也需要，也算是丰富 box 了吧。好在后面的小保底就没歪了(●’◡’●)</p><p>武器池都歪了〒▽〒，不过好在 100 抽就吃满了定轨。当天把新图肝完了，又充了 198，领了 10 多天月卡，终于拿到夜壶了！</p><p><img data-src="https://img.fufu.ink/ETxrxf.webp" alt="夜壶"></p><p>伤害虽然比原来降了 6000，原因是因为我之前用的赌狗乐章，面板是 <ruby>50&#x2F;190&#x2F;580<rt>暴率&#x2F;爆伤&#x2F;精通</rt></ruby>，换成专武后成为了 <ruby>56&#x2F;133&#x2F;760<rt>暴率&#x2F;爆伤&#x2F;精通</rt></ruby>，不过专武补充了精通，能为队伍整体带来更好的收益（虽然我一直是把草神当主 C 来养的，经典一带三）</p><p>去年的面板为「三精赌狗，也没有换上好一点的精通杯，190 爆伤的面板的是最近一个月才有的」，这是现在的面板：</p><p><img data-src="https://img.fufu.ink/27qmRl.webp" alt="新面板"></p><p>打深渊是够用了，虽然用来 PVP 还是差远了，毕竟别的不说，就认识的一个网友的面板是精精爆都能有 <ruby>40&#x2F;160&#x2F;800<rt>暴率&#x2F;爆伤&#x2F;精通</rt></ruby>。可惜我没有好的草套爆伤头，其余圣遗物的爆率词条也太少了，仍旧达不到这样的程度＞︿＜</p><p>后面就继续草本坐牢吧，直到哪天出了好沙漏、杯子、头，就能达到毕业了⊙﹏⊙∥</p>]]></content>
-    
-    
-    <summary type="html">草神终于2命了，也抽到专武啦！</summary>
-    
-    
-    
-    <category term="游戏" scheme="https://blog.fufu.ink/categories/%E6%B8%B8%E6%88%8F/"/>
-    
-    
-    <category term="原神" scheme="https://blog.fufu.ink/tags/%E5%8E%9F%E7%A5%9E/"/>
-    
-    <category term="游戏" scheme="https://blog.fufu.ink/tags/%E6%B8%B8%E6%88%8F/"/>
     
   </entry>
   
