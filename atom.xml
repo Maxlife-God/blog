@@ -48,7 +48,7 @@
     <published>2024-04-14T10:19:02.000Z</published>
     <updated>2024-04-14T10:19:02.000Z</updated>
     
-    <content type="html"><![CDATA[<p>6 种活用形</p><p><img data-src="https://img.fufu.ink/znu63C.png" alt="image-20240414151613194"></p><p>活用语：活用的单词。是动词，形容词，形容动词，助动词的总称。</p><p>一些助词和助动词的接续</p><p><img data-src="https://img.fufu.ink/3TtBGj.png" alt="image-20240414152222829"></p><p>一些助动词的接续（注意括号中的条件，比如り前面接的虽然是已然形，但仅限于四段动词，即り前面接<strong>四段动词的已然形</strong>）</p><p><img data-src="https://img.fufu.ink/P8sNJH.png" alt="image-20240414151420868"></p><p>ラ变动词及ラ变型（非标准定义，个人理解）</p><p>ラ变<strong>动词</strong>：在ラ行上进行活用的，即活用词尾为（ら·り·り·る·れ·れ）形式的动词。ラ变动词只有<strong>「あり」「をり」「はべり」「いまそかり」</strong>四个。</p><p>ラ变<strong>型</strong>：像ラ变动词一样进行活用，即活用词尾也为（ら·り·り·る·れ·れ）形式的<strong>活用语</strong>，如下图</p><p><img data-src="https://img.fufu.ink/q2IGzI.png" alt="image-20240414174157404"></p>]]></content>
+    <content type="html"><![CDATA[<p>6 种活用形</p><p><img data-src="https://img.fufu.ink/znu63C.png"></p><p>活用语：活用的单词。是动词，形容词，形容动词，助动词的总称。</p><p>一些助词和助动词的接续</p><p><img data-src="https://img.fufu.ink/3TtBGj.png"></p><p>一些助动词的接续（注意括号中的条件，比如り前面接的虽然是已然形，但仅限于四段动词，即り前面接<strong>四段动词的已然形</strong>）</p><p><img data-src="https://img.fufu.ink/P8sNJH.png"></p><p>ラ变动词及ラ变型（非标准定义，个人理解）</p><p>ラ变<strong>动词</strong>：在ラ行上进行活用的，即活用词尾为（ら·り·り·る·れ·れ）形式的动词。ラ变动词只有<strong>「あり」「をり」「はべり」「いまそかり」</strong>四个。</p><p>ラ变<strong>型</strong>：像ラ变动词一样进行活用，即活用词尾也为（ら·り·り·る·れ·れ）形式的<strong>活用语</strong>，如下图</p><p><img data-src="https://img.fufu.ink/q2IGzI.png"></p>]]></content>
     
     
     <summary type="html">笔记3</summary>
@@ -282,11 +282,11 @@
     <category term="技术" scheme="https://blog.fufu.ink/categories/%E6%8A%80%E6%9C%AF/"/>
     
     
-    <category term="Hexo" scheme="https://blog.fufu.ink/tags/Hexo/"/>
+    <category term="教程" scheme="https://blog.fufu.ink/tags/%E6%95%99%E7%A8%8B/"/>
     
     <category term="技术" scheme="https://blog.fufu.ink/tags/%E6%8A%80%E6%9C%AF/"/>
     
-    <category term="教程" scheme="https://blog.fufu.ink/tags/%E6%95%99%E7%A8%8B/"/>
+    <category term="Hexo" scheme="https://blog.fufu.ink/tags/Hexo/"/>
     
     <category term="CSS" scheme="https://blog.fufu.ink/tags/CSS/"/>
     
@@ -404,9 +404,9 @@
     <category term="技术" scheme="https://blog.fufu.ink/categories/%E6%8A%80%E6%9C%AF/"/>
     
     
-    <category term="Hexo" scheme="https://blog.fufu.ink/tags/Hexo/"/>
-    
     <category term="技术" scheme="https://blog.fufu.ink/tags/%E6%8A%80%E6%9C%AF/"/>
+    
+    <category term="Hexo" scheme="https://blog.fufu.ink/tags/Hexo/"/>
     
     <category term="CSS" scheme="https://blog.fufu.ink/tags/CSS/"/>
     
