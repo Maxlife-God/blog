@@ -6,7 +6,7 @@
   <link href="https://blog.fufu.ink/atom.xml" rel="self"/>
   
   <link href="https://blog.fufu.ink/"/>
-  <updated>2024-04-14T10:19:02.000Z</updated>
+  <updated>2024-04-16T07:52:45.000Z</updated>
   <id>https://blog.fufu.ink/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>【笔记·古典日语】动词活用</title>
+    <link href="https://blog.fufu.ink/2024/04/nihongokotenbunpou4.html"/>
+    <id>https://blog.fufu.ink/2024/04/nihongokotenbunpou4.html</id>
+    <published>2024-04-16T07:52:45.000Z</published>
+    <updated>2024-04-16T07:52:45.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>古典日语中动词有 9 种活用，分为正格活用和变格活用</p><p><img data-src="https://img.fufu.ink/pVgJ2S.png" alt="古典日语动词活用"></p><p>需要注意的是，动词的活用类型是由其活用词尾，即<strong>变化的部分</strong>来决定的，先确定行，然后确定段，加起来就是该动词的活用类型</p><h2 id="活用规则"><a href="#活用规则" class="headerlink" title="活用规则"></a>活用规则</h2><p>四段动词</p><div class="group-picture"><div class="group-picture-row"><div class="group-picture-column"><img data-src="https://img.fufu.ink/572OhB.png" alt="被称为四段动词的原因"></div><div class="group-picture-column"><img data-src="https://img.fufu.ink/wiQ80z.png" alt="四段动词活用-2"></div></div></div><p>总结：</p><ul><li>未然形：词尾变为ア段</li><li>连用形：词尾变为イ段</li><li>终止形：与基本形一致</li><li>连体形：与基本形一致</li><li>已然形：词尾变为ヘ段</li><li>命令形：词尾变为ヘ段</li></ul><p>上&#x2F;下一段动词·上&#x2F;下二段动词</p><div class="group-picture"><div class="group-picture-row"><div class="group-picture-column"><img data-src="https://img.fufu.ink/HziGFy.png" alt="上一段动词-上二段动词活用规则"></div><div class="group-picture-column"><img data-src="https://img.fufu.ink/84IcXO.png" alt="下一段动词活用-下二段动词活用"></div></div></div><p>总结：</p><p>上·下一段动词：</p><ul><li>未然形：去掉词尾る</li><li>连用形：去掉词尾る</li><li>终止形：与基本形一致</li><li>连体形：与基本形一致</li><li>已然形：词尾变为エ段</li><li>命令形：去る加よ</li></ul><p>上二段动词：</p><ul><li>未然形：词尾变为イ段</li><li>连用形：词尾变为イ段</li><li>终止形：与基本形一致</li><li>连体形：加る</li><li>已然形：加れ</li><li>命令性：词尾变为イ段加よ</li></ul><p>下二段动词：</p><ul><li>未然形：词尾变为エ段</li><li>连用形：词尾变为エ段</li><li>终止形：与基本形一致</li><li>连体形：加る</li><li>已然形：加れ</li><li>命令性：词尾变为エ段加よ</li></ul><p>为什么「見る」被称为<strong>マ行上一段活用动词</strong>：首先，动词的活用类型是由变化的部分（活用词尾）决定的，見る无法分为词干和词尾，则将みる、みれ、みよ后面的る、れ、よ都忽略掉，可将变化的部分看作是み，み属于マ行，变化的部分只在イ段一个段上，因此叫做一段。若把ア·イ·ウ·エ·オ段的ウ段看作是这五个段的正中央的段的话，イ段就属于ウ段往上数一个段，因此叫上一段。因此「見る」的变化部分是在マ行的上一段，因此「見る」的活用类型为マ行上一段活用</p><p>为什么「過ぐ」是<strong>ガ行上二段活用动词</strong>：同理，变化的部分是词尾ぐ，ぐ属于ガ行，变化发生在イ段和ウ段 2 个段上，因此称为二段，且是以ウ段为中心向上数，因此称为上二段，因此「過ぐ」变化发生在ガ行的上二段，因此「過ぐ」是ガ行上二段活用动词</p><p>〇行下一&#x2F;二段动词定义同理，先由变化的部分所在的行确定发生变化的行这一部分，再看发生变化的段，下一段这里是变化发生在エ段，且只在エ段 1 段上变化，エ段在ウ段往下数一个段，因此称为下一段。下两段则为：变化发生在ウ·エ段 2 段上，且是从ウ段开始往下数两个段，因此称为下两段。</p><p><strong>下一段动词只有「蹴る」</strong></p><p>カ变动词——来（注意与现代日语不同的活用形式以及命令形是こ·こよ）</p><p><img data-src="https://img.fufu.ink/ParL2k.png" alt="カ变动词活用"></p><p>サ变动词</p><p>サ变动词有两个：す、おはす（可以分为词干おは与词尾す，因此活用时只改变す部分）</p><p><img data-src="https://img.fufu.ink/f1PvgK.png" alt="サ变动词活用"></p><p>ナ变动词</p><p>ナ变动词有两个：死ぬ、往（去）ぬ</p><p><img data-src="https://img.fufu.ink/WPrnb7.png" alt="ナ变动词活用"></p><p>ラ变动词</p><p>ラ变动词有四个：あり、をり、はべり、いまそかり</p><p><img data-src="https://img.fufu.ink/YkkBtn.png" alt="image-20240415222308006"></p><h2 id="区分方法"><a href="#区分方法" class="headerlink" title="区分方法"></a>区分方法</h2><p>上一段动词与现代日语部分相似，即以る结尾，倒数第二个假名在イ段上</p><p>下一段动词只有「蹴る」一个</p><p>サ变动词：す、おはす</p><p>カ变动词：来</p><p>ナ变动词：死ぬ、往（去）ぬ</p><p>ラ变动词：あり、をり、はべり、いまそかり</p><p>不属于以上分类的：使用「V 未然形 + ず」进行判断</p><ul><li>若ず前面的假名在ア段上，则为<strong>四段动词</strong></li><li>若ず前面的假名在イ段上，则为<strong>上二段动词</strong></li><li>若ず前面的假名在エ段上，则为<strong>下二段动词</strong></li></ul>]]></content>
+    
+    
+    <summary type="html">笔记4</summary>
+    
+    
+    
+    <category term="日语" scheme="https://blog.fufu.ink/categories/%E6%97%A5%E8%AF%AD/"/>
+    
+    
+    <category term="日语" scheme="https://blog.fufu.ink/tags/%E6%97%A5%E8%AF%AD/"/>
+    
+    <category term="古典日语" scheme="https://blog.fufu.ink/tags/%E5%8F%A4%E5%85%B8%E6%97%A5%E8%AF%AD/"/>
+    
+    <category term="语法" scheme="https://blog.fufu.ink/tags/%E8%AF%AD%E6%B3%95/"/>
+    
+  </entry>
   
   <entry>
     <title>【笔记·古典日语】活用形及接续</title>
@@ -470,29 +495,6 @@
     
     
     <category term="日语" scheme="https://blog.fufu.ink/tags/%E6%97%A5%E8%AF%AD/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>小号双黄了！</title>
-    <link href="https://blog.fufu.ink/2023/05/gsxhcjl.html"/>
-    <id>https://blog.fufu.ink/2023/05/gsxhcjl.html</id>
-    <published>2023-05-06T10:55:27.000Z</published>
-    <updated>2023-05-06T10:55:27.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>这件事要从去年 11 月草神池刚出的时候说起，之前一直玩的号只抽中了草神（大保底），武器却歪了「飞雷」，于是创了个小号。想着小号前期资源多，肝一肝能在版本结束前拿个 0+1，结果后面发生了一系列事情，最终导致许久没登小号。今年2、3月份重新上了下号，把剧情推到璃月了，攒出了 74 抽，结果歪了莫娜（血的教训！一定不要边肝边抽，必歪！！！），当即下号。</p><p>今天闲来无事，想起了这个号，上号后拿着版本送的原石单抽了一发，本来以为出紫了，结果出金了！于是甘雨拿下~</p><p><img data-src="https://img.fufu.ink/dXzfGb.png" alt="双黄"></p><p>这又让我燃起了对小号培养的热情，本来都打算让这个号废了，毕竟第一个金就歪了，连新手保护期都没了，结果双黄来了，那它就还有被培养的理由！</p>]]></content>
-    
-    
-    <summary type="html">去年出草神时创了个小号，本来想在这个号上捞个 0+1 草神，可惜没出，时不时上上线拿点原石，抽了 74 抽结果绫华池歪莫娜了，后面就没玩了，今天上号第一抽就出金了！</summary>
-    
-    
-    
-    <category term="游戏" scheme="https://blog.fufu.ink/categories/%E6%B8%B8%E6%88%8F/"/>
-    
-    
-    <category term="原神" scheme="https://blog.fufu.ink/tags/%E5%8E%9F%E7%A5%9E/"/>
-    
-    <category term="游戏" scheme="https://blog.fufu.ink/tags/%E6%B8%B8%E6%88%8F/"/>
     
   </entry>
   
