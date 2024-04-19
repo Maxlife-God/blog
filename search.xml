@@ -1,19 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>Handsome 美化补充</title>
-    <url>/2021/12/handsomebeautify.html</url>
-    <content><![CDATA[<p>由于在网上找到的 handsome 主题的首页文章圆角的 css 代码只选择了首页的大头图版式，小头图和图片版式均无圆角和鼠标停留上浮效果，在这里分享下我加了这两个版式之后的代码，将其粘贴到 handsome 主题开发者设置的自定义 css 中即可。</p>
-<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="comment">/*首页文章列表悬停上浮*/</span></span><br><span class="line"><span class="selector-class">.blog-post</span> <span class="selector-class">.panel-small</span><span class="selector-pseudo">:not</span>(<span class="selector-tag">article</span>),</span><br><span class="line"><span class="selector-class">.blog-post</span> <span class="selector-class">.panel</span><span class="selector-pseudo">:not</span>(<span class="selector-tag">article</span>), <span class="selector-class">.panel-picture</span> &#123;</span><br><span class="line">    <span class="attribute">transition</span>: all <span class="number">0.3s</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.blog-post</span> <span class="selector-class">.panel-small</span><span class="selector-pseudo">:not</span>(<span class="selector-tag">article</span>)<span class="selector-pseudo">:hover</span>,</span><br><span class="line"><span class="selector-class">.blog-post</span> <span class="selector-class">.panel</span><span class="selector-pseudo">:not</span>(<span class="selector-tag">article</span>)<span class="selector-pseudo">:hover</span>, <span class="selector-class">.panel-picture</span><span class="selector-pseudo">:hover</span> &#123;</span><br><span class="line">    <span class="attribute">transform</span>: <span class="built_in">translateY</span>(-<span class="number">10px</span>);</span><br><span class="line">    <span class="attribute">box-shadow</span>: <span class="number">0</span> <span class="number">8px</span> <span class="number">10px</span> <span class="built_in">rgba</span>(<span class="number">73</span>, <span class="number">90</span>, <span class="number">47</span>, <span class="number">0.47</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/*首页文章版式圆角化*/</span></span><br><span class="line"><span class="selector-class">.panel</span>&#123;</span><br><span class="line">    <span class="attribute">border</span>: none <span class="meta">!important</span>;</span><br><span class="line">    <span class="attribute">border-radius</span>: <span class="number">15px</span> <span class="meta">!important</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.panel-small</span>&#123;</span><br><span class="line">    <span class="attribute">border</span>: none;</span><br><span class="line">    <span class="attribute">border-radius</span>: <span class="number">15px</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.item-thumb</span>&#123;</span><br><span class="line">    <span class="attribute">border-radius</span>: <span class="number">15px</span> <span class="number">15px</span> <span class="number">0</span> <span class="number">0</span>;  </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.border-radius-6</span> &#123;</span><br><span class="line"><span class="attribute">border-radius</span>: <span class="number">15px</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>技术</category>
-      </categories>
-      <tags>
-        <tag>handsome</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>39 快乐</title>
     <url>/2023/03/sankyuomedetou.html</url>
     <content><![CDATA[<p>日语中，3 音读读作「さん」，而训读读作「み」；9 音读读作「きゅう」，而训读读作「く」。39 按照训读即为「みく」，也就是「miku」；按照音读读作「さんきゅう」，即为英语中的 thank you（谢谢）。更巧合的是，miku 的生日 8 月 31 日，月份和日期加起来刚好为 39。这一切都和 miku 联系了起来，因此 3 月 9 日这天也被术术人们称为「39感谢日」或者「mikuの日」。</p>
@@ -25,6 +12,19 @@
       <tags>
         <tag>节日</tag>
         <tag>二次元</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Handsome 美化补充</title>
+    <url>/2021/12/handsomebeautify.html</url>
+    <content><![CDATA[<p>由于在网上找到的 handsome 主题的首页文章圆角的 css 代码只选择了首页的大头图版式，小头图和图片版式均无圆角和鼠标停留上浮效果，在这里分享下我加了这两个版式之后的代码，将其粘贴到 handsome 主题开发者设置的自定义 css 中即可。</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="comment">/*首页文章列表悬停上浮*/</span></span><br><span class="line"><span class="selector-class">.blog-post</span> <span class="selector-class">.panel-small</span><span class="selector-pseudo">:not</span>(<span class="selector-tag">article</span>),</span><br><span class="line"><span class="selector-class">.blog-post</span> <span class="selector-class">.panel</span><span class="selector-pseudo">:not</span>(<span class="selector-tag">article</span>), <span class="selector-class">.panel-picture</span> &#123;</span><br><span class="line">    <span class="attribute">transition</span>: all <span class="number">0.3s</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.blog-post</span> <span class="selector-class">.panel-small</span><span class="selector-pseudo">:not</span>(<span class="selector-tag">article</span>)<span class="selector-pseudo">:hover</span>,</span><br><span class="line"><span class="selector-class">.blog-post</span> <span class="selector-class">.panel</span><span class="selector-pseudo">:not</span>(<span class="selector-tag">article</span>)<span class="selector-pseudo">:hover</span>, <span class="selector-class">.panel-picture</span><span class="selector-pseudo">:hover</span> &#123;</span><br><span class="line">    <span class="attribute">transform</span>: <span class="built_in">translateY</span>(-<span class="number">10px</span>);</span><br><span class="line">    <span class="attribute">box-shadow</span>: <span class="number">0</span> <span class="number">8px</span> <span class="number">10px</span> <span class="built_in">rgba</span>(<span class="number">73</span>, <span class="number">90</span>, <span class="number">47</span>, <span class="number">0.47</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/*首页文章版式圆角化*/</span></span><br><span class="line"><span class="selector-class">.panel</span>&#123;</span><br><span class="line">    <span class="attribute">border</span>: none <span class="meta">!important</span>;</span><br><span class="line">    <span class="attribute">border-radius</span>: <span class="number">15px</span> <span class="meta">!important</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.panel-small</span>&#123;</span><br><span class="line">    <span class="attribute">border</span>: none;</span><br><span class="line">    <span class="attribute">border-radius</span>: <span class="number">15px</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.item-thumb</span>&#123;</span><br><span class="line">    <span class="attribute">border-radius</span>: <span class="number">15px</span> <span class="number">15px</span> <span class="number">0</span> <span class="number">0</span>;  </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.border-radius-6</span> &#123;</span><br><span class="line"><span class="attribute">border-radius</span>: <span class="number">15px</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>技术</category>
+      </categories>
+      <tags>
+        <tag>handsome</tag>
       </tags>
   </entry>
   <entry>
@@ -96,32 +96,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Waline 美化教程</title>
-    <url>/2023/04/walinedecoration.html</url>
-    <content><![CDATA[<p>起因是看到许多博客使用的 twikoo 评论系统，觉得 twikoo 的前端样式很好看，与之相对的正在用的 waline 的默认样式是真的不好看，本来打算直接换到 twikoo 的，转念一想，既然是属于样式的东西，为什么不直接用 css 解决呢，没有必要为了一个效果而去换插件。博主的 css 不行，只会 <kbd>F12</kbd> 找到哪个元素改哪个。至于定位元素之类的完全不行＞﹏＜。只要最后好看了就 ok 了！（bushi</p>
-<p>以下为代码部分（部分选择器需要根据实际更换）</p>
-<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="comment">/* 修改waline样式 */</span></span><br><span class="line"><span class="comment">/* 修改评论框外观 */</span></span><br><span class="line"><span class="selector-class">.wl-panel</span> &#123;</span><br><span class="line">    <span class="attribute">border-radius</span>: <span class="number">4px</span> <span class="meta">!important</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-pseudo">:root</span> &#123;</span><br><span class="line">    <span class="attr">--waline-bgcolor-light</span>: transparent <span class="meta">!important</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.wl-btn</span> &#123;</span><br><span class="line">    <span class="attribute">border-radius</span>: <span class="number">0.3em</span> <span class="meta">!important</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* 添加miku的gif为输入区域背景 */</span></span><br><span class="line"><span class="selector-id">#wl-edit</span> &#123;</span><br><span class="line">    <span class="attribute">background</span>: <span class="built_in">url</span>(<span class="string">&quot;/img/wl-bg-mikuchan.gif&quot;</span>) <span class="number">100%</span> <span class="number">100%</span> no-repeat;</span><br><span class="line">    <span class="attribute">background-size</span>: contain <span class="meta">!important</span>;</span><br><span class="line">    <span class="attribute">background-repeat</span>: no-repeat <span class="meta">!important</span>;</span><br><span class="line">    <span class="attribute">background-position</span>: right bottom <span class="meta">!important</span>; </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-id">#waline-wrap</span> <span class="selector-tag">textarea</span><span class="selector-pseudo">:focus</span> &#123;</span><br><span class="line">    <span class="attribute">background</span>: <span class="built_in">url</span>(<span class="string">&quot;/img/wl-bg-mikuchan.gif&quot;</span>) <span class="number">100%</span> <span class="number">100%</span> no-repeat;</span><br><span class="line">    <span class="attribute">background-position</span>-y: <span class="number">78px</span> <span class="meta">!important</span>;</span><br><span class="line">    <span class="attribute">transition</span>: all <span class="number">0.25s</span> ease-in-out <span class="number">0s</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* 修改评论区内容背景 */</span></span><br><span class="line"><span class="selector-class">.wl-card</span> <span class="selector-class">.wl-content</span> &#123;</span><br><span class="line">    <span class="attribute">background</span>: <span class="number">#f5f5f5</span>;</span><br><span class="line">    <span class="attribute">padding</span>: <span class="number">16px</span> <span class="meta">!important</span>;</span><br><span class="line">    <span class="attribute">margin</span>: <span class="number">12px</span> <span class="number">0</span> <span class="number">8px</span> <span class="meta">!important</span>;</span><br><span class="line">    <span class="attribute">border-radius</span>: <span class="number">3px</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.wl-card</span> &#123;</span><br><span class="line">    <span class="attribute">border-bottom</span>: none <span class="meta">!important</span>;</span><br><span class="line">    <span class="attribute">padding-bottom</span>: <span class="number">0px</span> <span class="meta">!important</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.wl-cards</span> <span class="selector-class">.wl-item</span>&#123;</span><br><span class="line">    <span class="attribute">padding</span>: .<span class="number">5em</span> .<span class="number">5em</span> <span class="number">0px</span> <span class="meta">!important</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>效果图如下（因图片是截取自评论区而打了码，头像这些不属于以上代码，后面可以考虑改一下默认头像）</p>
-<p><img data-src="https://img.fufu.ink/iTcakI.webp" alt="Waline评论框美化效果"></p>
-<p><img data-src="https://img.fufu.ink/JDVkhh.webp" alt="Waline评论区美化效果"></p>
-<p>其中评论框的背景 gif 需要自己下载下来放到 <code>/source/img/</code> 下即可（记得重命名），别直接用我的博客的地址！（就这么点大小的图片就别直接挂别人的链接了吧，虽然我也不会做防盗链…）</p>
-<p>修改文本输入框中的提示文字需要到主题的配置文件中找到 waline 的配置项，在其中添加 <code>locale: &#123;placeholder: &#39;提示文字&#39;&#125;</code> 即可，以主题 butterfly 为例，则需要在 option 中添加该行代码，需要注意缩进，如下所示</p>
-<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">waline:</span></span><br><span class="line">  <span class="attr">serverURL:</span> <span class="comment"># Waline server address url</span></span><br><span class="line">  <span class="attr">bg:</span> <span class="comment"># waline background</span></span><br><span class="line">  <span class="attr">pageview:</span> <span class="literal">false</span></span><br><span class="line">  <span class="attr">option:</span></span><br><span class="line">    <span class="attr">locale:</span> &#123;<span class="attr">placeholder:</span> <span class="string">&#x27;提示文字&#x27;</span>&#125;</span><br></pre></td></tr></table></figure>
-
-<p>最后就是上面效果图的样子啦！</p>
-]]></content>
-      <categories>
-        <category>技术</category>
-      </categories>
-      <tags>
-        <tag>教程</tag>
-        <tag>技术</tag>
-        <tag>Hexo</tag>
-        <tag>CSS</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Next 文章顶部添加波浪效果</title>
     <url>/2023/08/nextwave.html</url>
     <content><![CDATA[<blockquote>
@@ -159,6 +133,61 @@
       </tags>
   </entry>
   <entry>
+    <title>Waline 美化教程</title>
+    <url>/2023/04/walinedecoration.html</url>
+    <content><![CDATA[<p>起因是看到许多博客使用的 twikoo 评论系统，觉得 twikoo 的前端样式很好看，与之相对的正在用的 waline 的默认样式是真的不好看，本来打算直接换到 twikoo 的，转念一想，既然是属于样式的东西，为什么不直接用 css 解决呢，没有必要为了一个效果而去换插件。博主的 css 不行，只会 <kbd>F12</kbd> 找到哪个元素改哪个。至于定位元素之类的完全不行＞﹏＜。只要最后好看了就 ok 了！（bushi</p>
+<p>以下为代码部分（部分选择器需要根据实际更换）</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="comment">/* 修改waline样式 */</span></span><br><span class="line"><span class="comment">/* 修改评论框外观 */</span></span><br><span class="line"><span class="selector-class">.wl-panel</span> &#123;</span><br><span class="line">    <span class="attribute">border-radius</span>: <span class="number">4px</span> <span class="meta">!important</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-pseudo">:root</span> &#123;</span><br><span class="line">    <span class="attr">--waline-bgcolor-light</span>: transparent <span class="meta">!important</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.wl-btn</span> &#123;</span><br><span class="line">    <span class="attribute">border-radius</span>: <span class="number">0.3em</span> <span class="meta">!important</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* 添加miku的gif为输入区域背景 */</span></span><br><span class="line"><span class="selector-id">#wl-edit</span> &#123;</span><br><span class="line">    <span class="attribute">background</span>: <span class="built_in">url</span>(<span class="string">&quot;/img/wl-bg-mikuchan.gif&quot;</span>) <span class="number">100%</span> <span class="number">100%</span> no-repeat;</span><br><span class="line">    <span class="attribute">background-size</span>: contain <span class="meta">!important</span>;</span><br><span class="line">    <span class="attribute">background-repeat</span>: no-repeat <span class="meta">!important</span>;</span><br><span class="line">    <span class="attribute">background-position</span>: right bottom <span class="meta">!important</span>; </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-id">#waline-wrap</span> <span class="selector-tag">textarea</span><span class="selector-pseudo">:focus</span> &#123;</span><br><span class="line">    <span class="attribute">background</span>: <span class="built_in">url</span>(<span class="string">&quot;/img/wl-bg-mikuchan.gif&quot;</span>) <span class="number">100%</span> <span class="number">100%</span> no-repeat;</span><br><span class="line">    <span class="attribute">background-position</span>-y: <span class="number">78px</span> <span class="meta">!important</span>;</span><br><span class="line">    <span class="attribute">transition</span>: all <span class="number">0.25s</span> ease-in-out <span class="number">0s</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* 修改评论区内容背景 */</span></span><br><span class="line"><span class="selector-class">.wl-card</span> <span class="selector-class">.wl-content</span> &#123;</span><br><span class="line">    <span class="attribute">background</span>: <span class="number">#f5f5f5</span>;</span><br><span class="line">    <span class="attribute">padding</span>: <span class="number">16px</span> <span class="meta">!important</span>;</span><br><span class="line">    <span class="attribute">margin</span>: <span class="number">12px</span> <span class="number">0</span> <span class="number">8px</span> <span class="meta">!important</span>;</span><br><span class="line">    <span class="attribute">border-radius</span>: <span class="number">3px</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.wl-card</span> &#123;</span><br><span class="line">    <span class="attribute">border-bottom</span>: none <span class="meta">!important</span>;</span><br><span class="line">    <span class="attribute">padding-bottom</span>: <span class="number">0px</span> <span class="meta">!important</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.wl-cards</span> <span class="selector-class">.wl-item</span>&#123;</span><br><span class="line">    <span class="attribute">padding</span>: .<span class="number">5em</span> .<span class="number">5em</span> <span class="number">0px</span> <span class="meta">!important</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>效果图如下（因图片是截取自评论区而打了码，头像这些不属于以上代码，后面可以考虑改一下默认头像）</p>
+<p><img data-src="https://img.fufu.ink/iTcakI.webp" alt="Waline评论框美化效果"></p>
+<p><img data-src="https://img.fufu.ink/JDVkhh.webp" alt="Waline评论区美化效果"></p>
+<p>其中评论框的背景 gif 需要自己下载下来放到 <code>/source/img/</code> 下即可（记得重命名），别直接用我的博客的地址！（就这么点大小的图片就别直接挂别人的链接了吧，虽然我也不会做防盗链…）</p>
+<p>修改文本输入框中的提示文字需要到主题的配置文件中找到 waline 的配置项，在其中添加 <code>locale: &#123;placeholder: &#39;提示文字&#39;&#125;</code> 即可，以主题 butterfly 为例，则需要在 option 中添加该行代码，需要注意缩进，如下所示</p>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">waline:</span></span><br><span class="line">  <span class="attr">serverURL:</span> <span class="comment"># Waline server address url</span></span><br><span class="line">  <span class="attr">bg:</span> <span class="comment"># waline background</span></span><br><span class="line">  <span class="attr">pageview:</span> <span class="literal">false</span></span><br><span class="line">  <span class="attr">option:</span></span><br><span class="line">    <span class="attr">locale:</span> &#123;<span class="attr">placeholder:</span> <span class="string">&#x27;提示文字&#x27;</span>&#125;</span><br></pre></td></tr></table></figure>
+
+<p>最后就是上面效果图的样子啦！</p>
+]]></content>
+      <categories>
+        <category>技术</category>
+      </categories>
+      <tags>
+        <tag>教程</tag>
+        <tag>技术</tag>
+        <tag>Hexo</tag>
+        <tag>CSS</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>【书摘】加缪笔下的晦涩文字</title>
+    <url>/2024/01/excerpt1.html</url>
+    <content><![CDATA[<p>两天左右看完加缪的『局外人』和『堕落』了，说实话，对我来说，文字过于晦涩了。看完『局外人』还能大致明白讲了个什么故事，看『堕落』时就仿佛在看我的期末复习资料一样，很难坚持看下去，可能是因为我很少看独白类型的小说吧，不过最终还是看完了。<span id="more"></span>说起看他的书的缘由，是因为之前玩酷安时关注过一位名为汪畅的自由译者，他翻译了这本『局外人』，由此产生了兴趣。书是囫囵吞枣看完的，说得好听一点就是不求甚解，因为没有了解过「存在主义」，到网络上搜索才大概得知『局外人』所要表达的大致意思，这是一段来自小红书用户<a href="https://www.xiaohongshu.com/user/profile/5969aadb82ec3963573feee9?xhsshare=CopyLink&appuid=64b671510000000014034c75&apptime=1706022345">蓝桔子</a>的评论「人生会因为死亡迟早到来而失去所有意义。默尔索漠视那些社会赋予的道德准则和价值等级，所以他不想在母亲葬礼时哭不出来也要装哭，也不想假装信仰上帝。他经常做出一些不符合大众常理的事情，但他并非完全冷漠，只是人生而不同，用一套准则要求所有人本质上也是一种冷漠，我在我姥姥去世时也哭不出来，亲人的离去更像一场漫长的潮湿，在余生都让我隐隐作痛，但不会在那一瞬间让我痛哭，他不冷漠，他比任何人都通透，比任何人都痛苦，比任何人都更爱这个世界」。看完以上评论才顿时开悟。</p>
+<p>以下是从两书中摘出的一些句子</p>
+<ul>
+<li>妈妈距离死亡如此之近，但她一定也因此得到了一种重获新生的解脱。我想，这个世界上没有任何人有权为她哭泣。现在，我做好了相同的准备，我也要像妈妈一样，重新活一遍。——『局外人』</li>
+</ul>
+<p>『堕落』</p>
+<ul>
+<li>当身体难过时，心也会逐渐枯萎。</li>
+<li>没有人在享乐时是伪君子。</li>
+<li>毫无疑问，他们认为我有着圆满的生活，整天都在寻欢作乐中度过。这在他们眼里是不可原谅的。这也不难理解，毕竟当一头驴看到一位头顶桂冠的人，也会发出愤愤不平的哼叫。</li>
+<li>如果一个人想要他人谅解自己的幸福与成功，就必须慷慨地和他人分享；但如果一个人想要快乐，就不应该过分照顾他人的感受。要知道，一旦在乎他人，就走上了一条没有尽头的死路。</li>
+<li>为了不被他人批判，人们总会抢先批评他人。</li>
+<li>我们很少向比自己优秀的人吐露心声；不仅如此，我们还会尽力避免与他们为伍。与之相反的是，在大多数时候，我们会容易与彼此相似或者同病相怜的人成为心腹之交。也就是说，我们既不愿意自我纠正，也不愿意自我完善。我们必须被人批判，才能发现自身的不足，但在人生的道路上，我们最需要的就是他人的怜悯与鼓励。简而言之，我们一边希望免除洁身自好的麻烦，一边希望自己不会因此而内疚。长此以往，我们既不能放浪形骸之外，也不能静以修身，俭以养德；我们既非恶贯满盈之徒，也非乐善好施之士。</li>
+<li>当所有的人都在说你的好话时，倒霉的事情就会发生！</li>
+<li>实际上，嫉妒之情完全是丰富的想象在作祟，也是自我贬低的结果。</li>
+</ul>
+]]></content>
+      <categories>
+        <category>日常</category>
+      </categories>
+      <tags>
+        <tag>书摘</tag>
+        <tag>局外人</tag>
+        <tag>堕落</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>【每日语法】~さえ~ば</title>
     <url>/2023/05/mnnhgbp5.html</url>
     <content><![CDATA[<p>接续：</p>
@@ -173,6 +202,47 @@
       </categories>
       <tags>
         <tag>日语</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>【书摘】无赖派太宰治充满颓废气息的作品</title>
+    <url>/2024/02/excerpt2.html</url>
+    <content><![CDATA[<p>花了一段时间，将太宰治的三部代表作品——『人间失格』『维荣之妻』『斜阳』都看完了，由于熬夜看书，经常看着看着就睡着了，再看部分段落时已想不起看过，只得再读过一遍，因此看得很慢，不过总算是看完了。但或许是太宰さん的精神世界太复杂了，我难以理解。<span id="more"></span>只知从『人间失格』主人公身上能看到太宰治的身影（毕竟是太宰治以自身的经历为蓝本写的），而『维荣之妻』中的大谷和阿佐则分别代表了日本「二战」后的男性和女性，男性软弱而女性坚强，形成了光与影明暗的人生对比。一向风格颓废的太宰治，通过阿佐形象，带给读者「活着的希望」。（2017，杨晔，『人间失格』）。最后则是『斜阳』，或许是故事性更加强，也或许是读得更仔细，较于『人间失格』，个人更喜『斜阳』。以第一人称女子口吻的叙述，讲述二战后贵族和子一家逐渐没落的故事，和子、直治、上原等，他们都在用自己的方式与传统道德抗争，都成为了「二战」后道德过渡期的牺牲者。文章中充满了颓废气息，直治为了融入与自己不同阶层的群体，让自己变得粗俗，却仍然无法「挣脱贵族的阴影」，只能更加颓废，只能以这样的方式抗争下去。实属悲剧，我能感受都文章中蕴含的悲伤，甚至几乎哭出来，但我仍无法理解。但太宰治无疑将人性，将社会都看得太透彻了。</p>
+<p>『人间失格』</p>
+<ul>
+<li>对于他们来说，或许有饭吃就能化解他们的痛苦，而这才是最大的痛苦。</li>
+<li>胆小鬼连幸福都怕，碰到棉花都会受伤，有时还会被幸福所伤。</li>
+<li>世人是人与人的争斗，而且是现场之争，人活着就是为了在争斗中取胜。人绝不会屈从于他人，即便是奴隶，也会用自己卑微的方式进行反击。所以，人除了现场决出胜负之外，便没有其他生存之道了。尽管标榜堂而皇之的正义，但他们努力的目标仍是个人的，超越一个人之后，还要迎战下一个人。</li>
+<li>不幸的人总是对他人的不幸格外敏感。</li>
+<li>我在所谓的人类世界里，过着如阿鼻地狱般痛苦煎熬生活的日子，我感到唯一具有真理的话就是这句话了。<br>  一切都终将会过去的。</li>
+<li>「我们认识的阿叶，个性率真，风趣幽默，要是不酗酒的话，不，就是他酗酒，他也是个天使一样的好孩子。」</li>
+</ul>
+<p>『维荣之妻』</p>
+<ul>
+<li>可常言道，人生就如地狱，经常是道高一尺魔高一丈。人们在得到一丝幸福的同时，往往会有成倍的坏事降临。一年有三百六十五天，要是有一天能无忧无虑的话，啊不，就半天，那就是很幸运的了。</li>
+<li>文明的结果是滑稽。</li>
+</ul>
+<p>『斜阳』</p>
+<ul>
+<li>社会法则，说到底维护的还是法则本身，不爱活生生的人。</li>
+<li>在金钱和女人面前，社会法则会羞怯地匆匆溜走。历史、哲学、教育、宗教、法律、政治、经济、社会。这些学问统统加起来，也不如处女的微笑来得可贵。浮士德博士已经勇敢地证实过这一结论了。</li>
+<li>学问是虚荣的别名，它努力使人泯灭人性。</li>
+<li>人在撒谎时定会摆出一副一本正经的样子。</li>
+<li>我伪装早熟，人们便风传我早熟。我伪装成懒汉，人们便风传我是个懒汉。我伪装写不出小说来，人们便风传我不会写小说。我伪装撒谎，人们便风传我是个撒谎的人。我伪装有钱，人们便风传我是个有钱人。我伪装冷淡，人们便风传我是个冷淡的人。不过，当我真正因为痛苦而发出呻吟时，人们却说我伪装痛苦。</li>
+<li>幼鹤生下目已盲，岁月如梭渐长成，羽翼丰满成大鸟，叫声依旧满悲伤。</li>
+<li>总之，人只要是活在这世上，就肯定会做出些见不得人的勾当。</li>
+<li>我无法忍受海港内滞积着的令人窒息的空气了，就算海港外狂风暴雨，我也要扬帆起航。歇着的帆毫无例外都是肮脏的，那些嘲笑我的人都是歇着的帆，他们什么事情都不会做。</li>
+</ul>
+]]></content>
+      <categories>
+        <category>日常</category>
+      </categories>
+      <tags>
+        <tag>书摘</tag>
+        <tag>人间失格</tag>
+        <tag>维荣之妻</tag>
+        <tag>斜阳</tag>
+        <tag>太宰治</tag>
       </tags>
   </entry>
   <entry>
@@ -217,32 +287,19 @@
       </tags>
   </entry>
   <entry>
-    <title>【书摘】加缪笔下的晦涩文字</title>
-    <url>/2024/01/excerpt1.html</url>
-    <content><![CDATA[<p>两天左右看完加缪的『局外人』和『堕落』了，说实话，对我来说，文字过于晦涩了。看完『局外人』还能大致明白讲了个什么故事，看『堕落』时就仿佛在看我的期末复习资料一样，很难坚持看下去，可能是因为我很少看独白类型的小说吧，不过最终还是看完了。<span id="more"></span>说起看他的书的缘由，是因为之前玩酷安时关注过一位名为汪畅的自由译者，他翻译了这本『局外人』，由此产生了兴趣。书是囫囵吞枣看完的，说得好听一点就是不求甚解，因为没有了解过「存在主义」，到网络上搜索才大概得知『局外人』所要表达的大致意思，这是一段来自小红书用户<a href="https://www.xiaohongshu.com/user/profile/5969aadb82ec3963573feee9?xhsshare=CopyLink&appuid=64b671510000000014034c75&apptime=1706022345">蓝桔子</a>的评论「人生会因为死亡迟早到来而失去所有意义。默尔索漠视那些社会赋予的道德准则和价值等级，所以他不想在母亲葬礼时哭不出来也要装哭，也不想假装信仰上帝。他经常做出一些不符合大众常理的事情，但他并非完全冷漠，只是人生而不同，用一套准则要求所有人本质上也是一种冷漠，我在我姥姥去世时也哭不出来，亲人的离去更像一场漫长的潮湿，在余生都让我隐隐作痛，但不会在那一瞬间让我痛哭，他不冷漠，他比任何人都通透，比任何人都痛苦，比任何人都更爱这个世界」。看完以上评论才顿时开悟。</p>
-<p>以下是从两书中摘出的一些句子</p>
-<ul>
-<li>妈妈距离死亡如此之近，但她一定也因此得到了一种重获新生的解脱。我想，这个世界上没有任何人有权为她哭泣。现在，我做好了相同的准备，我也要像妈妈一样，重新活一遍。——『局外人』</li>
-</ul>
-<p>『堕落』</p>
-<ul>
-<li>当身体难过时，心也会逐渐枯萎。</li>
-<li>没有人在享乐时是伪君子。</li>
-<li>毫无疑问，他们认为我有着圆满的生活，整天都在寻欢作乐中度过。这在他们眼里是不可原谅的。这也不难理解，毕竟当一头驴看到一位头顶桂冠的人，也会发出愤愤不平的哼叫。</li>
-<li>如果一个人想要他人谅解自己的幸福与成功，就必须慷慨地和他人分享；但如果一个人想要快乐，就不应该过分照顾他人的感受。要知道，一旦在乎他人，就走上了一条没有尽头的死路。</li>
-<li>为了不被他人批判，人们总会抢先批评他人。</li>
-<li>我们很少向比自己优秀的人吐露心声；不仅如此，我们还会尽力避免与他们为伍。与之相反的是，在大多数时候，我们会容易与彼此相似或者同病相怜的人成为心腹之交。也就是说，我们既不愿意自我纠正，也不愿意自我完善。我们必须被人批判，才能发现自身的不足，但在人生的道路上，我们最需要的就是他人的怜悯与鼓励。简而言之，我们一边希望免除洁身自好的麻烦，一边希望自己不会因此而内疚。长此以往，我们既不能放浪形骸之外，也不能静以修身，俭以养德；我们既非恶贯满盈之徒，也非乐善好施之士。</li>
-<li>当所有的人都在说你的好话时，倒霉的事情就会发生！</li>
-<li>实际上，嫉妒之情完全是丰富的想象在作祟，也是自我贬低的结果。</li>
-</ul>
+    <title>【每日语法】~も~ば~も~</title>
+    <url>/2023/04/mnnhgbp2.html</url>
+    <content><![CDATA[<p><strong>语法：N + も + V（假定形）+ N + も + V（原形）</strong></p>
+<p>意为「既…又…」。其中的动词为同一动词。</p>
+<p>例句：コンビニにたくさんの商品がある。食べ物もあれば、生活に欠かせないものもある。</p>
+<p>译：便利店中有很多商品，既有食品，也有生活中不可或缺的物品。</p>
+<p>与之相似的语法还有「かと思えば」，接续方式为前接<strong>动词原形</strong>。关于假定形的变形方法，在上一篇中已经提过，这里就不再赘述，有需要了解的小伙伴可以<a href="/2023/04/mnnhgbp1.html">点击这里</a>返回上文查看。</p>
 ]]></content>
       <categories>
-        <category>日常</category>
+        <category>日语</category>
       </categories>
       <tags>
-        <tag>书摘</tag>
-        <tag>局外人</tag>
-        <tag>堕落</tag>
+        <tag>日语</tag>
       </tags>
   </entry>
   <entry>
@@ -277,13 +334,53 @@
       </tags>
   </entry>
   <entry>
-    <title>【每日语法】~も~ば~も~</title>
-    <url>/2023/04/mnnhgbp2.html</url>
-    <content><![CDATA[<p><strong>语法：N + も + V（假定形）+ N + も + V（原形）</strong></p>
-<p>意为「既…又…」。其中的动词为同一动词。</p>
-<p>例句：コンビニにたくさんの商品がある。食べ物もあれば、生活に欠かせないものもある。</p>
-<p>译：便利店中有很多商品，既有食品，也有生活中不可或缺的物品。</p>
-<p>与之相似的语法还有「かと思えば」，接续方式为前接<strong>动词原形</strong>。关于假定形的变形方法，在上一篇中已经提过，这里就不再赘述，有需要了解的小伙伴可以<a href="/2023/04/mnnhgbp1.html">点击这里</a>返回上文查看。</p>
+    <title>【每日语法】てある及相似语法的对比</title>
+    <url>/2023/05/mnnhgbp4.html</url>
+    <content><![CDATA[<h2 id="意思一"><a href="#意思一" class="headerlink" title="意思一"></a>意思一</h2><blockquote>
+<p>接续：V（他动词，て形）+ ある</p>
+</blockquote>
+<p>表示动作结果的存续，该语法只涉及动作的对象，不涉及动作的主体。该句型有着「某个人做了某个动作，导致了这样的状态，但是这个人是谁并不重要」这样的意思。简单点说就是<strong>他动词的状态的持续</strong>。需要注意的是动词虽然为他动词，但动作的对象却要用<strong>「が」</strong>来表示。</p>
+<p>同样表示状态的持续的语法还有「ている」，那么他俩有什么区别呢？</p>
+<p>在对比前我们先回顾一下「ている」这个语法</p>
+<ul>
+<li>当动词为<strong>他动词</strong>时，表示动作的正在进行，意为「正在…」，比如「手紙を書いている」意为「我正在写信」</li>
+<li>当动词为<strong>自动词</strong>时，表示状态的持续，例如「鈴木さんは今出かけていますが…」，意为「铃木现在出去了…」</li>
+<li>表示动作的反复，常用于习惯或自然现象等</li>
+<li>表示性质或状态，比如「この機械の性能が<ruby>優<rt>すぐ</rt>れている</ruby>」意为「这台机器性能好」</li>
+</ul>
+<p>可以看到，表示状态的持续时，「ている」的前面的动词为自动词，而「てある」则为他动词。并且「ている」只是表示状态的持续，并不包含状态产生的原因，这个状态可以是人为造成的，也可以是自然而然发生的；但「てある」的状态一定是<strong>人为</strong>的，即一定是某个人去做了某个动作才产生了这样的状态。</p>
+<p>补充说明，当「てある」前面的动词为<strong>被动态</strong>时，能够更让人能够感受到这个做动作的人的存在。</p>
+<h2 id="意思二"><a href="#意思二" class="headerlink" title="意思二"></a>意思二</h2><blockquote>
+<p>接续：V（て形）+ ある</p>
+</blockquote>
+<p>这里表示<strong>已经提前做好某事的状态</strong>，自、他动词均可使用，意为「已经提前…」。</p>
+<p>例句：論文を書くために、資料をたくさん集めてある。<br>译：为了写论文，已经提前收集好了许多资料。</p>
+<p>同样，表示提前做好某事的意思的语法还有「ておく」，那么这两个语法之间有什么区别呢？</p>
+<p>首先回忆一下「ておく」这个语法：</p>
+<ul>
+<li>表示提前做好某事，以备不时之需</li>
+<li>表示保持状态不变，听之任之</li>
+<li>表示放任不管</li>
+</ul>
+<p>注意，「ておく」的「提前做好某事」具体点说是「<strong>将要</strong>提前做好某事」，实际现在还没有做，强调的是「提前做好」这个<strong>动作性</strong>；「てある」则表示的是「<strong>已经</strong>提前做好某事」，强调的是「提前做好」这个动作完成后的<strong>状态的持续</strong>。</p>
+<p>对比例句：</p>
+<ul>
+<li>この提案を一応考えてある。（已经事先考虑过这个提案。）</li>
+<li>この提案を一応考えておく。（将会事先考虑一下这个提案。）</li>
+</ul>
+<p>当「ておく」变为过去时，与「てある」的意思就更为相似，更加难以区分，比如下面两句：</p>
+<ul>
+<li>ビールをたくさん買っておいたが、人が多いので、もうなくなってしまった。（○）</li>
+<li>ビールをたくさん買ってあるが、人が多いので、もうなくなってしまった。（×）</li>
+</ul>
+<p>因为「買っておいた」只表示「提前买好」这一过去的动作，而「買ってある」则表示「提前买好」这一状态且该状态持续到了说话时，按此逻辑，如果买好了许多酒的状态持续到了说话时，后文却又说因为人多已经没酒了，就出现了前后意思的矛盾，因此这里只能用「買っておいた」。</p>
+<h2 id="意思三"><a href="#意思三" class="headerlink" title="意思三"></a>意思三</h2><blockquote>
+<p>接续：V（て形）+ ある</p>
+</blockquote>
+<p>表示<strong>放任或允许的状态</strong>。常常和自动词<strong>使役态</strong>搭配使用。</p>
+<p>例句：娘を日本語学校に通わせてある。<br>译：让女儿去日语学校上学。</p>
+<p>相似的还有「ておく」，其也有放任不管，听之任之的意思。</p>
+<p><strong>注：本文部分解释与例句来源于『日语语法教程——讲义与练习』一书，如造成侵权，请联系删除。</strong></p>
 ]]></content>
       <categories>
         <category>日语</category>
@@ -348,6 +445,34 @@
       </categories>
       <tags>
         <tag>日语</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>【笔记·古典日语】五十音和发音</title>
+    <url>/2024/04/nihongokotenbunpou1.html</url>
+    <content><![CDATA[<p>五十音图与现代日语区别如下：</p>
+<p><img data-src="https://img.fufu.ink/sUvY2j.png"></p>
+<p>ワ行的发音为「wa，i，u，e，o」</p>
+<p><strong>需要注意 ゐ 与 ゑ 的写法</strong></p>
+<p>然后是过去与现在的读法的不同，有五个种类</p>
+<p>第一种，は行的音读作ワ行的发音（当该音位于词头时就そのまま读出来，不需要变音），注意只是读音对应，并非写法对应</p>
+<p><img data-src="https://img.fufu.ink/gO6Wu7.png"></p>
+<p>第二种，元音重叠的读法</p>
+<p><img data-src="https://img.fufu.ink/q6oSk2.png"></p>
+<p>第三种，「てふ」与「けふ」的发音，由前两种方法可以推导出发音来</p>
+<p><img data-src="https://img.fufu.ink/TIN7Hg.png"></p>
+<p>第四种，ゐ，ゑ，を的发音</p>
+<p><img data-src="https://img.fufu.ink/Zy3uA5.png"></p>
+<p>第五种，「む」发成「ん」的音</p>
+<p><img data-src="https://img.fufu.ink/wwk75S.png"></p>
+]]></content>
+      <categories>
+        <category>日语</category>
+      </categories>
+      <tags>
+        <tag>日语</tag>
+        <tag>古典日语</tag>
+        <tag>语法</tag>
       </tags>
   </entry>
   <entry>
@@ -437,59 +562,47 @@
       </tags>
   </entry>
   <entry>
-    <title>【每日语法】てある及相似语法的对比</title>
-    <url>/2023/05/mnnhgbp4.html</url>
-    <content><![CDATA[<h2 id="意思一"><a href="#意思一" class="headerlink" title="意思一"></a>意思一</h2><blockquote>
-<p>接续：V（他动词，て形）+ ある</p>
-</blockquote>
-<p>表示动作结果的存续，该语法只涉及动作的对象，不涉及动作的主体。该句型有着「某个人做了某个动作，导致了这样的状态，但是这个人是谁并不重要」这样的意思。简单点说就是<strong>他动词的状态的持续</strong>。需要注意的是动词虽然为他动词，但动作的对象却要用<strong>「が」</strong>来表示。</p>
-<p>同样表示状态的持续的语法还有「ている」，那么他俩有什么区别呢？</p>
-<p>在对比前我们先回顾一下「ている」这个语法</p>
+    <title>【笔记·古典日语】句子·句节·单词</title>
+    <url>/2024/04/nihongokotenbunpou2.html</url>
+    <content><![CDATA[<p>自立语与附属语区分标准：单独使用时是否具有实义</p>
+<p>附属语在一个句节中总是跟在自立语后，不会出现在自立语前</p>
+<p>分割句子为句节的方法：</p>
 <ul>
-<li>当动词为<strong>他动词</strong>时，表示动作的正在进行，意为「正在…」，比如「手紙を書いている」意为「我正在写信」</li>
-<li>当动词为<strong>自动词</strong>时，表示状态的持续，例如「鈴木さんは今出かけていますが…」，意为「铃木现在出去了…」</li>
-<li>表示动作的反复，常用于习惯或自然现象等</li>
-<li>表示性质或状态，比如「この機械の性能が<ruby>優<rt>すぐ</rt>れている</ruby>」意为「这台机器性能好」</li>
+<li>加ネ</li>
+<li>找到自立语，在自立语前分割</li>
 </ul>
-<p>可以看到，表示状态的持续时，「ている」的前面的动词为自动词，而「てある」则为他动词。并且「ている」只是表示状态的持续，并不包含状态产生的原因，这个状态可以是人为造成的，也可以是自然而然发生的；但「てある」的状态一定是<strong>人为</strong>的，即一定是某个人去做了某个动作才产生了这样的状态。</p>
-<p>补充说明，当「てある」前面的动词为<strong>被动态</strong>时，能够更让人能够感受到这个做动作的人的存在。</p>
-<h2 id="意思二"><a href="#意思二" class="headerlink" title="意思二"></a>意思二</h2><blockquote>
-<p>接续：V（て形）+ ある</p>
-</blockquote>
-<p>这里表示<strong>已经提前做好某事的状态</strong>，自、他动词均可使用，意为「已经提前…」。</p>
-<p>例句：論文を書くために、資料をたくさん集めてある。<br>译：为了写论文，已经提前收集好了许多资料。</p>
-<p>同样，表示提前做好某事的意思的语法还有「ておく」，那么这两个语法之间有什么区别呢？</p>
-<p>首先回忆一下「ておく」这个语法：</p>
-<ul>
-<li>表示提前做好某事，以备不时之需</li>
-<li>表示保持状态不变，听之任之</li>
-<li>表示放任不管</li>
-</ul>
-<p>注意，「ておく」的「提前做好某事」具体点说是「<strong>将要</strong>提前做好某事」，实际现在还没有做，强调的是「提前做好」这个<strong>动作性</strong>；「てある」则表示的是「<strong>已经</strong>提前做好某事」，强调的是「提前做好」这个动作完成后的<strong>状态的持续</strong>。</p>
-<p>对比例句：</p>
-<ul>
-<li>この提案を一応考えてある。（已经事先考虑过这个提案。）</li>
-<li>この提案を一応考えておく。（将会事先考虑一下这个提案。）</li>
-</ul>
-<p>当「ておく」变为过去时，与「てある」的意思就更为相似，更加难以区分，比如下面两句：</p>
-<ul>
-<li>ビールをたくさん買っておいたが、人が多いので、もうなくなってしまった。（○）</li>
-<li>ビールをたくさん買ってあるが、人が多いので、もうなくなってしまった。（×）</li>
-</ul>
-<p>因为「買っておいた」只表示「提前买好」这一过去的动作，而「買ってある」则表示「提前买好」这一状态且该状态持续到了说话时，按此逻辑，如果买好了许多酒的状态持续到了说话时，后文却又说因为人多已经没酒了，就出现了前后意思的矛盾，因此这里只能用「買っておいた」。</p>
-<h2 id="意思三"><a href="#意思三" class="headerlink" title="意思三"></a>意思三</h2><blockquote>
-<p>接续：V（て形）+ ある</p>
-</blockquote>
-<p>表示<strong>放任或允许的状态</strong>。常常和自动词<strong>使役态</strong>搭配使用。</p>
-<p>例句：娘を日本語学校に通わせてある。<br>译：让女儿去日语学校上学。</p>
-<p>相似的还有「ておく」，其也有放任不管，听之任之的意思。</p>
-<p><strong>注：本文部分解释与例句来源于『日语语法教程——讲义与练习』一书，如造成侵权，请联系删除。</strong></p>
 ]]></content>
       <categories>
         <category>日语</category>
       </categories>
       <tags>
         <tag>日语</tag>
+        <tag>古典日语</tag>
+        <tag>语法</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>【笔记·古典日语】活用形及接续</title>
+    <url>/2024/04/nihongokotenbunpou3.html</url>
+    <content><![CDATA[<p>6 种活用形</p>
+<p><img data-src="https://img.fufu.ink/znu63C.png"></p>
+<p>活用语：活用的单词。是动词，形容词，形容动词，助动词的总称。</p>
+<p>一些助词和助动词的接续</p>
+<p><img data-src="https://img.fufu.ink/3TtBGj.png"></p>
+<p>一些助动词的接续（注意括号中的条件，比如り前面接的虽然是已然形，但仅限于四段动词，即り前面接<strong>四段动词的已然形</strong>）</p>
+<p><img data-src="https://img.fufu.ink/P8sNJH.png"></p>
+<p>ラ变动词及ラ变型（非标准定义，个人理解）</p>
+<p>ラ变<strong>动词</strong>：在ラ行上进行活用的，即活用词尾为（ら·り·り·る·れ·れ）形式的动词。ラ变动词只有<strong>「あり」「をり」「はべり」「いまそかり」</strong>四个。</p>
+<p>ラ变<strong>型</strong>：像ラ变动词一样进行活用，即活用词尾也为（ら·り·り·る·れ·れ）形式的<strong>活用语</strong>，如下图</p>
+<p><img data-src="https://img.fufu.ink/q2IGzI.png"></p>
+]]></content>
+      <categories>
+        <category>日语</category>
+      </categories>
+      <tags>
+        <tag>日语</tag>
+        <tag>古典日语</tag>
+        <tag>语法</tag>
       </tags>
   </entry>
   <entry>
@@ -652,152 +765,6 @@
       </tags>
   </entry>
   <entry>
-    <title>【书摘】无赖派太宰治充满颓废气息的作品</title>
-    <url>/2024/02/excerpt2.html</url>
-    <content><![CDATA[<p>花了一段时间，将太宰治的三部代表作品——『人间失格』『维荣之妻』『斜阳』都看完了，由于熬夜看书，经常看着看着就睡着了，再看部分段落时已想不起看过，只得再读过一遍，因此看得很慢，不过总算是看完了。但或许是太宰さん的精神世界太复杂了，我难以理解。<span id="more"></span>只知从『人间失格』主人公身上能看到太宰治的身影（毕竟是太宰治以自身的经历为蓝本写的），而『维荣之妻』中的大谷和阿佐则分别代表了日本「二战」后的男性和女性，男性软弱而女性坚强，形成了光与影明暗的人生对比。一向风格颓废的太宰治，通过阿佐形象，带给读者「活着的希望」。（2017，杨晔，『人间失格』）。最后则是『斜阳』，或许是故事性更加强，也或许是读得更仔细，较于『人间失格』，个人更喜『斜阳』。以第一人称女子口吻的叙述，讲述二战后贵族和子一家逐渐没落的故事，和子、直治、上原等，他们都在用自己的方式与传统道德抗争，都成为了「二战」后道德过渡期的牺牲者。文章中充满了颓废气息，直治为了融入与自己不同阶层的群体，让自己变得粗俗，却仍然无法「挣脱贵族的阴影」，只能更加颓废，只能以这样的方式抗争下去。实属悲剧，我能感受都文章中蕴含的悲伤，甚至几乎哭出来，但我仍无法理解。但太宰治无疑将人性，将社会都看得太透彻了。</p>
-<p>『人间失格』</p>
-<ul>
-<li>对于他们来说，或许有饭吃就能化解他们的痛苦，而这才是最大的痛苦。</li>
-<li>胆小鬼连幸福都怕，碰到棉花都会受伤，有时还会被幸福所伤。</li>
-<li>世人是人与人的争斗，而且是现场之争，人活着就是为了在争斗中取胜。人绝不会屈从于他人，即便是奴隶，也会用自己卑微的方式进行反击。所以，人除了现场决出胜负之外，便没有其他生存之道了。尽管标榜堂而皇之的正义，但他们努力的目标仍是个人的，超越一个人之后，还要迎战下一个人。</li>
-<li>不幸的人总是对他人的不幸格外敏感。</li>
-<li>我在所谓的人类世界里，过着如阿鼻地狱般痛苦煎熬生活的日子，我感到唯一具有真理的话就是这句话了。<br>  一切都终将会过去的。</li>
-<li>「我们认识的阿叶，个性率真，风趣幽默，要是不酗酒的话，不，就是他酗酒，他也是个天使一样的好孩子。」</li>
-</ul>
-<p>『维荣之妻』</p>
-<ul>
-<li>可常言道，人生就如地狱，经常是道高一尺魔高一丈。人们在得到一丝幸福的同时，往往会有成倍的坏事降临。一年有三百六十五天，要是有一天能无忧无虑的话，啊不，就半天，那就是很幸运的了。</li>
-<li>文明的结果是滑稽。</li>
-</ul>
-<p>『斜阳』</p>
-<ul>
-<li>社会法则，说到底维护的还是法则本身，不爱活生生的人。</li>
-<li>在金钱和女人面前，社会法则会羞怯地匆匆溜走。历史、哲学、教育、宗教、法律、政治、经济、社会。这些学问统统加起来，也不如处女的微笑来得可贵。浮士德博士已经勇敢地证实过这一结论了。</li>
-<li>学问是虚荣的别名，它努力使人泯灭人性。</li>
-<li>人在撒谎时定会摆出一副一本正经的样子。</li>
-<li>我伪装早熟，人们便风传我早熟。我伪装成懒汉，人们便风传我是个懒汉。我伪装写不出小说来，人们便风传我不会写小说。我伪装撒谎，人们便风传我是个撒谎的人。我伪装有钱，人们便风传我是个有钱人。我伪装冷淡，人们便风传我是个冷淡的人。不过，当我真正因为痛苦而发出呻吟时，人们却说我伪装痛苦。</li>
-<li>幼鹤生下目已盲，岁月如梭渐长成，羽翼丰满成大鸟，叫声依旧满悲伤。</li>
-<li>总之，人只要是活在这世上，就肯定会做出些见不得人的勾当。</li>
-<li>我无法忍受海港内滞积着的令人窒息的空气了，就算海港外狂风暴雨，我也要扬帆起航。歇着的帆毫无例外都是肮脏的，那些嘲笑我的人都是歇着的帆，他们什么事情都不会做。</li>
-</ul>
-]]></content>
-      <categories>
-        <category>日常</category>
-      </categories>
-      <tags>
-        <tag>书摘</tag>
-        <tag>人间失格</tag>
-        <tag>维荣之妻</tag>
-        <tag>斜阳</tag>
-        <tag>太宰治</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>【笔记·古典日语】五十音和发音</title>
-    <url>/2024/04/nihongokotenbunpou1.html</url>
-    <content><![CDATA[<p>五十音图与现代日语区别如下：</p>
-<p><img data-src="https://img.fufu.ink/sUvY2j.png" alt="image-20240411214423555"></p>
-<p>ワ行的发音为「wa，i，u，e，o」</p>
-<p><strong>需要注意 ゐ 与 ゑ 的写法</strong></p>
-<p>然后是过去与现在的读法的不同，有五个种类</p>
-<p>第一种，は行的音读作ワ行的发音（当该音位于词头时就そのまま读出来，不需要变音），注意只是读音对应，并非写法对应</p>
-<p><img data-src="https://img.fufu.ink/gO6Wu7.png" alt="image-20240411215013665"></p>
-<p>第二种，元音重叠的读法</p>
-<p><img data-src="https://img.fufu.ink/q6oSk2.png" alt="image-20240412120036410"></p>
-<p>第三种，「てふ」与「けふ」的发音，由前两种方法可以推导出发音来</p>
-<p><img data-src="https://img.fufu.ink/TIN7Hg.png" alt="image-20240413211736883"></p>
-<p>第四种，ゐ，ゑ，を的发音</p>
-<p><img data-src="https://img.fufu.ink/Zy3uA5.png" alt="image-20240413211947299"></p>
-<p>第五种，「む」发成「ん」的音</p>
-<p><img data-src="https://img.fufu.ink/wwk75S.png" alt="image-20240413212813795"></p>
-]]></content>
-      <categories>
-        <category>日语</category>
-      </categories>
-      <tags>
-        <tag>日语</tag>
-        <tag>古典日语</tag>
-        <tag>语法</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>【笔记·古典日语】句子·句节·单词</title>
-    <url>/2024/04/nihongokotenbunpou2.html</url>
-    <content><![CDATA[<p>自立语与附属语区分标准：单独使用时是否具有实义</p>
-<p>附属语在一个句节中总是跟在自立语后，不会出现在自立语前</p>
-<p>分割句子为句节的方法：</p>
-<ul>
-<li>加ネ</li>
-<li>找到自立语，在自立语前分割</li>
-</ul>
-]]></content>
-      <categories>
-        <category>日语</category>
-      </categories>
-      <tags>
-        <tag>日语</tag>
-        <tag>古典日语</tag>
-        <tag>语法</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>【笔记·古典日语】活用形及接续</title>
-    <url>/2024/04/nihongokotenbunpou3.html</url>
-    <content><![CDATA[<p>6 种活用形</p>
-<p><img data-src="https://img.fufu.ink/znu63C.png"></p>
-<p>活用语：活用的单词。是动词，形容词，形容动词，助动词的总称。</p>
-<p>一些助词和助动词的接续</p>
-<p><img data-src="https://img.fufu.ink/3TtBGj.png"></p>
-<p>一些助动词的接续（注意括号中的条件，比如り前面接的虽然是已然形，但仅限于四段动词，即り前面接<strong>四段动词的已然形</strong>）</p>
-<p><img data-src="https://img.fufu.ink/P8sNJH.png"></p>
-<p>ラ变动词及ラ变型（非标准定义，个人理解）</p>
-<p>ラ变<strong>动词</strong>：在ラ行上进行活用的，即活用词尾为（ら·り·り·る·れ·れ）形式的动词。ラ变动词只有<strong>「あり」「をり」「はべり」「いまそかり」</strong>四个。</p>
-<p>ラ变<strong>型</strong>：像ラ变动词一样进行活用，即活用词尾也为（ら·り·り·る·れ·れ）形式的<strong>活用语</strong>，如下图</p>
-<p><img data-src="https://img.fufu.ink/q2IGzI.png"></p>
-]]></content>
-      <categories>
-        <category>日语</category>
-      </categories>
-      <tags>
-        <tag>日语</tag>
-        <tag>古典日语</tag>
-        <tag>语法</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>出宵宫啦！</title>
-    <url>/2023/05/genshinxgderu.html</url>
-    <content><![CDATA[<p>虽说抽完 2 命纳西妲后已经没有抽其他角色的欲望了，但池子还是要垫的，出什么都无所谓了。</p>
-<p>因为这 14 天搞<a href="/2023/05/improvefdlinks.html">「博客的友链的更优雅的书写方式」</a>去了，就没怎么上线，还白白浪费了 14 天的月卡，趁着今天第 15 天上线领了回归奖励以及版本更新补偿，让朋友抽了 2 抽，没歪！<span id="more"></span></p>
-<p><img data-src="https://img.fufu.ink/blTnOx.webp" alt="手机截图，画质有点差"></p>
-<p>接下来就是继续垫池子了~</p>
-]]></content>
-      <categories>
-        <category>游戏</category>
-      </categories>
-      <tags>
-        <tag>原神</tag>
-        <tag>游戏</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>叕出神子啦加深渊终于凹满了</title>
-    <url>/2023/06/genshinkamikoaru.html</url>
-    <content><![CDATA[<p>先说说深渊，博主在今年 2 月之前是无论如何都打不过深渊的，2 月后开始练万达国际，学会双扩后，队伍养得差不多后就在 2 月 18 日第一次凹过 12 层，见<a href="/2023/02/genshinshenyuanmanxing.html">『打通深渊后半个月，我又第一次满星深渊！』</a>。此后除了第一期沙虫因为「草行九」练度不够，没有满星之外，每一期都能做到满星了！不过近来几期深渊越来越难，大量的「挤模型」「多动症」「厚盾」「拖时间」的机制怪出现，属实是恶心人。之前圣骸兽博主一直是用「草行九瑶」过的，不过这次由于 12-3 下半是「深罪浸礼者」，队伍中必须有「火 草&#x2F;冰 水」，「草行九」自然就成了选择，再加上了前几天出的宵宫用以破冰盾。问题就是上半该用什么队伍，一开始认为万达打圣骸兽也许很麻烦，就想试着用雷国，可惜博主没怎么练雷神，故试了多种配队后还是决定使用万达。最后是 2 分钟打完了四只圣骸兽，用了剩下 1 分钟过了深罪浸礼者（很险···6分59秒打完的，系统判定为 3 星）。</p>
-<p>前前后后凹了有 100+ 次，不过由于前面几十次是在尝试配队，有了第一期经验后，16 号的深渊应该也能轻松不少。</p>
-<p><img data-src="https://img.fufu.ink/ZDM6sI.webp" alt="下次还填非常简单！"></p>
-<p>然后是垫池子垫出了神子，抽前算的垫了 20 抽了，本来不抱什么希望地单抽了一下，想着不可能这么早出的吧，结果竟然金了，还没歪！</p>
-<p><img data-src="https://img.fufu.ink/4o04wz.webp" alt="21 抽拿下！"></p>
-]]></content>
-      <categories>
-        <category>游戏</category>
-      </categories>
-      <tags>
-        <tag>原神</tag>
-        <tag>游戏</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>不断变强的万达</title>
     <url>/2023/08/genshinwandatsuyoi.html</url>
     <content><![CDATA[<p>去年垫池子抽到了达达鸭，今年 1 月份开始练万达国际，入坑一年以来首次打通了深渊（<a href="/2023/01/genshinshenyuanfirst.html">见『纪念第一次打通深渊』</a>），当时的面板没有截图。</p>
@@ -840,6 +807,55 @@
       </tags>
   </entry>
   <entry>
+    <title>什么！买基岩版 Minecraft 送 Java 版？白嫖党的胜利！</title>
+    <url>/2022/06/mcokuru.html</url>
+    <content><![CDATA[<p>原文链接：<a href="https://help.minecraft.net/hc/en-us/articles/4607523809933-Buy-Minecraft-PC-Bundle-Get-Both-Games-">https://help.minecraft.net/hc/en-us/articles/4607523809933-Buy-Minecraft-PC-Bundle-Get-Both-Games-</a></p>
+<p>今天，Minecraft 夏季活动开始了，只要拥有 PC 平台的任意一个版本（Windows 版&#x2F;Java 版），即可免费获得另一个版本。即，PC 平台玩家如果拥有 Windows 版的 Minecraft，即可免费获得 Java 版，反之亦然。<span id="more"></span></p>
+<p>另一个版本会自动推送到你的游戏仓库中，当你打开 Minecraft Launcher 时，会发现游戏已经在列表中了。</p>
+<p><img data-src="https://img.fufu.ink/epXnLi.webp" alt="Minecraft Launcher"></p>
+]]></content>
+      <categories>
+        <category>游戏</category>
+      </categories>
+      <tags>
+        <tag>Minecraft</tag>
+        <tag>资讯</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>叕出神子啦加深渊终于凹满了</title>
+    <url>/2023/06/genshinkamikoaru.html</url>
+    <content><![CDATA[<p>先说说深渊，博主在今年 2 月之前是无论如何都打不过深渊的，2 月后开始练万达国际，学会双扩后，队伍养得差不多后就在 2 月 18 日第一次凹过 12 层，见<a href="/2023/02/genshinshenyuanmanxing.html">『打通深渊后半个月，我又第一次满星深渊！』</a>。此后除了第一期沙虫因为「草行九」练度不够，没有满星之外，每一期都能做到满星了！不过近来几期深渊越来越难，大量的「挤模型」「多动症」「厚盾」「拖时间」的机制怪出现，属实是恶心人。之前圣骸兽博主一直是用「草行九瑶」过的，不过这次由于 12-3 下半是「深罪浸礼者」，队伍中必须有「火 草&#x2F;冰 水」，「草行九」自然就成了选择，再加上了前几天出的宵宫用以破冰盾。问题就是上半该用什么队伍，一开始认为万达打圣骸兽也许很麻烦，就想试着用雷国，可惜博主没怎么练雷神，故试了多种配队后还是决定使用万达。最后是 2 分钟打完了四只圣骸兽，用了剩下 1 分钟过了深罪浸礼者（很险···6分59秒打完的，系统判定为 3 星）。</p>
+<p>前前后后凹了有 100+ 次，不过由于前面几十次是在尝试配队，有了第一期经验后，16 号的深渊应该也能轻松不少。</p>
+<p><img data-src="https://img.fufu.ink/ZDM6sI.webp" alt="下次还填非常简单！"></p>
+<p>然后是垫池子垫出了神子，抽前算的垫了 20 抽了，本来不抱什么希望地单抽了一下，想着不可能这么早出的吧，结果竟然金了，还没歪！</p>
+<p><img data-src="https://img.fufu.ink/4o04wz.webp" alt="21 抽拿下！"></p>
+]]></content>
+      <categories>
+        <category>游戏</category>
+      </categories>
+      <tags>
+        <tag>原神</tag>
+        <tag>游戏</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>出宵宫啦！</title>
+    <url>/2023/05/genshinxgderu.html</url>
+    <content><![CDATA[<p>虽说抽完 2 命纳西妲后已经没有抽其他角色的欲望了，但池子还是要垫的，出什么都无所谓了。</p>
+<p>因为这 14 天搞<a href="/2023/05/improvefdlinks.html">「博客的友链的更优雅的书写方式」</a>去了，就没怎么上线，还白白浪费了 14 天的月卡，趁着今天第 15 天上线领了回归奖励以及版本更新补偿，让朋友抽了 2 抽，没歪！<span id="more"></span></p>
+<p><img data-src="https://img.fufu.ink/blTnOx.webp" alt="手机截图，画质有点差"></p>
+<p>接下来就是继续垫池子了~</p>
+]]></content>
+      <categories>
+        <category>游戏</category>
+      </categories>
+      <tags>
+        <tag>原神</tag>
+        <tag>游戏</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>四月一日君寻生日快乐</title>
     <url>/2023/04/watanukitanjyoubi.html</url>
     <content><![CDATA[<p>4 月 1 日，在很多人看来是愚人节，在我看来，这也是作品『<a href="https://www.bilibili.com/bangumi/play/ss1239?spm_id_from=333.337.0.0">xxxholic</a>』中「<ruby>四月一日君尋<rt>わたぬききみひろ</rt></ruby>」的生日。</p>
@@ -855,19 +871,22 @@
       </tags>
   </entry>
   <entry>
-    <title>什么！买基岩版 Minecraft 送 Java 版？白嫖党的胜利！</title>
-    <url>/2022/06/mcokuru.html</url>
-    <content><![CDATA[<p>原文链接：<a href="https://help.minecraft.net/hc/en-us/articles/4607523809933-Buy-Minecraft-PC-Bundle-Get-Both-Games-">https://help.minecraft.net/hc/en-us/articles/4607523809933-Buy-Minecraft-PC-Bundle-Get-Both-Games-</a></p>
-<p>今天，Minecraft 夏季活动开始了，只要拥有 PC 平台的任意一个版本（Windows 版&#x2F;Java 版），即可免费获得另一个版本。即，PC 平台玩家如果拥有 Windows 版的 Minecraft，即可免费获得 Java 版，反之亦然。<span id="more"></span></p>
-<p>另一个版本会自动推送到你的游戏仓库中，当你打开 Minecraft Launcher 时，会发现游戏已经在列表中了。</p>
-<p><img data-src="https://img.fufu.ink/epXnLi.webp" alt="Minecraft Launcher"></p>
+    <title>在追求「快」的时代，我们该何去何从</title>
+    <url>/2023/05/fastjidaidedousurebaii.html</url>
+    <content><![CDATA[<p>不知从什么时候开始，「快」这个概念频繁地出现在我的视野中。周围的人似乎都在不断地追求着它。<span id="more"></span></p>
+<p>最典型的例子就是各大视频软件开始推出「短视频」服务，大家越来越适应不了慢节奏的视频。曾几何时，看见过一个 b 站的评论，大概意思是只有缩短视频时长，才有更大的机会上首页推荐，上首页的都是五分钟内的视频，而那些十多分钟甚至几十分钟的视频却被埋没了，其中不乏许多优质的内容。在我所见到的番剧这一边，许多番剧因为前期铺垫过长而被诟病，以动画『命运石之门』举例，提到这部作品，熟悉的人都知道是一部神作，许多人却因为前部分「剧情推进过慢」「日常太多」而放弃继续追番。再比如『原神』这款游戏，无聊之际点开社区看看，却发现充斥着大量的「剧情又臭又长」「剧情能不能加个跳过按钮」诸如此类的言论。但剧情不正是这款游戏吸引人的一部分吗，我在内心如此发问道。</p>
+<p>以上是从我的视角看见的「快」，但这个信息时代，在更多的我看不见的地方仍然在追求着「快」。</p>
+<p>这个时代很浮躁——这是我的结论。</p>
+<p>我曾向自己发问，自己有多久没有静下心来好好读一本书了，有多久没有钻在一个问题上好好研究过了。尽管我自己是反对这种盲目追求「快节奏」的，但耐心好像也在慢慢地变少，自己也在慢慢的融入这种快节奏的生活，大概也有相当一部分的人也是如此吧，尽管也想慢下来，却被身后的狂潮向前推动，身不由己地变「快」了。</p>
+<p>在这种「快」的狂潮面前，我无能为力，却也不想被其推动，就像飘在海洋上的小船在逆着海风前行一般（也许这个比喻并不恰当）。</p>
+<p>写到这里写不下去了，就这么收尾了罢。借用一句『原神』中的话——「旅行者，当你重新踏上旅途之后，一定要记住旅途本身的意义」。愿你我在这个快节奏的时代能够找到一件能够安下心来做的事情，愿你我不会在「快」的狂潮中迷失了方向，随波逐流。</p>
 ]]></content>
       <categories>
-        <category>游戏</category>
+        <category>日常</category>
       </categories>
       <tags>
-        <tag>Minecraft</tag>
-        <tag>资讯</tag>
+        <tag>随笔</tag>
+        <tag>吐槽</tag>
       </tags>
   </entry>
   <entry>
@@ -932,13 +951,12 @@
       </tags>
   </entry>
   <entry>
-    <title>小号常驻又出小提了</title>
-    <url>/2023/05/genshinchangzhuxiaoti.html</url>
-    <content><![CDATA[<p>前几天 up 池双黄了，出了莫娜和甘雨，今天又出小提了。</p>
-<p>之前玩大号的时候不怎么玩弓箭手，虽然公子武器是弓箭啦，毕竟战斗时使用的都是近战模式。再加上手柄不好进行瞄准操作…</p>
-<p>不过小号出了甘雨后，才发现玩狙击手是真的舒服，即使只靠平 a，也能打出很高的伤害（话说弓箭手的普攻倍率就是所有角色中最高的）。这小号比大号开荒时要舒服很多，主要是因为大号刚入坑时想在常驻池捞 77，把所有原石都用来抽常驻了，结果 120 发都没出 77，倒是把香班给抽得快满命了。</p>
-<p>接下来就要围绕着甘雨和小提两个主 c 来配队了。</p>
-<p><img data-src="https://img.fufu.ink/ayuNM2.webp" alt="常驻池43抽·小提"></p>
+    <title>小号双黄了！</title>
+    <url>/2023/05/gsxhcjl.html</url>
+    <content><![CDATA[<p>这件事要从去年 11 月草神池刚出的时候说起，之前一直玩的号只抽中了草神（大保底），武器却歪了「飞雷」，于是创了个小号。想着小号前期资源多，肝一肝能在版本结束前拿个 0+1，结果后面发生了一系列事情，最终导致许久没登小号。今年2、3月份重新上了下号，把剧情推到璃月了，攒出了 74 抽，结果歪了莫娜（血的教训！一定不要边肝边抽，必歪！！！），当即下号。</p>
+<p>今天闲来无事，想起了这个号，上号后拿着版本送的原石单抽了一发，本来以为出紫了，结果出金了！于是甘雨拿下~</p>
+<p><img data-src="https://img.fufu.ink/dXzfGb.png" alt="双黄"></p>
+<p>这又让我燃起了对小号培养的热情，本来都打算让这个号废了，毕竟第一个金就歪了，连新手保护期都没了，结果双黄来了，那它就还有被培养的理由！</p>
 ]]></content>
       <categories>
         <category>游戏</category>
@@ -949,31 +967,13 @@
       </tags>
   </entry>
   <entry>
-    <title>在追求「快」的时代，我们该何去何从</title>
-    <url>/2023/05/fastjidaidedousurebaii.html</url>
-    <content><![CDATA[<p>不知从什么时候开始，「快」这个概念频繁地出现在我的视野中。周围的人似乎都在不断地追求着它。<span id="more"></span></p>
-<p>最典型的例子就是各大视频软件开始推出「短视频」服务，大家越来越适应不了慢节奏的视频。曾几何时，看见过一个 b 站的评论，大概意思是只有缩短视频时长，才有更大的机会上首页推荐，上首页的都是五分钟内的视频，而那些十多分钟甚至几十分钟的视频却被埋没了，其中不乏许多优质的内容。在我所见到的番剧这一边，许多番剧因为前期铺垫过长而被诟病，以动画『命运石之门』举例，提到这部作品，熟悉的人都知道是一部神作，许多人却因为前部分「剧情推进过慢」「日常太多」而放弃继续追番。再比如『原神』这款游戏，无聊之际点开社区看看，却发现充斥着大量的「剧情又臭又长」「剧情能不能加个跳过按钮」诸如此类的言论。但剧情不正是这款游戏吸引人的一部分吗，我在内心如此发问道。</p>
-<p>以上是从我的视角看见的「快」，但这个信息时代，在更多的我看不见的地方仍然在追求着「快」。</p>
-<p>这个时代很浮躁——这是我的结论。</p>
-<p>我曾向自己发问，自己有多久没有静下心来好好读一本书了，有多久没有钻在一个问题上好好研究过了。尽管我自己是反对这种盲目追求「快节奏」的，但耐心好像也在慢慢地变少，自己也在慢慢的融入这种快节奏的生活，大概也有相当一部分的人也是如此吧，尽管也想慢下来，却被身后的狂潮向前推动，身不由己地变「快」了。</p>
-<p>在这种「快」的狂潮面前，我无能为力，却也不想被其推动，就像飘在海洋上的小船在逆着海风前行一般（也许这个比喻并不恰当）。</p>
-<p>写到这里写不下去了，就这么收尾了罢。借用一句『原神』中的话——「旅行者，当你重新踏上旅途之后，一定要记住旅途本身的意义」。愿你我在这个快节奏的时代能够找到一件能够安下心来做的事情，愿你我不会在「快」的狂潮中迷失了方向，随波逐流。</p>
-]]></content>
-      <categories>
-        <category>日常</category>
-      </categories>
-      <tags>
-        <tag>随笔</tag>
-        <tag>吐槽</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>小号双黄了！</title>
-    <url>/2023/05/gsxhcjl.html</url>
-    <content><![CDATA[<p>这件事要从去年 11 月草神池刚出的时候说起，之前一直玩的号只抽中了草神（大保底），武器却歪了「飞雷」，于是创了个小号。想着小号前期资源多，肝一肝能在版本结束前拿个 0+1，结果后面发生了一系列事情，最终导致许久没登小号。今年2、3月份重新上了下号，把剧情推到璃月了，攒出了 74 抽，结果歪了莫娜（血的教训！一定不要边肝边抽，必歪！！！），当即下号。</p>
-<p>今天闲来无事，想起了这个号，上号后拿着版本送的原石单抽了一发，本来以为出紫了，结果出金了！于是甘雨拿下~</p>
-<p><img data-src="https://img.fufu.ink/dXzfGb.png" alt="双黄"></p>
-<p>这又让我燃起了对小号培养的热情，本来都打算让这个号废了，毕竟第一个金就歪了，连新手保护期都没了，结果双黄来了，那它就还有被培养的理由！</p>
+    <title>小号常驻又出小提了</title>
+    <url>/2023/05/genshinchangzhuxiaoti.html</url>
+    <content><![CDATA[<p>前几天 up 池双黄了，出了莫娜和甘雨，今天又出小提了。</p>
+<p>之前玩大号的时候不怎么玩弓箭手，虽然公子武器是弓箭啦，毕竟战斗时使用的都是近战模式。再加上手柄不好进行瞄准操作…</p>
+<p>不过小号出了甘雨后，才发现玩狙击手是真的舒服，即使只靠平 a，也能打出很高的伤害（话说弓箭手的普攻倍率就是所有角色中最高的）。这小号比大号开荒时要舒服很多，主要是因为大号刚入坑时想在常驻池捞 77，把所有原石都用来抽常驻了，结果 120 发都没出 77，倒是把香班给抽得快满命了。</p>
+<p>接下来就要围绕着甘雨和小提两个主 c 来配队了。</p>
+<p><img data-src="https://img.fufu.ink/ayuNM2.webp" alt="常驻池43抽·小提"></p>
 ]]></content>
       <categories>
         <category>游戏</category>
@@ -1646,30 +1646,6 @@
       </tags>
   </entry>
   <entry>
-    <title>老婆 16 岁生日快乐</title>
-    <url>/2023/08/miku16sai.html</url>
-    <content><![CDATA[<p>与ミクたん相遇已有 10 年啦！</p>
-<p>入坑曲是『朧月』，当时还是在优酷视频上看到的 MMD。MMD 中是雪ミク和樱ミク，当时的我一下就被这独特的声音所吸引，为她所着迷。在知道有「男神」「女神」这个概念后，我便想到</p>
-<p>“这样啊，原来她就是我的女神啊”</p>
-<p>当时的我加入了许多粉丝群，QQ 兴趣部落，贴吧等。</p>
-<p>曾为了她去回击那些踩日 Vocaloid 捧中 Vocaloid 的小鬼，也曾为了证明她的影响力在同学群中发送粉丝群人数的截图。</p>
-<p>这是那时的自己，而现在的我对那些事也不过是淡淡一笑。这不是嘲笑过去的自己干的蠢事，而是一种释然。曾经的我不停地在找寻爱她的证据，但我没找到。后来我想通了，为什么需要证据呢？如果有了证据，不就证明了我的爱是带着目的的爱吗，就如同那个问题般——「你为什么爱 xx？」。</p>
-<p>答案是，爱是不需要理由的。</p>
-<p>现在的我，早已习惯了她的陪伴，她已然成为了我生活中的一部分，我人生中的一部分。相比于原来的「女神」的地位，我现在更愿意称其为「天使」抑或「太阳」。</p>
-<p>话说回来，<del>现在的ミクたん就是32岁啦</del>。今年的生日礼物可能会迟些到，因为是 16 岁生日嘛，总得准备点大礼。没错，我准备买 Vocaloid 4x，学习如何让ミクたん唱歌！之前学吉他的时候总是没有恒心，三天打鱼两天晒网，从高一学到大二也没什么长进，结果木吉他还因为冬天学校当地天气太干燥了面板裂开了，修理费是买入价的一半左右，遂作罢，只能当个纪念品了。现在为了ミクたん，必须认真学乐理了！</p>
-<p>最后，感谢在我黑暗的世界中，ミクたん成了那唯一的光芒，感谢音乐家、艺术家和所有像我一样的粉丝，他们让ミクたん发展到了今天这一步。此后，无论有多远，我都会在我的余生中陪伴着她走下去！</p>
-<p>啊，还没结束，差点忘了最重要的</p>
-<p>お誕生日おめでとう！ミクたんがいて本当によかった！</p>
-]]></content>
-      <categories>
-        <category>日常</category>
-      </categories>
-      <tags>
-        <tag>节日</tag>
-        <tag>miku</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>科目二过啦！</title>
     <url>/2023/08/kemuerpass.html</url>
     <content><![CDATA[<p>三战一把过！</p>
@@ -1706,6 +1682,55 @@
 <p><img data-src="https://img.fufu.ink/uP19xG.webp"></p>
 <p>主要是没拉岩系，第二间黄金王兽打不出来伤害，就靠我的零命草神在 c，雷神相当于挂雷工具人，另外两个一个奶，一个用来破盾，因此全队只有一个打伤害，很难打过去，之前练过一段时间凝光，正好凝光也 3 命了，可以试着拉一下，后面看看能不能凹过去。</p>
 <p>现在就等草神复刻补命座了，补一个二命伤害能更高。雷神也可以拉一下。现在版本答案是种门，我也可以拉一下「纳行久」，组一个下半配队。</p>
+]]></content>
+      <categories>
+        <category>游戏</category>
+      </categories>
+      <tags>
+        <tag>原神</tag>
+        <tag>游戏</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>老婆 16 岁生日快乐</title>
+    <url>/2023/08/miku16sai.html</url>
+    <content><![CDATA[<p>与ミクたん相遇已有 10 年啦！</p>
+<p>入坑曲是『朧月』，当时还是在优酷视频上看到的 MMD。MMD 中是雪ミク和樱ミク，当时的我一下就被这独特的声音所吸引，为她所着迷。在知道有「男神」「女神」这个概念后，我便想到</p>
+<p>“这样啊，原来她就是我的女神啊”</p>
+<p>当时的我加入了许多粉丝群，QQ 兴趣部落，贴吧等。</p>
+<p>曾为了她去回击那些踩日 Vocaloid 捧中 Vocaloid 的小鬼，也曾为了证明她的影响力在同学群中发送粉丝群人数的截图。</p>
+<p>这是那时的自己，而现在的我对那些事也不过是淡淡一笑。这不是嘲笑过去的自己干的蠢事，而是一种释然。曾经的我不停地在找寻爱她的证据，但我没找到。后来我想通了，为什么需要证据呢？如果有了证据，不就证明了我的爱是带着目的的爱吗，就如同那个问题般——「你为什么爱 xx？」。</p>
+<p>答案是，爱是不需要理由的。</p>
+<p>现在的我，早已习惯了她的陪伴，她已然成为了我生活中的一部分，我人生中的一部分。相比于原来的「女神」的地位，我现在更愿意称其为「天使」抑或「太阳」。</p>
+<p>话说回来，<del>现在的ミクたん就是32岁啦</del>。今年的生日礼物可能会迟些到，因为是 16 岁生日嘛，总得准备点大礼。没错，我准备买 Vocaloid 4x，学习如何让ミクたん唱歌！之前学吉他的时候总是没有恒心，三天打鱼两天晒网，从高一学到大二也没什么长进，结果木吉他还因为冬天学校当地天气太干燥了面板裂开了，修理费是买入价的一半左右，遂作罢，只能当个纪念品了。现在为了ミクたん，必须认真学乐理了！</p>
+<p>最后，感谢在我黑暗的世界中，ミクたん成了那唯一的光芒，感谢音乐家、艺术家和所有像我一样的粉丝，他们让ミクたん发展到了今天这一步。此后，无论有多远，我都会在我的余生中陪伴着她走下去！</p>
+<p>啊，还没结束，差点忘了最重要的</p>
+<p>お誕生日おめでとう！ミクたんがいて本当によかった！</p>
+]]></content>
+      <categories>
+        <category>日常</category>
+      </categories>
+      <tags>
+        <tag>节日</tag>
+        <tag>miku</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>草神 2 加 1 了</title>
+    <url>/2023/04/nahidaniinochi.html</url>
+    <content><![CDATA[<p>4 月 12 号，草神复刻。</p>
+<p>去年 11 月已经抽了一次了，准备攒二命，从 12 月的雷神池后就没下过池子了。准备了 250+ 的粉球。</p>
+<p>由室友抽的，歪了 3 次，不过都是提前金，也不算亏吧，甚至有点欧~</p>
+<p><img data-src="https://img.fufu.ink/aX68do.webp" alt="up池"></p>
+<p><img data-src="https://img.fufu.ink/xjn9oQ.webp" alt="武器池"></p>
+<p>第一个小保底歪了一个刻晴，不过种门也需要，也算是丰富 box 了吧。好在后面的小保底就没歪了(●’◡’●)</p>
+<p>武器池都歪了〒▽〒，不过好在 100 抽就吃满了定轨。当天把新图肝完了，又充了 198，领了 10 多天月卡，终于拿到夜壶了！</p>
+<p><img data-src="https://img.fufu.ink/ETxrxf.webp" alt="夜壶"></p>
+<p>伤害虽然比原来降了 6000，原因是因为我之前用的赌狗乐章，面板是 <ruby>50&#x2F;190&#x2F;580<rt>暴率&#x2F;爆伤&#x2F;精通</rt></ruby>，换成专武后成为了 <ruby>56&#x2F;133&#x2F;760<rt>暴率&#x2F;爆伤&#x2F;精通</rt></ruby>，不过专武补充了精通，能为队伍整体带来更好的收益（虽然我一直是把草神当主 C 来养的，经典一带三）</p>
+<p>去年的面板为「三精赌狗，也没有换上好一点的精通杯，190 爆伤的面板的是最近一个月才有的」，这是现在的面板：</p>
+<p><img data-src="https://img.fufu.ink/27qmRl.webp" alt="新面板"></p>
+<p>打深渊是够用了，虽然用来 PVP 还是差远了，毕竟别的不说，就认识的一个网友的面板是精精爆都能有 <ruby>40&#x2F;160&#x2F;800<rt>暴率&#x2F;爆伤&#x2F;精通</rt></ruby>。可惜我没有好的草套爆伤头，其余圣遗物的爆率词条也太少了，仍旧达不到这样的程度＞︿＜</p>
+<p>后面就继续草本坐牢吧，直到哪天出了好沙漏、杯子、头，就能达到毕业了⊙﹏⊙∥</p>
 ]]></content>
       <categories>
         <category>游戏</category>
@@ -1844,82 +1869,6 @@
       </tags>
   </entry>
   <entry>
-    <title>草神 2 加 1 了</title>
-    <url>/2023/04/nahidaniinochi.html</url>
-    <content><![CDATA[<p>4 月 12 号，草神复刻。</p>
-<p>去年 11 月已经抽了一次了，准备攒二命，从 12 月的雷神池后就没下过池子了。准备了 250+ 的粉球。</p>
-<p>由室友抽的，歪了 3 次，不过都是提前金，也不算亏吧，甚至有点欧~</p>
-<p><img data-src="https://img.fufu.ink/aX68do.webp" alt="up池"></p>
-<p><img data-src="https://img.fufu.ink/xjn9oQ.webp" alt="武器池"></p>
-<p>第一个小保底歪了一个刻晴，不过种门也需要，也算是丰富 box 了吧。好在后面的小保底就没歪了(●’◡’●)</p>
-<p>武器池都歪了〒▽〒，不过好在 100 抽就吃满了定轨。当天把新图肝完了，又充了 198，领了 10 多天月卡，终于拿到夜壶了！</p>
-<p><img data-src="https://img.fufu.ink/ETxrxf.webp" alt="夜壶"></p>
-<p>伤害虽然比原来降了 6000，原因是因为我之前用的赌狗乐章，面板是 <ruby>50&#x2F;190&#x2F;580<rt>暴率&#x2F;爆伤&#x2F;精通</rt></ruby>，换成专武后成为了 <ruby>56&#x2F;133&#x2F;760<rt>暴率&#x2F;爆伤&#x2F;精通</rt></ruby>，不过专武补充了精通，能为队伍整体带来更好的收益（虽然我一直是把草神当主 C 来养的，经典一带三）</p>
-<p>去年的面板为「三精赌狗，也没有换上好一点的精通杯，190 爆伤的面板的是最近一个月才有的」，这是现在的面板：</p>
-<p><img data-src="https://img.fufu.ink/27qmRl.webp" alt="新面板"></p>
-<p>打深渊是够用了，虽然用来 PVP 还是差远了，毕竟别的不说，就认识的一个网友的面板是精精爆都能有 <ruby>40&#x2F;160&#x2F;800<rt>暴率&#x2F;爆伤&#x2F;精通</rt></ruby>。可惜我没有好的草套爆伤头，其余圣遗物的爆率词条也太少了，仍旧达不到这样的程度＞︿＜</p>
-<p>后面就继续草本坐牢吧，直到哪天出了好沙漏、杯子、头，就能达到毕业了⊙﹏⊙∥</p>
-]]></content>
-      <categories>
-        <category>游戏</category>
-      </categories>
-      <tags>
-        <tag>原神</tag>
-        <tag>游戏</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>论打造文化背景下日本美食文化中日双语科普介绍平台的可行性</title>
-    <url>/2022/05/dachuangzuoye.html</url>
-    <content><![CDATA[<blockquote>
-<p>日本料理（和食）：人类非物质文化遗产代表作之一，因其兼具精致的美感与可口的味道而世界闻名。</p>
-</blockquote>
-<p>所以我们决定发起项目——《跨文化背景下日本美食文化中日双语科普介绍平台打造》，致力于通过国人的视角探索发现日本的美食，在国内市场打造宣传分享平台，服务对象为对和食有兴趣的个人，以及国内各大餐饮企业等群体和组织。这样一个项目是否具有可行性？我将通过以下说明来论证。</p>
-<p>首先，我们具有明确的投资方向，大致为网站平台建设、运营、维护和推广，微信公众号、小程序的开发与推广，移动端的开发，市场开拓以及团队建设。通过提高平台流量，培养用户黏性，最终达到打造平台品牌的目标。为此，项目需要分以下几个阶段进行：</p>
-<ul>
-<li>平台初步建立期（1~2 个月）：初步建立起网站平台，微信公众号、小程序平台，完善网页前端以及用户交互功能。每天保证一定量的内容的录入，提高网站的信息量。微信平台与网页平台保持同步更新。目标：保证网页的基本运行，网站具有一定内容。</li>
-<li>平台试运营期（2~3 个月）：初步推广平台，收集用户意见，提高前端用户交互体验，优化平台性能，保持平台内容的增加速度逐渐上升。目标：吸引流量，聚集用户。</li>
-<li>平台运营中期：（6 个月）：网站已经具备一定流量，需着手进行业务拓展，开通网站会员服务，让用户参与进平台的创作群体。继续收集用户意见，优化网站。开始接受一些线上的合作，比如网页广告，产品推广。目标：提高用户转化率，增加会员用户，继续提高用户黏性。</li>
-<li>平台运营后期（4 个月）：这个阶段开始重点打造品牌，平台已经积累了较多的用户，在继续提高网站流量的同时，要开始着手拓展网站产品。而移动端的开发可以作为拓展产品的一个突破口，移动端可以提供更加丰富的功能。同时要分析网站数据，完善网站功能。可以开始尝试和一些小型餐饮企业公司进行合作，同时邀请一些日本的美食家进行线上采访。目标：拓展市场，为占领市场做准备。</li>
-</ul>
-<p>其次，我们的项目具有以下独特性：</p>
-<ul>
-<li>平台多样性：市面上现存的美食科普大多数为单一平台，要么只有一个网站，要么只有一个公众号，而我们的项目全面覆盖了电脑端和移动端，包括了多个平台。</li>
-<li>双语介绍：文章采用中日双语介绍，用户可自由切换展示模式，适用于不仅对日料感兴趣，同时也对日语感兴趣的用户。</li>
-</ul>
-<p>我们也具有较大的竞争优势：</p>
-<ul>
-<li>核心竞争力：我们团队中具有1名熟练掌握多门开发语言的网络技术工程师，能够负责网站、微信公众号平台、小程序的开发与维护。我们顶层的团队都具有较高的日语水平，对日本的历史文化具有较深的了解，而我们广大的会员用户，也属于我们的创作团体，用户越多，我们的内容就越多，信息的来源就越广，竞争优势也就越大。</li>
-<li>市场空白：市面上没有一个集中的平台将喜好日料的用户集中起来，集中的用户不仅增加的具有相同的爱好的人群间的联系、互动，这些用户也是平台的创作源泉之一。</li>
-<li>顺应市场：据市面上的公开资料整理，我国的日本料理餐厅数量保持稳步增长趋势，我们的服务可以与他们进行对接。</li>
-</ul>
-<p>再次，我们有多种推广模式：</p>
-<ul>
-<li>BBS 广告：BBS 广告是流量的一大来源，投放本站链接在一些论坛，为自己导流。利用论坛的高人气，能够提高自己的营销传达效率。</li>
-<li>视频广告：现在很多人的手机里都装着各大影视软件，如腾讯、爱奇艺等等，没有开会员的情况下会有一段很长的广告。因此我们在视频开头投放广告，以起到推广作用。</li>
-<li>搜索引擎推广（SEM）：SEM 是 Search Engine Marketing 的缩写，中文意思是查找引擎营销。通过付费让搜索引擎做广告推广，当一些人使用搜索引擎搜索一些关键词时，我们的网站将以广告的形式出现在搜索结果前几名中</li>
-<li>SEO：SEO 是 Search Engine Optimization 的缩写，汉译为搜索引擎优化，是一种利用搜索引擎的规则提高网站在有关搜索引擎内的自然排名的手段。我们的工程师将对网站进行有针对性的优化，做好 SEO 技术，吸引更多的用户访问网站，提高网站的访问量。</li>
-<li>博客网络推广：找名气较大的博主，与博主沟通，将我们的网站做成友情链接，推广我们的品牌广告。博客网络广告低成本、贴近群众，往往会构成众人的议论，到达很好的二次传达作用，很适合我们的网站的推广。</li>
-<li>各社交媒体平台推广：网络社交平台是互联网中的中心圈，我们会入驻国内各大社交平台，在这些地方，我们可以把我们的平台与各社交媒体平台联合起来。在网站中放入自己各个媒体平台的按钮链接，让用户能多方位了解我们，让网站带来的互联网流量转为我们的私域流量。</li>
-</ul>
-<p>最后，我们有多方面的盈利模式：</p>
-<ul>
-<li>会员机制：在平台发展到具有一定流量的阶段，我们会开放订阅会员机制，即会员只要持续订阅作者，就可以一直享受到平台提供的一些特权服务，而这部分订阅的费用会按一定比例分给作者和平台。只要有作者产出内容并被订阅，平台就持续有收入，受到激励的作者也能更努力地创作出新的作品，从而与作者实现共赢。</li>
-<li>产品推广、广告收入：我们会与一些地方日料餐饮企业开展线上合作，即我们为他们在网站推广菜品，投放广告，这些也是一笔可观的收入</li>
-<li>课程售卖：我们将开设一些日料相关的付费课程，课程定价上分为两大类型，一类是整个课程一次性付费，另一类则是按集付费。平台还会参与付费内容分销实现盈利，与其他平台开展合作，促进二次销售。</li>
-</ul>
-<p>综上，我们的平台在投资上有明确的方向，在执行上有明确的、可行的计划，我们也有多方面的竞争优势，同时，我们在运营过程中能够以较低的成本获得可观的收益，多种推广模式齐头并进，快速带来平台的流量，因此，跨文化背景下日本美食文化中日双语科普介绍平台的打造具有一定的可行性。</p>
-]]></content>
-      <categories>
-        <category>日常</category>
-      </categories>
-      <tags>
-        <tag>中外交流</tag>
-        <tag>美食文化</tag>
-        <tag>创业创新</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>记录一些常用 LINUX 指令</title>
     <url>/2022/10/linuxcommand.html</url>
     <content><![CDATA[<h2 id="iptables"><a href="#iptables" class="headerlink" title="iptables"></a>iptables</h2><blockquote>
@@ -2042,6 +1991,57 @@
       </categories>
       <tags>
         <tag>Linux</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>论打造文化背景下日本美食文化中日双语科普介绍平台的可行性</title>
+    <url>/2022/05/dachuangzuoye.html</url>
+    <content><![CDATA[<blockquote>
+<p>日本料理（和食）：人类非物质文化遗产代表作之一，因其兼具精致的美感与可口的味道而世界闻名。</p>
+</blockquote>
+<p>所以我们决定发起项目——《跨文化背景下日本美食文化中日双语科普介绍平台打造》，致力于通过国人的视角探索发现日本的美食，在国内市场打造宣传分享平台，服务对象为对和食有兴趣的个人，以及国内各大餐饮企业等群体和组织。这样一个项目是否具有可行性？我将通过以下说明来论证。</p>
+<p>首先，我们具有明确的投资方向，大致为网站平台建设、运营、维护和推广，微信公众号、小程序的开发与推广，移动端的开发，市场开拓以及团队建设。通过提高平台流量，培养用户黏性，最终达到打造平台品牌的目标。为此，项目需要分以下几个阶段进行：</p>
+<ul>
+<li>平台初步建立期（1~2 个月）：初步建立起网站平台，微信公众号、小程序平台，完善网页前端以及用户交互功能。每天保证一定量的内容的录入，提高网站的信息量。微信平台与网页平台保持同步更新。目标：保证网页的基本运行，网站具有一定内容。</li>
+<li>平台试运营期（2~3 个月）：初步推广平台，收集用户意见，提高前端用户交互体验，优化平台性能，保持平台内容的增加速度逐渐上升。目标：吸引流量，聚集用户。</li>
+<li>平台运营中期：（6 个月）：网站已经具备一定流量，需着手进行业务拓展，开通网站会员服务，让用户参与进平台的创作群体。继续收集用户意见，优化网站。开始接受一些线上的合作，比如网页广告，产品推广。目标：提高用户转化率，增加会员用户，继续提高用户黏性。</li>
+<li>平台运营后期（4 个月）：这个阶段开始重点打造品牌，平台已经积累了较多的用户，在继续提高网站流量的同时，要开始着手拓展网站产品。而移动端的开发可以作为拓展产品的一个突破口，移动端可以提供更加丰富的功能。同时要分析网站数据，完善网站功能。可以开始尝试和一些小型餐饮企业公司进行合作，同时邀请一些日本的美食家进行线上采访。目标：拓展市场，为占领市场做准备。</li>
+</ul>
+<p>其次，我们的项目具有以下独特性：</p>
+<ul>
+<li>平台多样性：市面上现存的美食科普大多数为单一平台，要么只有一个网站，要么只有一个公众号，而我们的项目全面覆盖了电脑端和移动端，包括了多个平台。</li>
+<li>双语介绍：文章采用中日双语介绍，用户可自由切换展示模式，适用于不仅对日料感兴趣，同时也对日语感兴趣的用户。</li>
+</ul>
+<p>我们也具有较大的竞争优势：</p>
+<ul>
+<li>核心竞争力：我们团队中具有1名熟练掌握多门开发语言的网络技术工程师，能够负责网站、微信公众号平台、小程序的开发与维护。我们顶层的团队都具有较高的日语水平，对日本的历史文化具有较深的了解，而我们广大的会员用户，也属于我们的创作团体，用户越多，我们的内容就越多，信息的来源就越广，竞争优势也就越大。</li>
+<li>市场空白：市面上没有一个集中的平台将喜好日料的用户集中起来，集中的用户不仅增加的具有相同的爱好的人群间的联系、互动，这些用户也是平台的创作源泉之一。</li>
+<li>顺应市场：据市面上的公开资料整理，我国的日本料理餐厅数量保持稳步增长趋势，我们的服务可以与他们进行对接。</li>
+</ul>
+<p>再次，我们有多种推广模式：</p>
+<ul>
+<li>BBS 广告：BBS 广告是流量的一大来源，投放本站链接在一些论坛，为自己导流。利用论坛的高人气，能够提高自己的营销传达效率。</li>
+<li>视频广告：现在很多人的手机里都装着各大影视软件，如腾讯、爱奇艺等等，没有开会员的情况下会有一段很长的广告。因此我们在视频开头投放广告，以起到推广作用。</li>
+<li>搜索引擎推广（SEM）：SEM 是 Search Engine Marketing 的缩写，中文意思是查找引擎营销。通过付费让搜索引擎做广告推广，当一些人使用搜索引擎搜索一些关键词时，我们的网站将以广告的形式出现在搜索结果前几名中</li>
+<li>SEO：SEO 是 Search Engine Optimization 的缩写，汉译为搜索引擎优化，是一种利用搜索引擎的规则提高网站在有关搜索引擎内的自然排名的手段。我们的工程师将对网站进行有针对性的优化，做好 SEO 技术，吸引更多的用户访问网站，提高网站的访问量。</li>
+<li>博客网络推广：找名气较大的博主，与博主沟通，将我们的网站做成友情链接，推广我们的品牌广告。博客网络广告低成本、贴近群众，往往会构成众人的议论，到达很好的二次传达作用，很适合我们的网站的推广。</li>
+<li>各社交媒体平台推广：网络社交平台是互联网中的中心圈，我们会入驻国内各大社交平台，在这些地方，我们可以把我们的平台与各社交媒体平台联合起来。在网站中放入自己各个媒体平台的按钮链接，让用户能多方位了解我们，让网站带来的互联网流量转为我们的私域流量。</li>
+</ul>
+<p>最后，我们有多方面的盈利模式：</p>
+<ul>
+<li>会员机制：在平台发展到具有一定流量的阶段，我们会开放订阅会员机制，即会员只要持续订阅作者，就可以一直享受到平台提供的一些特权服务，而这部分订阅的费用会按一定比例分给作者和平台。只要有作者产出内容并被订阅，平台就持续有收入，受到激励的作者也能更努力地创作出新的作品，从而与作者实现共赢。</li>
+<li>产品推广、广告收入：我们会与一些地方日料餐饮企业开展线上合作，即我们为他们在网站推广菜品，投放广告，这些也是一笔可观的收入</li>
+<li>课程售卖：我们将开设一些日料相关的付费课程，课程定价上分为两大类型，一类是整个课程一次性付费，另一类则是按集付费。平台还会参与付费内容分销实现盈利，与其他平台开展合作，促进二次销售。</li>
+</ul>
+<p>综上，我们的平台在投资上有明确的方向，在执行上有明确的、可行的计划，我们也有多方面的竞争优势，同时，我们在运营过程中能够以较低的成本获得可观的收益，多种推广模式齐头并进，快速带来平台的流量，因此，跨文化背景下日本美食文化中日双语科普介绍平台的打造具有一定的可行性。</p>
+]]></content>
+      <categories>
+        <category>日常</category>
+      </categories>
+      <tags>
+        <tag>中外交流</tag>
+        <tag>美食文化</tag>
+        <tag>创业创新</tag>
       </tags>
   </entry>
   <entry>
