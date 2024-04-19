@@ -66,6 +66,81 @@
       </tags>
   </entry>
   <entry>
+    <title>Next 主题添加公告栏</title>
+    <url>/2024/04/nextaddnotice.html</url>
+    <content><![CDATA[<p>字面意思，给 Next 主题添加个公告栏，不过由于 Next 侧边栏只在宽屏上显示，在手机上是看不到的。</p>
+<p>适用范围：Next·Pisces 主题</p>
+<span id="more"></span>
+
+<p>打开 <code>hexo/themes/next/layout/_macro/sidebar.njk</code>，在 <code>&lt;/aside&gt;</code> 与最后一个 <code>&#123;%- endif %&#125;</code> 之间添加以下代码</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&#123;%- if theme.related_posts.enable %&#125;</span><br><span class="line">      &#123;%- if theme.pjax %&#125;</span><br><span class="line">        &lt;div class=&quot;pjax&quot;&gt;</span><br><span class="line">      &#123;%- endif %&#125;</span><br><span class="line">      &#123;%- if page.related_posts and page.related_posts.length &gt; 0 %&#125;</span><br><span class="line">        &lt;div class=&quot;sidebar-inner sidebar-post-related&quot;&gt;</span><br><span class="line">          &lt;div class=&quot;animated&quot;&gt;</span><br><span class="line">            &#123;&#123; partial(&#x27;_partials/post/post-related.njk&#x27;) &#125;&#125;</span><br><span class="line">          &lt;/div&gt;</span><br><span class="line">        &lt;/div&gt;</span><br><span class="line">      &#123;%- endif %&#125;</span><br><span class="line">      &#123;%- if theme.pjax %&#125;</span><br><span class="line">        &lt;/div&gt;</span><br><span class="line">      &#123;%- endif %&#125;</span><br><span class="line">    &#123;%- endif %&#125;</span><br><span class="line"></span><br><span class="line">+    &#123;%- if theme.notice.enable %&#125;</span><br><span class="line">+      &#123;%- if theme.pjax %&#125;</span><br><span class="line">+        &lt;div class=&quot;pjax&quot;&gt;</span><br><span class="line">+      &#123;%- endif %&#125;</span><br><span class="line">+      &#123;%- if theme.notice.content.length &gt; 0 %&#125;</span><br><span class="line">+        &lt;div class=&quot;sidebar-inner notice&quot; style=&quot;padding: 18px;&quot;&gt;</span><br><span class="line">+          &lt;div class=&quot;notice-title&quot; style=&quot;font-size: 1.2em;text-align: left;&quot;&gt;</span><br><span class="line">+            &lt;i class=&quot;fa-solid fa-bullhorn&quot;&gt;&lt;/i&gt;</span><br><span class="line">+            &lt;span style=&quot;margin-left: 6px;&quot;&gt;公告&lt;/span&gt;</span><br><span class="line">+          &lt;/div&gt;</span><br><span class="line">+          &lt;div class=&quot;notice-content&quot; style=&quot;text-align: justify;&quot;&gt;</span><br><span class="line">+            &#123;&#123; theme.notice.content &#125;&#125;</span><br><span class="line">+          &lt;/div&gt;</span><br><span class="line">+        &lt;/div&gt;</span><br><span class="line">+      &#123;%- endif %&#125;</span><br><span class="line">+      &#123;%- if theme.pjax %&#125;</span><br><span class="line">+        &lt;/div&gt;</span><br><span class="line">+      &#123;%- endif %&#125;</span><br><span class="line">+    &#123;%- endif %&#125;</span><br><span class="line">	&lt;/aside&gt;</span><br><span class="line">&#123;% endmacro %&#125;</span><br></pre></td></tr></table></figure>
+
+<p>以下为方便复制的版本</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&#123;%- if theme.notice.enable %&#125;</span><br><span class="line">      &#123;%- if theme.pjax %&#125;</span><br><span class="line">        &lt;div class=&quot;pjax&quot;&gt;</span><br><span class="line">      &#123;%- endif %&#125;</span><br><span class="line">      &#123;%- if theme.notice.content.length &gt; 0 %&#125;</span><br><span class="line">        &lt;div class=&quot;sidebar-inner notice&quot; style=&quot;padding: 18px;&quot;&gt;</span><br><span class="line">          &lt;div class=&quot;notice-title&quot; style=&quot;font-size: 1.2em;text-align: left;&quot;&gt;</span><br><span class="line">            &lt;i class=&quot;fa-solid fa-bullhorn&quot;&gt;&lt;/i&gt;</span><br><span class="line">            &lt;span style=&quot;margin-left: 6px;&quot;&gt;公告&lt;/span&gt;</span><br><span class="line">          &lt;/div&gt;</span><br><span class="line">          &lt;div class=&quot;notice-content&quot; style=&quot;text-align: justify;&quot;&gt;</span><br><span class="line">            &#123;&#123; theme.notice.content &#125;&#125;</span><br><span class="line">          &lt;/div&gt;</span><br><span class="line">        &lt;/div&gt;</span><br><span class="line">      &#123;%- endif %&#125;</span><br><span class="line">      &#123;%- if theme.pjax %&#125;</span><br><span class="line">        &lt;/div&gt;</span><br><span class="line">      &#123;%- endif %&#125;</span><br><span class="line">&#123;%- endif %&#125;</span><br></pre></td></tr></table></figure>
+
+<p>然后在主题配置 <code>_config.next.yml</code> 中添加以下内容</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">notice:</span><br><span class="line">  enable: true</span><br><span class="line">  content: #公告内容</span><br></pre></td></tr></table></figure>
+
+<p>样式写的很简单，如有需要请自行更改。</p>
+]]></content>
+      <categories>
+        <category>技术</category>
+      </categories>
+      <tags>
+        <tag>教程</tag>
+        <tag>技术</tag>
+        <tag>Hexo</tag>
+        <tag>Next</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Next 主题添加说说</title>
+    <url>/2024/04/nextaddessay.html</url>
+    <content><![CDATA[<p>看见洪哥的即刻页面很好看，想 Copy 过来，可惜技术不行，写不来瀑布流，就只能搞个简单的 flex 布局。</p>
+<p>原理和友链页面是一样的，模版文件遍历 <code>hexo/source/_data</code> 文件夹下的 yml 然后循环生成结构。</p>
+<p>在这里感谢好朋友 <a href="https://miku.show/">@OrzMiku</a> 的帮助，修改该博客过程中，很多问题都是通过大佬耐心解答才得以解决 Orz</p>
+<p>废话不多说，直接 <code>Ctrl + C / V</code> 走起</p>
+<span id="more"></span>
+
+<p>在 <code>hexo/themes/next/layout/</code> 下创建 <code>essay.njk</code> 并写入以下内容</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">    &#123;##################&#125;</span><br><span class="line">    &#123;### ESSAY BLOCK ###&#125;</span><br><span class="line">    &#123;##################&#125;</span><br><span class="line"></span><br><span class="line">&lt;style&gt;</span><br><span class="line">#bber * &#123;</span><br><span class="line">  box-sizing: border-box;</span><br><span class="line">&#125;</span><br><span class="line">ul#waterfall &#123;</span><br><span class="line">    display: flex;</span><br><span class="line">    flex-wrap: wrap;</span><br><span class="line">    justify-content: space-between;</span><br><span class="line">    list-style: none;</span><br><span class="line">    margin: 0;</span><br><span class="line">    padding: 0;</span><br><span class="line">&#125;</span><br><span class="line">li.item &#123;</span><br><span class="line">    display: flex;</span><br><span class="line">    flex-direction: column;</span><br><span class="line">    flex-wrap: nowrap;</span><br><span class="line">    justify-content: flex-end;</span><br><span class="line">    align-items: flex-start;</span><br><span class="line">    border: 1px solid #e3e8f7;</span><br><span class="line">    padding: 20px;</span><br><span class="line">    margin: 10px;</span><br><span class="line">    flex-basis: 100%;</span><br><span class="line">    border-radius: 12px;</span><br><span class="line">&#125;</span><br><span class="line">.bber-content &#123;</span><br><span class="line">    display: flex;</span><br><span class="line">    flex-wrap: wrap;</span><br><span class="line">    justify-content: space-between;</span><br><span class="line">&#125;</span><br><span class="line">div#bber-tips &#123;</span><br><span class="line">    display: flex;</span><br><span class="line">    justify-content: center;</span><br><span class="line">&#125;</span><br><span class="line">#bber p &#123;</span><br><span class="line">  margin: 0px;</span><br><span class="line">  padding: 0px;</span><br><span class="line">&#125;</span><br><span class="line">.item hr &#123;</span><br><span class="line">  border: 1px dashed #4259ef23;</span><br><span class="line">  height: 0px;</span><br><span class="line">  margin: 8px 0px;</span><br><span class="line">  display: flex;</span><br><span class="line">  width: 100%;</span><br><span class="line">&#125;</span><br><span class="line">.bber-container-img &#123;</span><br><span class="line">    display: flex;</span><br><span class="line">    gap: 3px;</span><br><span class="line">    margin-bottom: 3px;</span><br><span class="line">&#125;</span><br><span class="line">a.fancybox &#123;</span><br><span class="line">    flex: 1;</span><br><span class="line">&#125;</span><br><span class="line">.bber-info, .bber-info-time, .bber-content-link &#123;</span><br><span class="line">    display: inline-block;</span><br><span class="line">&#125;</span><br><span class="line">.bber-content-link &#123;</span><br><span class="line">    margin-left: 15px;</span><br><span class="line">&#125;</span><br><span class="line">.bber-bottom &#123;</span><br><span class="line">    width: 100%;</span><br><span class="line">&#125;</span><br><span class="line">.bber-info-time, .bber-content-link &#123;</span><br><span class="line">    background-color: rgba(153,153,153,0.169);</span><br><span class="line">    border-radius: 20px;</span><br><span class="line">    padding: 0 8px;</span><br><span class="line">    font-size: .9rem;</span><br><span class="line">    color: var(--text-color);</span><br><span class="line">&#125;</span><br><span class="line">&lt;/style&gt;</span><br><span class="line"></span><br><span class="line">&lt;div id=&quot;bber&quot;&gt;</span><br><span class="line">  &lt;section class=&quot;timeline page-1&quot;&gt;</span><br><span class="line">    &lt;ul id=&quot;waterfall&quot; class=&quot;list&quot;&gt;</span><br><span class="line">      &#123;% for i in site.data.essay %&#125;</span><br><span class="line">        &#123;% for item in i.essay_list %&#125;</span><br><span class="line">            &lt;li class=&quot;item&quot;&gt;</span><br><span class="line">              &lt;div class=&quot;bber-content&quot;&gt;</span><br><span class="line">                &lt;p class=&quot;datacont&quot;&gt;&#123;&#123; item.content &#125;&#125;&lt;/p&gt;</span><br><span class="line">                &#123;% if item.image %&#125;</span><br><span class="line">                  &lt;div class=&quot;bber-container-img&quot;&gt;</span><br><span class="line">                    &#123;% for indey in item.image %&#125;</span><br><span class="line">                      &lt;img src=&quot;&#123;&#123; indey &#125;&#125;&quot; style=&quot;margin-bottom: 0px;&quot; /&gt;</span><br><span class="line">                    &#123;% endfor %&#125;</span><br><span class="line">                  &lt;/div&gt;</span><br><span class="line">                &#123;% endif %&#125;</span><br><span class="line">              &lt;/div&gt;</span><br><span class="line">              &lt;hr&gt;</span><br><span class="line">              &lt;div class=&quot;bber-bottom&quot;&gt;</span><br><span class="line">                &lt;div class=&quot;bber-info&quot;&gt;</span><br><span class="line">                  &lt;div class=&quot;bber-info-time&quot;&gt;</span><br><span class="line">                    &lt;i class=&quot;far fa-clock&quot;&gt;&lt;/i&gt;</span><br><span class="line">                    &lt;time class=&quot;datatime&quot; datetime=&quot;&#123;&#123; item.date &#125;&#125;&quot;&gt;&#123;&#123; date(item.date, &quot;YYYY/M/D&quot;) &#125;&#125;&lt;/time&gt;</span><br><span class="line">                  &lt;/div&gt;</span><br><span class="line">                  &#123;% if item.link %&#125;</span><br><span class="line">                    &lt;a href=&quot;&#123;&#123; item.link &#125;&#125;&quot; class=&quot;bber-content-link&quot; target=&quot;_blank&quot; title=&quot;跳转到短文指引的链接&quot;&gt;</span><br><span class="line">                      &lt;i class=&quot;fas fa-link&quot;&gt;&lt;/i&gt;</span><br><span class="line">                      链接</span><br><span class="line">                    &lt;/a&gt;</span><br><span class="line">                  &#123;% endif %&#125;</span><br><span class="line">                &lt;/div&gt;</span><br><span class="line">              &lt;/div&gt;</span><br><span class="line">            &lt;/li&gt;</span><br><span class="line">        &#123;% endfor %&#125;</span><br><span class="line">      &#123;% endfor %&#125;</span><br><span class="line">    &lt;/ul&gt;</span><br><span class="line">  &lt;/section&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line"></span><br><span class="line">    &#123;######################&#125;</span><br><span class="line">    &#123;### END ESSAY BLOCK ###&#125;</span><br><span class="line">    &#123;######################&#125;</span><br></pre></td></tr></table></figure>
+<p>然后打开 <code>hexo/themes/next/layout/page.njk</code>，在 <code>&#123;% block title %&#125;&#123;% endblock %&#125;</code> 内的 <code>&#123;%- else %&#125;</code> 前添加</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&#123;%- if page.type === &#x27;categories&#x27; and not page.title %&#125;</span><br><span class="line">    &#123;&#123;- __(&#x27;title.category&#x27;) + page_title_suffix &#125;&#125;</span><br><span class="line">&#123;%- elif page.type === &#x27;tags&#x27; and not page.title %&#125;</span><br><span class="line">    &#123;&#123;- __(&#x27;title.tag&#x27;) + page_title_suffix &#125;&#125;</span><br><span class="line">&#123;%- elif page.type === &#x27;schedule&#x27; and not page.title %&#125;</span><br><span class="line">    &#123;&#123;- __(&#x27;title.schedule&#x27;) + page_title_suffix &#125;&#125;</span><br><span class="line">+&#123;%- elif page.type === &#x27;essay&#x27; and not page.title %&#125;</span><br><span class="line">+    &#123;&#123;- __(&#x27;title.essay&#x27;) + page_title_suffix &#125;&#125;</span><br><span class="line">&#123;%- else %&#125;</span><br></pre></td></tr></table></figure>
+
+<p>以下为方便复制版本</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&#123;%- elif page.type === &#x27;essay&#x27; and not page.title %&#125;</span><br><span class="line">    &#123;&#123;- __(&#x27;title.essay&#x27;) + page_title_suffix &#125;&#125;</span><br></pre></td></tr></table></figure>
+
+<p>然后在下面的 <code>block content</code> 里的 <code>PAGE BODY</code> 内的 <code>&#123;% else %&#125;</code> 前，插入</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&#123;%- if page.type === &#x27;tags&#x27; %&#125;</span><br><span class="line">  &#123;%- include &#x27;_partials/page/tags.njk&#x27; -%&#125;</span><br><span class="line">&#123;% elif page.type === &#x27;categories&#x27; %&#125;</span><br><span class="line">  &#123;%- include &#x27;_partials/page/categories.njk&#x27; -%&#125;</span><br><span class="line">&#123;% elif page.type === &#x27;schedule&#x27; %&#125;</span><br><span class="line">  &#123;%- include &#x27;_partials/page/schedule.njk&#x27; -%&#125;</span><br><span class="line">+&#123;% elif page.type === &#x27;essay&#x27; %&#125;</span><br><span class="line">+  &#123;%- include &#x27;essay.njk&#x27; -%&#125;</span><br><span class="line">&#123;% else %&#125;</span><br></pre></td></tr></table></figure>
+
+<p>以下为方便复制版本</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&#123;% elif page.type === &#x27;essay&#x27; %&#125;</span><br><span class="line">  &#123;%- include &#x27;essay.njk&#x27; -%&#125;</span><br></pre></td></tr></table></figure>
+
+<p>然后在 <code>hexo/source/_data/</code> 下创建 <code>essay.yml</code>，写入以下内容</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">- class_name: 说说</span><br><span class="line">  essay_list:</span><br><span class="line">    - content: #（必须）内容</span><br><span class="line">      date: #（必须）日期 格式：年-月-日（月与日必须是 2 位数，如2024年3月9号为 2024-03-09）</span><br><span class="line">      link: #（可选）链接，可以在下方插入一条链接</span><br><span class="line">      image: #（可选），插入图片，可插入多张，写法如下，注意缩进</span><br><span class="line">        - #图片路径</span><br><span class="line">        - #图片路径</span><br><span class="line">        - #图片路径</span><br><span class="line">    - content:</span><br><span class="line">      date:</span><br><span class="line">    - content:</span><br><span class="line">      date:</span><br></pre></td></tr></table></figure>
+
+<p>运行 <code>hexo new page &quot;essay&quot;</code> 创建 <code>hexo/source/essay/index.md</code> 文件，设置标题日期，type 要设置为 <code>&quot;essay&quot;</code></p>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">title: 说说</span><br><span class="line">date: 2023-09-26 11:18:28</span><br><span class="line">type: &quot;essay&quot;</span><br></pre></td></tr></table></figure>
+
+<p>打开 <code>_config.next.yml</code>，在 <code>menu</code> 中添加</p>
+<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="attr">menu:</span></span><br><span class="line">  <span class="attr">essay:</span> <span class="string">/essay/</span> <span class="string">||</span> <span class="string">fas</span> <span class="string">fa-pen</span></span><br></pre></td></tr></table></figure>
+
+<p>打开 <code>hexo/themes/next/languages/zh-CN.yml</code>，在 <code>menu</code> 中添加</p>
+<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="attr">menu:</span></span><br><span class="line">  <span class="attr">essay:</span> <span class="string">说说</span></span><br></pre></td></tr></table></figure>
+
+<p>之后在 <code>hexo/source/_data/essay.yml</code> 更新内容就可以了，需要注意的是，内容的先后顺序与渲染出来的结果是一致的，即越写在上面的，在渲染结果中也就越排在上方</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">- content: 因为在最上面，所以网页中在最上方</span><br><span class="line">  date: 2024-03-09</span><br><span class="line">- content: 因为排在下方，所以网页中排在后面</span><br><span class="line">  date: 2024-03-09</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>技术</category>
+      </categories>
+      <tags>
+        <tag>教程</tag>
+        <tag>技术</tag>
+        <tag>Hexo</tag>
+        <tag>Next</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Next 主题部分图片禁用 FancyBox</title>
     <url>/2023/04/nextthemefancyboxdisabled.html</url>
     <content><![CDATA[<p>之前用的主题有 fancybox 功能的都有部分图片禁用 fancybox 的功能，看了一遍文档却发现没有这个选项，去 issue 中和 discusstion 中也没找到相关的信息。<span id="more"></span>于是 google 了一下，发现真有<a href="https://blog.csdn.net/cddchina/article/details/79764432">相关教程</a>，不过是 18 年的了，现在 next 主题已经变了很多，fancybox 的 js 代码也没在 utils.js 文件中了。找了一下，发现 fancybox 的相关 js 代码已经单独写在了主题文件夹下的 <code>\source\js\third-party\fancybox.js</code> 中了。</p>
@@ -128,8 +203,8 @@
         <tag>教程</tag>
         <tag>技术</tag>
         <tag>Hexo</tag>
-        <tag>CSS</tag>
         <tag>Next</tag>
+        <tag>CSS</tag>
       </tags>
   </entry>
   <entry>
@@ -156,6 +231,47 @@
         <tag>技术</tag>
         <tag>Hexo</tag>
         <tag>CSS</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>【书摘】无赖派太宰治充满颓废气息的作品</title>
+    <url>/2024/02/excerpt2.html</url>
+    <content><![CDATA[<p>花了一段时间，将太宰治的三部代表作品——『人间失格』『维荣之妻』『斜阳』都看完了，由于熬夜看书，经常看着看着就睡着了，再看部分段落时已想不起看过，只得再读过一遍，因此看得很慢，不过总算是看完了。但或许是太宰さん的精神世界太复杂了，我难以理解。<span id="more"></span>只知从『人间失格』主人公身上能看到太宰治的身影（毕竟是太宰治以自身的经历为蓝本写的），而『维荣之妻』中的大谷和阿佐则分别代表了日本「二战」后的男性和女性，男性软弱而女性坚强，形成了光与影明暗的人生对比。一向风格颓废的太宰治，通过阿佐形象，带给读者「活着的希望」。（2017，杨晔，『人间失格』）。最后则是『斜阳』，或许是故事性更加强，也或许是读得更仔细，较于『人间失格』，个人更喜『斜阳』。以第一人称女子口吻的叙述，讲述二战后贵族和子一家逐渐没落的故事，和子、直治、上原等，他们都在用自己的方式与传统道德抗争，都成为了「二战」后道德过渡期的牺牲者。文章中充满了颓废气息，直治为了融入与自己不同阶层的群体，让自己变得粗俗，却仍然无法「挣脱贵族的阴影」，只能更加颓废，只能以这样的方式抗争下去。实属悲剧，我能感受都文章中蕴含的悲伤，甚至几乎哭出来，但我仍无法理解。但太宰治无疑将人性，将社会都看得太透彻了。</p>
+<p>『人间失格』</p>
+<ul>
+<li>对于他们来说，或许有饭吃就能化解他们的痛苦，而这才是最大的痛苦。</li>
+<li>胆小鬼连幸福都怕，碰到棉花都会受伤，有时还会被幸福所伤。</li>
+<li>世人是人与人的争斗，而且是现场之争，人活着就是为了在争斗中取胜。人绝不会屈从于他人，即便是奴隶，也会用自己卑微的方式进行反击。所以，人除了现场决出胜负之外，便没有其他生存之道了。尽管标榜堂而皇之的正义，但他们努力的目标仍是个人的，超越一个人之后，还要迎战下一个人。</li>
+<li>不幸的人总是对他人的不幸格外敏感。</li>
+<li>我在所谓的人类世界里，过着如阿鼻地狱般痛苦煎熬生活的日子，我感到唯一具有真理的话就是这句话了。<br>  一切都终将会过去的。</li>
+<li>「我们认识的阿叶，个性率真，风趣幽默，要是不酗酒的话，不，就是他酗酒，他也是个天使一样的好孩子。」</li>
+</ul>
+<p>『维荣之妻』</p>
+<ul>
+<li>可常言道，人生就如地狱，经常是道高一尺魔高一丈。人们在得到一丝幸福的同时，往往会有成倍的坏事降临。一年有三百六十五天，要是有一天能无忧无虑的话，啊不，就半天，那就是很幸运的了。</li>
+<li>文明的结果是滑稽。</li>
+</ul>
+<p>『斜阳』</p>
+<ul>
+<li>社会法则，说到底维护的还是法则本身，不爱活生生的人。</li>
+<li>在金钱和女人面前，社会法则会羞怯地匆匆溜走。历史、哲学、教育、宗教、法律、政治、经济、社会。这些学问统统加起来，也不如处女的微笑来得可贵。浮士德博士已经勇敢地证实过这一结论了。</li>
+<li>学问是虚荣的别名，它努力使人泯灭人性。</li>
+<li>人在撒谎时定会摆出一副一本正经的样子。</li>
+<li>我伪装早熟，人们便风传我早熟。我伪装成懒汉，人们便风传我是个懒汉。我伪装写不出小说来，人们便风传我不会写小说。我伪装撒谎，人们便风传我是个撒谎的人。我伪装有钱，人们便风传我是个有钱人。我伪装冷淡，人们便风传我是个冷淡的人。不过，当我真正因为痛苦而发出呻吟时，人们却说我伪装痛苦。</li>
+<li>幼鹤生下目已盲，岁月如梭渐长成，羽翼丰满成大鸟，叫声依旧满悲伤。</li>
+<li>总之，人只要是活在这世上，就肯定会做出些见不得人的勾当。</li>
+<li>我无法忍受海港内滞积着的令人窒息的空气了，就算海港外狂风暴雨，我也要扬帆起航。歇着的帆毫无例外都是肮脏的，那些嘲笑我的人都是歇着的帆，他们什么事情都不会做。</li>
+</ul>
+]]></content>
+      <categories>
+        <category>日常</category>
+      </categories>
+      <tags>
+        <tag>书摘</tag>
+        <tag>人间失格</tag>
+        <tag>维荣之妻</tag>
+        <tag>斜阳</tag>
+        <tag>太宰治</tag>
       </tags>
   </entry>
   <entry>
@@ -202,47 +318,6 @@
       </categories>
       <tags>
         <tag>日语</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>【书摘】无赖派太宰治充满颓废气息的作品</title>
-    <url>/2024/02/excerpt2.html</url>
-    <content><![CDATA[<p>花了一段时间，将太宰治的三部代表作品——『人间失格』『维荣之妻』『斜阳』都看完了，由于熬夜看书，经常看着看着就睡着了，再看部分段落时已想不起看过，只得再读过一遍，因此看得很慢，不过总算是看完了。但或许是太宰さん的精神世界太复杂了，我难以理解。<span id="more"></span>只知从『人间失格』主人公身上能看到太宰治的身影（毕竟是太宰治以自身的经历为蓝本写的），而『维荣之妻』中的大谷和阿佐则分别代表了日本「二战」后的男性和女性，男性软弱而女性坚强，形成了光与影明暗的人生对比。一向风格颓废的太宰治，通过阿佐形象，带给读者「活着的希望」。（2017，杨晔，『人间失格』）。最后则是『斜阳』，或许是故事性更加强，也或许是读得更仔细，较于『人间失格』，个人更喜『斜阳』。以第一人称女子口吻的叙述，讲述二战后贵族和子一家逐渐没落的故事，和子、直治、上原等，他们都在用自己的方式与传统道德抗争，都成为了「二战」后道德过渡期的牺牲者。文章中充满了颓废气息，直治为了融入与自己不同阶层的群体，让自己变得粗俗，却仍然无法「挣脱贵族的阴影」，只能更加颓废，只能以这样的方式抗争下去。实属悲剧，我能感受都文章中蕴含的悲伤，甚至几乎哭出来，但我仍无法理解。但太宰治无疑将人性，将社会都看得太透彻了。</p>
-<p>『人间失格』</p>
-<ul>
-<li>对于他们来说，或许有饭吃就能化解他们的痛苦，而这才是最大的痛苦。</li>
-<li>胆小鬼连幸福都怕，碰到棉花都会受伤，有时还会被幸福所伤。</li>
-<li>世人是人与人的争斗，而且是现场之争，人活着就是为了在争斗中取胜。人绝不会屈从于他人，即便是奴隶，也会用自己卑微的方式进行反击。所以，人除了现场决出胜负之外，便没有其他生存之道了。尽管标榜堂而皇之的正义，但他们努力的目标仍是个人的，超越一个人之后，还要迎战下一个人。</li>
-<li>不幸的人总是对他人的不幸格外敏感。</li>
-<li>我在所谓的人类世界里，过着如阿鼻地狱般痛苦煎熬生活的日子，我感到唯一具有真理的话就是这句话了。<br>  一切都终将会过去的。</li>
-<li>「我们认识的阿叶，个性率真，风趣幽默，要是不酗酒的话，不，就是他酗酒，他也是个天使一样的好孩子。」</li>
-</ul>
-<p>『维荣之妻』</p>
-<ul>
-<li>可常言道，人生就如地狱，经常是道高一尺魔高一丈。人们在得到一丝幸福的同时，往往会有成倍的坏事降临。一年有三百六十五天，要是有一天能无忧无虑的话，啊不，就半天，那就是很幸运的了。</li>
-<li>文明的结果是滑稽。</li>
-</ul>
-<p>『斜阳』</p>
-<ul>
-<li>社会法则，说到底维护的还是法则本身，不爱活生生的人。</li>
-<li>在金钱和女人面前，社会法则会羞怯地匆匆溜走。历史、哲学、教育、宗教、法律、政治、经济、社会。这些学问统统加起来，也不如处女的微笑来得可贵。浮士德博士已经勇敢地证实过这一结论了。</li>
-<li>学问是虚荣的别名，它努力使人泯灭人性。</li>
-<li>人在撒谎时定会摆出一副一本正经的样子。</li>
-<li>我伪装早熟，人们便风传我早熟。我伪装成懒汉，人们便风传我是个懒汉。我伪装写不出小说来，人们便风传我不会写小说。我伪装撒谎，人们便风传我是个撒谎的人。我伪装有钱，人们便风传我是个有钱人。我伪装冷淡，人们便风传我是个冷淡的人。不过，当我真正因为痛苦而发出呻吟时，人们却说我伪装痛苦。</li>
-<li>幼鹤生下目已盲，岁月如梭渐长成，羽翼丰满成大鸟，叫声依旧满悲伤。</li>
-<li>总之，人只要是活在这世上，就肯定会做出些见不得人的勾当。</li>
-<li>我无法忍受海港内滞积着的令人窒息的空气了，就算海港外狂风暴雨，我也要扬帆起航。歇着的帆毫无例外都是肮脏的，那些嘲笑我的人都是歇着的帆，他们什么事情都不会做。</li>
-</ul>
-]]></content>
-      <categories>
-        <category>日常</category>
-      </categories>
-      <tags>
-        <tag>书摘</tag>
-        <tag>人间失格</tag>
-        <tag>维荣之妻</tag>
-        <tag>斜阳</tag>
-        <tag>太宰治</tag>
       </tags>
   </entry>
   <entry>
@@ -334,62 +409,6 @@
       </tags>
   </entry>
   <entry>
-    <title>【每日语法】てある及相似语法的对比</title>
-    <url>/2023/05/mnnhgbp4.html</url>
-    <content><![CDATA[<h2 id="意思一"><a href="#意思一" class="headerlink" title="意思一"></a>意思一</h2><blockquote>
-<p>接续：V（他动词，て形）+ ある</p>
-</blockquote>
-<p>表示动作结果的存续，该语法只涉及动作的对象，不涉及动作的主体。该句型有着「某个人做了某个动作，导致了这样的状态，但是这个人是谁并不重要」这样的意思。简单点说就是<strong>他动词的状态的持续</strong>。需要注意的是动词虽然为他动词，但动作的对象却要用<strong>「が」</strong>来表示。</p>
-<p>同样表示状态的持续的语法还有「ている」，那么他俩有什么区别呢？</p>
-<p>在对比前我们先回顾一下「ている」这个语法</p>
-<ul>
-<li>当动词为<strong>他动词</strong>时，表示动作的正在进行，意为「正在…」，比如「手紙を書いている」意为「我正在写信」</li>
-<li>当动词为<strong>自动词</strong>时，表示状态的持续，例如「鈴木さんは今出かけていますが…」，意为「铃木现在出去了…」</li>
-<li>表示动作的反复，常用于习惯或自然现象等</li>
-<li>表示性质或状态，比如「この機械の性能が<ruby>優<rt>すぐ</rt>れている</ruby>」意为「这台机器性能好」</li>
-</ul>
-<p>可以看到，表示状态的持续时，「ている」的前面的动词为自动词，而「てある」则为他动词。并且「ている」只是表示状态的持续，并不包含状态产生的原因，这个状态可以是人为造成的，也可以是自然而然发生的；但「てある」的状态一定是<strong>人为</strong>的，即一定是某个人去做了某个动作才产生了这样的状态。</p>
-<p>补充说明，当「てある」前面的动词为<strong>被动态</strong>时，能够更让人能够感受到这个做动作的人的存在。</p>
-<h2 id="意思二"><a href="#意思二" class="headerlink" title="意思二"></a>意思二</h2><blockquote>
-<p>接续：V（て形）+ ある</p>
-</blockquote>
-<p>这里表示<strong>已经提前做好某事的状态</strong>，自、他动词均可使用，意为「已经提前…」。</p>
-<p>例句：論文を書くために、資料をたくさん集めてある。<br>译：为了写论文，已经提前收集好了许多资料。</p>
-<p>同样，表示提前做好某事的意思的语法还有「ておく」，那么这两个语法之间有什么区别呢？</p>
-<p>首先回忆一下「ておく」这个语法：</p>
-<ul>
-<li>表示提前做好某事，以备不时之需</li>
-<li>表示保持状态不变，听之任之</li>
-<li>表示放任不管</li>
-</ul>
-<p>注意，「ておく」的「提前做好某事」具体点说是「<strong>将要</strong>提前做好某事」，实际现在还没有做，强调的是「提前做好」这个<strong>动作性</strong>；「てある」则表示的是「<strong>已经</strong>提前做好某事」，强调的是「提前做好」这个动作完成后的<strong>状态的持续</strong>。</p>
-<p>对比例句：</p>
-<ul>
-<li>この提案を一応考えてある。（已经事先考虑过这个提案。）</li>
-<li>この提案を一応考えておく。（将会事先考虑一下这个提案。）</li>
-</ul>
-<p>当「ておく」变为过去时，与「てある」的意思就更为相似，更加难以区分，比如下面两句：</p>
-<ul>
-<li>ビールをたくさん買っておいたが、人が多いので、もうなくなってしまった。（○）</li>
-<li>ビールをたくさん買ってあるが、人が多いので、もうなくなってしまった。（×）</li>
-</ul>
-<p>因为「買っておいた」只表示「提前买好」这一过去的动作，而「買ってある」则表示「提前买好」这一状态且该状态持续到了说话时，按此逻辑，如果买好了许多酒的状态持续到了说话时，后文却又说因为人多已经没酒了，就出现了前后意思的矛盾，因此这里只能用「買っておいた」。</p>
-<h2 id="意思三"><a href="#意思三" class="headerlink" title="意思三"></a>意思三</h2><blockquote>
-<p>接续：V（て形）+ ある</p>
-</blockquote>
-<p>表示<strong>放任或允许的状态</strong>。常常和自动词<strong>使役态</strong>搭配使用。</p>
-<p>例句：娘を日本語学校に通わせてある。<br>译：让女儿去日语学校上学。</p>
-<p>相似的还有「ておく」，其也有放任不管，听之任之的意思。</p>
-<p><strong>注：本文部分解释与例句来源于『日语语法教程——讲义与练习』一书，如造成侵权，请联系删除。</strong></p>
-]]></content>
-      <categories>
-        <category>日语</category>
-      </categories>
-      <tags>
-        <tag>日语</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>【每日语法】「既然~就~」的表达方法</title>
     <url>/2023/04/mnnhgbp3.html</url>
     <content><![CDATA[<blockquote>
@@ -439,6 +458,62 @@
 <p>(1). 約束したからには、ちゃんと守るべきだ。<br>译：既然约好了，就应该好好遵守约定。</p>
 <p>(2). 秘密を知られた上は、生かしてはおけない。<br>译：既然被你知道了这个秘密，就不能让你活下去了。</p>
 <p>(3). 会社を辞めると決めた以上、早く上司にその旨を伝えなければならない。<br>译：既然决定好向公司辞职了，就必须早点告诉上司这件事。</p>
+]]></content>
+      <categories>
+        <category>日语</category>
+      </categories>
+      <tags>
+        <tag>日语</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>【每日语法】てある及相似语法的对比</title>
+    <url>/2023/05/mnnhgbp4.html</url>
+    <content><![CDATA[<h2 id="意思一"><a href="#意思一" class="headerlink" title="意思一"></a>意思一</h2><blockquote>
+<p>接续：V（他动词，て形）+ ある</p>
+</blockquote>
+<p>表示动作结果的存续，该语法只涉及动作的对象，不涉及动作的主体。该句型有着「某个人做了某个动作，导致了这样的状态，但是这个人是谁并不重要」这样的意思。简单点说就是<strong>他动词的状态的持续</strong>。需要注意的是动词虽然为他动词，但动作的对象却要用<strong>「が」</strong>来表示。</p>
+<p>同样表示状态的持续的语法还有「ている」，那么他俩有什么区别呢？</p>
+<p>在对比前我们先回顾一下「ている」这个语法</p>
+<ul>
+<li>当动词为<strong>他动词</strong>时，表示动作的正在进行，意为「正在…」，比如「手紙を書いている」意为「我正在写信」</li>
+<li>当动词为<strong>自动词</strong>时，表示状态的持续，例如「鈴木さんは今出かけていますが…」，意为「铃木现在出去了…」</li>
+<li>表示动作的反复，常用于习惯或自然现象等</li>
+<li>表示性质或状态，比如「この機械の性能が<ruby>優<rt>すぐ</rt>れている</ruby>」意为「这台机器性能好」</li>
+</ul>
+<p>可以看到，表示状态的持续时，「ている」的前面的动词为自动词，而「てある」则为他动词。并且「ている」只是表示状态的持续，并不包含状态产生的原因，这个状态可以是人为造成的，也可以是自然而然发生的；但「てある」的状态一定是<strong>人为</strong>的，即一定是某个人去做了某个动作才产生了这样的状态。</p>
+<p>补充说明，当「てある」前面的动词为<strong>被动态</strong>时，能够更让人能够感受到这个做动作的人的存在。</p>
+<h2 id="意思二"><a href="#意思二" class="headerlink" title="意思二"></a>意思二</h2><blockquote>
+<p>接续：V（て形）+ ある</p>
+</blockquote>
+<p>这里表示<strong>已经提前做好某事的状态</strong>，自、他动词均可使用，意为「已经提前…」。</p>
+<p>例句：論文を書くために、資料をたくさん集めてある。<br>译：为了写论文，已经提前收集好了许多资料。</p>
+<p>同样，表示提前做好某事的意思的语法还有「ておく」，那么这两个语法之间有什么区别呢？</p>
+<p>首先回忆一下「ておく」这个语法：</p>
+<ul>
+<li>表示提前做好某事，以备不时之需</li>
+<li>表示保持状态不变，听之任之</li>
+<li>表示放任不管</li>
+</ul>
+<p>注意，「ておく」的「提前做好某事」具体点说是「<strong>将要</strong>提前做好某事」，实际现在还没有做，强调的是「提前做好」这个<strong>动作性</strong>；「てある」则表示的是「<strong>已经</strong>提前做好某事」，强调的是「提前做好」这个动作完成后的<strong>状态的持续</strong>。</p>
+<p>对比例句：</p>
+<ul>
+<li>この提案を一応考えてある。（已经事先考虑过这个提案。）</li>
+<li>この提案を一応考えておく。（将会事先考虑一下这个提案。）</li>
+</ul>
+<p>当「ておく」变为过去时，与「てある」的意思就更为相似，更加难以区分，比如下面两句：</p>
+<ul>
+<li>ビールをたくさん買っておいたが、人が多いので、もうなくなってしまった。（○）</li>
+<li>ビールをたくさん買ってあるが、人が多いので、もうなくなってしまった。（×）</li>
+</ul>
+<p>因为「買っておいた」只表示「提前买好」这一过去的动作，而「買ってある」则表示「提前买好」这一状态且该状态持续到了说话时，按此逻辑，如果买好了许多酒的状态持续到了说话时，后文却又说因为人多已经没酒了，就出现了前后意思的矛盾，因此这里只能用「買っておいた」。</p>
+<h2 id="意思三"><a href="#意思三" class="headerlink" title="意思三"></a>意思三</h2><blockquote>
+<p>接续：V（て形）+ ある</p>
+</blockquote>
+<p>表示<strong>放任或允许的状态</strong>。常常和自动词<strong>使役态</strong>搭配使用。</p>
+<p>例句：娘を日本語学校に通わせてある。<br>译：让女儿去日语学校上学。</p>
+<p>相似的还有「ておく」，其也有放任不管，听之任之的意思。</p>
+<p><strong>注：本文部分解释与例句来源于『日语语法教程——讲义与练习』一书，如造成侵权，请联系删除。</strong></p>
 ]]></content>
       <categories>
         <category>日语</category>
@@ -823,13 +898,12 @@
       </tags>
   </entry>
   <entry>
-    <title>叕出神子啦加深渊终于凹满了</title>
-    <url>/2023/06/genshinkamikoaru.html</url>
-    <content><![CDATA[<p>先说说深渊，博主在今年 2 月之前是无论如何都打不过深渊的，2 月后开始练万达国际，学会双扩后，队伍养得差不多后就在 2 月 18 日第一次凹过 12 层，见<a href="/2023/02/genshinshenyuanmanxing.html">『打通深渊后半个月，我又第一次满星深渊！』</a>。此后除了第一期沙虫因为「草行九」练度不够，没有满星之外，每一期都能做到满星了！不过近来几期深渊越来越难，大量的「挤模型」「多动症」「厚盾」「拖时间」的机制怪出现，属实是恶心人。之前圣骸兽博主一直是用「草行九瑶」过的，不过这次由于 12-3 下半是「深罪浸礼者」，队伍中必须有「火 草&#x2F;冰 水」，「草行九」自然就成了选择，再加上了前几天出的宵宫用以破冰盾。问题就是上半该用什么队伍，一开始认为万达打圣骸兽也许很麻烦，就想试着用雷国，可惜博主没怎么练雷神，故试了多种配队后还是决定使用万达。最后是 2 分钟打完了四只圣骸兽，用了剩下 1 分钟过了深罪浸礼者（很险···6分59秒打完的，系统判定为 3 星）。</p>
-<p>前前后后凹了有 100+ 次，不过由于前面几十次是在尝试配队，有了第一期经验后，16 号的深渊应该也能轻松不少。</p>
-<p><img data-src="https://img.fufu.ink/ZDM6sI.webp" alt="下次还填非常简单！"></p>
-<p>然后是垫池子垫出了神子，抽前算的垫了 20 抽了，本来不抱什么希望地单抽了一下，想着不可能这么早出的吧，结果竟然金了，还没歪！</p>
-<p><img data-src="https://img.fufu.ink/4o04wz.webp" alt="21 抽拿下！"></p>
+    <title>出宵宫啦！</title>
+    <url>/2023/05/genshinxgderu.html</url>
+    <content><![CDATA[<p>虽说抽完 2 命纳西妲后已经没有抽其他角色的欲望了，但池子还是要垫的，出什么都无所谓了。</p>
+<p>因为这 14 天搞<a href="/2023/05/improvefdlinks.html">「博客的友链的更优雅的书写方式」</a>去了，就没怎么上线，还白白浪费了 14 天的月卡，趁着今天第 15 天上线领了回归奖励以及版本更新补偿，让朋友抽了 2 抽，没歪！<span id="more"></span></p>
+<p><img data-src="https://img.fufu.ink/blTnOx.webp" alt="手机截图，画质有点差"></p>
+<p>接下来就是继续垫池子了~</p>
 ]]></content>
       <categories>
         <category>游戏</category>
@@ -840,12 +914,13 @@
       </tags>
   </entry>
   <entry>
-    <title>出宵宫啦！</title>
-    <url>/2023/05/genshinxgderu.html</url>
-    <content><![CDATA[<p>虽说抽完 2 命纳西妲后已经没有抽其他角色的欲望了，但池子还是要垫的，出什么都无所谓了。</p>
-<p>因为这 14 天搞<a href="/2023/05/improvefdlinks.html">「博客的友链的更优雅的书写方式」</a>去了，就没怎么上线，还白白浪费了 14 天的月卡，趁着今天第 15 天上线领了回归奖励以及版本更新补偿，让朋友抽了 2 抽，没歪！<span id="more"></span></p>
-<p><img data-src="https://img.fufu.ink/blTnOx.webp" alt="手机截图，画质有点差"></p>
-<p>接下来就是继续垫池子了~</p>
+    <title>叕出神子啦加深渊终于凹满了</title>
+    <url>/2023/06/genshinkamikoaru.html</url>
+    <content><![CDATA[<p>先说说深渊，博主在今年 2 月之前是无论如何都打不过深渊的，2 月后开始练万达国际，学会双扩后，队伍养得差不多后就在 2 月 18 日第一次凹过 12 层，见<a href="/2023/02/genshinshenyuanmanxing.html">『打通深渊后半个月，我又第一次满星深渊！』</a>。此后除了第一期沙虫因为「草行九」练度不够，没有满星之外，每一期都能做到满星了！不过近来几期深渊越来越难，大量的「挤模型」「多动症」「厚盾」「拖时间」的机制怪出现，属实是恶心人。之前圣骸兽博主一直是用「草行九瑶」过的，不过这次由于 12-3 下半是「深罪浸礼者」，队伍中必须有「火 草&#x2F;冰 水」，「草行九」自然就成了选择，再加上了前几天出的宵宫用以破冰盾。问题就是上半该用什么队伍，一开始认为万达打圣骸兽也许很麻烦，就想试着用雷国，可惜博主没怎么练雷神，故试了多种配队后还是决定使用万达。最后是 2 分钟打完了四只圣骸兽，用了剩下 1 分钟过了深罪浸礼者（很险···6分59秒打完的，系统判定为 3 星）。</p>
+<p>前前后后凹了有 100+ 次，不过由于前面几十次是在尝试配队，有了第一期经验后，16 号的深渊应该也能轻松不少。</p>
+<p><img data-src="https://img.fufu.ink/ZDM6sI.webp" alt="下次还填非常简单！"></p>
+<p>然后是垫池子垫出了神子，抽前算的垫了 20 抽了，本来不抱什么希望地单抽了一下，想着不可能这么早出的吧，结果竟然金了，还没歪！</p>
+<p><img data-src="https://img.fufu.ink/4o04wz.webp" alt="21 抽拿下！"></p>
 ]]></content>
       <categories>
         <category>游戏</category>
@@ -1009,6 +1084,25 @@
       </tags>
   </entry>
   <entry>
+    <title>打通深渊后半个月，我又第一次满星深渊！</title>
+    <url>/2023/02/genshinshenyuanmanxing.html</url>
+    <content><![CDATA[<p>上个月打通了深渊，但因为没练岩队，过不去黄金龙兽，然后万达的练度也拉。最近一直在研究万达的圣遗物搭配，看了把子哥的万达教学，把几个之前刷草神圣遗物拉起来的被我当作狗粮的圣遗物丢给公子，之前公子是 30&#x2F;160 的双爆，现在变成 78&#x2F;140 了，结果小助手一查，初步毕业了？然后去打深渊，把雷神之前的垃圾双爆圣遗物换成了精通狗粮，上半组了一支「瑶秋妲雷」，大招放完草神站场，没想到效果还挺好，相比于原来的「雷妲七主」只打超激化，现在多了超绽放的伤害，种门！（手不自觉地合上了~）然后就满星了！我都不知道为什么，猜测是之前 30 暴击的公子次次不暴击导致的……</p>
+<blockquote>
+<p>「说实话，当公子拥有 100% 暴击率，爆伤多少已经无所谓了」—— b站@这把我们就遇到高手</p>
+</blockquote>
+<p>315 天的萌新，xp 党，终于也满星深渊了~</p>
+<p><img data-src="https://img.fufu.ink/dz3OYE.webp" alt="第一次深渊满星"></p>
+<p>接下来准备攒着原石，等草神复刻，补 2 命，虽然大部分观点不认可非 6 命草神站场输出，但是我不管，我就希望她能够站场！继续坐牢绝缘本，给香菱刷圣遗物，狗粮就用来合成水套，毕竟很多公子的水套都是合成台毕业的。咱们也要打造一支「哪里亮了点哪里」也能够打通深渊的万达！</p>
+]]></content>
+      <categories>
+        <category>游戏</category>
+      </categories>
+      <tags>
+        <tag>原神</tag>
+        <tag>游戏</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>改进 Next 主题友链书写方式</title>
     <url>/2023/05/improvefdlinks.html</url>
     <content><![CDATA[<blockquote>
@@ -1024,6 +1118,12 @@
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&#123;### PAGE BODY ###&#125;</span><br><span class="line">      &#123;#################&#125;</span><br><span class="line">      &lt;div class=&quot;post-body&#123;% if page.direction and page.direction.toLowerCase() === &#x27;rtl&#x27; %&#125; rtl&#123;% endif %&#125;&quot;&gt;</span><br><span class="line">        &#123;%- if page.type === &#x27;tags&#x27; %&#125;</span><br><span class="line">          &#123;%- include &#x27;_partials/page/tags.njk&#x27; -%&#125;</span><br><span class="line">        &#123;% elif page.type === &#x27;categories&#x27; %&#125;</span><br><span class="line">          &#123;%- include &#x27;_partials/page/categories.njk&#x27; -%&#125;</span><br><span class="line">        &#123;% elif page.type === &#x27;schedule&#x27; %&#125;</span><br><span class="line">          &#123;%- include &#x27;_partials/page/schedule.njk&#x27; -%&#125;</span><br><span class="line">+        &#123;% elif page.type === &#x27;links&#x27; %&#125;</span><br><span class="line">+          &#123;%- include &#x27;links.njk&#x27; -%&#125;</span><br><span class="line">        &#123;% else %&#125;</span><br><span class="line">          &#123;&#123; page.content &#125;&#125;</span><br><span class="line">        &#123;%- endif %&#125;</span><br><span class="line">      &lt;/div&gt;</span><br><span class="line">      &#123;#####################&#125;</span><br><span class="line">      &#123;### END PAGE BODY ###&#125;</span><br><span class="line">      &#123;#####################&#125;</span><br></pre></td></tr></table></figure>
 
 <p>接下来就是创建 <code>source/links/index.md</code>，配置好里面的友链申请信息了（<strong>注意 <code>front-matter</code> 的 type 的值必须为 <code>links</code>！</strong>）。</p>
+<p>然后打开 <code>_config.next.yml</code>，在 <code>menu</code> 中添加</p>
+<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="attr">menu:</span></span><br><span class="line">  <span class="attr">links:</span> <span class="string">/links/</span> <span class="string">||</span> <span class="string">fas</span> <span class="string">fa-link</span></span><br></pre></td></tr></table></figure>
+
+<p>打开 <code>hexo/themes/next/languages/zh-CN.yml</code>，在 <code>menu</code> 中添加</p>
+<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="attr">menu:</span></span><br><span class="line">  <span class="attr">links:</span> <span class="string">友链</span></span><br></pre></td></tr></table></figure>
+
 <p>最后在 <code>hexo根目录/source/_data/</code> 下创建 <code>links.yml</code> 并填入以下内容：</p>
 <figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 参数说明</span></span><br><span class="line"><span class="comment"># class_name 选填，可以理解为友链组的名字，如果不填则会在顶部生成一个分割线</span></span><br><span class="line"><span class="comment"># nickname 博客名称</span></span><br><span class="line"><span class="comment"># site 博客地址</span></span><br><span class="line"><span class="comment"># info 博客简介</span></span><br><span class="line"><span class="comment"># avatar 博客logo</span></span><br><span class="line"><span class="comment"># 填写时注意缩进！</span></span><br><span class="line"></span><br><span class="line"><span class="bullet">-</span> <span class="attr">class_name:</span></span><br><span class="line">  <span class="attr">link_list:</span></span><br><span class="line">    <span class="bullet">-</span> <span class="attr">nickname:</span></span><br><span class="line">      <span class="attr">site:</span></span><br><span class="line">      <span class="attr">info:</span></span><br><span class="line">      <span class="attr">avatar:</span></span><br><span class="line">    <span class="bullet">-</span> <span class="attr">nickname:</span></span><br><span class="line">      <span class="attr">site:</span></span><br><span class="line">      <span class="attr">info:</span></span><br><span class="line">      <span class="attr">avatar:</span></span><br><span class="line"></span><br><span class="line"><span class="bullet">-</span> <span class="attr">class_name:</span></span><br><span class="line">  <span class="attr">link_list:</span></span><br><span class="line">    <span class="bullet">-</span> <span class="attr">nickname:</span></span><br><span class="line">      <span class="attr">site:</span></span><br><span class="line">      <span class="attr">info:</span></span><br><span class="line">      <span class="attr">avatar:</span></span><br><span class="line">    <span class="bullet">-</span> <span class="attr">nickname:</span></span><br><span class="line">      <span class="attr">site:</span></span><br><span class="line">      <span class="attr">info:</span></span><br><span class="line">      <span class="attr">avatar:</span></span><br></pre></td></tr></table></figure>
 
@@ -1041,25 +1141,6 @@
         <tag>技术</tag>
         <tag>Hexo</tag>
         <tag>CSS</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>打通深渊后半个月，我又第一次满星深渊！</title>
-    <url>/2023/02/genshinshenyuanmanxing.html</url>
-    <content><![CDATA[<p>上个月打通了深渊，但因为没练岩队，过不去黄金龙兽，然后万达的练度也拉。最近一直在研究万达的圣遗物搭配，看了把子哥的万达教学，把几个之前刷草神圣遗物拉起来的被我当作狗粮的圣遗物丢给公子，之前公子是 30&#x2F;160 的双爆，现在变成 78&#x2F;140 了，结果小助手一查，初步毕业了？然后去打深渊，把雷神之前的垃圾双爆圣遗物换成了精通狗粮，上半组了一支「瑶秋妲雷」，大招放完草神站场，没想到效果还挺好，相比于原来的「雷妲七主」只打超激化，现在多了超绽放的伤害，种门！（手不自觉地合上了~）然后就满星了！我都不知道为什么，猜测是之前 30 暴击的公子次次不暴击导致的……</p>
-<blockquote>
-<p>「说实话，当公子拥有 100% 暴击率，爆伤多少已经无所谓了」—— b站@这把我们就遇到高手</p>
-</blockquote>
-<p>315 天的萌新，xp 党，终于也满星深渊了~</p>
-<p><img data-src="https://img.fufu.ink/dz3OYE.webp" alt="第一次深渊满星"></p>
-<p>接下来准备攒着原石，等草神复刻，补 2 命，虽然大部分观点不认可非 6 命草神站场输出，但是我不管，我就希望她能够站场！继续坐牢绝缘本，给香菱刷圣遗物，狗粮就用来合成水套，毕竟很多公子的水套都是合成台毕业的。咱们也要打造一支「哪里亮了点哪里」也能够打通深渊的万达！</p>
-]]></content>
-      <categories>
-        <category>游戏</category>
-      </categories>
-      <tags>
-        <tag>原神</tag>
-        <tag>游戏</tag>
       </tags>
   </entry>
   <entry>
@@ -1575,6 +1656,32 @@
       </tags>
   </entry>
   <entry>
+    <title>科目二过啦！</title>
+    <url>/2023/08/kemuerpass.html</url>
+    <content><![CDATA[<p>三战一把过！</p>
+<p>早上八点半就出发去考场了，等了三个小时才轮到我，因为之前已经花钱模拟过了，轻轻松松就过了~</p>
+<p>这里记录一下科二的点位。<span id="more"></span></p>
+<ul>
+<li>座位、后视镜：座位高低调整为<strong>头顶距车顶一拳距离</strong>，靠背调整为 <strong>90°</strong>，前后距离为<strong>靠在靠背上撑直双手，手腕能刚好搭在方向盘顶部，且左脚踩离合（手动挡）能踩到底，离合踩到底时小腿与大腿不能是完全一条线、而是呈一定角度的状态</strong>为最佳。左后视镜调法为将左后车门的门把手置于<strong>左后视镜的顶部的线条的一半处</strong>（注意需要能完全看到门把手），右后视镜则为将右后车门门把手置于<strong>右后视镜的顶部的线条的三分之一处（从左到右数）</strong>。</li>
+<li>倒库：进项目后使用仪表盘的罩子的顶部正中央去对<strong>第三根虚线的最左边</strong>，待肩部与虚线齐平时停车、挂倒挡开始倒车，当<strong>左</strong>后视镜的<strong>底部完全盖过虚线</strong>时（即左后视镜的底部与虚线的内边线齐平时）方向盘向右打死，开始<strong>看右后视镜</strong>，当车身盖过右后视镜中<strong>第三根虚线的一半</strong>时回半圈方向盘并观察预测是否车轮会压库角，若觉得可能会压则再多回点方向盘，当车身与边线<strong>平行</strong>时迅速回正方向盘，当左后视镜的底部完全盖过项目的右边的实线时停车，即完成了右倒库。开出车辆，当引擎盖盖过项目的左边的实线后方向盘向左打死，车身摆正后回正方向盘，继续行驶直到肩部与虚线齐平时停车、挂倒挡开始倒车，左库需要比右库<strong>早打</strong>方向盘，具体为当左后视镜底部<strong>触碰虚线</strong>时就向左打死方向盘，并观察<strong>左后视镜</strong>，后续步骤与倒右库时相差无几。关于看哪边镜子的口诀为「倒什么库就看哪边的镜子」。左库出来后引擎盖盖过边线即可方向盘右打死，待车身端正后回正方向盘行驶出项目。</li>
+<li>侧方停车：侧方停车可以说是我的痛点哩，两次都挂在这个项目上，不过换了教练、调整点位后就没问题了。具体为进项目后使用<strong>左雨刮器的垛子</strong>的最右边去对项目<strong>右边线的内边线</strong>，使其始终沿着内边线走，当右后视镜中出现库的<strong>前库角</strong>时停车、挂倒挡开始倒车，当右后视镜中<strong>前库角</strong>完全消失时方向盘向右打死，观察右后视镜中的<strong>后车门门把手</strong>，当门把手<strong>完全越过库的右边线</strong>时迅速回正方向盘继续倒车，观察左后视镜，当左后车轮压到虚线上时方向盘向左打死（因人身高而异，身高高的则可以晚一点再打方向盘，但不能太晚，否则右边会有出线的危险），待车身摆正后即可停车，<strong>方向盘不用回正！</strong>回空挡并<strong>打左转向灯</strong>，挂一档（先挂挡与先打灯并无先后顺序，但为避免忘记打灯导致挂了还是先打灯较好）开始出库，当<strong>右边的雨刮器的垛子</strong>与项目的<strong>右</strong>边线重合时回正方向盘继续行驶，当<strong>左边的雨刮器的垛子</strong>与项目的<strong>左</strong>边线重合时方向盘向右打一圈，待车身摆正后即可回正方向盘并驶出项目。</li>
+<li>直角转弯：本人认为直角转弯属实是科目二中最简单的一个项目了。进项目前就可以使用<strong>左雨刮器的垛子</strong>的最右边去对项目<strong>右边线的内边线</strong>（科目二的对线都是这个方法），虽然可能直角的线没有画得很长，但你可以想象那条线的延长线，使用垛子去与这条延长线对线，一定要保持车身是端正的！听到进入项目的语音提示后就可以开始打左转向灯了，待<strong>驾驶座的门把手的顶部与另一条直角边重合（由于身高原因，可以调整为门把手的前端、后端，根据个人情况调整即可）</strong>时方向盘向左打死，心中默数三秒后关掉转向灯（部分地区可能不要求拨回转向灯），当车身摆正后回正方向盘驶出项目。</li>
+<li>曲线行驶：说实话这个项目我也拿不准点位，之前一直使用的车子前面加装的小镜子来对线的，但去考场模拟后发现小镜子没了，便想象了个小镜子在那里对线，然后看后视镜开，还开过了！今天考试也是结合新教练教的新点位来和后视镜来开的。车身摆正，将入口划分为三份，将自己（即驾驶员）置于从左到右数的三分之一处进入项目，当<strong>左后视镜的左边缘与项目的左边线的内线重合时</strong>方向盘向左打一圈，观察左后视镜中车身与边线的距离并适当修一修方向盘，当挡风玻璃的左下角与左边线重合时回正方向盘，当右边雨刮器的垛子与左边线还有两指宽左右的距离时方向盘向右打一圈，并观察右后视镜并调整车身与边线的距离，尽量让线出现在镜子中并且保证车身与线保持一定距离，这样另一边就不会压线，一直到快出项目时即可回正方向盘出项目了（回正的时机得看具体实际，因为我在驾校跑了三次都在出项目时回正回早了导致压线了）。</li>
+<li>坡上起步：上坡时离合松至车身抖动时车子就会慢慢往上爬，稳住离合即可保持速度。使用老办法对线，一直到右边的雨刮器的垛子与杆子之间呈一定的距离时即可踩住刹车（<strong>注意！这个「一定距离」不是绝对的，会因为人的身高不同而不同，需要自己去寻找</strong>）。在起步时有个小技巧，即右脚踩刹车时，左脚离合还是保持半离合状态，不用踩到底，刹车一定要踩牢，拉、放手刹，松开刹车车子马上就可以开走了。不过使用的前提是踩离合的功底深厚，如果在踩刹车时离合也向下踩了，直接松开刹车会向后滑，就会扣分甚至挂科，如果真的滑了也不要急，马上踩刹车，并且慢慢松离合，直到车子抖动即可松开刹车继续行驶！</li>
+</ul>
+<p>以上就是我学了 26 节科二总结的经验。虽然我使用着没有问题，但并不代表就一定适用于所有人，<strong>请不要照搬！一定要找到适合自己的点位！</strong>科二就是考点位，点位一旦有偏差就会出错，考试时要将座位，镜子调整为与练习时一样。</p>
+<p>接下来我也要冲科三去啦！</p>
+<p>最后祝考科二的小伙伴们都一把过！</p>
+]]></content>
+      <categories>
+        <category>日常</category>
+      </categories>
+      <tags>
+        <tag>生活</tag>
+        <tag>驾考</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>类原生美化教程</title>
     <url>/2022/09/aospbeautify.html</url>
     <content><![CDATA[<blockquote>
@@ -1643,32 +1750,6 @@
       <tags>
         <tag>类原生</tag>
         <tag>Android</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>科目二过啦！</title>
-    <url>/2023/08/kemuerpass.html</url>
-    <content><![CDATA[<p>三战一把过！</p>
-<p>早上八点半就出发去考场了，等了三个小时才轮到我，因为之前已经花钱模拟过了，轻轻松松就过了~</p>
-<p>这里记录一下科二的点位。<span id="more"></span></p>
-<ul>
-<li>座位、后视镜：座位高低调整为<strong>头顶距车顶一拳距离</strong>，靠背调整为 <strong>90°</strong>，前后距离为<strong>靠在靠背上撑直双手，手腕能刚好搭在方向盘顶部，且左脚踩离合（手动挡）能踩到底，离合踩到底时小腿与大腿不能是完全一条线、而是呈一定角度的状态</strong>为最佳。左后视镜调法为将左后车门的门把手置于<strong>左后视镜的顶部的线条的一半处</strong>（注意需要能完全看到门把手），右后视镜则为将右后车门门把手置于<strong>右后视镜的顶部的线条的三分之一处（从左到右数）</strong>。</li>
-<li>倒库：进项目后使用仪表盘的罩子的顶部正中央去对<strong>第三根虚线的最左边</strong>，待肩部与虚线齐平时停车、挂倒挡开始倒车，当<strong>左</strong>后视镜的<strong>底部完全盖过虚线</strong>时（即左后视镜的底部与虚线的内边线齐平时）方向盘向右打死，开始<strong>看右后视镜</strong>，当车身盖过右后视镜中<strong>第三根虚线的一半</strong>时回半圈方向盘并观察预测是否车轮会压库角，若觉得可能会压则再多回点方向盘，当车身与边线<strong>平行</strong>时迅速回正方向盘，当左后视镜的底部完全盖过项目的右边的实线时停车，即完成了右倒库。开出车辆，当引擎盖盖过项目的左边的实线后方向盘向左打死，车身摆正后回正方向盘，继续行驶直到肩部与虚线齐平时停车、挂倒挡开始倒车，左库需要比右库<strong>早打</strong>方向盘，具体为当左后视镜底部<strong>触碰虚线</strong>时就向左打死方向盘，并观察<strong>左后视镜</strong>，后续步骤与倒右库时相差无几。关于看哪边镜子的口诀为「倒什么库就看哪边的镜子」。左库出来后引擎盖盖过边线即可方向盘右打死，待车身端正后回正方向盘行驶出项目。</li>
-<li>侧方停车：侧方停车可以说是我的痛点哩，两次都挂在这个项目上，不过换了教练、调整点位后就没问题了。具体为进项目后使用<strong>左雨刮器的垛子</strong>的最右边去对项目<strong>右边线的内边线</strong>，使其始终沿着内边线走，当右后视镜中出现库的<strong>前库角</strong>时停车、挂倒挡开始倒车，当右后视镜中<strong>前库角</strong>完全消失时方向盘向右打死，观察右后视镜中的<strong>后车门门把手</strong>，当门把手<strong>完全越过库的右边线</strong>时迅速回正方向盘继续倒车，观察左后视镜，当左后车轮压到虚线上时方向盘向左打死（因人身高而异，身高高的则可以晚一点再打方向盘，但不能太晚，否则右边会有出线的危险），待车身摆正后即可停车，<strong>方向盘不用回正！</strong>回空挡并<strong>打左转向灯</strong>，挂一档（先挂挡与先打灯并无先后顺序，但为避免忘记打灯导致挂了还是先打灯较好）开始出库，当<strong>右边的雨刮器的垛子</strong>与项目的<strong>右</strong>边线重合时回正方向盘继续行驶，当<strong>左边的雨刮器的垛子</strong>与项目的<strong>左</strong>边线重合时方向盘向右打一圈，待车身摆正后即可回正方向盘并驶出项目。</li>
-<li>直角转弯：本人认为直角转弯属实是科目二中最简单的一个项目了。进项目前就可以使用<strong>左雨刮器的垛子</strong>的最右边去对项目<strong>右边线的内边线</strong>（科目二的对线都是这个方法），虽然可能直角的线没有画得很长，但你可以想象那条线的延长线，使用垛子去与这条延长线对线，一定要保持车身是端正的！听到进入项目的语音提示后就可以开始打左转向灯了，待<strong>驾驶座的门把手的顶部与另一条直角边重合（由于身高原因，可以调整为门把手的前端、后端，根据个人情况调整即可）</strong>时方向盘向左打死，心中默数三秒后关掉转向灯（部分地区可能不要求拨回转向灯），当车身摆正后回正方向盘驶出项目。</li>
-<li>曲线行驶：说实话这个项目我也拿不准点位，之前一直使用的车子前面加装的小镜子来对线的，但去考场模拟后发现小镜子没了，便想象了个小镜子在那里对线，然后看后视镜开，还开过了！今天考试也是结合新教练教的新点位来和后视镜来开的。车身摆正，将入口划分为三份，将自己（即驾驶员）置于从左到右数的三分之一处进入项目，当<strong>左后视镜的左边缘与项目的左边线的内线重合时</strong>方向盘向左打一圈，观察左后视镜中车身与边线的距离并适当修一修方向盘，当挡风玻璃的左下角与左边线重合时回正方向盘，当右边雨刮器的垛子与左边线还有两指宽左右的距离时方向盘向右打一圈，并观察右后视镜并调整车身与边线的距离，尽量让线出现在镜子中并且保证车身与线保持一定距离，这样另一边就不会压线，一直到快出项目时即可回正方向盘出项目了（回正的时机得看具体实际，因为我在驾校跑了三次都在出项目时回正回早了导致压线了）。</li>
-<li>坡上起步：上坡时离合松至车身抖动时车子就会慢慢往上爬，稳住离合即可保持速度。使用老办法对线，一直到右边的雨刮器的垛子与杆子之间呈一定的距离时即可踩住刹车（<strong>注意！这个「一定距离」不是绝对的，会因为人的身高不同而不同，需要自己去寻找</strong>）。在起步时有个小技巧，即右脚踩刹车时，左脚离合还是保持半离合状态，不用踩到底，刹车一定要踩牢，拉、放手刹，松开刹车车子马上就可以开走了。不过使用的前提是踩离合的功底深厚，如果在踩刹车时离合也向下踩了，直接松开刹车会向后滑，就会扣分甚至挂科，如果真的滑了也不要急，马上踩刹车，并且慢慢松离合，直到车子抖动即可松开刹车继续行驶！</li>
-</ul>
-<p>以上就是我学了 26 节科二总结的经验。虽然我使用着没有问题，但并不代表就一定适用于所有人，<strong>请不要照搬！一定要找到适合自己的点位！</strong>科二就是考点位，点位一旦有偏差就会出错，考试时要将座位，镜子调整为与练习时一样。</p>
-<p>接下来我也要冲科三去啦！</p>
-<p>最后祝考科二的小伙伴们都一把过！</p>
-]]></content>
-      <categories>
-        <category>日常</category>
-      </categories>
-      <tags>
-        <tag>生活</tag>
-        <tag>驾考</tag>
       </tags>
   </entry>
   <entry>
