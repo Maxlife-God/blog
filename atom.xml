@@ -6,7 +6,7 @@
   <link href="https://blog.fufu.ink/atom.xml" rel="self"/>
   
   <link href="https://blog.fufu.ink/"/>
-  <updated>2024-04-19T08:46:18.000Z</updated>
+  <updated>2024-04-19T14:00:58.000Z</updated>
   <id>https://blog.fufu.ink/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>【笔记·古典日语】形容词</title>
+    <link href="https://blog.fufu.ink/2024/04/kobun5.html"/>
+    <id>https://blog.fufu.ink/2024/04/kobun5.html</id>
+    <published>2024-04-19T14:00:58.000Z</published>
+    <updated>2024-04-19T14:00:58.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>形容词分为两类，通过「なる」的接续判断</p><p><img data-src="https://img.fufu.ink/Ek3ImA.png"></p><p><img data-src="https://img.fufu.ink/G5tROu.png"></p><p>两者除了终止形变形方式不同，其余变形方式一致</p><p><img data-src="https://img.fufu.ink/3aTiz6.png"></p><p>补助活用一般后续助动词，本活用一般后续助词或其他</p><p>特例：</p><p><img data-src="https://img.fufu.ink/ErwrNB.png"></p>]]></content>
+    
+    
+    <summary type="html">好好好，更难了</summary>
+    
+    
+    
+    <category term="日语" scheme="https://blog.fufu.ink/categories/%E6%97%A5%E8%AF%AD/"/>
+    
+    
+    <category term="日语" scheme="https://blog.fufu.ink/tags/%E6%97%A5%E8%AF%AD/"/>
+    
+    <category term="古典日语" scheme="https://blog.fufu.ink/tags/%E5%8F%A4%E5%85%B8%E6%97%A5%E8%AF%AD/"/>
+    
+    <category term="语法" scheme="https://blog.fufu.ink/tags/%E8%AF%AD%E6%B3%95/"/>
+    
+  </entry>
   
   <entry>
     <title>Next 主题添加说说</title>
@@ -76,15 +101,15 @@
   
   <entry>
     <title>【笔记·古典日语】动词活用</title>
-    <link href="https://blog.fufu.ink/2024/04/nihongokotenbunpou4.html"/>
-    <id>https://blog.fufu.ink/2024/04/nihongokotenbunpou4.html</id>
+    <link href="https://blog.fufu.ink/2024/04/kobun4.html"/>
+    <id>https://blog.fufu.ink/2024/04/kobun4.html</id>
     <published>2024-04-16T07:52:45.000Z</published>
     <updated>2024-04-16T07:52:45.000Z</updated>
     
-    <content type="html"><![CDATA[<p>古典日语中动词有 9 种活用，分为正格活用和变格活用</p><p><img data-src="https://img.fufu.ink/pVgJ2S.png" alt="古典日语动词活用"></p><p>需要注意的是，动词的活用类型是由其活用词尾，即<strong>变化的部分</strong>来决定的，先确定行，然后确定段，加起来就是该动词的活用类型</p><h2 id="活用规则"><a href="#活用规则" class="headerlink" title="活用规则"></a>活用规则</h2><p>四段动词</p><div class="group-picture"><div class="group-picture-row"><div class="group-picture-column"><img data-src="https://img.fufu.ink/572OhB.png" alt="被称为四段动词的原因"></div><div class="group-picture-column"><img data-src="https://img.fufu.ink/wiQ80z.png" alt="四段动词活用-2"></div></div></div><p>总结：</p><ul><li>未然形：词尾变为ア段</li><li>连用形：词尾变为イ段</li><li>终止形：与基本形一致</li><li>连体形：与基本形一致</li><li>已然形：词尾变为ヘ段</li><li>命令形：词尾变为ヘ段</li></ul><p>上&#x2F;下一段动词·上&#x2F;下二段动词</p><div class="group-picture"><div class="group-picture-row"><div class="group-picture-column"><img data-src="https://img.fufu.ink/HziGFy.png" alt="上一段动词-上二段动词活用规则"></div><div class="group-picture-column"><img data-src="https://img.fufu.ink/84IcXO.png" alt="下一段动词活用-下二段动词活用"></div></div></div><p>总结：</p><p>上·下一段动词：</p><ul><li>未然形：去掉词尾る</li><li>连用形：去掉词尾る</li><li>终止形：与基本形一致</li><li>连体形：与基本形一致</li><li>已然形：词尾变为エ段</li><li>命令形：去る加よ</li></ul><p>上二段动词：</p><ul><li>未然形：词尾变为イ段</li><li>连用形：词尾变为イ段</li><li>终止形：与基本形一致</li><li>连体形：加る</li><li>已然形：加れ</li><li>命令性：词尾变为イ段加よ</li></ul><p>下二段动词：</p><ul><li>未然形：词尾变为エ段</li><li>连用形：词尾变为エ段</li><li>终止形：与基本形一致</li><li>连体形：加る</li><li>已然形：加れ</li><li>命令性：词尾变为エ段加よ</li></ul><p>为什么「見る」被称为<strong>マ行上一段活用动词</strong>：首先，动词的活用类型是由变化的部分（活用词尾）决定的，見る无法分为词干和词尾，则将みる、みれ、みよ后面的る、れ、よ都忽略掉，可将变化的部分看作是み，み属于マ行，变化的部分只在イ段一个段上，因此叫做一段。若把ア·イ·ウ·エ·オ段的ウ段看作是这五个段的正中央的段的话，イ段就属于ウ段往上数一个段，因此叫上一段。因此「見る」的变化部分是在マ行的上一段，因此「見る」的活用类型为マ行上一段活用</p><p>为什么「過ぐ」是<strong>ガ行上二段活用动词</strong>：同理，变化的部分是词尾ぐ，ぐ属于ガ行，变化发生在イ段和ウ段 2 个段上，因此称为二段，且是以ウ段为中心向上数，因此称为上二段，因此「過ぐ」变化发生在ガ行的上二段，因此「過ぐ」是ガ行上二段活用动词</p><p>〇行下一&#x2F;二段动词定义同理，先由变化的部分所在的行确定发生变化的行这一部分，再看发生变化的段，下一段这里是变化发生在エ段，且只在エ段 1 段上变化，エ段在ウ段往下数一个段，因此称为下一段。下两段则为：变化发生在ウ·エ段 2 段上，且是从ウ段开始往下数两个段，因此称为下两段。</p><p><strong>下一段动词只有「蹴る」</strong></p><p>カ变动词——来（注意与现代日语不同的活用形式以及命令形是こ·こよ）</p><p><img data-src="https://img.fufu.ink/ParL2k.png" alt="カ变动词活用"></p><p>サ变动词</p><p>サ变动词有两个：す、おはす（可以分为词干おは与词尾す，因此活用时只改变す部分）</p><p><img data-src="https://img.fufu.ink/f1PvgK.png" alt="サ变动词活用"></p><p>ナ变动词</p><p>ナ变动词有两个：死ぬ、往（去）ぬ</p><p><img data-src="https://img.fufu.ink/WPrnb7.png" alt="ナ变动词活用"></p><p>ラ变动词</p><p>ラ变动词有四个：あり、をり、はべり、いまそかり</p><p><img data-src="https://img.fufu.ink/YkkBtn.png" alt="image-20240415222308006"></p><h2 id="区分方法"><a href="#区分方法" class="headerlink" title="区分方法"></a>区分方法</h2><p>上一段动词与现代日语部分相似，即以る结尾，倒数第二个假名在イ段上</p><p>下一段动词只有「蹴る」一个</p><p>サ变动词：す、おはす</p><p>カ变动词：来</p><p>ナ变动词：死ぬ、往（去）ぬ</p><p>ラ变动词：あり、をり、はべり、いまそかり</p><p>不属于以上分类的：使用「V 未然形 + ず」进行判断</p><ul><li>若ず前面的假名在ア段上，则为<strong>四段动词</strong></li><li>若ず前面的假名在イ段上，则为<strong>上二段动词</strong></li><li>若ず前面的假名在エ段上，则为<strong>下二段动词</strong></li></ul>]]></content>
+    <content type="html"><![CDATA[<p>古典日语中动词有 9 种活用，分为正格活用和变格活用</p><p><img data-src="https://img.fufu.ink/pVgJ2S.png" alt="古典日语动词活用"></p><p>需要注意的是，动词的活用类型是由其活用词尾，即<strong>变化的部分</strong>来决定的，先确定行，然后确定段，加起来就是该动词的活用类型</p><h2 id="活用规则"><a href="#活用规则" class="headerlink" title="活用规则"></a>活用规则</h2><p>四段动词</p><div class="group-picture"><div class="group-picture-row"><div class="group-picture-column"><img data-src="https://img.fufu.ink/572OhB.png" alt="被称为四段动词的原因"></div><div class="group-picture-column"><img data-src="https://img.fufu.ink/wiQ80z.png" alt="四段动词活用-2"></div></div></div><p>总结：</p><ul><li>未然形：词尾变为ア段</li><li>连用形：词尾变为イ段</li><li>终止形：与基本形一致</li><li>连体形：与基本形一致</li><li>已然形：词尾变为ヘ段</li><li>命令形：词尾变为ヘ段</li></ul><p>上&#x2F;下一段动词·上&#x2F;下二段动词</p><div class="group-picture"><div class="group-picture-row"><div class="group-picture-column"><img data-src="https://img.fufu.ink/HziGFy.png" alt="上一段动词-上二段动词活用规则"></div><div class="group-picture-column"><img data-src="https://img.fufu.ink/84IcXO.png" alt="下一段动词活用-下二段动词活用"></div></div></div><p>总结：</p><p>上·下一段动词：</p><ul><li>未然形：去掉词尾る</li><li>连用形：去掉词尾る</li><li>终止形：与基本形一致</li><li>连体形：与基本形一致</li><li>已然形：词尾变为エ段</li><li>命令形：去る加よ</li></ul><p>上二段动词：</p><ul><li>未然形：词尾变为イ段</li><li>连用形：词尾变为イ段</li><li>终止形：与基本形一致</li><li>连体形：加る</li><li>已然形：加れ</li><li>命令性：词尾变为イ段加よ</li></ul><p>下二段动词：</p><ul><li>未然形：词尾变为エ段</li><li>连用形：词尾变为エ段</li><li>终止形：与基本形一致</li><li>连体形：加る</li><li>已然形：加れ</li><li>命令性：词尾变为エ段加よ</li></ul><p>为什么「見る」被称为<strong>マ行上一段活用动词</strong>：首先，动词的活用类型是由变化的部分（活用词尾）决定的，見る无法分为词干和词尾，则将みる、みれ、みよ后面的る、れ、よ都忽略掉，可将变化的部分看作是み，み属于マ行，变化的部分只在イ段一个段上，因此叫做一段。若把ア·イ·ウ·エ·オ段的ウ段看作是这五个段的正中央的段的话，イ段就属于ウ段往上数一个段，因此叫上一段。因此「見る」的变化部分是在マ行的上一段，因此「見る」的活用类型为マ行上一段活用</p><p>为什么「過ぐ」是<strong>ガ行上二段活用动词</strong>：同理，变化的部分是词尾ぐ，ぐ属于ガ行，变化发生在イ段和ウ段 2 个段上，因此称为二段，且是以ウ段为中心向上数，因此称为上二段，因此「過ぐ」变化发生在ガ行的上二段，因此「過ぐ」是ガ行上二段活用动词</p><p>〇行下一&#x2F;二段动词定义同理，先由变化的部分所在的行确定发生变化的行这一部分，再看发生变化的段，下一段这里是变化发生在エ段，且只在エ段 1 段上变化，エ段在ウ段往下数一个段，因此称为下一段。下两段则为：变化发生在ウ·エ段 2 段上，且是从ウ段开始往下数两个段，因此称为下两段。</p><p><strong>下一段动词只有「蹴る」</strong></p><p>カ变动词——来（注意与现代日语不同的活用形式以及命令形是こ·こよ）</p><p><img data-src="https://img.fufu.ink/ParL2k.png" alt="カ变动词活用"></p><p>サ变动词</p><p>サ变动词有两个：す、おはす（可以分为词干おは与词尾す，因此活用时只改变す部分）</p><p><img data-src="https://img.fufu.ink/f1PvgK.png" alt="サ变动词活用"></p><p>ナ变动词</p><p>ナ变动词有两个：死ぬ、往（去）ぬ</p><p><img data-src="https://img.fufu.ink/WPrnb7.png" alt="ナ变动词活用"></p><p>ラ变动词</p><p>ラ变动词有四个：あり、をり、はべり、いまそかり</p><p><img data-src="https://img.fufu.ink/YkkBtn.png" alt="image-20240415222308006"></p><h2 id="区分方法"><a href="#区分方法" class="headerlink" title="区分方法"></a>区分方法</h2><p>上一段动词与现代日语部分相似，即以る结尾，倒数第二个假名在イ段上</p><p>下一段动词只有「蹴る」一个</p><p>サ变动词：す、おはす</p><p>カ变动词：来</p><p>ナ变动词：死ぬ、往（去）ぬ</p><p>ラ变动词：あり、をり、はべり、いまそかり</p><p>不属于以上分类的：使用「V 未然形 + ず」进行判断</p><ul><li>若ず前面的假名在ア段上，则为<strong>四段动词</strong></li><li>若ず前面的假名在イ段上，则为<strong>上二段动词</strong></li><li>若ず前面的假名在エ段上，则为<strong>下二段动词</strong></li></ul><p>使用 ず 无法判断的特例：</p><p>四段动词：<ruby>借<rt>か</rt>る</ruby> <ruby>足<rt>た</rt>る</ruby> <ruby>飽<rt>あ</rt>く</ruby> </p><p>*但从现代日语的角度来说，三者均为五段动词，接 ず 时词尾确实是ア段，符合四段动词特征，视频中举的例子则为 借りる 足りる 飽きる，均为一段动词，因此有点不清楚为什么老师说容易弄错。</p><p><strong>マ行上二段动词：恨む</strong></p><p><img data-src="https://img.fufu.ink/iFs4mT.png"></p><p>ア行活用的只有「<ruby>得<rt>う</rt></ruby>」「<ruby>心得<rt>こころう</rt></ruby>」两个词汇，其他的都不是ア行的活用</p><div class="group-picture"><div class="group-picture-row"><div class="group-picture-column"><img data-src="https://img.fufu.ink/tjigNf.png"></div><div class="group-picture-column"><img data-src="https://img.fufu.ink/gEwUkC.png"></div></div></div><p>终止形是一个字的动词</p><p><img data-src="https://img.fufu.ink/o0RlO4.png"></p><p>有两种种类活用的动词，四段活用是向内，下二段是向外</p><p><img data-src="https://img.fufu.ink/UCyFni.png"></p>]]></content>
     
     
-    <summary type="html">笔记4</summary>
+    <summary type="html">努努力还能记住，就是记忆方法和之前有点区别，需要一些时间习惯</summary>
     
     
     
@@ -101,15 +126,15 @@
   
   <entry>
     <title>【笔记·古典日语】活用形及接续</title>
-    <link href="https://blog.fufu.ink/2024/04/nihongokotenbunpou3.html"/>
-    <id>https://blog.fufu.ink/2024/04/nihongokotenbunpou3.html</id>
+    <link href="https://blog.fufu.ink/2024/04/kobun3.html"/>
+    <id>https://blog.fufu.ink/2024/04/kobun3.html</id>
     <published>2024-04-14T10:19:02.000Z</published>
     <updated>2024-04-14T10:19:02.000Z</updated>
     
     <content type="html"><![CDATA[<p>6 种活用形</p><p><img data-src="https://img.fufu.ink/znu63C.png"></p><p>活用语：活用的单词。是动词，形容词，形容动词，助动词的总称。</p><p>一些助词和助动词的接续</p><p><img data-src="https://img.fufu.ink/3TtBGj.png"></p><p>一些助动词的接续（注意括号中的条件，比如り前面接的虽然是已然形，但仅限于四段动词，即り前面接<strong>四段动词的已然形</strong>）</p><p><img data-src="https://img.fufu.ink/P8sNJH.png"></p><p>ラ变动词及ラ变型（非标准定义，个人理解）</p><p>ラ变<strong>动词</strong>：在ラ行上进行活用的，即活用词尾为（ら·り·り·る·れ·れ）形式的动词。ラ变动词只有<strong>「あり」「をり」「はべり」「いまそかり」</strong>四个。</p><p>ラ变<strong>型</strong>：像ラ变动词一样进行活用，即活用词尾也为（ら·り·り·る·れ·れ）形式的<strong>活用语</strong>，如下图</p><p><img data-src="https://img.fufu.ink/q2IGzI.png"></p>]]></content>
     
     
-    <summary type="html">笔记3</summary>
+    <summary type="html">有点难记了</summary>
     
     
     
@@ -126,15 +151,15 @@
   
   <entry>
     <title>【笔记·古典日语】句子·句节·单词</title>
-    <link href="https://blog.fufu.ink/2024/04/nihongokotenbunpou2.html"/>
-    <id>https://blog.fufu.ink/2024/04/nihongokotenbunpou2.html</id>
+    <link href="https://blog.fufu.ink/2024/04/kobun2.html"/>
+    <id>https://blog.fufu.ink/2024/04/kobun2.html</id>
     <published>2024-04-14T10:18:41.000Z</published>
     <updated>2024-04-14T10:18:41.000Z</updated>
     
     <content type="html"><![CDATA[<p>自立语与附属语区分标准：单独使用时是否具有实义</p><p>附属语在一个句节中总是跟在自立语后，不会出现在自立语前</p><p>分割句子为句节的方法：</p><ul><li>加ネ</li><li>找到自立语，在自立语前分割</li></ul>]]></content>
     
     
-    <summary type="html">笔记2</summary>
+    <summary type="html">可以</summary>
     
     
     
@@ -151,15 +176,15 @@
   
   <entry>
     <title>【笔记·古典日语】五十音和发音</title>
-    <link href="https://blog.fufu.ink/2024/04/nihongokotenbunpou1.html"/>
-    <id>https://blog.fufu.ink/2024/04/nihongokotenbunpou1.html</id>
+    <link href="https://blog.fufu.ink/2024/04/kobun1.html"/>
+    <id>https://blog.fufu.ink/2024/04/kobun1.html</id>
     <published>2024-04-14T10:18:13.000Z</published>
     <updated>2024-04-14T10:18:13.000Z</updated>
     
     <content type="html"><![CDATA[<p>五十音图与现代日语区别如下：</p><p><img data-src="https://img.fufu.ink/sUvY2j.png"></p><p>ワ行的发音为「wa，i，u，e，o」</p><p><strong>需要注意 ゐ 与 ゑ 的写法</strong></p><p>然后是过去与现在的读法的不同，有五个种类</p><p>第一种，は行的音读作ワ行的发音（当该音位于词头时就そのまま读出来，不需要变音），注意只是读音对应，并非写法对应</p><p><img data-src="https://img.fufu.ink/gO6Wu7.png"></p><p>第二种，元音重叠的读法</p><p><img data-src="https://img.fufu.ink/q6oSk2.png"></p><p>第三种，「てふ」与「けふ」的发音，由前两种方法可以推导出发音来</p><p><img data-src="https://img.fufu.ink/TIN7Hg.png"></p><p>第四种，ゐ，ゑ，を的发音</p><p><img data-src="https://img.fufu.ink/Zy3uA5.png"></p><p>第五种，「む」发成「ん」的音</p><p><img data-src="https://img.fufu.ink/wwk75S.png"></p>]]></content>
     
     
-    <summary type="html">笔记1</summary>
+    <summary type="html">还行，挺简单的</summary>
     
     
     
@@ -481,27 +506,6 @@
     
     
     <summary type="html">日语小课堂</summary>
-    
-    
-    
-    <category term="日语" scheme="https://blog.fufu.ink/categories/%E6%97%A5%E8%AF%AD/"/>
-    
-    
-    <category term="日语" scheme="https://blog.fufu.ink/tags/%E6%97%A5%E8%AF%AD/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>【长期更新】N4 考题固定短语总结</title>
-    <link href="https://blog.fufu.ink/2023/05/n4shikengudingduanyu.html"/>
-    <id>https://blog.fufu.ink/2023/05/n4shikengudingduanyu.html</id>
-    <published>2023-05-14T14:32:55.000Z</published>
-    <updated>2023-05-14T14:32:55.000Z</updated>
-    
-    <content type="html"><![CDATA[<table><thead><tr><th align="center">固定短语</th><th align="center">中文意思</th></tr></thead><tbody><tr><td align="center"><ruby>理屈<rt>りくつ</rt></ruby>をつける</td><td align="center">找借口，讲歪理</td></tr><tr><td align="center"><ruby>理屈<rt>りくつ</rt></ruby>をこねる</td><td align="center">强词夺理</td></tr><tr><td align="center"><ruby>腹<rt>はら</rt></ruby>が立つ</td><td align="center">生气</td></tr><tr><td align="center"><ruby>腹<rt>はら</rt></ruby>を<ruby>割<rt>わ</rt>る</ruby></td><td align="center">推心置腹</td></tr><tr><td align="center">腹を<ruby>探<rt>さぐ</rt>る</ruby></td><td align="center">打探对方的想法</td></tr><tr><td align="center">腹を<ruby>括<rt>くく</rt>る</ruby></td><td align="center">横心，下定决心</td></tr><tr><td align="center">背が立つ</td><td align="center">个子高</td></tr><tr><td align="center"><ruby>胸<rt>むね</rt></ruby>が<ruby>痛<rt>いた</rt>む</ruby></td><td align="center">痛心</td></tr><tr><td align="center">胸を<ruby>張<rt>は</rt>る</ruby></td><td align="center">挺胸</td></tr><tr><td align="center">胸を打つ</td><td align="center">打动</td></tr><tr><td align="center">胸を<ruby>撫<rt>な</rt></ruby>で<ruby>下<rt>お</rt>ろす</ruby></td><td align="center">松一口气，放心</td></tr><tr><td align="center">失敗を<ruby>重<rt>かさ</rt>ねる</ruby></td><td align="center">反复失败</td></tr><tr><td align="center"><ruby>試行錯誤<rt>しこうさくご</rt></ruby>を重ねる</td><td align="center">反复试错</td></tr><tr><td align="center">努力を重ねる</td><td align="center">不断努力</td></tr><tr><td align="center"><ruby>議論<rt>ぎろん</rt></ruby>を重ねる</td><td align="center">反复讨论</td></tr><tr><td align="center"><ruby>慎<rt>つつし</rt>む</ruby></td><td align="center">谨慎；节制</td></tr><tr><td align="center">酒を慎む</td><td align="center">喝酒节制</td></tr><tr><td align="center"><ruby>言行<rt>げんこう</rt></ruby>を慎む</td><td align="center">谨言慎行</td></tr><tr><td align="center"><ruby>首<rt>くび</rt></ruby>を切る</td><td align="center">解雇，辞退</td></tr><tr><td align="center">首にする</td><td align="center">解雇，辞退</td></tr><tr><td align="center">ばか<ruby>正直<rt>しょうじき</rt></ruby></td><td align="center">过于老实，死心眼</td></tr><tr><td align="center">ばか<ruby>丁寧<rt>ていねい</rt></ruby></td><td align="center">过分尊重</td></tr><tr><td align="center">ばか<ruby>騒<rt>さわ</rt>ぎ</ruby></td><td align="center">瞎胡闹</td></tr><tr><td align="center">ばか<ruby>笑<rt>わら</rt>い</ruby></td><td align="center">狂笑</td></tr><tr><td align="center">ばか做接头词</td><td align="center">表示「过度」，带有贬义</td></tr><tr><td align="center">相手をなめる</td><td align="center">轻视对方</td></tr><tr><td align="center">～に<ruby>応<rt>おう</rt>じて</ruby></td><td align="center">表示根据前项，后项会发生变化，意为「根据…」</td></tr><tr><td align="center">～<ruby>関<rt>かん</rt>して</ruby></td><td align="center">关于…</td></tr><tr><td align="center">～に<ruby>先立<rt>さきだ</rt>って</ruby></td><td align="center">在…之前</td></tr><tr><td align="center">～に向けて</td><td align="center">向着…，朝着…（努力）</td></tr><tr><td align="center">できるかぎり</td><td align="center">尽可能</td></tr><tr><td align="center">～にすぎない</td><td align="center">只不过…，只是…</td></tr><tr><td align="center">N + を<ruby>抜<rt>ぬ</rt>き</ruby>にしては ~ ない  <br />N + 抜きでは～ない</td><td align="center">没有…就不可能…</td></tr><tr><td align="center"><ruby>即<rt>すなわ</rt>ち</ruby></td><td align="center">即…</td></tr><tr><td align="center">いかにも</td><td align="center">简直…，实在是…</td></tr></tbody></table>]]></content>
-    
-    
-    <summary type="html">本地记了一份，云端在写一份，方便随时随地查找以及分享</summary>
     
     
     

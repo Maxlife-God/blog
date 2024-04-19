@@ -2,6 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://blog.fufu.ink/2024/04/kobun5.html</loc>
+    
+    <lastmod>2024-04-19</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://blog.fufu.ink/2024/04/nextaddessay.html</loc>
     
     <lastmod>2024-04-19</lastmod>
@@ -20,7 +29,7 @@
   </url>
   
   <url>
-    <loc>https://blog.fufu.ink/2024/04/nihongokotenbunpou4.html</loc>
+    <loc>https://blog.fufu.ink/2024/04/kobun4.html</loc>
     
     <lastmod>2024-04-16</lastmod>
     
@@ -29,7 +38,7 @@
   </url>
   
   <url>
-    <loc>https://blog.fufu.ink/2024/04/nihongokotenbunpou3.html</loc>
+    <loc>https://blog.fufu.ink/2024/04/kobun3.html</loc>
     
     <lastmod>2024-04-14</lastmod>
     
@@ -38,7 +47,7 @@
   </url>
   
   <url>
-    <loc>https://blog.fufu.ink/2024/04/nihongokotenbunpou2.html</loc>
+    <loc>https://blog.fufu.ink/2024/04/kobun2.html</loc>
     
     <lastmod>2024-04-14</lastmod>
     
@@ -47,7 +56,7 @@
   </url>
   
   <url>
-    <loc>https://blog.fufu.ink/2024/04/nihongokotenbunpou1.html</loc>
+    <loc>https://blog.fufu.ink/2024/04/kobun1.html</loc>
     
     <lastmod>2024-04-14</lastmod>
     
@@ -547,6 +556,13 @@
   </url>
   
   <url>
+    <loc>https://blog.fufu.ink/tags/CSS/</loc>
+    <lastmod>2024-04-19</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>https://blog.fufu.ink/tags/%E4%B9%A6%E6%91%98/</loc>
     <lastmod>2024-04-19</lastmod>
     <changefreq>weekly</changefreq>
@@ -562,13 +578,6 @@
   
   <url>
     <loc>https://blog.fufu.ink/tags/%E5%A0%95%E8%90%BD/</loc>
-    <lastmod>2024-04-19</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.fufu.ink/tags/CSS/</loc>
     <lastmod>2024-04-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
