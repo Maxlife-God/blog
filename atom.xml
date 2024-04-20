@@ -6,7 +6,7 @@
   <link href="https://blog.fufu.ink/atom.xml" rel="self"/>
   
   <link href="https://blog.fufu.ink/"/>
-  <updated>2024-04-19T14:00:58.000Z</updated>
+  <updated>2024-04-20T13:15:44.000Z</updated>
   <id>https://blog.fufu.ink/</id>
   
   <author>
@@ -17,13 +17,38 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>【笔记·古典日语】形容动词</title>
+    <link href="https://blog.fufu.ink/2024/04/kobun6.html"/>
+    <id>https://blog.fufu.ink/2024/04/kobun6.html</id>
+    <published>2024-04-20T13:15:44.000Z</published>
+    <updated>2024-04-20T13:15:44.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>形容动词有「なり」「たり」两种活用，两种活用除了「と」「に」的连用形较为特殊，其余均与ラ变动词「あり」的活用方式一致，因此活用词尾「たり」「なり」属于<strong>ラ变形</strong></p><p><img data-src="https://img.fufu.ink/0Ror8Q.png"></p><p>使用「なり」「たり」的不同情况。有「々」这样表示重复的符号的为「たり」活用，其余为「なり」活用，可以记一下常见的「なり」前的形式</p><p><img data-src="https://img.fufu.ink/pvVG8h.png"></p><p>连用形「に」使用的情况</p><p><img data-src="https://img.fufu.ink/pXfLh5.png"></p>]]></content>
+    
+    
+    <summary type="html">很好，彻底乱了</summary>
+    
+    
+    
+    <category term="日语" scheme="https://blog.fufu.ink/categories/%E6%97%A5%E8%AF%AD/"/>
+    
+    
+    <category term="日语" scheme="https://blog.fufu.ink/tags/%E6%97%A5%E8%AF%AD/"/>
+    
+    <category term="古典日语" scheme="https://blog.fufu.ink/tags/%E5%8F%A4%E5%85%B8%E6%97%A5%E8%AF%AD/"/>
+    
+    <category term="语法" scheme="https://blog.fufu.ink/tags/%E8%AF%AD%E6%B3%95/"/>
+    
+  </entry>
+  
+  <entry>
     <title>【笔记·古典日语】形容词</title>
     <link href="https://blog.fufu.ink/2024/04/kobun5.html"/>
     <id>https://blog.fufu.ink/2024/04/kobun5.html</id>
     <published>2024-04-19T14:00:58.000Z</published>
     <updated>2024-04-19T14:00:58.000Z</updated>
     
-    <content type="html"><![CDATA[<p>形容词分为两类，通过「なる」的接续判断</p><p><img data-src="https://img.fufu.ink/Ek3ImA.png"></p><p><img data-src="https://img.fufu.ink/G5tROu.png"></p><p>两者除了终止形变形方式不同，其余变形方式一致</p><p><img data-src="https://img.fufu.ink/3aTiz6.png"></p><p>补助活用一般后续助动词，本活用一般后续助词或其他</p><p>特例：</p><p><img data-src="https://img.fufu.ink/ErwrNB.png"></p>]]></content>
+    <content type="html"><![CDATA[<p>形容词分为两类，通过「なる」的接续判断</p><p><img data-src="https://img.fufu.ink/Ek3ImA.png"></p><p><img data-src="https://img.fufu.ink/G5tROu.png"></p><p>两者除了终止形变形方式不同，其余变形方式一致。补助活用的活用词尾的活用方式与ラ变动词「あり」的活用方式一致，因此属于<strong>ラ变形</strong></p><p><img data-src="https://img.fufu.ink/3aTiz6.png"></p><p>补助活用一般后续助动词，本活用一般后续助词或其他</p><p>特例：</p><p><img data-src="https://img.fufu.ink/ErwrNB.png"></p>]]></content>
     
     
     <summary type="html">好好好，更难了</summary>
@@ -61,11 +86,11 @@
     <category term="技术" scheme="https://blog.fufu.ink/categories/%E6%8A%80%E6%9C%AF/"/>
     
     
-    <category term="Hexo" scheme="https://blog.fufu.ink/tags/Hexo/"/>
+    <category term="教程" scheme="https://blog.fufu.ink/tags/%E6%95%99%E7%A8%8B/"/>
     
     <category term="技术" scheme="https://blog.fufu.ink/tags/%E6%8A%80%E6%9C%AF/"/>
     
-    <category term="教程" scheme="https://blog.fufu.ink/tags/%E6%95%99%E7%A8%8B/"/>
+    <category term="Hexo" scheme="https://blog.fufu.ink/tags/Hexo/"/>
     
     <category term="Next" scheme="https://blog.fufu.ink/tags/Next/"/>
     
@@ -89,11 +114,11 @@
     <category term="技术" scheme="https://blog.fufu.ink/categories/%E6%8A%80%E6%9C%AF/"/>
     
     
-    <category term="Hexo" scheme="https://blog.fufu.ink/tags/Hexo/"/>
+    <category term="教程" scheme="https://blog.fufu.ink/tags/%E6%95%99%E7%A8%8B/"/>
     
     <category term="技术" scheme="https://blog.fufu.ink/tags/%E6%8A%80%E6%9C%AF/"/>
     
-    <category term="教程" scheme="https://blog.fufu.ink/tags/%E6%95%99%E7%A8%8B/"/>
+    <category term="Hexo" scheme="https://blog.fufu.ink/tags/Hexo/"/>
     
     <category term="Next" scheme="https://blog.fufu.ink/tags/Next/"/>
     
@@ -365,11 +390,11 @@
     <category term="技术" scheme="https://blog.fufu.ink/categories/%E6%8A%80%E6%9C%AF/"/>
     
     
-    <category term="Hexo" scheme="https://blog.fufu.ink/tags/Hexo/"/>
+    <category term="教程" scheme="https://blog.fufu.ink/tags/%E6%95%99%E7%A8%8B/"/>
     
     <category term="技术" scheme="https://blog.fufu.ink/tags/%E6%8A%80%E6%9C%AF/"/>
     
-    <category term="教程" scheme="https://blog.fufu.ink/tags/%E6%95%99%E7%A8%8B/"/>
+    <category term="Hexo" scheme="https://blog.fufu.ink/tags/Hexo/"/>
     
     <category term="Next" scheme="https://blog.fufu.ink/tags/Next/"/>
     
@@ -487,32 +512,11 @@
     <category term="技术" scheme="https://blog.fufu.ink/categories/%E6%8A%80%E6%9C%AF/"/>
     
     
-    <category term="Hexo" scheme="https://blog.fufu.ink/tags/Hexo/"/>
-    
     <category term="技术" scheme="https://blog.fufu.ink/tags/%E6%8A%80%E6%9C%AF/"/>
     
+    <category term="Hexo" scheme="https://blog.fufu.ink/tags/Hexo/"/>
+    
     <category term="CSS" scheme="https://blog.fufu.ink/tags/CSS/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>【每日语法】~さえ~ば</title>
-    <link href="https://blog.fufu.ink/2023/05/mnnhgbp5.html"/>
-    <id>https://blog.fufu.ink/2023/05/mnnhgbp5.html</id>
-    <published>2023-05-25T07:58:35.000Z</published>
-    <updated>2023-05-25T07:58:35.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>接续：</p><blockquote><p>N + さえ + 假定形<br>A（く形）&#x2F; NA（て形）+ さえあれば<br>V（ます形）&#x2F; サ变动词词干 + さえすれば</p></blockquote><p>意为「只要···就···」。关于假定形的变形方法，请参考<a href="/2023/04/mnnhgbp1.html">『【每日语法】~ば~ほど』</a>的文末表格。</p><p>例句：やすくさえあれば、買いましょう。<br>译：只要便宜的话就买吧！</p>]]></content>
-    
-    
-    <summary type="html">日语小课堂</summary>
-    
-    
-    
-    <category term="日语" scheme="https://blog.fufu.ink/categories/%E6%97%A5%E8%AF%AD/"/>
-    
-    
-    <category term="日语" scheme="https://blog.fufu.ink/tags/%E6%97%A5%E8%AF%AD/"/>
     
   </entry>
   
