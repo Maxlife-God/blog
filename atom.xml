@@ -6,7 +6,7 @@
   <link href="https://blog.fufu.ink/atom.xml" rel="self"/>
   
   <link href="https://blog.fufu.ink/"/>
-  <updated>2024-04-21T01:24:35.000Z</updated>
+  <updated>2024-04-21T13:07:25.000Z</updated>
   <id>https://blog.fufu.ink/</id>
   
   <author>
@@ -15,6 +15,56 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>【笔记·古典日语】助动词「る·らる」</title>
+    <link href="https://blog.fufu.ink/2024/04/kobun10.html"/>
+    <id>https://blog.fufu.ink/2024/04/kobun10.html</id>
+    <published>2024-04-21T13:07:25.000Z</published>
+    <updated>2024-04-21T13:07:25.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>活用及接续</p><p>活用方式符合下二段动词的活用</p><p><img data-src="https://img.fufu.ink/jPexpH.png"></p><p>作用</p><ul><li>自发，翻译为现代日语为黄色部分，前面多续心情语</li><li>被动，通过观察有无表示被的对象的「に」来判断是否是表示被动</li><li>可能，表示可能的意思时，后项多续<strong>否定</strong>表达</li><li>尊敬，主语多为身份地位较高的人</li></ul><div class="group-picture"><div class="group-picture-row"><div class="group-picture-column"><img data-src="https://img.fufu.ink/nKu84y.png"></div><div class="group-picture-column"><img data-src="https://img.fufu.ink/5UNLdh.png"></div><div class="group-picture-column"><img data-src="https://img.fufu.ink/zkHEpo.png"></div></div><div class="group-picture-row"><div class="group-picture-column"><img data-src="https://img.fufu.ink/Ec8qhh.png"></div></div></div>]]></content>
+    
+    
+    <summary type="html">相当于现在的被动态</summary>
+    
+    
+    
+    <category term="日语" scheme="https://blog.fufu.ink/categories/%E6%97%A5%E8%AF%AD/"/>
+    
+    
+    <category term="日语" scheme="https://blog.fufu.ink/tags/%E6%97%A5%E8%AF%AD/"/>
+    
+    <category term="古典日语" scheme="https://blog.fufu.ink/tags/%E5%8F%A4%E5%85%B8%E6%97%A5%E8%AF%AD/"/>
+    
+    <category term="语法" scheme="https://blog.fufu.ink/tags/%E8%AF%AD%E6%B3%95/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>【笔记·古典日语】系结的规则</title>
+    <link href="https://blog.fufu.ink/2024/04/kobun9.html"/>
+    <id>https://blog.fufu.ink/2024/04/kobun9.html</id>
+    <published>2024-04-21T12:15:02.000Z</published>
+    <updated>2024-04-21T12:15:02.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>系结现象</p><p>定义：受到句中的系助词（ぞ・なむ・や・か・こそ）的影响而将句尾的活用语改变为<strong>连体形</strong>或<strong>已然形</strong>的现象</p><p><img data-src="https://img.fufu.ink/BszfSs.png"></p><h2 id="规则"><a href="#规则" class="headerlink" title="规则"></a>规则</h2><p>第一种，规则如图</p><p>表示强调，强调系助词前的内容，作用类似于「が」，翻译成现代日语时将系助词看作「が」即可</p><div class="group-picture"><div class="group-picture-row"><div class="group-picture-column"><img data-src="https://img.fufu.ink/3dP9gn.png"></div><div class="group-picture-column"><img data-src="https://img.fufu.ink/c6Br1D.png"></div></div></div><p>第二种</p><p>表示疑问·反问</p><p>翻译成现代日语即为黄色字体部分</p><p>具体是疑问还是反问需要根据语境判断</p><div class="group-picture"><div class="group-picture-row"><div class="group-picture-column"><img data-src="https://img.fufu.ink/RREt9F.png"></div><div class="group-picture-column"><img data-src="https://img.fufu.ink/Nmoeyy.png"></div></div></div><h2 id="注意点"><a href="#注意点" class="headerlink" title="注意点"></a>注意点</h2><ol><li>省略：有时会出现系助词的部分保留，后面活用语部分省略的现象</li><li>转折：以「～こそー已然形、～」形式出现，即该部分位于句中时，除了本身表示强调的作用外，还带有转折的意思，即「けれど」</li><li>表示「如果…就不好了」</li><li>「やは」「かは」多表示<strong>反问</strong></li></ol><div class="group-picture"><div class="group-picture-row"><div class="group-picture-column"><img data-src="https://img.fufu.ink/Ts0Rps.png" alt="解释对应上方序号"></div><div class="group-picture-column"><img data-src="https://img.fufu.ink/yPi33F.png" alt="解释对应上方序号"></div></div></div>]]></content>
+    
+    
+    <summary type="html">有点意思</summary>
+    
+    
+    
+    <category term="日语" scheme="https://blog.fufu.ink/categories/%E6%97%A5%E8%AF%AD/"/>
+    
+    
+    <category term="日语" scheme="https://blog.fufu.ink/tags/%E6%97%A5%E8%AF%AD/"/>
+    
+    <category term="古典日语" scheme="https://blog.fufu.ink/tags/%E5%8F%A4%E5%85%B8%E6%97%A5%E8%AF%AD/"/>
+    
+    <category term="语法" scheme="https://blog.fufu.ink/tags/%E8%AF%AD%E6%B3%95/"/>
+    
+  </entry>
   
   <entry>
     <title>【笔记·古典日语】用言的音便</title>
@@ -136,11 +186,11 @@
     <category term="技术" scheme="https://blog.fufu.ink/categories/%E6%8A%80%E6%9C%AF/"/>
     
     
-    <category term="教程" scheme="https://blog.fufu.ink/tags/%E6%95%99%E7%A8%8B/"/>
+    <category term="Hexo" scheme="https://blog.fufu.ink/tags/Hexo/"/>
     
     <category term="技术" scheme="https://blog.fufu.ink/tags/%E6%8A%80%E6%9C%AF/"/>
     
-    <category term="Hexo" scheme="https://blog.fufu.ink/tags/Hexo/"/>
+    <category term="教程" scheme="https://blog.fufu.ink/tags/%E6%95%99%E7%A8%8B/"/>
     
     <category term="Next" scheme="https://blog.fufu.ink/tags/Next/"/>
     
@@ -164,11 +214,11 @@
     <category term="技术" scheme="https://blog.fufu.ink/categories/%E6%8A%80%E6%9C%AF/"/>
     
     
-    <category term="教程" scheme="https://blog.fufu.ink/tags/%E6%95%99%E7%A8%8B/"/>
+    <category term="Hexo" scheme="https://blog.fufu.ink/tags/Hexo/"/>
     
     <category term="技术" scheme="https://blog.fufu.ink/tags/%E6%8A%80%E6%9C%AF/"/>
     
-    <category term="Hexo" scheme="https://blog.fufu.ink/tags/Hexo/"/>
+    <category term="教程" scheme="https://blog.fufu.ink/tags/%E6%95%99%E7%A8%8B/"/>
     
     <category term="Next" scheme="https://blog.fufu.ink/tags/Next/"/>
     
@@ -440,11 +490,11 @@
     <category term="技术" scheme="https://blog.fufu.ink/categories/%E6%8A%80%E6%9C%AF/"/>
     
     
-    <category term="教程" scheme="https://blog.fufu.ink/tags/%E6%95%99%E7%A8%8B/"/>
+    <category term="Hexo" scheme="https://blog.fufu.ink/tags/Hexo/"/>
     
     <category term="技术" scheme="https://blog.fufu.ink/tags/%E6%8A%80%E6%9C%AF/"/>
     
-    <category term="Hexo" scheme="https://blog.fufu.ink/tags/Hexo/"/>
+    <category term="教程" scheme="https://blog.fufu.ink/tags/%E6%95%99%E7%A8%8B/"/>
     
     <category term="Next" scheme="https://blog.fufu.ink/tags/Next/"/>
     
@@ -474,50 +524,6 @@
     <category term="生活" scheme="https://blog.fufu.ink/tags/%E7%94%9F%E6%B4%BB/"/>
     
     <category term="驾考" scheme="https://blog.fufu.ink/tags/%E9%A9%BE%E8%80%83/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>诈尸更新一下最近状态</title>
-    <link href="https://blog.fufu.ink/2023/07/natsuyasumijyoutai.html"/>
-    <id>https://blog.fufu.ink/2023/07/natsuyasumijyoutai.html</id>
-    <published>2023-07-24T13:23:01.000Z</published>
-    <updated>2023-07-24T13:23:01.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>一个月没更新力。</p><p>主要是没啥想法，每天宅在家里，打游戏，追番（这一个月可追了不少番——齐木楠雄的灾难，别当欧尼酱了，鬼灭，文豪野犬，因为太怕痛就全点防御力了，无职转生，无神世界中的神明活动，僵尸百分百，魔禁……算是把高中以来没怎么看番的时间全补回来了）。</p><p>科二因为挂两回了，拖了两年了，明年要过期了，最近又开始练了。今天去考场中模拟了一个小时，除了最后一圈坡上起步因为边线距离扣了 10 分，都是 100 分，感觉下次考试应该问题不大了，现在开始准备科三了。科三打算 C1 转 C2 了，因为不用在意档位的变换，科三考试可以更稳地通过，现在主要是要求暑假结束前拿到驾照，否则拖到寒假就容易过期了。至于 C1 和 C2 的区别，上网查了一下，似乎是 C1 可以开蓝牌车，但 C2 只能开小型驾驶车？嘛，以后我也不会有机会去开手动挡啦，驾照这东西不就是图个方便么，怎么快速方便怎么来，没必要死磕个手动挡为难自己。</p><p>家里躺了三周了，得开始准备下半年的 N1 了，虽然上个月的专四大概率挂了，但是 N1 还是得拿的，拿了就可以开始接一些小的翻译工作赚点零花钱了！</p>]]></content>
-    
-    
-    <summary type="html">还活着</summary>
-    
-    
-    
-    <category term="日常" scheme="https://blog.fufu.ink/categories/%E6%97%A5%E5%B8%B8/"/>
-    
-    
-    <category term="生活" scheme="https://blog.fufu.ink/tags/%E7%94%9F%E6%B4%BB/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>叕出神子啦加深渊终于凹满了</title>
-    <link href="https://blog.fufu.ink/2023/06/genshinkamikoaru.html"/>
-    <id>https://blog.fufu.ink/2023/06/genshinkamikoaru.html</id>
-    <published>2023-06-03T12:11:04.000Z</published>
-    <updated>2023-06-03T12:11:04.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>先说说深渊，博主在今年 2 月之前是无论如何都打不过深渊的，2 月后开始练万达国际，学会双扩后，队伍养得差不多后就在 2 月 18 日第一次凹过 12 层，见<a href="/2023/02/genshinshenyuanmanxing.html">『打通深渊后半个月，我又第一次满星深渊！』</a>。此后除了第一期沙虫因为「草行九」练度不够，没有满星之外，每一期都能做到满星了！不过近来几期深渊越来越难，大量的「挤模型」「多动症」「厚盾」「拖时间」的机制怪出现，属实是恶心人。之前圣骸兽博主一直是用「草行九瑶」过的，不过这次由于 12-3 下半是「深罪浸礼者」，队伍中必须有「火 草&#x2F;冰 水」，「草行九」自然就成了选择，再加上了前几天出的宵宫用以破冰盾。问题就是上半该用什么队伍，一开始认为万达打圣骸兽也许很麻烦，就想试着用雷国，可惜博主没怎么练雷神，故试了多种配队后还是决定使用万达。最后是 2 分钟打完了四只圣骸兽，用了剩下 1 分钟过了深罪浸礼者（很险···6分59秒打完的，系统判定为 3 星）。</p><p>前前后后凹了有 100+ 次，不过由于前面几十次是在尝试配队，有了第一期经验后，16 号的深渊应该也能轻松不少。</p><p><img data-src="https://img.fufu.ink/ZDM6sI.webp" alt="下次还填非常简单！"></p><p>然后是垫池子垫出了神子，抽前算的垫了 20 抽了，本来不抱什么希望地单抽了一下，想着不可能这么早出的吧，结果竟然金了，还没歪！</p><p><img data-src="https://img.fufu.ink/4o04wz.webp" alt="21 抽拿下！"></p>]]></content>
-    
-    
-    <summary type="html">21 抽提前出了神子，是大号！</summary>
-    
-    
-    
-    <category term="游戏" scheme="https://blog.fufu.ink/categories/%E6%B8%B8%E6%88%8F/"/>
-    
-    
-    <category term="原神" scheme="https://blog.fufu.ink/tags/%E5%8E%9F%E7%A5%9E/"/>
-    
-    <category term="游戏" scheme="https://blog.fufu.ink/tags/%E6%B8%B8%E6%88%8F/"/>
     
   </entry>
   
