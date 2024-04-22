@@ -28,6 +28,44 @@
       </tags>
   </entry>
   <entry>
+    <title>MinecraftBDS 修改材质包和行为包教程</title>
+    <url>/2022/07/mcbdsbeautify.html</url>
+    <content><![CDATA[<blockquote>
+<p>本文使用的服务器为基岩版官服 BDS，教程可能仅适用于该类服务器</p>
+</blockquote>
+<h2 id="材质包修改教程"><a href="#材质包修改教程" class="headerlink" title="材质包修改教程"></a>材质包修改教程</h2><p>在 BDS 的根目录找到文件夹 resource_packs 并进入。这里我使用宝塔面板进行演示。</p>
+<p><img data-src="https://img.fufu.ink/NmX8b5.webp" alt="resources_packs"></p>
+<p>将材质包扩展名改为 <code>.zip</code> 后上传到该文件夹中并解压。进入解压后的文件夹一般会有以下文件：</p>
+<p><img data-src="https://img.fufu.ink/39iM8F.webp" alt="材质包文件"></p>
+<p>打开 <code>manifest.json</code> 文件并复制其中的 <code>name</code>、<code>uuid</code> 和 <code>version</code> 几个的值。接下来进入到根目录的 <code>worlds</code> 文件夹中，找到需要加材质包的地图的文件夹，进入并创建四个文件</p>
+<figure class="highlight pgsql"><table><tr><td class="code"><pre><span class="line">world_behavior_pack_history.json</span><br><span class="line">world_behavior_packs.json</span><br><span class="line">world_resource_pack_history.json</span><br><span class="line">world_resource_packs.json</span><br></pre></td></tr></table></figure>
+
+<p>含 behavior 的为行为包，resource 的为材质包。我们打开 <code>world_resource_pack_history.json</code> 并粘贴如下代码：</p>
+<figure class="highlight json"><table><tr><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span><span class="attr">&quot;packs&quot;</span><span class="punctuation">:</span><span class="punctuation">[</span><span class="punctuation">&#123;</span><span class="attr">&quot;can_be_redownloaded&quot;</span><span class="punctuation">:</span><span class="literal"><span class="keyword">true</span></span><span class="punctuation">,</span><span class="attr">&quot;name&quot;</span><span class="punctuation">:</span><span class="string">&quot; 上面的name的值 &quot;</span><span class="punctuation">,</span><span class="attr">&quot;uuid&quot;</span><span class="punctuation">:</span><span class="string">&quot; 上面的uuid的值 &quot;</span><span class="punctuation">,</span><span class="attr">&quot;version&quot;</span><span class="punctuation">:</span><span class="punctuation">[</span> 上面的version的值 <span class="punctuation">]</span><span class="punctuation">&#125;</span><span class="punctuation">]</span><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
+
+<p>一个材质包的参数使用 <code>&#123;&#125;</code> 括起来，如有多个材质包，则需要使用英文符号 <code>,</code> 分隔，比如：</p>
+<figure class="highlight json"><table><tr><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span><span class="attr">&quot;packs&quot;</span><span class="punctuation">:</span><span class="punctuation">[</span><span class="punctuation">&#123;</span><span class="attr">&quot;can_be_redownloaded&quot;</span><span class="punctuation">:</span><span class="literal"><span class="keyword">true</span></span><span class="punctuation">,</span><span class="attr">&quot;name&quot;</span><span class="punctuation">:</span><span class="string">&quot; 第一个材质的name的值 &quot;</span><span class="punctuation">,</span><span class="attr">&quot;uuid&quot;</span><span class="punctuation">:</span><span class="string">&quot; 第一个材质的uuid的值 &quot;</span><span class="punctuation">,</span><span class="attr">&quot;version&quot;</span><span class="punctuation">:</span><span class="punctuation">[</span> 第一个材质的version的值 <span class="punctuation">]</span><span class="punctuation">&#125;</span><span class="punctuation">,</span><span class="punctuation">&#123;</span><span class="attr">&quot;can_be_redownloaded&quot;</span><span class="punctuation">:</span><span class="literal"><span class="keyword">true</span></span><span class="punctuation">,</span><span class="attr">&quot;name&quot;</span><span class="punctuation">:</span><span class="string">&quot; 第二个材质的name的值 &quot;</span><span class="punctuation">,</span><span class="attr">&quot;uuid&quot;</span><span class="punctuation">:</span><span class="string">&quot; 第二个材质的uuid的值 &quot;</span><span class="punctuation">,</span><span class="attr">&quot;version&quot;</span><span class="punctuation">:</span><span class="punctuation">[</span> 第二个材质的version的值 <span class="punctuation">]</span><span class="punctuation">&#125;</span><span class="punctuation">]</span><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
+
+<p><code>can_be_redownloaded</code> 的值为 <code>true</code> 和 <code>false</code>，表示是否能够重新下载该材质包。</p>
+<p>接下来打开 <code>world_resource_packs.json</code>，并粘贴如下代码：</p>
+<figure class="highlight json"><table><tr><td class="code"><pre><span class="line"><span class="punctuation">[</span>	</span><br><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">		<span class="attr">&quot;pack_id&quot;</span> <span class="punctuation">:</span> <span class="string">&quot; 上面的uuid的值 &quot;</span><span class="punctuation">,</span></span><br><span class="line">		<span class="attr">&quot;version&quot;</span> <span class="punctuation">:</span> <span class="punctuation">[</span> 上面的version的值 <span class="punctuation">]</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br><span class="line">	<span class="punctuation">]</span></span><br></pre></td></tr></table></figure>
+
+<p>一个材质包由 <code>&#123;&#125;</code> 括起来，如有多个材质包，则需使用则需要使用英文符号 <code>,</code> 分隔。一个材质包的这几个参数需要同时填入以上两个文件才会生效。</p>
+<h2 id="行为包"><a href="#行为包" class="headerlink" title="行为包"></a>行为包</h2><p>行为包操作方法与材质包差不多，首先在根目录找到 <code>behavior_packs</code> 文件夹并将行为包的扩展名改为 <code>.zip</code> 上传到该目录中，解压后获取 <code>manifest.json</code> 的那三个值，将值填入 <code>world_behavior_pack_history.json</code> 和 <code>world_behavior_packs.json</code> 中。带 <code>history</code> 与材质包带 history 的内容一致，不带的与不带的内容一致。</p>
+<h2 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h2><p>1.更换材质包和行为包和需要重启服务端才会生效。<br>2.若之前已从服务器下载过材质包，现在更换新的材质包后没有弹出下载提示窗口，请去游戏的<code>设置——存储——缓存数据</code>中清除对应材质包的缓存之后再次进入服务器。</p>
+]]></content>
+      <categories>
+        <category>游戏</category>
+      </categories>
+      <tags>
+        <tag>Minecraft</tag>
+        <tag>材质包</tag>
+        <tag>行为包</tag>
+        <tag>教程</tag>
+        <tag>技术</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Next 主题添加说说</title>
     <url>/2024/04/nextaddessay.html</url>
     <content><![CDATA[<p>看见洪哥的即刻页面很好看，想 Copy 过来，可惜技术不行，写不来瀑布流，就只能搞个简单的 flex 布局。</p>
@@ -68,48 +106,10 @@
         <category>技术</category>
       </categories>
       <tags>
+        <tag>教程</tag>
+        <tag>技术</tag>
         <tag>Hexo</tag>
-        <tag>技术</tag>
-        <tag>教程</tag>
         <tag>Next</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>MinecraftBDS 修改材质包和行为包教程</title>
-    <url>/2022/07/mcbdsbeautify.html</url>
-    <content><![CDATA[<blockquote>
-<p>本文使用的服务器为基岩版官服 BDS，教程可能仅适用于该类服务器</p>
-</blockquote>
-<h2 id="材质包修改教程"><a href="#材质包修改教程" class="headerlink" title="材质包修改教程"></a>材质包修改教程</h2><p>在 BDS 的根目录找到文件夹 resource_packs 并进入。这里我使用宝塔面板进行演示。</p>
-<p><img data-src="https://img.fufu.ink/NmX8b5.webp" alt="resources_packs"></p>
-<p>将材质包扩展名改为 <code>.zip</code> 后上传到该文件夹中并解压。进入解压后的文件夹一般会有以下文件：</p>
-<p><img data-src="https://img.fufu.ink/39iM8F.webp" alt="材质包文件"></p>
-<p>打开 <code>manifest.json</code> 文件并复制其中的 <code>name</code>、<code>uuid</code> 和 <code>version</code> 几个的值。接下来进入到根目录的 <code>worlds</code> 文件夹中，找到需要加材质包的地图的文件夹，进入并创建四个文件</p>
-<figure class="highlight pgsql"><table><tr><td class="code"><pre><span class="line">world_behavior_pack_history.json</span><br><span class="line">world_behavior_packs.json</span><br><span class="line">world_resource_pack_history.json</span><br><span class="line">world_resource_packs.json</span><br></pre></td></tr></table></figure>
-
-<p>含 behavior 的为行为包，resource 的为材质包。我们打开 <code>world_resource_pack_history.json</code> 并粘贴如下代码：</p>
-<figure class="highlight json"><table><tr><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span><span class="attr">&quot;packs&quot;</span><span class="punctuation">:</span><span class="punctuation">[</span><span class="punctuation">&#123;</span><span class="attr">&quot;can_be_redownloaded&quot;</span><span class="punctuation">:</span><span class="literal"><span class="keyword">true</span></span><span class="punctuation">,</span><span class="attr">&quot;name&quot;</span><span class="punctuation">:</span><span class="string">&quot; 上面的name的值 &quot;</span><span class="punctuation">,</span><span class="attr">&quot;uuid&quot;</span><span class="punctuation">:</span><span class="string">&quot; 上面的uuid的值 &quot;</span><span class="punctuation">,</span><span class="attr">&quot;version&quot;</span><span class="punctuation">:</span><span class="punctuation">[</span> 上面的version的值 <span class="punctuation">]</span><span class="punctuation">&#125;</span><span class="punctuation">]</span><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
-
-<p>一个材质包的参数使用 <code>&#123;&#125;</code> 括起来，如有多个材质包，则需要使用英文符号 <code>,</code> 分隔，比如：</p>
-<figure class="highlight json"><table><tr><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span><span class="attr">&quot;packs&quot;</span><span class="punctuation">:</span><span class="punctuation">[</span><span class="punctuation">&#123;</span><span class="attr">&quot;can_be_redownloaded&quot;</span><span class="punctuation">:</span><span class="literal"><span class="keyword">true</span></span><span class="punctuation">,</span><span class="attr">&quot;name&quot;</span><span class="punctuation">:</span><span class="string">&quot; 第一个材质的name的值 &quot;</span><span class="punctuation">,</span><span class="attr">&quot;uuid&quot;</span><span class="punctuation">:</span><span class="string">&quot; 第一个材质的uuid的值 &quot;</span><span class="punctuation">,</span><span class="attr">&quot;version&quot;</span><span class="punctuation">:</span><span class="punctuation">[</span> 第一个材质的version的值 <span class="punctuation">]</span><span class="punctuation">&#125;</span><span class="punctuation">,</span><span class="punctuation">&#123;</span><span class="attr">&quot;can_be_redownloaded&quot;</span><span class="punctuation">:</span><span class="literal"><span class="keyword">true</span></span><span class="punctuation">,</span><span class="attr">&quot;name&quot;</span><span class="punctuation">:</span><span class="string">&quot; 第二个材质的name的值 &quot;</span><span class="punctuation">,</span><span class="attr">&quot;uuid&quot;</span><span class="punctuation">:</span><span class="string">&quot; 第二个材质的uuid的值 &quot;</span><span class="punctuation">,</span><span class="attr">&quot;version&quot;</span><span class="punctuation">:</span><span class="punctuation">[</span> 第二个材质的version的值 <span class="punctuation">]</span><span class="punctuation">&#125;</span><span class="punctuation">]</span><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
-
-<p><code>can_be_redownloaded</code> 的值为 <code>true</code> 和 <code>false</code>，表示是否能够重新下载该材质包。</p>
-<p>接下来打开 <code>world_resource_packs.json</code>，并粘贴如下代码：</p>
-<figure class="highlight json"><table><tr><td class="code"><pre><span class="line"><span class="punctuation">[</span>	</span><br><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">		<span class="attr">&quot;pack_id&quot;</span> <span class="punctuation">:</span> <span class="string">&quot; 上面的uuid的值 &quot;</span><span class="punctuation">,</span></span><br><span class="line">		<span class="attr">&quot;version&quot;</span> <span class="punctuation">:</span> <span class="punctuation">[</span> 上面的version的值 <span class="punctuation">]</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br><span class="line">	<span class="punctuation">]</span></span><br></pre></td></tr></table></figure>
-
-<p>一个材质包由 <code>&#123;&#125;</code> 括起来，如有多个材质包，则需使用则需要使用英文符号 <code>,</code> 分隔。一个材质包的这几个参数需要同时填入以上两个文件才会生效。</p>
-<h2 id="行为包"><a href="#行为包" class="headerlink" title="行为包"></a>行为包</h2><p>行为包操作方法与材质包差不多，首先在根目录找到 <code>behavior_packs</code> 文件夹并将行为包的扩展名改为 <code>.zip</code> 上传到该目录中，解压后获取 <code>manifest.json</code> 的那三个值，将值填入 <code>world_behavior_pack_history.json</code> 和 <code>world_behavior_packs.json</code> 中。带 <code>history</code> 与材质包带 history 的内容一致，不带的与不带的内容一致。</p>
-<h2 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h2><p>1.更换材质包和行为包和需要重启服务端才会生效。<br>2.若之前已从服务器下载过材质包，现在更换新的材质包后没有弹出下载提示窗口，请去游戏的<code>设置——存储——缓存数据</code>中清除对应材质包的缓存之后再次进入服务器。</p>
-]]></content>
-      <categories>
-        <category>游戏</category>
-      </categories>
-      <tags>
-        <tag>技术</tag>
-        <tag>教程</tag>
-        <tag>Minecraft</tag>
-        <tag>材质包</tag>
-        <tag>行为包</tag>
       </tags>
   </entry>
   <entry>
@@ -134,9 +134,9 @@
         <category>技术</category>
       </categories>
       <tags>
-        <tag>Hexo</tag>
-        <tag>技术</tag>
         <tag>教程</tag>
+        <tag>技术</tag>
+        <tag>Hexo</tag>
         <tag>Next</tag>
       </tags>
   </entry>
@@ -165,8 +165,8 @@
         <category>技术</category>
       </categories>
       <tags>
-        <tag>Hexo</tag>
         <tag>技术</tag>
+        <tag>Hexo</tag>
         <tag>JavaScript</tag>
       </tags>
   </entry>
@@ -200,9 +200,9 @@
         <category>技术</category>
       </categories>
       <tags>
-        <tag>Hexo</tag>
-        <tag>技术</tag>
         <tag>教程</tag>
+        <tag>技术</tag>
+        <tag>Hexo</tag>
         <tag>Next</tag>
         <tag>CSS</tag>
       </tags>
@@ -227,9 +227,9 @@
         <category>技术</category>
       </categories>
       <tags>
-        <tag>Hexo</tag>
-        <tag>技术</tag>
         <tag>教程</tag>
+        <tag>技术</tag>
+        <tag>Hexo</tag>
         <tag>CSS</tag>
       </tags>
   </entry>
@@ -260,23 +260,6 @@
         <tag>书摘</tag>
         <tag>局外人</tag>
         <tag>堕落</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>【每日语法】~さえ~ば</title>
-    <url>/2023/05/mnnhgbp5.html</url>
-    <content><![CDATA[<p>接续：</p>
-<blockquote>
-<p>N + さえ + 假定形<br>A（く形）&#x2F; NA（て形）+ さえあれば<br>V（ます形）&#x2F; サ变动词词干 + さえすれば</p>
-</blockquote>
-<p>意为「只要···就···」。关于假定形的变形方法，请参考<a href="/2023/04/mnnhgbp1.html">『【每日语法】~ば~ほど』</a>的文末表格。</p>
-<p>例句：やすくさえあれば、買いましょう。<br>译：只要便宜的话就买吧！</p>
-]]></content>
-      <categories>
-        <category>日语</category>
-      </categories>
-      <tags>
-        <tag>日语</tag>
       </tags>
   </entry>
   <entry>
@@ -321,28 +304,14 @@
       </tags>
   </entry>
   <entry>
-    <title>【每日语法】N1 易混语法总结</title>
-    <url>/2024/03/mnnhgbp6.html</url>
-    <content><![CDATA[<details class="note default no-icon"><summary><p><strong>自不必说</strong>的表达，后常续「も」「さえ」「まで」等</p>
-</summary>
-<p>～はもちろん、～</p>
-<p>～は言うまでもなく、～</p>
-<p>～は言わずもがな、～</p>
-<p>～どころか、～</p>
-<p>～もさることながら、～</p>
-<p>～は言うに及ばず、～</p>
-
-</details>
-
-<details class="note default no-icon"><summary><p><strong>姑且不论</strong>（部分句子可译为「如果……的话，还情有可原，但……」）的表达</p>
-</summary>
-<p>～ならいざしらず、～</p>
-<p>～なら&#x2F;はともかく、～</p>
-<p>～なら&#x2F;は別だが、～</p>
-<p>～なら&#x2F;はまだしも、～</p>
-<p>～はさておき&#x2F;はさておいて～</p>
-
-</details>
+    <title>【每日语法】~さえ~ば</title>
+    <url>/2023/05/mnnhgbp5.html</url>
+    <content><![CDATA[<p>接续：</p>
+<blockquote>
+<p>N + さえ + 假定形<br>A（く形）&#x2F; NA（て形）+ さえあれば<br>V（ます形）&#x2F; サ变动词词干 + さえすれば</p>
+</blockquote>
+<p>意为「只要···就···」。关于假定形的变形方法，请参考<a href="/2023/04/mnnhgbp1.html">『【每日语法】~ば~ほど』</a>的文末表格。</p>
+<p>例句：やすくさえあれば、買いましょう。<br>译：只要便宜的话就买吧！</p>
 ]]></content>
       <categories>
         <category>日语</category>
@@ -409,53 +378,28 @@
       </tags>
   </entry>
   <entry>
-    <title>【每日语法】てある及相似语法的对比</title>
-    <url>/2023/05/mnnhgbp4.html</url>
-    <content><![CDATA[<h2 id="意思一"><a href="#意思一" class="headerlink" title="意思一"></a>意思一</h2><blockquote>
-<p>接续：V（他动词，て形）+ ある</p>
-</blockquote>
-<p>表示动作结果的存续，该语法只涉及动作的对象，不涉及动作的主体。该句型有着「某个人做了某个动作，导致了这样的状态，但是这个人是谁并不重要」这样的意思。简单点说就是<strong>他动词的状态的持续</strong>。需要注意的是动词虽然为他动词，但动作的对象却要用<strong>「が」</strong>来表示。</p>
-<p>同样表示状态的持续的语法还有「ている」，那么他俩有什么区别呢？</p>
-<p>在对比前我们先回顾一下「ている」这个语法</p>
-<ul>
-<li>当动词为<strong>他动词</strong>时，表示动作的正在进行，意为「正在…」，比如「手紙を書いている」意为「我正在写信」</li>
-<li>当动词为<strong>自动词</strong>时，表示状态的持续，例如「鈴木さんは今出かけていますが…」，意为「铃木现在出去了…」</li>
-<li>表示动作的反复，常用于习惯或自然现象等</li>
-<li>表示性质或状态，比如「この機械の性能が<ruby>優<rt>すぐ</rt>れている</ruby>」意为「这台机器性能好」</li>
-</ul>
-<p>可以看到，表示状态的持续时，「ている」的前面的动词为自动词，而「てある」则为他动词。并且「ている」只是表示状态的持续，并不包含状态产生的原因，这个状态可以是人为造成的，也可以是自然而然发生的；但「てある」的状态一定是<strong>人为</strong>的，即一定是某个人去做了某个动作才产生了这样的状态。</p>
-<p>补充说明，当「てある」前面的动词为<strong>被动态</strong>时，能够更让人能够感受到这个做动作的人的存在。</p>
-<h2 id="意思二"><a href="#意思二" class="headerlink" title="意思二"></a>意思二</h2><blockquote>
-<p>接续：V（て形）+ ある</p>
-</blockquote>
-<p>这里表示<strong>已经提前做好某事的状态</strong>，自、他动词均可使用，意为「已经提前…」。</p>
-<p>例句：論文を書くために、資料をたくさん集めてある。<br>译：为了写论文，已经提前收集好了许多资料。</p>
-<p>同样，表示提前做好某事的意思的语法还有「ておく」，那么这两个语法之间有什么区别呢？</p>
-<p>首先回忆一下「ておく」这个语法：</p>
-<ul>
-<li>表示提前做好某事，以备不时之需</li>
-<li>表示保持状态不变，听之任之</li>
-<li>表示放任不管</li>
-</ul>
-<p>注意，「ておく」的「提前做好某事」具体点说是「<strong>将要</strong>提前做好某事」，实际现在还没有做，强调的是「提前做好」这个<strong>动作性</strong>；「てある」则表示的是「<strong>已经</strong>提前做好某事」，强调的是「提前做好」这个动作完成后的<strong>状态的持续</strong>。</p>
-<p>对比例句：</p>
-<ul>
-<li>この提案を一応考えてある。（已经事先考虑过这个提案。）</li>
-<li>この提案を一応考えておく。（将会事先考虑一下这个提案。）</li>
-</ul>
-<p>当「ておく」变为过去时，与「てある」的意思就更为相似，更加难以区分，比如下面两句：</p>
-<ul>
-<li>ビールをたくさん買っておいたが、人が多いので、もうなくなってしまった。（○）</li>
-<li>ビールをたくさん買ってあるが、人が多いので、もうなくなってしまった。（×）</li>
-</ul>
-<p>因为「買っておいた」只表示「提前买好」这一过去的动作，而「買ってある」则表示「提前买好」这一状态且该状态持续到了说话时，按此逻辑，如果买好了许多酒的状态持续到了说话时，后文却又说因为人多已经没酒了，就出现了前后意思的矛盾，因此这里只能用「買っておいた」。</p>
-<h2 id="意思三"><a href="#意思三" class="headerlink" title="意思三"></a>意思三</h2><blockquote>
-<p>接续：V（て形）+ ある</p>
-</blockquote>
-<p>表示<strong>放任或允许的状态</strong>。常常和自动词<strong>使役态</strong>搭配使用。</p>
-<p>例句：娘を日本語学校に通わせてある。<br>译：让女儿去日语学校上学。</p>
-<p>相似的还有「ておく」，其也有放任不管，听之任之的意思。</p>
-<p><strong>注：本文部分解释与例句来源于『日语语法教程——讲义与练习』一书，如造成侵权，请联系删除。</strong></p>
+    <title>【每日语法】N1 易混语法总结</title>
+    <url>/2024/03/mnnhgbp6.html</url>
+    <content><![CDATA[<details class="note default no-icon"><summary><p><strong>自不必说</strong>的表达，后常续「も」「さえ」「まで」等</p>
+</summary>
+<p>～はもちろん、～</p>
+<p>～は言うまでもなく、～</p>
+<p>～は言わずもがな、～</p>
+<p>～どころか、～</p>
+<p>～もさることながら、～</p>
+<p>～は言うに及ばず、～</p>
+
+</details>
+
+<details class="note default no-icon"><summary><p><strong>姑且不论</strong>（部分句子可译为「如果……的话，还情有可原，但……」）的表达</p>
+</summary>
+<p>～ならいざしらず、～</p>
+<p>～なら&#x2F;はともかく、～</p>
+<p>～なら&#x2F;は別だが、～</p>
+<p>～なら&#x2F;はまだしも、～</p>
+<p>～はさておき&#x2F;はさておいて～</p>
+
+</details>
 ]]></content>
       <categories>
         <category>日语</category>
@@ -523,23 +467,79 @@
       </tags>
   </entry>
   <entry>
+    <title>【每日语法】てある及相似语法的对比</title>
+    <url>/2023/05/mnnhgbp4.html</url>
+    <content><![CDATA[<h2 id="意思一"><a href="#意思一" class="headerlink" title="意思一"></a>意思一</h2><blockquote>
+<p>接续：V（他动词，て形）+ ある</p>
+</blockquote>
+<p>表示动作结果的存续，该语法只涉及动作的对象，不涉及动作的主体。该句型有着「某个人做了某个动作，导致了这样的状态，但是这个人是谁并不重要」这样的意思。简单点说就是<strong>他动词的状态的持续</strong>。需要注意的是动词虽然为他动词，但动作的对象却要用<strong>「が」</strong>来表示。</p>
+<p>同样表示状态的持续的语法还有「ている」，那么他俩有什么区别呢？</p>
+<p>在对比前我们先回顾一下「ている」这个语法</p>
+<ul>
+<li>当动词为<strong>他动词</strong>时，表示动作的正在进行，意为「正在…」，比如「手紙を書いている」意为「我正在写信」</li>
+<li>当动词为<strong>自动词</strong>时，表示状态的持续，例如「鈴木さんは今出かけていますが…」，意为「铃木现在出去了…」</li>
+<li>表示动作的反复，常用于习惯或自然现象等</li>
+<li>表示性质或状态，比如「この機械の性能が<ruby>優<rt>すぐ</rt>れている</ruby>」意为「这台机器性能好」</li>
+</ul>
+<p>可以看到，表示状态的持续时，「ている」的前面的动词为自动词，而「てある」则为他动词。并且「ている」只是表示状态的持续，并不包含状态产生的原因，这个状态可以是人为造成的，也可以是自然而然发生的；但「てある」的状态一定是<strong>人为</strong>的，即一定是某个人去做了某个动作才产生了这样的状态。</p>
+<p>补充说明，当「てある」前面的动词为<strong>被动态</strong>时，能够更让人能够感受到这个做动作的人的存在。</p>
+<h2 id="意思二"><a href="#意思二" class="headerlink" title="意思二"></a>意思二</h2><blockquote>
+<p>接续：V（て形）+ ある</p>
+</blockquote>
+<p>这里表示<strong>已经提前做好某事的状态</strong>，自、他动词均可使用，意为「已经提前…」。</p>
+<p>例句：論文を書くために、資料をたくさん集めてある。<br>译：为了写论文，已经提前收集好了许多资料。</p>
+<p>同样，表示提前做好某事的意思的语法还有「ておく」，那么这两个语法之间有什么区别呢？</p>
+<p>首先回忆一下「ておく」这个语法：</p>
+<ul>
+<li>表示提前做好某事，以备不时之需</li>
+<li>表示保持状态不变，听之任之</li>
+<li>表示放任不管</li>
+</ul>
+<p>注意，「ておく」的「提前做好某事」具体点说是「<strong>将要</strong>提前做好某事」，实际现在还没有做，强调的是「提前做好」这个<strong>动作性</strong>；「てある」则表示的是「<strong>已经</strong>提前做好某事」，强调的是「提前做好」这个动作完成后的<strong>状态的持续</strong>。</p>
+<p>对比例句：</p>
+<ul>
+<li>この提案を一応考えてある。（已经事先考虑过这个提案。）</li>
+<li>この提案を一応考えておく。（将会事先考虑一下这个提案。）</li>
+</ul>
+<p>当「ておく」变为过去时，与「てある」的意思就更为相似，更加难以区分，比如下面两句：</p>
+<ul>
+<li>ビールをたくさん買っておいたが、人が多いので、もうなくなってしまった。（○）</li>
+<li>ビールをたくさん買ってあるが、人が多いので、もうなくなってしまった。（×）</li>
+</ul>
+<p>因为「買っておいた」只表示「提前买好」这一过去的动作，而「買ってある」则表示「提前买好」这一状态且该状态持续到了说话时，按此逻辑，如果买好了许多酒的状态持续到了说话时，后文却又说因为人多已经没酒了，就出现了前后意思的矛盾，因此这里只能用「買っておいた」。</p>
+<h2 id="意思三"><a href="#意思三" class="headerlink" title="意思三"></a>意思三</h2><blockquote>
+<p>接续：V（て形）+ ある</p>
+</blockquote>
+<p>表示<strong>放任或允许的状态</strong>。常常和自动词<strong>使役态</strong>搭配使用。</p>
+<p>例句：娘を日本語学校に通わせてある。<br>译：让女儿去日语学校上学。</p>
+<p>相似的还有「ておく」，其也有放任不管，听之任之的意思。</p>
+<p><strong>注：本文部分解释与例句来源于『日语语法教程——讲义与练习』一书，如造成侵权，请联系删除。</strong></p>
+]]></content>
+      <categories>
+        <category>日语</category>
+      </categories>
+      <tags>
+        <tag>日语</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>【笔记·古典日语】五十音和发音</title>
     <url>/2024/04/kobun1.html</url>
     <content><![CDATA[<p>五十音图与现代日语区别如下：</p>
-<p><img data-src="https://img.fufu.ink/sUvY2j.png"></p>
+<p><img data-src="https://img.fufu.ink/OmfFKP.webp"></p>
 <p>ワ行的发音为「wa，i，u，e，o」</p>
 <p><strong>需要注意 ゐ 与 ゑ 的写法</strong></p>
 <p>然后是过去与现在的读法的不同，有五个种类</p>
 <p>第一种，は行的音读作ワ行的发音（当该音位于词头时就そのまま读出来，不需要变音），注意只是读音对应，并非写法对应</p>
-<p><img data-src="https://img.fufu.ink/gO6Wu7.png"></p>
+<p><img data-src="https://img.fufu.ink/WC3e6D.webp"></p>
 <p>第二种，元音重叠的读法</p>
-<p><img data-src="https://img.fufu.ink/q6oSk2.png"></p>
+<p><img data-src="https://img.fufu.ink/1Q0YU9.webp"></p>
 <p>第三种，「てふ」与「けふ」的发音，由前两种方法可以推导出发音来</p>
-<p><img data-src="https://img.fufu.ink/TIN7Hg.png"></p>
+<p><img data-src="https://img.fufu.ink/Ctqkfh.webp"></p>
 <p>第四种，ゐ，ゑ，を的发音</p>
-<p><img data-src="https://img.fufu.ink/Zy3uA5.png"></p>
+<p><img data-src="https://img.fufu.ink/v6Fwjk.webp"></p>
 <p>第五种，「む」发成「ん」的音</p>
-<p><img data-src="https://img.fufu.ink/wwk75S.png"></p>
+<p><img data-src="https://img.fufu.ink/P4VCRG.webp"></p>
 ]]></content>
       <categories>
         <category>日语</category>
@@ -555,7 +555,7 @@
     <url>/2024/04/kobun10.html</url>
     <content><![CDATA[<p>活用及接续</p>
 <p>活用方式符合下二段动词的活用</p>
-<p><img data-src="https://img.fufu.ink/jPexpH.png"></p>
+<p><img data-src="https://img.fufu.ink/icyUgg.webp"></p>
 <p>作用</p>
 <ul>
 <li>自发，翻译为现代日语为黄色部分，前面多续心情语</li>
@@ -563,7 +563,7 @@
 <li>可能，表示可能的意思时，后项多续<strong>否定</strong>表达</li>
 <li>尊敬，主语多为身份地位较高的人</li>
 </ul>
-<div class="group-picture"><div class="group-picture-row"><div class="group-picture-column"><img data-src="https://img.fufu.ink/nKu84y.png"></div><div class="group-picture-column"><img data-src="https://img.fufu.ink/5UNLdh.png"></div><div class="group-picture-column"><img data-src="https://img.fufu.ink/zkHEpo.png"></div></div><div class="group-picture-row"><div class="group-picture-column"><img data-src="https://img.fufu.ink/Ec8qhh.png"></div></div></div>
+<div class="group-picture"><div class="group-picture-row"><div class="group-picture-column"><img data-src="https://img.fufu.ink/OnN4A2.webp"></div><div class="group-picture-column"><img data-src="https://img.fufu.ink/HA09JZ.webp"></div><div class="group-picture-column"><img data-src="https://img.fufu.ink/3ALgAR.webp"></div></div><div class="group-picture-row"><div class="group-picture-column"><img data-src="https://img.fufu.ink/6I3oZ0.webp"></div></div></div>
 ]]></content>
       <categories>
         <category>日语</category>
@@ -578,10 +578,10 @@
     <title>【笔记·古典日语】动词活用</title>
     <url>/2024/04/kobun4.html</url>
     <content><![CDATA[<p>古典日语中动词有 9 种活用，分为正格活用和变格活用</p>
-<p><img data-src="https://img.fufu.ink/pVgJ2S.png" alt="古典日语动词活用"></p>
+<p><img data-src="https://img.fufu.ink/WOpQGT.webp" alt="古典日语动词活用"></p>
 <p>需要注意的是，动词的活用类型是由其活用词尾，即<strong>变化的部分</strong>来决定的，先确定行，然后确定段，加起来就是该动词的活用类型</p>
 <h2 id="活用规则"><a href="#活用规则" class="headerlink" title="活用规则"></a>活用规则</h2><p>四段动词</p>
-<div class="group-picture"><div class="group-picture-row"><div class="group-picture-column"><img data-src="https://img.fufu.ink/572OhB.png" alt="被称为四段动词的原因"></div><div class="group-picture-column"><img data-src="https://img.fufu.ink/wiQ80z.png" alt="四段动词活用-2"></div></div></div>
+<div class="group-picture"><div class="group-picture-row"><div class="group-picture-column"><img data-src="https://img.fufu.ink/IiWGaF.webp" alt="被称为四段动词的原因"></div><div class="group-picture-column"><img data-src="https://img.fufu.ink/ShLlJy.webp" alt="四段动词活用-2"></div></div></div>
 
 <p>总结：</p>
 <ul>
@@ -593,7 +593,7 @@
 <li>命令形：词尾变为ヘ段</li>
 </ul>
 <p>上&#x2F;下一段动词·上&#x2F;下二段动词</p>
-<div class="group-picture"><div class="group-picture-row"><div class="group-picture-column"><img data-src="https://img.fufu.ink/HziGFy.png" alt="上一段动词-上二段动词活用规则"></div><div class="group-picture-column"><img data-src="https://img.fufu.ink/84IcXO.png" alt="下一段动词活用-下二段动词活用"></div></div></div>
+<div class="group-picture"><div class="group-picture-row"><div class="group-picture-column"><img data-src="https://img.fufu.ink/Y0xgFL.webp" alt="上一段动词-上二段动词活用规则"></div><div class="group-picture-column"><img data-src="https://img.fufu.ink/JP8212.webp" alt="下一段动词活用-下二段动词活用"></div></div></div>
 
 <p>总结：</p>
 <p>上·下一段动词：</p>
@@ -628,16 +628,16 @@
 <p>〇行下一&#x2F;二段动词定义同理，先由变化的部分所在的行确定发生变化的行这一部分，再看发生变化的段，下一段这里是变化发生在エ段，且只在エ段 1 段上变化，エ段在ウ段往下数一个段，因此称为下一段。下两段则为：变化发生在ウ·エ段 2 段上，且是从ウ段开始往下数两个段，因此称为下两段。</p>
 <p><strong>下一段动词只有「蹴る」</strong></p>
 <p>カ变动词——来（注意与现代日语不同的活用形式以及命令形是こ·こよ）</p>
-<p><img data-src="https://img.fufu.ink/ParL2k.png" alt="カ变动词活用"></p>
+<p><img data-src="https://img.fufu.ink/SCX8Hz.webp" alt="カ变动词活用"></p>
 <p>サ变动词</p>
 <p>サ变动词有两个：す、おはす（可以分为词干おは与词尾す，因此活用时只改变す部分）</p>
-<p><img data-src="https://img.fufu.ink/f1PvgK.png" alt="サ变动词活用"></p>
+<p><img data-src="https://img.fufu.ink/sL2ucK.webp" alt="サ变动词活用"></p>
 <p>ナ变动词</p>
 <p>ナ变动词有两个：死ぬ、往（去）ぬ</p>
-<p><img data-src="https://img.fufu.ink/WPrnb7.png" alt="ナ变动词活用"></p>
+<p><img data-src="https://img.fufu.ink/YmHIwQ.webp" alt="ナ变动词活用"></p>
 <p>ラ变动词</p>
 <p>ラ变动词有四个：あり、をり、はべり、いまそかり</p>
-<p><img data-src="https://img.fufu.ink/YkkBtn.png" alt="ラ变动词活用"></p>
+<p><img data-src="https://img.fufu.ink/i9SFSX.webp" alt="ラ变动词活用"></p>
 <h2 id="区分方法"><a href="#区分方法" class="headerlink" title="区分方法"></a>区分方法</h2><p>上一段动词与现代日语部分相似，即以る结尾，倒数第二个假名在イ段上</p>
 <p>下一段动词只有「蹴る」一个</p>
 <p>サ变动词：す、おはす</p>
@@ -654,14 +654,14 @@
 <p>四段动词：<ruby>借<rt>か</rt>る</ruby> <ruby>足<rt>た</rt>る</ruby> <ruby>飽<rt>あ</rt>く</ruby> </p>
 <p>*但从现代日语的角度来说，三者均为五段动词，接 ず 时词尾确实是ア段，符合四段动词特征，视频中举的例子则为 借りる 足りる 飽きる，均为一段动词，因此有点不清楚为什么老师说容易弄错。</p>
 <p><strong>マ行上二段动词：恨む</strong></p>
-<p><img data-src="https://img.fufu.ink/iFs4mT.png"></p>
+<p><img data-src="https://img.fufu.ink/kAUckn.webp"></p>
 <p>ア行活用的只有「<ruby>得<rt>う</rt></ruby>」「<ruby>心得<rt>こころう</rt></ruby>」两个词汇，其他的都不是ア行的活用</p>
-<div class="group-picture"><div class="group-picture-row"><div class="group-picture-column"><img data-src="https://img.fufu.ink/tjigNf.png"></div><div class="group-picture-column"><img data-src="https://img.fufu.ink/gEwUkC.png"></div></div></div>
+<div class="group-picture"><div class="group-picture-row"><div class="group-picture-column"><img data-src="https://img.fufu.ink/HSHPFA.webp"></div><div class="group-picture-column"><img data-src="https://img.fufu.ink/fVZn0r.webp"></div></div></div>
 
 <p>终止形是一个字的动词</p>
-<p><img data-src="https://img.fufu.ink/o0RlO4.png"></p>
+<p><img data-src="https://img.fufu.ink/9Y5Vyr.webp"></p>
 <p>有两种种类活用的动词，四段活用是向内，下二段是向外</p>
-<p><img data-src="https://img.fufu.ink/UCyFni.png"></p>
+<p><img data-src="https://img.fufu.ink/OXmk6L.webp"></p>
 ]]></content>
       <categories>
         <category>日语</category>
@@ -696,11 +696,11 @@
     <title>【笔记·古典日语】形容动词</title>
     <url>/2024/04/kobun6.html</url>
     <content><![CDATA[<p>形容动词有「なり」「たり」两种活用，两种活用除了「と」「に」的连用形较为特殊，其余均与ラ变动词「あり」的活用方式一致，因此活用词尾「たり」「なり」属于<strong>ラ变形</strong></p>
-<p><img data-src="https://img.fufu.ink/0Ror8Q.png"></p>
+<p><img data-src="https://img.fufu.ink/XLaWr8.webp"></p>
 <p>使用「なり」「たり」的不同情况。有「々」这样表示重复的符号的为「たり」活用，其余为「なり」活用，可以记一下常见的「なり」前的形式</p>
-<p><img data-src="https://img.fufu.ink/pvVG8h.png"></p>
+<p><img data-src="https://img.fufu.ink/oJpKxK.webp"></p>
 <p>连用形「に」使用的情况</p>
-<p><img data-src="https://img.fufu.ink/pXfLh5.png"></p>
+<p><img data-src="https://img.fufu.ink/syAnm5.webp"></p>
 ]]></content>
       <categories>
         <category>日语</category>
@@ -715,13 +715,13 @@
     <title>【笔记·古典日语】形容词</title>
     <url>/2024/04/kobun5.html</url>
     <content><![CDATA[<p>形容词分为两类，通过「なる」的接续判断</p>
-<p><img data-src="https://img.fufu.ink/Ek3ImA.png"></p>
-<p><img data-src="https://img.fufu.ink/G5tROu.png"></p>
+<p><img data-src="https://img.fufu.ink/S6lKGs.webp"></p>
+<p><img data-src="https://img.fufu.ink/rrXv0C.webp"></p>
 <p>两者除了终止形变形方式不同，其余变形方式一致。补助活用的活用词尾的活用方式与ラ变动词「あり」的活用方式一致，因此属于<strong>ラ变形</strong></p>
-<p><img data-src="https://img.fufu.ink/3aTiz6.png"></p>
+<p><img data-src="https://img.fufu.ink/U2aUwf.webp"></p>
 <p>补助活用一般后续助动词，本活用一般后续助词或其他</p>
 <p>特例：</p>
-<p><img data-src="https://img.fufu.ink/ErwrNB.png"></p>
+<p><img data-src="https://img.fufu.ink/skZm8P.webp"></p>
 ]]></content>
       <categories>
         <category>日语</category>
@@ -736,16 +736,16 @@
     <title>【笔记·古典日语】活用形及接续</title>
     <url>/2024/04/kobun3.html</url>
     <content><![CDATA[<p>6 种活用形</p>
-<p><img data-src="https://img.fufu.ink/znu63C.png"></p>
+<p><img data-src="https://img.fufu.ink/YHh61r.webp"></p>
 <p>活用语：活用的单词。是动词，形容词，形容动词，助动词的总称。</p>
 <p>一些助词和助动词的接续</p>
-<p><img data-src="https://img.fufu.ink/3TtBGj.png"></p>
+<p><img data-src="https://img.fufu.ink/9wRJmG.webp"></p>
 <p>一些助动词的接续（注意括号中的条件，比如り前面接的虽然是已然形，但仅限于四段动词，即り前面接<strong>四段动词的已然形</strong>）</p>
-<p><img data-src="https://img.fufu.ink/P8sNJH.png"></p>
+<p><img data-src="https://img.fufu.ink/HpGciD.webp"></p>
 <p>ラ变动词及ラ变型（非标准定义，个人理解）</p>
 <p>ラ变<strong>动词</strong>：在ラ行上进行活用的，即活用词尾为（ら·り·り·る·れ·れ）形式的动词。ラ变动词只有<strong>「あり」「をり」「はべり」「いまそかり」</strong>四个。</p>
 <p>ラ变<strong>型</strong>：像ラ变动词一样进行活用，即活用词尾也为（ら·り·り·る·れ·れ）形式的<strong>活用语</strong>，如下图</p>
-<p><img data-src="https://img.fufu.ink/q2IGzI.png"></p>
+<p><img data-src="https://img.fufu.ink/EXKIlJ.webp"></p>
 ]]></content>
       <categories>
         <category>日语</category>
@@ -760,23 +760,23 @@
     <title>【笔记·古典日语】用言的音便</title>
     <url>/2024/04/kobun8.html</url>
     <content><![CDATA[<p>古典日语中音便有 4 种</p>
-<p><img data-src="https://img.fufu.ink/tOyAeO.png"></p>
+<p><img data-src="https://img.fufu.ink/NL5YbT.webp"></p>
 <h2 id="动词的音便"><a href="#动词的音便" class="headerlink" title="动词的音便"></a>动词的音便</h2><p>动词音便有上面四种。</p>
 <p>「イ音便・撥音便・促音便」变形方法大致上和现代日语变法一致。需要注意，促音便的促音写的时候一般写作大的「つ」</p>
-<div class="group-picture"><div class="group-picture-row"><div class="group-picture-column"><img data-src="https://img.fufu.ink/A4X6h6.png"></div><div class="group-picture-column"><img data-src="https://img.fufu.ink/Zc75RO.png"></div><div class="group-picture-column"><img data-src="https://img.fufu.ink/i5plFV.png"></div></div></div>
+<div class="group-picture"><div class="group-picture-row"><div class="group-picture-column"><img data-src="https://img.fufu.ink/gHSvWz.webp"></div><div class="group-picture-column"><img data-src="https://img.fufu.ink/lUo2cW.webp"></div><div class="group-picture-column"><img data-src="https://img.fufu.ink/uak8Go.webp"></div></div></div>
 
 <p>「ウ音便」在教材中没有提及，个人不清楚现代日语是否还有ウ音便，上次搜知乎好像看到有个回答说「目前关西地区还在使用」。</p>
-<p><img data-src="https://img.fufu.ink/kjPFvd.png"></p>
+<p><img data-src="https://img.fufu.ink/ppbvUs.webp"></p>
 <h2 id="形容词的音便"><a href="#形容词的音便" class="headerlink" title="形容词的音便"></a>形容词的音便</h2><p>形容词音便有两种</p>
 <ul>
 <li>イ音便</li>
 <li>ウ音便</li>
 </ul>
 <p>两者都是发生在本活用，イ音便发生在连体形，ウ音便发生在连用形</p>
-<div class="group-picture"><div class="group-picture-row"><div class="group-picture-column"><img data-src="https://img.fufu.ink/C7PbwP.png"></div><div class="group-picture-column"><img data-src="https://img.fufu.ink/FTrZ7G.png"></div></div></div>
+<div class="group-picture"><div class="group-picture-row"><div class="group-picture-column"><img data-src="https://img.fufu.ink/7U2wfy.webp"></div><div class="group-picture-column"><img data-src="https://img.fufu.ink/q2HB2Z.webp"></div></div></div>
 
 <h2 id="消失的拨音便"><a href="#消失的拨音便" class="headerlink" title="消失的拨音便"></a>消失的拨音便</h2><p>即，ラ变型的连体形去接「（表示传闻及推测的）なり・めり・べし」时，ラ变型的连体形本身先发生拨音便，<strong>最后写的时候省略掉「ん」</strong>，但读的时候还是要把「ん」的音发出来。</p>
-<div class="group-picture"><div class="group-picture-row"><div class="group-picture-column"><img data-src="https://img.fufu.ink/VWcIc8.png"></div><div class="group-picture-column"><img data-src="https://img.fufu.ink/MCguKV.png"></div><div class="group-picture-column"><img data-src="https://img.fufu.ink/EGML66.png"></div></div></div>
+<div class="group-picture"><div class="group-picture-row"><div class="group-picture-column"><img data-src="https://img.fufu.ink/UK05Cl.webp"></div><div class="group-picture-column"><img data-src="https://img.fufu.ink/E9px86.webp"></div><div class="group-picture-column"><img data-src="https://img.fufu.ink/9UqtuK.webp"></div></div></div>
 
 <p>反推过程：先看到「（表示传闻及推测的）なり・めり・べし」，关键是要认出前面的动词是ラ变型，然后为什么会是这样的形态，是因为省略了「ん」，补充上「ん」后，由「（表示传闻及推测的）なり・めり・べし」前续ラ变型时要接连体形可知「～ん」是连体形，是由原来的词的连体形拨音便变化而来。由此可得出音便前的形态。</p>
 ]]></content>
@@ -794,16 +794,16 @@
     <url>/2024/04/kobun9.html</url>
     <content><![CDATA[<p>系结现象</p>
 <p>定义：受到句中的系助词（ぞ・なむ・や・か・こそ）的影响而将句尾的活用语改变为<strong>连体形</strong>或<strong>已然形</strong>的现象</p>
-<p><img data-src="https://img.fufu.ink/BszfSs.png"></p>
+<p><img data-src="https://img.fufu.ink/YJLoPV.webp"></p>
 <h2 id="规则"><a href="#规则" class="headerlink" title="规则"></a>规则</h2><p>第一种，规则如图</p>
 <p>表示强调，强调系助词前的内容，作用类似于「が」，翻译成现代日语时将系助词看作「が」即可</p>
-<div class="group-picture"><div class="group-picture-row"><div class="group-picture-column"><img data-src="https://img.fufu.ink/3dP9gn.png"></div><div class="group-picture-column"><img data-src="https://img.fufu.ink/c6Br1D.png"></div></div></div>
+<div class="group-picture"><div class="group-picture-row"><div class="group-picture-column"><img data-src="https://img.fufu.ink/5wtmnE.webp"></div><div class="group-picture-column"><img data-src="https://img.fufu.ink/6zLHYS.webp"></div></div></div>
 
 <p>第二种</p>
 <p>表示疑问·反问</p>
 <p>翻译成现代日语即为黄色字体部分</p>
 <p>具体是疑问还是反问需要根据语境判断</p>
-<div class="group-picture"><div class="group-picture-row"><div class="group-picture-column"><img data-src="https://img.fufu.ink/RREt9F.png"></div><div class="group-picture-column"><img data-src="https://img.fufu.ink/Nmoeyy.png"></div></div></div>
+<div class="group-picture"><div class="group-picture-row"><div class="group-picture-column"><img data-src="https://img.fufu.ink/V688M1.webp"></div><div class="group-picture-column"><img data-src="https://img.fufu.ink/6tCDMu.webp"></div></div></div>
 
 <h2 id="注意点"><a href="#注意点" class="headerlink" title="注意点"></a>注意点</h2><ol>
 <li>省略：有时会出现系助词的部分保留，后面活用语部分省略的现象</li>
@@ -811,7 +811,7 @@
 <li>表示「如果…就不好了」</li>
 <li>「やは」「かは」多表示<strong>反问</strong></li>
 </ol>
-<div class="group-picture"><div class="group-picture-row"><div class="group-picture-column"><img data-src="https://img.fufu.ink/Ts0Rps.png" alt="解释对应上方序号"></div><div class="group-picture-column"><img data-src="https://img.fufu.ink/yPi33F.png" alt="解释对应上方序号"></div></div></div>
+<div class="group-picture"><div class="group-picture-row"><div class="group-picture-column"><img data-src="https://img.fufu.ink/lMcKky.webp" alt="解释对应上方序号"></div><div class="group-picture-column"><img data-src="https://img.fufu.ink/YDNZHZ.webp" alt="解释对应上方序号"></div></div></div>
 
 ]]></content>
       <categories>
@@ -830,15 +830,15 @@
 <p>第一种</p>
 <p>形式：あな + 词干 + や（可省略）</p>
 <p>表示感动，惊讶等语气，意思大致相当于现代日语的「ああ、～だなあ」，可根据语境适当更改意思。「や」表示感叹，相当于「～だなあ」</p>
-<p><img data-src="https://img.fufu.ink/O39ewO.png"></p>
+<p><img data-src="https://img.fufu.ink/IPASxl.webp"></p>
 <p>第二种</p>
 <p>形式：词干 + の + N</p>
 <p>构成连体词，相当于其连体形</p>
-<p><img data-src="https://img.fufu.ink/pYXUqk.png"></p>
+<p><img data-src="https://img.fufu.ink/G3jerd.webp"></p>
 <p><strong>形容动词没有，只有形容词才有的用法</strong></p>
 <p>形式：N + を（可省略）+ <strong>形容词</strong>词干 + み</p>
 <p>意思相当于「◯が⬜なので」，◯ 为 N，⬜ 为形容词。翻译成现代日语时可根据语境适当补充内容。</p>
-<p><img data-src="https://img.fufu.ink/uZyIIC.png"></p>
+<p><img data-src="https://img.fufu.ink/zHntAB.webp"></p>
 ]]></content>
       <categories>
         <category>日语</category>
@@ -847,6 +847,48 @@
         <tag>日语</tag>
         <tag>古典日语</tag>
         <tag>语法</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>不断变强的万达</title>
+    <url>/2023/08/genshinwandatsuyoi.html</url>
+    <content><![CDATA[<p>去年垫池子抽到了达达鸭，今年 1 月份开始练万达国际，入坑一年以来首次打通了深渊（<a href="/2023/01/genshinshenyuanfirst.html">见『纪念第一次打通深渊』</a>），当时的面板没有截图。</p>
+<p>之后一直在水本坐牢，妄图给达达鸭刷一套好的 2 件套，其中最想要的当属水套的水伤杯，可惜一直没出货（刷出来的狗粮用来合水套也没出）。</p>
+<p>这是 5 月 12 日的面板，当时应该是常驻出了风鹰剑，换掉了原来的暗巷闪光。</p>
+<p><img data-src="https://img.fufu.ink/MOUy69.webp" alt="5月12日"></p>
+<p>后来<a href="/2023/05/genshinxgderu.html">出了宵宫</a>，就把鸭子的武器给她，鸭子自己用天空弓。</p>
+<p>武器主词条从爆伤换成了暴击，圣遗物暴击词条的压力也就减轻了许多。虽然白值变低了一点，队伍 dps 降了一点，不过问题不大。</p>
+<p><img data-src="https://img.fufu.ink/NRj97x.webp" alt="6月2日"></p>
+<p>几天后想办法把万叶的精通堆到了 1000+，dps 又提高了 4w。</p>
+<p><img data-src="https://img.fufu.ink/wpXCNv.webp" alt="6月13日"></p>
+<p>因为一直不出货，还想提伤害的我把目光转移到了香菱的大招上，毕竟<del>万达的伤害都是香菱打的</del>。将其大招升到 13 级后，dps 高了 2w。</p>
+<p><img data-src="https://img.fufu.ink/3zvva3.webp" alt="6月16日"></p>
+<p>这也是我的万达的 dps 第一次达到 ACE。</p>
+<p>接下来想要再提升就只能指望香菱和达达鸭的圣遗物以及班爷的 6 命了。</p>
+<p>在压了达达鸭的暴击后，配出了以下面板。</p>
+<p><img data-src="https://img.fufu.ink/RMVORk.webp" alt="7月19日"></p>
+<p>可能有人奇怪为什么双爆降低了，伤害却变高了。原因是我把鸭子的精通拉到了 320+，这精通正好弥补了双爆的不足。</p>
+<p>然后今天水米游社的时候突发奇想，搜了一下「达达利亚是否必须带 2 水套」，结果发现只要有水伤杯，即使不带二水套也可以。</p>
+<p>这段时间一直没有较大提升就是因为局限于需要保证 2 水套的情况下更换圣遗物，现在得知那 15% 的水伤其实不太重要，只要不带明显与水属性不合的套装效果的圣遗物就行。于是换成了所有圣遗物里双爆较好的，最后得出的面板如下。</p>
+<p><img data-src="https://img.fufu.ink/h6vQha.webp" alt="8月26日"></p>
+<p>暴击也压得刚刚好，精通也有 250 左右，伤害也明显地提高了。</p>
+<p>乘兴打了个散兵本，打出了 53w 的核爆。</p>
+<p><img data-src="https://img.fufu.ink/ZUZ9V9.webp" alt="核爆53w"></p>
+<p>再过几天活动就送一只班尼特，有了 6 命的火伤加成，估计还能再提几万 dps。</p>
+<p>不断变强的达达鸭，不断变强的万达国际！</p>
+<p><img data-src="https://img.fufu.ink/ad1AMs.webp" alt="万达国际"></p>
+<hr>
+<p>今天活动更新了，班爷终于 6 命了，测出来最新的 dps 如下。</p>
+<p><img data-src="https://img.fufu.ink/gq7SDw.webp" alt="8月28日"></p>
+<p>接下来的时间里应该很难再有大的提升了，如果想要再提，就要去抽 2 命万叶了。</p>
+<p>不过现在的目标是攒满命草神，就先不考虑继续提升万达的 dps 了，反正现在的也足够乱杀深渊了。</p>
+]]></content>
+      <categories>
+        <category>游戏</category>
+      </categories>
+      <tags>
+        <tag>原神</tag>
+        <tag>游戏</tag>
       </tags>
   </entry>
   <entry>
@@ -1009,48 +1051,6 @@
       </tags>
   </entry>
   <entry>
-    <title>不断变强的万达</title>
-    <url>/2023/08/genshinwandatsuyoi.html</url>
-    <content><![CDATA[<p>去年垫池子抽到了达达鸭，今年 1 月份开始练万达国际，入坑一年以来首次打通了深渊（<a href="/2023/01/genshinshenyuanfirst.html">见『纪念第一次打通深渊』</a>），当时的面板没有截图。</p>
-<p>之后一直在水本坐牢，妄图给达达鸭刷一套好的 2 件套，其中最想要的当属水套的水伤杯，可惜一直没出货（刷出来的狗粮用来合水套也没出）。</p>
-<p>这是 5 月 12 日的面板，当时应该是常驻出了风鹰剑，换掉了原来的暗巷闪光。</p>
-<p><img data-src="https://img.fufu.ink/MOUy69.webp" alt="5月12日"></p>
-<p>后来<a href="/2023/05/genshinxgderu.html">出了宵宫</a>，就把鸭子的武器给她，鸭子自己用天空弓。</p>
-<p>武器主词条从爆伤换成了暴击，圣遗物暴击词条的压力也就减轻了许多。虽然白值变低了一点，队伍 dps 降了一点，不过问题不大。</p>
-<p><img data-src="https://img.fufu.ink/NRj97x.webp" alt="6月2日"></p>
-<p>几天后想办法把万叶的精通堆到了 1000+，dps 又提高了 4w。</p>
-<p><img data-src="https://img.fufu.ink/wpXCNv.webp" alt="6月13日"></p>
-<p>因为一直不出货，还想提伤害的我把目光转移到了香菱的大招上，毕竟<del>万达的伤害都是香菱打的</del>。将其大招升到 13 级后，dps 高了 2w。</p>
-<p><img data-src="https://img.fufu.ink/3zvva3.webp" alt="6月16日"></p>
-<p>这也是我的万达的 dps 第一次达到 ACE。</p>
-<p>接下来想要再提升就只能指望香菱和达达鸭的圣遗物以及班爷的 6 命了。</p>
-<p>在压了达达鸭的暴击后，配出了以下面板。</p>
-<p><img data-src="https://img.fufu.ink/RMVORk.webp" alt="7月19日"></p>
-<p>可能有人奇怪为什么双爆降低了，伤害却变高了。原因是我把鸭子的精通拉到了 320+，这精通正好弥补了双爆的不足。</p>
-<p>然后今天水米游社的时候突发奇想，搜了一下「达达利亚是否必须带 2 水套」，结果发现只要有水伤杯，即使不带二水套也可以。</p>
-<p>这段时间一直没有较大提升就是因为局限于需要保证 2 水套的情况下更换圣遗物，现在得知那 15% 的水伤其实不太重要，只要不带明显与水属性不合的套装效果的圣遗物就行。于是换成了所有圣遗物里双爆较好的，最后得出的面板如下。</p>
-<p><img data-src="https://img.fufu.ink/h6vQha.webp" alt="8月26日"></p>
-<p>暴击也压得刚刚好，精通也有 250 左右，伤害也明显地提高了。</p>
-<p>乘兴打了个散兵本，打出了 53w 的核爆。</p>
-<p><img data-src="https://img.fufu.ink/ZUZ9V9.webp" alt="核爆53w"></p>
-<p>再过几天活动就送一只班尼特，有了 6 命的火伤加成，估计还能再提几万 dps。</p>
-<p>不断变强的达达鸭，不断变强的万达国际！</p>
-<p><img data-src="https://img.fufu.ink/ad1AMs.webp" alt="万达国际"></p>
-<hr>
-<p>今天活动更新了，班爷终于 6 命了，测出来最新的 dps 如下。</p>
-<p><img data-src="https://img.fufu.ink/gq7SDw.webp" alt="8月28日"></p>
-<p>接下来的时间里应该很难再有大的提升了，如果想要再提，就要去抽 2 命万叶了。</p>
-<p>不过现在的目标是攒满命草神，就先不考虑继续提升万达的 dps 了，反正现在的也足够乱杀深渊了。</p>
-]]></content>
-      <categories>
-        <category>游戏</category>
-      </categories>
-      <tags>
-        <tag>原神</tag>
-        <tag>游戏</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>什么！买基岩版 Minecraft 送 Java 版？白嫖党的胜利！</title>
     <url>/2022/06/mcokuru.html</url>
     <content><![CDATA[<p>原文链接：<a href="https://help.minecraft.net/hc/en-us/articles/4607523809933-Buy-Minecraft-PC-Bundle-Get-Both-Games-">https://help.minecraft.net/hc/en-us/articles/4607523809933-Buy-Minecraft-PC-Bundle-Get-Both-Games-</a></p>
@@ -1067,13 +1067,12 @@
       </tags>
   </entry>
   <entry>
-    <title>叕出神子啦加深渊终于凹满了</title>
-    <url>/2023/06/genshinkamikoaru.html</url>
-    <content><![CDATA[<p>先说说深渊，博主在今年 2 月之前是无论如何都打不过深渊的，2 月后开始练万达国际，学会双扩后，队伍养得差不多后就在 2 月 18 日第一次凹过 12 层，见<a href="/2023/02/genshinshenyuanmanxing.html">『打通深渊后半个月，我又第一次满星深渊！』</a>。此后除了第一期沙虫因为「草行九」练度不够，没有满星之外，每一期都能做到满星了！不过近来几期深渊越来越难，大量的「挤模型」「多动症」「厚盾」「拖时间」的机制怪出现，属实是恶心人。之前圣骸兽博主一直是用「草行九瑶」过的，不过这次由于 12-3 下半是「深罪浸礼者」，队伍中必须有「火 草&#x2F;冰 水」，「草行九」自然就成了选择，再加上了前几天出的宵宫用以破冰盾。问题就是上半该用什么队伍，一开始认为万达打圣骸兽也许很麻烦，就想试着用雷国，可惜博主没怎么练雷神，故试了多种配队后还是决定使用万达。最后是 2 分钟打完了四只圣骸兽，用了剩下 1 分钟过了深罪浸礼者（很险···6分59秒打完的，系统判定为 3 星）。</p>
-<p>前前后后凹了有 100+ 次，不过由于前面几十次是在尝试配队，有了第一期经验后，16 号的深渊应该也能轻松不少。</p>
-<p><img data-src="https://img.fufu.ink/ZDM6sI.webp" alt="下次还填非常简单！"></p>
-<p>然后是垫池子垫出了神子，抽前算的垫了 20 抽了，本来不抱什么希望地单抽了一下，想着不可能这么早出的吧，结果竟然金了，还没歪！</p>
-<p><img data-src="https://img.fufu.ink/4o04wz.webp" alt="21 抽拿下！"></p>
+    <title>出宵宫啦！</title>
+    <url>/2023/05/genshinxgderu.html</url>
+    <content><![CDATA[<p>虽说抽完 2 命纳西妲后已经没有抽其他角色的欲望了，但池子还是要垫的，出什么都无所谓了。</p>
+<p>因为这 14 天搞<a href="/2023/05/improvefdlinks.html">「博客的友链的更优雅的书写方式」</a>去了，就没怎么上线，还白白浪费了 14 天的月卡，趁着今天第 15 天上线领了回归奖励以及版本更新补偿，让朋友抽了 2 抽，没歪！<span id="more"></span></p>
+<p><img data-src="https://img.fufu.ink/blTnOx.webp" alt="手机截图，画质有点差"></p>
+<p>接下来就是继续垫池子了~</p>
 ]]></content>
       <categories>
         <category>游戏</category>
@@ -1084,12 +1083,13 @@
       </tags>
   </entry>
   <entry>
-    <title>出宵宫啦！</title>
-    <url>/2023/05/genshinxgderu.html</url>
-    <content><![CDATA[<p>虽说抽完 2 命纳西妲后已经没有抽其他角色的欲望了，但池子还是要垫的，出什么都无所谓了。</p>
-<p>因为这 14 天搞<a href="/2023/05/improvefdlinks.html">「博客的友链的更优雅的书写方式」</a>去了，就没怎么上线，还白白浪费了 14 天的月卡，趁着今天第 15 天上线领了回归奖励以及版本更新补偿，让朋友抽了 2 抽，没歪！<span id="more"></span></p>
-<p><img data-src="https://img.fufu.ink/blTnOx.webp" alt="手机截图，画质有点差"></p>
-<p>接下来就是继续垫池子了~</p>
+    <title>叕出神子啦加深渊终于凹满了</title>
+    <url>/2023/06/genshinkamikoaru.html</url>
+    <content><![CDATA[<p>先说说深渊，博主在今年 2 月之前是无论如何都打不过深渊的，2 月后开始练万达国际，学会双扩后，队伍养得差不多后就在 2 月 18 日第一次凹过 12 层，见<a href="/2023/02/genshinshenyuanmanxing.html">『打通深渊后半个月，我又第一次满星深渊！』</a>。此后除了第一期沙虫因为「草行九」练度不够，没有满星之外，每一期都能做到满星了！不过近来几期深渊越来越难，大量的「挤模型」「多动症」「厚盾」「拖时间」的机制怪出现，属实是恶心人。之前圣骸兽博主一直是用「草行九瑶」过的，不过这次由于 12-3 下半是「深罪浸礼者」，队伍中必须有「火 草&#x2F;冰 水」，「草行九」自然就成了选择，再加上了前几天出的宵宫用以破冰盾。问题就是上半该用什么队伍，一开始认为万达打圣骸兽也许很麻烦，就想试着用雷国，可惜博主没怎么练雷神，故试了多种配队后还是决定使用万达。最后是 2 分钟打完了四只圣骸兽，用了剩下 1 分钟过了深罪浸礼者（很险···6分59秒打完的，系统判定为 3 星）。</p>
+<p>前前后后凹了有 100+ 次，不过由于前面几十次是在尝试配队，有了第一期经验后，16 号的深渊应该也能轻松不少。</p>
+<p><img data-src="https://img.fufu.ink/ZDM6sI.webp" alt="下次还填非常简单！"></p>
+<p>然后是垫池子垫出了神子，抽前算的垫了 20 抽了，本来不抱什么希望地单抽了一下，想着不可能这么早出的吧，结果竟然金了，还没歪！</p>
+<p><img data-src="https://img.fufu.ink/4o04wz.webp" alt="21 抽拿下！"></p>
 ]]></content>
       <categories>
         <category>游戏</category>
@@ -1190,8 +1190,8 @@
         <category>技术</category>
       </categories>
       <tags>
-        <tag>Hexo</tag>
         <tag>技术</tag>
+        <tag>Hexo</tag>
       </tags>
   </entry>
   <entry>
@@ -1199,7 +1199,7 @@
     <url>/2023/05/gsxhcjl.html</url>
     <content><![CDATA[<p>这件事要从去年 11 月草神池刚出的时候说起，之前一直玩的号只抽中了草神（大保底），武器却歪了「飞雷」，于是创了个小号。想着小号前期资源多，肝一肝能在版本结束前拿个 0+1，结果后面发生了一系列事情，最终导致许久没登小号。今年2、3月份重新上了下号，把剧情推到璃月了，攒出了 74 抽，结果歪了莫娜（血的教训！一定不要边肝边抽，必歪！！！），当即下号。</p>
 <p>今天闲来无事，想起了这个号，上号后拿着版本送的原石单抽了一发，本来以为出紫了，结果出金了！于是甘雨拿下~</p>
-<p><img data-src="https://img.fufu.ink/dXzfGb.png" alt="双黄"></p>
+<p><img data-src="https://img.fufu.ink/p1lG81.webp" alt="双黄"></p>
 <p>这又让我燃起了对小号培养的热情，本来都打算让这个号废了，毕竟第一个金就歪了，连新手保护期都没了，结果双黄来了，那它就还有被培养的理由！</p>
 ]]></content>
       <categories>
@@ -1307,8 +1307,8 @@
         <category>技术</category>
       </categories>
       <tags>
-        <tag>Hexo</tag>
         <tag>技术</tag>
+        <tag>Hexo</tag>
         <tag>CSS</tag>
       </tags>
   </entry>
@@ -1991,64 +1991,6 @@
       </tags>
   </entry>
   <entry>
-    <title>计算机网络结课作业</title>
-    <url>/2022/05/computerhomework.html</url>
-    <content><![CDATA[<h2 id="第一题——家庭拓扑结构"><a href="#第一题——家庭拓扑结构" class="headerlink" title="第一题——家庭拓扑结构"></a>第一题——家庭拓扑结构</h2><p>一、结构规划</p>
-<ul>
-<li>确定小区网线接入点（控制中心）：书房</li>
-<li>规划每个房间布置 3 个网点，共 18 个网点</li>
-<li>联网设备：书房一台电脑，客厅，卧室各一台有线电视，卧室各一台电脑等</li>
-</ul>
-<p>二、材料规划</p>
-<ul>
-<li>每个网点需要水晶头、网点模块各 1 个，共计水晶头 18 个，网点模块 18 个。</li>
-<li>需要超七类网线 18 条，长度共计 50m 左右</li>
-<li>路由器：斐讯 K2P</li>
-</ul>
-<p>三、接线与路由器设置</p>
-<ol>
-<li><p>接线：将小区网线接在路由器的 LAN 上，路由器的 WAN 口分别接上交换机与书房电脑。其余网线都接在交换机上</p>
-<p>拓扑布线结构图：</p>
-</li>
-</ol>
-<p><img data-src="https://img.fufu.ink/wuqSko.webp" alt="家庭网络拓扑"></p>
-<ol start="2">
-<li>路由器配置<ul>
-<li>开启内网 IP</li>
-<li>配置防火墙</li>
-</ul>
-</li>
-</ol>
-<h2 id="第二题——设想"><a href="#第二题——设想" class="headerlink" title="第二题——设想"></a>第二题——设想</h2><p>一、物联网</p>
-<p>物联网，即万物互联，指的是只需有限的人工干预即可通过无线网络接收和传输数据的任何物理设备系统。设想一下，当你疲惫地从公司上班回家后，打开门时，不需要你摸黑寻找电灯开关，电灯会自动打开，当你在换衣服时，热水壶已经开始加热热水，准备好温度合适的热水，电视机自动开机，并播放这个时间点你平时观看次数最多的节目。这就是万物互联中一个典型的例子，无需人的过多干涉，它会为你规划好一切。</p>
-<p>我们现在的生活中已经隐约出现了物联网的轮廓了，虽然还有很多不足，但证明了物联网在未来是可行的。小米家居就是一个很好的例子，比如进入家门的第一步——开锁，现在还有很多地方使用的门锁还是传统的门锁，而小米的智能门锁除了支持指纹识别开锁、密码开锁、还支持 NFC 开锁，即使用支持 NFC 功能的小米手机靠一下门锁即可打开，并且无需手动旋&#x2F;推拉把手的动作，锁舌会自动打开与关上，若家主人装上了相应软件，还能够在手机上查看门锁的状态，通过摄像头能够实时看到门前的状况。</p>
-<p>上面的只是一个小例子，即以现在的技术能实现的让物品与互联网相接的程度，还有将来的无人驾驶等，都是证明物联网的可行性的证据。</p>
-<p>二、元宇宙</p>
-<p>元宇宙，即一个持久化和去中心化的在线三维虚拟环境。”Metaverse”一词最早见于尼尔·斯蒂芬森1992年的科幻小说《雪崩》，Metaverse是一个虚拟的城市环境，沿着一条100米宽的道路发展，覆盖了一个无特征的、黑色的、完美球形星球上整个65536公里周长。这个虚拟世界中的土地可以被购买，并在上面开发建筑。而这个概念在 2021 年突然就火了，Facebook 的扎克伯格在 Facebook Connect 演讲中展示了 Meta 在未来的应用场景和业内的方案雏形，各大巨头也相继开始宣称进军该领域。</p>
-<p>元宇宙是一个虚拟的世界，虚拟就意味着可复制，因此如果要将现实世界映射到这个虚拟世界中，这就是一个巨大的问题，于是可以运用区块链技术与去中心化技术，再具体点就是非同质化代币，即利用其无法互换的特性，可以将其作为虚拟商品所有权的电子认证或证书，虽然作品本身是可以无限复制的，但这些代表它们的代币在其底层区块链上能被完整追踪，故能为买家提供所有权证明。这样就解决了在元宇宙中，无法证明资产所属的问题了。</p>
-<p>但现在的元宇宙还只是一个概念，虽然有很多东西都应用到了其原理，比如 VR（虚拟现实）、AR（增强现实）技术，带上 VR 眼镜就能在虚拟世界中有身临其境的感觉，而 AR 眼镜又能看到虚拟世界与现实相结合的视角，但如果把元宇宙技术的发展比作100米长跑，现在最顶级的运用到该概念的技术也只跑了10米左右，就从工具上来说，连接现实与虚拟的工具，现在的技术即 VR 眼镜或 AR 眼镜，即使是业内排名靠前的 Facebook、微软等巨头的产品的分辨率、刷新率、舒适度都还有许多问题，元宇宙要走的路还很长。</p>
-<p>三、区块链</p>
-<p>是借由密码学与共识机制等技术创建与存储庞大交易资料区块链的点对点网络系统。每一个区块包含了前一个区块的加密散列、相应时间戳记以及交易资料（通常用默克尔树（Merkle tree）算法计算的散列值表示），这样的设计使得区块内容具有难以篡改的特性。</p>
-<p>区块链最大的特点是去中心化、不可篡改，因此其可用于各种领域。在现在最大的应用是数字货币，比如「比特币」等虚拟货币和运用了区块链部分技术的「数字人名币」。也可用于物源追踪，产品从起源地到终点所在的过程都可以通过区块链来追踪。而且，这类准确的溯源方式，可以用来检测供应链中的缺陷。还可用于教育领域，将区块链技术应用到学历证书上，即可有效防止伪造学历等事情的发生，将学生成绩以区块链形式记录，从而形成不可更改不可否认的学习记录，保证了公平性。</p>
-<h2 id="第三题——感想和建议"><a href="#第三题——感想和建议" class="headerlink" title="第三题——感想和建议"></a>第三题——感想和建议</h2><p>一、感想</p>
-<p>本课程教学方式与传统的集中于知识点的讲解的教学方式不同，旨在通过将生活中熟悉的事物和抽象的计算机网络相关专业知识结合起来讲解的方式来使学生能够容易地理解、消化知识点，不仅增加了学习的乐趣，也能够增加我们对生活的感悟。</p>
-<p>计算机是抽象的，但也是具体的。说它是抽象的，是因为它的运作方式，内部结构都很复杂，很难在大脑中形成一个完整地架构。说它是具体的，是因为「艺术来源于生活，高于生活」，同理，我们也可以说「科技来源于生活而高于生活」，计算机的抽象展现了它高于生活的一面，而它具体的一面则体现在它的设计原理来源于生活，它的设计都是以「人」和「世界」等为参照的，因此也符合人的思维方式，比如，二进制的产生就来源于中国的古老的太极八卦图。</p>
-<p>本门课程名为《计算机网络及互联网技术》，在开篇中老师就提到，计算机之间的通信构成了计算机网络，无论计算机网络的内容多么复杂，其最终目的都是为了实现资源的共享，因此全课程的内容，从根本上讲，都是围绕其展开的。由于疫情原因，我们的课程只能以网课的形式进行，无法通过实践操作加深对这些知识点的理解，老师也尽力通过具体的讲解来让我们理解这些知识点。尽管我是一个文科生，但我对计算机感兴趣，因此对这门课程也有浓厚的兴趣，当然，由于我没有涉及过理科相关的知识（即使学习过也由于时间较长忘记了），对于 PPT 中一些较为专业的公式，计算方法不能够很好的理解，但这已经脱离我选修该门课程的初衷了，我选择该门课程，最主要是想提高自己的能力，同时在生活中我也在着手使用服务器搭建个人网站等与互联网有关的事情，因此该门课程对我很有帮助，以前我只知道在域名解析处填写好对应的数据就可以通过域名访问网站，却不知其中原理，经过老师的讲解后，我才知道在其之后运作机制。因此，只要该门课程对我来说是有用的，我从中受益了，我的选择就没有错误。</p>
-<p>二、建议</p>
-<ol>
-<li>适当增加课堂互动，不知是否是线上教学的原因，上课过程中缺少课堂互动，学生很难获得反馈，长时间保持这样的状态注意力容易分散</li>
-<li>适当增加课堂演示，或者相关演示视频，将一些知识点通过现场演示的方式展示给同学，不仅可以加深同学对该知识点的印象，也能够提高同学们对该门课程的兴趣</li>
-</ol>
-]]></content>
-      <categories>
-        <category>技术</category>
-      </categories>
-      <tags>
-        <tag>计算机</tag>
-        <tag>网络</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>萌新的 PC 计划</title>
     <url>/2023/02/computercompose.html</url>
     <content><![CDATA[<p>因为原来的电脑是轻薄本，用的 r5 5500u 核显，玩个原神只能开 0.8 精度，还经常掉帧，正好过年了，就想拿着压岁钱和寒假打工的钱组一台台式机（不买游戏本是因为预算不足）。预算为 6000 元左右，经过群友的建议，组出的配置如下：<span id="more"></span></p>
@@ -2116,6 +2058,64 @@
       <tags>
         <tag>生活</tag>
         <tag>计算机</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>计算机网络结课作业</title>
+    <url>/2022/05/computerhomework.html</url>
+    <content><![CDATA[<h2 id="第一题——家庭拓扑结构"><a href="#第一题——家庭拓扑结构" class="headerlink" title="第一题——家庭拓扑结构"></a>第一题——家庭拓扑结构</h2><p>一、结构规划</p>
+<ul>
+<li>确定小区网线接入点（控制中心）：书房</li>
+<li>规划每个房间布置 3 个网点，共 18 个网点</li>
+<li>联网设备：书房一台电脑，客厅，卧室各一台有线电视，卧室各一台电脑等</li>
+</ul>
+<p>二、材料规划</p>
+<ul>
+<li>每个网点需要水晶头、网点模块各 1 个，共计水晶头 18 个，网点模块 18 个。</li>
+<li>需要超七类网线 18 条，长度共计 50m 左右</li>
+<li>路由器：斐讯 K2P</li>
+</ul>
+<p>三、接线与路由器设置</p>
+<ol>
+<li><p>接线：将小区网线接在路由器的 LAN 上，路由器的 WAN 口分别接上交换机与书房电脑。其余网线都接在交换机上</p>
+<p>拓扑布线结构图：</p>
+</li>
+</ol>
+<p><img data-src="https://img.fufu.ink/wuqSko.webp" alt="家庭网络拓扑"></p>
+<ol start="2">
+<li>路由器配置<ul>
+<li>开启内网 IP</li>
+<li>配置防火墙</li>
+</ul>
+</li>
+</ol>
+<h2 id="第二题——设想"><a href="#第二题——设想" class="headerlink" title="第二题——设想"></a>第二题——设想</h2><p>一、物联网</p>
+<p>物联网，即万物互联，指的是只需有限的人工干预即可通过无线网络接收和传输数据的任何物理设备系统。设想一下，当你疲惫地从公司上班回家后，打开门时，不需要你摸黑寻找电灯开关，电灯会自动打开，当你在换衣服时，热水壶已经开始加热热水，准备好温度合适的热水，电视机自动开机，并播放这个时间点你平时观看次数最多的节目。这就是万物互联中一个典型的例子，无需人的过多干涉，它会为你规划好一切。</p>
+<p>我们现在的生活中已经隐约出现了物联网的轮廓了，虽然还有很多不足，但证明了物联网在未来是可行的。小米家居就是一个很好的例子，比如进入家门的第一步——开锁，现在还有很多地方使用的门锁还是传统的门锁，而小米的智能门锁除了支持指纹识别开锁、密码开锁、还支持 NFC 开锁，即使用支持 NFC 功能的小米手机靠一下门锁即可打开，并且无需手动旋&#x2F;推拉把手的动作，锁舌会自动打开与关上，若家主人装上了相应软件，还能够在手机上查看门锁的状态，通过摄像头能够实时看到门前的状况。</p>
+<p>上面的只是一个小例子，即以现在的技术能实现的让物品与互联网相接的程度，还有将来的无人驾驶等，都是证明物联网的可行性的证据。</p>
+<p>二、元宇宙</p>
+<p>元宇宙，即一个持久化和去中心化的在线三维虚拟环境。”Metaverse”一词最早见于尼尔·斯蒂芬森1992年的科幻小说《雪崩》，Metaverse是一个虚拟的城市环境，沿着一条100米宽的道路发展，覆盖了一个无特征的、黑色的、完美球形星球上整个65536公里周长。这个虚拟世界中的土地可以被购买，并在上面开发建筑。而这个概念在 2021 年突然就火了，Facebook 的扎克伯格在 Facebook Connect 演讲中展示了 Meta 在未来的应用场景和业内的方案雏形，各大巨头也相继开始宣称进军该领域。</p>
+<p>元宇宙是一个虚拟的世界，虚拟就意味着可复制，因此如果要将现实世界映射到这个虚拟世界中，这就是一个巨大的问题，于是可以运用区块链技术与去中心化技术，再具体点就是非同质化代币，即利用其无法互换的特性，可以将其作为虚拟商品所有权的电子认证或证书，虽然作品本身是可以无限复制的，但这些代表它们的代币在其底层区块链上能被完整追踪，故能为买家提供所有权证明。这样就解决了在元宇宙中，无法证明资产所属的问题了。</p>
+<p>但现在的元宇宙还只是一个概念，虽然有很多东西都应用到了其原理，比如 VR（虚拟现实）、AR（增强现实）技术，带上 VR 眼镜就能在虚拟世界中有身临其境的感觉，而 AR 眼镜又能看到虚拟世界与现实相结合的视角，但如果把元宇宙技术的发展比作100米长跑，现在最顶级的运用到该概念的技术也只跑了10米左右，就从工具上来说，连接现实与虚拟的工具，现在的技术即 VR 眼镜或 AR 眼镜，即使是业内排名靠前的 Facebook、微软等巨头的产品的分辨率、刷新率、舒适度都还有许多问题，元宇宙要走的路还很长。</p>
+<p>三、区块链</p>
+<p>是借由密码学与共识机制等技术创建与存储庞大交易资料区块链的点对点网络系统。每一个区块包含了前一个区块的加密散列、相应时间戳记以及交易资料（通常用默克尔树（Merkle tree）算法计算的散列值表示），这样的设计使得区块内容具有难以篡改的特性。</p>
+<p>区块链最大的特点是去中心化、不可篡改，因此其可用于各种领域。在现在最大的应用是数字货币，比如「比特币」等虚拟货币和运用了区块链部分技术的「数字人名币」。也可用于物源追踪，产品从起源地到终点所在的过程都可以通过区块链来追踪。而且，这类准确的溯源方式，可以用来检测供应链中的缺陷。还可用于教育领域，将区块链技术应用到学历证书上，即可有效防止伪造学历等事情的发生，将学生成绩以区块链形式记录，从而形成不可更改不可否认的学习记录，保证了公平性。</p>
+<h2 id="第三题——感想和建议"><a href="#第三题——感想和建议" class="headerlink" title="第三题——感想和建议"></a>第三题——感想和建议</h2><p>一、感想</p>
+<p>本课程教学方式与传统的集中于知识点的讲解的教学方式不同，旨在通过将生活中熟悉的事物和抽象的计算机网络相关专业知识结合起来讲解的方式来使学生能够容易地理解、消化知识点，不仅增加了学习的乐趣，也能够增加我们对生活的感悟。</p>
+<p>计算机是抽象的，但也是具体的。说它是抽象的，是因为它的运作方式，内部结构都很复杂，很难在大脑中形成一个完整地架构。说它是具体的，是因为「艺术来源于生活，高于生活」，同理，我们也可以说「科技来源于生活而高于生活」，计算机的抽象展现了它高于生活的一面，而它具体的一面则体现在它的设计原理来源于生活，它的设计都是以「人」和「世界」等为参照的，因此也符合人的思维方式，比如，二进制的产生就来源于中国的古老的太极八卦图。</p>
+<p>本门课程名为《计算机网络及互联网技术》，在开篇中老师就提到，计算机之间的通信构成了计算机网络，无论计算机网络的内容多么复杂，其最终目的都是为了实现资源的共享，因此全课程的内容，从根本上讲，都是围绕其展开的。由于疫情原因，我们的课程只能以网课的形式进行，无法通过实践操作加深对这些知识点的理解，老师也尽力通过具体的讲解来让我们理解这些知识点。尽管我是一个文科生，但我对计算机感兴趣，因此对这门课程也有浓厚的兴趣，当然，由于我没有涉及过理科相关的知识（即使学习过也由于时间较长忘记了），对于 PPT 中一些较为专业的公式，计算方法不能够很好的理解，但这已经脱离我选修该门课程的初衷了，我选择该门课程，最主要是想提高自己的能力，同时在生活中我也在着手使用服务器搭建个人网站等与互联网有关的事情，因此该门课程对我很有帮助，以前我只知道在域名解析处填写好对应的数据就可以通过域名访问网站，却不知其中原理，经过老师的讲解后，我才知道在其之后运作机制。因此，只要该门课程对我来说是有用的，我从中受益了，我的选择就没有错误。</p>
+<p>二、建议</p>
+<ol>
+<li>适当增加课堂互动，不知是否是线上教学的原因，上课过程中缺少课堂互动，学生很难获得反馈，长时间保持这样的状态注意力容易分散</li>
+<li>适当增加课堂演示，或者相关演示视频，将一些知识点通过现场演示的方式展示给同学，不仅可以加深同学对该知识点的印象，也能够提高同学们对该门课程的兴趣</li>
+</ol>
+]]></content>
+      <categories>
+        <category>技术</category>
+      </categories>
+      <tags>
+        <tag>计算机</tag>
+        <tag>网络</tag>
       </tags>
   </entry>
   <entry>
