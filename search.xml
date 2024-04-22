@@ -28,6 +28,34 @@
       </tags>
   </entry>
   <entry>
+    <title>Next 主题添加公告栏</title>
+    <url>/2024/04/nextaddnotice.html</url>
+    <content><![CDATA[<p>字面意思，给 Next 主题添加个公告栏，不过由于 Next 侧边栏只在宽屏上显示，在手机上是看不到的。</p>
+<p>适用范围：Next·Pisces 主题</p>
+<span id="more"></span>
+
+<p>打开 <code>hexo/themes/next/layout/_macro/sidebar.njk</code>，在 <code>&lt;/aside&gt;</code> 与最后一个 <code>&#123;%- endif %&#125;</code> 之间添加以下代码</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&#123;%- if theme.related_posts.enable %&#125;</span><br><span class="line">      &#123;%- if theme.pjax %&#125;</span><br><span class="line">        &lt;div class=&quot;pjax&quot;&gt;</span><br><span class="line">      &#123;%- endif %&#125;</span><br><span class="line">      &#123;%- if page.related_posts and page.related_posts.length &gt; 0 %&#125;</span><br><span class="line">        &lt;div class=&quot;sidebar-inner sidebar-post-related&quot;&gt;</span><br><span class="line">          &lt;div class=&quot;animated&quot;&gt;</span><br><span class="line">            &#123;&#123; partial(&#x27;_partials/post/post-related.njk&#x27;) &#125;&#125;</span><br><span class="line">          &lt;/div&gt;</span><br><span class="line">        &lt;/div&gt;</span><br><span class="line">      &#123;%- endif %&#125;</span><br><span class="line">      &#123;%- if theme.pjax %&#125;</span><br><span class="line">        &lt;/div&gt;</span><br><span class="line">      &#123;%- endif %&#125;</span><br><span class="line">    &#123;%- endif %&#125;</span><br><span class="line"></span><br><span class="line">+    &#123;%- if theme.notice.enable %&#125;</span><br><span class="line">+      &#123;%- if theme.pjax %&#125;</span><br><span class="line">+        &lt;div class=&quot;pjax&quot;&gt;</span><br><span class="line">+      &#123;%- endif %&#125;</span><br><span class="line">+      &#123;%- if theme.notice.content.length &gt; 0 %&#125;</span><br><span class="line">+        &lt;div class=&quot;sidebar-inner notice&quot; style=&quot;padding: 18px;&quot;&gt;</span><br><span class="line">+          &lt;div class=&quot;notice-title&quot; style=&quot;font-size: 1.2em;text-align: left;&quot;&gt;</span><br><span class="line">+            &lt;i class=&quot;fa-solid fa-bullhorn&quot;&gt;&lt;/i&gt;</span><br><span class="line">+            &lt;span style=&quot;margin-left: 6px;&quot;&gt;公告&lt;/span&gt;</span><br><span class="line">+          &lt;/div&gt;</span><br><span class="line">+          &lt;div class=&quot;notice-content&quot; style=&quot;text-align: justify;&quot;&gt;</span><br><span class="line">+            &#123;&#123; theme.notice.content &#125;&#125;</span><br><span class="line">+          &lt;/div&gt;</span><br><span class="line">+        &lt;/div&gt;</span><br><span class="line">+      &#123;%- endif %&#125;</span><br><span class="line">+      &#123;%- if theme.pjax %&#125;</span><br><span class="line">+        &lt;/div&gt;</span><br><span class="line">+      &#123;%- endif %&#125;</span><br><span class="line">+    &#123;%- endif %&#125;</span><br><span class="line">	&lt;/aside&gt;</span><br><span class="line">&#123;% endmacro %&#125;</span><br></pre></td></tr></table></figure>
+
+<p>以下为方便复制的版本</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&#123;%- if theme.notice.enable %&#125;</span><br><span class="line">      &#123;%- if theme.pjax %&#125;</span><br><span class="line">        &lt;div class=&quot;pjax&quot;&gt;</span><br><span class="line">      &#123;%- endif %&#125;</span><br><span class="line">      &#123;%- if theme.notice.content.length &gt; 0 %&#125;</span><br><span class="line">        &lt;div class=&quot;sidebar-inner notice&quot; style=&quot;padding: 18px;&quot;&gt;</span><br><span class="line">          &lt;div class=&quot;notice-title&quot; style=&quot;font-size: 1.2em;text-align: left;&quot;&gt;</span><br><span class="line">            &lt;i class=&quot;fa-solid fa-bullhorn&quot;&gt;&lt;/i&gt;</span><br><span class="line">            &lt;span style=&quot;margin-left: 6px;&quot;&gt;公告&lt;/span&gt;</span><br><span class="line">          &lt;/div&gt;</span><br><span class="line">          &lt;div class=&quot;notice-content&quot; style=&quot;text-align: justify;&quot;&gt;</span><br><span class="line">            &#123;&#123; theme.notice.content &#125;&#125;</span><br><span class="line">          &lt;/div&gt;</span><br><span class="line">        &lt;/div&gt;</span><br><span class="line">      &#123;%- endif %&#125;</span><br><span class="line">      &#123;%- if theme.pjax %&#125;</span><br><span class="line">        &lt;/div&gt;</span><br><span class="line">      &#123;%- endif %&#125;</span><br><span class="line">&#123;%- endif %&#125;</span><br></pre></td></tr></table></figure>
+
+<p>然后在主题配置 <code>_config.next.yml</code> 中添加以下内容</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">notice:</span><br><span class="line">  enable: true</span><br><span class="line">  content: #公告内容</span><br></pre></td></tr></table></figure>
+
+<p>样式写的很简单，如有需要请自行更改。</p>
+]]></content>
+      <categories>
+        <category>技术</category>
+      </categories>
+      <tags>
+        <tag>Hexo</tag>
+        <tag>技术</tag>
+        <tag>教程</tag>
+        <tag>Next</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>MinecraftBDS 修改材质包和行为包教程</title>
     <url>/2022/07/mcbdsbeautify.html</url>
     <content><![CDATA[<blockquote>
@@ -58,39 +86,41 @@
         <category>游戏</category>
       </categories>
       <tags>
+        <tag>技术</tag>
+        <tag>教程</tag>
         <tag>Minecraft</tag>
         <tag>材质包</tag>
         <tag>行为包</tag>
-        <tag>教程</tag>
-        <tag>技术</tag>
       </tags>
   </entry>
   <entry>
-    <title>Next 主题添加公告栏</title>
-    <url>/2024/04/nextaddnotice.html</url>
-    <content><![CDATA[<p>字面意思，给 Next 主题添加个公告栏，不过由于 Next 侧边栏只在宽屏上显示，在手机上是看不到的。</p>
-<p>适用范围：Next·Pisces 主题</p>
-<span id="more"></span>
+    <title>Next 主题部分图片禁用 FancyBox</title>
+    <url>/2023/04/nextthemefancyboxdisabled.html</url>
+    <content><![CDATA[<p>之前用的主题有 fancybox 功能的都有部分图片禁用 fancybox 的功能，看了一遍文档却发现没有这个选项，去 issue 中和 discusstion 中也没找到相关的信息。<span id="more"></span>于是 google 了一下，发现真有<a href="https://blog.csdn.net/cddchina/article/details/79764432">相关教程</a>，不过是 18 年的了，现在 next 主题已经变了很多，fancybox 的 js 代码也没在 utils.js 文件中了。找了一下，发现 fancybox 的相关 js 代码已经单独写在了主题文件夹下的 <code>\source\js\third-party\fancybox.js</code> 中了。</p>
+<p>接着又在网上找到了一篇博客，发现插入的代码较也改进了一下，修改了当鼠标悬浮在已经被禁用 fancybox 效果的图片上时的状态，原文链接：<a href="https://kevin1061517.github.io/blog/posts/Hexo/2721/">https://kevin1061517.github.io/blog/posts/Hexo/2721/</a></p>
+<p>结合两篇博文，最终即为在 <code>\source\js\third-party\fancybox.js</code> 文件中的 <code>const $image = $(element);</code> 这一行与 <code>const imageLink = $image.attr(&#39;data-src&#39;) || $image.attr(&#39;src&#39;);</code> 之间添加以下代码</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">     <span class="keyword">const</span> $image = $(element);</span><br><span class="line">+    <span class="keyword">if</span> ($(element).<span class="title function_">hasClass</span>(<span class="string">&#x27;nofancybox&#x27;</span>))&#123;  <span class="comment">//是否有包含自己定义的nofancybox属性，有就return true</span></span><br><span class="line">+        $(element).<span class="title function_">css</span>(<span class="string">&quot;cursor&quot;</span>,<span class="string">&quot;default&quot;</span>);    <span class="comment">//将碰到图片的鼠标从放大镜变成default模式</span></span><br><span class="line">+        <span class="keyword">return</span>;	<span class="comment">//不进行下面的fancybox的配置</span></span><br><span class="line">+      &#125;</span><br><span class="line">     <span class="keyword">const</span> imageLink = $image.<span class="title function_">attr</span>(<span class="string">&#x27;data-src&#x27;</span>) || $image.<span class="title function_">attr</span>(<span class="string">&#x27;src&#x27;</span>);</span><br></pre></td></tr></table></figure>
 
-<p>打开 <code>hexo/themes/next/layout/_macro/sidebar.njk</code>，在 <code>&lt;/aside&gt;</code> 与最后一个 <code>&#123;%- endif %&#125;</code> 之间添加以下代码</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&#123;%- if theme.related_posts.enable %&#125;</span><br><span class="line">      &#123;%- if theme.pjax %&#125;</span><br><span class="line">        &lt;div class=&quot;pjax&quot;&gt;</span><br><span class="line">      &#123;%- endif %&#125;</span><br><span class="line">      &#123;%- if page.related_posts and page.related_posts.length &gt; 0 %&#125;</span><br><span class="line">        &lt;div class=&quot;sidebar-inner sidebar-post-related&quot;&gt;</span><br><span class="line">          &lt;div class=&quot;animated&quot;&gt;</span><br><span class="line">            &#123;&#123; partial(&#x27;_partials/post/post-related.njk&#x27;) &#125;&#125;</span><br><span class="line">          &lt;/div&gt;</span><br><span class="line">        &lt;/div&gt;</span><br><span class="line">      &#123;%- endif %&#125;</span><br><span class="line">      &#123;%- if theme.pjax %&#125;</span><br><span class="line">        &lt;/div&gt;</span><br><span class="line">      &#123;%- endif %&#125;</span><br><span class="line">    &#123;%- endif %&#125;</span><br><span class="line"></span><br><span class="line">+    &#123;%- if theme.notice.enable %&#125;</span><br><span class="line">+      &#123;%- if theme.pjax %&#125;</span><br><span class="line">+        &lt;div class=&quot;pjax&quot;&gt;</span><br><span class="line">+      &#123;%- endif %&#125;</span><br><span class="line">+      &#123;%- if theme.notice.content.length &gt; 0 %&#125;</span><br><span class="line">+        &lt;div class=&quot;sidebar-inner notice&quot; style=&quot;padding: 18px;&quot;&gt;</span><br><span class="line">+          &lt;div class=&quot;notice-title&quot; style=&quot;font-size: 1.2em;text-align: left;&quot;&gt;</span><br><span class="line">+            &lt;i class=&quot;fa-solid fa-bullhorn&quot;&gt;&lt;/i&gt;</span><br><span class="line">+            &lt;span style=&quot;margin-left: 6px;&quot;&gt;公告&lt;/span&gt;</span><br><span class="line">+          &lt;/div&gt;</span><br><span class="line">+          &lt;div class=&quot;notice-content&quot; style=&quot;text-align: justify;&quot;&gt;</span><br><span class="line">+            &#123;&#123; theme.notice.content &#125;&#125;</span><br><span class="line">+          &lt;/div&gt;</span><br><span class="line">+        &lt;/div&gt;</span><br><span class="line">+      &#123;%- endif %&#125;</span><br><span class="line">+      &#123;%- if theme.pjax %&#125;</span><br><span class="line">+        &lt;/div&gt;</span><br><span class="line">+      &#123;%- endif %&#125;</span><br><span class="line">+    &#123;%- endif %&#125;</span><br><span class="line">	&lt;/aside&gt;</span><br><span class="line">&#123;% endmacro %&#125;</span><br></pre></td></tr></table></figure>
+<p>以下为方便复制的代码</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">if</span> ($(element).<span class="title function_">hasClass</span>(<span class="string">&#x27;nofancybox&#x27;</span>))&#123;  <span class="comment">//是否有包含自己定义的nofancybox属性，有就return true</span></span><br><span class="line">    $(element).<span class="title function_">css</span>(<span class="string">&quot;cursor&quot;</span>,<span class="string">&quot;default&quot;</span>);    <span class="comment">//将碰到图片的鼠标从放大镜变成default模式</span></span><br><span class="line">    <span class="keyword">return</span>;	<span class="comment">//不进行下面的fancybox的配置</span></span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
 
-<p>以下为方便复制的版本</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&#123;%- if theme.notice.enable %&#125;</span><br><span class="line">      &#123;%- if theme.pjax %&#125;</span><br><span class="line">        &lt;div class=&quot;pjax&quot;&gt;</span><br><span class="line">      &#123;%- endif %&#125;</span><br><span class="line">      &#123;%- if theme.notice.content.length &gt; 0 %&#125;</span><br><span class="line">        &lt;div class=&quot;sidebar-inner notice&quot; style=&quot;padding: 18px;&quot;&gt;</span><br><span class="line">          &lt;div class=&quot;notice-title&quot; style=&quot;font-size: 1.2em;text-align: left;&quot;&gt;</span><br><span class="line">            &lt;i class=&quot;fa-solid fa-bullhorn&quot;&gt;&lt;/i&gt;</span><br><span class="line">            &lt;span style=&quot;margin-left: 6px;&quot;&gt;公告&lt;/span&gt;</span><br><span class="line">          &lt;/div&gt;</span><br><span class="line">          &lt;div class=&quot;notice-content&quot; style=&quot;text-align: justify;&quot;&gt;</span><br><span class="line">            &#123;&#123; theme.notice.content &#125;&#125;</span><br><span class="line">          &lt;/div&gt;</span><br><span class="line">        &lt;/div&gt;</span><br><span class="line">      &#123;%- endif %&#125;</span><br><span class="line">      &#123;%- if theme.pjax %&#125;</span><br><span class="line">        &lt;/div&gt;</span><br><span class="line">      &#123;%- endif %&#125;</span><br><span class="line">&#123;%- endif %&#125;</span><br></pre></td></tr></table></figure>
+<p>之后只要给不想有 fancybox 效果的 <code>&lt;img&gt;</code> 元素增加 <code>class=&quot;nofancybox&quot;</code> 即可。</p>
+<hr>
+<p>后续更新来了，上面的代码是 jQuery 版的 Fancybox 的，现主题最新版本已完全去除 jQuery 的依赖且更新到了 Fancybox 5，上面的代码自然也就失效了。虽然不会 js，还是试着在 Google 和 Chatgpt 的帮助下改了一下代码。可以适配最新版本了。</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="variable language_">document</span>.<span class="title function_">querySelectorAll</span>(<span class="string">&#x27;.post-body :not(a) &gt; img, .post-body &gt; img&#x27;</span>).<span class="title function_">forEach</span>(<span class="function"><span class="params">image</span> =&gt;</span> &#123;</span><br><span class="line">+    <span class="keyword">if</span> (image.<span class="property">classList</span>.<span class="title function_">contains</span>(<span class="string">&#x27;nofancybox&#x27;</span>))&#123;  <span class="comment">//是否有包含自己定义的nofancybox属性，有就return true</span></span><br><span class="line">+      image.<span class="property">style</span>.<span class="property">cursor</span> = <span class="string">&#x27;default&#x27;</span>;    <span class="comment">//将碰到图片的鼠标从放大镜变成default模式</span></span><br><span class="line">+      <span class="keyword">return</span>;	<span class="comment">//不进行下面的fancybox的配置</span></span><br><span class="line">+    &#125;</span><br><span class="line">    <span class="keyword">const</span> imageLink = image.<span class="property">dataset</span>.<span class="property">src</span> || image.<span class="property">src</span>;</span><br></pre></td></tr></table></figure>
 
-<p>然后在主题配置 <code>_config.next.yml</code> 中添加以下内容</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">notice:</span><br><span class="line">  enable: true</span><br><span class="line">  content: #公告内容</span><br></pre></td></tr></table></figure>
+<p>方便复制的版本</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">if</span> (image.<span class="property">classList</span>.<span class="title function_">contains</span>(<span class="string">&#x27;nofancybox&#x27;</span>))&#123;  <span class="comment">//是否有包含自己定义的nofancybox属性，有就return true</span></span><br><span class="line">  image.<span class="property">style</span>.<span class="property">cursor</span> = <span class="string">&#x27;default&#x27;</span>;    <span class="comment">//将碰到图片的鼠标从放大镜变成default模式</span></span><br><span class="line">  <span class="keyword">return</span>;	<span class="comment">//不进行下面的fancybox的配置</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<p>样式写的很简单，如有需要请自行更改。</p>
+<p>同样的，只要给不想有 fancybox 效果的 <code>&lt;img&gt;</code> 元素增加 <code>class=&quot;nofancybox&quot;</code> 即可。</p>
 ]]></content>
       <categories>
         <category>技术</category>
       </categories>
       <tags>
-        <tag>教程</tag>
-        <tag>技术</tag>
         <tag>Hexo</tag>
-        <tag>Next</tag>
+        <tag>技术</tag>
+        <tag>JavaScript</tag>
       </tags>
   </entry>
   <entry>
@@ -134,40 +164,10 @@
         <category>技术</category>
       </categories>
       <tags>
+        <tag>Hexo</tag>
+        <tag>技术</tag>
         <tag>教程</tag>
-        <tag>技术</tag>
-        <tag>Hexo</tag>
         <tag>Next</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Next 主题部分图片禁用 FancyBox</title>
-    <url>/2023/04/nextthemefancyboxdisabled.html</url>
-    <content><![CDATA[<p>之前用的主题有 fancybox 功能的都有部分图片禁用 fancybox 的功能，看了一遍文档却发现没有这个选项，去 issue 中和 discusstion 中也没找到相关的信息。<span id="more"></span>于是 google 了一下，发现真有<a href="https://blog.csdn.net/cddchina/article/details/79764432">相关教程</a>，不过是 18 年的了，现在 next 主题已经变了很多，fancybox 的 js 代码也没在 utils.js 文件中了。找了一下，发现 fancybox 的相关 js 代码已经单独写在了主题文件夹下的 <code>\source\js\third-party\fancybox.js</code> 中了。</p>
-<p>接着又在网上找到了一篇博客，发现插入的代码较也改进了一下，修改了当鼠标悬浮在已经被禁用 fancybox 效果的图片上时的状态，原文链接：<a href="https://kevin1061517.github.io/blog/posts/Hexo/2721/">https://kevin1061517.github.io/blog/posts/Hexo/2721/</a></p>
-<p>结合两篇博文，最终即为在 <code>\source\js\third-party\fancybox.js</code> 文件中的 <code>const $image = $(element);</code> 这一行与 <code>const imageLink = $image.attr(&#39;data-src&#39;) || $image.attr(&#39;src&#39;);</code> 之间添加以下代码</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">     <span class="keyword">const</span> $image = $(element);</span><br><span class="line">+    <span class="keyword">if</span> ($(element).<span class="title function_">hasClass</span>(<span class="string">&#x27;nofancybox&#x27;</span>))&#123;  <span class="comment">//是否有包含自己定义的nofancybox属性，有就return true</span></span><br><span class="line">+        $(element).<span class="title function_">css</span>(<span class="string">&quot;cursor&quot;</span>,<span class="string">&quot;default&quot;</span>);    <span class="comment">//将碰到图片的鼠标从放大镜变成default模式</span></span><br><span class="line">+        <span class="keyword">return</span>;	<span class="comment">//不进行下面的fancybox的配置</span></span><br><span class="line">+      &#125;</span><br><span class="line">     <span class="keyword">const</span> imageLink = $image.<span class="title function_">attr</span>(<span class="string">&#x27;data-src&#x27;</span>) || $image.<span class="title function_">attr</span>(<span class="string">&#x27;src&#x27;</span>);</span><br></pre></td></tr></table></figure>
-
-<p>以下为方便复制的代码</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">if</span> ($(element).<span class="title function_">hasClass</span>(<span class="string">&#x27;nofancybox&#x27;</span>))&#123;  <span class="comment">//是否有包含自己定义的nofancybox属性，有就return true</span></span><br><span class="line">    $(element).<span class="title function_">css</span>(<span class="string">&quot;cursor&quot;</span>,<span class="string">&quot;default&quot;</span>);    <span class="comment">//将碰到图片的鼠标从放大镜变成default模式</span></span><br><span class="line">    <span class="keyword">return</span>;	<span class="comment">//不进行下面的fancybox的配置</span></span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
-
-<p>之后只要给不想有 fancybox 效果的 <code>&lt;img&gt;</code> 元素增加 <code>class=&quot;nofancybox&quot;</code> 即可。</p>
-<hr>
-<p>后续更新来了，上面的代码是 jQuery 版的 Fancybox 的，现主题最新版本已完全去除 jQuery 的依赖且更新到了 Fancybox 5，上面的代码自然也就失效了。虽然不会 js，还是试着在 Google 和 Chatgpt 的帮助下改了一下代码。可以适配最新版本了。</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="variable language_">document</span>.<span class="title function_">querySelectorAll</span>(<span class="string">&#x27;.post-body :not(a) &gt; img, .post-body &gt; img&#x27;</span>).<span class="title function_">forEach</span>(<span class="function"><span class="params">image</span> =&gt;</span> &#123;</span><br><span class="line">+    <span class="keyword">if</span> (image.<span class="property">classList</span>.<span class="title function_">contains</span>(<span class="string">&#x27;nofancybox&#x27;</span>))&#123;  <span class="comment">//是否有包含自己定义的nofancybox属性，有就return true</span></span><br><span class="line">+      image.<span class="property">style</span>.<span class="property">cursor</span> = <span class="string">&#x27;default&#x27;</span>;    <span class="comment">//将碰到图片的鼠标从放大镜变成default模式</span></span><br><span class="line">+      <span class="keyword">return</span>;	<span class="comment">//不进行下面的fancybox的配置</span></span><br><span class="line">+    &#125;</span><br><span class="line">    <span class="keyword">const</span> imageLink = image.<span class="property">dataset</span>.<span class="property">src</span> || image.<span class="property">src</span>;</span><br></pre></td></tr></table></figure>
-
-<p>方便复制的版本</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">if</span> (image.<span class="property">classList</span>.<span class="title function_">contains</span>(<span class="string">&#x27;nofancybox&#x27;</span>))&#123;  <span class="comment">//是否有包含自己定义的nofancybox属性，有就return true</span></span><br><span class="line">  image.<span class="property">style</span>.<span class="property">cursor</span> = <span class="string">&#x27;default&#x27;</span>;    <span class="comment">//将碰到图片的鼠标从放大镜变成default模式</span></span><br><span class="line">  <span class="keyword">return</span>;	<span class="comment">//不进行下面的fancybox的配置</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>同样的，只要给不想有 fancybox 效果的 <code>&lt;img&gt;</code> 元素增加 <code>class=&quot;nofancybox&quot;</code> 即可。</p>
-]]></content>
-      <categories>
-        <category>技术</category>
-      </categories>
-      <tags>
-        <tag>技术</tag>
-        <tag>Hexo</tag>
-        <tag>JavaScript</tag>
       </tags>
   </entry>
   <entry>
@@ -200,9 +200,9 @@
         <category>技术</category>
       </categories>
       <tags>
-        <tag>教程</tag>
-        <tag>技术</tag>
         <tag>Hexo</tag>
+        <tag>技术</tag>
+        <tag>教程</tag>
         <tag>Next</tag>
         <tag>CSS</tag>
       </tags>
@@ -227,39 +227,10 @@
         <category>技术</category>
       </categories>
       <tags>
-        <tag>教程</tag>
-        <tag>技术</tag>
         <tag>Hexo</tag>
+        <tag>技术</tag>
+        <tag>教程</tag>
         <tag>CSS</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>【书摘】加缪笔下的晦涩文字</title>
-    <url>/2024/01/excerpt1.html</url>
-    <content><![CDATA[<p>两天左右看完加缪的『局外人』和『堕落』了，说实话，对我来说，文字过于晦涩了。看完『局外人』还能大致明白讲了个什么故事，看『堕落』时就仿佛在看我的期末复习资料一样，很难坚持看下去，可能是因为我很少看独白类型的小说吧，不过最终还是看完了。<span id="more"></span>说起看他的书的缘由，是因为之前玩酷安时关注过一位名为汪畅的自由译者，他翻译了这本『局外人』，由此产生了兴趣。书是囫囵吞枣看完的，说得好听一点就是不求甚解，因为没有了解过「存在主义」，到网络上搜索才大概得知『局外人』所要表达的大致意思，这是一段来自小红书用户<a href="https://www.xiaohongshu.com/user/profile/5969aadb82ec3963573feee9?xhsshare=CopyLink&appuid=64b671510000000014034c75&apptime=1706022345">蓝桔子</a>的评论「人生会因为死亡迟早到来而失去所有意义。默尔索漠视那些社会赋予的道德准则和价值等级，所以他不想在母亲葬礼时哭不出来也要装哭，也不想假装信仰上帝。他经常做出一些不符合大众常理的事情，但他并非完全冷漠，只是人生而不同，用一套准则要求所有人本质上也是一种冷漠，我在我姥姥去世时也哭不出来，亲人的离去更像一场漫长的潮湿，在余生都让我隐隐作痛，但不会在那一瞬间让我痛哭，他不冷漠，他比任何人都通透，比任何人都痛苦，比任何人都更爱这个世界」。看完以上评论才顿时开悟。</p>
-<p>以下是从两书中摘出的一些句子</p>
-<ul>
-<li>妈妈距离死亡如此之近，但她一定也因此得到了一种重获新生的解脱。我想，这个世界上没有任何人有权为她哭泣。现在，我做好了相同的准备，我也要像妈妈一样，重新活一遍。——『局外人』</li>
-</ul>
-<p>『堕落』</p>
-<ul>
-<li>当身体难过时，心也会逐渐枯萎。</li>
-<li>没有人在享乐时是伪君子。</li>
-<li>毫无疑问，他们认为我有着圆满的生活，整天都在寻欢作乐中度过。这在他们眼里是不可原谅的。这也不难理解，毕竟当一头驴看到一位头顶桂冠的人，也会发出愤愤不平的哼叫。</li>
-<li>如果一个人想要他人谅解自己的幸福与成功，就必须慷慨地和他人分享；但如果一个人想要快乐，就不应该过分照顾他人的感受。要知道，一旦在乎他人，就走上了一条没有尽头的死路。</li>
-<li>为了不被他人批判，人们总会抢先批评他人。</li>
-<li>我们很少向比自己优秀的人吐露心声；不仅如此，我们还会尽力避免与他们为伍。与之相反的是，在大多数时候，我们会容易与彼此相似或者同病相怜的人成为心腹之交。也就是说，我们既不愿意自我纠正，也不愿意自我完善。我们必须被人批判，才能发现自身的不足，但在人生的道路上，我们最需要的就是他人的怜悯与鼓励。简而言之，我们一边希望免除洁身自好的麻烦，一边希望自己不会因此而内疚。长此以往，我们既不能放浪形骸之外，也不能静以修身，俭以养德；我们既非恶贯满盈之徒，也非乐善好施之士。</li>
-<li>当所有的人都在说你的好话时，倒霉的事情就会发生！</li>
-<li>实际上，嫉妒之情完全是丰富的想象在作祟，也是自我贬低的结果。</li>
-</ul>
-]]></content>
-      <categories>
-        <category>日常</category>
-      </categories>
-      <tags>
-        <tag>书摘</tag>
-        <tag>局外人</tag>
-        <tag>堕落</tag>
       </tags>
   </entry>
   <entry>
@@ -304,20 +275,32 @@
       </tags>
   </entry>
   <entry>
-    <title>【每日语法】~さえ~ば</title>
-    <url>/2023/05/mnnhgbp5.html</url>
-    <content><![CDATA[<p>接续：</p>
-<blockquote>
-<p>N + さえ + 假定形<br>A（く形）&#x2F; NA（て形）+ さえあれば<br>V（ます形）&#x2F; サ变动词词干 + さえすれば</p>
-</blockquote>
-<p>意为「只要···就···」。关于假定形的变形方法，请参考<a href="/2023/04/mnnhgbp1.html">『【每日语法】~ば~ほど』</a>的文末表格。</p>
-<p>例句：やすくさえあれば、買いましょう。<br>译：只要便宜的话就买吧！</p>
+    <title>【书摘】加缪笔下的晦涩文字</title>
+    <url>/2024/01/excerpt1.html</url>
+    <content><![CDATA[<p>两天左右看完加缪的『局外人』和『堕落』了，说实话，对我来说，文字过于晦涩了。看完『局外人』还能大致明白讲了个什么故事，看『堕落』时就仿佛在看我的期末复习资料一样，很难坚持看下去，可能是因为我很少看独白类型的小说吧，不过最终还是看完了。<span id="more"></span>说起看他的书的缘由，是因为之前玩酷安时关注过一位名为汪畅的自由译者，他翻译了这本『局外人』，由此产生了兴趣。书是囫囵吞枣看完的，说得好听一点就是不求甚解，因为没有了解过「存在主义」，到网络上搜索才大概得知『局外人』所要表达的大致意思，这是一段来自小红书用户<a href="https://www.xiaohongshu.com/user/profile/5969aadb82ec3963573feee9?xhsshare=CopyLink&appuid=64b671510000000014034c75&apptime=1706022345">蓝桔子</a>的评论「人生会因为死亡迟早到来而失去所有意义。默尔索漠视那些社会赋予的道德准则和价值等级，所以他不想在母亲葬礼时哭不出来也要装哭，也不想假装信仰上帝。他经常做出一些不符合大众常理的事情，但他并非完全冷漠，只是人生而不同，用一套准则要求所有人本质上也是一种冷漠，我在我姥姥去世时也哭不出来，亲人的离去更像一场漫长的潮湿，在余生都让我隐隐作痛，但不会在那一瞬间让我痛哭，他不冷漠，他比任何人都通透，比任何人都痛苦，比任何人都更爱这个世界」。看完以上评论才顿时开悟。</p>
+<p>以下是从两书中摘出的一些句子</p>
+<ul>
+<li>妈妈距离死亡如此之近，但她一定也因此得到了一种重获新生的解脱。我想，这个世界上没有任何人有权为她哭泣。现在，我做好了相同的准备，我也要像妈妈一样，重新活一遍。——『局外人』</li>
+</ul>
+<p>『堕落』</p>
+<ul>
+<li>当身体难过时，心也会逐渐枯萎。</li>
+<li>没有人在享乐时是伪君子。</li>
+<li>毫无疑问，他们认为我有着圆满的生活，整天都在寻欢作乐中度过。这在他们眼里是不可原谅的。这也不难理解，毕竟当一头驴看到一位头顶桂冠的人，也会发出愤愤不平的哼叫。</li>
+<li>如果一个人想要他人谅解自己的幸福与成功，就必须慷慨地和他人分享；但如果一个人想要快乐，就不应该过分照顾他人的感受。要知道，一旦在乎他人，就走上了一条没有尽头的死路。</li>
+<li>为了不被他人批判，人们总会抢先批评他人。</li>
+<li>我们很少向比自己优秀的人吐露心声；不仅如此，我们还会尽力避免与他们为伍。与之相反的是，在大多数时候，我们会容易与彼此相似或者同病相怜的人成为心腹之交。也就是说，我们既不愿意自我纠正，也不愿意自我完善。我们必须被人批判，才能发现自身的不足，但在人生的道路上，我们最需要的就是他人的怜悯与鼓励。简而言之，我们一边希望免除洁身自好的麻烦，一边希望自己不会因此而内疚。长此以往，我们既不能放浪形骸之外，也不能静以修身，俭以养德；我们既非恶贯满盈之徒，也非乐善好施之士。</li>
+<li>当所有的人都在说你的好话时，倒霉的事情就会发生！</li>
+<li>实际上，嫉妒之情完全是丰富的想象在作祟，也是自我贬低的结果。</li>
+</ul>
 ]]></content>
       <categories>
-        <category>日语</category>
+        <category>日常</category>
       </categories>
       <tags>
-        <tag>日语</tag>
+        <tag>书摘</tag>
+        <tag>局外人</tag>
+        <tag>堕落</tag>
       </tags>
   </entry>
   <entry>
@@ -353,6 +336,23 @@
 <td align="center">加「ならば」或者「であれば」</td>
 </tr>
 </tbody></table>
+]]></content>
+      <categories>
+        <category>日语</category>
+      </categories>
+      <tags>
+        <tag>日语</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>【每日语法】~さえ~ば</title>
+    <url>/2023/05/mnnhgbp5.html</url>
+    <content><![CDATA[<p>接续：</p>
+<blockquote>
+<p>N + さえ + 假定形<br>A（く形）&#x2F; NA（て形）+ さえあれば<br>V（ます形）&#x2F; サ变动词词干 + さえすれば</p>
+</blockquote>
+<p>意为「只要···就···」。关于假定形的变形方法，请参考<a href="/2023/04/mnnhgbp1.html">『【每日语法】~ば~ほど』</a>的文末表格。</p>
+<p>例句：やすくさえあれば、買いましょう。<br>译：只要便宜的话就买吧！</p>
 ]]></content>
       <categories>
         <category>日语</category>
@@ -409,6 +409,34 @@
       </tags>
   </entry>
   <entry>
+    <title>【笔记·古典日语】五十音和发音</title>
+    <url>/2024/04/kobun1.html</url>
+    <content><![CDATA[<p>五十音图与现代日语区别如下：</p>
+<p><img data-src="https://img.fufu.ink/OmfFKP.webp"></p>
+<p>ワ行的发音为「wa，i，u，e，o」</p>
+<p><strong>需要注意 ゐ 与 ゑ 的写法</strong></p>
+<p>然后是过去与现在的读法的不同，有五个种类</p>
+<p>第一种，は行的音读作ワ行的发音（当该音位于词头时就そのまま读出来，不需要变音），注意只是读音对应，并非写法对应</p>
+<p><img data-src="https://img.fufu.ink/WC3e6D.webp"></p>
+<p>第二种，元音重叠的读法</p>
+<p><img data-src="https://img.fufu.ink/1Q0YU9.webp"></p>
+<p>第三种，「てふ」与「けふ」的发音，由前两种方法可以推导出发音来</p>
+<p><img data-src="https://img.fufu.ink/Ctqkfh.webp"></p>
+<p>第四种，ゐ，ゑ，を的发音</p>
+<p><img data-src="https://img.fufu.ink/v6Fwjk.webp"></p>
+<p>第五种，「む」发成「ん」的音</p>
+<p><img data-src="https://img.fufu.ink/P4VCRG.webp"></p>
+]]></content>
+      <categories>
+        <category>日语</category>
+      </categories>
+      <tags>
+        <tag>日语</tag>
+        <tag>古典日语</tag>
+        <tag>语法</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>【每日语法】てある及相似语法的对比</title>
     <url>/2023/05/mnnhgbp4.html</url>
     <content><![CDATA[<h2 id="意思一"><a href="#意思一" class="headerlink" title="意思一"></a>意思一</h2><blockquote>
@@ -462,92 +490,6 @@
       </categories>
       <tags>
         <tag>日语</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>【每日语法】「既然~就~」的表达方法</title>
-    <url>/2023/04/mnnhgbp3.html</url>
-    <content><![CDATA[<blockquote>
-<p>注：本文部分解释来源于网站 <a href="https://chiyo-sampo.net/grammar-jlptn2-karaniha-ijouha-ueha/">https://chiyo-sampo.net/grammar-jlptn2-karaniha-ijouha-ueha/</a></p>
-</blockquote>
-<p>「からには」「以上は」「上は」都可以译为「既然…就…」，当然他们有部分的不同，根据上面网站的解释：</p>
-<ul>
-<li>「からには」是「からは」的更加强调、强硬的表达方式</li>
-<li>「以上は」也可以写作「以上」，读作「いじょう」</li>
-<li>「上は」有一种「除此之外，别无他法」的意味，在表示严峻的状况的时候使用</li>
-<li>这三个词后面都常常接「つもりだ（打算）」「べきだ（一种责任和义务，应该…）」「なければならない（客观上的必须做某事）」「てはいけない（禁止、不许）」「はずだ（推测，按说应该…）」「に違いない（充满自信的推测，肯定…）」等表达方式。</li>
-</ul>
-<p>接续方式：</p>
-<table>
-<thead>
-<tr>
-<th align="center">接续助词</th>
-<th align="center">名词</th>
-<th align="center">形容词</th>
-<th align="center">形容动词</th>
-<th align="center">动词</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center">からには</td>
-<td align="center">N + である</td>
-<td align="center">A简体</td>
-<td align="center">NA（词干）+ である</td>
-<td align="center">V简体</td>
-</tr>
-<tr>
-<td align="center">上は</td>
-<td align="center">N + の</td>
-<td align="center">\</td>
-<td align="center">\</td>
-<td align="center">V（た形）</td>
-</tr>
-<tr>
-<td align="center">以上（は）</td>
-<td align="center">N + である</td>
-<td align="center">\</td>
-<td align="center">NA（词干）+ である</td>
-<td align="center">V简体</td>
-</tr>
-</tbody></table>
-<p>例句：</p>
-<p>(1). 約束したからには、ちゃんと守るべきだ。<br>译：既然约好了，就应该好好遵守约定。</p>
-<p>(2). 秘密を知られた上は、生かしてはおけない。<br>译：既然被你知道了这个秘密，就不能让你活下去了。</p>
-<p>(3). 会社を辞めると決めた以上、早く上司にその旨を伝えなければならない。<br>译：既然决定好向公司辞职了，就必须早点告诉上司这件事。</p>
-]]></content>
-      <categories>
-        <category>日语</category>
-      </categories>
-      <tags>
-        <tag>日语</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>【笔记·古典日语】五十音和发音</title>
-    <url>/2024/04/kobun1.html</url>
-    <content><![CDATA[<p>五十音图与现代日语区别如下：</p>
-<p><img data-src="https://img.fufu.ink/OmfFKP.webp"></p>
-<p>ワ行的发音为「wa，i，u，e，o」</p>
-<p><strong>需要注意 ゐ 与 ゑ 的写法</strong></p>
-<p>然后是过去与现在的读法的不同，有五个种类</p>
-<p>第一种，は行的音读作ワ行的发音（当该音位于词头时就そのまま读出来，不需要变音），注意只是读音对应，并非写法对应</p>
-<p><img data-src="https://img.fufu.ink/WC3e6D.webp"></p>
-<p>第二种，元音重叠的读法</p>
-<p><img data-src="https://img.fufu.ink/1Q0YU9.webp"></p>
-<p>第三种，「てふ」与「けふ」的发音，由前两种方法可以推导出发音来</p>
-<p><img data-src="https://img.fufu.ink/Ctqkfh.webp"></p>
-<p>第四种，ゐ，ゑ，を的发音</p>
-<p><img data-src="https://img.fufu.ink/v6Fwjk.webp"></p>
-<p>第五种，「む」发成「ん」的音</p>
-<p><img data-src="https://img.fufu.ink/P4VCRG.webp"></p>
-]]></content>
-      <categories>
-        <category>日语</category>
-      </categories>
-      <tags>
-        <tag>日语</tag>
-        <tag>古典日语</tag>
-        <tag>语法</tag>
       </tags>
   </entry>
   <entry>
@@ -649,6 +591,64 @@
       </tags>
   </entry>
   <entry>
+    <title>【每日语法】「既然~就~」的表达方法</title>
+    <url>/2023/04/mnnhgbp3.html</url>
+    <content><![CDATA[<blockquote>
+<p>注：本文部分解释来源于网站 <a href="https://chiyo-sampo.net/grammar-jlptn2-karaniha-ijouha-ueha/">https://chiyo-sampo.net/grammar-jlptn2-karaniha-ijouha-ueha/</a></p>
+</blockquote>
+<p>「からには」「以上は」「上は」都可以译为「既然…就…」，当然他们有部分的不同，根据上面网站的解释：</p>
+<ul>
+<li>「からには」是「からは」的更加强调、强硬的表达方式</li>
+<li>「以上は」也可以写作「以上」，读作「いじょう」</li>
+<li>「上は」有一种「除此之外，别无他法」的意味，在表示严峻的状况的时候使用</li>
+<li>这三个词后面都常常接「つもりだ（打算）」「べきだ（一种责任和义务，应该…）」「なければならない（客观上的必须做某事）」「てはいけない（禁止、不许）」「はずだ（推测，按说应该…）」「に違いない（充满自信的推测，肯定…）」等表达方式。</li>
+</ul>
+<p>接续方式：</p>
+<table>
+<thead>
+<tr>
+<th align="center">接续助词</th>
+<th align="center">名词</th>
+<th align="center">形容词</th>
+<th align="center">形容动词</th>
+<th align="center">动词</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">からには</td>
+<td align="center">N + である</td>
+<td align="center">A简体</td>
+<td align="center">NA（词干）+ である</td>
+<td align="center">V简体</td>
+</tr>
+<tr>
+<td align="center">上は</td>
+<td align="center">N + の</td>
+<td align="center">\</td>
+<td align="center">\</td>
+<td align="center">V（た形）</td>
+</tr>
+<tr>
+<td align="center">以上（は）</td>
+<td align="center">N + である</td>
+<td align="center">\</td>
+<td align="center">NA（词干）+ である</td>
+<td align="center">V简体</td>
+</tr>
+</tbody></table>
+<p>例句：</p>
+<p>(1). 約束したからには、ちゃんと守るべきだ。<br>译：既然约好了，就应该好好遵守约定。</p>
+<p>(2). 秘密を知られた上は、生かしてはおけない。<br>译：既然被你知道了这个秘密，就不能让你活下去了。</p>
+<p>(3). 会社を辞めると決めた以上、早く上司にその旨を伝えなければならない。<br>译：既然决定好向公司辞职了，就必须早点告诉上司这件事。</p>
+]]></content>
+      <categories>
+        <category>日语</category>
+      </categories>
+      <tags>
+        <tag>日语</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>【笔记·古典日语】助动词「る·らる」</title>
     <url>/2024/04/kobun10.html</url>
     <content><![CDATA[<p>活用及接续</p>
@@ -712,27 +712,6 @@
       </tags>
   </entry>
   <entry>
-    <title>【笔记·古典日语】形容词</title>
-    <url>/2024/04/kobun5.html</url>
-    <content><![CDATA[<p>形容词分为两类，通过「なる」的接续判断</p>
-<p><img data-src="https://img.fufu.ink/S6lKGs.webp"></p>
-<p><img data-src="https://img.fufu.ink/rrXv0C.webp"></p>
-<p>两者除了终止形变形方式不同，其余变形方式一致。补助活用的活用词尾的活用方式与ラ变动词「あり」的活用方式一致，因此属于<strong>ラ变形</strong></p>
-<p><img data-src="https://img.fufu.ink/U2aUwf.webp"></p>
-<p>补助活用一般后续助动词，本活用一般后续助词或其他</p>
-<p>特例：</p>
-<p><img data-src="https://img.fufu.ink/skZm8P.webp"></p>
-]]></content>
-      <categories>
-        <category>日语</category>
-      </categories>
-      <tags>
-        <tag>日语</tag>
-        <tag>古典日语</tag>
-        <tag>语法</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>【笔记·古典日语】活用形及接续</title>
     <url>/2024/04/kobun3.html</url>
     <content><![CDATA[<p>6 种活用形</p>
@@ -746,6 +725,27 @@
 <p>ラ变<strong>动词</strong>：在ラ行上进行活用的，即活用词尾为（ら·り·り·る·れ·れ）形式的动词。ラ变动词只有<strong>「あり」「をり」「はべり」「いまそかり」</strong>四个。</p>
 <p>ラ变<strong>型</strong>：像ラ变动词一样进行活用，即活用词尾也为（ら·り·り·る·れ·れ）形式的<strong>活用语</strong>，如下图</p>
 <p><img data-src="https://img.fufu.ink/EXKIlJ.webp"></p>
+]]></content>
+      <categories>
+        <category>日语</category>
+      </categories>
+      <tags>
+        <tag>日语</tag>
+        <tag>古典日语</tag>
+        <tag>语法</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>【笔记·古典日语】形容词</title>
+    <url>/2024/04/kobun5.html</url>
+    <content><![CDATA[<p>形容词分为两类，通过「なる」的接续判断</p>
+<p><img data-src="https://img.fufu.ink/S6lKGs.webp"></p>
+<p><img data-src="https://img.fufu.ink/rrXv0C.webp"></p>
+<p>两者除了终止形变形方式不同，其余变形方式一致。补助活用的活用词尾的活用方式与ラ变动词「あり」的活用方式一致，因此属于<strong>ラ变形</strong></p>
+<p><img data-src="https://img.fufu.ink/U2aUwf.webp"></p>
+<p>补助活用一般后续助动词，本活用一般后续助词或其他</p>
+<p>特例：</p>
+<p><img data-src="https://img.fufu.ink/skZm8P.webp"></p>
 ]]></content>
       <categories>
         <category>日语</category>
@@ -847,6 +847,48 @@
         <tag>日语</tag>
         <tag>古典日语</tag>
         <tag>语法</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>不断变强的万达</title>
+    <url>/2023/08/genshinwandatsuyoi.html</url>
+    <content><![CDATA[<p>去年垫池子抽到了达达鸭，今年 1 月份开始练万达国际，入坑一年以来首次打通了深渊（<a href="/2023/01/genshinshenyuanfirst.html">见『纪念第一次打通深渊』</a>），当时的面板没有截图。</p>
+<p>之后一直在水本坐牢，妄图给达达鸭刷一套好的 2 件套，其中最想要的当属水套的水伤杯，可惜一直没出货（刷出来的狗粮用来合水套也没出）。</p>
+<p>这是 5 月 12 日的面板，当时应该是常驻出了风鹰剑，换掉了原来的暗巷闪光。</p>
+<p><img data-src="https://img.fufu.ink/MOUy69.webp" alt="5月12日"></p>
+<p>后来<a href="/2023/05/genshinxgderu.html">出了宵宫</a>，就把鸭子的武器给她，鸭子自己用天空弓。</p>
+<p>武器主词条从爆伤换成了暴击，圣遗物暴击词条的压力也就减轻了许多。虽然白值变低了一点，队伍 dps 降了一点，不过问题不大。</p>
+<p><img data-src="https://img.fufu.ink/NRj97x.webp" alt="6月2日"></p>
+<p>几天后想办法把万叶的精通堆到了 1000+，dps 又提高了 4w。</p>
+<p><img data-src="https://img.fufu.ink/wpXCNv.webp" alt="6月13日"></p>
+<p>因为一直不出货，还想提伤害的我把目光转移到了香菱的大招上，毕竟<del>万达的伤害都是香菱打的</del>。将其大招升到 13 级后，dps 高了 2w。</p>
+<p><img data-src="https://img.fufu.ink/3zvva3.webp" alt="6月16日"></p>
+<p>这也是我的万达的 dps 第一次达到 ACE。</p>
+<p>接下来想要再提升就只能指望香菱和达达鸭的圣遗物以及班爷的 6 命了。</p>
+<p>在压了达达鸭的暴击后，配出了以下面板。</p>
+<p><img data-src="https://img.fufu.ink/RMVORk.webp" alt="7月19日"></p>
+<p>可能有人奇怪为什么双爆降低了，伤害却变高了。原因是我把鸭子的精通拉到了 320+，这精通正好弥补了双爆的不足。</p>
+<p>然后今天水米游社的时候突发奇想，搜了一下「达达利亚是否必须带 2 水套」，结果发现只要有水伤杯，即使不带二水套也可以。</p>
+<p>这段时间一直没有较大提升就是因为局限于需要保证 2 水套的情况下更换圣遗物，现在得知那 15% 的水伤其实不太重要，只要不带明显与水属性不合的套装效果的圣遗物就行。于是换成了所有圣遗物里双爆较好的，最后得出的面板如下。</p>
+<p><img data-src="https://img.fufu.ink/h6vQha.webp" alt="8月26日"></p>
+<p>暴击也压得刚刚好，精通也有 250 左右，伤害也明显地提高了。</p>
+<p>乘兴打了个散兵本，打出了 53w 的核爆。</p>
+<p><img data-src="https://img.fufu.ink/ZUZ9V9.webp" alt="核爆53w"></p>
+<p>再过几天活动就送一只班尼特，有了 6 命的火伤加成，估计还能再提几万 dps。</p>
+<p>不断变强的达达鸭，不断变强的万达国际！</p>
+<p><img data-src="https://img.fufu.ink/ad1AMs.webp" alt="万达国际"></p>
+<hr>
+<p>今天活动更新了，班爷终于 6 命了，测出来最新的 dps 如下。</p>
+<p><img data-src="https://img.fufu.ink/gq7SDw.webp" alt="8月28日"></p>
+<p>接下来的时间里应该很难再有大的提升了，如果想要再提，就要去抽 2 命万叶了。</p>
+<p>不过现在的目标是攒满命草神，就先不考虑继续提升万达的 dps 了，反正现在的也足够乱杀深渊了。</p>
+]]></content>
+      <categories>
+        <category>游戏</category>
+      </categories>
+      <tags>
+        <tag>原神</tag>
+        <tag>游戏</tag>
       </tags>
   </entry>
   <entry>
@@ -1009,48 +1051,6 @@
       </tags>
   </entry>
   <entry>
-    <title>不断变强的万达</title>
-    <url>/2023/08/genshinwandatsuyoi.html</url>
-    <content><![CDATA[<p>去年垫池子抽到了达达鸭，今年 1 月份开始练万达国际，入坑一年以来首次打通了深渊（<a href="/2023/01/genshinshenyuanfirst.html">见『纪念第一次打通深渊』</a>），当时的面板没有截图。</p>
-<p>之后一直在水本坐牢，妄图给达达鸭刷一套好的 2 件套，其中最想要的当属水套的水伤杯，可惜一直没出货（刷出来的狗粮用来合水套也没出）。</p>
-<p>这是 5 月 12 日的面板，当时应该是常驻出了风鹰剑，换掉了原来的暗巷闪光。</p>
-<p><img data-src="https://img.fufu.ink/MOUy69.webp" alt="5月12日"></p>
-<p>后来<a href="/2023/05/genshinxgderu.html">出了宵宫</a>，就把鸭子的武器给她，鸭子自己用天空弓。</p>
-<p>武器主词条从爆伤换成了暴击，圣遗物暴击词条的压力也就减轻了许多。虽然白值变低了一点，队伍 dps 降了一点，不过问题不大。</p>
-<p><img data-src="https://img.fufu.ink/NRj97x.webp" alt="6月2日"></p>
-<p>几天后想办法把万叶的精通堆到了 1000+，dps 又提高了 4w。</p>
-<p><img data-src="https://img.fufu.ink/wpXCNv.webp" alt="6月13日"></p>
-<p>因为一直不出货，还想提伤害的我把目光转移到了香菱的大招上，毕竟<del>万达的伤害都是香菱打的</del>。将其大招升到 13 级后，dps 高了 2w。</p>
-<p><img data-src="https://img.fufu.ink/3zvva3.webp" alt="6月16日"></p>
-<p>这也是我的万达的 dps 第一次达到 ACE。</p>
-<p>接下来想要再提升就只能指望香菱和达达鸭的圣遗物以及班爷的 6 命了。</p>
-<p>在压了达达鸭的暴击后，配出了以下面板。</p>
-<p><img data-src="https://img.fufu.ink/RMVORk.webp" alt="7月19日"></p>
-<p>可能有人奇怪为什么双爆降低了，伤害却变高了。原因是我把鸭子的精通拉到了 320+，这精通正好弥补了双爆的不足。</p>
-<p>然后今天水米游社的时候突发奇想，搜了一下「达达利亚是否必须带 2 水套」，结果发现只要有水伤杯，即使不带二水套也可以。</p>
-<p>这段时间一直没有较大提升就是因为局限于需要保证 2 水套的情况下更换圣遗物，现在得知那 15% 的水伤其实不太重要，只要不带明显与水属性不合的套装效果的圣遗物就行。于是换成了所有圣遗物里双爆较好的，最后得出的面板如下。</p>
-<p><img data-src="https://img.fufu.ink/h6vQha.webp" alt="8月26日"></p>
-<p>暴击也压得刚刚好，精通也有 250 左右，伤害也明显地提高了。</p>
-<p>乘兴打了个散兵本，打出了 53w 的核爆。</p>
-<p><img data-src="https://img.fufu.ink/ZUZ9V9.webp" alt="核爆53w"></p>
-<p>再过几天活动就送一只班尼特，有了 6 命的火伤加成，估计还能再提几万 dps。</p>
-<p>不断变强的达达鸭，不断变强的万达国际！</p>
-<p><img data-src="https://img.fufu.ink/ad1AMs.webp" alt="万达国际"></p>
-<hr>
-<p>今天活动更新了，班爷终于 6 命了，测出来最新的 dps 如下。</p>
-<p><img data-src="https://img.fufu.ink/gq7SDw.webp" alt="8月28日"></p>
-<p>接下来的时间里应该很难再有大的提升了，如果想要再提，就要去抽 2 命万叶了。</p>
-<p>不过现在的目标是攒满命草神，就先不考虑继续提升万达的 dps 了，反正现在的也足够乱杀深渊了。</p>
-]]></content>
-      <categories>
-        <category>游戏</category>
-      </categories>
-      <tags>
-        <tag>原神</tag>
-        <tag>游戏</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>什么！买基岩版 Minecraft 送 Java 版？白嫖党的胜利！</title>
     <url>/2022/06/mcokuru.html</url>
     <content><![CDATA[<p>原文链接：<a href="https://help.minecraft.net/hc/en-us/articles/4607523809933-Buy-Minecraft-PC-Bundle-Get-Both-Games-">https://help.minecraft.net/hc/en-us/articles/4607523809933-Buy-Minecraft-PC-Bundle-Get-Both-Games-</a></p>
@@ -1064,22 +1064,6 @@
       <tags>
         <tag>Minecraft</tag>
         <tag>资讯</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>出宵宫啦！</title>
-    <url>/2023/05/genshinxgderu.html</url>
-    <content><![CDATA[<p>虽说抽完 2 命纳西妲后已经没有抽其他角色的欲望了，但池子还是要垫的，出什么都无所谓了。</p>
-<p>因为这 14 天搞<a href="/2023/05/improvefdlinks.html">「博客的友链的更优雅的书写方式」</a>去了，就没怎么上线，还白白浪费了 14 天的月卡，趁着今天第 15 天上线领了回归奖励以及版本更新补偿，让朋友抽了 2 抽，没歪！<span id="more"></span></p>
-<p><img data-src="https://img.fufu.ink/blTnOx.webp" alt="手机截图，画质有点差"></p>
-<p>接下来就是继续垫池子了~</p>
-]]></content>
-      <categories>
-        <category>游戏</category>
-      </categories>
-      <tags>
-        <tag>原神</tag>
-        <tag>游戏</tag>
       </tags>
   </entry>
   <entry>
@@ -1131,6 +1115,22 @@
       <tags>
         <tag>随笔</tag>
         <tag>吐槽</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>出宵宫啦！</title>
+    <url>/2023/05/genshinxgderu.html</url>
+    <content><![CDATA[<p>虽说抽完 2 命纳西妲后已经没有抽其他角色的欲望了，但池子还是要垫的，出什么都无所谓了。</p>
+<p>因为这 14 天搞<a href="/2023/05/improvefdlinks.html">「博客的友链的更优雅的书写方式」</a>去了，就没怎么上线，还白白浪费了 14 天的月卡，趁着今天第 15 天上线领了回归奖励以及版本更新补偿，让朋友抽了 2 抽，没歪！<span id="more"></span></p>
+<p><img data-src="https://img.fufu.ink/blTnOx.webp" alt="手机截图，画质有点差"></p>
+<p>接下来就是继续垫池子了~</p>
+]]></content>
+      <categories>
+        <category>游戏</category>
+      </categories>
+      <tags>
+        <tag>原神</tag>
+        <tag>游戏</tag>
       </tags>
   </entry>
   <entry>
@@ -1190,8 +1190,8 @@
         <category>技术</category>
       </categories>
       <tags>
-        <tag>技术</tag>
         <tag>Hexo</tag>
+        <tag>技术</tag>
       </tags>
   </entry>
   <entry>
@@ -1269,47 +1269,6 @@
       <tags>
         <tag>原神</tag>
         <tag>游戏</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>改进 Next 主题友链书写方式</title>
-    <url>/2023/05/improvefdlinks.html</url>
-    <content><![CDATA[<blockquote>
-<p>声明：友链的设计源于主题 handsome，主题链接：<a href="https://www.ihewro.com/archives/489/">https://www.ihewro.com/archives/489/</a> 本文仅模仿了其风格，若造成侵权，请联系我删除。</p>
-</blockquote>
-<p>首先在 <code>next主题文件夹/layout/</code> 下新建 <code>links.njk</code>，写入以下内容：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">    &#123;##################&#125;</span><br><span class="line">    &#123;### LINKS BLOCK ###&#125;</span><br><span class="line">    &#123;##################&#125;</span><br><span class="line"></span><br><span class="line">&lt;style&gt;</span><br><span class="line">    @media (min-width: 768px) &#123;</span><br><span class="line">        .link-card &#123;</span><br><span class="line">            width: 50%;</span><br><span class="line">            float: left;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    .link-card&#123;</span><br><span class="line">        position: relative;</span><br><span class="line">        min-height: 1px;</span><br><span class="line">        padding-right: 15px;</span><br><span class="line">        padding-left: 15px;</span><br><span class="line">        box-sizing: border-box;</span><br><span class="line">    &#125;</span><br><span class="line">    .link-user-list&#123;</span><br><span class="line">        margin-bottom: 5px;</span><br><span class="line">        border-radius: 3px;</span><br><span class="line">        padding: 15px;</span><br><span class="line">        display: block;</span><br><span class="line">        box-shadow: 0 2px 6px rgba(0,0,0,.1);</span><br><span class="line">        position: relative;</span><br><span class="line">    &#125;</span><br><span class="line">    .link-user-list:hover&#123;</span><br><span class="line">        background-color: #f6f8f8;</span><br><span class="line">        text-decoration: none;</span><br><span class="line">    &#125;</span><br><span class="line">    #link-container a&#123;</span><br><span class="line">        border: none;</span><br><span class="line">    &#125;</span><br><span class="line">    .user-avatar img&#123;</span><br><span class="line">        border: 2px solid #fff;</span><br><span class="line">        height: auto;</span><br><span class="line">        vertical-align: middle;</span><br><span class="line">        width: 100%;</span><br><span class="line">        border-radius: 20%;</span><br><span class="line">        max-width: 100%!important;</span><br><span class="line">        margin: 0px !important;</span><br><span class="line">    &#125;</span><br><span class="line">    .clearfix:after&#123;</span><br><span class="line">        content: &#x27; &#x27;; </span><br><span class="line">        display: block; </span><br><span class="line">        height: 0; </span><br><span class="line">        clear: both; </span><br><span class="line">        visibility: hidden;</span><br><span class="line">    &#125;</span><br><span class="line">    .text-ellipsis&#123;</span><br><span class="line">        display: block;</span><br><span class="line">        text-overflow: ellipsis;</span><br><span class="line">        overflow: hidden;</span><br><span class="line">        white-space: nowrap;</span><br><span class="line">        font-size: 13px;</span><br><span class="line">    &#125;</span><br><span class="line">    .user-message&#123;</span><br><span class="line">        display: block;</span><br><span class="line">        overflow: hidden;</span><br><span class="line">    &#125;</span><br><span class="line">    .user-description&#123;</span><br><span class="line">        color: #a0a0a0;</span><br><span class="line">    &#125;</span><br><span class="line">    .user-avatar&#123;</span><br><span class="line">        display: inline-block;</span><br><span class="line">        width: 52px;</span><br><span class="line">        height: auto;</span><br><span class="line">        float: left !important;</span><br><span class="line">        margin-right: 15px;</span><br><span class="line">        position: relative;</span><br><span class="line">        white-space: nowrap;</span><br><span class="line">    &#125;</span><br><span class="line">&lt;/style&gt;</span><br><span class="line">&lt;div id=&quot;link-container&quot;&gt;</span><br><span class="line">    &#123;% for link_config in site.data.links %&#125;</span><br><span class="line">    &#123;% if link_config.class_name %&#125;</span><br><span class="line">    &lt;h2 id=&quot;&#123;&#123; link_config.class_name &#125;&#125;&quot;&gt;</span><br><span class="line">        &lt;a href=&quot;#&#123;&#123; link_config.class_name &#125;&#125;&quot; class=&quot;headerlink&quot; title=&quot;&#123;&#123; link_config.class_name &#125;&#125;&quot; data-pjax-state&gt;&lt;/a&gt;</span><br><span class="line">        &#123;&#123; link_config.class_name &#125;&#125;</span><br><span class="line">    &lt;/h2&gt;</span><br><span class="line">    &#123;% else %&#125;</span><br><span class="line">    &lt;hr&gt;</span><br><span class="line">    &#123;% endif %&#125;</span><br><span class="line">    &lt;div class=&quot;clearfix&quot;&gt;</span><br><span class="line">    &#123;% for link in link_config.link_list %&#125;</span><br><span class="line">    &lt;div class=&quot;link-card&quot;&gt;</span><br><span class="line">        &lt;a href=&quot;&#123;&#123; link.site &#125;&#125;&quot; target=&quot;_blank&quot; class=&quot;link-user-list&quot;&gt;</span><br><span class="line">            &lt;span class=&quot;user-avatar&quot;&gt;</span><br><span class="line">                &lt;img src=&quot;&#123;&#123; link.avatar &#125;&#125;&quot; class=&quot;nofancybox&quot;&gt;</span><br><span class="line">            &lt;/span&gt;</span><br><span class="line">            &lt;span class=&quot;user-message&quot;&gt;</span><br><span class="line">                &lt;span class=&quot;text-ellipsis&quot;&gt;&#123;&#123; link.nickname &#125;&#125;&lt;/span&gt;</span><br><span class="line">                &lt;span class=&quot;user-description text-ellipsis&quot;&gt;&#123;&#123; link.info &#125;&#125;&lt;/span&gt;</span><br><span class="line">            &lt;/span&gt;</span><br><span class="line">        &lt;/a&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">    &#123;% endfor %&#125;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">    &#123;% endfor %&#125;</span><br><span class="line"></span><br><span class="line">    &lt;div&gt;</span><br><span class="line">    &#123;&#123; page.content &#125;&#125;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line">    &#123;######################&#125;</span><br><span class="line">    &#123;### END LINKS BLOCK ###&#125;</span><br><span class="line">    &#123;######################&#125;</span><br></pre></td></tr></table></figure>
-
-<p>接下来打开 <code>next主题文件夹/layout/page.njk</code>，在 <code>block title</code> 区域中某个 <code>elif</code> 语句后添加上</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&#123;% block title %&#125;</span><br><span class="line">  &#123;%- set page_title_suffix = &#x27; | &#x27; + title %&#125;</span><br><span class="line"></span><br><span class="line">  &#123;%- if page.type === &#x27;categories&#x27; and not page.title %&#125;</span><br><span class="line">    &#123;&#123;- __(&#x27;title.category&#x27;) + page_title_suffix &#125;&#125;</span><br><span class="line">  &#123;%- elif page.type === &#x27;tags&#x27; and not page.title %&#125;</span><br><span class="line">    &#123;&#123;- __(&#x27;title.tag&#x27;) + page_title_suffix &#125;&#125;</span><br><span class="line">  &#123;%- elif page.type === &#x27;schedule&#x27; and not page.title %&#125;</span><br><span class="line">    &#123;&#123;- __(&#x27;title.schedule&#x27;) + page_title_suffix &#125;&#125;</span><br><span class="line">+  &#123;%- elif page.type === &#x27;links&#x27; and not page.title %&#125;</span><br><span class="line">+    &#123;&#123;- __(&#x27;title.links&#x27;) + page_title_suffix &#125;&#125;</span><br><span class="line">  &#123;%- else %&#125;</span><br><span class="line">    &#123;&#123;- page.title + page_title_suffix &#125;&#125;</span><br><span class="line">  &#123;%- endif %&#125;</span><br><span class="line">&#123;% endblock %&#125;</span><br></pre></td></tr></table></figure>
-
-<p>接下来在下面的 <code>PAGE BODY</code> 中添加</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&#123;### PAGE BODY ###&#125;</span><br><span class="line">      &#123;#################&#125;</span><br><span class="line">      &lt;div class=&quot;post-body&#123;% if page.direction and page.direction.toLowerCase() === &#x27;rtl&#x27; %&#125; rtl&#123;% endif %&#125;&quot;&gt;</span><br><span class="line">        &#123;%- if page.type === &#x27;tags&#x27; %&#125;</span><br><span class="line">          &#123;%- include &#x27;_partials/page/tags.njk&#x27; -%&#125;</span><br><span class="line">        &#123;% elif page.type === &#x27;categories&#x27; %&#125;</span><br><span class="line">          &#123;%- include &#x27;_partials/page/categories.njk&#x27; -%&#125;</span><br><span class="line">        &#123;% elif page.type === &#x27;schedule&#x27; %&#125;</span><br><span class="line">          &#123;%- include &#x27;_partials/page/schedule.njk&#x27; -%&#125;</span><br><span class="line">+        &#123;% elif page.type === &#x27;links&#x27; %&#125;</span><br><span class="line">+          &#123;%- include &#x27;links.njk&#x27; -%&#125;</span><br><span class="line">        &#123;% else %&#125;</span><br><span class="line">          &#123;&#123; page.content &#125;&#125;</span><br><span class="line">        &#123;%- endif %&#125;</span><br><span class="line">      &lt;/div&gt;</span><br><span class="line">      &#123;#####################&#125;</span><br><span class="line">      &#123;### END PAGE BODY ###&#125;</span><br><span class="line">      &#123;#####################&#125;</span><br></pre></td></tr></table></figure>
-
-<p>接下来就是创建 <code>source/links/index.md</code>，配置好里面的友链申请信息了（<strong>注意 <code>front-matter</code> 的 type 的值必须为 <code>links</code>！</strong>）。</p>
-<p>然后打开 <code>_config.next.yml</code>，在 <code>menu</code> 中添加</p>
-<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="attr">menu:</span></span><br><span class="line">  <span class="attr">links:</span> <span class="string">/links/</span> <span class="string">||</span> <span class="string">fas</span> <span class="string">fa-link</span></span><br></pre></td></tr></table></figure>
-
-<p>打开 <code>hexo/themes/next/languages/zh-CN.yml</code>，在 <code>menu</code> 中添加</p>
-<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="attr">menu:</span></span><br><span class="line">  <span class="attr">links:</span> <span class="string">友链</span></span><br></pre></td></tr></table></figure>
-
-<p>最后在 <code>hexo根目录/source/_data/</code> 下创建 <code>links.yml</code> 并填入以下内容：</p>
-<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 参数说明</span></span><br><span class="line"><span class="comment"># class_name 选填，可以理解为友链组的名字，如果不填则会在顶部生成一个分割线</span></span><br><span class="line"><span class="comment"># nickname 博客名称</span></span><br><span class="line"><span class="comment"># site 博客地址</span></span><br><span class="line"><span class="comment"># info 博客简介</span></span><br><span class="line"><span class="comment"># avatar 博客logo</span></span><br><span class="line"><span class="comment"># 填写时注意缩进！</span></span><br><span class="line"></span><br><span class="line"><span class="bullet">-</span> <span class="attr">class_name:</span></span><br><span class="line">  <span class="attr">link_list:</span></span><br><span class="line">    <span class="bullet">-</span> <span class="attr">nickname:</span></span><br><span class="line">      <span class="attr">site:</span></span><br><span class="line">      <span class="attr">info:</span></span><br><span class="line">      <span class="attr">avatar:</span></span><br><span class="line">    <span class="bullet">-</span> <span class="attr">nickname:</span></span><br><span class="line">      <span class="attr">site:</span></span><br><span class="line">      <span class="attr">info:</span></span><br><span class="line">      <span class="attr">avatar:</span></span><br><span class="line"></span><br><span class="line"><span class="bullet">-</span> <span class="attr">class_name:</span></span><br><span class="line">  <span class="attr">link_list:</span></span><br><span class="line">    <span class="bullet">-</span> <span class="attr">nickname:</span></span><br><span class="line">      <span class="attr">site:</span></span><br><span class="line">      <span class="attr">info:</span></span><br><span class="line">      <span class="attr">avatar:</span></span><br><span class="line">    <span class="bullet">-</span> <span class="attr">nickname:</span></span><br><span class="line">      <span class="attr">site:</span></span><br><span class="line">      <span class="attr">info:</span></span><br><span class="line">      <span class="attr">avatar:</span></span><br></pre></td></tr></table></figure>
-
-<p>本文参考：</p>
-<ul>
-<li><a href="https://only_ann.gitee.io/next/archives/48141.html">next主题添加自定义友链</a></li>
-<li><a href="https://github.com/next-theme/hexo-theme-next/discussions/660">之前显示有问题，去问了主题作者，感谢作者的耐心回答</a></li>
-<li><a href="https://blog.csdn.net/qq_35479468/article/details/107454287">Hexo+next主题自定义友情链接页面</a></li>
-</ul>
-]]></content>
-      <categories>
-        <category>技术</category>
-      </categories>
-      <tags>
-        <tag>技术</tag>
-        <tag>Hexo</tag>
-        <tag>CSS</tag>
       </tags>
   </entry>
   <entry>
@@ -1825,6 +1784,47 @@
       </tags>
   </entry>
   <entry>
+    <title>改进 Next 主题友链书写方式</title>
+    <url>/2023/05/improvefdlinks.html</url>
+    <content><![CDATA[<blockquote>
+<p>声明：友链的设计源于主题 handsome，主题链接：<a href="https://www.ihewro.com/archives/489/">https://www.ihewro.com/archives/489/</a> 本文仅模仿了其风格，若造成侵权，请联系我删除。</p>
+</blockquote>
+<p>首先在 <code>next主题文件夹/layout/</code> 下新建 <code>links.njk</code>，写入以下内容：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">    &#123;##################&#125;</span><br><span class="line">    &#123;### LINKS BLOCK ###&#125;</span><br><span class="line">    &#123;##################&#125;</span><br><span class="line"></span><br><span class="line">&lt;style&gt;</span><br><span class="line">    @media (min-width: 768px) &#123;</span><br><span class="line">        .link-card &#123;</span><br><span class="line">            width: 50%;</span><br><span class="line">            float: left;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    .link-card&#123;</span><br><span class="line">        position: relative;</span><br><span class="line">        min-height: 1px;</span><br><span class="line">        padding-right: 15px;</span><br><span class="line">        padding-left: 15px;</span><br><span class="line">        box-sizing: border-box;</span><br><span class="line">    &#125;</span><br><span class="line">    .link-user-list&#123;</span><br><span class="line">        margin-bottom: 5px;</span><br><span class="line">        border-radius: 3px;</span><br><span class="line">        padding: 15px;</span><br><span class="line">        display: block;</span><br><span class="line">        box-shadow: 0 2px 6px rgba(0,0,0,.1);</span><br><span class="line">        position: relative;</span><br><span class="line">    &#125;</span><br><span class="line">    .link-user-list:hover&#123;</span><br><span class="line">        background-color: #f6f8f8;</span><br><span class="line">        text-decoration: none;</span><br><span class="line">    &#125;</span><br><span class="line">    #link-container a&#123;</span><br><span class="line">        border: none;</span><br><span class="line">    &#125;</span><br><span class="line">    .user-avatar img&#123;</span><br><span class="line">        border: 2px solid #fff;</span><br><span class="line">        height: auto;</span><br><span class="line">        vertical-align: middle;</span><br><span class="line">        width: 100%;</span><br><span class="line">        border-radius: 20%;</span><br><span class="line">        max-width: 100%!important;</span><br><span class="line">        margin: 0px !important;</span><br><span class="line">    &#125;</span><br><span class="line">    .clearfix:after&#123;</span><br><span class="line">        content: &#x27; &#x27;; </span><br><span class="line">        display: block; </span><br><span class="line">        height: 0; </span><br><span class="line">        clear: both; </span><br><span class="line">        visibility: hidden;</span><br><span class="line">    &#125;</span><br><span class="line">    .text-ellipsis&#123;</span><br><span class="line">        display: block;</span><br><span class="line">        text-overflow: ellipsis;</span><br><span class="line">        overflow: hidden;</span><br><span class="line">        white-space: nowrap;</span><br><span class="line">        font-size: 13px;</span><br><span class="line">    &#125;</span><br><span class="line">    .user-message&#123;</span><br><span class="line">        display: block;</span><br><span class="line">        overflow: hidden;</span><br><span class="line">    &#125;</span><br><span class="line">    .user-description&#123;</span><br><span class="line">        color: #a0a0a0;</span><br><span class="line">    &#125;</span><br><span class="line">    .user-avatar&#123;</span><br><span class="line">        display: inline-block;</span><br><span class="line">        width: 52px;</span><br><span class="line">        height: auto;</span><br><span class="line">        float: left !important;</span><br><span class="line">        margin-right: 15px;</span><br><span class="line">        position: relative;</span><br><span class="line">        white-space: nowrap;</span><br><span class="line">    &#125;</span><br><span class="line">&lt;/style&gt;</span><br><span class="line">&lt;div id=&quot;link-container&quot;&gt;</span><br><span class="line">    &#123;% for link_config in site.data.links %&#125;</span><br><span class="line">    &#123;% if link_config.class_name %&#125;</span><br><span class="line">    &lt;h2 id=&quot;&#123;&#123; link_config.class_name &#125;&#125;&quot;&gt;</span><br><span class="line">        &lt;a href=&quot;#&#123;&#123; link_config.class_name &#125;&#125;&quot; class=&quot;headerlink&quot; title=&quot;&#123;&#123; link_config.class_name &#125;&#125;&quot; data-pjax-state&gt;&lt;/a&gt;</span><br><span class="line">        &#123;&#123; link_config.class_name &#125;&#125;</span><br><span class="line">    &lt;/h2&gt;</span><br><span class="line">    &#123;% else %&#125;</span><br><span class="line">    &lt;hr&gt;</span><br><span class="line">    &#123;% endif %&#125;</span><br><span class="line">    &lt;div class=&quot;clearfix&quot;&gt;</span><br><span class="line">    &#123;% for link in link_config.link_list %&#125;</span><br><span class="line">    &lt;div class=&quot;link-card&quot;&gt;</span><br><span class="line">        &lt;a href=&quot;&#123;&#123; link.site &#125;&#125;&quot; target=&quot;_blank&quot; class=&quot;link-user-list&quot;&gt;</span><br><span class="line">            &lt;span class=&quot;user-avatar&quot;&gt;</span><br><span class="line">                &lt;img src=&quot;&#123;&#123; link.avatar &#125;&#125;&quot; class=&quot;nofancybox&quot;&gt;</span><br><span class="line">            &lt;/span&gt;</span><br><span class="line">            &lt;span class=&quot;user-message&quot;&gt;</span><br><span class="line">                &lt;span class=&quot;text-ellipsis&quot;&gt;&#123;&#123; link.nickname &#125;&#125;&lt;/span&gt;</span><br><span class="line">                &lt;span class=&quot;user-description text-ellipsis&quot;&gt;&#123;&#123; link.info &#125;&#125;&lt;/span&gt;</span><br><span class="line">            &lt;/span&gt;</span><br><span class="line">        &lt;/a&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">    &#123;% endfor %&#125;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">    &#123;% endfor %&#125;</span><br><span class="line"></span><br><span class="line">    &lt;div&gt;</span><br><span class="line">    &#123;&#123; page.content &#125;&#125;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line">    &#123;######################&#125;</span><br><span class="line">    &#123;### END LINKS BLOCK ###&#125;</span><br><span class="line">    &#123;######################&#125;</span><br></pre></td></tr></table></figure>
+
+<p>接下来打开 <code>next主题文件夹/layout/page.njk</code>，在 <code>block title</code> 区域中某个 <code>elif</code> 语句后添加上</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&#123;% block title %&#125;</span><br><span class="line">  &#123;%- set page_title_suffix = &#x27; | &#x27; + title %&#125;</span><br><span class="line"></span><br><span class="line">  &#123;%- if page.type === &#x27;categories&#x27; and not page.title %&#125;</span><br><span class="line">    &#123;&#123;- __(&#x27;title.category&#x27;) + page_title_suffix &#125;&#125;</span><br><span class="line">  &#123;%- elif page.type === &#x27;tags&#x27; and not page.title %&#125;</span><br><span class="line">    &#123;&#123;- __(&#x27;title.tag&#x27;) + page_title_suffix &#125;&#125;</span><br><span class="line">  &#123;%- elif page.type === &#x27;schedule&#x27; and not page.title %&#125;</span><br><span class="line">    &#123;&#123;- __(&#x27;title.schedule&#x27;) + page_title_suffix &#125;&#125;</span><br><span class="line">+  &#123;%- elif page.type === &#x27;links&#x27; and not page.title %&#125;</span><br><span class="line">+    &#123;&#123;- __(&#x27;title.links&#x27;) + page_title_suffix &#125;&#125;</span><br><span class="line">  &#123;%- else %&#125;</span><br><span class="line">    &#123;&#123;- page.title + page_title_suffix &#125;&#125;</span><br><span class="line">  &#123;%- endif %&#125;</span><br><span class="line">&#123;% endblock %&#125;</span><br></pre></td></tr></table></figure>
+
+<p>接下来在下面的 <code>PAGE BODY</code> 中添加</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&#123;### PAGE BODY ###&#125;</span><br><span class="line">      &#123;#################&#125;</span><br><span class="line">      &lt;div class=&quot;post-body&#123;% if page.direction and page.direction.toLowerCase() === &#x27;rtl&#x27; %&#125; rtl&#123;% endif %&#125;&quot;&gt;</span><br><span class="line">        &#123;%- if page.type === &#x27;tags&#x27; %&#125;</span><br><span class="line">          &#123;%- include &#x27;_partials/page/tags.njk&#x27; -%&#125;</span><br><span class="line">        &#123;% elif page.type === &#x27;categories&#x27; %&#125;</span><br><span class="line">          &#123;%- include &#x27;_partials/page/categories.njk&#x27; -%&#125;</span><br><span class="line">        &#123;% elif page.type === &#x27;schedule&#x27; %&#125;</span><br><span class="line">          &#123;%- include &#x27;_partials/page/schedule.njk&#x27; -%&#125;</span><br><span class="line">+        &#123;% elif page.type === &#x27;links&#x27; %&#125;</span><br><span class="line">+          &#123;%- include &#x27;links.njk&#x27; -%&#125;</span><br><span class="line">        &#123;% else %&#125;</span><br><span class="line">          &#123;&#123; page.content &#125;&#125;</span><br><span class="line">        &#123;%- endif %&#125;</span><br><span class="line">      &lt;/div&gt;</span><br><span class="line">      &#123;#####################&#125;</span><br><span class="line">      &#123;### END PAGE BODY ###&#125;</span><br><span class="line">      &#123;#####################&#125;</span><br></pre></td></tr></table></figure>
+
+<p>接下来就是创建 <code>source/links/index.md</code>，配置好里面的友链申请信息了（<strong>注意 <code>front-matter</code> 的 type 的值必须为 <code>links</code>！</strong>）。</p>
+<p>然后打开 <code>_config.next.yml</code>，在 <code>menu</code> 中添加</p>
+<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="attr">menu:</span></span><br><span class="line">  <span class="attr">links:</span> <span class="string">/links/</span> <span class="string">||</span> <span class="string">fas</span> <span class="string">fa-link</span></span><br></pre></td></tr></table></figure>
+
+<p>打开 <code>hexo/themes/next/languages/zh-CN.yml</code>，在 <code>menu</code> 中添加</p>
+<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="attr">menu:</span></span><br><span class="line">  <span class="attr">links:</span> <span class="string">友链</span></span><br></pre></td></tr></table></figure>
+
+<p>最后在 <code>hexo根目录/source/_data/</code> 下创建 <code>links.yml</code> 并填入以下内容：</p>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 参数说明</span></span><br><span class="line"><span class="comment"># class_name 选填，可以理解为友链组的名字，如果不填则会在顶部生成一个分割线</span></span><br><span class="line"><span class="comment"># nickname 博客名称</span></span><br><span class="line"><span class="comment"># site 博客地址</span></span><br><span class="line"><span class="comment"># info 博客简介</span></span><br><span class="line"><span class="comment"># avatar 博客logo</span></span><br><span class="line"><span class="comment"># 填写时注意缩进！</span></span><br><span class="line"></span><br><span class="line"><span class="bullet">-</span> <span class="attr">class_name:</span></span><br><span class="line">  <span class="attr">link_list:</span></span><br><span class="line">    <span class="bullet">-</span> <span class="attr">nickname:</span></span><br><span class="line">      <span class="attr">site:</span></span><br><span class="line">      <span class="attr">info:</span></span><br><span class="line">      <span class="attr">avatar:</span></span><br><span class="line">    <span class="bullet">-</span> <span class="attr">nickname:</span></span><br><span class="line">      <span class="attr">site:</span></span><br><span class="line">      <span class="attr">info:</span></span><br><span class="line">      <span class="attr">avatar:</span></span><br><span class="line"></span><br><span class="line"><span class="bullet">-</span> <span class="attr">class_name:</span></span><br><span class="line">  <span class="attr">link_list:</span></span><br><span class="line">    <span class="bullet">-</span> <span class="attr">nickname:</span></span><br><span class="line">      <span class="attr">site:</span></span><br><span class="line">      <span class="attr">info:</span></span><br><span class="line">      <span class="attr">avatar:</span></span><br><span class="line">    <span class="bullet">-</span> <span class="attr">nickname:</span></span><br><span class="line">      <span class="attr">site:</span></span><br><span class="line">      <span class="attr">info:</span></span><br><span class="line">      <span class="attr">avatar:</span></span><br></pre></td></tr></table></figure>
+
+<p>本文参考：</p>
+<ul>
+<li><a href="https://only_ann.gitee.io/next/archives/48141.html">next主题添加自定义友链</a></li>
+<li><a href="https://github.com/next-theme/hexo-theme-next/discussions/660">之前显示有问题，去问了主题作者，感谢作者的耐心回答</a></li>
+<li><a href="https://blog.csdn.net/qq_35479468/article/details/107454287">Hexo+next主题自定义友情链接页面</a></li>
+</ul>
+]]></content>
+      <categories>
+        <category>技术</category>
+      </categories>
+      <tags>
+        <tag>Hexo</tag>
+        <tag>技术</tag>
+        <tag>CSS</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>科目二过啦！</title>
     <url>/2023/08/kemuerpass.html</url>
     <content><![CDATA[<p>三战一把过！</p>
@@ -1848,26 +1848,6 @@
       <tags>
         <tag>生活</tag>
         <tag>驾考</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>纪念第一次打通深渊</title>
-    <url>/2023/01/genshinshenyuanfirst.html</url>
-    <content><![CDATA[<p>去年也是这个时候入的坑，当时看泠鸢 yousa 在直播这个游戏，然后里面的派蒙和七七很可爱，就下载试着玩了一下，然后……就玩到了现在~</p>
-<p>作为一个剧情党和 xp 党，当然是以剧情为主要，抽卡以喜欢的角色为前提，因此也是深渊困难户。</p>
-<p><img data-src="https://img.fufu.ink/VAGfzC.webp"></p>
-<p>现在练度上来一些了，队伍也有点伤害了，本来原来抽到雷神后打算组个雷国来打，不过后面发现绝缘本出货率感人，同时早听说过万达的爆炸性伤害，正好去年 11 份垫池子 30 多发出了鸭鸭，就想着练一下。不得不说双扩的方法实在是太多了，因此光是学习双扩就让人头大，后面学会偷懒了，就把怪的状态都打到一个状态后再进行双扩流程，就不同分不同的元素附着情况了。</p>
-<p>当然，现在公子离毕业、万达离毕业还很远，不过作为一个萌新，看到 21w 一刀的伤害，还是很激动的，果然在满足 xp 后追求的就是强度(bushi。</p>
-<p><img data-src="https://img.fufu.ink/uP19xG.webp"></p>
-<p>主要是没拉岩系，第二间黄金王兽打不出来伤害，就靠我的零命草神在 c，雷神相当于挂雷工具人，另外两个一个奶，一个用来破盾，因此全队只有一个打伤害，很难打过去，之前练过一段时间凝光，正好凝光也 3 命了，可以试着拉一下，后面看看能不能凹过去。</p>
-<p>现在就等草神复刻补命座了，补一个二命伤害能更高。雷神也可以拉一下。现在版本答案是种门，我也可以拉一下「纳行久」，组一个下半配队。</p>
-]]></content>
-      <categories>
-        <category>游戏</category>
-      </categories>
-      <tags>
-        <tag>原神</tag>
-        <tag>游戏</tag>
       </tags>
   </entry>
   <entry>
@@ -1942,45 +1922,16 @@
       </tags>
   </entry>
   <entry>
-    <title>老婆 16 岁生日快乐</title>
-    <url>/2023/08/miku16sai.html</url>
-    <content><![CDATA[<p>与ミクたん相遇已有 10 年啦！</p>
-<p>入坑曲是『朧月』，当时还是在优酷视频上看到的 MMD。MMD 中是雪ミク和樱ミク，当时的我一下就被这独特的声音所吸引，为她所着迷。在知道有「男神」「女神」这个概念后，我便想到</p>
-<p>“这样啊，原来她就是我的女神啊”</p>
-<p>当时的我加入了许多粉丝群，QQ 兴趣部落，贴吧等。</p>
-<p>曾为了她去回击那些踩日 Vocaloid 捧中 Vocaloid 的小鬼，也曾为了证明她的影响力在同学群中发送粉丝群人数的截图。</p>
-<p>这是那时的自己，而现在的我对那些事也不过是淡淡一笑。这不是嘲笑过去的自己干的蠢事，而是一种释然。曾经的我不停地在找寻爱她的证据，但我没找到。后来我想通了，为什么需要证据呢？如果有了证据，不就证明了我的爱是带着目的的爱吗，就如同那个问题般——「你为什么爱 xx？」。</p>
-<p>答案是，爱是不需要理由的。</p>
-<p>现在的我，早已习惯了她的陪伴，她已然成为了我生活中的一部分，我人生中的一部分。相比于原来的「女神」的地位，我现在更愿意称其为「天使」抑或「太阳」。</p>
-<p>话说回来，<del>现在的ミクたん就是32岁啦</del>。今年的生日礼物可能会迟些到，因为是 16 岁生日嘛，总得准备点大礼。没错，我准备买 Vocaloid 4x，学习如何让ミクたん唱歌！之前学吉他的时候总是没有恒心，三天打鱼两天晒网，从高一学到大二也没什么长进，结果木吉他还因为冬天学校当地天气太干燥了面板裂开了，修理费是买入价的一半左右，遂作罢，只能当个纪念品了。现在为了ミクたん，必须认真学乐理了！</p>
-<p>最后，感谢在我黑暗的世界中，ミクたん成了那唯一的光芒，感谢音乐家、艺术家和所有像我一样的粉丝，他们让ミクたん发展到了今天这一步。此后，无论有多远，我都会在我的余生中陪伴着她走下去！</p>
-<p>啊，还没结束，差点忘了最重要的</p>
-<p>お誕生日おめでとう！ミクたんがいて本当によかった！</p>
-]]></content>
-      <categories>
-        <category>日常</category>
-      </categories>
-      <tags>
-        <tag>节日</tag>
-        <tag>miku</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>草神 2 加 1 了</title>
-    <url>/2023/04/nahidaniinochi.html</url>
-    <content><![CDATA[<p>4 月 12 号，草神复刻。</p>
-<p>去年 11 月已经抽了一次了，准备攒二命，从 12 月的雷神池后就没下过池子了。准备了 250+ 的粉球。</p>
-<p>由室友抽的，歪了 3 次，不过都是提前金，也不算亏吧，甚至有点欧~</p>
-<p><img data-src="https://img.fufu.ink/aX68do.webp" alt="up池"></p>
-<p><img data-src="https://img.fufu.ink/xjn9oQ.webp" alt="武器池"></p>
-<p>第一个小保底歪了一个刻晴，不过种门也需要，也算是丰富 box 了吧。好在后面的小保底就没歪了(●’◡’●)</p>
-<p>武器池都歪了〒▽〒，不过好在 100 抽就吃满了定轨。当天把新图肝完了，又充了 198，领了 10 多天月卡，终于拿到夜壶了！</p>
-<p><img data-src="https://img.fufu.ink/ETxrxf.webp" alt="夜壶"></p>
-<p>伤害虽然比原来降了 6000，原因是因为我之前用的赌狗乐章，面板是 <ruby>50&#x2F;190&#x2F;580<rt>暴率&#x2F;爆伤&#x2F;精通</rt></ruby>，换成专武后成为了 <ruby>56&#x2F;133&#x2F;760<rt>暴率&#x2F;爆伤&#x2F;精通</rt></ruby>，不过专武补充了精通，能为队伍整体带来更好的收益（虽然我一直是把草神当主 C 来养的，经典一带三）</p>
-<p>去年的面板为「三精赌狗，也没有换上好一点的精通杯，190 爆伤的面板的是最近一个月才有的」，这是现在的面板：</p>
-<p><img data-src="https://img.fufu.ink/27qmRl.webp" alt="新面板"></p>
-<p>打深渊是够用了，虽然用来 PVP 还是差远了，毕竟别的不说，就认识的一个网友的面板是精精爆都能有 <ruby>40&#x2F;160&#x2F;800<rt>暴率&#x2F;爆伤&#x2F;精通</rt></ruby>。可惜我没有好的草套爆伤头，其余圣遗物的爆率词条也太少了，仍旧达不到这样的程度＞︿＜</p>
-<p>后面就继续草本坐牢吧，直到哪天出了好沙漏、杯子、头，就能达到毕业了⊙﹏⊙∥</p>
+    <title>纪念第一次打通深渊</title>
+    <url>/2023/01/genshinshenyuanfirst.html</url>
+    <content><![CDATA[<p>去年也是这个时候入的坑，当时看泠鸢 yousa 在直播这个游戏，然后里面的派蒙和七七很可爱，就下载试着玩了一下，然后……就玩到了现在~</p>
+<p>作为一个剧情党和 xp 党，当然是以剧情为主要，抽卡以喜欢的角色为前提，因此也是深渊困难户。</p>
+<p><img data-src="https://img.fufu.ink/VAGfzC.webp"></p>
+<p>现在练度上来一些了，队伍也有点伤害了，本来原来抽到雷神后打算组个雷国来打，不过后面发现绝缘本出货率感人，同时早听说过万达的爆炸性伤害，正好去年 11 份垫池子 30 多发出了鸭鸭，就想着练一下。不得不说双扩的方法实在是太多了，因此光是学习双扩就让人头大，后面学会偷懒了，就把怪的状态都打到一个状态后再进行双扩流程，就不同分不同的元素附着情况了。</p>
+<p>当然，现在公子离毕业、万达离毕业还很远，不过作为一个萌新，看到 21w 一刀的伤害，还是很激动的，果然在满足 xp 后追求的就是强度(bushi。</p>
+<p><img data-src="https://img.fufu.ink/uP19xG.webp"></p>
+<p>主要是没拉岩系，第二间黄金王兽打不出来伤害，就靠我的零命草神在 c，雷神相当于挂雷工具人，另外两个一个奶，一个用来破盾，因此全队只有一个打伤害，很难打过去，之前练过一段时间凝光，正好凝光也 3 命了，可以试着拉一下，后面看看能不能凹过去。</p>
+<p>现在就等草神复刻补命座了，补一个二命伤害能更高。雷神也可以拉一下。现在版本答案是种门，我也可以拉一下「纳行久」，组一个下半配队。</p>
 ]]></content>
       <categories>
         <category>游戏</category>
@@ -2119,6 +2070,55 @@
       </tags>
   </entry>
   <entry>
+    <title>老婆 16 岁生日快乐</title>
+    <url>/2023/08/miku16sai.html</url>
+    <content><![CDATA[<p>与ミクたん相遇已有 10 年啦！</p>
+<p>入坑曲是『朧月』，当时还是在优酷视频上看到的 MMD。MMD 中是雪ミク和樱ミク，当时的我一下就被这独特的声音所吸引，为她所着迷。在知道有「男神」「女神」这个概念后，我便想到</p>
+<p>“这样啊，原来她就是我的女神啊”</p>
+<p>当时的我加入了许多粉丝群，QQ 兴趣部落，贴吧等。</p>
+<p>曾为了她去回击那些踩日 Vocaloid 捧中 Vocaloid 的小鬼，也曾为了证明她的影响力在同学群中发送粉丝群人数的截图。</p>
+<p>这是那时的自己，而现在的我对那些事也不过是淡淡一笑。这不是嘲笑过去的自己干的蠢事，而是一种释然。曾经的我不停地在找寻爱她的证据，但我没找到。后来我想通了，为什么需要证据呢？如果有了证据，不就证明了我的爱是带着目的的爱吗，就如同那个问题般——「你为什么爱 xx？」。</p>
+<p>答案是，爱是不需要理由的。</p>
+<p>现在的我，早已习惯了她的陪伴，她已然成为了我生活中的一部分，我人生中的一部分。相比于原来的「女神」的地位，我现在更愿意称其为「天使」抑或「太阳」。</p>
+<p>话说回来，<del>现在的ミクたん就是32岁啦</del>。今年的生日礼物可能会迟些到，因为是 16 岁生日嘛，总得准备点大礼。没错，我准备买 Vocaloid 4x，学习如何让ミクたん唱歌！之前学吉他的时候总是没有恒心，三天打鱼两天晒网，从高一学到大二也没什么长进，结果木吉他还因为冬天学校当地天气太干燥了面板裂开了，修理费是买入价的一半左右，遂作罢，只能当个纪念品了。现在为了ミクたん，必须认真学乐理了！</p>
+<p>最后，感谢在我黑暗的世界中，ミクたん成了那唯一的光芒，感谢音乐家、艺术家和所有像我一样的粉丝，他们让ミクたん发展到了今天这一步。此后，无论有多远，我都会在我的余生中陪伴着她走下去！</p>
+<p>啊，还没结束，差点忘了最重要的</p>
+<p>お誕生日おめでとう！ミクたんがいて本当によかった！</p>
+]]></content>
+      <categories>
+        <category>日常</category>
+      </categories>
+      <tags>
+        <tag>节日</tag>
+        <tag>miku</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>草神 2 加 1 了</title>
+    <url>/2023/04/nahidaniinochi.html</url>
+    <content><![CDATA[<p>4 月 12 号，草神复刻。</p>
+<p>去年 11 月已经抽了一次了，准备攒二命，从 12 月的雷神池后就没下过池子了。准备了 250+ 的粉球。</p>
+<p>由室友抽的，歪了 3 次，不过都是提前金，也不算亏吧，甚至有点欧~</p>
+<p><img data-src="https://img.fufu.ink/aX68do.webp" alt="up池"></p>
+<p><img data-src="https://img.fufu.ink/xjn9oQ.webp" alt="武器池"></p>
+<p>第一个小保底歪了一个刻晴，不过种门也需要，也算是丰富 box 了吧。好在后面的小保底就没歪了(●’◡’●)</p>
+<p>武器池都歪了〒▽〒，不过好在 100 抽就吃满了定轨。当天把新图肝完了，又充了 198，领了 10 多天月卡，终于拿到夜壶了！</p>
+<p><img data-src="https://img.fufu.ink/ETxrxf.webp" alt="夜壶"></p>
+<p>伤害虽然比原来降了 6000，原因是因为我之前用的赌狗乐章，面板是 <ruby>50&#x2F;190&#x2F;580<rt>暴率&#x2F;爆伤&#x2F;精通</rt></ruby>，换成专武后成为了 <ruby>56&#x2F;133&#x2F;760<rt>暴率&#x2F;爆伤&#x2F;精通</rt></ruby>，不过专武补充了精通，能为队伍整体带来更好的收益（虽然我一直是把草神当主 C 来养的，经典一带三）</p>
+<p>去年的面板为「三精赌狗，也没有换上好一点的精通杯，190 爆伤的面板的是最近一个月才有的」，这是现在的面板：</p>
+<p><img data-src="https://img.fufu.ink/27qmRl.webp" alt="新面板"></p>
+<p>打深渊是够用了，虽然用来 PVP 还是差远了，毕竟别的不说，就认识的一个网友的面板是精精爆都能有 <ruby>40&#x2F;160&#x2F;800<rt>暴率&#x2F;爆伤&#x2F;精通</rt></ruby>。可惜我没有好的草套爆伤头，其余圣遗物的爆率词条也太少了，仍旧达不到这样的程度＞︿＜</p>
+<p>后面就继续草本坐牢吧，直到哪天出了好沙漏、杯子、头，就能达到毕业了⊙﹏⊙∥</p>
+]]></content>
+      <categories>
+        <category>游戏</category>
+      </categories>
+      <tags>
+        <tag>原神</tag>
+        <tag>游戏</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>记录一些常用 LINUX 指令</title>
     <url>/2022/10/linuxcommand.html</url>
     <content><![CDATA[<h2 id="iptables"><a href="#iptables" class="headerlink" title="iptables"></a>iptables</h2><blockquote>
@@ -2244,6 +2244,21 @@
       </tags>
   </entry>
   <entry>
+    <title>诈尸更新一下最近状态</title>
+    <url>/2023/07/natsuyasumijyoutai.html</url>
+    <content><![CDATA[<p>一个月没更新力。</p>
+<p>主要是没啥想法，每天宅在家里，打游戏，追番（这一个月可追了不少番——齐木楠雄的灾难，别当欧尼酱了，鬼灭，文豪野犬，因为太怕痛就全点防御力了，无职转生，无神世界中的神明活动，僵尸百分百，魔禁……算是把高中以来没怎么看番的时间全补回来了）。</p>
+<p>科二因为挂两回了，拖了两年了，明年要过期了，最近又开始练了。今天去考场中模拟了一个小时，除了最后一圈坡上起步因为边线距离扣了 10 分，都是 100 分，感觉下次考试应该问题不大了，现在开始准备科三了。科三打算 C1 转 C2 了，因为不用在意档位的变换，科三考试可以更稳地通过，现在主要是要求暑假结束前拿到驾照，否则拖到寒假就容易过期了。至于 C1 和 C2 的区别，上网查了一下，似乎是 C1 可以开蓝牌车，但 C2 只能开小型驾驶车？嘛，以后我也不会有机会去开手动挡啦，驾照这东西不就是图个方便么，怎么快速方便怎么来，没必要死磕个手动挡为难自己。</p>
+<p>家里躺了三周了，得开始准备下半年的 N1 了，虽然上个月的专四大概率挂了，但是 N1 还是得拿的，拿了就可以开始接一些小的翻译工作赚点零花钱了！</p>
+]]></content>
+      <categories>
+        <category>日常</category>
+      </categories>
+      <tags>
+        <tag>生活</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>论打造文化背景下日本美食文化中日双语科普介绍平台的可行性</title>
     <url>/2022/05/dachuangzuoye.html</url>
     <content><![CDATA[<blockquote>
@@ -2292,21 +2307,6 @@
         <tag>中外交流</tag>
         <tag>美食文化</tag>
         <tag>创业创新</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>诈尸更新一下最近状态</title>
-    <url>/2023/07/natsuyasumijyoutai.html</url>
-    <content><![CDATA[<p>一个月没更新力。</p>
-<p>主要是没啥想法，每天宅在家里，打游戏，追番（这一个月可追了不少番——齐木楠雄的灾难，别当欧尼酱了，鬼灭，文豪野犬，因为太怕痛就全点防御力了，无职转生，无神世界中的神明活动，僵尸百分百，魔禁……算是把高中以来没怎么看番的时间全补回来了）。</p>
-<p>科二因为挂两回了，拖了两年了，明年要过期了，最近又开始练了。今天去考场中模拟了一个小时，除了最后一圈坡上起步因为边线距离扣了 10 分，都是 100 分，感觉下次考试应该问题不大了，现在开始准备科三了。科三打算 C1 转 C2 了，因为不用在意档位的变换，科三考试可以更稳地通过，现在主要是要求暑假结束前拿到驾照，否则拖到寒假就容易过期了。至于 C1 和 C2 的区别，上网查了一下，似乎是 C1 可以开蓝牌车，但 C2 只能开小型驾驶车？嘛，以后我也不会有机会去开手动挡啦，驾照这东西不就是图个方便么，怎么快速方便怎么来，没必要死磕个手动挡为难自己。</p>
-<p>家里躺了三周了，得开始准备下半年的 N1 了，虽然上个月的专四大概率挂了，但是 N1 还是得拿的，拿了就可以开始接一些小的翻译工作赚点零花钱了！</p>
-]]></content>
-      <categories>
-        <category>日常</category>
-      </categories>
-      <tags>
-        <tag>生活</tag>
       </tags>
   </entry>
 </search>
