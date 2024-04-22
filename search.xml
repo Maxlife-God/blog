@@ -15,34 +15,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Next 主题添加公告栏</title>
-    <url>/2024/04/nextaddnotice.html</url>
-    <content><![CDATA[<p>字面意思，给 Next 主题添加个公告栏，不过由于 Next 侧边栏只在宽屏上显示，在手机上是看不到的。</p>
-<p>适用范围：Next·Pisces 主题</p>
-<span id="more"></span>
-
-<p>打开 <code>hexo/themes/next/layout/_macro/sidebar.njk</code>，在 <code>&lt;/aside&gt;</code> 与最后一个 <code>&#123;%- endif %&#125;</code> 之间添加以下代码</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&#123;%- if theme.related_posts.enable %&#125;</span><br><span class="line">      &#123;%- if theme.pjax %&#125;</span><br><span class="line">        &lt;div class=&quot;pjax&quot;&gt;</span><br><span class="line">      &#123;%- endif %&#125;</span><br><span class="line">      &#123;%- if page.related_posts and page.related_posts.length &gt; 0 %&#125;</span><br><span class="line">        &lt;div class=&quot;sidebar-inner sidebar-post-related&quot;&gt;</span><br><span class="line">          &lt;div class=&quot;animated&quot;&gt;</span><br><span class="line">            &#123;&#123; partial(&#x27;_partials/post/post-related.njk&#x27;) &#125;&#125;</span><br><span class="line">          &lt;/div&gt;</span><br><span class="line">        &lt;/div&gt;</span><br><span class="line">      &#123;%- endif %&#125;</span><br><span class="line">      &#123;%- if theme.pjax %&#125;</span><br><span class="line">        &lt;/div&gt;</span><br><span class="line">      &#123;%- endif %&#125;</span><br><span class="line">    &#123;%- endif %&#125;</span><br><span class="line"></span><br><span class="line">+    &#123;%- if theme.notice.enable %&#125;</span><br><span class="line">+      &#123;%- if theme.pjax %&#125;</span><br><span class="line">+        &lt;div class=&quot;pjax&quot;&gt;</span><br><span class="line">+      &#123;%- endif %&#125;</span><br><span class="line">+      &#123;%- if theme.notice.content.length &gt; 0 %&#125;</span><br><span class="line">+        &lt;div class=&quot;sidebar-inner notice&quot; style=&quot;padding: 18px;&quot;&gt;</span><br><span class="line">+          &lt;div class=&quot;notice-title&quot; style=&quot;font-size: 1.2em;text-align: left;&quot;&gt;</span><br><span class="line">+            &lt;i class=&quot;fa-solid fa-bullhorn&quot;&gt;&lt;/i&gt;</span><br><span class="line">+            &lt;span style=&quot;margin-left: 6px;&quot;&gt;公告&lt;/span&gt;</span><br><span class="line">+          &lt;/div&gt;</span><br><span class="line">+          &lt;div class=&quot;notice-content&quot; style=&quot;text-align: justify;&quot;&gt;</span><br><span class="line">+            &#123;&#123; theme.notice.content &#125;&#125;</span><br><span class="line">+          &lt;/div&gt;</span><br><span class="line">+        &lt;/div&gt;</span><br><span class="line">+      &#123;%- endif %&#125;</span><br><span class="line">+      &#123;%- if theme.pjax %&#125;</span><br><span class="line">+        &lt;/div&gt;</span><br><span class="line">+      &#123;%- endif %&#125;</span><br><span class="line">+    &#123;%- endif %&#125;</span><br><span class="line">	&lt;/aside&gt;</span><br><span class="line">&#123;% endmacro %&#125;</span><br></pre></td></tr></table></figure>
-
-<p>以下为方便复制的版本</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&#123;%- if theme.notice.enable %&#125;</span><br><span class="line">      &#123;%- if theme.pjax %&#125;</span><br><span class="line">        &lt;div class=&quot;pjax&quot;&gt;</span><br><span class="line">      &#123;%- endif %&#125;</span><br><span class="line">      &#123;%- if theme.notice.content.length &gt; 0 %&#125;</span><br><span class="line">        &lt;div class=&quot;sidebar-inner notice&quot; style=&quot;padding: 18px;&quot;&gt;</span><br><span class="line">          &lt;div class=&quot;notice-title&quot; style=&quot;font-size: 1.2em;text-align: left;&quot;&gt;</span><br><span class="line">            &lt;i class=&quot;fa-solid fa-bullhorn&quot;&gt;&lt;/i&gt;</span><br><span class="line">            &lt;span style=&quot;margin-left: 6px;&quot;&gt;公告&lt;/span&gt;</span><br><span class="line">          &lt;/div&gt;</span><br><span class="line">          &lt;div class=&quot;notice-content&quot; style=&quot;text-align: justify;&quot;&gt;</span><br><span class="line">            &#123;&#123; theme.notice.content &#125;&#125;</span><br><span class="line">          &lt;/div&gt;</span><br><span class="line">        &lt;/div&gt;</span><br><span class="line">      &#123;%- endif %&#125;</span><br><span class="line">      &#123;%- if theme.pjax %&#125;</span><br><span class="line">        &lt;/div&gt;</span><br><span class="line">      &#123;%- endif %&#125;</span><br><span class="line">&#123;%- endif %&#125;</span><br></pre></td></tr></table></figure>
-
-<p>然后在主题配置 <code>_config.next.yml</code> 中添加以下内容</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">notice:</span><br><span class="line">  enable: true</span><br><span class="line">  content: #公告内容</span><br></pre></td></tr></table></figure>
-
-<p>样式写的很简单，如有需要请自行更改。</p>
-]]></content>
-      <categories>
-        <category>技术</category>
-      </categories>
-      <tags>
-        <tag>Hexo</tag>
-        <tag>技术</tag>
-        <tag>教程</tag>
-        <tag>Next</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Handsome 美化补充</title>
     <url>/2021/12/handsomebeautify.html</url>
     <content><![CDATA[<p>由于在网上找到的 handsome 主题的首页文章圆角的 css 代码只选择了首页的大头图版式，小头图和图片版式均无圆角和鼠标停留上浮效果，在这里分享下我加了这两个版式之后的代码，将其粘贴到 handsome 主题开发者设置的自定义 css 中即可。</p>
@@ -86,11 +58,11 @@
         <category>游戏</category>
       </categories>
       <tags>
-        <tag>技术</tag>
-        <tag>教程</tag>
         <tag>Minecraft</tag>
         <tag>材质包</tag>
         <tag>行为包</tag>
+        <tag>教程</tag>
+        <tag>技术</tag>
       </tags>
   </entry>
   <entry>
@@ -118,46 +90,9 @@
         <category>技术</category>
       </categories>
       <tags>
-        <tag>Hexo</tag>
         <tag>技术</tag>
+        <tag>Hexo</tag>
         <tag>JavaScript</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Next 文章顶部添加波浪效果</title>
-    <url>/2023/08/nextwave.html</url>
-    <content><![CDATA[<blockquote>
-<p>参考文章：安知鱼 <a href="https://blog.anheyu.com/posts/98c4.html">butterfly文章顶部添加波浪效果</a></p>
-</blockquote>
-<p>之前用 butterfly 的时候就看过安知鱼大佬的文章顶部加波浪效果的教程，又好像在哪里看到过 Next 也有人做出来过，但已找不到相关博客。两个月前早已萌发了自己做出来的念头，奈何看不懂 Next 使用的 <code>njk</code> 语法。</p>
-<h2 id="折腾的过程"><a href="#折腾的过程" class="headerlink" title="折腾的过程"></a>折腾的过程</h2><p>将大佬的代码插入到 post 的生成模版的 <code>&lt;header&gt;</code> 标签末尾，添加 css 后却发现首页的文章卡片（下文简称为文章卡片）的 meta 信息部分和文章页的 meta 信息部分是同一个模版生成的。如果给文章页头部添加了波浪效果，文章卡片也会有波浪效果，这是我不希望看到的，于是放弃了一段时间。</p>
-<p>前两天又想起这个效果，于是想着再试一试，这次我发现文章卡片与文章页的头部的描述部分（description 部分）的字体大小不一致，查看 css 后发现文章页的 description 多了一个<strong>类</strong>用以区分首页的 description。于是去找模版中对应的部分，发现有个 if 语句判断当前是否非主页，true 的话就添加了一个类名。这给了我很大信心，感觉只要分离主页和文章页的 <code>&lt;header&gt;</code> 就可以轻松实现了。</p>
-<p>接下来遇到的问题是整个内容主体 <code>&lt;main&gt;</code> 有个 40px 的 <code>padding</code>，导致增加的波浪效果会变窄。想到的解决办法是把 <code>&lt;header&gt;</code> 放置在 <code>&lt;main&gt;</code> 上面，但尝试后遇到了文章卡片 <code>&lt;header&gt;</code> 结构同步变化、不能熟练使用 flex 布局达到使文章页 <code>&lt;header&gt;</code> 与 <code>&lt;main&gt;</code> 保持垂直分布且宽度一致的目的、由于 pjax 进入文章页后不能自动更新新的 <code>&lt;header&gt;</code> 的位置等阻碍。最终放弃把 <code>&lt;header&gt;</code> 与 <code>&lt;main&gt;</code> 分离这一想法。</p>
-<p>无奈之下查询 Google 是否有办法让子元素不受父元素的 padding 的影响，结果发现只需要使子元素的 margin 的值为负的父元素的 padding 值即可。一拍脑袋，不知道自己之前怎么想的，明明是 css 的问题，却要去改变结构，总结是自己没理解好 margin 相关的知识导致的。</p>
-<p>最后的方案就是给 <code>&lt;header&gt;</code> 加了个条件判断，如果是非主页就增加一个<strong>类</strong>，用以加 css 样式。这样就可以分开主页与文章页。至于大佬原来使用的是绝对定位来定位波浪位置，但 Next 的 <code>&lt;header&gt;</code> 的父元素没有使用相对定位，导致绝对定位参照的是 <code>&lt;main&gt;</code> 这个祖先元素，我将波浪改成了相对定位就解决了，虽然不知道有没有什么大的影响，不过测试下来没有什么问题。</p>
-<p>唠了这么多，接下来就上代码了！</p>
-<h2 id="教程"><a href="#教程" class="headerlink" title="教程"></a>教程</h2><p>打开 <code>themes/next/layout/_macro/post.njk</code> 并修改以下内容</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&#123;%- if post.header !== false %&#125;</span><br><span class="line">-      &lt;header class=&quot;post-header&quot;&gt;</span><br><span class="line">+      &lt;header class=&quot;post-header&#123;% if not is_index %&#125; insidepost-header&#123;% endif %&#125;&quot;&gt;</span><br><span class="line">        &lt;&#123;% if is_index %&#125;h2&#123;% else %&#125;h1&#123;% endif %&#125; class=&quot;post-title&#123;% if post.direction and post.direction.toLowerCase() === &#x27;rtl&#x27; %&#125; rtl&#123;% endif %&#125;&quot; itemprop=&quot;name headline&quot;&gt;</span><br><span class="line">          &#123;# Link posts #&#125;</span><br><span class="line"></span><br><span class="line">	...</span><br><span class="line"></span><br><span class="line">&lt;div class=&quot;post-description&quot;&gt;&#123;&#123; post.description &#125;&#125;&lt;/div&gt;</span><br><span class="line">          &#123;%- endif %&#125;</span><br><span class="line">        &lt;/div&gt;</span><br><span class="line">+        &#123;% if not is_index %&#125;</span><br><span class="line">+          &lt;section class=&quot;main-hero-waves-area waves-area&quot;&gt;</span><br><span class="line">+            &lt;svg class=&quot;waves-svg&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot; xlink=&quot;http://www.w3.org/1999/xlink&quot; viewBox=&quot;0 24 150 28&quot; preserveAspectRatio=&quot;none&quot; shape-rendering=&quot;auto&quot;&gt;</span><br><span class="line">+              &lt;defs&gt;</span><br><span class="line">+                &lt;path id=&quot;gentle-wave&quot; d=&quot;M -160 44 c 30 0 58 -18 88 -18 s 58 18 88 18 s 58 -18 88 -18 s 58 18 88 18 v 44 h -352 Z&quot;&gt;&lt;/path&gt;</span><br><span class="line">+              &lt;/defs&gt;</span><br><span class="line">+              &lt;g class=&quot;parallax&quot;&gt;</span><br><span class="line">+                &lt;use href=&quot;#gentle-wave&quot; x=&quot;48&quot; y=&quot;0&quot;&gt;&lt;/use&gt;</span><br><span class="line">+                &lt;use href=&quot;#gentle-wave&quot; x=&quot;48&quot; y=&quot;3&quot;&gt;&lt;/use&gt;</span><br><span class="line">+                &lt;use href=&quot;#gentle-wave&quot; x=&quot;48&quot; y=&quot;5&quot;&gt;&lt;/use&gt;</span><br><span class="line">+                &lt;use href=&quot;#gentle-wave&quot; x=&quot;48&quot; y=&quot;7&quot;&gt;&lt;/use&gt;</span><br><span class="line">+              &lt;/g&gt;</span><br><span class="line">+            &lt;/svg&gt;</span><br><span class="line">+          &lt;/section&gt;</span><br><span class="line">+        &#123;% endif %&#125;</span><br><span class="line">      &lt;/header&gt;</span><br><span class="line">    &#123;%- endif %&#125;</span><br></pre></td></tr></table></figure>
-
-<p>这里提供一份方便复制的版本</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;header class=&quot;post-header&#123;% if not is_index %&#125; insidepost-header&#123;% endif %&#125;&quot;&gt;</span><br><span class="line"></span><br><span class="line">		&#123;% if not is_index %&#125;</span><br><span class="line">          &lt;section class=&quot;main-hero-waves-area waves-area&quot;&gt;</span><br><span class="line">            &lt;svg class=&quot;waves-svg&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot; xlink=&quot;http://www.w3.org/1999/xlink&quot; viewBox=&quot;0 24 150 28&quot; preserveAspectRatio=&quot;none&quot; shape-rendering=&quot;auto&quot;&gt;</span><br><span class="line">              &lt;defs&gt;</span><br><span class="line">                &lt;path id=&quot;gentle-wave&quot; d=&quot;M -160 44 c 30 0 58 -18 88 -18 s 58 18 88 18 s 58 -18 88 -18 s 58 18 88 18 v 44 h -352 Z&quot;&gt;&lt;/path&gt;</span><br><span class="line">              &lt;/defs&gt;</span><br><span class="line">              &lt;g class=&quot;parallax&quot;&gt;</span><br><span class="line">                &lt;use href=&quot;#gentle-wave&quot; x=&quot;48&quot; y=&quot;0&quot;&gt;&lt;/use&gt;</span><br><span class="line">                &lt;use href=&quot;#gentle-wave&quot; x=&quot;48&quot; y=&quot;3&quot;&gt;&lt;/use&gt;</span><br><span class="line">                &lt;use href=&quot;#gentle-wave&quot; x=&quot;48&quot; y=&quot;5&quot;&gt;&lt;/use&gt;</span><br><span class="line">                &lt;use href=&quot;#gentle-wave&quot; x=&quot;48&quot; y=&quot;7&quot;&gt;&lt;/use&gt;</span><br><span class="line">              &lt;/g&gt;</span><br><span class="line">            &lt;/svg&gt;</span><br><span class="line">          &lt;/section&gt;</span><br><span class="line">        &#123;% endif %&#125;</span><br></pre></td></tr></table></figure>
-
-<p>接下来在 <code>_config.next.yml</code> 中取消 <code>custom_file_path</code> 的 <code>style: source/_data/styles.styl</code> 的注释，并在 <code>根目录/source/_data/</code> 下创建 <code>styles.styl</code>，粘贴以下内容</p>
-<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="comment">/* 波浪css */</span></span><br><span class="line"><span class="selector-class">.main-hero-waves-area</span> &#123;</span><br><span class="line">  <span class="attribute">width</span>: <span class="number">100%</span>;</span><br><span class="line">  <span class="attribute">height</span>: <span class="number">5rem</span>;</span><br><span class="line">  <span class="attribute">position</span>: relative;</span><br><span class="line">  <span class="attribute">left</span>: <span class="number">0</span>;</span><br><span class="line">  <span class="attribute">z-index</span>: <span class="number">5</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.waves-area</span> <span class="selector-class">.waves-svg</span> &#123;</span><br><span class="line">  <span class="attribute">width</span>: <span class="number">100%</span>;</span><br><span class="line">  <span class="attribute">height</span>: <span class="number">5rem</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/* Animation */</span></span><br><span class="line"></span><br><span class="line"><span class="selector-class">.parallax</span> &gt; use &#123;</span><br><span class="line">  <span class="attribute">animation</span>: move-forever <span class="number">25s</span> <span class="built_in">cubic-bezier</span>(<span class="number">0.55</span>, <span class="number">0.5</span>, <span class="number">0.45</span>, <span class="number">0.5</span>) infinite;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.parallax</span> &gt; use<span class="selector-pseudo">:nth-child</span>(<span class="number">1</span>) &#123;</span><br><span class="line">  <span class="attribute">animation-delay</span>: -<span class="number">2s</span>;</span><br><span class="line">  <span class="attribute">animation-duration</span>: <span class="number">7s</span>;</span><br><span class="line">  fill: <span class="number">#f7f9febd</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.parallax</span> &gt; use<span class="selector-pseudo">:nth-child</span>(<span class="number">2</span>) &#123;</span><br><span class="line">  <span class="attribute">animation-delay</span>: -<span class="number">3s</span>;</span><br><span class="line">  <span class="attribute">animation-duration</span>: <span class="number">10s</span>;</span><br><span class="line">  fill: <span class="number">#f7f9fe82</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.parallax</span> &gt; use<span class="selector-pseudo">:nth-child</span>(<span class="number">3</span>) &#123;</span><br><span class="line">  <span class="attribute">animation-delay</span>: -<span class="number">4s</span>;</span><br><span class="line">  <span class="attribute">animation-duration</span>: <span class="number">13s</span>;</span><br><span class="line">  fill: <span class="number">#f7f9fe36</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.parallax</span> &gt; use<span class="selector-pseudo">:nth-child</span>(<span class="number">4</span>) &#123;</span><br><span class="line">  <span class="attribute">animation-delay</span>: -<span class="number">5s</span>;</span><br><span class="line">  <span class="attribute">animation-duration</span>: <span class="number">20s</span>;</span><br><span class="line">  fill: <span class="number">#f7f9fe</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/* 黑色模式背景 */</span></span><br><span class="line"><span class="selector-attr">[data-theme=<span class="string">&quot;dark&quot;</span>]</span> <span class="selector-class">.parallax</span> &gt; use<span class="selector-pseudo">:nth-child</span>(<span class="number">1</span>) &#123;</span><br><span class="line">  <span class="attribute">animation-delay</span>: -<span class="number">2s</span>;</span><br><span class="line">  <span class="attribute">animation-duration</span>: <span class="number">7s</span>;</span><br><span class="line">  fill: <span class="number">#18171dc8</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-attr">[data-theme=<span class="string">&quot;dark&quot;</span>]</span> <span class="selector-class">.parallax</span> &gt; use<span class="selector-pseudo">:nth-child</span>(<span class="number">2</span>) &#123;</span><br><span class="line">  <span class="attribute">animation-delay</span>: -<span class="number">3s</span>;</span><br><span class="line">  <span class="attribute">animation-duration</span>: <span class="number">10s</span>;</span><br><span class="line">  fill: <span class="number">#18171d80</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-attr">[data-theme=<span class="string">&quot;dark&quot;</span>]</span> <span class="selector-class">.parallax</span> &gt; use<span class="selector-pseudo">:nth-child</span>(<span class="number">3</span>) &#123;</span><br><span class="line">  <span class="attribute">animation-delay</span>: -<span class="number">4s</span>;</span><br><span class="line">  <span class="attribute">animation-duration</span>: <span class="number">13s</span>;</span><br><span class="line">  fill: <span class="number">#18171d3e</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-attr">[data-theme=<span class="string">&quot;dark&quot;</span>]</span> <span class="selector-class">.parallax</span> &gt; use<span class="selector-pseudo">:nth-child</span>(<span class="number">4</span>) &#123;</span><br><span class="line">  <span class="attribute">animation-delay</span>: -<span class="number">5s</span>;</span><br><span class="line">  <span class="attribute">animation-duration</span>: <span class="number">20s</span>;</span><br><span class="line">  fill: <span class="number">#18171d</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">@keyframes</span> move-forever &#123;</span><br><span class="line">  <span class="number">0%</span> &#123;</span><br><span class="line">    <span class="attribute">transform</span>: <span class="built_in">translate3d</span>(-<span class="number">90px</span>, <span class="number">0</span>, <span class="number">0</span>);</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="number">100%</span> &#123;</span><br><span class="line">    <span class="attribute">transform</span>: <span class="built_in">translate3d</span>(<span class="number">85px</span>, <span class="number">0</span>, <span class="number">0</span>);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/*Shrinking for mobile*/</span></span><br><span class="line"><span class="keyword">@media</span> (<span class="attribute">max-width</span>: <span class="number">768px</span>) &#123;</span><br><span class="line">  <span class="selector-class">.waves-area</span>, <span class="selector-class">.waves-area</span> <span class="selector-class">.waves-svg</span> &#123;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">40px</span>;</span><br><span class="line">    <span class="attribute">min-height</span>: <span class="number">40px</span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/* 修改postheader背景 */</span></span><br><span class="line"><span class="selector-class">.insidepost-header</span> &#123;</span><br><span class="line">    <span class="attribute">margin-left</span>: -<span class="number">40px</span>;</span><br><span class="line">    <span class="attribute">margin-right</span>: -<span class="number">40px</span>;</span><br><span class="line">    <span class="attribute">background</span>: <span class="built_in">var</span>(--theme-color);</span><br><span class="line">    <span class="attribute">margin-top</span>: -<span class="number">70px</span>;</span><br><span class="line">    <span class="attribute">padding-top</span>: <span class="number">40px</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.insidepost-header</span>, <span class="selector-class">.insidepost-header</span> <span class="selector-tag">a</span>, <span class="selector-class">.insidepost-header</span> <span class="selector-class">.post-meta-container</span> &#123;</span><br><span class="line">  <span class="attribute">color</span>: white;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.insidepost-header</span> <span class="selector-class">.post-meta-container</span> &#123;</span><br><span class="line">  <span class="attribute">margin-bottom</span>: <span class="number">40px</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.insidepost-header</span> <span class="selector-class">.post-description</span> &#123;</span><br><span class="line">    <span class="attribute">display</span>: none;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.insidepost-header</span> <span class="selector-tag">h1</span><span class="selector-class">.post-title</span>, <span class="selector-class">.insidepost-header</span> <span class="selector-class">.post-meta-container</span> &#123;</span><br><span class="line">    <span class="attribute">padding-left</span>: <span class="number">40px</span>;</span><br><span class="line">    <span class="attribute">padding-right</span>: <span class="number">40px</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">@media</span> (<span class="attribute">max-width</span>: <span class="number">991px</span>) &#123;</span><br><span class="line">  <span class="selector-class">.insidepost-header</span> &#123;</span><br><span class="line">    <span class="attribute">margin-left</span>: -<span class="number">20px</span>;</span><br><span class="line">    <span class="attribute">margin-right</span>: -<span class="number">20px</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="selector-class">.insidepost-header</span> <span class="selector-tag">h1</span><span class="selector-class">.post-title</span>, <span class="selector-class">.insidepost-header</span> <span class="selector-class">.post-meta-container</span> &#123;</span><br><span class="line">    <span class="attribute">padding-left</span>: <span class="number">20px</span>;</span><br><span class="line">    <span class="attribute">padding-right</span>: <span class="number">20px</span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>然后打开网站看看效果吧！</p>
-<p>效果图：</p>
-<p><img data-src="https://img.fufu.ink/6SevHQ.webp" alt="文章顶部波浪效果图"></p>
-]]></content>
-      <categories>
-        <category>技术</category>
-      </categories>
-      <tags>
-        <tag>Hexo</tag>
-        <tag>技术</tag>
-        <tag>教程</tag>
-        <tag>Next</tag>
-        <tag>CSS</tag>
       </tags>
   </entry>
   <entry>
@@ -201,10 +136,64 @@
         <category>技术</category>
       </categories>
       <tags>
-        <tag>Hexo</tag>
-        <tag>技术</tag>
         <tag>教程</tag>
+        <tag>技术</tag>
+        <tag>Hexo</tag>
         <tag>Next</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Next 主题添加公告栏</title>
+    <url>/2024/04/nextaddnotice.html</url>
+    <content><![CDATA[<p>字面意思，给 Next 主题添加个公告栏，不过由于 Next 侧边栏只在宽屏上显示，在手机上是看不到的。</p>
+<p>适用范围：Next·Pisces 主题</p>
+<span id="more"></span>
+
+<p>打开 <code>hexo/themes/next/layout/_macro/sidebar.njk</code>，在 <code>&lt;/aside&gt;</code> 与最后一个 <code>&#123;%- endif %&#125;</code> 之间添加以下代码</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&#123;%- if theme.related_posts.enable %&#125;</span><br><span class="line">      &#123;%- if theme.pjax %&#125;</span><br><span class="line">        &lt;div class=&quot;pjax&quot;&gt;</span><br><span class="line">      &#123;%- endif %&#125;</span><br><span class="line">      &#123;%- if page.related_posts and page.related_posts.length &gt; 0 %&#125;</span><br><span class="line">        &lt;div class=&quot;sidebar-inner sidebar-post-related&quot;&gt;</span><br><span class="line">          &lt;div class=&quot;animated&quot;&gt;</span><br><span class="line">            &#123;&#123; partial(&#x27;_partials/post/post-related.njk&#x27;) &#125;&#125;</span><br><span class="line">          &lt;/div&gt;</span><br><span class="line">        &lt;/div&gt;</span><br><span class="line">      &#123;%- endif %&#125;</span><br><span class="line">      &#123;%- if theme.pjax %&#125;</span><br><span class="line">        &lt;/div&gt;</span><br><span class="line">      &#123;%- endif %&#125;</span><br><span class="line">    &#123;%- endif %&#125;</span><br><span class="line"></span><br><span class="line">+    &#123;%- if theme.notice.enable %&#125;</span><br><span class="line">+      &#123;%- if theme.pjax %&#125;</span><br><span class="line">+        &lt;div class=&quot;pjax&quot;&gt;</span><br><span class="line">+      &#123;%- endif %&#125;</span><br><span class="line">+      &#123;%- if theme.notice.content.length &gt; 0 %&#125;</span><br><span class="line">+        &lt;div class=&quot;sidebar-inner notice&quot; style=&quot;padding: 18px;&quot;&gt;</span><br><span class="line">+          &lt;div class=&quot;notice-title&quot; style=&quot;font-size: 1.2em;text-align: left;&quot;&gt;</span><br><span class="line">+            &lt;i class=&quot;fa-solid fa-bullhorn&quot;&gt;&lt;/i&gt;</span><br><span class="line">+            &lt;span style=&quot;margin-left: 6px;&quot;&gt;公告&lt;/span&gt;</span><br><span class="line">+          &lt;/div&gt;</span><br><span class="line">+          &lt;div class=&quot;notice-content&quot; style=&quot;text-align: justify;&quot;&gt;</span><br><span class="line">+            &#123;&#123; theme.notice.content &#125;&#125;</span><br><span class="line">+          &lt;/div&gt;</span><br><span class="line">+        &lt;/div&gt;</span><br><span class="line">+      &#123;%- endif %&#125;</span><br><span class="line">+      &#123;%- if theme.pjax %&#125;</span><br><span class="line">+        &lt;/div&gt;</span><br><span class="line">+      &#123;%- endif %&#125;</span><br><span class="line">+    &#123;%- endif %&#125;</span><br><span class="line">	&lt;/aside&gt;</span><br><span class="line">&#123;% endmacro %&#125;</span><br></pre></td></tr></table></figure>
+
+<p>以下为方便复制的版本</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&#123;%- if theme.notice.enable %&#125;</span><br><span class="line">      &#123;%- if theme.pjax %&#125;</span><br><span class="line">        &lt;div class=&quot;pjax&quot;&gt;</span><br><span class="line">      &#123;%- endif %&#125;</span><br><span class="line">      &#123;%- if theme.notice.content.length &gt; 0 %&#125;</span><br><span class="line">        &lt;div class=&quot;sidebar-inner notice&quot; style=&quot;padding: 18px;&quot;&gt;</span><br><span class="line">          &lt;div class=&quot;notice-title&quot; style=&quot;font-size: 1.2em;text-align: left;&quot;&gt;</span><br><span class="line">            &lt;i class=&quot;fa-solid fa-bullhorn&quot;&gt;&lt;/i&gt;</span><br><span class="line">            &lt;span style=&quot;margin-left: 6px;&quot;&gt;公告&lt;/span&gt;</span><br><span class="line">          &lt;/div&gt;</span><br><span class="line">          &lt;div class=&quot;notice-content&quot; style=&quot;text-align: justify;&quot;&gt;</span><br><span class="line">            &#123;&#123; theme.notice.content &#125;&#125;</span><br><span class="line">          &lt;/div&gt;</span><br><span class="line">        &lt;/div&gt;</span><br><span class="line">      &#123;%- endif %&#125;</span><br><span class="line">      &#123;%- if theme.pjax %&#125;</span><br><span class="line">        &lt;/div&gt;</span><br><span class="line">      &#123;%- endif %&#125;</span><br><span class="line">&#123;%- endif %&#125;</span><br></pre></td></tr></table></figure>
+
+<p>然后在主题配置 <code>_config.next.yml</code> 中添加以下内容</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">notice:</span><br><span class="line">  enable: true</span><br><span class="line">  content: #公告内容</span><br></pre></td></tr></table></figure>
+
+<p>样式写的很简单，如有需要请自行更改。</p>
+]]></content>
+      <categories>
+        <category>技术</category>
+      </categories>
+      <tags>
+        <tag>教程</tag>
+        <tag>技术</tag>
+        <tag>Hexo</tag>
+        <tag>Next</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Waline 美化教程</title>
+    <url>/2023/04/walinedecoration.html</url>
+    <content><![CDATA[<p>起因是看到许多博客使用的 twikoo 评论系统，觉得 twikoo 的前端样式很好看，与之相对的正在用的 waline 的默认样式是真的不好看，本来打算直接换到 twikoo 的，转念一想，既然是属于样式的东西，为什么不直接用 css 解决呢，没有必要为了一个效果而去换插件。博主的 css 不行，只会 <kbd>F12</kbd> 找到哪个元素改哪个。至于定位元素之类的完全不行＞﹏＜。只要最后好看了就 ok 了！（bushi</p>
+<p>以下为代码部分（部分选择器需要根据实际更换）</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="comment">/* 修改waline样式 */</span></span><br><span class="line"><span class="comment">/* 修改评论框外观 */</span></span><br><span class="line"><span class="selector-class">.wl-panel</span> &#123;</span><br><span class="line">    <span class="attribute">border-radius</span>: <span class="number">4px</span> <span class="meta">!important</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-pseudo">:root</span> &#123;</span><br><span class="line">    <span class="attr">--waline-bgcolor-light</span>: transparent <span class="meta">!important</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.wl-btn</span> &#123;</span><br><span class="line">    <span class="attribute">border-radius</span>: <span class="number">0.3em</span> <span class="meta">!important</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* 添加miku的gif为输入区域背景 */</span></span><br><span class="line"><span class="selector-id">#wl-edit</span> &#123;</span><br><span class="line">    <span class="attribute">background</span>: <span class="built_in">url</span>(<span class="string">&quot;/img/wl-bg-mikuchan.gif&quot;</span>) <span class="number">100%</span> <span class="number">100%</span> no-repeat;</span><br><span class="line">    <span class="attribute">background-size</span>: contain <span class="meta">!important</span>;</span><br><span class="line">    <span class="attribute">background-repeat</span>: no-repeat <span class="meta">!important</span>;</span><br><span class="line">    <span class="attribute">background-position</span>: right bottom <span class="meta">!important</span>; </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-id">#waline-wrap</span> <span class="selector-tag">textarea</span><span class="selector-pseudo">:focus</span> &#123;</span><br><span class="line">    <span class="attribute">background</span>: <span class="built_in">url</span>(<span class="string">&quot;/img/wl-bg-mikuchan.gif&quot;</span>) <span class="number">100%</span> <span class="number">100%</span> no-repeat;</span><br><span class="line">    <span class="attribute">background-position</span>-y: <span class="number">78px</span> <span class="meta">!important</span>;</span><br><span class="line">    <span class="attribute">transition</span>: all <span class="number">0.25s</span> ease-in-out <span class="number">0s</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* 修改评论区内容背景 */</span></span><br><span class="line"><span class="selector-class">.wl-card</span> <span class="selector-class">.wl-content</span> &#123;</span><br><span class="line">    <span class="attribute">background</span>: <span class="number">#f5f5f5</span>;</span><br><span class="line">    <span class="attribute">padding</span>: <span class="number">16px</span> <span class="meta">!important</span>;</span><br><span class="line">    <span class="attribute">margin</span>: <span class="number">12px</span> <span class="number">0</span> <span class="number">8px</span> <span class="meta">!important</span>;</span><br><span class="line">    <span class="attribute">border-radius</span>: <span class="number">3px</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.wl-card</span> &#123;</span><br><span class="line">    <span class="attribute">border-bottom</span>: none <span class="meta">!important</span>;</span><br><span class="line">    <span class="attribute">padding-bottom</span>: <span class="number">0px</span> <span class="meta">!important</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.wl-cards</span> <span class="selector-class">.wl-item</span>&#123;</span><br><span class="line">    <span class="attribute">padding</span>: .<span class="number">5em</span> .<span class="number">5em</span> <span class="number">0px</span> <span class="meta">!important</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>效果图如下（因图片是截取自评论区而打了码，头像这些不属于以上代码，后面可以考虑改一下默认头像）</p>
+<p><img data-src="https://img.fufu.ink/iTcakI.webp" alt="Waline评论框美化效果"></p>
+<p><img data-src="https://img.fufu.ink/JDVkhh.webp" alt="Waline评论区美化效果"></p>
+<p>其中评论框的背景 gif 需要自己下载下来放到 <code>/source/img/</code> 下即可（记得重命名），别直接用我的博客的地址！（就这么点大小的图片就别直接挂别人的链接了吧，虽然我也不会做防盗链…）</p>
+<p>修改文本输入框中的提示文字需要到主题的配置文件中找到 waline 的配置项，在其中添加 <code>locale: &#123;placeholder: &#39;提示文字&#39;&#125;</code> 即可，以主题 butterfly 为例，则需要在 option 中添加该行代码，需要注意缩进，如下所示</p>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">waline:</span></span><br><span class="line">  <span class="attr">serverURL:</span> <span class="comment"># Waline server address url</span></span><br><span class="line">  <span class="attr">bg:</span> <span class="comment"># waline background</span></span><br><span class="line">  <span class="attr">pageview:</span> <span class="literal">false</span></span><br><span class="line">  <span class="attr">option:</span></span><br><span class="line">    <span class="attr">locale:</span> &#123;<span class="attr">placeholder:</span> <span class="string">&#x27;提示文字&#x27;</span>&#125;</span><br></pre></td></tr></table></figure>
+
+<p>最后就是上面效果图的样子啦！</p>
+]]></content>
+      <categories>
+        <category>技术</category>
+      </categories>
+      <tags>
+        <tag>教程</tag>
+        <tag>技术</tag>
+        <tag>Hexo</tag>
+        <tag>CSS</tag>
       </tags>
   </entry>
   <entry>
@@ -237,70 +226,57 @@
       </tags>
   </entry>
   <entry>
-    <title>【每日语法】~ば~ほど</title>
-    <url>/2023/04/mnnhgbp1.html</url>
-    <content><![CDATA[<p><strong>语法：V（假定形）+ V（原形）+ ほど</strong></p>
-<p>意为「越…越…」。</p>
-<p>例句：</p>
-<p>日语：この本は読めば読むほど面白いと思う。</p>
-<p>译：这本书越读越觉得有趣。</p>
-<p>假定形变形规则：</p>
-<table>
-<thead>
-<tr>
-<th align="center">词类</th>
-<th align="center">规则</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center">动词</td>
-<td align="center">词尾假名变为同行的「え」段假名，再加「ば」</td>
-</tr>
-<tr>
-<td align="center">形容词</td>
-<td align="center">词尾「い」变「ければ」</td>
-</tr>
-<tr>
-<td align="center">形容动词</td>
-<td align="center">词干加「ならば」或者「であれば」</td>
-</tr>
-<tr>
-<td align="center">名词</td>
-<td align="center">加「ならば」或者「であれば」</td>
-</tr>
-</tbody></table>
+    <title>Next 文章顶部添加波浪效果</title>
+    <url>/2023/08/nextwave.html</url>
+    <content><![CDATA[<blockquote>
+<p>参考文章：安知鱼 <a href="https://blog.anheyu.com/posts/98c4.html">butterfly文章顶部添加波浪效果</a></p>
+</blockquote>
+<p>之前用 butterfly 的时候就看过安知鱼大佬的文章顶部加波浪效果的教程，又好像在哪里看到过 Next 也有人做出来过，但已找不到相关博客。两个月前早已萌发了自己做出来的念头，奈何看不懂 Next 使用的 <code>njk</code> 语法。</p>
+<h2 id="折腾的过程"><a href="#折腾的过程" class="headerlink" title="折腾的过程"></a>折腾的过程</h2><p>将大佬的代码插入到 post 的生成模版的 <code>&lt;header&gt;</code> 标签末尾，添加 css 后却发现首页的文章卡片（下文简称为文章卡片）的 meta 信息部分和文章页的 meta 信息部分是同一个模版生成的。如果给文章页头部添加了波浪效果，文章卡片也会有波浪效果，这是我不希望看到的，于是放弃了一段时间。</p>
+<p>前两天又想起这个效果，于是想着再试一试，这次我发现文章卡片与文章页的头部的描述部分（description 部分）的字体大小不一致，查看 css 后发现文章页的 description 多了一个<strong>类</strong>用以区分首页的 description。于是去找模版中对应的部分，发现有个 if 语句判断当前是否非主页，true 的话就添加了一个类名。这给了我很大信心，感觉只要分离主页和文章页的 <code>&lt;header&gt;</code> 就可以轻松实现了。</p>
+<p>接下来遇到的问题是整个内容主体 <code>&lt;main&gt;</code> 有个 40px 的 <code>padding</code>，导致增加的波浪效果会变窄。想到的解决办法是把 <code>&lt;header&gt;</code> 放置在 <code>&lt;main&gt;</code> 上面，但尝试后遇到了文章卡片 <code>&lt;header&gt;</code> 结构同步变化、不能熟练使用 flex 布局达到使文章页 <code>&lt;header&gt;</code> 与 <code>&lt;main&gt;</code> 保持垂直分布且宽度一致的目的、由于 pjax 进入文章页后不能自动更新新的 <code>&lt;header&gt;</code> 的位置等阻碍。最终放弃把 <code>&lt;header&gt;</code> 与 <code>&lt;main&gt;</code> 分离这一想法。</p>
+<p>无奈之下查询 Google 是否有办法让子元素不受父元素的 padding 的影响，结果发现只需要使子元素的 margin 的值为负的父元素的 padding 值即可。一拍脑袋，不知道自己之前怎么想的，明明是 css 的问题，却要去改变结构，总结是自己没理解好 margin 相关的知识导致的。</p>
+<p>最后的方案就是给 <code>&lt;header&gt;</code> 加了个条件判断，如果是非主页就增加一个<strong>类</strong>，用以加 css 样式。这样就可以分开主页与文章页。至于大佬原来使用的是绝对定位来定位波浪位置，但 Next 的 <code>&lt;header&gt;</code> 的父元素没有使用相对定位，导致绝对定位参照的是 <code>&lt;main&gt;</code> 这个祖先元素，我将波浪改成了相对定位就解决了，虽然不知道有没有什么大的影响，不过测试下来没有什么问题。</p>
+<p>唠了这么多，接下来就上代码了！</p>
+<h2 id="教程"><a href="#教程" class="headerlink" title="教程"></a>教程</h2><p>打开 <code>themes/next/layout/_macro/post.njk</code> 并修改以下内容</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&#123;%- if post.header !== false %&#125;</span><br><span class="line">-      &lt;header class=&quot;post-header&quot;&gt;</span><br><span class="line">+      &lt;header class=&quot;post-header&#123;% if not is_index %&#125; insidepost-header&#123;% endif %&#125;&quot;&gt;</span><br><span class="line">        &lt;&#123;% if is_index %&#125;h2&#123;% else %&#125;h1&#123;% endif %&#125; class=&quot;post-title&#123;% if post.direction and post.direction.toLowerCase() === &#x27;rtl&#x27; %&#125; rtl&#123;% endif %&#125;&quot; itemprop=&quot;name headline&quot;&gt;</span><br><span class="line">          &#123;# Link posts #&#125;</span><br><span class="line"></span><br><span class="line">	...</span><br><span class="line"></span><br><span class="line">&lt;div class=&quot;post-description&quot;&gt;&#123;&#123; post.description &#125;&#125;&lt;/div&gt;</span><br><span class="line">          &#123;%- endif %&#125;</span><br><span class="line">        &lt;/div&gt;</span><br><span class="line">+        &#123;% if not is_index %&#125;</span><br><span class="line">+          &lt;section class=&quot;main-hero-waves-area waves-area&quot;&gt;</span><br><span class="line">+            &lt;svg class=&quot;waves-svg&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot; xlink=&quot;http://www.w3.org/1999/xlink&quot; viewBox=&quot;0 24 150 28&quot; preserveAspectRatio=&quot;none&quot; shape-rendering=&quot;auto&quot;&gt;</span><br><span class="line">+              &lt;defs&gt;</span><br><span class="line">+                &lt;path id=&quot;gentle-wave&quot; d=&quot;M -160 44 c 30 0 58 -18 88 -18 s 58 18 88 18 s 58 -18 88 -18 s 58 18 88 18 v 44 h -352 Z&quot;&gt;&lt;/path&gt;</span><br><span class="line">+              &lt;/defs&gt;</span><br><span class="line">+              &lt;g class=&quot;parallax&quot;&gt;</span><br><span class="line">+                &lt;use href=&quot;#gentle-wave&quot; x=&quot;48&quot; y=&quot;0&quot;&gt;&lt;/use&gt;</span><br><span class="line">+                &lt;use href=&quot;#gentle-wave&quot; x=&quot;48&quot; y=&quot;3&quot;&gt;&lt;/use&gt;</span><br><span class="line">+                &lt;use href=&quot;#gentle-wave&quot; x=&quot;48&quot; y=&quot;5&quot;&gt;&lt;/use&gt;</span><br><span class="line">+                &lt;use href=&quot;#gentle-wave&quot; x=&quot;48&quot; y=&quot;7&quot;&gt;&lt;/use&gt;</span><br><span class="line">+              &lt;/g&gt;</span><br><span class="line">+            &lt;/svg&gt;</span><br><span class="line">+          &lt;/section&gt;</span><br><span class="line">+        &#123;% endif %&#125;</span><br><span class="line">      &lt;/header&gt;</span><br><span class="line">    &#123;%- endif %&#125;</span><br></pre></td></tr></table></figure>
+
+<p>这里提供一份方便复制的版本</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;header class=&quot;post-header&#123;% if not is_index %&#125; insidepost-header&#123;% endif %&#125;&quot;&gt;</span><br><span class="line"></span><br><span class="line">		&#123;% if not is_index %&#125;</span><br><span class="line">          &lt;section class=&quot;main-hero-waves-area waves-area&quot;&gt;</span><br><span class="line">            &lt;svg class=&quot;waves-svg&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot; xlink=&quot;http://www.w3.org/1999/xlink&quot; viewBox=&quot;0 24 150 28&quot; preserveAspectRatio=&quot;none&quot; shape-rendering=&quot;auto&quot;&gt;</span><br><span class="line">              &lt;defs&gt;</span><br><span class="line">                &lt;path id=&quot;gentle-wave&quot; d=&quot;M -160 44 c 30 0 58 -18 88 -18 s 58 18 88 18 s 58 -18 88 -18 s 58 18 88 18 v 44 h -352 Z&quot;&gt;&lt;/path&gt;</span><br><span class="line">              &lt;/defs&gt;</span><br><span class="line">              &lt;g class=&quot;parallax&quot;&gt;</span><br><span class="line">                &lt;use href=&quot;#gentle-wave&quot; x=&quot;48&quot; y=&quot;0&quot;&gt;&lt;/use&gt;</span><br><span class="line">                &lt;use href=&quot;#gentle-wave&quot; x=&quot;48&quot; y=&quot;3&quot;&gt;&lt;/use&gt;</span><br><span class="line">                &lt;use href=&quot;#gentle-wave&quot; x=&quot;48&quot; y=&quot;5&quot;&gt;&lt;/use&gt;</span><br><span class="line">                &lt;use href=&quot;#gentle-wave&quot; x=&quot;48&quot; y=&quot;7&quot;&gt;&lt;/use&gt;</span><br><span class="line">              &lt;/g&gt;</span><br><span class="line">            &lt;/svg&gt;</span><br><span class="line">          &lt;/section&gt;</span><br><span class="line">        &#123;% endif %&#125;</span><br></pre></td></tr></table></figure>
+
+<p>接下来在 <code>_config.next.yml</code> 中取消 <code>custom_file_path</code> 的 <code>style: source/_data/styles.styl</code> 的注释，并在 <code>根目录/source/_data/</code> 下创建 <code>styles.styl</code>，粘贴以下内容</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="comment">/* 波浪css */</span></span><br><span class="line"><span class="selector-class">.main-hero-waves-area</span> &#123;</span><br><span class="line">  <span class="attribute">width</span>: <span class="number">100%</span>;</span><br><span class="line">  <span class="attribute">height</span>: <span class="number">5rem</span>;</span><br><span class="line">  <span class="attribute">position</span>: relative;</span><br><span class="line">  <span class="attribute">left</span>: <span class="number">0</span>;</span><br><span class="line">  <span class="attribute">z-index</span>: <span class="number">5</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.waves-area</span> <span class="selector-class">.waves-svg</span> &#123;</span><br><span class="line">  <span class="attribute">width</span>: <span class="number">100%</span>;</span><br><span class="line">  <span class="attribute">height</span>: <span class="number">5rem</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/* Animation */</span></span><br><span class="line"></span><br><span class="line"><span class="selector-class">.parallax</span> &gt; use &#123;</span><br><span class="line">  <span class="attribute">animation</span>: move-forever <span class="number">25s</span> <span class="built_in">cubic-bezier</span>(<span class="number">0.55</span>, <span class="number">0.5</span>, <span class="number">0.45</span>, <span class="number">0.5</span>) infinite;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.parallax</span> &gt; use<span class="selector-pseudo">:nth-child</span>(<span class="number">1</span>) &#123;</span><br><span class="line">  <span class="attribute">animation-delay</span>: -<span class="number">2s</span>;</span><br><span class="line">  <span class="attribute">animation-duration</span>: <span class="number">7s</span>;</span><br><span class="line">  fill: <span class="number">#f7f9febd</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.parallax</span> &gt; use<span class="selector-pseudo">:nth-child</span>(<span class="number">2</span>) &#123;</span><br><span class="line">  <span class="attribute">animation-delay</span>: -<span class="number">3s</span>;</span><br><span class="line">  <span class="attribute">animation-duration</span>: <span class="number">10s</span>;</span><br><span class="line">  fill: <span class="number">#f7f9fe82</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.parallax</span> &gt; use<span class="selector-pseudo">:nth-child</span>(<span class="number">3</span>) &#123;</span><br><span class="line">  <span class="attribute">animation-delay</span>: -<span class="number">4s</span>;</span><br><span class="line">  <span class="attribute">animation-duration</span>: <span class="number">13s</span>;</span><br><span class="line">  fill: <span class="number">#f7f9fe36</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.parallax</span> &gt; use<span class="selector-pseudo">:nth-child</span>(<span class="number">4</span>) &#123;</span><br><span class="line">  <span class="attribute">animation-delay</span>: -<span class="number">5s</span>;</span><br><span class="line">  <span class="attribute">animation-duration</span>: <span class="number">20s</span>;</span><br><span class="line">  fill: <span class="number">#f7f9fe</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/* 黑色模式背景 */</span></span><br><span class="line"><span class="selector-attr">[data-theme=<span class="string">&quot;dark&quot;</span>]</span> <span class="selector-class">.parallax</span> &gt; use<span class="selector-pseudo">:nth-child</span>(<span class="number">1</span>) &#123;</span><br><span class="line">  <span class="attribute">animation-delay</span>: -<span class="number">2s</span>;</span><br><span class="line">  <span class="attribute">animation-duration</span>: <span class="number">7s</span>;</span><br><span class="line">  fill: <span class="number">#18171dc8</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-attr">[data-theme=<span class="string">&quot;dark&quot;</span>]</span> <span class="selector-class">.parallax</span> &gt; use<span class="selector-pseudo">:nth-child</span>(<span class="number">2</span>) &#123;</span><br><span class="line">  <span class="attribute">animation-delay</span>: -<span class="number">3s</span>;</span><br><span class="line">  <span class="attribute">animation-duration</span>: <span class="number">10s</span>;</span><br><span class="line">  fill: <span class="number">#18171d80</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-attr">[data-theme=<span class="string">&quot;dark&quot;</span>]</span> <span class="selector-class">.parallax</span> &gt; use<span class="selector-pseudo">:nth-child</span>(<span class="number">3</span>) &#123;</span><br><span class="line">  <span class="attribute">animation-delay</span>: -<span class="number">4s</span>;</span><br><span class="line">  <span class="attribute">animation-duration</span>: <span class="number">13s</span>;</span><br><span class="line">  fill: <span class="number">#18171d3e</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-attr">[data-theme=<span class="string">&quot;dark&quot;</span>]</span> <span class="selector-class">.parallax</span> &gt; use<span class="selector-pseudo">:nth-child</span>(<span class="number">4</span>) &#123;</span><br><span class="line">  <span class="attribute">animation-delay</span>: -<span class="number">5s</span>;</span><br><span class="line">  <span class="attribute">animation-duration</span>: <span class="number">20s</span>;</span><br><span class="line">  fill: <span class="number">#18171d</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">@keyframes</span> move-forever &#123;</span><br><span class="line">  <span class="number">0%</span> &#123;</span><br><span class="line">    <span class="attribute">transform</span>: <span class="built_in">translate3d</span>(-<span class="number">90px</span>, <span class="number">0</span>, <span class="number">0</span>);</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="number">100%</span> &#123;</span><br><span class="line">    <span class="attribute">transform</span>: <span class="built_in">translate3d</span>(<span class="number">85px</span>, <span class="number">0</span>, <span class="number">0</span>);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/*Shrinking for mobile*/</span></span><br><span class="line"><span class="keyword">@media</span> (<span class="attribute">max-width</span>: <span class="number">768px</span>) &#123;</span><br><span class="line">  <span class="selector-class">.waves-area</span>, <span class="selector-class">.waves-area</span> <span class="selector-class">.waves-svg</span> &#123;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">40px</span>;</span><br><span class="line">    <span class="attribute">min-height</span>: <span class="number">40px</span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/* 修改postheader背景 */</span></span><br><span class="line"><span class="selector-class">.insidepost-header</span> &#123;</span><br><span class="line">    <span class="attribute">margin-left</span>: -<span class="number">40px</span>;</span><br><span class="line">    <span class="attribute">margin-right</span>: -<span class="number">40px</span>;</span><br><span class="line">    <span class="attribute">background</span>: <span class="built_in">var</span>(--theme-color);</span><br><span class="line">    <span class="attribute">margin-top</span>: -<span class="number">70px</span>;</span><br><span class="line">    <span class="attribute">padding-top</span>: <span class="number">40px</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.insidepost-header</span>, <span class="selector-class">.insidepost-header</span> <span class="selector-tag">a</span>, <span class="selector-class">.insidepost-header</span> <span class="selector-class">.post-meta-container</span> &#123;</span><br><span class="line">  <span class="attribute">color</span>: white;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.insidepost-header</span> <span class="selector-class">.post-meta-container</span> &#123;</span><br><span class="line">  <span class="attribute">margin-bottom</span>: <span class="number">40px</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.insidepost-header</span> <span class="selector-class">.post-description</span> &#123;</span><br><span class="line">    <span class="attribute">display</span>: none;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.insidepost-header</span> <span class="selector-tag">h1</span><span class="selector-class">.post-title</span>, <span class="selector-class">.insidepost-header</span> <span class="selector-class">.post-meta-container</span> &#123;</span><br><span class="line">    <span class="attribute">padding-left</span>: <span class="number">40px</span>;</span><br><span class="line">    <span class="attribute">padding-right</span>: <span class="number">40px</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">@media</span> (<span class="attribute">max-width</span>: <span class="number">991px</span>) &#123;</span><br><span class="line">  <span class="selector-class">.insidepost-header</span> &#123;</span><br><span class="line">    <span class="attribute">margin-left</span>: -<span class="number">20px</span>;</span><br><span class="line">    <span class="attribute">margin-right</span>: -<span class="number">20px</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="selector-class">.insidepost-header</span> <span class="selector-tag">h1</span><span class="selector-class">.post-title</span>, <span class="selector-class">.insidepost-header</span> <span class="selector-class">.post-meta-container</span> &#123;</span><br><span class="line">    <span class="attribute">padding-left</span>: <span class="number">20px</span>;</span><br><span class="line">    <span class="attribute">padding-right</span>: <span class="number">20px</span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>然后打开网站看看效果吧！</p>
+<p>效果图：</p>
+<p><img data-src="https://img.fufu.ink/6SevHQ.webp" alt="文章顶部波浪效果图"></p>
+]]></content>
+      <categories>
+        <category>技术</category>
+      </categories>
+      <tags>
+        <tag>教程</tag>
+        <tag>技术</tag>
+        <tag>Hexo</tag>
+        <tag>Next</tag>
+        <tag>CSS</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>【每日语法】~さえ~ば</title>
+    <url>/2023/05/mnnhgbp5.html</url>
+    <content><![CDATA[<p>接续：</p>
+<blockquote>
+<p>N + さえ + 假定形<br>A（く形）&#x2F; NA（て形）+ さえあれば<br>V（ます形）&#x2F; サ变动词词干 + さえすれば</p>
+</blockquote>
+<p>意为「只要···就···」。关于假定形的变形方法，请参考<a href="/2023/04/mnnhgbp1.html">『【每日语法】~ば~ほど』</a>的文末表格。</p>
+<p>例句：やすくさえあれば、買いましょう。<br>译：只要便宜的话就买吧！</p>
 ]]></content>
       <categories>
         <category>日语</category>
       </categories>
       <tags>
         <tag>日语</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Waline 美化教程</title>
-    <url>/2023/04/walinedecoration.html</url>
-    <content><![CDATA[<p>起因是看到许多博客使用的 twikoo 评论系统，觉得 twikoo 的前端样式很好看，与之相对的正在用的 waline 的默认样式是真的不好看，本来打算直接换到 twikoo 的，转念一想，既然是属于样式的东西，为什么不直接用 css 解决呢，没有必要为了一个效果而去换插件。博主的 css 不行，只会 <kbd>F12</kbd> 找到哪个元素改哪个。至于定位元素之类的完全不行＞﹏＜。只要最后好看了就 ok 了！（bushi</p>
-<p>以下为代码部分（部分选择器需要根据实际更换）</p>
-<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="comment">/* 修改waline样式 */</span></span><br><span class="line"><span class="comment">/* 修改评论框外观 */</span></span><br><span class="line"><span class="selector-class">.wl-panel</span> &#123;</span><br><span class="line">    <span class="attribute">border-radius</span>: <span class="number">4px</span> <span class="meta">!important</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-pseudo">:root</span> &#123;</span><br><span class="line">    <span class="attr">--waline-bgcolor-light</span>: transparent <span class="meta">!important</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.wl-btn</span> &#123;</span><br><span class="line">    <span class="attribute">border-radius</span>: <span class="number">0.3em</span> <span class="meta">!important</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* 添加miku的gif为输入区域背景 */</span></span><br><span class="line"><span class="selector-id">#wl-edit</span> &#123;</span><br><span class="line">    <span class="attribute">background</span>: <span class="built_in">url</span>(<span class="string">&quot;/img/wl-bg-mikuchan.gif&quot;</span>) <span class="number">100%</span> <span class="number">100%</span> no-repeat;</span><br><span class="line">    <span class="attribute">background-size</span>: contain <span class="meta">!important</span>;</span><br><span class="line">    <span class="attribute">background-repeat</span>: no-repeat <span class="meta">!important</span>;</span><br><span class="line">    <span class="attribute">background-position</span>: right bottom <span class="meta">!important</span>; </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-id">#waline-wrap</span> <span class="selector-tag">textarea</span><span class="selector-pseudo">:focus</span> &#123;</span><br><span class="line">    <span class="attribute">background</span>: <span class="built_in">url</span>(<span class="string">&quot;/img/wl-bg-mikuchan.gif&quot;</span>) <span class="number">100%</span> <span class="number">100%</span> no-repeat;</span><br><span class="line">    <span class="attribute">background-position</span>-y: <span class="number">78px</span> <span class="meta">!important</span>;</span><br><span class="line">    <span class="attribute">transition</span>: all <span class="number">0.25s</span> ease-in-out <span class="number">0s</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* 修改评论区内容背景 */</span></span><br><span class="line"><span class="selector-class">.wl-card</span> <span class="selector-class">.wl-content</span> &#123;</span><br><span class="line">    <span class="attribute">background</span>: <span class="number">#f5f5f5</span>;</span><br><span class="line">    <span class="attribute">padding</span>: <span class="number">16px</span> <span class="meta">!important</span>;</span><br><span class="line">    <span class="attribute">margin</span>: <span class="number">12px</span> <span class="number">0</span> <span class="number">8px</span> <span class="meta">!important</span>;</span><br><span class="line">    <span class="attribute">border-radius</span>: <span class="number">3px</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.wl-card</span> &#123;</span><br><span class="line">    <span class="attribute">border-bottom</span>: none <span class="meta">!important</span>;</span><br><span class="line">    <span class="attribute">padding-bottom</span>: <span class="number">0px</span> <span class="meta">!important</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.wl-cards</span> <span class="selector-class">.wl-item</span>&#123;</span><br><span class="line">    <span class="attribute">padding</span>: .<span class="number">5em</span> .<span class="number">5em</span> <span class="number">0px</span> <span class="meta">!important</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>效果图如下（因图片是截取自评论区而打了码，头像这些不属于以上代码，后面可以考虑改一下默认头像）</p>
-<p><img data-src="https://img.fufu.ink/iTcakI.webp" alt="Waline评论框美化效果"></p>
-<p><img data-src="https://img.fufu.ink/JDVkhh.webp" alt="Waline评论区美化效果"></p>
-<p>其中评论框的背景 gif 需要自己下载下来放到 <code>/source/img/</code> 下即可（记得重命名），别直接用我的博客的地址！（就这么点大小的图片就别直接挂别人的链接了吧，虽然我也不会做防盗链…）</p>
-<p>修改文本输入框中的提示文字需要到主题的配置文件中找到 waline 的配置项，在其中添加 <code>locale: &#123;placeholder: &#39;提示文字&#39;&#125;</code> 即可，以主题 butterfly 为例，则需要在 option 中添加该行代码，需要注意缩进，如下所示</p>
-<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">waline:</span></span><br><span class="line">  <span class="attr">serverURL:</span> <span class="comment"># Waline server address url</span></span><br><span class="line">  <span class="attr">bg:</span> <span class="comment"># waline background</span></span><br><span class="line">  <span class="attr">pageview:</span> <span class="literal">false</span></span><br><span class="line">  <span class="attr">option:</span></span><br><span class="line">    <span class="attr">locale:</span> &#123;<span class="attr">placeholder:</span> <span class="string">&#x27;提示文字&#x27;</span>&#125;</span><br></pre></td></tr></table></figure>
-
-<p>最后就是上面效果图的样子啦！</p>
-]]></content>
-      <categories>
-        <category>技术</category>
-      </categories>
-      <tags>
-        <tag>Hexo</tag>
-        <tag>技术</tag>
-        <tag>教程</tag>
-        <tag>CSS</tag>
       </tags>
   </entry>
   <entry>
@@ -345,14 +321,69 @@
       </tags>
   </entry>
   <entry>
-    <title>【每日语法】~さえ~ば</title>
-    <url>/2023/05/mnnhgbp5.html</url>
-    <content><![CDATA[<p>接续：</p>
-<blockquote>
-<p>N + さえ + 假定形<br>A（く形）&#x2F; NA（て形）+ さえあれば<br>V（ます形）&#x2F; サ变动词词干 + さえすれば</p>
-</blockquote>
-<p>意为「只要···就···」。关于假定形的变形方法，请参考<a href="/2023/04/mnnhgbp1.html">『【每日语法】~ば~ほど』</a>的文末表格。</p>
-<p>例句：やすくさえあれば、買いましょう。<br>译：只要便宜的话就买吧！</p>
+    <title>【每日语法】N1 易混语法总结</title>
+    <url>/2024/03/mnnhgbp6.html</url>
+    <content><![CDATA[<details class="note default no-icon"><summary><p><strong>自不必说</strong>的表达，后常续「も」「さえ」「まで」等</p>
+</summary>
+<p>～はもちろん、～</p>
+<p>～は言うまでもなく、～</p>
+<p>～は言わずもがな、～</p>
+<p>～どころか、～</p>
+<p>～もさることながら、～</p>
+<p>～は言うに及ばず、～</p>
+
+</details>
+
+<details class="note default no-icon"><summary><p><strong>姑且不论</strong>（部分句子可译为「如果……的话，还情有可原，但……」）的表达</p>
+</summary>
+<p>～ならいざしらず、～</p>
+<p>～なら&#x2F;はともかく、～</p>
+<p>～なら&#x2F;は別だが、～</p>
+<p>～なら&#x2F;はまだしも、～</p>
+<p>～はさておき&#x2F;はさておいて～</p>
+
+</details>
+]]></content>
+      <categories>
+        <category>日语</category>
+      </categories>
+      <tags>
+        <tag>日语</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>【每日语法】~ば~ほど</title>
+    <url>/2023/04/mnnhgbp1.html</url>
+    <content><![CDATA[<p><strong>语法：V（假定形）+ V（原形）+ ほど</strong></p>
+<p>意为「越…越…」。</p>
+<p>例句：</p>
+<p>日语：この本は読めば読むほど面白いと思う。</p>
+<p>译：这本书越读越觉得有趣。</p>
+<p>假定形变形规则：</p>
+<table>
+<thead>
+<tr>
+<th align="center">词类</th>
+<th align="center">规则</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">动词</td>
+<td align="center">词尾假名变为同行的「え」段假名，再加「ば」</td>
+</tr>
+<tr>
+<td align="center">形容词</td>
+<td align="center">词尾「い」变「ければ」</td>
+</tr>
+<tr>
+<td align="center">形容动词</td>
+<td align="center">词干加「ならば」或者「であれば」</td>
+</tr>
+<tr>
+<td align="center">名词</td>
+<td align="center">加「ならば」或者「であれば」</td>
+</tr>
+</tbody></table>
 ]]></content>
       <categories>
         <category>日语</category>
@@ -427,37 +458,6 @@
 <p>(1). 約束したからには、ちゃんと守るべきだ。<br>译：既然约好了，就应该好好遵守约定。</p>
 <p>(2). 秘密を知られた上は、生かしてはおけない。<br>译：既然被你知道了这个秘密，就不能让你活下去了。</p>
 <p>(3). 会社を辞めると決めた以上、早く上司にその旨を伝えなければならない。<br>译：既然决定好向公司辞职了，就必须早点告诉上司这件事。</p>
-]]></content>
-      <categories>
-        <category>日语</category>
-      </categories>
-      <tags>
-        <tag>日语</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>【每日语法】N1 易混语法总结</title>
-    <url>/2024/03/mnnhgbp6.html</url>
-    <content><![CDATA[<details class="note default no-icon"><summary><p><strong>自不必说</strong>的表达，后常续「も」「さえ」「まで」等</p>
-</summary>
-<p>～はもちろん、～</p>
-<p>～は言うまでもなく、～</p>
-<p>～は言わずもがな、～</p>
-<p>～どころか、～</p>
-<p>～もさることながら、～</p>
-<p>～は言うに及ばず、～</p>
-
-</details>
-
-<details class="note default no-icon"><summary><p><strong>姑且不论</strong>（部分句子可译为「如果……的话，还情有可原，但……」）的表达</p>
-</summary>
-<p>～ならいざしらず、～</p>
-<p>～なら&#x2F;はともかく、～</p>
-<p>～なら&#x2F;は別だが、～</p>
-<p>～なら&#x2F;はまだしも、～</p>
-<p>～はさておき&#x2F;はさておいて～</p>
-
-</details>
 ]]></content>
       <categories>
         <category>日语</category>
@@ -712,27 +712,6 @@
       </tags>
   </entry>
   <entry>
-    <title>【笔记·古典日语】形容词</title>
-    <url>/2024/04/kobun5.html</url>
-    <content><![CDATA[<p>形容词分为两类，通过「なる」的接续判断</p>
-<p><img data-src="https://img.fufu.ink/S6lKGs.webp"></p>
-<p><img data-src="https://img.fufu.ink/rrXv0C.webp"></p>
-<p>两者除了终止形变形方式不同，其余变形方式一致。补助活用的活用词尾的活用方式与ラ变动词「あり」的活用方式一致，因此属于<strong>ラ变形</strong></p>
-<p><img data-src="https://img.fufu.ink/U2aUwf.webp"></p>
-<p>补助活用一般后续助动词，本活用一般后续助词或其他</p>
-<p>特例：</p>
-<p><img data-src="https://img.fufu.ink/skZm8P.webp"></p>
-]]></content>
-      <categories>
-        <category>日语</category>
-      </categories>
-      <tags>
-        <tag>日语</tag>
-        <tag>古典日语</tag>
-        <tag>语法</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>【笔记·古典日语】活用形及接续</title>
     <url>/2024/04/kobun3.html</url>
     <content><![CDATA[<p>6 种活用形</p>
@@ -746,6 +725,27 @@
 <p>ラ变<strong>动词</strong>：在ラ行上进行活用的，即活用词尾为（ら·り·り·る·れ·れ）形式的动词。ラ变动词只有<strong>「あり」「をり」「はべり」「いまそかり」</strong>四个。</p>
 <p>ラ变<strong>型</strong>：像ラ变动词一样进行活用，即活用词尾也为（ら·り·り·る·れ·れ）形式的<strong>活用语</strong>，如下图</p>
 <p><img data-src="https://img.fufu.ink/EXKIlJ.webp"></p>
+]]></content>
+      <categories>
+        <category>日语</category>
+      </categories>
+      <tags>
+        <tag>日语</tag>
+        <tag>古典日语</tag>
+        <tag>语法</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>【笔记·古典日语】形容词</title>
+    <url>/2024/04/kobun5.html</url>
+    <content><![CDATA[<p>形容词分为两类，通过「なる」的接续判断</p>
+<p><img data-src="https://img.fufu.ink/S6lKGs.webp"></p>
+<p><img data-src="https://img.fufu.ink/rrXv0C.webp"></p>
+<p>两者除了终止形变形方式不同，其余变形方式一致。补助活用的活用词尾的活用方式与ラ变动词「あり」的活用方式一致，因此属于<strong>ラ变形</strong></p>
+<p><img data-src="https://img.fufu.ink/U2aUwf.webp"></p>
+<p>补助活用一般后续助动词，本活用一般后续助词或其他</p>
+<p>特例：</p>
+<p><img data-src="https://img.fufu.ink/skZm8P.webp"></p>
 ]]></content>
       <categories>
         <category>日语</category>
@@ -779,6 +779,32 @@
 <div class="group-picture"><div class="group-picture-row"><div class="group-picture-column"><img data-src="https://img.fufu.ink/UK05Cl.webp"></div><div class="group-picture-column"><img data-src="https://img.fufu.ink/E9px86.webp"></div><div class="group-picture-column"><img data-src="https://img.fufu.ink/9UqtuK.webp"></div></div></div>
 
 <p>反推过程：先看到「（表示传闻及推测的）なり・めり・べし」，关键是要认出前面的动词是ラ变型，然后为什么会是这样的形态，是因为省略了「ん」，补充上「ん」后，由「（表示传闻及推测的）なり・めり・べし」前续ラ变型时要接连体形可知「～ん」是连体形，是由原来的词的连体形拨音便变化而来。由此可得出音便前的形态。</p>
+]]></content>
+      <categories>
+        <category>日语</category>
+      </categories>
+      <tags>
+        <tag>日语</tag>
+        <tag>古典日语</tag>
+        <tag>语法</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>【笔记·古典日语】词干的作用</title>
+    <url>/2024/04/kobun7.html</url>
+    <content><![CDATA[<p>形容词·形容动词的词干的用法</p>
+<p>第一种</p>
+<p>形式：あな + 词干 + や（可省略）</p>
+<p>表示感动，惊讶等语气，意思大致相当于现代日语的「ああ、～だなあ」，可根据语境适当更改意思。「や」表示感叹，相当于「～だなあ」</p>
+<p><img data-src="https://img.fufu.ink/IPASxl.webp"></p>
+<p>第二种</p>
+<p>形式：词干 + の + N</p>
+<p>构成连体词，相当于其连体形</p>
+<p><img data-src="https://img.fufu.ink/G3jerd.webp"></p>
+<p><strong>形容动词没有，只有形容词才有的用法</strong></p>
+<p>形式：N + を（可省略）+ <strong>形容词</strong>词干 + み</p>
+<p>意思相当于「◯が⬜なので」，◯ 为 N，⬜ 为形容词。翻译成现代日语时可根据语境适当补充内容。</p>
+<p><img data-src="https://img.fufu.ink/zHntAB.webp"></p>
 ]]></content>
       <categories>
         <category>日语</category>
@@ -983,32 +1009,6 @@
       </tags>
   </entry>
   <entry>
-    <title>【笔记·古典日语】词干的作用</title>
-    <url>/2024/04/kobun7.html</url>
-    <content><![CDATA[<p>形容词·形容动词的词干的用法</p>
-<p>第一种</p>
-<p>形式：あな + 词干 + や（可省略）</p>
-<p>表示感动，惊讶等语气，意思大致相当于现代日语的「ああ、～だなあ」，可根据语境适当更改意思。「や」表示感叹，相当于「～だなあ」</p>
-<p><img data-src="https://img.fufu.ink/IPASxl.webp"></p>
-<p>第二种</p>
-<p>形式：词干 + の + N</p>
-<p>构成连体词，相当于其连体形</p>
-<p><img data-src="https://img.fufu.ink/G3jerd.webp"></p>
-<p><strong>形容动词没有，只有形容词才有的用法</strong></p>
-<p>形式：N + を（可省略）+ <strong>形容词</strong>词干 + み</p>
-<p>意思相当于「◯が⬜なので」，◯ 为 N，⬜ 为形容词。翻译成现代日语时可根据语境适当补充内容。</p>
-<p><img data-src="https://img.fufu.ink/zHntAB.webp"></p>
-]]></content>
-      <categories>
-        <category>日语</category>
-      </categories>
-      <tags>
-        <tag>日语</tag>
-        <tag>古典日语</tag>
-        <tag>语法</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>不断变强的万达</title>
     <url>/2023/08/genshinwandatsuyoi.html</url>
     <content><![CDATA[<p>去年垫池子抽到了达达鸭，今年 1 月份开始练万达国际，入坑一年以来首次打通了深渊（<a href="/2023/01/genshinshenyuanfirst.html">见『纪念第一次打通深渊』</a>），当时的面板没有截图。</p>
@@ -1083,6 +1083,25 @@
       </tags>
   </entry>
   <entry>
+    <title>在追求「快」的时代，我们该何去何从</title>
+    <url>/2023/05/fastjidaidedousurebaii.html</url>
+    <content><![CDATA[<p>不知从什么时候开始，「快」这个概念频繁地出现在我的视野中。周围的人似乎都在不断地追求着它。<span id="more"></span></p>
+<p>最典型的例子就是各大视频软件开始推出「短视频」服务，大家越来越适应不了慢节奏的视频。曾几何时，看见过一个 b 站的评论，大概意思是只有缩短视频时长，才有更大的机会上首页推荐，上首页的都是五分钟内的视频，而那些十多分钟甚至几十分钟的视频却被埋没了，其中不乏许多优质的内容。在我所见到的番剧这一边，许多番剧因为前期铺垫过长而被诟病，以动画『命运石之门』举例，提到这部作品，熟悉的人都知道是一部神作，许多人却因为前部分「剧情推进过慢」「日常太多」而放弃继续追番。再比如『原神』这款游戏，无聊之际点开社区看看，却发现充斥着大量的「剧情又臭又长」「剧情能不能加个跳过按钮」诸如此类的言论。但剧情不正是这款游戏吸引人的一部分吗，我在内心如此发问道。</p>
+<p>以上是从我的视角看见的「快」，但这个信息时代，在更多的我看不见的地方仍然在追求着「快」。</p>
+<p>这个时代很浮躁——这是我的结论。</p>
+<p>我曾向自己发问，自己有多久没有静下心来好好读一本书了，有多久没有钻在一个问题上好好研究过了。尽管我自己是反对这种盲目追求「快节奏」的，但耐心好像也在慢慢地变少，自己也在慢慢的融入这种快节奏的生活，大概也有相当一部分的人也是如此吧，尽管也想慢下来，却被身后的狂潮向前推动，身不由己地变「快」了。</p>
+<p>在这种「快」的狂潮面前，我无能为力，却也不想被其推动，就像飘在海洋上的小船在逆着海风前行一般（也许这个比喻并不恰当）。</p>
+<p>写到这里写不下去了，就这么收尾了罢。借用一句『原神』中的话——「旅行者，当你重新踏上旅途之后，一定要记住旅途本身的意义」。愿你我在这个快节奏的时代能够找到一件能够安下心来做的事情，愿你我不会在「快」的狂潮中迷失了方向，随波逐流。</p>
+]]></content>
+      <categories>
+        <category>日常</category>
+      </categories>
+      <tags>
+        <tag>随笔</tag>
+        <tag>吐槽</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>叕出神子啦加深渊终于凹满了</title>
     <url>/2023/06/genshinkamikoaru.html</url>
     <content><![CDATA[<p>先说说深渊，博主在今年 2 月之前是无论如何都打不过深渊的，2 月后开始练万达国际，学会双扩后，队伍养得差不多后就在 2 月 18 日第一次凹过 12 层，见<a href="/2023/02/genshinshenyuanmanxing.html">『打通深渊后半个月，我又第一次满星深渊！』</a>。此后除了第一期沙虫因为「草行九」练度不够，没有满星之外，每一期都能做到满星了！不过近来几期深渊越来越难，大量的「挤模型」「多动症」「厚盾」「拖时间」的机制怪出现，属实是恶心人。之前圣骸兽博主一直是用「草行九瑶」过的，不过这次由于 12-3 下半是「深罪浸礼者」，队伍中必须有「火 草&#x2F;冰 水」，「草行九」自然就成了选择，再加上了前几天出的宵宫用以破冰盾。问题就是上半该用什么队伍，一开始认为万达打圣骸兽也许很麻烦，就想试着用雷国，可惜博主没怎么练雷神，故试了多种配队后还是决定使用万达。最后是 2 分钟打完了四只圣骸兽，用了剩下 1 分钟过了深罪浸礼者（很险···6分59秒打完的，系统判定为 3 星）。</p>
@@ -1112,25 +1131,6 @@
       <tags>
         <tag>节日</tag>
         <tag>二次元</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>在追求「快」的时代，我们该何去何从</title>
-    <url>/2023/05/fastjidaidedousurebaii.html</url>
-    <content><![CDATA[<p>不知从什么时候开始，「快」这个概念频繁地出现在我的视野中。周围的人似乎都在不断地追求着它。<span id="more"></span></p>
-<p>最典型的例子就是各大视频软件开始推出「短视频」服务，大家越来越适应不了慢节奏的视频。曾几何时，看见过一个 b 站的评论，大概意思是只有缩短视频时长，才有更大的机会上首页推荐，上首页的都是五分钟内的视频，而那些十多分钟甚至几十分钟的视频却被埋没了，其中不乏许多优质的内容。在我所见到的番剧这一边，许多番剧因为前期铺垫过长而被诟病，以动画『命运石之门』举例，提到这部作品，熟悉的人都知道是一部神作，许多人却因为前部分「剧情推进过慢」「日常太多」而放弃继续追番。再比如『原神』这款游戏，无聊之际点开社区看看，却发现充斥着大量的「剧情又臭又长」「剧情能不能加个跳过按钮」诸如此类的言论。但剧情不正是这款游戏吸引人的一部分吗，我在内心如此发问道。</p>
-<p>以上是从我的视角看见的「快」，但这个信息时代，在更多的我看不见的地方仍然在追求着「快」。</p>
-<p>这个时代很浮躁——这是我的结论。</p>
-<p>我曾向自己发问，自己有多久没有静下心来好好读一本书了，有多久没有钻在一个问题上好好研究过了。尽管我自己是反对这种盲目追求「快节奏」的，但耐心好像也在慢慢地变少，自己也在慢慢的融入这种快节奏的生活，大概也有相当一部分的人也是如此吧，尽管也想慢下来，却被身后的狂潮向前推动，身不由己地变「快」了。</p>
-<p>在这种「快」的狂潮面前，我无能为力，却也不想被其推动，就像飘在海洋上的小船在逆着海风前行一般（也许这个比喻并不恰当）。</p>
-<p>写到这里写不下去了，就这么收尾了罢。借用一句『原神』中的话——「旅行者，当你重新踏上旅途之后，一定要记住旅途本身的意义」。愿你我在这个快节奏的时代能够找到一件能够安下心来做的事情，愿你我不会在「快」的狂潮中迷失了方向，随波逐流。</p>
-]]></content>
-      <categories>
-        <category>日常</category>
-      </categories>
-      <tags>
-        <tag>随笔</tag>
-        <tag>吐槽</tag>
       </tags>
   </entry>
   <entry>
@@ -1190,8 +1190,8 @@
         <category>技术</category>
       </categories>
       <tags>
-        <tag>Hexo</tag>
         <tag>技术</tag>
+        <tag>Hexo</tag>
       </tags>
   </entry>
   <entry>
@@ -1253,25 +1253,6 @@
       </tags>
   </entry>
   <entry>
-    <title>打通深渊后半个月，我又第一次满星深渊！</title>
-    <url>/2023/02/genshinshenyuanmanxing.html</url>
-    <content><![CDATA[<p>上个月打通了深渊，但因为没练岩队，过不去黄金龙兽，然后万达的练度也拉。最近一直在研究万达的圣遗物搭配，看了把子哥的万达教学，把几个之前刷草神圣遗物拉起来的被我当作狗粮的圣遗物丢给公子，之前公子是 30&#x2F;160 的双爆，现在变成 78&#x2F;140 了，结果小助手一查，初步毕业了？然后去打深渊，把雷神之前的垃圾双爆圣遗物换成了精通狗粮，上半组了一支「瑶秋妲雷」，大招放完草神站场，没想到效果还挺好，相比于原来的「雷妲七主」只打超激化，现在多了超绽放的伤害，种门！（手不自觉地合上了~）然后就满星了！我都不知道为什么，猜测是之前 30 暴击的公子次次不暴击导致的……</p>
-<blockquote>
-<p>「说实话，当公子拥有 100% 暴击率，爆伤多少已经无所谓了」—— b站@这把我们就遇到高手</p>
-</blockquote>
-<p>315 天的萌新，xp 党，终于也满星深渊了~</p>
-<p><img data-src="https://img.fufu.ink/dz3OYE.webp" alt="第一次深渊满星"></p>
-<p>接下来准备攒着原石，等草神复刻，补 2 命，虽然大部分观点不认可非 6 命草神站场输出，但是我不管，我就希望她能够站场！继续坐牢绝缘本，给香菱刷圣遗物，狗粮就用来合成水套，毕竟很多公子的水套都是合成台毕业的。咱们也要打造一支「哪里亮了点哪里」也能够打通深渊的万达！</p>
-]]></content>
-      <categories>
-        <category>游戏</category>
-      </categories>
-      <tags>
-        <tag>原神</tag>
-        <tag>游戏</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>改进 Next 主题友链书写方式</title>
     <url>/2023/05/improvefdlinks.html</url>
     <content><![CDATA[<blockquote>
@@ -1307,9 +1288,28 @@
         <category>技术</category>
       </categories>
       <tags>
-        <tag>Hexo</tag>
         <tag>技术</tag>
+        <tag>Hexo</tag>
         <tag>CSS</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>打通深渊后半个月，我又第一次满星深渊！</title>
+    <url>/2023/02/genshinshenyuanmanxing.html</url>
+    <content><![CDATA[<p>上个月打通了深渊，但因为没练岩队，过不去黄金龙兽，然后万达的练度也拉。最近一直在研究万达的圣遗物搭配，看了把子哥的万达教学，把几个之前刷草神圣遗物拉起来的被我当作狗粮的圣遗物丢给公子，之前公子是 30&#x2F;160 的双爆，现在变成 78&#x2F;140 了，结果小助手一查，初步毕业了？然后去打深渊，把雷神之前的垃圾双爆圣遗物换成了精通狗粮，上半组了一支「瑶秋妲雷」，大招放完草神站场，没想到效果还挺好，相比于原来的「雷妲七主」只打超激化，现在多了超绽放的伤害，种门！（手不自觉地合上了~）然后就满星了！我都不知道为什么，猜测是之前 30 暴击的公子次次不暴击导致的……</p>
+<blockquote>
+<p>「说实话，当公子拥有 100% 暴击率，爆伤多少已经无所谓了」—— b站@这把我们就遇到高手</p>
+</blockquote>
+<p>315 天的萌新，xp 党，终于也满星深渊了~</p>
+<p><img data-src="https://img.fufu.ink/dz3OYE.webp" alt="第一次深渊满星"></p>
+<p>接下来准备攒着原石，等草神复刻，补 2 命，虽然大部分观点不认可非 6 命草神站场输出，但是我不管，我就希望她能够站场！继续坐牢绝缘本，给香菱刷圣遗物，狗粮就用来合成水套，毕竟很多公子的水套都是合成台毕业的。咱们也要打造一支「哪里亮了点哪里」也能够打通深渊的万达！</p>
+]]></content>
+      <categories>
+        <category>游戏</category>
+      </categories>
+      <tags>
+        <tag>原神</tag>
+        <tag>游戏</tag>
       </tags>
   </entry>
   <entry>
@@ -2244,21 +2244,6 @@
       </tags>
   </entry>
   <entry>
-    <title>诈尸更新一下最近状态</title>
-    <url>/2023/07/natsuyasumijyoutai.html</url>
-    <content><![CDATA[<p>一个月没更新力。</p>
-<p>主要是没啥想法，每天宅在家里，打游戏，追番（这一个月可追了不少番——齐木楠雄的灾难，别当欧尼酱了，鬼灭，文豪野犬，因为太怕痛就全点防御力了，无职转生，无神世界中的神明活动，僵尸百分百，魔禁……算是把高中以来没怎么看番的时间全补回来了）。</p>
-<p>科二因为挂两回了，拖了两年了，明年要过期了，最近又开始练了。今天去考场中模拟了一个小时，除了最后一圈坡上起步因为边线距离扣了 10 分，都是 100 分，感觉下次考试应该问题不大了，现在开始准备科三了。科三打算 C1 转 C2 了，因为不用在意档位的变换，科三考试可以更稳地通过，现在主要是要求暑假结束前拿到驾照，否则拖到寒假就容易过期了。至于 C1 和 C2 的区别，上网查了一下，似乎是 C1 可以开蓝牌车，但 C2 只能开小型驾驶车？嘛，以后我也不会有机会去开手动挡啦，驾照这东西不就是图个方便么，怎么快速方便怎么来，没必要死磕个手动挡为难自己。</p>
-<p>家里躺了三周了，得开始准备下半年的 N1 了，虽然上个月的专四大概率挂了，但是 N1 还是得拿的，拿了就可以开始接一些小的翻译工作赚点零花钱了！</p>
-]]></content>
-      <categories>
-        <category>日常</category>
-      </categories>
-      <tags>
-        <tag>生活</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>论打造文化背景下日本美食文化中日双语科普介绍平台的可行性</title>
     <url>/2022/05/dachuangzuoye.html</url>
     <content><![CDATA[<blockquote>
@@ -2307,6 +2292,21 @@
         <tag>中外交流</tag>
         <tag>美食文化</tag>
         <tag>创业创新</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>诈尸更新一下最近状态</title>
+    <url>/2023/07/natsuyasumijyoutai.html</url>
+    <content><![CDATA[<p>一个月没更新力。</p>
+<p>主要是没啥想法，每天宅在家里，打游戏，追番（这一个月可追了不少番——齐木楠雄的灾难，别当欧尼酱了，鬼灭，文豪野犬，因为太怕痛就全点防御力了，无职转生，无神世界中的神明活动，僵尸百分百，魔禁……算是把高中以来没怎么看番的时间全补回来了）。</p>
+<p>科二因为挂两回了，拖了两年了，明年要过期了，最近又开始练了。今天去考场中模拟了一个小时，除了最后一圈坡上起步因为边线距离扣了 10 分，都是 100 分，感觉下次考试应该问题不大了，现在开始准备科三了。科三打算 C1 转 C2 了，因为不用在意档位的变换，科三考试可以更稳地通过，现在主要是要求暑假结束前拿到驾照，否则拖到寒假就容易过期了。至于 C1 和 C2 的区别，上网查了一下，似乎是 C1 可以开蓝牌车，但 C2 只能开小型驾驶车？嘛，以后我也不会有机会去开手动挡啦，驾照这东西不就是图个方便么，怎么快速方便怎么来，没必要死磕个手动挡为难自己。</p>
+<p>家里躺了三周了，得开始准备下半年的 N1 了，虽然上个月的专四大概率挂了，但是 N1 还是得拿的，拿了就可以开始接一些小的翻译工作赚点零花钱了！</p>
+]]></content>
+      <categories>
+        <category>日常</category>
+      </categories>
+      <tags>
+        <tag>生活</tag>
       </tags>
   </entry>
 </search>
