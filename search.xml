@@ -94,6 +94,36 @@
       </tags>
   </entry>
   <entry>
+    <title>Next 主题部分图片禁用 FancyBox</title>
+    <url>/2023/04/nextthemefancyboxdisabled.html</url>
+    <content><![CDATA[<p>之前用的主题有 fancybox 功能的都有部分图片禁用 fancybox 的功能，看了一遍文档却发现没有这个选项，去 issue 中和 discusstion 中也没找到相关的信息。<span id="more"></span>于是 google 了一下，发现真有<a href="https://blog.csdn.net/cddchina/article/details/79764432">相关教程</a>，不过是 18 年的了，现在 next 主题已经变了很多，fancybox 的 js 代码也没在 utils.js 文件中了。找了一下，发现 fancybox 的相关 js 代码已经单独写在了主题文件夹下的 <code>\source\js\third-party\fancybox.js</code> 中了。</p>
+<p>接着又在网上找到了一篇博客，发现插入的代码较也改进了一下，修改了当鼠标悬浮在已经被禁用 fancybox 效果的图片上时的状态，原文链接：<a href="https://kevin1061517.github.io/blog/posts/Hexo/2721/">https://kevin1061517.github.io/blog/posts/Hexo/2721/</a></p>
+<p>结合两篇博文，最终即为在 <code>\source\js\third-party\fancybox.js</code> 文件中的 <code>const $image = $(element);</code> 这一行与 <code>const imageLink = $image.attr(&#39;data-src&#39;) || $image.attr(&#39;src&#39;);</code> 之间添加以下代码</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">     <span class="keyword">const</span> $image = $(element);</span><br><span class="line">+    <span class="keyword">if</span> ($(element).<span class="title function_">hasClass</span>(<span class="string">&#x27;nofancybox&#x27;</span>))&#123;  <span class="comment">//是否有包含自己定义的nofancybox属性，有就return true</span></span><br><span class="line">+        $(element).<span class="title function_">css</span>(<span class="string">&quot;cursor&quot;</span>,<span class="string">&quot;default&quot;</span>);    <span class="comment">//将碰到图片的鼠标从放大镜变成default模式</span></span><br><span class="line">+        <span class="keyword">return</span>;	<span class="comment">//不进行下面的fancybox的配置</span></span><br><span class="line">+      &#125;</span><br><span class="line">     <span class="keyword">const</span> imageLink = $image.<span class="title function_">attr</span>(<span class="string">&#x27;data-src&#x27;</span>) || $image.<span class="title function_">attr</span>(<span class="string">&#x27;src&#x27;</span>);</span><br></pre></td></tr></table></figure>
+
+<p>以下为方便复制的代码</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">if</span> ($(element).<span class="title function_">hasClass</span>(<span class="string">&#x27;nofancybox&#x27;</span>))&#123;  <span class="comment">//是否有包含自己定义的nofancybox属性，有就return true</span></span><br><span class="line">    $(element).<span class="title function_">css</span>(<span class="string">&quot;cursor&quot;</span>,<span class="string">&quot;default&quot;</span>);    <span class="comment">//将碰到图片的鼠标从放大镜变成default模式</span></span><br><span class="line">    <span class="keyword">return</span>;	<span class="comment">//不进行下面的fancybox的配置</span></span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+
+<p>之后只要给不想有 fancybox 效果的 <code>&lt;img&gt;</code> 元素增加 <code>class=&quot;nofancybox&quot;</code> 即可。</p>
+<hr>
+<p>后续更新来了，上面的代码是 jQuery 版的 Fancybox 的，现主题最新版本已完全去除 jQuery 的依赖且更新到了 Fancybox 5，上面的代码自然也就失效了。虽然不会 js，还是试着在 Google 和 Chatgpt 的帮助下改了一下代码。可以适配最新版本了。</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="variable language_">document</span>.<span class="title function_">querySelectorAll</span>(<span class="string">&#x27;.post-body :not(a) &gt; img, .post-body &gt; img&#x27;</span>).<span class="title function_">forEach</span>(<span class="function"><span class="params">image</span> =&gt;</span> &#123;</span><br><span class="line">+    <span class="keyword">if</span> (image.<span class="property">classList</span>.<span class="title function_">contains</span>(<span class="string">&#x27;nofancybox&#x27;</span>))&#123;  <span class="comment">//是否有包含自己定义的nofancybox属性，有就return true</span></span><br><span class="line">+      image.<span class="property">style</span>.<span class="property">cursor</span> = <span class="string">&#x27;default&#x27;</span>;    <span class="comment">//将碰到图片的鼠标从放大镜变成default模式</span></span><br><span class="line">+      <span class="keyword">return</span>;	<span class="comment">//不进行下面的fancybox的配置</span></span><br><span class="line">+    &#125;</span><br><span class="line">    <span class="keyword">const</span> imageLink = image.<span class="property">dataset</span>.<span class="property">src</span> || image.<span class="property">src</span>;</span><br></pre></td></tr></table></figure>
+
+<p>方便复制的版本</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">if</span> (image.<span class="property">classList</span>.<span class="title function_">contains</span>(<span class="string">&#x27;nofancybox&#x27;</span>))&#123;  <span class="comment">//是否有包含自己定义的nofancybox属性，有就return true</span></span><br><span class="line">  image.<span class="property">style</span>.<span class="property">cursor</span> = <span class="string">&#x27;default&#x27;</span>;    <span class="comment">//将碰到图片的鼠标从放大镜变成default模式</span></span><br><span class="line">  <span class="keyword">return</span>;	<span class="comment">//不进行下面的fancybox的配置</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>同样的，只要给不想有 fancybox 效果的 <code>&lt;img&gt;</code> 元素增加 <code>class=&quot;nofancybox&quot;</code> 即可。</p>
+]]></content>
+      <categories>
+        <category>技术</category>
+      </categories>
+      <tags>
+        <tag>技术</tag>
+        <tag>Hexo</tag>
+        <tag>JavaScript</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Next 主题添加说说</title>
     <url>/2024/04/nextaddessay.html</url>
     <content><![CDATA[<p>看见洪哥的即刻页面很好看，想 Copy 过来，可惜技术不行，写不来瀑布流，就只能搞个简单的 flex 布局。</p>
@@ -138,36 +168,6 @@
         <tag>技术</tag>
         <tag>Hexo</tag>
         <tag>Next</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Next 主题部分图片禁用 FancyBox</title>
-    <url>/2023/04/nextthemefancyboxdisabled.html</url>
-    <content><![CDATA[<p>之前用的主题有 fancybox 功能的都有部分图片禁用 fancybox 的功能，看了一遍文档却发现没有这个选项，去 issue 中和 discusstion 中也没找到相关的信息。<span id="more"></span>于是 google 了一下，发现真有<a href="https://blog.csdn.net/cddchina/article/details/79764432">相关教程</a>，不过是 18 年的了，现在 next 主题已经变了很多，fancybox 的 js 代码也没在 utils.js 文件中了。找了一下，发现 fancybox 的相关 js 代码已经单独写在了主题文件夹下的 <code>\source\js\third-party\fancybox.js</code> 中了。</p>
-<p>接着又在网上找到了一篇博客，发现插入的代码较也改进了一下，修改了当鼠标悬浮在已经被禁用 fancybox 效果的图片上时的状态，原文链接：<a href="https://kevin1061517.github.io/blog/posts/Hexo/2721/">https://kevin1061517.github.io/blog/posts/Hexo/2721/</a></p>
-<p>结合两篇博文，最终即为在 <code>\source\js\third-party\fancybox.js</code> 文件中的 <code>const $image = $(element);</code> 这一行与 <code>const imageLink = $image.attr(&#39;data-src&#39;) || $image.attr(&#39;src&#39;);</code> 之间添加以下代码</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">     <span class="keyword">const</span> $image = $(element);</span><br><span class="line">+    <span class="keyword">if</span> ($(element).<span class="title function_">hasClass</span>(<span class="string">&#x27;nofancybox&#x27;</span>))&#123;  <span class="comment">//是否有包含自己定义的nofancybox属性，有就return true</span></span><br><span class="line">+        $(element).<span class="title function_">css</span>(<span class="string">&quot;cursor&quot;</span>,<span class="string">&quot;default&quot;</span>);    <span class="comment">//将碰到图片的鼠标从放大镜变成default模式</span></span><br><span class="line">+        <span class="keyword">return</span>;	<span class="comment">//不进行下面的fancybox的配置</span></span><br><span class="line">+      &#125;</span><br><span class="line">     <span class="keyword">const</span> imageLink = $image.<span class="title function_">attr</span>(<span class="string">&#x27;data-src&#x27;</span>) || $image.<span class="title function_">attr</span>(<span class="string">&#x27;src&#x27;</span>);</span><br></pre></td></tr></table></figure>
-
-<p>以下为方便复制的代码</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">if</span> ($(element).<span class="title function_">hasClass</span>(<span class="string">&#x27;nofancybox&#x27;</span>))&#123;  <span class="comment">//是否有包含自己定义的nofancybox属性，有就return true</span></span><br><span class="line">    $(element).<span class="title function_">css</span>(<span class="string">&quot;cursor&quot;</span>,<span class="string">&quot;default&quot;</span>);    <span class="comment">//将碰到图片的鼠标从放大镜变成default模式</span></span><br><span class="line">    <span class="keyword">return</span>;	<span class="comment">//不进行下面的fancybox的配置</span></span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
-
-<p>之后只要给不想有 fancybox 效果的 <code>&lt;img&gt;</code> 元素增加 <code>class=&quot;nofancybox&quot;</code> 即可。</p>
-<hr>
-<p>后续更新来了，上面的代码是 jQuery 版的 Fancybox 的，现主题最新版本已完全去除 jQuery 的依赖且更新到了 Fancybox 5，上面的代码自然也就失效了。虽然不会 js，还是试着在 Google 和 Chatgpt 的帮助下改了一下代码。可以适配最新版本了。</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="variable language_">document</span>.<span class="title function_">querySelectorAll</span>(<span class="string">&#x27;.post-body :not(a) &gt; img, .post-body &gt; img&#x27;</span>).<span class="title function_">forEach</span>(<span class="function"><span class="params">image</span> =&gt;</span> &#123;</span><br><span class="line">+    <span class="keyword">if</span> (image.<span class="property">classList</span>.<span class="title function_">contains</span>(<span class="string">&#x27;nofancybox&#x27;</span>))&#123;  <span class="comment">//是否有包含自己定义的nofancybox属性，有就return true</span></span><br><span class="line">+      image.<span class="property">style</span>.<span class="property">cursor</span> = <span class="string">&#x27;default&#x27;</span>;    <span class="comment">//将碰到图片的鼠标从放大镜变成default模式</span></span><br><span class="line">+      <span class="keyword">return</span>;	<span class="comment">//不进行下面的fancybox的配置</span></span><br><span class="line">+    &#125;</span><br><span class="line">    <span class="keyword">const</span> imageLink = image.<span class="property">dataset</span>.<span class="property">src</span> || image.<span class="property">src</span>;</span><br></pre></td></tr></table></figure>
-
-<p>方便复制的版本</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">if</span> (image.<span class="property">classList</span>.<span class="title function_">contains</span>(<span class="string">&#x27;nofancybox&#x27;</span>))&#123;  <span class="comment">//是否有包含自己定义的nofancybox属性，有就return true</span></span><br><span class="line">  image.<span class="property">style</span>.<span class="property">cursor</span> = <span class="string">&#x27;default&#x27;</span>;    <span class="comment">//将碰到图片的鼠标从放大镜变成default模式</span></span><br><span class="line">  <span class="keyword">return</span>;	<span class="comment">//不进行下面的fancybox的配置</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>同样的，只要给不想有 fancybox 效果的 <code>&lt;img&gt;</code> 元素增加 <code>class=&quot;nofancybox&quot;</code> 即可。</p>
-]]></content>
-      <categories>
-        <category>技术</category>
-      </categories>
-      <tags>
-        <tag>技术</tag>
-        <tag>Hexo</tag>
-        <tag>JavaScript</tag>
       </tags>
   </entry>
   <entry>
@@ -280,69 +280,13 @@
       </tags>
   </entry>
   <entry>
-    <title>【书摘】无赖派太宰治充满颓废气息的作品</title>
-    <url>/2024/02/excerpt2.html</url>
-    <content><![CDATA[<p>花了一段时间，将太宰治的三部代表作品——『人间失格』『维荣之妻』『斜阳』都看完了，由于熬夜看书，经常看着看着就睡着了，再看部分段落时已想不起看过，只得再读过一遍，因此看得很慢，不过总算是看完了。但或许是太宰さん的精神世界太复杂了，我难以理解。<span id="more"></span>只知从『人间失格』主人公身上能看到太宰治的身影（毕竟是太宰治以自身的经历为蓝本写的），而『维荣之妻』中的大谷和阿佐则分别代表了日本「二战」后的男性和女性，男性软弱而女性坚强，形成了光与影明暗的人生对比。一向风格颓废的太宰治，通过阿佐形象，带给读者「活着的希望」。（2017，杨晔，『人间失格』）。最后则是『斜阳』，或许是故事性更加强，也或许是读得更仔细，较于『人间失格』，个人更喜『斜阳』。以第一人称女子口吻的叙述，讲述二战后贵族和子一家逐渐没落的故事，和子、直治、上原等，他们都在用自己的方式与传统道德抗争，都成为了「二战」后道德过渡期的牺牲者。文章中充满了颓废气息，直治为了融入与自己不同阶层的群体，让自己变得粗俗，却仍然无法「挣脱贵族的阴影」，只能更加颓废，只能以这样的方式抗争下去。实属悲剧，我能感受都文章中蕴含的悲伤，甚至几乎哭出来，但我仍无法理解。但太宰治无疑将人性，将社会都看得太透彻了。</p>
-<p>『人间失格』</p>
-<ul>
-<li>对于他们来说，或许有饭吃就能化解他们的痛苦，而这才是最大的痛苦。</li>
-<li>胆小鬼连幸福都怕，碰到棉花都会受伤，有时还会被幸福所伤。</li>
-<li>世人是人与人的争斗，而且是现场之争，人活着就是为了在争斗中取胜。人绝不会屈从于他人，即便是奴隶，也会用自己卑微的方式进行反击。所以，人除了现场决出胜负之外，便没有其他生存之道了。尽管标榜堂而皇之的正义，但他们努力的目标仍是个人的，超越一个人之后，还要迎战下一个人。</li>
-<li>不幸的人总是对他人的不幸格外敏感。</li>
-<li>我在所谓的人类世界里，过着如阿鼻地狱般痛苦煎熬生活的日子，我感到唯一具有真理的话就是这句话了。<br>  一切都终将会过去的。</li>
-<li>「我们认识的阿叶，个性率真，风趣幽默，要是不酗酒的话，不，就是他酗酒，他也是个天使一样的好孩子。」</li>
-</ul>
-<p>『维荣之妻』</p>
-<ul>
-<li>可常言道，人生就如地狱，经常是道高一尺魔高一丈。人们在得到一丝幸福的同时，往往会有成倍的坏事降临。一年有三百六十五天，要是有一天能无忧无虑的话，啊不，就半天，那就是很幸运的了。</li>
-<li>文明的结果是滑稽。</li>
-</ul>
-<p>『斜阳』</p>
-<ul>
-<li>社会法则，说到底维护的还是法则本身，不爱活生生的人。</li>
-<li>在金钱和女人面前，社会法则会羞怯地匆匆溜走。历史、哲学、教育、宗教、法律、政治、经济、社会。这些学问统统加起来，也不如处女的微笑来得可贵。浮士德博士已经勇敢地证实过这一结论了。</li>
-<li>学问是虚荣的别名，它努力使人泯灭人性。</li>
-<li>人在撒谎时定会摆出一副一本正经的样子。</li>
-<li>我伪装早熟，人们便风传我早熟。我伪装成懒汉，人们便风传我是个懒汉。我伪装写不出小说来，人们便风传我不会写小说。我伪装撒谎，人们便风传我是个撒谎的人。我伪装有钱，人们便风传我是个有钱人。我伪装冷淡，人们便风传我是个冷淡的人。不过，当我真正因为痛苦而发出呻吟时，人们却说我伪装痛苦。</li>
-<li>幼鹤生下目已盲，岁月如梭渐长成，羽翼丰满成大鸟，叫声依旧满悲伤。</li>
-<li>总之，人只要是活在这世上，就肯定会做出些见不得人的勾当。</li>
-<li>我无法忍受海港内滞积着的令人窒息的空气了，就算海港外狂风暴雨，我也要扬帆起航。歇着的帆毫无例外都是肮脏的，那些嘲笑我的人都是歇着的帆，他们什么事情都不会做。</li>
-</ul>
-]]></content>
-      <categories>
-        <category>日常</category>
-      </categories>
-      <tags>
-        <tag>书摘</tag>
-        <tag>人间失格</tag>
-        <tag>维荣之妻</tag>
-        <tag>斜阳</tag>
-        <tag>太宰治</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>【每日语法】N1 易混语法总结</title>
-    <url>/2024/03/mnnhgbp6.html</url>
-    <content><![CDATA[<details class="note default no-icon"><summary><p><strong>自不必说</strong>的表达，后常续「も」「さえ」「まで」等</p>
-</summary>
-<p>～はもちろん、～</p>
-<p>～は言うまでもなく、～</p>
-<p>～は言わずもがな、～</p>
-<p>～どころか、～</p>
-<p>～もさることながら、～</p>
-<p>～は言うに及ばず、～</p>
-
-</details>
-
-<details class="note default no-icon"><summary><p><strong>姑且不论</strong>（部分句子可译为「如果……的话，还情有可原，但……」）的表达</p>
-</summary>
-<p>～ならいざしらず、～</p>
-<p>～なら&#x2F;はともかく、～</p>
-<p>～なら&#x2F;は別だが、～</p>
-<p>～なら&#x2F;はまだしも、～</p>
-<p>～はさておき&#x2F;はさておいて～</p>
-
-</details>
+    <title>【每日语法】~も~ば~も~</title>
+    <url>/2023/04/mnnhgbp2.html</url>
+    <content><![CDATA[<p><strong>语法：N + も + V（假定形）+ N + も + V（原形）</strong></p>
+<p>意为「既…又…」。其中的动词为同一动词。</p>
+<p>例句：コンビニにたくさんの商品がある。食べ物もあれば、生活に欠かせないものもある。</p>
+<p>译：便利店中有很多商品，既有食品，也有生活中不可或缺的物品。</p>
+<p>与之相似的语法还有「かと思えば」，接续方式为前接<strong>动词原形</strong>。关于假定形的变形方法，在上一篇中已经提过，这里就不再赘述，有需要了解的小伙伴可以<a href="/2023/04/mnnhgbp1.html">点击这里</a>返回上文查看。</p>
 ]]></content>
       <categories>
         <category>日语</category>
@@ -393,13 +337,125 @@
       </tags>
   </entry>
   <entry>
-    <title>【每日语法】~も~ば~も~</title>
-    <url>/2023/04/mnnhgbp2.html</url>
-    <content><![CDATA[<p><strong>语法：N + も + V（假定形）+ N + も + V（原形）</strong></p>
-<p>意为「既…又…」。其中的动词为同一动词。</p>
-<p>例句：コンビニにたくさんの商品がある。食べ物もあれば、生活に欠かせないものもある。</p>
-<p>译：便利店中有很多商品，既有食品，也有生活中不可或缺的物品。</p>
-<p>与之相似的语法还有「かと思えば」，接续方式为前接<strong>动词原形</strong>。关于假定形的变形方法，在上一篇中已经提过，这里就不再赘述，有需要了解的小伙伴可以<a href="/2023/04/mnnhgbp1.html">点击这里</a>返回上文查看。</p>
+    <title>【每日语法】N1 易混语法总结</title>
+    <url>/2024/03/mnnhgbp6.html</url>
+    <content><![CDATA[<details class="note default no-icon"><summary><p><strong>自不必说</strong>的表达，后常续「も」「さえ」「まで」等</p>
+</summary>
+<p>～はもちろん、～</p>
+<p>～は言うまでもなく、～</p>
+<p>～は言わずもがな、～</p>
+<p>～どころか、～</p>
+<p>～もさることながら、～</p>
+<p>～は言うに及ばず、～</p>
+
+</details>
+
+<details class="note default no-icon"><summary><p><strong>姑且不论</strong>（部分句子可译为「如果……的话，还情有可原，但……」）的表达</p>
+</summary>
+<p>～ならいざしらず、～</p>
+<p>～なら&#x2F;はともかく、～</p>
+<p>～なら&#x2F;は別だが、～</p>
+<p>～なら&#x2F;はまだしも、～</p>
+<p>～はさておき&#x2F;はさておいて～</p>
+
+</details>
+]]></content>
+      <categories>
+        <category>日语</category>
+      </categories>
+      <tags>
+        <tag>日语</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>【书摘】无赖派太宰治充满颓废气息的作品</title>
+    <url>/2024/02/excerpt2.html</url>
+    <content><![CDATA[<p>花了一段时间，将太宰治的三部代表作品——『人间失格』『维荣之妻』『斜阳』都看完了，由于熬夜看书，经常看着看着就睡着了，再看部分段落时已想不起看过，只得再读过一遍，因此看得很慢，不过总算是看完了。但或许是太宰さん的精神世界太复杂了，我难以理解。<span id="more"></span>只知从『人间失格』主人公身上能看到太宰治的身影（毕竟是太宰治以自身的经历为蓝本写的），而『维荣之妻』中的大谷和阿佐则分别代表了日本「二战」后的男性和女性，男性软弱而女性坚强，形成了光与影明暗的人生对比。一向风格颓废的太宰治，通过阿佐形象，带给读者「活着的希望」。（2017，杨晔，『人间失格』）。最后则是『斜阳』，或许是故事性更加强，也或许是读得更仔细，较于『人间失格』，个人更喜『斜阳』。以第一人称女子口吻的叙述，讲述二战后贵族和子一家逐渐没落的故事，和子、直治、上原等，他们都在用自己的方式与传统道德抗争，都成为了「二战」后道德过渡期的牺牲者。文章中充满了颓废气息，直治为了融入与自己不同阶层的群体，让自己变得粗俗，却仍然无法「挣脱贵族的阴影」，只能更加颓废，只能以这样的方式抗争下去。实属悲剧，我能感受都文章中蕴含的悲伤，甚至几乎哭出来，但我仍无法理解。但太宰治无疑将人性，将社会都看得太透彻了。</p>
+<p>『人间失格』</p>
+<ul>
+<li>对于他们来说，或许有饭吃就能化解他们的痛苦，而这才是最大的痛苦。</li>
+<li>胆小鬼连幸福都怕，碰到棉花都会受伤，有时还会被幸福所伤。</li>
+<li>世人是人与人的争斗，而且是现场之争，人活着就是为了在争斗中取胜。人绝不会屈从于他人，即便是奴隶，也会用自己卑微的方式进行反击。所以，人除了现场决出胜负之外，便没有其他生存之道了。尽管标榜堂而皇之的正义，但他们努力的目标仍是个人的，超越一个人之后，还要迎战下一个人。</li>
+<li>不幸的人总是对他人的不幸格外敏感。</li>
+<li>我在所谓的人类世界里，过着如阿鼻地狱般痛苦煎熬生活的日子，我感到唯一具有真理的话就是这句话了。<br>  一切都终将会过去的。</li>
+<li>「我们认识的阿叶，个性率真，风趣幽默，要是不酗酒的话，不，就是他酗酒，他也是个天使一样的好孩子。」</li>
+</ul>
+<p>『维荣之妻』</p>
+<ul>
+<li>可常言道，人生就如地狱，经常是道高一尺魔高一丈。人们在得到一丝幸福的同时，往往会有成倍的坏事降临。一年有三百六十五天，要是有一天能无忧无虑的话，啊不，就半天，那就是很幸运的了。</li>
+<li>文明的结果是滑稽。</li>
+</ul>
+<p>『斜阳』</p>
+<ul>
+<li>社会法则，说到底维护的还是法则本身，不爱活生生的人。</li>
+<li>在金钱和女人面前，社会法则会羞怯地匆匆溜走。历史、哲学、教育、宗教、法律、政治、经济、社会。这些学问统统加起来，也不如处女的微笑来得可贵。浮士德博士已经勇敢地证实过这一结论了。</li>
+<li>学问是虚荣的别名，它努力使人泯灭人性。</li>
+<li>人在撒谎时定会摆出一副一本正经的样子。</li>
+<li>我伪装早熟，人们便风传我早熟。我伪装成懒汉，人们便风传我是个懒汉。我伪装写不出小说来，人们便风传我不会写小说。我伪装撒谎，人们便风传我是个撒谎的人。我伪装有钱，人们便风传我是个有钱人。我伪装冷淡，人们便风传我是个冷淡的人。不过，当我真正因为痛苦而发出呻吟时，人们却说我伪装痛苦。</li>
+<li>幼鹤生下目已盲，岁月如梭渐长成，羽翼丰满成大鸟，叫声依旧满悲伤。</li>
+<li>总之，人只要是活在这世上，就肯定会做出些见不得人的勾当。</li>
+<li>我无法忍受海港内滞积着的令人窒息的空气了，就算海港外狂风暴雨，我也要扬帆起航。歇着的帆毫无例外都是肮脏的，那些嘲笑我的人都是歇着的帆，他们什么事情都不会做。</li>
+</ul>
+]]></content>
+      <categories>
+        <category>日常</category>
+      </categories>
+      <tags>
+        <tag>书摘</tag>
+        <tag>人间失格</tag>
+        <tag>维荣之妻</tag>
+        <tag>斜阳</tag>
+        <tag>太宰治</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>【每日语法】てある及相似语法的对比</title>
+    <url>/2023/05/mnnhgbp4.html</url>
+    <content><![CDATA[<h2 id="意思一"><a href="#意思一" class="headerlink" title="意思一"></a>意思一</h2><blockquote>
+<p>接续：V（他动词，て形）+ ある</p>
+</blockquote>
+<p>表示动作结果的存续，该语法只涉及动作的对象，不涉及动作的主体。该句型有着「某个人做了某个动作，导致了这样的状态，但是这个人是谁并不重要」这样的意思。简单点说就是<strong>他动词的状态的持续</strong>。需要注意的是动词虽然为他动词，但动作的对象却要用<strong>「が」</strong>来表示。</p>
+<p>同样表示状态的持续的语法还有「ている」，那么他俩有什么区别呢？</p>
+<p>在对比前我们先回顾一下「ている」这个语法</p>
+<ul>
+<li>当动词为<strong>他动词</strong>时，表示动作的正在进行，意为「正在…」，比如「手紙を書いている」意为「我正在写信」</li>
+<li>当动词为<strong>自动词</strong>时，表示状态的持续，例如「鈴木さんは今出かけていますが…」，意为「铃木现在出去了…」</li>
+<li>表示动作的反复，常用于习惯或自然现象等</li>
+<li>表示性质或状态，比如「この機械の性能が<ruby>優<rt>すぐ</rt>れている</ruby>」意为「这台机器性能好」</li>
+</ul>
+<p>可以看到，表示状态的持续时，「ている」的前面的动词为自动词，而「てある」则为他动词。并且「ている」只是表示状态的持续，并不包含状态产生的原因，这个状态可以是人为造成的，也可以是自然而然发生的；但「てある」的状态一定是<strong>人为</strong>的，即一定是某个人去做了某个动作才产生了这样的状态。</p>
+<p>补充说明，当「てある」前面的动词为<strong>被动态</strong>时，能够更让人能够感受到这个做动作的人的存在。</p>
+<h2 id="意思二"><a href="#意思二" class="headerlink" title="意思二"></a>意思二</h2><blockquote>
+<p>接续：V（て形）+ ある</p>
+</blockquote>
+<p>这里表示<strong>已经提前做好某事的状态</strong>，自、他动词均可使用，意为「已经提前…」。</p>
+<p>例句：論文を書くために、資料をたくさん集めてある。<br>译：为了写论文，已经提前收集好了许多资料。</p>
+<p>同样，表示提前做好某事的意思的语法还有「ておく」，那么这两个语法之间有什么区别呢？</p>
+<p>首先回忆一下「ておく」这个语法：</p>
+<ul>
+<li>表示提前做好某事，以备不时之需</li>
+<li>表示保持状态不变，听之任之</li>
+<li>表示放任不管</li>
+</ul>
+<p>注意，「ておく」的「提前做好某事」具体点说是「<strong>将要</strong>提前做好某事」，实际现在还没有做，强调的是「提前做好」这个<strong>动作性</strong>；「てある」则表示的是「<strong>已经</strong>提前做好某事」，强调的是「提前做好」这个动作完成后的<strong>状态的持续</strong>。</p>
+<p>对比例句：</p>
+<ul>
+<li>この提案を一応考えてある。（已经事先考虑过这个提案。）</li>
+<li>この提案を一応考えておく。（将会事先考虑一下这个提案。）</li>
+</ul>
+<p>当「ておく」变为过去时，与「てある」的意思就更为相似，更加难以区分，比如下面两句：</p>
+<ul>
+<li>ビールをたくさん買っておいたが、人が多いので、もうなくなってしまった。（○）</li>
+<li>ビールをたくさん買ってあるが、人が多いので、もうなくなってしまった。（×）</li>
+</ul>
+<p>因为「買っておいた」只表示「提前买好」这一过去的动作，而「買ってある」则表示「提前买好」这一状态且该状态持续到了说话时，按此逻辑，如果买好了许多酒的状态持续到了说话时，后文却又说因为人多已经没酒了，就出现了前后意思的矛盾，因此这里只能用「買っておいた」。</p>
+<h2 id="意思三"><a href="#意思三" class="headerlink" title="意思三"></a>意思三</h2><blockquote>
+<p>接续：V（て形）+ ある</p>
+</blockquote>
+<p>表示<strong>放任或允许的状态</strong>。常常和自动词<strong>使役态</strong>搭配使用。</p>
+<p>例句：娘を日本語学校に通わせてある。<br>译：让女儿去日语学校上学。</p>
+<p>相似的还有「ておく」，其也有放任不管，听之任之的意思。</p>
+<p><strong>注：本文部分解释与例句来源于『日语语法教程——讲义与练习』一书，如造成侵权，请联系删除。</strong></p>
 ]]></content>
       <categories>
         <category>日语</category>
@@ -458,62 +514,6 @@
 <p>(1). 約束したからには、ちゃんと守るべきだ。<br>译：既然约好了，就应该好好遵守约定。</p>
 <p>(2). 秘密を知られた上は、生かしてはおけない。<br>译：既然被你知道了这个秘密，就不能让你活下去了。</p>
 <p>(3). 会社を辞めると決めた以上、早く上司にその旨を伝えなければならない。<br>译：既然决定好向公司辞职了，就必须早点告诉上司这件事。</p>
-]]></content>
-      <categories>
-        <category>日语</category>
-      </categories>
-      <tags>
-        <tag>日语</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>【每日语法】てある及相似语法的对比</title>
-    <url>/2023/05/mnnhgbp4.html</url>
-    <content><![CDATA[<h2 id="意思一"><a href="#意思一" class="headerlink" title="意思一"></a>意思一</h2><blockquote>
-<p>接续：V（他动词，て形）+ ある</p>
-</blockquote>
-<p>表示动作结果的存续，该语法只涉及动作的对象，不涉及动作的主体。该句型有着「某个人做了某个动作，导致了这样的状态，但是这个人是谁并不重要」这样的意思。简单点说就是<strong>他动词的状态的持续</strong>。需要注意的是动词虽然为他动词，但动作的对象却要用<strong>「が」</strong>来表示。</p>
-<p>同样表示状态的持续的语法还有「ている」，那么他俩有什么区别呢？</p>
-<p>在对比前我们先回顾一下「ている」这个语法</p>
-<ul>
-<li>当动词为<strong>他动词</strong>时，表示动作的正在进行，意为「正在…」，比如「手紙を書いている」意为「我正在写信」</li>
-<li>当动词为<strong>自动词</strong>时，表示状态的持续，例如「鈴木さんは今出かけていますが…」，意为「铃木现在出去了…」</li>
-<li>表示动作的反复，常用于习惯或自然现象等</li>
-<li>表示性质或状态，比如「この機械の性能が<ruby>優<rt>すぐ</rt>れている</ruby>」意为「这台机器性能好」</li>
-</ul>
-<p>可以看到，表示状态的持续时，「ている」的前面的动词为自动词，而「てある」则为他动词。并且「ている」只是表示状态的持续，并不包含状态产生的原因，这个状态可以是人为造成的，也可以是自然而然发生的；但「てある」的状态一定是<strong>人为</strong>的，即一定是某个人去做了某个动作才产生了这样的状态。</p>
-<p>补充说明，当「てある」前面的动词为<strong>被动态</strong>时，能够更让人能够感受到这个做动作的人的存在。</p>
-<h2 id="意思二"><a href="#意思二" class="headerlink" title="意思二"></a>意思二</h2><blockquote>
-<p>接续：V（て形）+ ある</p>
-</blockquote>
-<p>这里表示<strong>已经提前做好某事的状态</strong>，自、他动词均可使用，意为「已经提前…」。</p>
-<p>例句：論文を書くために、資料をたくさん集めてある。<br>译：为了写论文，已经提前收集好了许多资料。</p>
-<p>同样，表示提前做好某事的意思的语法还有「ておく」，那么这两个语法之间有什么区别呢？</p>
-<p>首先回忆一下「ておく」这个语法：</p>
-<ul>
-<li>表示提前做好某事，以备不时之需</li>
-<li>表示保持状态不变，听之任之</li>
-<li>表示放任不管</li>
-</ul>
-<p>注意，「ておく」的「提前做好某事」具体点说是「<strong>将要</strong>提前做好某事」，实际现在还没有做，强调的是「提前做好」这个<strong>动作性</strong>；「てある」则表示的是「<strong>已经</strong>提前做好某事」，强调的是「提前做好」这个动作完成后的<strong>状态的持续</strong>。</p>
-<p>对比例句：</p>
-<ul>
-<li>この提案を一応考えてある。（已经事先考虑过这个提案。）</li>
-<li>この提案を一応考えておく。（将会事先考虑一下这个提案。）</li>
-</ul>
-<p>当「ておく」变为过去时，与「てある」的意思就更为相似，更加难以区分，比如下面两句：</p>
-<ul>
-<li>ビールをたくさん買っておいたが、人が多いので、もうなくなってしまった。（○）</li>
-<li>ビールをたくさん買ってあるが、人が多いので、もうなくなってしまった。（×）</li>
-</ul>
-<p>因为「買っておいた」只表示「提前买好」这一过去的动作，而「買ってある」则表示「提前买好」这一状态且该状态持续到了说话时，按此逻辑，如果买好了许多酒的状态持续到了说话时，后文却又说因为人多已经没酒了，就出现了前后意思的矛盾，因此这里只能用「買っておいた」。</p>
-<h2 id="意思三"><a href="#意思三" class="headerlink" title="意思三"></a>意思三</h2><blockquote>
-<p>接续：V（て形）+ ある</p>
-</blockquote>
-<p>表示<strong>放任或允许的状态</strong>。常常和自动词<strong>使役态</strong>搭配使用。</p>
-<p>例句：娘を日本語学校に通わせてある。<br>译：让女儿去日语学校上学。</p>
-<p>相似的还有「ておく」，其也有放任不管，听之任之的意思。</p>
-<p><strong>注：本文部分解释与例句来源于『日语语法教程——讲义与练习』一书，如造成侵权，请联系删除。</strong></p>
 ]]></content>
       <categories>
         <category>日语</category>
@@ -712,6 +712,30 @@
       </tags>
   </entry>
   <entry>
+    <title>【笔记·古典日语】活用形及接续</title>
+    <url>/2024/04/kobun3.html</url>
+    <content><![CDATA[<p>6 种活用形</p>
+<p><img data-src="https://img.fufu.ink/YHh61r.webp"></p>
+<p>活用语：活用的单词。是动词，形容词，形容动词，助动词的总称。</p>
+<p>一些助词和助动词的接续</p>
+<p><img data-src="https://img.fufu.ink/9wRJmG.webp"></p>
+<p>一些助动词的接续（注意括号中的条件，比如り前面接的虽然是已然形，但仅限于四段动词，即り前面接<strong>四段动词的已然形</strong>）</p>
+<p><img data-src="https://img.fufu.ink/HpGciD.webp"></p>
+<p>ラ变动词及ラ变型（非标准定义，个人理解）</p>
+<p>ラ变<strong>动词</strong>：在ラ行上进行活用的，即活用词尾为（ら·り·り·る·れ·れ）形式的动词。ラ变动词只有<strong>「あり」「をり」「はべり」「いまそかり」</strong>四个。</p>
+<p>ラ变<strong>型</strong>：像ラ变动词一样进行活用，即活用词尾也为（ら·り·り·る·れ·れ）形式的<strong>活用语</strong>，如下图</p>
+<p><img data-src="https://img.fufu.ink/EXKIlJ.webp"></p>
+]]></content>
+      <categories>
+        <category>日语</category>
+      </categories>
+      <tags>
+        <tag>日语</tag>
+        <tag>古典日语</tag>
+        <tag>语法</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>【笔记·古典日语】形容词</title>
     <url>/2024/04/kobun5.html</url>
     <content><![CDATA[<p>形容词分为两类，通过「なる」的接续判断</p>
@@ -733,19 +757,28 @@
       </tags>
   </entry>
   <entry>
-    <title>【笔记·古典日语】活用形及接续</title>
-    <url>/2024/04/kobun3.html</url>
-    <content><![CDATA[<p>6 种活用形</p>
-<p><img data-src="https://img.fufu.ink/YHh61r.webp"></p>
-<p>活用语：活用的单词。是动词，形容词，形容动词，助动词的总称。</p>
-<p>一些助词和助动词的接续</p>
-<p><img data-src="https://img.fufu.ink/9wRJmG.webp"></p>
-<p>一些助动词的接续（注意括号中的条件，比如り前面接的虽然是已然形，但仅限于四段动词，即り前面接<strong>四段动词的已然形</strong>）</p>
-<p><img data-src="https://img.fufu.ink/HpGciD.webp"></p>
-<p>ラ变动词及ラ变型（非标准定义，个人理解）</p>
-<p>ラ变<strong>动词</strong>：在ラ行上进行活用的，即活用词尾为（ら·り·り·る·れ·れ）形式的动词。ラ变动词只有<strong>「あり」「をり」「はべり」「いまそかり」</strong>四个。</p>
-<p>ラ变<strong>型</strong>：像ラ变动词一样进行活用，即活用词尾也为（ら·り·り·る·れ·れ）形式的<strong>活用语</strong>，如下图</p>
-<p><img data-src="https://img.fufu.ink/EXKIlJ.webp"></p>
+    <title>【笔记·古典日语】用言的音便</title>
+    <url>/2024/04/kobun8.html</url>
+    <content><![CDATA[<p>古典日语中音便有 4 种</p>
+<p><img data-src="https://img.fufu.ink/NL5YbT.webp"></p>
+<h2 id="动词的音便"><a href="#动词的音便" class="headerlink" title="动词的音便"></a>动词的音便</h2><p>动词音便有上面四种。</p>
+<p>「イ音便・撥音便・促音便」变形方法大致上和现代日语变法一致。需要注意，促音便的促音写的时候一般写作大的「つ」</p>
+<div class="group-picture"><div class="group-picture-row"><div class="group-picture-column"><img data-src="https://img.fufu.ink/gHSvWz.webp"></div><div class="group-picture-column"><img data-src="https://img.fufu.ink/lUo2cW.webp"></div><div class="group-picture-column"><img data-src="https://img.fufu.ink/uak8Go.webp"></div></div></div>
+
+<p>「ウ音便」在教材中没有提及，个人不清楚现代日语是否还有ウ音便，上次搜知乎好像看到有个回答说「目前关西地区还在使用」。</p>
+<p><img data-src="https://img.fufu.ink/ppbvUs.webp"></p>
+<h2 id="形容词的音便"><a href="#形容词的音便" class="headerlink" title="形容词的音便"></a>形容词的音便</h2><p>形容词音便有两种</p>
+<ul>
+<li>イ音便</li>
+<li>ウ音便</li>
+</ul>
+<p>两者都是发生在本活用，イ音便发生在连体形，ウ音便发生在连用形</p>
+<div class="group-picture"><div class="group-picture-row"><div class="group-picture-column"><img data-src="https://img.fufu.ink/7U2wfy.webp"></div><div class="group-picture-column"><img data-src="https://img.fufu.ink/q2HB2Z.webp"></div></div></div>
+
+<h2 id="消失的拨音便"><a href="#消失的拨音便" class="headerlink" title="消失的拨音便"></a>消失的拨音便</h2><p>即，ラ变型的连体形去接「（表示传闻及推测的）なり・めり・べし」时，ラ变型的连体形本身先发生拨音便，<strong>最后写的时候省略掉「ん」</strong>，但读的时候还是要把「ん」的音发出来。</p>
+<div class="group-picture"><div class="group-picture-row"><div class="group-picture-column"><img data-src="https://img.fufu.ink/UK05Cl.webp"></div><div class="group-picture-column"><img data-src="https://img.fufu.ink/E9px86.webp"></div><div class="group-picture-column"><img data-src="https://img.fufu.ink/9UqtuK.webp"></div></div></div>
+
+<p>反推过程：先看到「（表示传闻及推测的）なり・めり・べし」，关键是要认出前面的动词是ラ变型，然后为什么会是这样的形态，是因为省略了「ん」，补充上「ん」后，由「（表示传闻及推测的）なり・めり・べし」前续ラ变型时要接连体形可知「～ん」是连体形，是由原来的词的连体形拨音便变化而来。由此可得出音便前的形态。</p>
 ]]></content>
       <categories>
         <category>日语</category>
@@ -780,39 +813,6 @@
 </ol>
 <div class="group-picture"><div class="group-picture-row"><div class="group-picture-column"><img data-src="https://img.fufu.ink/lMcKky.webp" alt="解释对应上方序号"></div><div class="group-picture-column"><img data-src="https://img.fufu.ink/YDNZHZ.webp" alt="解释对应上方序号"></div></div></div>
 
-]]></content>
-      <categories>
-        <category>日语</category>
-      </categories>
-      <tags>
-        <tag>日语</tag>
-        <tag>古典日语</tag>
-        <tag>语法</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>【笔记·古典日语】用言的音便</title>
-    <url>/2024/04/kobun8.html</url>
-    <content><![CDATA[<p>古典日语中音便有 4 种</p>
-<p><img data-src="https://img.fufu.ink/NL5YbT.webp"></p>
-<h2 id="动词的音便"><a href="#动词的音便" class="headerlink" title="动词的音便"></a>动词的音便</h2><p>动词音便有上面四种。</p>
-<p>「イ音便・撥音便・促音便」变形方法大致上和现代日语变法一致。需要注意，促音便的促音写的时候一般写作大的「つ」</p>
-<div class="group-picture"><div class="group-picture-row"><div class="group-picture-column"><img data-src="https://img.fufu.ink/gHSvWz.webp"></div><div class="group-picture-column"><img data-src="https://img.fufu.ink/lUo2cW.webp"></div><div class="group-picture-column"><img data-src="https://img.fufu.ink/uak8Go.webp"></div></div></div>
-
-<p>「ウ音便」在教材中没有提及，个人不清楚现代日语是否还有ウ音便，上次搜知乎好像看到有个回答说「目前关西地区还在使用」。</p>
-<p><img data-src="https://img.fufu.ink/ppbvUs.webp"></p>
-<h2 id="形容词的音便"><a href="#形容词的音便" class="headerlink" title="形容词的音便"></a>形容词的音便</h2><p>形容词音便有两种</p>
-<ul>
-<li>イ音便</li>
-<li>ウ音便</li>
-</ul>
-<p>两者都是发生在本活用，イ音便发生在连体形，ウ音便发生在连用形</p>
-<div class="group-picture"><div class="group-picture-row"><div class="group-picture-column"><img data-src="https://img.fufu.ink/7U2wfy.webp"></div><div class="group-picture-column"><img data-src="https://img.fufu.ink/q2HB2Z.webp"></div></div></div>
-
-<h2 id="消失的拨音便"><a href="#消失的拨音便" class="headerlink" title="消失的拨音便"></a>消失的拨音便</h2><p>即，ラ变型的连体形去接「（表示传闻及推测的）なり・めり・べし」时，ラ变型的连体形本身先发生拨音便，<strong>最后写的时候省略掉「ん」</strong>，但读的时候还是要把「ん」的音发出来。</p>
-<div class="group-picture"><div class="group-picture-row"><div class="group-picture-column"><img data-src="https://img.fufu.ink/UK05Cl.webp"></div><div class="group-picture-column"><img data-src="https://img.fufu.ink/E9px86.webp"></div><div class="group-picture-column"><img data-src="https://img.fufu.ink/9UqtuK.webp"></div></div></div>
-
-<p>反推过程：先看到「（表示传闻及推测的）なり・めり・べし」，关键是要认出前面的动词是ラ变型，然后为什么会是这样的形态，是因为省略了「ん」，补充上「ん」后，由「（表示传闻及推测的）なり・めり・べし」前续ラ变型时要接连体形可知「～ん」是连体形，是由原来的词的连体形拨音便变化而来。由此可得出音便前的形态。</p>
 ]]></content>
       <categories>
         <category>日语</category>
@@ -1051,22 +1051,6 @@
       </tags>
   </entry>
   <entry>
-    <title>什么！买基岩版 Minecraft 送 Java 版？白嫖党的胜利！</title>
-    <url>/2022/06/mcokuru.html</url>
-    <content><![CDATA[<p>原文链接：<a href="https://help.minecraft.net/hc/en-us/articles/4607523809933-Buy-Minecraft-PC-Bundle-Get-Both-Games-">https://help.minecraft.net/hc/en-us/articles/4607523809933-Buy-Minecraft-PC-Bundle-Get-Both-Games-</a></p>
-<p>今天，Minecraft 夏季活动开始了，只要拥有 PC 平台的任意一个版本（Windows 版&#x2F;Java 版），即可免费获得另一个版本。即，PC 平台玩家如果拥有 Windows 版的 Minecraft，即可免费获得 Java 版，反之亦然。<span id="more"></span></p>
-<p>另一个版本会自动推送到你的游戏仓库中，当你打开 Minecraft Launcher 时，会发现游戏已经在列表中了。</p>
-<p><img data-src="https://img.fufu.ink/epXnLi.webp" alt="Minecraft Launcher"></p>
-]]></content>
-      <categories>
-        <category>游戏</category>
-      </categories>
-      <tags>
-        <tag>Minecraft</tag>
-        <tag>资讯</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>出宵宫啦！</title>
     <url>/2023/05/genshinxgderu.html</url>
     <content><![CDATA[<p>虽说抽完 2 命纳西妲后已经没有抽其他角色的欲望了，但池子还是要垫的，出什么都无所谓了。</p>
@@ -1080,6 +1064,22 @@
       <tags>
         <tag>原神</tag>
         <tag>游戏</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>什么！买基岩版 Minecraft 送 Java 版？白嫖党的胜利！</title>
+    <url>/2022/06/mcokuru.html</url>
+    <content><![CDATA[<p>原文链接：<a href="https://help.minecraft.net/hc/en-us/articles/4607523809933-Buy-Minecraft-PC-Bundle-Get-Both-Games-">https://help.minecraft.net/hc/en-us/articles/4607523809933-Buy-Minecraft-PC-Bundle-Get-Both-Games-</a></p>
+<p>今天，Minecraft 夏季活动开始了，只要拥有 PC 平台的任意一个版本（Windows 版&#x2F;Java 版），即可免费获得另一个版本。即，PC 平台玩家如果拥有 Windows 版的 Minecraft，即可免费获得 Java 版，反之亦然。<span id="more"></span></p>
+<p>另一个版本会自动推送到你的游戏仓库中，当你打开 Minecraft Launcher 时，会发现游戏已经在列表中了。</p>
+<p><img data-src="https://img.fufu.ink/epXnLi.webp" alt="Minecraft Launcher"></p>
+]]></content>
+      <categories>
+        <category>游戏</category>
+      </categories>
+      <tags>
+        <tag>Minecraft</tag>
+        <tag>资讯</tag>
       </tags>
   </entry>
   <entry>
@@ -1211,23 +1211,6 @@
       </tags>
   </entry>
   <entry>
-    <title>小号常驻又出小提了</title>
-    <url>/2023/05/genshinchangzhuxiaoti.html</url>
-    <content><![CDATA[<p>前几天 up 池双黄了，出了莫娜和甘雨，今天又出小提了。</p>
-<p>之前玩大号的时候不怎么玩弓箭手，虽然公子武器是弓箭啦，毕竟战斗时使用的都是近战模式。再加上手柄不好进行瞄准操作…</p>
-<p>不过小号出了甘雨后，才发现玩狙击手是真的舒服，即使只靠平 a，也能打出很高的伤害（话说弓箭手的普攻倍率就是所有角色中最高的）。这小号比大号开荒时要舒服很多，主要是因为大号刚入坑时想在常驻池捞 77，把所有原石都用来抽常驻了，结果 120 发都没出 77，倒是把香班给抽得快满命了。</p>
-<p>接下来就要围绕着甘雨和小提两个主 c 来配队了。</p>
-<p><img data-src="https://img.fufu.ink/ayuNM2.webp" alt="常驻池43抽·小提"></p>
-]]></content>
-      <categories>
-        <category>游戏</category>
-      </categories>
-      <tags>
-        <tag>原神</tag>
-        <tag>游戏</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>小草神小毕业纪念</title>
     <url>/2022/11/genshicaoshen.html</url>
     <content><![CDATA[<p>刷了快 3 周，终于小毕业了。精通没有凑到 1000，不过 900 多也够用了，因为不出暴击头和草伤杯，只能用爆伤头代替 ~<span id="more"></span></p>
@@ -1243,6 +1226,23 @@
 <p>还好，零命打出这样的伤害，我很满意了，毕竟非强度党 ~</p>
 <p>等剩下两周把异梦溶媒给刷出来或者散兵池里多出几个悬丝，把 e 和 q 都升到 9 级，伤害还能上一层，差不多就能毕业了……</p>
 <p>这期没抽神子，抽的武器池，56 发了还没有出，不过大概率还是能够拿下神子专武给纳西妲用用的（绝对不是因为纳西妲专武池歪飞雷了……）</p>
+]]></content>
+      <categories>
+        <category>游戏</category>
+      </categories>
+      <tags>
+        <tag>原神</tag>
+        <tag>游戏</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>小号常驻又出小提了</title>
+    <url>/2023/05/genshinchangzhuxiaoti.html</url>
+    <content><![CDATA[<p>前几天 up 池双黄了，出了莫娜和甘雨，今天又出小提了。</p>
+<p>之前玩大号的时候不怎么玩弓箭手，虽然公子武器是弓箭啦，毕竟战斗时使用的都是近战模式。再加上手柄不好进行瞄准操作…</p>
+<p>不过小号出了甘雨后，才发现玩狙击手是真的舒服，即使只靠平 a，也能打出很高的伤害（话说弓箭手的普攻倍率就是所有角色中最高的）。这小号比大号开荒时要舒服很多，主要是因为大号刚入坑时想在常驻池捞 77，把所有原石都用来抽常驻了，结果 120 发都没出 77，倒是把香班给抽得快满命了。</p>
+<p>接下来就要围绕着甘雨和小提两个主 c 来配队了。</p>
+<p><img data-src="https://img.fufu.ink/ayuNM2.webp" alt="常驻池43抽·小提"></p>
 ]]></content>
       <categories>
         <category>游戏</category>
@@ -2244,6 +2244,21 @@
       </tags>
   </entry>
   <entry>
+    <title>诈尸更新一下最近状态</title>
+    <url>/2023/07/natsuyasumijyoutai.html</url>
+    <content><![CDATA[<p>一个月没更新力。</p>
+<p>主要是没啥想法，每天宅在家里，打游戏，追番（这一个月可追了不少番——齐木楠雄的灾难，别当欧尼酱了，鬼灭，文豪野犬，因为太怕痛就全点防御力了，无职转生，无神世界中的神明活动，僵尸百分百，魔禁……算是把高中以来没怎么看番的时间全补回来了）。</p>
+<p>科二因为挂两回了，拖了两年了，明年要过期了，最近又开始练了。今天去考场中模拟了一个小时，除了最后一圈坡上起步因为边线距离扣了 10 分，都是 100 分，感觉下次考试应该问题不大了，现在开始准备科三了。科三打算 C1 转 C2 了，因为不用在意档位的变换，科三考试可以更稳地通过，现在主要是要求暑假结束前拿到驾照，否则拖到寒假就容易过期了。至于 C1 和 C2 的区别，上网查了一下，似乎是 C1 可以开蓝牌车，但 C2 只能开小型驾驶车？嘛，以后我也不会有机会去开手动挡啦，驾照这东西不就是图个方便么，怎么快速方便怎么来，没必要死磕个手动挡为难自己。</p>
+<p>家里躺了三周了，得开始准备下半年的 N1 了，虽然上个月的专四大概率挂了，但是 N1 还是得拿的，拿了就可以开始接一些小的翻译工作赚点零花钱了！</p>
+]]></content>
+      <categories>
+        <category>日常</category>
+      </categories>
+      <tags>
+        <tag>生活</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>论打造文化背景下日本美食文化中日双语科普介绍平台的可行性</title>
     <url>/2022/05/dachuangzuoye.html</url>
     <content><![CDATA[<blockquote>
@@ -2292,21 +2307,6 @@
         <tag>中外交流</tag>
         <tag>美食文化</tag>
         <tag>创业创新</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>诈尸更新一下最近状态</title>
-    <url>/2023/07/natsuyasumijyoutai.html</url>
-    <content><![CDATA[<p>一个月没更新力。</p>
-<p>主要是没啥想法，每天宅在家里，打游戏，追番（这一个月可追了不少番——齐木楠雄的灾难，别当欧尼酱了，鬼灭，文豪野犬，因为太怕痛就全点防御力了，无职转生，无神世界中的神明活动，僵尸百分百，魔禁……算是把高中以来没怎么看番的时间全补回来了）。</p>
-<p>科二因为挂两回了，拖了两年了，明年要过期了，最近又开始练了。今天去考场中模拟了一个小时，除了最后一圈坡上起步因为边线距离扣了 10 分，都是 100 分，感觉下次考试应该问题不大了，现在开始准备科三了。科三打算 C1 转 C2 了，因为不用在意档位的变换，科三考试可以更稳地通过，现在主要是要求暑假结束前拿到驾照，否则拖到寒假就容易过期了。至于 C1 和 C2 的区别，上网查了一下，似乎是 C1 可以开蓝牌车，但 C2 只能开小型驾驶车？嘛，以后我也不会有机会去开手动挡啦，驾照这东西不就是图个方便么，怎么快速方便怎么来，没必要死磕个手动挡为难自己。</p>
-<p>家里躺了三周了，得开始准备下半年的 N1 了，虽然上个月的专四大概率挂了，但是 N1 还是得拿的，拿了就可以开始接一些小的翻译工作赚点零花钱了！</p>
-]]></content>
-      <categories>
-        <category>日常</category>
-      </categories>
-      <tags>
-        <tag>生活</tag>
       </tags>
   </entry>
 </search>
