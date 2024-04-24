@@ -15,19 +15,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Handsome 美化补充</title>
-    <url>/2021/12/handsomebeautify.html</url>
-    <content><![CDATA[<p>由于在网上找到的 handsome 主题的首页文章圆角的 css 代码只选择了首页的大头图版式，小头图和图片版式均无圆角和鼠标停留上浮效果，在这里分享下我加了这两个版式之后的代码，将其粘贴到 handsome 主题开发者设置的自定义 css 中即可。</p>
-<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="comment">/*首页文章列表悬停上浮*/</span></span><br><span class="line"><span class="selector-class">.blog-post</span> <span class="selector-class">.panel-small</span><span class="selector-pseudo">:not</span>(<span class="selector-tag">article</span>),</span><br><span class="line"><span class="selector-class">.blog-post</span> <span class="selector-class">.panel</span><span class="selector-pseudo">:not</span>(<span class="selector-tag">article</span>), <span class="selector-class">.panel-picture</span> &#123;</span><br><span class="line">    <span class="attribute">transition</span>: all <span class="number">0.3s</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.blog-post</span> <span class="selector-class">.panel-small</span><span class="selector-pseudo">:not</span>(<span class="selector-tag">article</span>)<span class="selector-pseudo">:hover</span>,</span><br><span class="line"><span class="selector-class">.blog-post</span> <span class="selector-class">.panel</span><span class="selector-pseudo">:not</span>(<span class="selector-tag">article</span>)<span class="selector-pseudo">:hover</span>, <span class="selector-class">.panel-picture</span><span class="selector-pseudo">:hover</span> &#123;</span><br><span class="line">    <span class="attribute">transform</span>: <span class="built_in">translateY</span>(-<span class="number">10px</span>);</span><br><span class="line">    <span class="attribute">box-shadow</span>: <span class="number">0</span> <span class="number">8px</span> <span class="number">10px</span> <span class="built_in">rgba</span>(<span class="number">73</span>, <span class="number">90</span>, <span class="number">47</span>, <span class="number">0.47</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/*首页文章版式圆角化*/</span></span><br><span class="line"><span class="selector-class">.panel</span>&#123;</span><br><span class="line">    <span class="attribute">border</span>: none <span class="meta">!important</span>;</span><br><span class="line">    <span class="attribute">border-radius</span>: <span class="number">15px</span> <span class="meta">!important</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.panel-small</span>&#123;</span><br><span class="line">    <span class="attribute">border</span>: none;</span><br><span class="line">    <span class="attribute">border-radius</span>: <span class="number">15px</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.item-thumb</span>&#123;</span><br><span class="line">    <span class="attribute">border-radius</span>: <span class="number">15px</span> <span class="number">15px</span> <span class="number">0</span> <span class="number">0</span>;  </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.border-radius-6</span> &#123;</span><br><span class="line"><span class="attribute">border-radius</span>: <span class="number">15px</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>技术</category>
-      </categories>
-      <tags>
-        <tag>handsome</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>MinecraftBDS 修改材质包和行为包教程</title>
     <url>/2022/07/mcbdsbeautify.html</url>
     <content><![CDATA[<blockquote>
@@ -138,6 +125,19 @@
         <tag>技术</tag>
         <tag>Hexo</tag>
         <tag>Next</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Handsome 美化补充</title>
+    <url>/2021/12/handsomebeautify.html</url>
+    <content><![CDATA[<p>由于在网上找到的 handsome 主题的首页文章圆角的 css 代码只选择了首页的大头图版式，小头图和图片版式均无圆角和鼠标停留上浮效果，在这里分享下我加了这两个版式之后的代码，将其粘贴到 handsome 主题开发者设置的自定义 css 中即可。</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="comment">/*首页文章列表悬停上浮*/</span></span><br><span class="line"><span class="selector-class">.blog-post</span> <span class="selector-class">.panel-small</span><span class="selector-pseudo">:not</span>(<span class="selector-tag">article</span>),</span><br><span class="line"><span class="selector-class">.blog-post</span> <span class="selector-class">.panel</span><span class="selector-pseudo">:not</span>(<span class="selector-tag">article</span>), <span class="selector-class">.panel-picture</span> &#123;</span><br><span class="line">    <span class="attribute">transition</span>: all <span class="number">0.3s</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.blog-post</span> <span class="selector-class">.panel-small</span><span class="selector-pseudo">:not</span>(<span class="selector-tag">article</span>)<span class="selector-pseudo">:hover</span>,</span><br><span class="line"><span class="selector-class">.blog-post</span> <span class="selector-class">.panel</span><span class="selector-pseudo">:not</span>(<span class="selector-tag">article</span>)<span class="selector-pseudo">:hover</span>, <span class="selector-class">.panel-picture</span><span class="selector-pseudo">:hover</span> &#123;</span><br><span class="line">    <span class="attribute">transform</span>: <span class="built_in">translateY</span>(-<span class="number">10px</span>);</span><br><span class="line">    <span class="attribute">box-shadow</span>: <span class="number">0</span> <span class="number">8px</span> <span class="number">10px</span> <span class="built_in">rgba</span>(<span class="number">73</span>, <span class="number">90</span>, <span class="number">47</span>, <span class="number">0.47</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/*首页文章版式圆角化*/</span></span><br><span class="line"><span class="selector-class">.panel</span>&#123;</span><br><span class="line">    <span class="attribute">border</span>: none <span class="meta">!important</span>;</span><br><span class="line">    <span class="attribute">border-radius</span>: <span class="number">15px</span> <span class="meta">!important</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.panel-small</span>&#123;</span><br><span class="line">    <span class="attribute">border</span>: none;</span><br><span class="line">    <span class="attribute">border-radius</span>: <span class="number">15px</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.item-thumb</span>&#123;</span><br><span class="line">    <span class="attribute">border-radius</span>: <span class="number">15px</span> <span class="number">15px</span> <span class="number">0</span> <span class="number">0</span>;  </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.border-radius-6</span> &#123;</span><br><span class="line"><span class="attribute">border-radius</span>: <span class="number">15px</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>技术</category>
+      </categories>
+      <tags>
+        <tag>handsome</tag>
       </tags>
   </entry>
   <entry>
@@ -304,39 +304,6 @@
       </tags>
   </entry>
   <entry>
-    <title>【每日语法】~さえ~ば</title>
-    <url>/2023/05/mnnhgbp5.html</url>
-    <content><![CDATA[<p>接续：</p>
-<blockquote>
-<p>N + さえ + 假定形<br>A（く形）&#x2F; NA（て形）+ さえあれば<br>V（ます形）&#x2F; サ变动词词干 + さえすれば</p>
-</blockquote>
-<p>意为「只要···就···」。关于假定形的变形方法，请参考<a href="/2023/04/mnnhgbp1.html">『【每日语法】~ば~ほど』</a>的文末表格。</p>
-<p>例句：やすくさえあれば、買いましょう。<br>译：只要便宜的话就买吧！</p>
-]]></content>
-      <categories>
-        <category>日语</category>
-      </categories>
-      <tags>
-        <tag>日语</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>【每日语法】~も~ば~も~</title>
-    <url>/2023/04/mnnhgbp2.html</url>
-    <content><![CDATA[<p><strong>语法：N + も + V（假定形）+ N + も + V（原形）</strong></p>
-<p>意为「既…又…」。其中的动词为同一动词。</p>
-<p>例句：コンビニにたくさんの商品がある。食べ物もあれば、生活に欠かせないものもある。</p>
-<p>译：便利店中有很多商品，既有食品，也有生活中不可或缺的物品。</p>
-<p>与之相似的语法还有「かと思えば」，接续方式为前接<strong>动词原形</strong>。关于假定形的变形方法，在上一篇中已经提过，这里就不再赘述，有需要了解的小伙伴可以<a href="/2023/04/mnnhgbp1.html">点击这里</a>返回上文查看。</p>
-]]></content>
-      <categories>
-        <category>日语</category>
-      </categories>
-      <tags>
-        <tag>日语</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>【每日语法】~ば~ほど</title>
     <url>/2023/04/mnnhgbp1.html</url>
     <content><![CDATA[<p><strong>语法：V（假定形）+ V（原形）+ ほど</strong></p>
@@ -369,6 +336,39 @@
 <td align="center">加「ならば」或者「であれば」</td>
 </tr>
 </tbody></table>
+]]></content>
+      <categories>
+        <category>日语</category>
+      </categories>
+      <tags>
+        <tag>日语</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>【每日语法】~さえ~ば</title>
+    <url>/2023/05/mnnhgbp5.html</url>
+    <content><![CDATA[<p>接续：</p>
+<blockquote>
+<p>N + さえ + 假定形<br>A（く形）&#x2F; NA（て形）+ さえあれば<br>V（ます形）&#x2F; サ变动词词干 + さえすれば</p>
+</blockquote>
+<p>意为「只要···就···」。关于假定形的变形方法，请参考<a href="/2023/04/mnnhgbp1.html">『【每日语法】~ば~ほど』</a>的文末表格。</p>
+<p>例句：やすくさえあれば、買いましょう。<br>译：只要便宜的话就买吧！</p>
+]]></content>
+      <categories>
+        <category>日语</category>
+      </categories>
+      <tags>
+        <tag>日语</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>【每日语法】~も~ば~も~</title>
+    <url>/2023/04/mnnhgbp2.html</url>
+    <content><![CDATA[<p><strong>语法：N + も + V（假定形）+ N + も + V（原形）</strong></p>
+<p>意为「既…又…」。其中的动词为同一动词。</p>
+<p>例句：コンビニにたくさんの商品がある。食べ物もあれば、生活に欠かせないものもある。</p>
+<p>译：便利店中有很多商品，既有食品，也有生活中不可或缺的物品。</p>
+<p>与之相似的语法还有「かと思えば」，接续方式为前接<strong>动词原形</strong>。关于假定形的变形方法，在上一篇中已经提过，这里就不再赘述，有需要了解的小伙伴可以<a href="/2023/04/mnnhgbp1.html">点击这里</a>返回上文查看。</p>
 ]]></content>
       <categories>
         <category>日语</category>
@@ -649,6 +649,33 @@
       </tags>
   </entry>
   <entry>
+    <title>【笔记·古典日语】助动词「す·さす·しむ」</title>
+    <url>/2024/04/kobun11.html</url>
+    <content><![CDATA[<h2 id="活用·接续"><a href="#活用·接续" class="headerlink" title="活用·接续"></a>活用·接续</h2><p>活用方式与下二段动词一致</p>
+<p>接续：前接<strong>未然形</strong>。す前续四段动词，ナ变动词，ラ变动词的未然形，さす前续<strong>非</strong>「四段动词，ナ变动词，ラ变动词」的未然形，しむ则没有限制，只要是活用语的未然形都可以接</p>
+<p><img data-src="https://img.fufu.ink/xXjTYD.webp"></p>
+<h2 id="作用"><a href="#作用" class="headerlink" title="作用"></a>作用</h2><p>作用有两个</p>
+<ul>
+<li>使役，可译为「せる・させる」</li>
+<li>尊敬，可译为「なさる・お～になる」。表示尊敬的时候的「す・さす・しむ」本身不翻译，而是和表示尊敬的词一起译为现在表示尊敬的说法</li>
+</ul>
+<h2 id="判断方法"><a href="#判断方法" class="headerlink" title="判断方法"></a>判断方法</h2><p>首先，先看「す・さす・しむ」后面有没有出现表示尊敬的词</p>
+<ul>
+<li>后面没有出现表示尊敬的词，为<strong>表示使役</strong></li>
+<li>后面出现了表示尊敬的补助动词<strong>「おはす・おはします」</strong>时，<strong>表示尊敬</strong></li>
+<li>后面出现助动词「給ふ・らる」时，<strong>既可以表示尊敬，也可以表示使役，也可以同时表示两者</strong>，需根据实际语境进行判断</li>
+</ul>
+]]></content>
+      <categories>
+        <category>日语</category>
+      </categories>
+      <tags>
+        <tag>日语</tag>
+        <tag>古典日语</tag>
+        <tag>语法</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>【笔记·古典日语】助动词「き·けり」</title>
     <url>/2024/04/kobun12.html</url>
     <content><![CDATA[<h2 id="活用·接续"><a href="#活用·接续" class="headerlink" title="活用·接续"></a>活用·接续</h2><p>接续：</p>
@@ -665,33 +692,6 @@
 <ul>
 <li>过去，表示<strong>听说的过去，并非亲身经历的过去</strong>。翻译成现代日语即为「～た・～たそうだ」</li>
 <li>咏叹，翻译成现代日语即为「～だなあ」。表示这一意思的标志有，表示断定的助动词「なり」+「けり」形成的<strong>「なりけり」</strong>，在<strong>对话、内心、和歌</strong>中出现的「けり」，多表示咏叹</li>
-</ul>
-]]></content>
-      <categories>
-        <category>日语</category>
-      </categories>
-      <tags>
-        <tag>日语</tag>
-        <tag>古典日语</tag>
-        <tag>语法</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>【笔记·古典日语】助动词「す·さす·しむ」</title>
-    <url>/2024/04/kobun11.html</url>
-    <content><![CDATA[<h2 id="活用·接续"><a href="#活用·接续" class="headerlink" title="活用·接续"></a>活用·接续</h2><p>活用方式与下二段动词一致</p>
-<p>接续：前接<strong>未然形</strong>。す前续四段动词，ナ变动词，ラ变动词的未然形，さす前续<strong>非</strong>「四段动词，ナ变动词，ラ变动词」的未然形，しむ则没有限制，只要是活用语的未然形都可以接</p>
-<p><img data-src="https://img.fufu.ink/xXjTYD.webp"></p>
-<h2 id="作用"><a href="#作用" class="headerlink" title="作用"></a>作用</h2><p>作用有两个</p>
-<ul>
-<li>使役，可译为「せる・させる」</li>
-<li>尊敬，可译为「なさる・お～になる」。表示尊敬的时候的「す・さす・しむ」本身不翻译，而是和表示尊敬的词一起译为现在表示尊敬的说法</li>
-</ul>
-<h2 id="判断方法"><a href="#判断方法" class="headerlink" title="判断方法"></a>判断方法</h2><p>首先，先看「す・さす・しむ」后面有没有出现表示尊敬的词</p>
-<ul>
-<li>后面没有出现表示尊敬的词，为<strong>表示使役</strong></li>
-<li>后面出现了表示尊敬的补助动词<strong>「おはす・おはします」</strong>时，<strong>表示尊敬</strong></li>
-<li>后面出现助动词「給ふ・らる」时，<strong>既可以表示尊敬，也可以表示使役，也可以同时表示两者</strong>，需根据实际语境进行判断</li>
 </ul>
 ]]></content>
       <categories>
@@ -777,6 +777,30 @@
 <p>补助活用一般后续助动词，本活用一般后续助词或其他</p>
 <p>特例：</p>
 <p><img data-src="https://img.fufu.ink/skZm8P.webp"></p>
+]]></content>
+      <categories>
+        <category>日语</category>
+      </categories>
+      <tags>
+        <tag>日语</tag>
+        <tag>古典日语</tag>
+        <tag>语法</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>【笔记·古典日语】活用形及接续</title>
+    <url>/2024/04/kobun3.html</url>
+    <content><![CDATA[<p>6 种活用形</p>
+<p><img data-src="https://img.fufu.ink/YHh61r.webp"></p>
+<p>活用语：活用的单词。是动词，形容词，形容动词，助动词的总称。</p>
+<p>一些助词和助动词的接续</p>
+<p><img data-src="https://img.fufu.ink/9wRJmG.webp"></p>
+<p>一些助动词的接续（注意括号中的条件，比如り前面接的虽然是已然形，但仅限于四段动词，即り前面接<strong>四段动词的已然形</strong>）</p>
+<p><img data-src="https://img.fufu.ink/HpGciD.webp"></p>
+<p>ラ变动词及ラ变型（非标准定义，个人理解）</p>
+<p>ラ变<strong>动词</strong>：在ラ行上进行活用的，即活用词尾为（ら·り·り·る·れ·れ）形式的动词。ラ变动词只有<strong>「あり」「をり」「はべり」「いまそかり」</strong>四个。</p>
+<p>ラ变<strong>型</strong>：像ラ变动词一样进行活用，即活用词尾也为（ら·り·り·る·れ·れ）形式的<strong>活用语</strong>，如下图</p>
+<p><img data-src="https://img.fufu.ink/EXKIlJ.webp"></p>
 ]]></content>
       <categories>
         <category>日语</category>
@@ -1082,30 +1106,6 @@
       </tags>
   </entry>
   <entry>
-    <title>【笔记·古典日语】活用形及接续</title>
-    <url>/2024/04/kobun3.html</url>
-    <content><![CDATA[<p>6 种活用形</p>
-<p><img data-src="https://img.fufu.ink/YHh61r.webp"></p>
-<p>活用语：活用的单词。是动词，形容词，形容动词，助动词的总称。</p>
-<p>一些助词和助动词的接续</p>
-<p><img data-src="https://img.fufu.ink/9wRJmG.webp"></p>
-<p>一些助动词的接续（注意括号中的条件，比如り前面接的虽然是已然形，但仅限于四段动词，即り前面接<strong>四段动词的已然形</strong>）</p>
-<p><img data-src="https://img.fufu.ink/HpGciD.webp"></p>
-<p>ラ变动词及ラ变型（非标准定义，个人理解）</p>
-<p>ラ变<strong>动词</strong>：在ラ行上进行活用的，即活用词尾为（ら·り·り·る·れ·れ）形式的动词。ラ变动词只有<strong>「あり」「をり」「はべり」「いまそかり」</strong>四个。</p>
-<p>ラ变<strong>型</strong>：像ラ变动词一样进行活用，即活用词尾也为（ら·り·り·る·れ·れ）形式的<strong>活用语</strong>，如下图</p>
-<p><img data-src="https://img.fufu.ink/EXKIlJ.webp"></p>
-]]></content>
-      <categories>
-        <category>日语</category>
-      </categories>
-      <tags>
-        <tag>日语</tag>
-        <tag>古典日语</tag>
-        <tag>语法</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>什么！买基岩版 Minecraft 送 Java 版？白嫖党的胜利！</title>
     <url>/2022/06/mcokuru.html</url>
     <content><![CDATA[<p>原文链接：<a href="https://help.minecraft.net/hc/en-us/articles/4607523809933-Buy-Minecraft-PC-Bundle-Get-Both-Games-">https://help.minecraft.net/hc/en-us/articles/4607523809933-Buy-Minecraft-PC-Bundle-Get-Both-Games-</a></p>
@@ -1189,22 +1189,6 @@
       </tags>
   </entry>
   <entry>
-    <title>小号双黄了！</title>
-    <url>/2023/05/gsxhcjl.html</url>
-    <content><![CDATA[<p>这件事要从去年 11 月草神池刚出的时候说起，之前一直玩的号只抽中了草神（大保底），武器却歪了「飞雷」，于是创了个小号。想着小号前期资源多，肝一肝能在版本结束前拿个 0+1，结果后面发生了一系列事情，最终导致许久没登小号。今年2、3月份重新上了下号，把剧情推到璃月了，攒出了 74 抽，结果歪了莫娜（血的教训！一定不要边肝边抽，必歪！！！），当即下号。</p>
-<p>今天闲来无事，想起了这个号，上号后拿着版本送的原石单抽了一发，本来以为出紫了，结果出金了！于是甘雨拿下~</p>
-<p><img data-src="https://img.fufu.ink/p1lG81.webp" alt="双黄"></p>
-<p>这又让我燃起了对小号培养的热情，本来都打算让这个号废了，毕竟第一个金就歪了，连新手保护期都没了，结果双黄来了，那它就还有被培养的理由！</p>
-]]></content>
-      <categories>
-        <category>游戏</category>
-      </categories>
-      <tags>
-        <tag>原神</tag>
-        <tag>游戏</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>备份 hexo 方法</title>
     <url>/2023/02/hexobackuphouhou.html</url>
     <content><![CDATA[<p>最终还是入手游戏本了，而且是 3060。因为被你机革耍了，又因为网上机革翻车视频太多了，所以最终还是选择准一线的宏碁的暗影骑士了。</p>
@@ -1266,6 +1250,22 @@
       </tags>
   </entry>
   <entry>
+    <title>小号双黄了！</title>
+    <url>/2023/05/gsxhcjl.html</url>
+    <content><![CDATA[<p>这件事要从去年 11 月草神池刚出的时候说起，之前一直玩的号只抽中了草神（大保底），武器却歪了「飞雷」，于是创了个小号。想着小号前期资源多，肝一肝能在版本结束前拿个 0+1，结果后面发生了一系列事情，最终导致许久没登小号。今年2、3月份重新上了下号，把剧情推到璃月了，攒出了 74 抽，结果歪了莫娜（血的教训！一定不要边肝边抽，必歪！！！），当即下号。</p>
+<p>今天闲来无事，想起了这个号，上号后拿着版本送的原石单抽了一发，本来以为出紫了，结果出金了！于是甘雨拿下~</p>
+<p><img data-src="https://img.fufu.ink/p1lG81.webp" alt="双黄"></p>
+<p>这又让我燃起了对小号培养的热情，本来都打算让这个号废了，毕竟第一个金就歪了，连新手保护期都没了，结果双黄来了，那它就还有被培养的理由！</p>
+]]></content>
+      <categories>
+        <category>游戏</category>
+      </categories>
+      <tags>
+        <tag>原神</tag>
+        <tag>游戏</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>小草神小毕业纪念</title>
     <url>/2022/11/genshicaoshen.html</url>
     <content><![CDATA[<p>刷了快 3 周，终于小毕业了。精通没有凑到 1000，不过 900 多也够用了，因为不出暴击头和草伤杯，只能用爆伤头代替 ~<span id="more"></span></p>
@@ -1305,6 +1305,47 @@
       <tags>
         <tag>原神</tag>
         <tag>游戏</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>改进 Next 主题友链书写方式</title>
+    <url>/2023/05/improvefdlinks.html</url>
+    <content><![CDATA[<blockquote>
+<p>声明：友链的设计源于主题 handsome，主题链接：<a href="https://www.ihewro.com/archives/489/">https://www.ihewro.com/archives/489/</a> 本文仅模仿了其风格，若造成侵权，请联系我删除。</p>
+</blockquote>
+<p>首先在 <code>next主题文件夹/layout/</code> 下新建 <code>links.njk</code>，写入以下内容：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">    &#123;##################&#125;</span><br><span class="line">    &#123;### LINKS BLOCK ###&#125;</span><br><span class="line">    &#123;##################&#125;</span><br><span class="line"></span><br><span class="line">&lt;style&gt;</span><br><span class="line">    @media (min-width: 768px) &#123;</span><br><span class="line">        .link-card &#123;</span><br><span class="line">            width: 50%;</span><br><span class="line">            float: left;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    .link-card&#123;</span><br><span class="line">        position: relative;</span><br><span class="line">        min-height: 1px;</span><br><span class="line">        padding-right: 15px;</span><br><span class="line">        padding-left: 15px;</span><br><span class="line">        box-sizing: border-box;</span><br><span class="line">    &#125;</span><br><span class="line">    .link-user-list&#123;</span><br><span class="line">        margin-bottom: 5px;</span><br><span class="line">        border-radius: 3px;</span><br><span class="line">        padding: 15px;</span><br><span class="line">        display: block;</span><br><span class="line">        box-shadow: 0 2px 6px rgba(0,0,0,.1);</span><br><span class="line">        position: relative;</span><br><span class="line">    &#125;</span><br><span class="line">    .link-user-list:hover&#123;</span><br><span class="line">        background-color: #f6f8f8;</span><br><span class="line">        text-decoration: none;</span><br><span class="line">    &#125;</span><br><span class="line">    #link-container a&#123;</span><br><span class="line">        border: none;</span><br><span class="line">    &#125;</span><br><span class="line">    .user-avatar img&#123;</span><br><span class="line">        border: 2px solid #fff;</span><br><span class="line">        height: auto;</span><br><span class="line">        vertical-align: middle;</span><br><span class="line">        width: 100%;</span><br><span class="line">        border-radius: 20%;</span><br><span class="line">        max-width: 100%!important;</span><br><span class="line">        margin: 0px !important;</span><br><span class="line">    &#125;</span><br><span class="line">    .clearfix:after&#123;</span><br><span class="line">        content: &#x27; &#x27;; </span><br><span class="line">        display: block; </span><br><span class="line">        height: 0; </span><br><span class="line">        clear: both; </span><br><span class="line">        visibility: hidden;</span><br><span class="line">    &#125;</span><br><span class="line">    .text-ellipsis&#123;</span><br><span class="line">        display: block;</span><br><span class="line">        text-overflow: ellipsis;</span><br><span class="line">        overflow: hidden;</span><br><span class="line">        white-space: nowrap;</span><br><span class="line">        font-size: 13px;</span><br><span class="line">    &#125;</span><br><span class="line">    .user-message&#123;</span><br><span class="line">        display: block;</span><br><span class="line">        overflow: hidden;</span><br><span class="line">    &#125;</span><br><span class="line">    .user-description&#123;</span><br><span class="line">        color: #a0a0a0;</span><br><span class="line">    &#125;</span><br><span class="line">    .user-avatar&#123;</span><br><span class="line">        display: inline-block;</span><br><span class="line">        width: 52px;</span><br><span class="line">        height: auto;</span><br><span class="line">        float: left !important;</span><br><span class="line">        margin-right: 15px;</span><br><span class="line">        position: relative;</span><br><span class="line">        white-space: nowrap;</span><br><span class="line">    &#125;</span><br><span class="line">&lt;/style&gt;</span><br><span class="line">&lt;div id=&quot;link-container&quot;&gt;</span><br><span class="line">    &#123;% for link_config in site.data.links %&#125;</span><br><span class="line">    &#123;% if link_config.class_name %&#125;</span><br><span class="line">    &lt;h2 id=&quot;&#123;&#123; link_config.class_name &#125;&#125;&quot;&gt;</span><br><span class="line">        &lt;a href=&quot;#&#123;&#123; link_config.class_name &#125;&#125;&quot; class=&quot;headerlink&quot; title=&quot;&#123;&#123; link_config.class_name &#125;&#125;&quot;&gt;&lt;/a&gt;</span><br><span class="line">        &#123;&#123; link_config.class_name &#125;&#125;</span><br><span class="line">    &lt;/h2&gt;</span><br><span class="line">    &#123;% else %&#125;</span><br><span class="line">    &lt;hr&gt;</span><br><span class="line">    &#123;% endif %&#125;</span><br><span class="line">    &lt;div class=&quot;clearfix&quot;&gt;</span><br><span class="line">    &#123;% for link in link_config.link_list %&#125;</span><br><span class="line">    &lt;div class=&quot;link-card&quot;&gt;</span><br><span class="line">        &lt;a href=&quot;&#123;&#123; link.site &#125;&#125;&quot; target=&quot;_blank&quot; class=&quot;link-user-list&quot;&gt;</span><br><span class="line">            &lt;span class=&quot;user-avatar&quot;&gt;</span><br><span class="line">                &lt;img src=&quot;&#123;&#123; link.avatar &#125;&#125;&quot; class=&quot;nofancybox&quot;&gt;</span><br><span class="line">            &lt;/span&gt;</span><br><span class="line">            &lt;span class=&quot;user-message&quot;&gt;</span><br><span class="line">                &lt;span class=&quot;text-ellipsis&quot;&gt;&#123;&#123; link.nickname &#125;&#125;&lt;/span&gt;</span><br><span class="line">                &lt;span class=&quot;user-description text-ellipsis&quot;&gt;&#123;&#123; link.info &#125;&#125;&lt;/span&gt;</span><br><span class="line">            &lt;/span&gt;</span><br><span class="line">        &lt;/a&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">    &#123;% endfor %&#125;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">    &#123;% endfor %&#125;</span><br><span class="line"></span><br><span class="line">    &lt;div&gt;</span><br><span class="line">    &#123;&#123; page.content &#125;&#125;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line">    &#123;######################&#125;</span><br><span class="line">    &#123;### END LINKS BLOCK ###&#125;</span><br><span class="line">    &#123;######################&#125;</span><br></pre></td></tr></table></figure>
+
+<p>接下来打开 <code>next主题文件夹/layout/page.njk</code>，在 <code>block title</code> 区域中某个 <code>elif</code> 语句后添加上</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&#123;% block title %&#125;</span><br><span class="line">  &#123;%- set page_title_suffix = &#x27; | &#x27; + title %&#125;</span><br><span class="line"></span><br><span class="line">  &#123;%- if page.type === &#x27;categories&#x27; and not page.title %&#125;</span><br><span class="line">    &#123;&#123;- __(&#x27;title.category&#x27;) + page_title_suffix &#125;&#125;</span><br><span class="line">  &#123;%- elif page.type === &#x27;tags&#x27; and not page.title %&#125;</span><br><span class="line">    &#123;&#123;- __(&#x27;title.tag&#x27;) + page_title_suffix &#125;&#125;</span><br><span class="line">  &#123;%- elif page.type === &#x27;schedule&#x27; and not page.title %&#125;</span><br><span class="line">    &#123;&#123;- __(&#x27;title.schedule&#x27;) + page_title_suffix &#125;&#125;</span><br><span class="line">+  &#123;%- elif page.type === &#x27;links&#x27; and not page.title %&#125;</span><br><span class="line">+    &#123;&#123;- __(&#x27;title.links&#x27;) + page_title_suffix &#125;&#125;</span><br><span class="line">  &#123;%- else %&#125;</span><br><span class="line">    &#123;&#123;- page.title + page_title_suffix &#125;&#125;</span><br><span class="line">  &#123;%- endif %&#125;</span><br><span class="line">&#123;% endblock %&#125;</span><br></pre></td></tr></table></figure>
+
+<p>接下来在下面的 <code>PAGE BODY</code> 中添加</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&#123;### PAGE BODY ###&#125;</span><br><span class="line">      &#123;#################&#125;</span><br><span class="line">      &lt;div class=&quot;post-body&#123;% if page.direction and page.direction.toLowerCase() === &#x27;rtl&#x27; %&#125; rtl&#123;% endif %&#125;&quot;&gt;</span><br><span class="line">        &#123;%- if page.type === &#x27;tags&#x27; %&#125;</span><br><span class="line">          &#123;%- include &#x27;_partials/page/tags.njk&#x27; -%&#125;</span><br><span class="line">        &#123;% elif page.type === &#x27;categories&#x27; %&#125;</span><br><span class="line">          &#123;%- include &#x27;_partials/page/categories.njk&#x27; -%&#125;</span><br><span class="line">        &#123;% elif page.type === &#x27;schedule&#x27; %&#125;</span><br><span class="line">          &#123;%- include &#x27;_partials/page/schedule.njk&#x27; -%&#125;</span><br><span class="line">+        &#123;% elif page.type === &#x27;links&#x27; %&#125;</span><br><span class="line">+          &#123;%- include &#x27;links.njk&#x27; -%&#125;</span><br><span class="line">        &#123;% else %&#125;</span><br><span class="line">          &#123;&#123; page.content &#125;&#125;</span><br><span class="line">        &#123;%- endif %&#125;</span><br><span class="line">      &lt;/div&gt;</span><br><span class="line">      &#123;#####################&#125;</span><br><span class="line">      &#123;### END PAGE BODY ###&#125;</span><br><span class="line">      &#123;#####################&#125;</span><br></pre></td></tr></table></figure>
+
+<p>接下来就是创建 <code>source/links/index.md</code>，配置好里面的友链申请信息了（<strong>注意 <code>front-matter</code> 的 type 的值必须为 <code>links</code>！</strong>）。</p>
+<p>然后打开 <code>_config.next.yml</code>，在 <code>menu</code> 中添加</p>
+<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="attr">menu:</span></span><br><span class="line">  <span class="attr">links:</span> <span class="string">/links/</span> <span class="string">||</span> <span class="string">fas</span> <span class="string">fa-link</span></span><br></pre></td></tr></table></figure>
+
+<p>打开 <code>hexo/themes/next/languages/zh-CN.yml</code>，在 <code>menu</code> 中添加</p>
+<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="attr">menu:</span></span><br><span class="line">  <span class="attr">links:</span> <span class="string">友链</span></span><br></pre></td></tr></table></figure>
+
+<p>最后在 <code>hexo根目录/source/_data/</code> 下创建 <code>links.yml</code> 并填入以下内容：</p>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 参数说明</span></span><br><span class="line"><span class="comment"># class_name 选填，可以理解为友链组的名字，如果不填则会在顶部生成一个分割线</span></span><br><span class="line"><span class="comment"># nickname 博客名称</span></span><br><span class="line"><span class="comment"># site 博客地址</span></span><br><span class="line"><span class="comment"># info 博客简介</span></span><br><span class="line"><span class="comment"># avatar 博客logo</span></span><br><span class="line"><span class="comment"># 填写时注意缩进！</span></span><br><span class="line"></span><br><span class="line"><span class="bullet">-</span> <span class="attr">class_name:</span></span><br><span class="line">  <span class="attr">link_list:</span></span><br><span class="line">    <span class="bullet">-</span> <span class="attr">nickname:</span></span><br><span class="line">      <span class="attr">site:</span></span><br><span class="line">      <span class="attr">info:</span></span><br><span class="line">      <span class="attr">avatar:</span></span><br><span class="line">    <span class="bullet">-</span> <span class="attr">nickname:</span></span><br><span class="line">      <span class="attr">site:</span></span><br><span class="line">      <span class="attr">info:</span></span><br><span class="line">      <span class="attr">avatar:</span></span><br><span class="line"></span><br><span class="line"><span class="bullet">-</span> <span class="attr">class_name:</span></span><br><span class="line">  <span class="attr">link_list:</span></span><br><span class="line">    <span class="bullet">-</span> <span class="attr">nickname:</span></span><br><span class="line">      <span class="attr">site:</span></span><br><span class="line">      <span class="attr">info:</span></span><br><span class="line">      <span class="attr">avatar:</span></span><br><span class="line">    <span class="bullet">-</span> <span class="attr">nickname:</span></span><br><span class="line">      <span class="attr">site:</span></span><br><span class="line">      <span class="attr">info:</span></span><br><span class="line">      <span class="attr">avatar:</span></span><br></pre></td></tr></table></figure>
+
+<p>本文参考：</p>
+<ul>
+<li><a href="https://only_ann.gitee.io/next/archives/48141.html">next主题添加自定义友链</a></li>
+<li><a href="https://github.com/next-theme/hexo-theme-next/discussions/660">之前显示有问题，去问了主题作者，感谢作者的耐心回答</a></li>
+<li><a href="https://blog.csdn.net/qq_35479468/article/details/107454287">Hexo+next主题自定义友情链接页面</a></li>
+</ul>
+]]></content>
+      <categories>
+        <category>技术</category>
+      </categories>
+      <tags>
+        <tag>技术</tag>
+        <tag>Hexo</tag>
+        <tag>CSS</tag>
       </tags>
   </entry>
   <entry>
@@ -1368,47 +1409,6 @@
       <tags>
         <tag>Linux</tag>
         <tag>Ubuntu</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>改进 Next 主题友链书写方式</title>
-    <url>/2023/05/improvefdlinks.html</url>
-    <content><![CDATA[<blockquote>
-<p>声明：友链的设计源于主题 handsome，主题链接：<a href="https://www.ihewro.com/archives/489/">https://www.ihewro.com/archives/489/</a> 本文仅模仿了其风格，若造成侵权，请联系我删除。</p>
-</blockquote>
-<p>首先在 <code>next主题文件夹/layout/</code> 下新建 <code>links.njk</code>，写入以下内容：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">    &#123;##################&#125;</span><br><span class="line">    &#123;### LINKS BLOCK ###&#125;</span><br><span class="line">    &#123;##################&#125;</span><br><span class="line"></span><br><span class="line">&lt;style&gt;</span><br><span class="line">    @media (min-width: 768px) &#123;</span><br><span class="line">        .link-card &#123;</span><br><span class="line">            width: 50%;</span><br><span class="line">            float: left;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    .link-card&#123;</span><br><span class="line">        position: relative;</span><br><span class="line">        min-height: 1px;</span><br><span class="line">        padding-right: 15px;</span><br><span class="line">        padding-left: 15px;</span><br><span class="line">        box-sizing: border-box;</span><br><span class="line">    &#125;</span><br><span class="line">    .link-user-list&#123;</span><br><span class="line">        margin-bottom: 5px;</span><br><span class="line">        border-radius: 3px;</span><br><span class="line">        padding: 15px;</span><br><span class="line">        display: block;</span><br><span class="line">        box-shadow: 0 2px 6px rgba(0,0,0,.1);</span><br><span class="line">        position: relative;</span><br><span class="line">    &#125;</span><br><span class="line">    .link-user-list:hover&#123;</span><br><span class="line">        background-color: #f6f8f8;</span><br><span class="line">        text-decoration: none;</span><br><span class="line">    &#125;</span><br><span class="line">    #link-container a&#123;</span><br><span class="line">        border: none;</span><br><span class="line">    &#125;</span><br><span class="line">    .user-avatar img&#123;</span><br><span class="line">        border: 2px solid #fff;</span><br><span class="line">        height: auto;</span><br><span class="line">        vertical-align: middle;</span><br><span class="line">        width: 100%;</span><br><span class="line">        border-radius: 20%;</span><br><span class="line">        max-width: 100%!important;</span><br><span class="line">        margin: 0px !important;</span><br><span class="line">    &#125;</span><br><span class="line">    .clearfix:after&#123;</span><br><span class="line">        content: &#x27; &#x27;; </span><br><span class="line">        display: block; </span><br><span class="line">        height: 0; </span><br><span class="line">        clear: both; </span><br><span class="line">        visibility: hidden;</span><br><span class="line">    &#125;</span><br><span class="line">    .text-ellipsis&#123;</span><br><span class="line">        display: block;</span><br><span class="line">        text-overflow: ellipsis;</span><br><span class="line">        overflow: hidden;</span><br><span class="line">        white-space: nowrap;</span><br><span class="line">        font-size: 13px;</span><br><span class="line">    &#125;</span><br><span class="line">    .user-message&#123;</span><br><span class="line">        display: block;</span><br><span class="line">        overflow: hidden;</span><br><span class="line">    &#125;</span><br><span class="line">    .user-description&#123;</span><br><span class="line">        color: #a0a0a0;</span><br><span class="line">    &#125;</span><br><span class="line">    .user-avatar&#123;</span><br><span class="line">        display: inline-block;</span><br><span class="line">        width: 52px;</span><br><span class="line">        height: auto;</span><br><span class="line">        float: left !important;</span><br><span class="line">        margin-right: 15px;</span><br><span class="line">        position: relative;</span><br><span class="line">        white-space: nowrap;</span><br><span class="line">    &#125;</span><br><span class="line">&lt;/style&gt;</span><br><span class="line">&lt;div id=&quot;link-container&quot;&gt;</span><br><span class="line">    &#123;% for link_config in site.data.links %&#125;</span><br><span class="line">    &#123;% if link_config.class_name %&#125;</span><br><span class="line">    &lt;h2 id=&quot;&#123;&#123; link_config.class_name &#125;&#125;&quot;&gt;</span><br><span class="line">        &lt;a href=&quot;#&#123;&#123; link_config.class_name &#125;&#125;&quot; class=&quot;headerlink&quot; title=&quot;&#123;&#123; link_config.class_name &#125;&#125;&quot;&gt;&lt;/a&gt;</span><br><span class="line">        &#123;&#123; link_config.class_name &#125;&#125;</span><br><span class="line">    &lt;/h2&gt;</span><br><span class="line">    &#123;% else %&#125;</span><br><span class="line">    &lt;hr&gt;</span><br><span class="line">    &#123;% endif %&#125;</span><br><span class="line">    &lt;div class=&quot;clearfix&quot;&gt;</span><br><span class="line">    &#123;% for link in link_config.link_list %&#125;</span><br><span class="line">    &lt;div class=&quot;link-card&quot;&gt;</span><br><span class="line">        &lt;a href=&quot;&#123;&#123; link.site &#125;&#125;&quot; target=&quot;_blank&quot; class=&quot;link-user-list&quot;&gt;</span><br><span class="line">            &lt;span class=&quot;user-avatar&quot;&gt;</span><br><span class="line">                &lt;img src=&quot;&#123;&#123; link.avatar &#125;&#125;&quot; class=&quot;nofancybox&quot;&gt;</span><br><span class="line">            &lt;/span&gt;</span><br><span class="line">            &lt;span class=&quot;user-message&quot;&gt;</span><br><span class="line">                &lt;span class=&quot;text-ellipsis&quot;&gt;&#123;&#123; link.nickname &#125;&#125;&lt;/span&gt;</span><br><span class="line">                &lt;span class=&quot;user-description text-ellipsis&quot;&gt;&#123;&#123; link.info &#125;&#125;&lt;/span&gt;</span><br><span class="line">            &lt;/span&gt;</span><br><span class="line">        &lt;/a&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">    &#123;% endfor %&#125;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">    &#123;% endfor %&#125;</span><br><span class="line"></span><br><span class="line">    &lt;div&gt;</span><br><span class="line">    &#123;&#123; page.content &#125;&#125;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line">    &#123;######################&#125;</span><br><span class="line">    &#123;### END LINKS BLOCK ###&#125;</span><br><span class="line">    &#123;######################&#125;</span><br></pre></td></tr></table></figure>
-
-<p>接下来打开 <code>next主题文件夹/layout/page.njk</code>，在 <code>block title</code> 区域中某个 <code>elif</code> 语句后添加上</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&#123;% block title %&#125;</span><br><span class="line">  &#123;%- set page_title_suffix = &#x27; | &#x27; + title %&#125;</span><br><span class="line"></span><br><span class="line">  &#123;%- if page.type === &#x27;categories&#x27; and not page.title %&#125;</span><br><span class="line">    &#123;&#123;- __(&#x27;title.category&#x27;) + page_title_suffix &#125;&#125;</span><br><span class="line">  &#123;%- elif page.type === &#x27;tags&#x27; and not page.title %&#125;</span><br><span class="line">    &#123;&#123;- __(&#x27;title.tag&#x27;) + page_title_suffix &#125;&#125;</span><br><span class="line">  &#123;%- elif page.type === &#x27;schedule&#x27; and not page.title %&#125;</span><br><span class="line">    &#123;&#123;- __(&#x27;title.schedule&#x27;) + page_title_suffix &#125;&#125;</span><br><span class="line">+  &#123;%- elif page.type === &#x27;links&#x27; and not page.title %&#125;</span><br><span class="line">+    &#123;&#123;- __(&#x27;title.links&#x27;) + page_title_suffix &#125;&#125;</span><br><span class="line">  &#123;%- else %&#125;</span><br><span class="line">    &#123;&#123;- page.title + page_title_suffix &#125;&#125;</span><br><span class="line">  &#123;%- endif %&#125;</span><br><span class="line">&#123;% endblock %&#125;</span><br></pre></td></tr></table></figure>
-
-<p>接下来在下面的 <code>PAGE BODY</code> 中添加</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&#123;### PAGE BODY ###&#125;</span><br><span class="line">      &#123;#################&#125;</span><br><span class="line">      &lt;div class=&quot;post-body&#123;% if page.direction and page.direction.toLowerCase() === &#x27;rtl&#x27; %&#125; rtl&#123;% endif %&#125;&quot;&gt;</span><br><span class="line">        &#123;%- if page.type === &#x27;tags&#x27; %&#125;</span><br><span class="line">          &#123;%- include &#x27;_partials/page/tags.njk&#x27; -%&#125;</span><br><span class="line">        &#123;% elif page.type === &#x27;categories&#x27; %&#125;</span><br><span class="line">          &#123;%- include &#x27;_partials/page/categories.njk&#x27; -%&#125;</span><br><span class="line">        &#123;% elif page.type === &#x27;schedule&#x27; %&#125;</span><br><span class="line">          &#123;%- include &#x27;_partials/page/schedule.njk&#x27; -%&#125;</span><br><span class="line">+        &#123;% elif page.type === &#x27;links&#x27; %&#125;</span><br><span class="line">+          &#123;%- include &#x27;links.njk&#x27; -%&#125;</span><br><span class="line">        &#123;% else %&#125;</span><br><span class="line">          &#123;&#123; page.content &#125;&#125;</span><br><span class="line">        &#123;%- endif %&#125;</span><br><span class="line">      &lt;/div&gt;</span><br><span class="line">      &#123;#####################&#125;</span><br><span class="line">      &#123;### END PAGE BODY ###&#125;</span><br><span class="line">      &#123;#####################&#125;</span><br></pre></td></tr></table></figure>
-
-<p>接下来就是创建 <code>source/links/index.md</code>，配置好里面的友链申请信息了（<strong>注意 <code>front-matter</code> 的 type 的值必须为 <code>links</code>！</strong>）。</p>
-<p>然后打开 <code>_config.next.yml</code>，在 <code>menu</code> 中添加</p>
-<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="attr">menu:</span></span><br><span class="line">  <span class="attr">links:</span> <span class="string">/links/</span> <span class="string">||</span> <span class="string">fas</span> <span class="string">fa-link</span></span><br></pre></td></tr></table></figure>
-
-<p>打开 <code>hexo/themes/next/languages/zh-CN.yml</code>，在 <code>menu</code> 中添加</p>
-<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="attr">menu:</span></span><br><span class="line">  <span class="attr">links:</span> <span class="string">友链</span></span><br></pre></td></tr></table></figure>
-
-<p>最后在 <code>hexo根目录/source/_data/</code> 下创建 <code>links.yml</code> 并填入以下内容：</p>
-<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 参数说明</span></span><br><span class="line"><span class="comment"># class_name 选填，可以理解为友链组的名字，如果不填则会在顶部生成一个分割线</span></span><br><span class="line"><span class="comment"># nickname 博客名称</span></span><br><span class="line"><span class="comment"># site 博客地址</span></span><br><span class="line"><span class="comment"># info 博客简介</span></span><br><span class="line"><span class="comment"># avatar 博客logo</span></span><br><span class="line"><span class="comment"># 填写时注意缩进！</span></span><br><span class="line"></span><br><span class="line"><span class="bullet">-</span> <span class="attr">class_name:</span></span><br><span class="line">  <span class="attr">link_list:</span></span><br><span class="line">    <span class="bullet">-</span> <span class="attr">nickname:</span></span><br><span class="line">      <span class="attr">site:</span></span><br><span class="line">      <span class="attr">info:</span></span><br><span class="line">      <span class="attr">avatar:</span></span><br><span class="line">    <span class="bullet">-</span> <span class="attr">nickname:</span></span><br><span class="line">      <span class="attr">site:</span></span><br><span class="line">      <span class="attr">info:</span></span><br><span class="line">      <span class="attr">avatar:</span></span><br><span class="line"></span><br><span class="line"><span class="bullet">-</span> <span class="attr">class_name:</span></span><br><span class="line">  <span class="attr">link_list:</span></span><br><span class="line">    <span class="bullet">-</span> <span class="attr">nickname:</span></span><br><span class="line">      <span class="attr">site:</span></span><br><span class="line">      <span class="attr">info:</span></span><br><span class="line">      <span class="attr">avatar:</span></span><br><span class="line">    <span class="bullet">-</span> <span class="attr">nickname:</span></span><br><span class="line">      <span class="attr">site:</span></span><br><span class="line">      <span class="attr">info:</span></span><br><span class="line">      <span class="attr">avatar:</span></span><br></pre></td></tr></table></figure>
-
-<p>本文参考：</p>
-<ul>
-<li><a href="https://only_ann.gitee.io/next/archives/48141.html">next主题添加自定义友链</a></li>
-<li><a href="https://github.com/next-theme/hexo-theme-next/discussions/660">之前显示有问题，去问了主题作者，感谢作者的耐心回答</a></li>
-<li><a href="https://blog.csdn.net/qq_35479468/article/details/107454287">Hexo+next主题自定义友情链接页面</a></li>
-</ul>
-]]></content>
-      <categories>
-        <category>技术</category>
-      </categories>
-      <tags>
-        <tag>技术</tag>
-        <tag>Hexo</tag>
-        <tag>CSS</tag>
       </tags>
   </entry>
   <entry>
@@ -1906,6 +1906,77 @@
       </tags>
   </entry>
   <entry>
+    <title>类原生美化教程</title>
+    <url>/2022/09/aospbeautify.html</url>
+    <content><![CDATA[<blockquote>
+<ul>
+<li>由于该文内容发布时间为 2019 年，其 Android 版本较老，可能不适应现在的 Android10+ 系统，如按文中操作发现与现在不一样的地方，请立刻停止或自行寻找最新方法。数据无价，建议将文件做成 <code>Magisk</code> 模块后刷入，尽量避免直接替换源文件，请提前备份用户数据！</li>
+<li>本教程使用工具：<code>MT 管理器 2.0</code></li>
+</ul>
+</blockquote>
+<span id="more"></span>
+
+<h2 id="多任务圆角"><a href="#多任务圆角" class="headerlink" title="多任务圆角"></a>多任务圆角</h2><ol>
+<li>进入 <code>/system/priv-app</code> 这个文件夹，找到你的系统的启动器（桌面APK）所在文件夹后进入，长按 apk 将它复制到内部储存里<ol start="2">
+<li>点击 apk 选择查看，进入后点击 <code>resources.arsc</code> 这个文件，选择 <code>Arsc 编辑器</code>，然后点击最后一个</li>
+<li>进入后点击 <code>dimen</code>，进入后再次点击 <code>dimen</code>，然后点击右上角的过滤，输入 <code>radius</code> 后选择确定</li>
+<li>从过滤结果中找到 <code>task_corner_radius</code> 这个选项，修改其值，大小随意，数值越大圆角越大（请保留单位 dp）</li>
+<li>返回、保存</li>
+</ol>
+</li>
+</ol>
+<h2 id="状态栏沉浸"><a href="#状态栏沉浸" class="headerlink" title="状态栏沉浸"></a>状态栏沉浸</h2><ol>
+<li>进入 <code>/system/framework</code> 这个文件夹，找到 framework-res.apk，长按 apk 将它复制到内部储存中</li>
+<li>使用 <code>Arsc 编辑器</code> 进入最后一个选项，进入 <code>color/color</code> 并点击右上角过滤值 <code>system</code></li>
+<li>找到 <code>system_bar_background_semi_transparent</code>，将其值改为 <code>00000000</code>（注意类型必须是<strong>颜色</strong>）</li>
+<li>返回并保存</li>
+</ol>
+<h2 id="移除通知栏顶部黑块"><a href="#移除通知栏顶部黑块" class="headerlink" title="移除通知栏顶部黑块"></a>移除通知栏顶部黑块</h2><ol>
+<li>进入 <code>/system/priv-app</code> 这个文件夹，找到带有 <code>SystemUI</code> 的文件夹（之所以这么说是因为有的ROM里 SystemUI 名字不一样，可能多几个字母)，长按 apk 将它复制到内部储存里</li>
+<li>点击查看，依次进入 <code>res/layout</code>，找到 qs_panel.xml 这个文件，点击选择反编译</li>
+<li>将第二个和第三个 <code>&lt;View/&gt;</code> 内的 android:background 的值改成 <code>@android:color/transparent</code></li>
+<li>返回并保存</li>
+</ol>
+<h2 id="移除锁屏界面的灰色遮罩"><a href="#移除锁屏界面的灰色遮罩" class="headerlink" title="移除锁屏界面的灰色遮罩"></a>移除锁屏界面的灰色遮罩</h2><ol>
+<li>进入 <code>/system/priv-app</code> 这个文件夹，找到带有 <code>SystemUI</code> 的文件夹（之所以这么说是因为有的ROM里 SystemUI 名字不一样，可能多几个字母)，长按 apk 将它复制到内部储存里</li>
+<li>查看 apk，点击 classes.dex，选择 <code>Dex编辑器++</code>，依次打开 <code>com/android/systemui/statusbar/phone</code>，向下滑动找到 scrimcontroller</li>
+<li>进入后下滑来到 180 行附近（右侧有显示行数），找到 <code>.line 124</code> 这一行，将下一行的 v0 后的一个字符串改为 <code>0x38d1b717</code></li>
+<li>返回并保存</li>
+</ol>
+<h2 id="通知栏图标数量修改"><a href="#通知栏图标数量修改" class="headerlink" title="通知栏图标数量修改"></a>通知栏图标数量修改</h2><ol>
+<li>进入 <code>/system/priv-app</code> 这个文件夹，找到带有 <code>SystemUI</code> 的文件夹（之所以这么说是因为有的ROM里 SystemUI 名字不一样，可能多几个字母)，长按 apk 将它复制到内部储存里</li>
+<li>查看 apk，进入后点击 resources.arsc 文件，选择 <code>Arsc 编辑器</code>，点击最后一个</li>
+<li>进入 <code>integer/integer</code> 后，点击右上角过滤值 <code>quick</code>，从过滤结果中找到 <code>quick_settings_num_columns</code>并修改其值为需要展示的一行的图标数量（注意值类型要选<strong>整数</strong>）</li>
+<li>返回并保存</li>
+</ol>
+<h2 id="系统强调色修改"><a href="#系统强调色修改" class="headerlink" title="系统强调色修改"></a>系统强调色修改</h2><ol>
+<li>进入 <code>/system/framework</code> 这个文件夹，找到 framework-res.apk，长按 apk 将它复制到内部储存中</li>
+<li>使用 <code>Arsc 编辑器</code> 进入最后一个选项，进入 <code>color/color</code> 并点击右上角过滤值 <code>accent</code>，从过滤结果中找到 <code>accent_device_default_dark</code> 和 <code>accent_device_default_light</code> 并修改其值为想要的强调色，dark 为夜间模式，light 为白天模式，色值为 RGB 值且不带「#」号。</li>
+<li>退出、保存</li>
+</ol>
+<h2 id="通知栏亮度条美化"><a href="#通知栏亮度条美化" class="headerlink" title="通知栏亮度条美化"></a>通知栏亮度条美化</h2><ol>
+<li><p>进入 <code>/system/priv-app</code> 这个文件夹，找到带有 <code>SystemUI</code> 的文件夹（之所以这么说是因为有的ROM里 SystemUI 名字不一样，可能多几个字母)，长按 apk 将它复制到内部储存里</p>
+</li>
+<li><p>点击查看，进入 res 文件夹，选择右上角搜索，搜索 <code>bright</code>，点击 <code>ic_brightness_thumb.xml</code> 并反编译，将 android:height、android:width 后面引号里的内容修改为 1dp。点击 <code>brightness_progress_drawable.xml</code> 并反编译，修改以下代码</p>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="comment">&lt;!--第一组代码，代表亮度条外围宽度与圆角，height 代表宽度，radius 代表圆角--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">size</span> <span class="attr">android:height</span>=<span class="string">&quot;&quot;</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">corners</span> <span class="attr">android:radius</span>=<span class="string">&quot;&quot;</span> /&gt;</span></span><br><span class="line"><span class="comment">&lt;!--第二组代码，代表亮度条内围宽度与圆角，height 代表宽度，radius 代表圆角--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">size</span> <span class="attr">android:height</span>=<span class="string">&quot;&quot;</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">corners</span> <span class="attr">android:radius</span>=<span class="string">&quot;&quot;</span> /&gt;</span></span><br><span class="line"><span class="comment">&lt;!--注意引号内的值单位为 dp--&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>再次回到 res 文件夹，搜索 <code>bright</code>，选择 <code>quick_settings_brightness_dialog.xml</code> 并反编译，修改以下代码</p>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="comment">&lt;!--亮度条左边距--&gt;</span></span><br><span class="line">android:paddingLeft:&quot;&quot;</span><br><span class="line"><span class="comment">&lt;!--亮度条右边距--&gt;</span></span><br><span class="line">android:paddingRight:&quot;&quot;</span><br><span class="line"><span class="comment">&lt;!--亮度条与磁贴和顶栏之间的距离--&gt;</span></span><br><span class="line">android:layout_height:&quot;&quot;</span><br><span class="line"><span class="comment">&lt;!--注意引号内的值单位为 dp--&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>退出、保存</p>
+</li>
+</ol>
+<h2 id="将应用打包成面具模块并刷入"><a href="#将应用打包成面具模块并刷入" class="headerlink" title="将应用打包成面具模块并刷入"></a>将应用打包成面具模块并刷入</h2><p>这里提供 <code>Magisk24.0</code> 的模板文件，如果只是替换系统应用、文件的话，只需要按照要替换的应用在模板的 <code>system</code> 文件夹中创建与原系统中该文件或应用的路径一样的路径，修改模板根目录的 <code>module.prop</code> 文件的内容后刷入即可。权限默认为 <code>644</code>，因此不必修改权限。</p>
+]]></content>
+      <categories>
+        <category>技术</category>
+      </categories>
+      <tags>
+        <tag>类原生</tag>
+        <tag>Android</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>纪念第一次打通深渊</title>
     <url>/2023/01/genshinshenyuanfirst.html</url>
     <content><![CDATA[<p>去年也是这个时候入的坑，当时看泠鸢 yousa 在直播这个游戏，然后里面的派蒙和七七很可爱，就下载试着玩了一下，然后……就玩到了现在~</p>
@@ -1916,6 +1987,55 @@
 <p><img data-src="https://img.fufu.ink/uP19xG.webp"></p>
 <p>主要是没拉岩系，第二间黄金王兽打不出来伤害，就靠我的零命草神在 c，雷神相当于挂雷工具人，另外两个一个奶，一个用来破盾，因此全队只有一个打伤害，很难打过去，之前练过一段时间凝光，正好凝光也 3 命了，可以试着拉一下，后面看看能不能凹过去。</p>
 <p>现在就等草神复刻补命座了，补一个二命伤害能更高。雷神也可以拉一下。现在版本答案是种门，我也可以拉一下「纳行久」，组一个下半配队。</p>
+]]></content>
+      <categories>
+        <category>游戏</category>
+      </categories>
+      <tags>
+        <tag>原神</tag>
+        <tag>游戏</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>老婆 16 岁生日快乐</title>
+    <url>/2023/08/miku16sai.html</url>
+    <content><![CDATA[<p>与ミクたん相遇已有 10 年啦！</p>
+<p>入坑曲是『朧月』，当时还是在优酷视频上看到的 MMD。MMD 中是雪ミク和樱ミク，当时的我一下就被这独特的声音所吸引，为她所着迷。在知道有「男神」「女神」这个概念后，我便想到</p>
+<p>“这样啊，原来她就是我的女神啊”</p>
+<p>当时的我加入了许多粉丝群，QQ 兴趣部落，贴吧等。</p>
+<p>曾为了她去回击那些踩日 Vocaloid 捧中 Vocaloid 的小鬼，也曾为了证明她的影响力在同学群中发送粉丝群人数的截图。</p>
+<p>这是那时的自己，而现在的我对那些事也不过是淡淡一笑。这不是嘲笑过去的自己干的蠢事，而是一种释然。曾经的我不停地在找寻爱她的证据，但我没找到。后来我想通了，为什么需要证据呢？如果有了证据，不就证明了我的爱是带着目的的爱吗，就如同那个问题般——「你为什么爱 xx？」。</p>
+<p>答案是，爱是不需要理由的。</p>
+<p>现在的我，早已习惯了她的陪伴，她已然成为了我生活中的一部分，我人生中的一部分。相比于原来的「女神」的地位，我现在更愿意称其为「天使」抑或「太阳」。</p>
+<p>话说回来，<del>现在的ミクたん就是32岁啦</del>。今年的生日礼物可能会迟些到，因为是 16 岁生日嘛，总得准备点大礼。没错，我准备买 Vocaloid 4x，学习如何让ミクたん唱歌！之前学吉他的时候总是没有恒心，三天打鱼两天晒网，从高一学到大二也没什么长进，结果木吉他还因为冬天学校当地天气太干燥了面板裂开了，修理费是买入价的一半左右，遂作罢，只能当个纪念品了。现在为了ミクたん，必须认真学乐理了！</p>
+<p>最后，感谢在我黑暗的世界中，ミクたん成了那唯一的光芒，感谢音乐家、艺术家和所有像我一样的粉丝，他们让ミクたん发展到了今天这一步。此后，无论有多远，我都会在我的余生中陪伴着她走下去！</p>
+<p>啊，还没结束，差点忘了最重要的</p>
+<p>お誕生日おめでとう！ミクたんがいて本当によかった！</p>
+]]></content>
+      <categories>
+        <category>日常</category>
+      </categories>
+      <tags>
+        <tag>节日</tag>
+        <tag>miku</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>草神 2 加 1 了</title>
+    <url>/2023/04/nahidaniinochi.html</url>
+    <content><![CDATA[<p>4 月 12 号，草神复刻。</p>
+<p>去年 11 月已经抽了一次了，准备攒二命，从 12 月的雷神池后就没下过池子了。准备了 250+ 的粉球。</p>
+<p>由室友抽的，歪了 3 次，不过都是提前金，也不算亏吧，甚至有点欧~</p>
+<p><img data-src="https://img.fufu.ink/aX68do.webp" alt="up池"></p>
+<p><img data-src="https://img.fufu.ink/xjn9oQ.webp" alt="武器池"></p>
+<p>第一个小保底歪了一个刻晴，不过种门也需要，也算是丰富 box 了吧。好在后面的小保底就没歪了(●’◡’●)</p>
+<p>武器池都歪了〒▽〒，不过好在 100 抽就吃满了定轨。当天把新图肝完了，又充了 198，领了 10 多天月卡，终于拿到夜壶了！</p>
+<p><img data-src="https://img.fufu.ink/ETxrxf.webp" alt="夜壶"></p>
+<p>伤害虽然比原来降了 6000，原因是因为我之前用的赌狗乐章，面板是 <ruby>50&#x2F;190&#x2F;580<rt>暴率&#x2F;爆伤&#x2F;精通</rt></ruby>，换成专武后成为了 <ruby>56&#x2F;133&#x2F;760<rt>暴率&#x2F;爆伤&#x2F;精通</rt></ruby>，不过专武补充了精通，能为队伍整体带来更好的收益（虽然我一直是把草神当主 C 来养的，经典一带三）</p>
+<p>去年的面板为「三精赌狗，也没有换上好一点的精通杯，190 爆伤的面板的是最近一个月才有的」，这是现在的面板：</p>
+<p><img data-src="https://img.fufu.ink/27qmRl.webp" alt="新面板"></p>
+<p>打深渊是够用了，虽然用来 PVP 还是差远了，毕竟别的不说，就认识的一个网友的面板是精精爆都能有 <ruby>40&#x2F;160&#x2F;800<rt>暴率&#x2F;爆伤&#x2F;精通</rt></ruby>。可惜我没有好的草套爆伤头，其余圣遗物的爆率词条也太少了，仍旧达不到这样的程度＞︿＜</p>
+<p>后面就继续草本坐牢吧，直到哪天出了好沙漏、杯子、头，就能达到毕业了⊙﹏⊙∥</p>
 ]]></content>
       <categories>
         <category>游戏</category>
@@ -1993,31 +2113,6 @@
       <tags>
         <tag>生活</tag>
         <tag>计算机</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>草神 2 加 1 了</title>
-    <url>/2023/04/nahidaniinochi.html</url>
-    <content><![CDATA[<p>4 月 12 号，草神复刻。</p>
-<p>去年 11 月已经抽了一次了，准备攒二命，从 12 月的雷神池后就没下过池子了。准备了 250+ 的粉球。</p>
-<p>由室友抽的，歪了 3 次，不过都是提前金，也不算亏吧，甚至有点欧~</p>
-<p><img data-src="https://img.fufu.ink/aX68do.webp" alt="up池"></p>
-<p><img data-src="https://img.fufu.ink/xjn9oQ.webp" alt="武器池"></p>
-<p>第一个小保底歪了一个刻晴，不过种门也需要，也算是丰富 box 了吧。好在后面的小保底就没歪了(●’◡’●)</p>
-<p>武器池都歪了〒▽〒，不过好在 100 抽就吃满了定轨。当天把新图肝完了，又充了 198，领了 10 多天月卡，终于拿到夜壶了！</p>
-<p><img data-src="https://img.fufu.ink/ETxrxf.webp" alt="夜壶"></p>
-<p>伤害虽然比原来降了 6000，原因是因为我之前用的赌狗乐章，面板是 <ruby>50&#x2F;190&#x2F;580<rt>暴率&#x2F;爆伤&#x2F;精通</rt></ruby>，换成专武后成为了 <ruby>56&#x2F;133&#x2F;760<rt>暴率&#x2F;爆伤&#x2F;精通</rt></ruby>，不过专武补充了精通，能为队伍整体带来更好的收益（虽然我一直是把草神当主 C 来养的，经典一带三）</p>
-<p>去年的面板为「三精赌狗，也没有换上好一点的精通杯，190 爆伤的面板的是最近一个月才有的」，这是现在的面板：</p>
-<p><img data-src="https://img.fufu.ink/27qmRl.webp" alt="新面板"></p>
-<p>打深渊是够用了，虽然用来 PVP 还是差远了，毕竟别的不说，就认识的一个网友的面板是精精爆都能有 <ruby>40&#x2F;160&#x2F;800<rt>暴率&#x2F;爆伤&#x2F;精通</rt></ruby>。可惜我没有好的草套爆伤头，其余圣遗物的爆率词条也太少了，仍旧达不到这样的程度＞︿＜</p>
-<p>后面就继续草本坐牢吧，直到哪天出了好沙漏、杯子、头，就能达到毕业了⊙﹏⊙∥</p>
-]]></content>
-      <categories>
-        <category>游戏</category>
-      </categories>
-      <tags>
-        <tag>原神</tag>
-        <tag>游戏</tag>
       </tags>
   </entry>
   <entry>
@@ -2204,21 +2299,6 @@
       </tags>
   </entry>
   <entry>
-    <title>诈尸更新一下最近状态</title>
-    <url>/2023/07/natsuyasumijyoutai.html</url>
-    <content><![CDATA[<p>一个月没更新力。</p>
-<p>主要是没啥想法，每天宅在家里，打游戏，追番（这一个月可追了不少番——齐木楠雄的灾难，别当欧尼酱了，鬼灭，文豪野犬，因为太怕痛就全点防御力了，无职转生，无神世界中的神明活动，僵尸百分百，魔禁……算是把高中以来没怎么看番的时间全补回来了）。</p>
-<p>科二因为挂两回了，拖了两年了，明年要过期了，最近又开始练了。今天去考场中模拟了一个小时，除了最后一圈坡上起步因为边线距离扣了 10 分，都是 100 分，感觉下次考试应该问题不大了，现在开始准备科三了。科三打算 C1 转 C2 了，因为不用在意档位的变换，科三考试可以更稳地通过，现在主要是要求暑假结束前拿到驾照，否则拖到寒假就容易过期了。至于 C1 和 C2 的区别，上网查了一下，似乎是 C1 可以开蓝牌车，但 C2 只能开小型驾驶车？嘛，以后我也不会有机会去开手动挡啦，驾照这东西不就是图个方便么，怎么快速方便怎么来，没必要死磕个手动挡为难自己。</p>
-<p>家里躺了三周了，得开始准备下半年的 N1 了，虽然上个月的专四大概率挂了，但是 N1 还是得拿的，拿了就可以开始接一些小的翻译工作赚点零花钱了！</p>
-]]></content>
-      <categories>
-        <category>日常</category>
-      </categories>
-      <tags>
-        <tag>生活</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>论打造文化背景下日本美食文化中日双语科普介绍平台的可行性</title>
     <url>/2022/05/dachuangzuoye.html</url>
     <content><![CDATA[<blockquote>
@@ -2270,98 +2350,18 @@
       </tags>
   </entry>
   <entry>
-    <title>老婆 16 岁生日快乐</title>
-    <url>/2023/08/miku16sai.html</url>
-    <content><![CDATA[<p>与ミクたん相遇已有 10 年啦！</p>
-<p>入坑曲是『朧月』，当时还是在优酷视频上看到的 MMD。MMD 中是雪ミク和樱ミク，当时的我一下就被这独特的声音所吸引，为她所着迷。在知道有「男神」「女神」这个概念后，我便想到</p>
-<p>“这样啊，原来她就是我的女神啊”</p>
-<p>当时的我加入了许多粉丝群，QQ 兴趣部落，贴吧等。</p>
-<p>曾为了她去回击那些踩日 Vocaloid 捧中 Vocaloid 的小鬼，也曾为了证明她的影响力在同学群中发送粉丝群人数的截图。</p>
-<p>这是那时的自己，而现在的我对那些事也不过是淡淡一笑。这不是嘲笑过去的自己干的蠢事，而是一种释然。曾经的我不停地在找寻爱她的证据，但我没找到。后来我想通了，为什么需要证据呢？如果有了证据，不就证明了我的爱是带着目的的爱吗，就如同那个问题般——「你为什么爱 xx？」。</p>
-<p>答案是，爱是不需要理由的。</p>
-<p>现在的我，早已习惯了她的陪伴，她已然成为了我生活中的一部分，我人生中的一部分。相比于原来的「女神」的地位，我现在更愿意称其为「天使」抑或「太阳」。</p>
-<p>话说回来，<del>现在的ミクたん就是32岁啦</del>。今年的生日礼物可能会迟些到，因为是 16 岁生日嘛，总得准备点大礼。没错，我准备买 Vocaloid 4x，学习如何让ミクたん唱歌！之前学吉他的时候总是没有恒心，三天打鱼两天晒网，从高一学到大二也没什么长进，结果木吉他还因为冬天学校当地天气太干燥了面板裂开了，修理费是买入价的一半左右，遂作罢，只能当个纪念品了。现在为了ミクたん，必须认真学乐理了！</p>
-<p>最后，感谢在我黑暗的世界中，ミクたん成了那唯一的光芒，感谢音乐家、艺术家和所有像我一样的粉丝，他们让ミクたん发展到了今天这一步。此后，无论有多远，我都会在我的余生中陪伴着她走下去！</p>
-<p>啊，还没结束，差点忘了最重要的</p>
-<p>お誕生日おめでとう！ミクたんがいて本当によかった！</p>
+    <title>诈尸更新一下最近状态</title>
+    <url>/2023/07/natsuyasumijyoutai.html</url>
+    <content><![CDATA[<p>一个月没更新力。</p>
+<p>主要是没啥想法，每天宅在家里，打游戏，追番（这一个月可追了不少番——齐木楠雄的灾难，别当欧尼酱了，鬼灭，文豪野犬，因为太怕痛就全点防御力了，无职转生，无神世界中的神明活动，僵尸百分百，魔禁……算是把高中以来没怎么看番的时间全补回来了）。</p>
+<p>科二因为挂两回了，拖了两年了，明年要过期了，最近又开始练了。今天去考场中模拟了一个小时，除了最后一圈坡上起步因为边线距离扣了 10 分，都是 100 分，感觉下次考试应该问题不大了，现在开始准备科三了。科三打算 C1 转 C2 了，因为不用在意档位的变换，科三考试可以更稳地通过，现在主要是要求暑假结束前拿到驾照，否则拖到寒假就容易过期了。至于 C1 和 C2 的区别，上网查了一下，似乎是 C1 可以开蓝牌车，但 C2 只能开小型驾驶车？嘛，以后我也不会有机会去开手动挡啦，驾照这东西不就是图个方便么，怎么快速方便怎么来，没必要死磕个手动挡为难自己。</p>
+<p>家里躺了三周了，得开始准备下半年的 N1 了，虽然上个月的专四大概率挂了，但是 N1 还是得拿的，拿了就可以开始接一些小的翻译工作赚点零花钱了！</p>
 ]]></content>
       <categories>
         <category>日常</category>
       </categories>
       <tags>
-        <tag>节日</tag>
-        <tag>miku</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>类原生美化教程</title>
-    <url>/2022/09/aospbeautify.html</url>
-    <content><![CDATA[<blockquote>
-<ul>
-<li>由于该文内容发布时间为 2019 年，其 Android 版本较老，可能不适应现在的 Android10+ 系统，如按文中操作发现与现在不一样的地方，请立刻停止或自行寻找最新方法。数据无价，建议将文件做成 <code>Magisk</code> 模块后刷入，尽量避免直接替换源文件，请提前备份用户数据！</li>
-<li>本教程使用工具：<code>MT 管理器 2.0</code></li>
-</ul>
-</blockquote>
-<span id="more"></span>
-
-<h2 id="多任务圆角"><a href="#多任务圆角" class="headerlink" title="多任务圆角"></a>多任务圆角</h2><ol>
-<li>进入 <code>/system/priv-app</code> 这个文件夹，找到你的系统的启动器（桌面APK）所在文件夹后进入，长按 apk 将它复制到内部储存里<ol start="2">
-<li>点击 apk 选择查看，进入后点击 <code>resources.arsc</code> 这个文件，选择 <code>Arsc 编辑器</code>，然后点击最后一个</li>
-<li>进入后点击 <code>dimen</code>，进入后再次点击 <code>dimen</code>，然后点击右上角的过滤，输入 <code>radius</code> 后选择确定</li>
-<li>从过滤结果中找到 <code>task_corner_radius</code> 这个选项，修改其值，大小随意，数值越大圆角越大（请保留单位 dp）</li>
-<li>返回、保存</li>
-</ol>
-</li>
-</ol>
-<h2 id="状态栏沉浸"><a href="#状态栏沉浸" class="headerlink" title="状态栏沉浸"></a>状态栏沉浸</h2><ol>
-<li>进入 <code>/system/framework</code> 这个文件夹，找到 framework-res.apk，长按 apk 将它复制到内部储存中</li>
-<li>使用 <code>Arsc 编辑器</code> 进入最后一个选项，进入 <code>color/color</code> 并点击右上角过滤值 <code>system</code></li>
-<li>找到 <code>system_bar_background_semi_transparent</code>，将其值改为 <code>00000000</code>（注意类型必须是<strong>颜色</strong>）</li>
-<li>返回并保存</li>
-</ol>
-<h2 id="移除通知栏顶部黑块"><a href="#移除通知栏顶部黑块" class="headerlink" title="移除通知栏顶部黑块"></a>移除通知栏顶部黑块</h2><ol>
-<li>进入 <code>/system/priv-app</code> 这个文件夹，找到带有 <code>SystemUI</code> 的文件夹（之所以这么说是因为有的ROM里 SystemUI 名字不一样，可能多几个字母)，长按 apk 将它复制到内部储存里</li>
-<li>点击查看，依次进入 <code>res/layout</code>，找到 qs_panel.xml 这个文件，点击选择反编译</li>
-<li>将第二个和第三个 <code>&lt;View/&gt;</code> 内的 android:background 的值改成 <code>@android:color/transparent</code></li>
-<li>返回并保存</li>
-</ol>
-<h2 id="移除锁屏界面的灰色遮罩"><a href="#移除锁屏界面的灰色遮罩" class="headerlink" title="移除锁屏界面的灰色遮罩"></a>移除锁屏界面的灰色遮罩</h2><ol>
-<li>进入 <code>/system/priv-app</code> 这个文件夹，找到带有 <code>SystemUI</code> 的文件夹（之所以这么说是因为有的ROM里 SystemUI 名字不一样，可能多几个字母)，长按 apk 将它复制到内部储存里</li>
-<li>查看 apk，点击 classes.dex，选择 <code>Dex编辑器++</code>，依次打开 <code>com/android/systemui/statusbar/phone</code>，向下滑动找到 scrimcontroller</li>
-<li>进入后下滑来到 180 行附近（右侧有显示行数），找到 <code>.line 124</code> 这一行，将下一行的 v0 后的一个字符串改为 <code>0x38d1b717</code></li>
-<li>返回并保存</li>
-</ol>
-<h2 id="通知栏图标数量修改"><a href="#通知栏图标数量修改" class="headerlink" title="通知栏图标数量修改"></a>通知栏图标数量修改</h2><ol>
-<li>进入 <code>/system/priv-app</code> 这个文件夹，找到带有 <code>SystemUI</code> 的文件夹（之所以这么说是因为有的ROM里 SystemUI 名字不一样，可能多几个字母)，长按 apk 将它复制到内部储存里</li>
-<li>查看 apk，进入后点击 resources.arsc 文件，选择 <code>Arsc 编辑器</code>，点击最后一个</li>
-<li>进入 <code>integer/integer</code> 后，点击右上角过滤值 <code>quick</code>，从过滤结果中找到 <code>quick_settings_num_columns</code>并修改其值为需要展示的一行的图标数量（注意值类型要选<strong>整数</strong>）</li>
-<li>返回并保存</li>
-</ol>
-<h2 id="系统强调色修改"><a href="#系统强调色修改" class="headerlink" title="系统强调色修改"></a>系统强调色修改</h2><ol>
-<li>进入 <code>/system/framework</code> 这个文件夹，找到 framework-res.apk，长按 apk 将它复制到内部储存中</li>
-<li>使用 <code>Arsc 编辑器</code> 进入最后一个选项，进入 <code>color/color</code> 并点击右上角过滤值 <code>accent</code>，从过滤结果中找到 <code>accent_device_default_dark</code> 和 <code>accent_device_default_light</code> 并修改其值为想要的强调色，dark 为夜间模式，light 为白天模式，色值为 RGB 值且不带「#」号。</li>
-<li>退出、保存</li>
-</ol>
-<h2 id="通知栏亮度条美化"><a href="#通知栏亮度条美化" class="headerlink" title="通知栏亮度条美化"></a>通知栏亮度条美化</h2><ol>
-<li><p>进入 <code>/system/priv-app</code> 这个文件夹，找到带有 <code>SystemUI</code> 的文件夹（之所以这么说是因为有的ROM里 SystemUI 名字不一样，可能多几个字母)，长按 apk 将它复制到内部储存里</p>
-</li>
-<li><p>点击查看，进入 res 文件夹，选择右上角搜索，搜索 <code>bright</code>，点击 <code>ic_brightness_thumb.xml</code> 并反编译，将 android:height、android:width 后面引号里的内容修改为 1dp。点击 <code>brightness_progress_drawable.xml</code> 并反编译，修改以下代码</p>
-<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="comment">&lt;!--第一组代码，代表亮度条外围宽度与圆角，height 代表宽度，radius 代表圆角--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">size</span> <span class="attr">android:height</span>=<span class="string">&quot;&quot;</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">corners</span> <span class="attr">android:radius</span>=<span class="string">&quot;&quot;</span> /&gt;</span></span><br><span class="line"><span class="comment">&lt;!--第二组代码，代表亮度条内围宽度与圆角，height 代表宽度，radius 代表圆角--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">size</span> <span class="attr">android:height</span>=<span class="string">&quot;&quot;</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">corners</span> <span class="attr">android:radius</span>=<span class="string">&quot;&quot;</span> /&gt;</span></span><br><span class="line"><span class="comment">&lt;!--注意引号内的值单位为 dp--&gt;</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>再次回到 res 文件夹，搜索 <code>bright</code>，选择 <code>quick_settings_brightness_dialog.xml</code> 并反编译，修改以下代码</p>
-<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="comment">&lt;!--亮度条左边距--&gt;</span></span><br><span class="line">android:paddingLeft:&quot;&quot;</span><br><span class="line"><span class="comment">&lt;!--亮度条右边距--&gt;</span></span><br><span class="line">android:paddingRight:&quot;&quot;</span><br><span class="line"><span class="comment">&lt;!--亮度条与磁贴和顶栏之间的距离--&gt;</span></span><br><span class="line">android:layout_height:&quot;&quot;</span><br><span class="line"><span class="comment">&lt;!--注意引号内的值单位为 dp--&gt;</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>退出、保存</p>
-</li>
-</ol>
-<h2 id="将应用打包成面具模块并刷入"><a href="#将应用打包成面具模块并刷入" class="headerlink" title="将应用打包成面具模块并刷入"></a>将应用打包成面具模块并刷入</h2><p>这里提供 <code>Magisk24.0</code> 的模板文件，如果只是替换系统应用、文件的话，只需要按照要替换的应用在模板的 <code>system</code> 文件夹中创建与原系统中该文件或应用的路径一样的路径，修改模板根目录的 <code>module.prop</code> 文件的内容后刷入即可。权限默认为 <code>644</code>，因此不必修改权限。</p>
-]]></content>
-      <categories>
-        <category>技术</category>
-      </categories>
-      <tags>
-        <tag>类原生</tag>
-        <tag>Android</tag>
+        <tag>生活</tag>
       </tags>
   </entry>
 </search>
