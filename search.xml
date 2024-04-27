@@ -15,19 +15,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Handsome 美化补充</title>
-    <url>/2021/12/handsomebeautify.html</url>
-    <content><![CDATA[<p>由于在网上找到的 handsome 主题的首页文章圆角的 css 代码只选择了首页的大头图版式，小头图和图片版式均无圆角和鼠标停留上浮效果，在这里分享下我加了这两个版式之后的代码，将其粘贴到 handsome 主题开发者设置的自定义 css 中即可。</p>
-<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="comment">/*首页文章列表悬停上浮*/</span></span><br><span class="line"><span class="selector-class">.blog-post</span> <span class="selector-class">.panel-small</span><span class="selector-pseudo">:not</span>(<span class="selector-tag">article</span>),</span><br><span class="line"><span class="selector-class">.blog-post</span> <span class="selector-class">.panel</span><span class="selector-pseudo">:not</span>(<span class="selector-tag">article</span>), <span class="selector-class">.panel-picture</span> &#123;</span><br><span class="line">    <span class="attribute">transition</span>: all <span class="number">0.3s</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.blog-post</span> <span class="selector-class">.panel-small</span><span class="selector-pseudo">:not</span>(<span class="selector-tag">article</span>)<span class="selector-pseudo">:hover</span>,</span><br><span class="line"><span class="selector-class">.blog-post</span> <span class="selector-class">.panel</span><span class="selector-pseudo">:not</span>(<span class="selector-tag">article</span>)<span class="selector-pseudo">:hover</span>, <span class="selector-class">.panel-picture</span><span class="selector-pseudo">:hover</span> &#123;</span><br><span class="line">    <span class="attribute">transform</span>: <span class="built_in">translateY</span>(-<span class="number">10px</span>);</span><br><span class="line">    <span class="attribute">box-shadow</span>: <span class="number">0</span> <span class="number">8px</span> <span class="number">10px</span> <span class="built_in">rgba</span>(<span class="number">73</span>, <span class="number">90</span>, <span class="number">47</span>, <span class="number">0.47</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/*首页文章版式圆角化*/</span></span><br><span class="line"><span class="selector-class">.panel</span>&#123;</span><br><span class="line">    <span class="attribute">border</span>: none <span class="meta">!important</span>;</span><br><span class="line">    <span class="attribute">border-radius</span>: <span class="number">15px</span> <span class="meta">!important</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.panel-small</span>&#123;</span><br><span class="line">    <span class="attribute">border</span>: none;</span><br><span class="line">    <span class="attribute">border-radius</span>: <span class="number">15px</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.item-thumb</span>&#123;</span><br><span class="line">    <span class="attribute">border-radius</span>: <span class="number">15px</span> <span class="number">15px</span> <span class="number">0</span> <span class="number">0</span>;  </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.border-radius-6</span> &#123;</span><br><span class="line"><span class="attribute">border-radius</span>: <span class="number">15px</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>技术</category>
-      </categories>
-      <tags>
-        <tag>handsome</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>MinecraftBDS 修改材质包和行为包教程</title>
     <url>/2022/07/mcbdsbeautify.html</url>
     <content><![CDATA[<blockquote>
@@ -63,34 +50,6 @@
         <tag>行为包</tag>
         <tag>教程</tag>
         <tag>技术</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Next 主题添加公告栏</title>
-    <url>/2024/04/nextaddnotice.html</url>
-    <content><![CDATA[<p>字面意思，给 Next 主题添加个公告栏，不过由于 Next 侧边栏只在宽屏上显示，在手机上是看不到的。</p>
-<p>适用范围：Next·Pisces 主题</p>
-<span id="more"></span>
-
-<p>打开 <code>hexo/themes/next/layout/_macro/sidebar.njk</code>，在 <code>&lt;/aside&gt;</code> 与最后一个 <code>&#123;%- endif %&#125;</code> 之间添加以下代码</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&#123;%- if theme.related_posts.enable %&#125;</span><br><span class="line">      &#123;%- if theme.pjax %&#125;</span><br><span class="line">        &lt;div class=&quot;pjax&quot;&gt;</span><br><span class="line">      &#123;%- endif %&#125;</span><br><span class="line">      &#123;%- if page.related_posts and page.related_posts.length &gt; 0 %&#125;</span><br><span class="line">        &lt;div class=&quot;sidebar-inner sidebar-post-related&quot;&gt;</span><br><span class="line">          &lt;div class=&quot;animated&quot;&gt;</span><br><span class="line">            &#123;&#123; partial(&#x27;_partials/post/post-related.njk&#x27;) &#125;&#125;</span><br><span class="line">          &lt;/div&gt;</span><br><span class="line">        &lt;/div&gt;</span><br><span class="line">      &#123;%- endif %&#125;</span><br><span class="line">      &#123;%- if theme.pjax %&#125;</span><br><span class="line">        &lt;/div&gt;</span><br><span class="line">      &#123;%- endif %&#125;</span><br><span class="line">    &#123;%- endif %&#125;</span><br><span class="line"></span><br><span class="line">+    &#123;%- if theme.notice.enable %&#125;</span><br><span class="line">+      &#123;%- if theme.pjax %&#125;</span><br><span class="line">+        &lt;div class=&quot;pjax&quot;&gt;</span><br><span class="line">+      &#123;%- endif %&#125;</span><br><span class="line">+      &#123;%- if theme.notice.content.length &gt; 0 %&#125;</span><br><span class="line">+        &lt;div class=&quot;sidebar-inner notice&quot; style=&quot;padding: 18px;&quot;&gt;</span><br><span class="line">+          &lt;div class=&quot;notice-title&quot; style=&quot;font-size: 1.2em;text-align: left;&quot;&gt;</span><br><span class="line">+            &lt;i class=&quot;fa-solid fa-bullhorn&quot;&gt;&lt;/i&gt;</span><br><span class="line">+            &lt;span style=&quot;margin-left: 6px;&quot;&gt;公告&lt;/span&gt;</span><br><span class="line">+          &lt;/div&gt;</span><br><span class="line">+          &lt;div class=&quot;notice-content&quot; style=&quot;text-align: justify;&quot;&gt;</span><br><span class="line">+            &#123;&#123; theme.notice.content &#125;&#125;</span><br><span class="line">+          &lt;/div&gt;</span><br><span class="line">+        &lt;/div&gt;</span><br><span class="line">+      &#123;%- endif %&#125;</span><br><span class="line">+      &#123;%- if theme.pjax %&#125;</span><br><span class="line">+        &lt;/div&gt;</span><br><span class="line">+      &#123;%- endif %&#125;</span><br><span class="line">+    &#123;%- endif %&#125;</span><br><span class="line">	&lt;/aside&gt;</span><br><span class="line">&#123;% endmacro %&#125;</span><br></pre></td></tr></table></figure>
-
-<p>以下为方便复制的版本</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&#123;%- if theme.notice.enable %&#125;</span><br><span class="line">      &#123;%- if theme.pjax %&#125;</span><br><span class="line">        &lt;div class=&quot;pjax&quot;&gt;</span><br><span class="line">      &#123;%- endif %&#125;</span><br><span class="line">      &#123;%- if theme.notice.content.length &gt; 0 %&#125;</span><br><span class="line">        &lt;div class=&quot;sidebar-inner notice&quot; style=&quot;padding: 18px;&quot;&gt;</span><br><span class="line">          &lt;div class=&quot;notice-title&quot; style=&quot;font-size: 1.2em;text-align: left;&quot;&gt;</span><br><span class="line">            &lt;i class=&quot;fa-solid fa-bullhorn&quot;&gt;&lt;/i&gt;</span><br><span class="line">            &lt;span style=&quot;margin-left: 6px;&quot;&gt;公告&lt;/span&gt;</span><br><span class="line">          &lt;/div&gt;</span><br><span class="line">          &lt;div class=&quot;notice-content&quot; style=&quot;text-align: justify;&quot;&gt;</span><br><span class="line">            &#123;&#123; theme.notice.content &#125;&#125;</span><br><span class="line">          &lt;/div&gt;</span><br><span class="line">        &lt;/div&gt;</span><br><span class="line">      &#123;%- endif %&#125;</span><br><span class="line">      &#123;%- if theme.pjax %&#125;</span><br><span class="line">        &lt;/div&gt;</span><br><span class="line">      &#123;%- endif %&#125;</span><br><span class="line">&#123;%- endif %&#125;</span><br></pre></td></tr></table></figure>
-
-<p>然后在主题配置 <code>_config.next.yml</code> 中添加以下内容</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">notice:</span><br><span class="line">  enable: true</span><br><span class="line">  content: #公告内容</span><br></pre></td></tr></table></figure>
-
-<p>样式写的很简单，如有需要请自行更改。</p>
-]]></content>
-      <categories>
-        <category>技术</category>
-      </categories>
-      <tags>
-        <tag>教程</tag>
-        <tag>技术</tag>
-        <tag>Hexo</tag>
-        <tag>Next</tag>
       </tags>
   </entry>
   <entry>
@@ -141,33 +100,31 @@
       </tags>
   </entry>
   <entry>
-    <title>Next 主题部分图片禁用 FancyBox</title>
-    <url>/2023/04/nextthemefancyboxdisabled.html</url>
-    <content><![CDATA[<p>之前用的主题有 fancybox 功能的都有部分图片禁用 fancybox 的功能，看了一遍文档却发现没有这个选项，去 issue 中和 discusstion 中也没找到相关的信息。<span id="more"></span>于是 google 了一下，发现真有<a href="https://blog.csdn.net/cddchina/article/details/79764432">相关教程</a>，不过是 18 年的了，现在 next 主题已经变了很多，fancybox 的 js 代码也没在 utils.js 文件中了。找了一下，发现 fancybox 的相关 js 代码已经单独写在了主题文件夹下的 <code>\source\js\third-party\fancybox.js</code> 中了。</p>
-<p>接着又在网上找到了一篇博客，发现插入的代码较也改进了一下，修改了当鼠标悬浮在已经被禁用 fancybox 效果的图片上时的状态，原文链接：<a href="https://kevin1061517.github.io/blog/posts/Hexo/2721/">https://kevin1061517.github.io/blog/posts/Hexo/2721/</a></p>
-<p>结合两篇博文，最终即为在 <code>\source\js\third-party\fancybox.js</code> 文件中的 <code>const $image = $(element);</code> 这一行与 <code>const imageLink = $image.attr(&#39;data-src&#39;) || $image.attr(&#39;src&#39;);</code> 之间添加以下代码</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">     <span class="keyword">const</span> $image = $(element);</span><br><span class="line">+    <span class="keyword">if</span> ($(element).<span class="title function_">hasClass</span>(<span class="string">&#x27;nofancybox&#x27;</span>))&#123;  <span class="comment">//是否有包含自己定义的nofancybox属性，有就return true</span></span><br><span class="line">+        $(element).<span class="title function_">css</span>(<span class="string">&quot;cursor&quot;</span>,<span class="string">&quot;default&quot;</span>);    <span class="comment">//将碰到图片的鼠标从放大镜变成default模式</span></span><br><span class="line">+        <span class="keyword">return</span>;	<span class="comment">//不进行下面的fancybox的配置</span></span><br><span class="line">+      &#125;</span><br><span class="line">     <span class="keyword">const</span> imageLink = $image.<span class="title function_">attr</span>(<span class="string">&#x27;data-src&#x27;</span>) || $image.<span class="title function_">attr</span>(<span class="string">&#x27;src&#x27;</span>);</span><br></pre></td></tr></table></figure>
+    <title>Next 主题添加公告栏</title>
+    <url>/2024/04/nextaddnotice.html</url>
+    <content><![CDATA[<p>字面意思，给 Next 主题添加个公告栏，不过由于 Next 侧边栏只在宽屏上显示，在手机上是看不到的。</p>
+<p>适用范围：Next·Pisces 主题</p>
+<span id="more"></span>
 
-<p>以下为方便复制的代码</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">if</span> ($(element).<span class="title function_">hasClass</span>(<span class="string">&#x27;nofancybox&#x27;</span>))&#123;  <span class="comment">//是否有包含自己定义的nofancybox属性，有就return true</span></span><br><span class="line">    $(element).<span class="title function_">css</span>(<span class="string">&quot;cursor&quot;</span>,<span class="string">&quot;default&quot;</span>);    <span class="comment">//将碰到图片的鼠标从放大镜变成default模式</span></span><br><span class="line">    <span class="keyword">return</span>;	<span class="comment">//不进行下面的fancybox的配置</span></span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+<p>打开 <code>hexo/themes/next/layout/_macro/sidebar.njk</code>，在 <code>&lt;/aside&gt;</code> 与最后一个 <code>&#123;%- endif %&#125;</code> 之间添加以下代码</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&#123;%- if theme.related_posts.enable %&#125;</span><br><span class="line">      &#123;%- if theme.pjax %&#125;</span><br><span class="line">        &lt;div class=&quot;pjax&quot;&gt;</span><br><span class="line">      &#123;%- endif %&#125;</span><br><span class="line">      &#123;%- if page.related_posts and page.related_posts.length &gt; 0 %&#125;</span><br><span class="line">        &lt;div class=&quot;sidebar-inner sidebar-post-related&quot;&gt;</span><br><span class="line">          &lt;div class=&quot;animated&quot;&gt;</span><br><span class="line">            &#123;&#123; partial(&#x27;_partials/post/post-related.njk&#x27;) &#125;&#125;</span><br><span class="line">          &lt;/div&gt;</span><br><span class="line">        &lt;/div&gt;</span><br><span class="line">      &#123;%- endif %&#125;</span><br><span class="line">      &#123;%- if theme.pjax %&#125;</span><br><span class="line">        &lt;/div&gt;</span><br><span class="line">      &#123;%- endif %&#125;</span><br><span class="line">    &#123;%- endif %&#125;</span><br><span class="line"></span><br><span class="line">+    &#123;%- if theme.notice.enable %&#125;</span><br><span class="line">+      &#123;%- if theme.pjax %&#125;</span><br><span class="line">+        &lt;div class=&quot;pjax&quot;&gt;</span><br><span class="line">+      &#123;%- endif %&#125;</span><br><span class="line">+      &#123;%- if theme.notice.content.length &gt; 0 %&#125;</span><br><span class="line">+        &lt;div class=&quot;sidebar-inner notice&quot; style=&quot;padding: 18px;&quot;&gt;</span><br><span class="line">+          &lt;div class=&quot;notice-title&quot; style=&quot;font-size: 1.2em;text-align: left;&quot;&gt;</span><br><span class="line">+            &lt;i class=&quot;fa-solid fa-bullhorn&quot;&gt;&lt;/i&gt;</span><br><span class="line">+            &lt;span style=&quot;margin-left: 6px;&quot;&gt;公告&lt;/span&gt;</span><br><span class="line">+          &lt;/div&gt;</span><br><span class="line">+          &lt;div class=&quot;notice-content&quot; style=&quot;text-align: justify;&quot;&gt;</span><br><span class="line">+            &#123;&#123; theme.notice.content &#125;&#125;</span><br><span class="line">+          &lt;/div&gt;</span><br><span class="line">+        &lt;/div&gt;</span><br><span class="line">+      &#123;%- endif %&#125;</span><br><span class="line">+      &#123;%- if theme.pjax %&#125;</span><br><span class="line">+        &lt;/div&gt;</span><br><span class="line">+      &#123;%- endif %&#125;</span><br><span class="line">+    &#123;%- endif %&#125;</span><br><span class="line">	&lt;/aside&gt;</span><br><span class="line">&#123;% endmacro %&#125;</span><br></pre></td></tr></table></figure>
 
-<p>之后只要给不想有 fancybox 效果的 <code>&lt;img&gt;</code> 元素增加 <code>class=&quot;nofancybox&quot;</code> 即可。</p>
-<hr>
-<p>后续更新来了，上面的代码是 jQuery 版的 Fancybox 的，现主题最新版本已完全去除 jQuery 的依赖且更新到了 Fancybox 5，上面的代码自然也就失效了。虽然不会 js，还是试着在 Google 和 Chatgpt 的帮助下改了一下代码。可以适配最新版本了。</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="variable language_">document</span>.<span class="title function_">querySelectorAll</span>(<span class="string">&#x27;.post-body :not(a) &gt; img, .post-body &gt; img&#x27;</span>).<span class="title function_">forEach</span>(<span class="function"><span class="params">image</span> =&gt;</span> &#123;</span><br><span class="line">+    <span class="keyword">if</span> (image.<span class="property">classList</span>.<span class="title function_">contains</span>(<span class="string">&#x27;nofancybox&#x27;</span>))&#123;  <span class="comment">//是否有包含自己定义的nofancybox属性，有就return true</span></span><br><span class="line">+      image.<span class="property">style</span>.<span class="property">cursor</span> = <span class="string">&#x27;default&#x27;</span>;    <span class="comment">//将碰到图片的鼠标从放大镜变成default模式</span></span><br><span class="line">+      <span class="keyword">return</span>;	<span class="comment">//不进行下面的fancybox的配置</span></span><br><span class="line">+    &#125;</span><br><span class="line">    <span class="keyword">const</span> imageLink = image.<span class="property">dataset</span>.<span class="property">src</span> || image.<span class="property">src</span>;</span><br></pre></td></tr></table></figure>
+<p>以下为方便复制的版本</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&#123;%- if theme.notice.enable %&#125;</span><br><span class="line">      &#123;%- if theme.pjax %&#125;</span><br><span class="line">        &lt;div class=&quot;pjax&quot;&gt;</span><br><span class="line">      &#123;%- endif %&#125;</span><br><span class="line">      &#123;%- if theme.notice.content.length &gt; 0 %&#125;</span><br><span class="line">        &lt;div class=&quot;sidebar-inner notice&quot; style=&quot;padding: 18px;&quot;&gt;</span><br><span class="line">          &lt;div class=&quot;notice-title&quot; style=&quot;font-size: 1.2em;text-align: left;&quot;&gt;</span><br><span class="line">            &lt;i class=&quot;fa-solid fa-bullhorn&quot;&gt;&lt;/i&gt;</span><br><span class="line">            &lt;span style=&quot;margin-left: 6px;&quot;&gt;公告&lt;/span&gt;</span><br><span class="line">          &lt;/div&gt;</span><br><span class="line">          &lt;div class=&quot;notice-content&quot; style=&quot;text-align: justify;&quot;&gt;</span><br><span class="line">            &#123;&#123; theme.notice.content &#125;&#125;</span><br><span class="line">          &lt;/div&gt;</span><br><span class="line">        &lt;/div&gt;</span><br><span class="line">      &#123;%- endif %&#125;</span><br><span class="line">      &#123;%- if theme.pjax %&#125;</span><br><span class="line">        &lt;/div&gt;</span><br><span class="line">      &#123;%- endif %&#125;</span><br><span class="line">&#123;%- endif %&#125;</span><br></pre></td></tr></table></figure>
 
-<p>方便复制的版本</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">if</span> (image.<span class="property">classList</span>.<span class="title function_">contains</span>(<span class="string">&#x27;nofancybox&#x27;</span>))&#123;  <span class="comment">//是否有包含自己定义的nofancybox属性，有就return true</span></span><br><span class="line">  image.<span class="property">style</span>.<span class="property">cursor</span> = <span class="string">&#x27;default&#x27;</span>;    <span class="comment">//将碰到图片的鼠标从放大镜变成default模式</span></span><br><span class="line">  <span class="keyword">return</span>;	<span class="comment">//不进行下面的fancybox的配置</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>然后在主题配置 <code>_config.next.yml</code> 中添加以下内容</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">notice:</span><br><span class="line">  enable: true</span><br><span class="line">  content: #公告内容</span><br></pre></td></tr></table></figure>
 
-<p>同样的，只要给不想有 fancybox 效果的 <code>&lt;img&gt;</code> 元素增加 <code>class=&quot;nofancybox&quot;</code> 即可。</p>
+<p>样式写的很简单，如有需要请自行更改。</p>
 ]]></content>
       <categories>
         <category>技术</category>
       </categories>
       <tags>
+        <tag>教程</tag>
         <tag>技术</tag>
         <tag>Hexo</tag>
-        <tag>JavaScript</tag>
+        <tag>Next</tag>
       </tags>
   </entry>
   <entry>
@@ -231,6 +188,36 @@
         <tag>技术</tag>
         <tag>Hexo</tag>
         <tag>CSS</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Next 主题部分图片禁用 FancyBox</title>
+    <url>/2023/04/nextthemefancyboxdisabled.html</url>
+    <content><![CDATA[<p>之前用的主题有 fancybox 功能的都有部分图片禁用 fancybox 的功能，看了一遍文档却发现没有这个选项，去 issue 中和 discusstion 中也没找到相关的信息。<span id="more"></span>于是 google 了一下，发现真有<a href="https://blog.csdn.net/cddchina/article/details/79764432">相关教程</a>，不过是 18 年的了，现在 next 主题已经变了很多，fancybox 的 js 代码也没在 utils.js 文件中了。找了一下，发现 fancybox 的相关 js 代码已经单独写在了主题文件夹下的 <code>\source\js\third-party\fancybox.js</code> 中了。</p>
+<p>接着又在网上找到了一篇博客，发现插入的代码较也改进了一下，修改了当鼠标悬浮在已经被禁用 fancybox 效果的图片上时的状态，原文链接：<a href="https://kevin1061517.github.io/blog/posts/Hexo/2721/">https://kevin1061517.github.io/blog/posts/Hexo/2721/</a></p>
+<p>结合两篇博文，最终即为在 <code>\source\js\third-party\fancybox.js</code> 文件中的 <code>const $image = $(element);</code> 这一行与 <code>const imageLink = $image.attr(&#39;data-src&#39;) || $image.attr(&#39;src&#39;);</code> 之间添加以下代码</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">     <span class="keyword">const</span> $image = $(element);</span><br><span class="line">+    <span class="keyword">if</span> ($(element).<span class="title function_">hasClass</span>(<span class="string">&#x27;nofancybox&#x27;</span>))&#123;  <span class="comment">//是否有包含自己定义的nofancybox属性，有就return true</span></span><br><span class="line">+        $(element).<span class="title function_">css</span>(<span class="string">&quot;cursor&quot;</span>,<span class="string">&quot;default&quot;</span>);    <span class="comment">//将碰到图片的鼠标从放大镜变成default模式</span></span><br><span class="line">+        <span class="keyword">return</span>;	<span class="comment">//不进行下面的fancybox的配置</span></span><br><span class="line">+      &#125;</span><br><span class="line">     <span class="keyword">const</span> imageLink = $image.<span class="title function_">attr</span>(<span class="string">&#x27;data-src&#x27;</span>) || $image.<span class="title function_">attr</span>(<span class="string">&#x27;src&#x27;</span>);</span><br></pre></td></tr></table></figure>
+
+<p>以下为方便复制的代码</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">if</span> ($(element).<span class="title function_">hasClass</span>(<span class="string">&#x27;nofancybox&#x27;</span>))&#123;  <span class="comment">//是否有包含自己定义的nofancybox属性，有就return true</span></span><br><span class="line">    $(element).<span class="title function_">css</span>(<span class="string">&quot;cursor&quot;</span>,<span class="string">&quot;default&quot;</span>);    <span class="comment">//将碰到图片的鼠标从放大镜变成default模式</span></span><br><span class="line">    <span class="keyword">return</span>;	<span class="comment">//不进行下面的fancybox的配置</span></span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+
+<p>之后只要给不想有 fancybox 效果的 <code>&lt;img&gt;</code> 元素增加 <code>class=&quot;nofancybox&quot;</code> 即可。</p>
+<hr>
+<p>后续更新来了，上面的代码是 jQuery 版的 Fancybox 的，现主题最新版本已完全去除 jQuery 的依赖且更新到了 Fancybox 5，上面的代码自然也就失效了。虽然不会 js，还是试着在 Google 和 Chatgpt 的帮助下改了一下代码。可以适配最新版本了。</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="variable language_">document</span>.<span class="title function_">querySelectorAll</span>(<span class="string">&#x27;.post-body :not(a) &gt; img, .post-body &gt; img&#x27;</span>).<span class="title function_">forEach</span>(<span class="function"><span class="params">image</span> =&gt;</span> &#123;</span><br><span class="line">+    <span class="keyword">if</span> (image.<span class="property">classList</span>.<span class="title function_">contains</span>(<span class="string">&#x27;nofancybox&#x27;</span>))&#123;  <span class="comment">//是否有包含自己定义的nofancybox属性，有就return true</span></span><br><span class="line">+      image.<span class="property">style</span>.<span class="property">cursor</span> = <span class="string">&#x27;default&#x27;</span>;    <span class="comment">//将碰到图片的鼠标从放大镜变成default模式</span></span><br><span class="line">+      <span class="keyword">return</span>;	<span class="comment">//不进行下面的fancybox的配置</span></span><br><span class="line">+    &#125;</span><br><span class="line">    <span class="keyword">const</span> imageLink = image.<span class="property">dataset</span>.<span class="property">src</span> || image.<span class="property">src</span>;</span><br></pre></td></tr></table></figure>
+
+<p>方便复制的版本</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">if</span> (image.<span class="property">classList</span>.<span class="title function_">contains</span>(<span class="string">&#x27;nofancybox&#x27;</span>))&#123;  <span class="comment">//是否有包含自己定义的nofancybox属性，有就return true</span></span><br><span class="line">  image.<span class="property">style</span>.<span class="property">cursor</span> = <span class="string">&#x27;default&#x27;</span>;    <span class="comment">//将碰到图片的鼠标从放大镜变成default模式</span></span><br><span class="line">  <span class="keyword">return</span>;	<span class="comment">//不进行下面的fancybox的配置</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>同样的，只要给不想有 fancybox 效果的 <code>&lt;img&gt;</code> 元素增加 <code>class=&quot;nofancybox&quot;</code> 即可。</p>
+]]></content>
+      <categories>
+        <category>技术</category>
+      </categories>
+      <tags>
+        <tag>技术</tag>
+        <tag>Hexo</tag>
+        <tag>JavaScript</tag>
       </tags>
   </entry>
   <entry>
@@ -304,23 +291,6 @@
       </tags>
   </entry>
   <entry>
-    <title>【每日语法】~さえ~ば</title>
-    <url>/2023/05/mnnhgbp5.html</url>
-    <content><![CDATA[<p>接续：</p>
-<blockquote>
-<p>N + さえ + 假定形<br>A（く形）&#x2F; NA（て形）+ さえあれば<br>V（ます形）&#x2F; サ变动词词干 + さえすれば</p>
-</blockquote>
-<p>意为「只要···就···」。关于假定形的变形方法，请参考<a href="/2023/04/mnnhgbp1.html">『【每日语法】~ば~ほど』</a>的文末表格。</p>
-<p>例句：やすくさえあれば、買いましょう。<br>译：只要便宜的话就买吧！</p>
-]]></content>
-      <categories>
-        <category>日语</category>
-      </categories>
-      <tags>
-        <tag>日语</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>【每日语法】~ば~ほど</title>
     <url>/2023/04/mnnhgbp1.html</url>
     <content><![CDATA[<p><strong>语法：V（假定形）+ V（原形）+ ほど</strong></p>
@@ -362,13 +332,14 @@
       </tags>
   </entry>
   <entry>
-    <title>【每日语法】~も~ば~も~</title>
-    <url>/2023/04/mnnhgbp2.html</url>
-    <content><![CDATA[<p><strong>语法：N + も + V（假定形）+ N + も + V（原形）</strong></p>
-<p>意为「既…又…」。其中的动词为同一动词。</p>
-<p>例句：コンビニにたくさんの商品がある。食べ物もあれば、生活に欠かせないものもある。</p>
-<p>译：便利店中有很多商品，既有食品，也有生活中不可或缺的物品。</p>
-<p>与之相似的语法还有「かと思えば」，接续方式为前接<strong>动词原形</strong>。关于假定形的变形方法，在上一篇中已经提过，这里就不再赘述，有需要了解的小伙伴可以<a href="/2023/04/mnnhgbp1.html">点击这里</a>返回上文查看。</p>
+    <title>【每日语法】~さえ~ば</title>
+    <url>/2023/05/mnnhgbp5.html</url>
+    <content><![CDATA[<p>接续：</p>
+<blockquote>
+<p>N + さえ + 假定形<br>A（く形）&#x2F; NA（て形）+ さえあれば<br>V（ます形）&#x2F; サ变动词词干 + さえすれば</p>
+</blockquote>
+<p>意为「只要···就···」。关于假定形的变形方法，请参考<a href="/2023/04/mnnhgbp1.html">『【每日语法】~ば~ほど』</a>的文末表格。</p>
+<p>例句：やすくさえあれば、買いましょう。<br>译：只要便宜的话就买吧！</p>
 ]]></content>
       <categories>
         <category>日语</category>
@@ -406,6 +377,35 @@
       </categories>
       <tags>
         <tag>日语</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>【每日语法】~も~ば~も~</title>
+    <url>/2023/04/mnnhgbp2.html</url>
+    <content><![CDATA[<p><strong>语法：N + も + V（假定形）+ N + も + V（原形）</strong></p>
+<p>意为「既…又…」。其中的动词为同一动词。</p>
+<p>例句：コンビニにたくさんの商品がある。食べ物もあれば、生活に欠かせないものもある。</p>
+<p>译：便利店中有很多商品，既有食品，也有生活中不可或缺的物品。</p>
+<p>与之相似的语法还有「かと思えば」，接续方式为前接<strong>动词原形</strong>。关于假定形的变形方法，在上一篇中已经提过，这里就不再赘述，有需要了解的小伙伴可以<a href="/2023/04/mnnhgbp1.html">点击这里</a>返回上文查看。</p>
+]]></content>
+      <categories>
+        <category>日语</category>
+      </categories>
+      <tags>
+        <tag>日语</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Handsome 美化补充</title>
+    <url>/2021/12/handsomebeautify.html</url>
+    <content><![CDATA[<p>由于在网上找到的 handsome 主题的首页文章圆角的 css 代码只选择了首页的大头图版式，小头图和图片版式均无圆角和鼠标停留上浮效果，在这里分享下我加了这两个版式之后的代码，将其粘贴到 handsome 主题开发者设置的自定义 css 中即可。</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="comment">/*首页文章列表悬停上浮*/</span></span><br><span class="line"><span class="selector-class">.blog-post</span> <span class="selector-class">.panel-small</span><span class="selector-pseudo">:not</span>(<span class="selector-tag">article</span>),</span><br><span class="line"><span class="selector-class">.blog-post</span> <span class="selector-class">.panel</span><span class="selector-pseudo">:not</span>(<span class="selector-tag">article</span>), <span class="selector-class">.panel-picture</span> &#123;</span><br><span class="line">    <span class="attribute">transition</span>: all <span class="number">0.3s</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.blog-post</span> <span class="selector-class">.panel-small</span><span class="selector-pseudo">:not</span>(<span class="selector-tag">article</span>)<span class="selector-pseudo">:hover</span>,</span><br><span class="line"><span class="selector-class">.blog-post</span> <span class="selector-class">.panel</span><span class="selector-pseudo">:not</span>(<span class="selector-tag">article</span>)<span class="selector-pseudo">:hover</span>, <span class="selector-class">.panel-picture</span><span class="selector-pseudo">:hover</span> &#123;</span><br><span class="line">    <span class="attribute">transform</span>: <span class="built_in">translateY</span>(-<span class="number">10px</span>);</span><br><span class="line">    <span class="attribute">box-shadow</span>: <span class="number">0</span> <span class="number">8px</span> <span class="number">10px</span> <span class="built_in">rgba</span>(<span class="number">73</span>, <span class="number">90</span>, <span class="number">47</span>, <span class="number">0.47</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/*首页文章版式圆角化*/</span></span><br><span class="line"><span class="selector-class">.panel</span>&#123;</span><br><span class="line">    <span class="attribute">border</span>: none <span class="meta">!important</span>;</span><br><span class="line">    <span class="attribute">border-radius</span>: <span class="number">15px</span> <span class="meta">!important</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.panel-small</span>&#123;</span><br><span class="line">    <span class="attribute">border</span>: none;</span><br><span class="line">    <span class="attribute">border-radius</span>: <span class="number">15px</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.item-thumb</span>&#123;</span><br><span class="line">    <span class="attribute">border-radius</span>: <span class="number">15px</span> <span class="number">15px</span> <span class="number">0</span> <span class="number">0</span>;  </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.border-radius-6</span> &#123;</span><br><span class="line"><span class="attribute">border-radius</span>: <span class="number">15px</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>技术</category>
+      </categories>
+      <tags>
+        <tag>handsome</tag>
       </tags>
   </entry>
   <entry>
@@ -551,6 +551,61 @@
       </tags>
   </entry>
   <entry>
+    <title>【笔记·古典日语】助动词「き·けり」</title>
+    <url>/2024/04/kobun12.html</url>
+    <content><![CDATA[<h2 id="活用·接续"><a href="#活用·接续" class="headerlink" title="活用·接续"></a>活用·接续</h2><p>接续：</p>
+<ul>
+<li>连用形 + けり・き</li>
+<li>特殊：<strong>き前面也可以接カ変動詞・サ変動詞の未然形</strong></li>
+</ul>
+<div class="group-picture"><div class="group-picture-row"><div class="group-picture-column"><img data-src="https://img.fufu.ink/U6tXxv.webp"></div><div class="group-picture-column"><img data-src="https://img.fufu.ink/ib291f.webp"></div><div class="group-picture-column"><img data-src="https://img.fufu.ink/CXBjzH.webp"></div></div></div>
+
+<h2 id="作用"><a href="#作用" class="headerlink" title="作用"></a>作用</h2><p>き的作用：表示<strong>过去</strong>，而且是<strong>自己亲身体验了</strong>的过去</p>
+<p>翻译成现代日语可译为「～た」</p>
+<p><strong>表示过去的き</strong>还有一个表示「反実仮想」的作用，即做出一个与现实相反的假想，实际上不是这样，句型为「～せば～まし」，其中せ为き的未然形，翻译成现代日语即为「～ば～のに…」</p>
+<p>けり的作用：</p>
+<ul>
+<li>过去，表示<strong>听说的过去，并非亲身经历的过去</strong>。翻译成现代日语即为「～た・～たそうだ」</li>
+<li>咏叹，翻译成现代日语即为「～だなあ」。表示这一意思的标志有，表示断定的助动词「なり」+「けり」形成的<strong>「なりけり」</strong>，在<strong>对话、内心、和歌</strong>中出现的「けり」，多表示咏叹</li>
+</ul>
+]]></content>
+      <categories>
+        <category>日语</category>
+      </categories>
+      <tags>
+        <tag>日语</tag>
+        <tag>古典日语</tag>
+        <tag>语法</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>【笔记·古典日语】助动词「す·さす·しむ」</title>
+    <url>/2024/04/kobun11.html</url>
+    <content><![CDATA[<h2 id="活用·接续"><a href="#活用·接续" class="headerlink" title="活用·接续"></a>活用·接续</h2><p>活用方式与下二段动词一致</p>
+<p>接续：前接<strong>未然形</strong>。す前续四段动词，ナ变动词，ラ变动词的未然形，さす前续<strong>非</strong>「四段动词，ナ变动词，ラ变动词」的未然形，しむ则没有限制，只要是活用语的未然形都可以接</p>
+<p><img data-src="https://img.fufu.ink/xXjTYD.webp"></p>
+<h2 id="作用"><a href="#作用" class="headerlink" title="作用"></a>作用</h2><p>作用有两个</p>
+<ul>
+<li>使役，可译为「せる・させる」</li>
+<li>尊敬，可译为「なさる・お～になる」。表示尊敬的时候的「す・さす・しむ」本身不翻译，而是和表示尊敬的词一起译为现在表示尊敬的说法</li>
+</ul>
+<h2 id="判断方法"><a href="#判断方法" class="headerlink" title="判断方法"></a>判断方法</h2><p>首先，先看「す・さす・しむ」后面有没有出现表示尊敬的词</p>
+<ul>
+<li>后面没有出现表示尊敬的词，为<strong>表示使役</strong></li>
+<li>后面出现了表示尊敬的补助动词<strong>「おはす・おはします」</strong>时，<strong>表示尊敬</strong></li>
+<li>后面出现助动词「給ふ・らる」时，<strong>既可以表示尊敬，也可以表示使役，也可以同时表示两者</strong>，需根据实际语境进行判断</li>
+</ul>
+]]></content>
+      <categories>
+        <category>日语</category>
+      </categories>
+      <tags>
+        <tag>日语</tag>
+        <tag>古典日语</tag>
+        <tag>语法</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>【笔记·古典日语】动词活用</title>
     <url>/2024/04/kobun4.html</url>
     <content><![CDATA[<p>古典日语中动词有 9 种活用，分为正格活用和变格活用</p>
@@ -649,50 +704,60 @@
       </tags>
   </entry>
   <entry>
-    <title>【笔记·古典日语】助动词「き·けり」</title>
-    <url>/2024/04/kobun12.html</url>
-    <content><![CDATA[<h2 id="活用·接续"><a href="#活用·接续" class="headerlink" title="活用·接续"></a>活用·接续</h2><p>接续：</p>
+    <title>【笔记·古典日语】助动词「つ·ぬ」</title>
+    <url>/2024/04/kobun13.html</url>
+    <content><![CDATA[<h2 id="活用·接续"><a href="#活用·接续" class="headerlink" title="活用·接续"></a>活用·接续</h2><p>つ的活用符合下二段动词的活用方式，需要注意ぬ的活用</p>
+<p>接续：连用形 + つ・ぬ</p>
+<table>
+<thead>
+<tr>
+<th align="center">活用</th>
+<th align="center">つ</th>
+<th align="center">ぬ</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">未然形</td>
+<td align="center">て</td>
+<td align="center">な</td>
+</tr>
+<tr>
+<td align="center">连用形</td>
+<td align="center">て</td>
+<td align="center">に</td>
+</tr>
+<tr>
+<td align="center">终止形</td>
+<td align="center">つ</td>
+<td align="center">ぬ</td>
+</tr>
+<tr>
+<td align="center">连体形</td>
+<td align="center">つる</td>
+<td align="center">ぬる</td>
+</tr>
+<tr>
+<td align="center">已然形</td>
+<td align="center">つれ</td>
+<td align="center">ぬれ</td>
+</tr>
+<tr>
+<td align="center">命令形</td>
+<td align="center">てよ</td>
+<td align="center">ね</td>
+</tr>
+</tbody></table>
+<h2 id="作用"><a href="#作用" class="headerlink" title="作用"></a>作用</h2><p>つ・ぬ有三个作用</p>
 <ul>
-<li>连用形 + けり・き</li>
-<li>特殊：<strong>き前面也可以接カ変動詞・サ変動詞の未然形</strong></li>
+<li><p>完了：完成，可译为「～た・～てしまった」。つ・ぬ常常后续表示过去的助动词「き・けり」，以「連用形＋てき・てけり・にき・にきり」的形式出现，其中的つ・ぬ表示完成，翻译成现代日语即为「～た・～てしまった」</p>
+</li>
+<li><p>強意：加强语气，可译为「きっと～・はやく～」。</p>
+</li>
+<li><p>並列：并列，相当于「～たり、～たり」。常常以<strong>成对</strong>的形式，如「～つ、～つ」「～ぬ、～ぬ」出现，其中的つ・ぬ属于<strong>终止形</strong></p>
+</li>
 </ul>
-<div class="group-picture"><div class="group-picture-row"><div class="group-picture-column"><img data-src="https://img.fufu.ink/U6tXxv.webp"></div><div class="group-picture-column"><img data-src="https://img.fufu.ink/ib291f.webp"></div><div class="group-picture-column"><img data-src="https://img.fufu.ink/CXBjzH.webp"></div></div></div>
-
-<h2 id="作用"><a href="#作用" class="headerlink" title="作用"></a>作用</h2><p>き的作用：表示<strong>过去</strong>，而且是<strong>自己亲身体验了</strong>的过去</p>
-<p>翻译成现代日语可译为「～た」</p>
-<p><strong>表示过去的き</strong>还有一个表示「反実仮想」的作用，即做出一个与现实相反的假想，实际上不是这样，句型为「～せば～まし」，其中せ为き的未然形，翻译成现代日语即为「～ば～のに…」</p>
-<p>けり的作用：</p>
-<ul>
-<li>过去，表示<strong>听说的过去，并非亲身经历的过去</strong>。翻译成现代日语即为「～た・～たそうだ」</li>
-<li>咏叹，翻译成现代日语即为「～だなあ」。表示这一意思的标志有，表示断定的助动词「なり」+「けり」形成的<strong>「なりけり」</strong>，在<strong>对话、内心、和歌</strong>中出现的「けり」，多表示咏叹</li>
-</ul>
-]]></content>
-      <categories>
-        <category>日语</category>
-      </categories>
-      <tags>
-        <tag>日语</tag>
-        <tag>古典日语</tag>
-        <tag>语法</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>【笔记·古典日语】助动词「す·さす·しむ」</title>
-    <url>/2024/04/kobun11.html</url>
-    <content><![CDATA[<h2 id="活用·接续"><a href="#活用·接续" class="headerlink" title="活用·接续"></a>活用·接续</h2><p>活用方式与下二段动词一致</p>
-<p>接续：前接<strong>未然形</strong>。す前续四段动词，ナ变动词，ラ变动词的未然形，さす前续<strong>非</strong>「四段动词，ナ变动词，ラ变动词」的未然形，しむ则没有限制，只要是活用语的未然形都可以接</p>
-<p><img data-src="https://img.fufu.ink/xXjTYD.webp"></p>
-<h2 id="作用"><a href="#作用" class="headerlink" title="作用"></a>作用</h2><p>作用有两个</p>
-<ul>
-<li>使役，可译为「せる・させる」</li>
-<li>尊敬，可译为「なさる・お～になる」。表示尊敬的时候的「す・さす・しむ」本身不翻译，而是和表示尊敬的词一起译为现在表示尊敬的说法</li>
-</ul>
-<h2 id="判断方法"><a href="#判断方法" class="headerlink" title="判断方法"></a>判断方法</h2><p>首先，先看「す・さす・しむ」后面有没有出现表示尊敬的词</p>
-<ul>
-<li>后面没有出现表示尊敬的词，为<strong>表示使役</strong></li>
-<li>后面出现了表示尊敬的补助动词<strong>「おはす・おはします」</strong>时，<strong>表示尊敬</strong></li>
-<li>后面出现助动词「給ふ・らる」时，<strong>既可以表示尊敬，也可以表示使役，也可以同时表示两者</strong>，需根据实际语境进行判断</li>
-</ul>
+<p>后续表示<strong>推量</strong>的助动词「べし・む」等时，表示<strong>加强语气（強意）</strong>，全部形式如下</p>
+<p><img data-src="https://img.fufu.ink/a4luFx.webp"></p>
 ]]></content>
       <categories>
         <category>日语</category>
@@ -759,71 +824,6 @@
 <h2 id="注意点"><a href="#注意点" class="headerlink" title="注意点"></a>注意点</h2><p><strong>エ段假名 + ら・り・る・れ</strong></p>
 <p>即常出现的形式，り的接续为サ变动词的未然形・四段动词的已然形，两者词尾都在エ段上，り活用为ら・り・る・れ四个，因此当出现以上形式的时候，其中的ら・り・る・れ<strong>多为</strong>表示完了和存続的り这个助动词。</p>
 <p>当然也有特例，如「行きけり」中的「り」不是单独存在的，即并非本文中的表示完了和存续的「り」，而是表示过去和咏叹的助动词<a href="/2024/04/kobun12.html">「けり」</a>。</p>
-]]></content>
-      <categories>
-        <category>日语</category>
-      </categories>
-      <tags>
-        <tag>日语</tag>
-        <tag>古典日语</tag>
-        <tag>语法</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>【笔记·古典日语】助动词「つ·ぬ」</title>
-    <url>/2024/04/kobun13.html</url>
-    <content><![CDATA[<h2 id="活用·接续"><a href="#活用·接续" class="headerlink" title="活用·接续"></a>活用·接续</h2><p>つ的活用符合下二段动词的活用方式，需要注意ぬ的活用</p>
-<p>接续：连用形 + つ・ぬ</p>
-<table>
-<thead>
-<tr>
-<th align="center">活用</th>
-<th align="center">つ</th>
-<th align="center">ぬ</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center">未然形</td>
-<td align="center">て</td>
-<td align="center">な</td>
-</tr>
-<tr>
-<td align="center">连用形</td>
-<td align="center">て</td>
-<td align="center">に</td>
-</tr>
-<tr>
-<td align="center">终止形</td>
-<td align="center">つ</td>
-<td align="center">ぬ</td>
-</tr>
-<tr>
-<td align="center">连体形</td>
-<td align="center">つる</td>
-<td align="center">ぬる</td>
-</tr>
-<tr>
-<td align="center">已然形</td>
-<td align="center">つれ</td>
-<td align="center">ぬれ</td>
-</tr>
-<tr>
-<td align="center">命令形</td>
-<td align="center">てよ</td>
-<td align="center">ね</td>
-</tr>
-</tbody></table>
-<h2 id="作用"><a href="#作用" class="headerlink" title="作用"></a>作用</h2><p>つ・ぬ有三个作用</p>
-<ul>
-<li><p>完了：完成，可译为「～た・～てしまった」。つ・ぬ常常后续表示过去的助动词「き・けり」，以「連用形＋てき・てけり・にき・にきり」的形式出现，其中的つ・ぬ表示完成，翻译成现代日语即为「～た・～てしまった」</p>
-</li>
-<li><p>強意：加强语气，可译为「きっと～・はやく～」。</p>
-</li>
-<li><p>並列：并列，相当于「～たり、～たり」。常常以<strong>成对</strong>的形式，如「～つ、～つ」「～ぬ、～ぬ」出现，其中的つ・ぬ属于<strong>终止形</strong></p>
-</li>
-</ul>
-<p>后续表示<strong>推量</strong>的助动词「べし・む」等时，表示<strong>加强语气（強意）</strong>，全部形式如下</p>
-<p><img data-src="https://img.fufu.ink/a4luFx.webp"></p>
 ]]></content>
       <categories>
         <category>日语</category>
@@ -981,15 +981,19 @@
       </tags>
   </entry>
   <entry>
-    <title>【笔记·古典日语】句子·句节·单词</title>
-    <url>/2024/04/kobun2.html</url>
-    <content><![CDATA[<p>自立语与附属语区分标准：单独使用时是否具有实义</p>
-<p>附属语在一个句节中总是跟在自立语后，不会出现在自立语前</p>
-<p>分割句子为句节的方法：</p>
-<ul>
-<li>加ネ</li>
-<li>找到自立语，在自立语前分割</li>
-</ul>
+    <title>【笔记·古典日语】活用形及接续</title>
+    <url>/2024/04/kobun3.html</url>
+    <content><![CDATA[<p>6 种活用形</p>
+<p><img data-src="https://img.fufu.ink/YHh61r.webp"></p>
+<p>活用语：活用的单词。是动词，形容词，形容动词，助动词的总称。</p>
+<p>一些助词和助动词的接续</p>
+<p><img data-src="https://img.fufu.ink/9wRJmG.webp"></p>
+<p>一些助动词的接续（注意括号中的条件，比如り前面接的虽然是已然形，但仅限于四段动词，即り前面接<strong>四段动词的已然形</strong>）</p>
+<p><img data-src="https://img.fufu.ink/HpGciD.webp"></p>
+<p>ラ变动词及ラ变型（非标准定义，个人理解）</p>
+<p>ラ变<strong>动词</strong>：在ラ行上进行活用的，即活用词尾为（ら·り·り·る·れ·れ）形式的动词。ラ变动词只有<strong>「あり」「をり」「はべり」「いまそかり」</strong>四个。</p>
+<p>ラ变<strong>型</strong>：像ラ变动词一样进行活用，即活用词尾也为（ら·り·り·る·れ·れ）形式的<strong>活用语</strong>，如下图</p>
+<p><img data-src="https://img.fufu.ink/EXKIlJ.webp"></p>
 ]]></content>
       <categories>
         <category>日语</category>
@@ -1022,14 +1026,15 @@
       </tags>
   </entry>
   <entry>
-    <title>【笔记·古典日语】形容动词</title>
-    <url>/2024/04/kobun6.html</url>
-    <content><![CDATA[<p>形容动词有「なり」「たり」两种活用，两种活用除了「と」「に」的连用形较为特殊，其余均与ラ变动词「あり」的活用方式一致，因此活用词尾「たり」「なり」属于<strong>ラ变形</strong></p>
-<p><img data-src="https://img.fufu.ink/XLaWr8.webp"></p>
-<p>使用「なり」「たり」的不同情况。有「々」这样表示重复的符号的为「たり」活用，其余为「なり」活用，可以记一下常见的「なり」前的形式</p>
-<p><img data-src="https://img.fufu.ink/oJpKxK.webp"></p>
-<p>连用形「に」使用的情况</p>
-<p><img data-src="https://img.fufu.ink/syAnm5.webp"></p>
+    <title>【笔记·古典日语】句子·句节·单词</title>
+    <url>/2024/04/kobun2.html</url>
+    <content><![CDATA[<p>自立语与附属语区分标准：单独使用时是否具有实义</p>
+<p>附属语在一个句节中总是跟在自立语后，不会出现在自立语前</p>
+<p>分割句子为句节的方法：</p>
+<ul>
+<li>加ネ</li>
+<li>找到自立语，在自立语前分割</li>
+</ul>
 ]]></content>
       <categories>
         <category>日语</category>
@@ -1041,19 +1046,14 @@
       </tags>
   </entry>
   <entry>
-    <title>【笔记·古典日语】活用形及接续</title>
-    <url>/2024/04/kobun3.html</url>
-    <content><![CDATA[<p>6 种活用形</p>
-<p><img data-src="https://img.fufu.ink/YHh61r.webp"></p>
-<p>活用语：活用的单词。是动词，形容词，形容动词，助动词的总称。</p>
-<p>一些助词和助动词的接续</p>
-<p><img data-src="https://img.fufu.ink/9wRJmG.webp"></p>
-<p>一些助动词的接续（注意括号中的条件，比如り前面接的虽然是已然形，但仅限于四段动词，即り前面接<strong>四段动词的已然形</strong>）</p>
-<p><img data-src="https://img.fufu.ink/HpGciD.webp"></p>
-<p>ラ变动词及ラ变型（非标准定义，个人理解）</p>
-<p>ラ变<strong>动词</strong>：在ラ行上进行活用的，即活用词尾为（ら·り·り·る·れ·れ）形式的动词。ラ变动词只有<strong>「あり」「をり」「はべり」「いまそかり」</strong>四个。</p>
-<p>ラ变<strong>型</strong>：像ラ变动词一样进行活用，即活用词尾也为（ら·り·り·る·れ·れ）形式的<strong>活用语</strong>，如下图</p>
-<p><img data-src="https://img.fufu.ink/EXKIlJ.webp"></p>
+    <title>【笔记·古典日语】形容动词</title>
+    <url>/2024/04/kobun6.html</url>
+    <content><![CDATA[<p>形容动词有「なり」「たり」两种活用，两种活用除了「と」「に」的连用形较为特殊，其余均与ラ变动词「あり」的活用方式一致，因此活用词尾「たり」「なり」属于<strong>ラ变形</strong></p>
+<p><img data-src="https://img.fufu.ink/XLaWr8.webp"></p>
+<p>使用「なり」「たり」的不同情况。有「々」这样表示重复的符号的为「たり」活用，其余为「なり」活用，可以记一下常见的「なり」前的形式</p>
+<p><img data-src="https://img.fufu.ink/oJpKxK.webp"></p>
+<p>连用形「に」使用的情况</p>
+<p><img data-src="https://img.fufu.ink/syAnm5.webp"></p>
 ]]></content>
       <categories>
         <category>日语</category>
@@ -1087,66 +1087,6 @@
 <div class="group-picture"><div class="group-picture-row"><div class="group-picture-column"><img data-src="https://img.fufu.ink/UK05Cl.webp"></div><div class="group-picture-column"><img data-src="https://img.fufu.ink/E9px86.webp"></div><div class="group-picture-column"><img data-src="https://img.fufu.ink/9UqtuK.webp"></div></div></div>
 
 <p>反推过程：先看到「（表示传闻及推测的）なり・めり・べし」，关键是要认出前面的动词是ラ变型，然后为什么会是这样的形态，是因为省略了「ん」，补充上「ん」后，由「（表示传闻及推测的）なり・めり・べし」前续ラ变型时要接连体形可知「～ん」是连体形，是由原来的词的连体形拨音便变化而来。由此可得出音便前的形态。</p>
-]]></content>
-      <categories>
-        <category>日语</category>
-      </categories>
-      <tags>
-        <tag>日语</tag>
-        <tag>古典日语</tag>
-        <tag>语法</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>【笔记·古典日语】系结的规则</title>
-    <url>/2024/04/kobun9.html</url>
-    <content><![CDATA[<p>系结现象</p>
-<p>定义：受到句中的系助词（ぞ・なむ・や・か・こそ）的影响而将句尾的活用语改变为<strong>连体形</strong>或<strong>已然形</strong>的现象</p>
-<p><img data-src="https://img.fufu.ink/YJLoPV.webp"></p>
-<h2 id="规则"><a href="#规则" class="headerlink" title="规则"></a>规则</h2><p>第一种，规则如图</p>
-<p>表示强调，强调系助词前的内容，作用类似于「が」，翻译成现代日语时将系助词看作「が」即可</p>
-<div class="group-picture"><div class="group-picture-row"><div class="group-picture-column"><img data-src="https://img.fufu.ink/5wtmnE.webp"></div><div class="group-picture-column"><img data-src="https://img.fufu.ink/6zLHYS.webp"></div></div></div>
-
-<p>第二种</p>
-<p>表示疑问·反问</p>
-<p>翻译成现代日语即为黄色字体部分</p>
-<p>具体是疑问还是反问需要根据语境判断</p>
-<div class="group-picture"><div class="group-picture-row"><div class="group-picture-column"><img data-src="https://img.fufu.ink/V688M1.webp"></div><div class="group-picture-column"><img data-src="https://img.fufu.ink/6tCDMu.webp"></div></div></div>
-
-<h2 id="注意点"><a href="#注意点" class="headerlink" title="注意点"></a>注意点</h2><ol>
-<li>省略：有时会出现系助词的部分保留，后面活用语部分省略的现象</li>
-<li>转折：以「～こそー已然形、～」形式出现，即该部分位于句中时，除了本身表示强调的作用外，还带有转折的意思，即「けれど」</li>
-<li>表示「如果…就不好了」</li>
-<li>「やは」「かは」多表示<strong>反问</strong></li>
-</ol>
-<div class="group-picture"><div class="group-picture-row"><div class="group-picture-column"><img data-src="https://img.fufu.ink/lMcKky.webp" alt="解释对应上方序号"></div><div class="group-picture-column"><img data-src="https://img.fufu.ink/YDNZHZ.webp" alt="解释对应上方序号"></div></div></div>
-
-]]></content>
-      <categories>
-        <category>日语</category>
-      </categories>
-      <tags>
-        <tag>日语</tag>
-        <tag>古典日语</tag>
-        <tag>语法</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>【笔记·古典日语】词干的作用</title>
-    <url>/2024/04/kobun7.html</url>
-    <content><![CDATA[<p>形容词·形容动词的词干的用法</p>
-<p>第一种</p>
-<p>形式：あな + 词干 + や（可省略）</p>
-<p>表示感动，惊讶等语气，意思大致相当于现代日语的「ああ、～だなあ」，可根据语境适当更改意思。「や」表示感叹，相当于「～だなあ」</p>
-<p><img data-src="https://img.fufu.ink/IPASxl.webp"></p>
-<p>第二种</p>
-<p>形式：词干 + の + N</p>
-<p>构成连体词，相当于其连体形</p>
-<p><img data-src="https://img.fufu.ink/G3jerd.webp"></p>
-<p><strong>形容动词没有，只有形容词才有的用法</strong></p>
-<p>形式：N + を（可省略）+ <strong>形容词</strong>词干 + み</p>
-<p>意思相当于「◯が⬜なので」，◯ 为 N，⬜ 为形容词。翻译成现代日语时可根据语境适当补充内容。</p>
-<p><img data-src="https://img.fufu.ink/zHntAB.webp"></p>
 ]]></content>
       <categories>
         <category>日语</category>
@@ -1317,6 +1257,40 @@
       </tags>
   </entry>
   <entry>
+    <title>【笔记·古典日语】系结的规则</title>
+    <url>/2024/04/kobun9.html</url>
+    <content><![CDATA[<p>系结现象</p>
+<p>定义：受到句中的系助词（ぞ・なむ・や・か・こそ）的影响而将句尾的活用语改变为<strong>连体形</strong>或<strong>已然形</strong>的现象</p>
+<p><img data-src="https://img.fufu.ink/YJLoPV.webp"></p>
+<h2 id="规则"><a href="#规则" class="headerlink" title="规则"></a>规则</h2><p>第一种，规则如图</p>
+<p>表示强调，强调系助词前的内容，作用类似于「が」，翻译成现代日语时将系助词看作「が」即可</p>
+<div class="group-picture"><div class="group-picture-row"><div class="group-picture-column"><img data-src="https://img.fufu.ink/5wtmnE.webp"></div><div class="group-picture-column"><img data-src="https://img.fufu.ink/6zLHYS.webp"></div></div></div>
+
+<p>第二种</p>
+<p>表示疑问·反问</p>
+<p>翻译成现代日语即为黄色字体部分</p>
+<p>具体是疑问还是反问需要根据语境判断</p>
+<div class="group-picture"><div class="group-picture-row"><div class="group-picture-column"><img data-src="https://img.fufu.ink/V688M1.webp"></div><div class="group-picture-column"><img data-src="https://img.fufu.ink/6tCDMu.webp"></div></div></div>
+
+<h2 id="注意点"><a href="#注意点" class="headerlink" title="注意点"></a>注意点</h2><ol>
+<li>省略：有时会出现系助词的部分保留，后面活用语部分省略的现象</li>
+<li>转折：以「～こそー已然形、～」形式出现，即该部分位于句中时，除了本身表示强调的作用外，还带有转折的意思，即「けれど」</li>
+<li>表示「如果…就不好了」</li>
+<li>「やは」「かは」多表示<strong>反问</strong></li>
+</ol>
+<div class="group-picture"><div class="group-picture-row"><div class="group-picture-column"><img data-src="https://img.fufu.ink/lMcKky.webp" alt="解释对应上方序号"></div><div class="group-picture-column"><img data-src="https://img.fufu.ink/YDNZHZ.webp" alt="解释对应上方序号"></div></div></div>
+
+]]></content>
+      <categories>
+        <category>日语</category>
+      </categories>
+      <tags>
+        <tag>日语</tag>
+        <tag>古典日语</tag>
+        <tag>语法</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>不断变强的万达</title>
     <url>/2023/08/genshinwandatsuyoi.html</url>
     <content><![CDATA[<p>去年垫池子抽到了达达鸭，今年 1 月份开始练万达国际，入坑一年以来首次打通了深渊（<a href="/2023/01/genshinshenyuanfirst.html">见『纪念第一次打通深渊』</a>），当时的面板没有截图。</p>
@@ -1391,20 +1365,29 @@
       </tags>
   </entry>
   <entry>
-    <title>叕出神子啦加深渊终于凹满了</title>
-    <url>/2023/06/genshinkamikoaru.html</url>
-    <content><![CDATA[<p>先说说深渊，博主在今年 2 月之前是无论如何都打不过深渊的，2 月后开始练万达国际，学会双扩后，队伍养得差不多后就在 2 月 18 日第一次凹过 12 层，见<a href="/2023/02/genshinshenyuanmanxing.html">『打通深渊后半个月，我又第一次满星深渊！』</a>。此后除了第一期沙虫因为「草行九」练度不够，没有满星之外，每一期都能做到满星了！不过近来几期深渊越来越难，大量的「挤模型」「多动症」「厚盾」「拖时间」的机制怪出现，属实是恶心人。之前圣骸兽博主一直是用「草行九瑶」过的，不过这次由于 12-3 下半是「深罪浸礼者」，队伍中必须有「火 草&#x2F;冰 水」，「草行九」自然就成了选择，再加上了前几天出的宵宫用以破冰盾。问题就是上半该用什么队伍，一开始认为万达打圣骸兽也许很麻烦，就想试着用雷国，可惜博主没怎么练雷神，故试了多种配队后还是决定使用万达。最后是 2 分钟打完了四只圣骸兽，用了剩下 1 分钟过了深罪浸礼者（很险···6分59秒打完的，系统判定为 3 星）。</p>
-<p>前前后后凹了有 100+ 次，不过由于前面几十次是在尝试配队，有了第一期经验后，16 号的深渊应该也能轻松不少。</p>
-<p><img data-src="https://img.fufu.ink/ZDM6sI.webp" alt="下次还填非常简单！"></p>
-<p>然后是垫池子垫出了神子，抽前算的垫了 20 抽了，本来不抱什么希望地单抽了一下，想着不可能这么早出的吧，结果竟然金了，还没歪！</p>
-<p><img data-src="https://img.fufu.ink/4o04wz.webp" alt="21 抽拿下！"></p>
+    <title>【笔记·古典日语】词干的作用</title>
+    <url>/2024/04/kobun7.html</url>
+    <content><![CDATA[<p>形容词·形容动词的词干的用法</p>
+<p>第一种</p>
+<p>形式：あな + 词干 + や（可省略）</p>
+<p>表示感动，惊讶等语气，意思大致相当于现代日语的「ああ、～だなあ」，可根据语境适当更改意思。「や」表示感叹，相当于「～だなあ」</p>
+<p><img data-src="https://img.fufu.ink/IPASxl.webp"></p>
+<p>第二种</p>
+<p>形式：词干 + の + N</p>
+<p>构成连体词，相当于其连体形</p>
+<p><img data-src="https://img.fufu.ink/G3jerd.webp"></p>
+<p><strong>形容动词没有，只有形容词才有的用法</strong></p>
+<p>形式：N + を（可省略）+ <strong>形容词</strong>词干 + み</p>
+<p>意思相当于「◯が⬜なので」，◯ 为 N，⬜ 为形容词。翻译成现代日语时可根据语境适当补充内容。</p>
+<p><img data-src="https://img.fufu.ink/zHntAB.webp"></p>
 ]]></content>
       <categories>
-        <category>游戏</category>
+        <category>日语</category>
       </categories>
       <tags>
-        <tag>原神</tag>
-        <tag>游戏</tag>
+        <tag>日语</tag>
+        <tag>古典日语</tag>
+        <tag>语法</tag>
       </tags>
   </entry>
   <entry>
@@ -1439,6 +1422,23 @@
       <tags>
         <tag>随笔</tag>
         <tag>吐槽</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>叕出神子啦加深渊终于凹满了</title>
+    <url>/2023/06/genshinkamikoaru.html</url>
+    <content><![CDATA[<p>先说说深渊，博主在今年 2 月之前是无论如何都打不过深渊的，2 月后开始练万达国际，学会双扩后，队伍养得差不多后就在 2 月 18 日第一次凹过 12 层，见<a href="/2023/02/genshinshenyuanmanxing.html">『打通深渊后半个月，我又第一次满星深渊！』</a>。此后除了第一期沙虫因为「草行九」练度不够，没有满星之外，每一期都能做到满星了！不过近来几期深渊越来越难，大量的「挤模型」「多动症」「厚盾」「拖时间」的机制怪出现，属实是恶心人。之前圣骸兽博主一直是用「草行九瑶」过的，不过这次由于 12-3 下半是「深罪浸礼者」，队伍中必须有「火 草&#x2F;冰 水」，「草行九」自然就成了选择，再加上了前几天出的宵宫用以破冰盾。问题就是上半该用什么队伍，一开始认为万达打圣骸兽也许很麻烦，就想试着用雷国，可惜博主没怎么练雷神，故试了多种配队后还是决定使用万达。最后是 2 分钟打完了四只圣骸兽，用了剩下 1 分钟过了深罪浸礼者（很险···6分59秒打完的，系统判定为 3 星）。</p>
+<p>前前后后凹了有 100+ 次，不过由于前面几十次是在尝试配队，有了第一期经验后，16 号的深渊应该也能轻松不少。</p>
+<p><img data-src="https://img.fufu.ink/ZDM6sI.webp" alt="下次还填非常简单！"></p>
+<p>然后是垫池子垫出了神子，抽前算的垫了 20 抽了，本来不抱什么希望地单抽了一下，想着不可能这么早出的吧，结果竟然金了，还没歪！</p>
+<p><img data-src="https://img.fufu.ink/4o04wz.webp" alt="21 抽拿下！"></p>
+]]></content>
+      <categories>
+        <category>游戏</category>
+      </categories>
+      <tags>
+        <tag>原神</tag>
+        <tag>游戏</tag>
       </tags>
   </entry>
   <entry>
@@ -1536,25 +1536,6 @@
       </tags>
   </entry>
   <entry>
-    <title>打通深渊后半个月，我又第一次满星深渊！</title>
-    <url>/2023/02/genshinshenyuanmanxing.html</url>
-    <content><![CDATA[<p>上个月打通了深渊，但因为没练岩队，过不去黄金龙兽，然后万达的练度也拉。最近一直在研究万达的圣遗物搭配，看了把子哥的万达教学，把几个之前刷草神圣遗物拉起来的被我当作狗粮的圣遗物丢给公子，之前公子是 30&#x2F;160 的双爆，现在变成 78&#x2F;140 了，结果小助手一查，初步毕业了？然后去打深渊，把雷神之前的垃圾双爆圣遗物换成了精通狗粮，上半组了一支「瑶秋妲雷」，大招放完草神站场，没想到效果还挺好，相比于原来的「雷妲七主」只打超激化，现在多了超绽放的伤害，种门！（手不自觉地合上了~）然后就满星了！我都不知道为什么，猜测是之前 30 暴击的公子次次不暴击导致的……</p>
-<blockquote>
-<p>「说实话，当公子拥有 100% 暴击率，爆伤多少已经无所谓了」—— b站@这把我们就遇到高手</p>
-</blockquote>
-<p>315 天的萌新，xp 党，终于也满星深渊了~</p>
-<p><img data-src="https://img.fufu.ink/dz3OYE.webp" alt="第一次深渊满星"></p>
-<p>接下来准备攒着原石，等草神复刻，补 2 命，虽然大部分观点不认可非 6 命草神站场输出，但是我不管，我就希望她能够站场！继续坐牢绝缘本，给香菱刷圣遗物，狗粮就用来合成水套，毕竟很多公子的水套都是合成台毕业的。咱们也要打造一支「哪里亮了点哪里」也能够打通深渊的万达！</p>
-]]></content>
-      <categories>
-        <category>游戏</category>
-      </categories>
-      <tags>
-        <tag>原神</tag>
-        <tag>游戏</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>小草神小毕业纪念</title>
     <url>/2022/11/genshicaoshen.html</url>
     <content><![CDATA[<p>刷了快 3 周，终于小毕业了。精通没有凑到 1000，不过 900 多也够用了，因为不出暴击头和草伤杯，只能用爆伤头代替 ~<span id="more"></span></p>
@@ -1621,66 +1602,85 @@
       </tags>
   </entry>
   <entry>
-    <title>服务器 Ubuntu 配置 ftp</title>
-    <url>/2022/11/ubuntuftp.html</url>
-    <content><![CDATA[<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p>更新软件包</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo apt upgrade</span><br></pre></td></tr></table></figure>
-
-<p>安装 vsftpd</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo apt-get install vsftpd</span><br></pre></td></tr></table></figure>
-
-<p>ftp 启动，停止，重启，查看状态指令</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">systemctl start vsftpd <span class="comment">#启动</span></span><br><span class="line"></span><br><span class="line">systemctl stop vsftpd <span class="comment">#停止</span></span><br><span class="line"></span><br><span class="line">systemctl restart vsftpd <span class="comment">#重启</span></span><br><span class="line"></span><br><span class="line">systemctl status vsftpd <span class="comment">#查看状态</span></span><br></pre></td></tr></table></figure>
-
-<h2 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h2><p>编辑 &#x2F;etc&#x2F;vsftpd.conf 文件</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo vi /etc/vsftpd.conf</span><br></pre></td></tr></table></figure>
-
-<p>FTP 配置文件部分说明（需要修改的部分）：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 设置登录 FTP 欢迎信息</span></span><br><span class="line">ftpd_banner=Welcome to CHL FTP service. </span><br><span class="line"></span><br><span class="line">listen=YES               <span class="comment"># 服务器监听</span></span><br><span class="line">local_enable=YES         <span class="comment"># 是否允许本地用户访问</span></span><br><span class="line">write_enable=YES         <span class="comment"># 是否允许上传文件，不开启会报 550 permission denied</span></span><br><span class="line">anonymous_enable=NO      <span class="comment"># 匿名访问允许，默认不要开启</span></span><br><span class="line">anon_upload_enable=YES   <span class="comment"># 匿名上传允许，默认是 NO</span></span><br><span class="line">anon_mkdir_write_enable=YES  <span class="comment"># 匿名创建文件夹允许 </span></span><br><span class="line"></span><br><span class="line">local_umask=022    　　<span class="comment"># FTP 上本地的文件权限，默认是 077。此时 umask 为 022，则目录为 777-022=755，文件为 666-022=644。</span></span><br><span class="line">connect_from_port_20=YES   <span class="comment"># 启用 20 号端口作为数据传送的端口 </span></span><br><span class="line">data_connection_timeout=120    <span class="comment"># 设置数据连接超时时间</span></span><br><span class="line"></span><br><span class="line">utf8_filesystem=YES    <span class="comment"># vsftpd使用 utf8 文件系统</span></span><br><span class="line">use_localtime=YES</span><br><span class="line">xferlog_enable=YES         <span class="comment"># 激活上传和下传的日志 </span></span><br><span class="line">xferlog_file=/var/log/vsftpd.log    <span class="comment"># 设定系统维护记录FTP服务器上传和下载情况的日志文件</span></span><br><span class="line">xferlog_std_format=YES     <span class="comment"># 使用标准的日志格式 </span></span><br><span class="line"></span><br><span class="line">local_root=/home/ftp    <span class="comment"># 设置自定义的 ftp 根目录的位置</span></span><br><span class="line"></span><br><span class="line">allow_writeable_chroot=YES    <span class="comment"># 解决 &quot;500 OOPS: vsftpd: refusing to run with writable root inside chroot()&quot; 问题</span></span><br><span class="line">write_enable=YES    <span class="comment"># 允许向 FTP 服务器写入权限</span></span><br><span class="line">chown_uploads=YES    <span class="comment"># 设定是否允许改变上传文件的属主，与下面一个设定项配合使用</span></span><br><span class="line">chown_username=whoever    <span class="comment"># 设置想要改变的上传文件的属主，可设为 ftp</span></span><br><span class="line"></span><br><span class="line">ascii_upload_enable=YES    　<span class="comment"># 允许服务器以 ASCII 方式传输数据,但引起 &quot;SIZE /big/file&quot; 方式的 DoS 攻击</span></span><br><span class="line">ascii_download_enable=YES</span><br><span class="line"></span><br><span class="line"><span class="comment"># 在默认配置下，本地用户登入FTP后可以使用 cd 命令切换到其他目录，这样会对系统带来安全隐患,可配置如下</span></span><br><span class="line">chroot_list_enable=YES     <span class="comment"># 设置是否启用 chroot_list_file 配置项指定的用户列表文件。默认值为NO。</span></span><br><span class="line">chroot_local_user=YES      <span class="comment"># 用于指定用户列表文件中的用户是否允许切换到上级目录。默认值为NO。</span></span><br><span class="line">chroot_list_file=/etc/vsftpd.chroot_list    <span class="comment"># 禁用名单，用于指定用户列表，该文件用于控制哪些用户可以切换到 home 目录的上级目录。</span></span><br><span class="line"></span><br><span class="line">listen_port=6666 <span class="comment">#修改 ftp 服务器端口</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 配置为被动模式</span></span><br><span class="line">pasv_enable=YES</span><br><span class="line">pasv_min_port=6000 <span class="comment">#最小端口</span></span><br><span class="line">pasv_max_port=7000 <span class="comment">#最大端口</span></span><br></pre></td></tr></table></figure>
-
-<p><code>chroot_list_enable</code> <code>chroot_local_user</code> <code>chroot_list_file</code> 通过搭配能实现以下几种效果：</p>
-<ul>
-<li>当 chroot_list_enable&#x3D;YES，chroot_local_user&#x3D;YES 时，在 &#x2F;etc&#x2F;vsftpd.chroot_list 文件中列出的用户，可以切换到其他目录；未在文件中列出的用户，不能切换到其他目录。</li>
-<li>当 chroot_list_enable&#x3D;YES，chroot_local_user&#x3D;NO 时，在 &#x2F;etc&#x2F;vsftpd.chroot_list 文件中列出的用户，不能切换到其他目录；未在文件中列出的用户，可以切换到其他目录。</li>
-<li>当 chroot_list_enable&#x3D;NO，chroot_local_user&#x3D;YES 时，所有的用户均不能切换到其他目录。</li>
-<li>当 chroot_list_enable&#x3D;NO，chroot_local_user&#x3D;NO 时，所有的用户均可以切换到其他目录。</li>
-</ul>
-<p>通过终端访问 ftp（由于浏览器访问 ftp 在新版 chrome 与 edge 中皆已失效，在这里便不再列出）</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">ftp ip 端口</span><br></pre></td></tr></table></figure>
-
-<h2 id="创建-ftp-上传目录"><a href="#创建-ftp-上传目录" class="headerlink" title="创建 ftp 上传目录"></a>创建 ftp 上传目录</h2><p>需要与配置文件中的 <code>local_root</code> 指定的路径一致</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">mkdir</span> -p /home/ftp</span><br></pre></td></tr></table></figure>
-
-<h2 id="创建-ftp-用户"><a href="#创建-ftp-用户" class="headerlink" title="创建 ftp 用户"></a>创建 ftp 用户</h2><p>创建 vsftpd 用户组（若已存在请跳过该步）</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo groupadd vsftpd</span><br></pre></td></tr></table></figure>
-
-<p>创建 ftp 用户</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo useradd -g vsftpd -d /home/ftp -M username</span><br></pre></td></tr></table></figure>
-
-<p>参数说明：</p>
-<ul>
-<li>g：指定用户所属的组</li>
-<li>d：指定用户登入时的起始目录，这里即为 ftp 上传目录</li>
-<li>M：不创建用户的家目录</li>
-</ul>
-<p>设置 ftp 用户的密码：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo passwd username</span><br></pre></td></tr></table></figure>
-
-<p>设置 ftp 用户权限</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo <span class="built_in">chown</span> -R username:vsftpd /home/ftp</span><br></pre></td></tr></table></figure>
-
-<p>由于设置了 <code>chroot_list_enable</code> 这几个选项，需要将用户名写入 <code>/etc/vsftpd.chroot_list</code> 文件，并重启 ftp 服务</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo vi /etc/vsftpd.chroot_list</span><br><span class="line">sudo systemctl restart vsftpd</span><br></pre></td></tr></table></figure>
-
-<h2 id="连接-ftp"><a href="#连接-ftp" class="headerlink" title="连接 ftp"></a>连接 ftp</h2><p>这里推荐使用 XFTP 连接 ftp，上传下载文件非常方便。XFTP 官方提供了教育版，只需要点击下方链接填写邮箱就会受到包含下载链接的邮件：</p>
-<p><a href="https://www.xshell.com/zh/free-for-home-school/">https://www.xshell.com/zh/free-for-home-school/</a></p>
+    <title>无题（一）</title>
+    <url>/2024/04/mudai1.html</url>
+    <content><![CDATA[<p>他又在打瞌睡了。</p>
+<p>自从早上来到教室，他就一动不动地趴在那里。</p>
+<p>尽管周围充斥着读书声和同学间的笑谈声，但他似乎置若罔闻，仍旧保持着那副姿势。<span id="more"></span></p>
+<p>终于，上课铃响了。然而，他仍然没有动弹。于是，旁边的同学推了推他。</p>
+<p>“嘿，上课了！”</p>
+<p>“嗯……嗯？”</p>
+<p>他终于醒了过来，揉了揉眼睛，茫然地看着走上讲台的教师。</p>
+<p>这节课是数学课，数学老师是一个矮小精悍的老头。老头大概已有 60 岁了，头发黑白相间，总是穿着一身西服，但不知为何，他总是给人一种永远不会消退的精神气质</p>
+<p>“上课啦——安静！”</p>
+<p>学委提高了声音，试图压过尚未平息的嘈杂声。</p>
+<p>最终，教室恢复了安静，老师打开书，开始了授课。</p>
+<p>他的目光重新投向书本，看着那些熟悉的文字，这些内容在暑假的初升高衔接班上已经讲过了，不过他那时也是这副样子，只是记住了一些文字，而对其意义一窍不通。渐渐地，他开始觉得这些文字变得模糊起来。</p>
+<p>他开始垂着脑袋，点起头来，而且很有规律的，当脖子弯曲到接近 90 度时，忽然又抬起头来，然后又开始缓缓下垂，如此反复。渐渐地，他的身体也晃了起来。</p>
+<p>突然，他朝左侧倒了下去，靠在了旁边女生的身上。</p>
+<p>“哎呀！你干什么！”</p>
+<p>“啊！对不起，睡迷糊了”</p>
+<p>女生一脸无语地看了他一眼。他却是低着头朝她说了一句后，马上又侧过脸去，没看到她的表情。</p>
+<p>经历了刚才这出，他终于是醒过来了。但课程已经进行了一半，早已不知老师讲到了何处。反正也是无聊，于是他拿出一本小说看了起来。</p>
+<p>那是一本科幻小说。他已经看了这个作者写的数本书了，有长篇也有短篇，但都很吸引人，或量子力学，或外星文明，或多维宇宙，他很喜欢这些题材，看完后还常常将书借给同样喜欢科幻的 W。</p>
+<p>刚读了不到一页，老头的声音戛然而止，一只手突然出现在他眼前，遮住了书上的文字。</p>
+<p>他抬起头，面无表情地看着眼前的老头，老头却是一脸担忧的神色。</p>
+<p>“要好好听课啊……”</p>
+<p>他没有做出回应，甚至连头也没点一下，只是一动不动地看着老头。</p>
+<p>老头见状也就作罢，转身回到讲台，继续如同巫师念咒一般地讲着他无法理解的那些数字、字母、符号组成的公式。</p>
+<p>这下书是看不成了，于是他环顾四周，希望找点能够打发这漫长的上课时间的事情。结果，往左一转头，他找到了。</p>
+<p>他的同桌，刚才的那个女生，此刻也像他一样，开始不断地“点头”。</p>
+<p>“诶！诶！醒醒！醒醒！”</p>
+<p>本着还人情的想法，他也推了推她，把她也叫醒了。</p>
+<p>“笑死我了，怎么你也睡了？”</p>
+<p>“哎呀，别吵我，困死了！”</p>
+<p>这个女生叫 X，在他看来，她是个和自己一样上课不听讲，光睡觉的家伙，也经常迟到，被班主任责问时，便露出带有歉意的，腼腆的微笑。每到这时，班主任便气不打一处来，言语中却又带着些无奈。</p>
+<p>“笑，还笑，这有什么好笑的。下次别再迟到了！”</p>
+<p>说罢便让她回到了座位上。这是每隔两三天便会上演一次的戏码，她永远都能够找到合适的理由来为自己开脱，而每次班主任也只好叮嘱，便作罢。</p>
+<p>对他来说，这样的事情倒是给他无聊的生活增添了些许乐趣。毕竟他就是喜欢看别人倒霉的人，他无法容忍别人比他优秀，又蔑视那些不如他的人，看到他人遭遇不幸，他反而觉得心里舒畅。</p>
+<p>”叮——“</p>
+<p>第一节课终于结束了。</p>
+<p>他又趴了下去，老头走到他面前，拍了拍他。</p>
+<p>“D，你上课要听啊……”</p>
+<p>他只是点了点头，便又趴下了，老头只好无奈地走出了教室。</p>
+<p>之后的事情他都不清楚了，再次醒来时，已经接近下午一点了。</p>
+<p>“已经是这个时间点了吗？得去吃饭了。”</p>
+<p>食堂里人不多，毕竟人流高峰期是刚下课的时候，也就是 12 点 10 分左右，此时只有零零散散的几张桌子坐着几个人，一些还是结束了中午的工作，从厨房中走出来的厨师。开着的窗口也不多了，他犹豫了片刻，最终还是选择了位于二楼楼梯拐角处的卖汤面的窗口。这家店的特色是面可以无限添，还可以选择是汤面还是拌面。</p>
+<p>他点了一份拌面，独自一人静静地吃了起来。他喜欢拌面，加入数勺辣子油和酱油、醋搅拌后，光是看着那一碗红油，就充满了食欲。</p>
+<p>吃碗面，他又回到了教室。教室里只剩下几个男女，他们都是不良学生，这一点从入学的时候他就知道了。虽然他也承认自己也是上课不听讲，成天好吃懒做的“不良”学生，但他认为这种“不良”和他们的“不良”是有本质区别的。他们有一种看上去就让人觉得是社会混混的“痞气”，但外表还是学生，便只能归类于“不良”。他是打心里畏惧着这些人，同时心里也瞧不起这些人，对他们总是退避三舍。</p>
+<p>但他不能把这种态度太明显地表现出来，于是他随着他们中的一个名为 Q 的高个子，称似乎是老大的名为 Z 的人为 Z 哥，借此与他们套近乎。</p>
+<p>他们口中充满了对老师与学校的不满，说出的是粗鄙之言，做出的是不堪之举，他们内心总是躁动着，似乎想通过对外界的破坏来将这些不满与躁动发泄出来。</p>
+<p>其中一个叫 L 的胖子，从课桌中抽出一个短的金属筒状物，握住尾端黑色的部分，向斜下方用力一甩，筒状物一下子就伸长了，外形如同鱼竿，圆筒的半径从手握的黑色部分到最前端逐渐缩短，到了前端变成了一个金属小球，这是他们口中的“甩棍”！胖子拿着甩棍走到教室的后面，那里摆放了一排的储物柜，是给学生放书用的。胖子一边嘴里骂着什么，一边用甩棍用力地敲打着储物柜的门。整个教室回荡着巨大的响声，遭受这无妄之灾的金属门最终是承受不了甩棍无情的摧残，变瘪了。</p>
+<p>他埋头趴在桌子上，每一次巨大的敲击声，都仿佛穿透了他的身体一般，使他不由得发抖。不知道过去了多久，敲击声消失了，交谈声也慢慢变远，最后不知所踪，他们终于是离开了。</p>
+<p>下午第一节是化学课，由于记不住化学方程式，他被老师叫到了教室后面罚站听课。化学是他的薄弱项，这一点从初中开始就是，当时老师甚至让同学在课堂上自习，专门让他上讲台给他讲解，但他还是无法理解。到了高中，许多知识点又讲了一遍，但他还是不会，或许他是真的不擅长理科。</p>
+<p>第二节是历史课，由之前提到的那位班主任负责教授。历史课上他倒没有打瞌睡了，但他向来对历史不感兴趣，在他看来，历史就是讲述什么时候发生了什么事情，教材上不就是这么写的吗？还要去分析什么根本原因，什么直接原因、间接原因，简直麻烦死了。于是，没事干的他陷入了回忆。</p>
 ]]></content>
       <categories>
-        <category>技术</category>
+        <category>日常</category>
       </categories>
       <tags>
-        <tag>Linux</tag>
-        <tag>Ubuntu</tag>
+        <tag>小说</tag>
+        <tag>高中</tag>
+        <tag>生活</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>打通深渊后半个月，我又第一次满星深渊！</title>
+    <url>/2023/02/genshinshenyuanmanxing.html</url>
+    <content><![CDATA[<p>上个月打通了深渊，但因为没练岩队，过不去黄金龙兽，然后万达的练度也拉。最近一直在研究万达的圣遗物搭配，看了把子哥的万达教学，把几个之前刷草神圣遗物拉起来的被我当作狗粮的圣遗物丢给公子，之前公子是 30&#x2F;160 的双爆，现在变成 78&#x2F;140 了，结果小助手一查，初步毕业了？然后去打深渊，把雷神之前的垃圾双爆圣遗物换成了精通狗粮，上半组了一支「瑶秋妲雷」，大招放完草神站场，没想到效果还挺好，相比于原来的「雷妲七主」只打超激化，现在多了超绽放的伤害，种门！（手不自觉地合上了~）然后就满星了！我都不知道为什么，猜测是之前 30 暴击的公子次次不暴击导致的……</p>
+<blockquote>
+<p>「说实话，当公子拥有 100% 暴击率，爆伤多少已经无所谓了」—— b站@这把我们就遇到高手</p>
+</blockquote>
+<p>315 天的萌新，xp 党，终于也满星深渊了~</p>
+<p><img data-src="https://img.fufu.ink/dz3OYE.webp" alt="第一次深渊满星"></p>
+<p>接下来准备攒着原石，等草神复刻，补 2 命，虽然大部分观点不认可非 6 命草神站场输出，但是我不管，我就希望她能够站场！继续坐牢绝缘本，给香菱刷圣遗物，狗粮就用来合成水套，毕竟很多公子的水套都是合成台毕业的。咱们也要打造一支「哪里亮了点哪里」也能够打通深渊的万达！</p>
+]]></content>
+      <categories>
+        <category>游戏</category>
+      </categories>
+      <tags>
+        <tag>原神</tag>
+        <tag>游戏</tag>
       </tags>
   </entry>
   <entry>
@@ -2159,6 +2159,89 @@
       </tags>
   </entry>
   <entry>
+    <title>纪念第一次打通深渊</title>
+    <url>/2023/01/genshinshenyuanfirst.html</url>
+    <content><![CDATA[<p>去年也是这个时候入的坑，当时看泠鸢 yousa 在直播这个游戏，然后里面的派蒙和七七很可爱，就下载试着玩了一下，然后……就玩到了现在~</p>
+<p>作为一个剧情党和 xp 党，当然是以剧情为主要，抽卡以喜欢的角色为前提，因此也是深渊困难户。</p>
+<p><img data-src="https://img.fufu.ink/VAGfzC.webp"></p>
+<p>现在练度上来一些了，队伍也有点伤害了，本来原来抽到雷神后打算组个雷国来打，不过后面发现绝缘本出货率感人，同时早听说过万达的爆炸性伤害，正好去年 11 份垫池子 30 多发出了鸭鸭，就想着练一下。不得不说双扩的方法实在是太多了，因此光是学习双扩就让人头大，后面学会偷懒了，就把怪的状态都打到一个状态后再进行双扩流程，就不同分不同的元素附着情况了。</p>
+<p>当然，现在公子离毕业、万达离毕业还很远，不过作为一个萌新，看到 21w 一刀的伤害，还是很激动的，果然在满足 xp 后追求的就是强度(bushi。</p>
+<p><img data-src="https://img.fufu.ink/uP19xG.webp"></p>
+<p>主要是没拉岩系，第二间黄金王兽打不出来伤害，就靠我的零命草神在 c，雷神相当于挂雷工具人，另外两个一个奶，一个用来破盾，因此全队只有一个打伤害，很难打过去，之前练过一段时间凝光，正好凝光也 3 命了，可以试着拉一下，后面看看能不能凹过去。</p>
+<p>现在就等草神复刻补命座了，补一个二命伤害能更高。雷神也可以拉一下。现在版本答案是种门，我也可以拉一下「纳行久」，组一个下半配队。</p>
+]]></content>
+      <categories>
+        <category>游戏</category>
+      </categories>
+      <tags>
+        <tag>原神</tag>
+        <tag>游戏</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>服务器 Ubuntu 配置 ftp</title>
+    <url>/2022/11/ubuntuftp.html</url>
+    <content><![CDATA[<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p>更新软件包</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo apt upgrade</span><br></pre></td></tr></table></figure>
+
+<p>安装 vsftpd</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo apt-get install vsftpd</span><br></pre></td></tr></table></figure>
+
+<p>ftp 启动，停止，重启，查看状态指令</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">systemctl start vsftpd <span class="comment">#启动</span></span><br><span class="line"></span><br><span class="line">systemctl stop vsftpd <span class="comment">#停止</span></span><br><span class="line"></span><br><span class="line">systemctl restart vsftpd <span class="comment">#重启</span></span><br><span class="line"></span><br><span class="line">systemctl status vsftpd <span class="comment">#查看状态</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h2><p>编辑 &#x2F;etc&#x2F;vsftpd.conf 文件</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo vi /etc/vsftpd.conf</span><br></pre></td></tr></table></figure>
+
+<p>FTP 配置文件部分说明（需要修改的部分）：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 设置登录 FTP 欢迎信息</span></span><br><span class="line">ftpd_banner=Welcome to CHL FTP service. </span><br><span class="line"></span><br><span class="line">listen=YES               <span class="comment"># 服务器监听</span></span><br><span class="line">local_enable=YES         <span class="comment"># 是否允许本地用户访问</span></span><br><span class="line">write_enable=YES         <span class="comment"># 是否允许上传文件，不开启会报 550 permission denied</span></span><br><span class="line">anonymous_enable=NO      <span class="comment"># 匿名访问允许，默认不要开启</span></span><br><span class="line">anon_upload_enable=YES   <span class="comment"># 匿名上传允许，默认是 NO</span></span><br><span class="line">anon_mkdir_write_enable=YES  <span class="comment"># 匿名创建文件夹允许 </span></span><br><span class="line"></span><br><span class="line">local_umask=022    　　<span class="comment"># FTP 上本地的文件权限，默认是 077。此时 umask 为 022，则目录为 777-022=755，文件为 666-022=644。</span></span><br><span class="line">connect_from_port_20=YES   <span class="comment"># 启用 20 号端口作为数据传送的端口 </span></span><br><span class="line">data_connection_timeout=120    <span class="comment"># 设置数据连接超时时间</span></span><br><span class="line"></span><br><span class="line">utf8_filesystem=YES    <span class="comment"># vsftpd使用 utf8 文件系统</span></span><br><span class="line">use_localtime=YES</span><br><span class="line">xferlog_enable=YES         <span class="comment"># 激活上传和下传的日志 </span></span><br><span class="line">xferlog_file=/var/log/vsftpd.log    <span class="comment"># 设定系统维护记录FTP服务器上传和下载情况的日志文件</span></span><br><span class="line">xferlog_std_format=YES     <span class="comment"># 使用标准的日志格式 </span></span><br><span class="line"></span><br><span class="line">local_root=/home/ftp    <span class="comment"># 设置自定义的 ftp 根目录的位置</span></span><br><span class="line"></span><br><span class="line">allow_writeable_chroot=YES    <span class="comment"># 解决 &quot;500 OOPS: vsftpd: refusing to run with writable root inside chroot()&quot; 问题</span></span><br><span class="line">write_enable=YES    <span class="comment"># 允许向 FTP 服务器写入权限</span></span><br><span class="line">chown_uploads=YES    <span class="comment"># 设定是否允许改变上传文件的属主，与下面一个设定项配合使用</span></span><br><span class="line">chown_username=whoever    <span class="comment"># 设置想要改变的上传文件的属主，可设为 ftp</span></span><br><span class="line"></span><br><span class="line">ascii_upload_enable=YES    　<span class="comment"># 允许服务器以 ASCII 方式传输数据,但引起 &quot;SIZE /big/file&quot; 方式的 DoS 攻击</span></span><br><span class="line">ascii_download_enable=YES</span><br><span class="line"></span><br><span class="line"><span class="comment"># 在默认配置下，本地用户登入FTP后可以使用 cd 命令切换到其他目录，这样会对系统带来安全隐患,可配置如下</span></span><br><span class="line">chroot_list_enable=YES     <span class="comment"># 设置是否启用 chroot_list_file 配置项指定的用户列表文件。默认值为NO。</span></span><br><span class="line">chroot_local_user=YES      <span class="comment"># 用于指定用户列表文件中的用户是否允许切换到上级目录。默认值为NO。</span></span><br><span class="line">chroot_list_file=/etc/vsftpd.chroot_list    <span class="comment"># 禁用名单，用于指定用户列表，该文件用于控制哪些用户可以切换到 home 目录的上级目录。</span></span><br><span class="line"></span><br><span class="line">listen_port=6666 <span class="comment">#修改 ftp 服务器端口</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 配置为被动模式</span></span><br><span class="line">pasv_enable=YES</span><br><span class="line">pasv_min_port=6000 <span class="comment">#最小端口</span></span><br><span class="line">pasv_max_port=7000 <span class="comment">#最大端口</span></span><br></pre></td></tr></table></figure>
+
+<p><code>chroot_list_enable</code> <code>chroot_local_user</code> <code>chroot_list_file</code> 通过搭配能实现以下几种效果：</p>
+<ul>
+<li>当 chroot_list_enable&#x3D;YES，chroot_local_user&#x3D;YES 时，在 &#x2F;etc&#x2F;vsftpd.chroot_list 文件中列出的用户，可以切换到其他目录；未在文件中列出的用户，不能切换到其他目录。</li>
+<li>当 chroot_list_enable&#x3D;YES，chroot_local_user&#x3D;NO 时，在 &#x2F;etc&#x2F;vsftpd.chroot_list 文件中列出的用户，不能切换到其他目录；未在文件中列出的用户，可以切换到其他目录。</li>
+<li>当 chroot_list_enable&#x3D;NO，chroot_local_user&#x3D;YES 时，所有的用户均不能切换到其他目录。</li>
+<li>当 chroot_list_enable&#x3D;NO，chroot_local_user&#x3D;NO 时，所有的用户均可以切换到其他目录。</li>
+</ul>
+<p>通过终端访问 ftp（由于浏览器访问 ftp 在新版 chrome 与 edge 中皆已失效，在这里便不再列出）</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">ftp ip 端口</span><br></pre></td></tr></table></figure>
+
+<h2 id="创建-ftp-上传目录"><a href="#创建-ftp-上传目录" class="headerlink" title="创建 ftp 上传目录"></a>创建 ftp 上传目录</h2><p>需要与配置文件中的 <code>local_root</code> 指定的路径一致</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">mkdir</span> -p /home/ftp</span><br></pre></td></tr></table></figure>
+
+<h2 id="创建-ftp-用户"><a href="#创建-ftp-用户" class="headerlink" title="创建 ftp 用户"></a>创建 ftp 用户</h2><p>创建 vsftpd 用户组（若已存在请跳过该步）</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo groupadd vsftpd</span><br></pre></td></tr></table></figure>
+
+<p>创建 ftp 用户</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo useradd -g vsftpd -d /home/ftp -M username</span><br></pre></td></tr></table></figure>
+
+<p>参数说明：</p>
+<ul>
+<li>g：指定用户所属的组</li>
+<li>d：指定用户登入时的起始目录，这里即为 ftp 上传目录</li>
+<li>M：不创建用户的家目录</li>
+</ul>
+<p>设置 ftp 用户的密码：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo passwd username</span><br></pre></td></tr></table></figure>
+
+<p>设置 ftp 用户权限</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo <span class="built_in">chown</span> -R username:vsftpd /home/ftp</span><br></pre></td></tr></table></figure>
+
+<p>由于设置了 <code>chroot_list_enable</code> 这几个选项，需要将用户名写入 <code>/etc/vsftpd.chroot_list</code> 文件，并重启 ftp 服务</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo vi /etc/vsftpd.chroot_list</span><br><span class="line">sudo systemctl restart vsftpd</span><br></pre></td></tr></table></figure>
+
+<h2 id="连接-ftp"><a href="#连接-ftp" class="headerlink" title="连接 ftp"></a>连接 ftp</h2><p>这里推荐使用 XFTP 连接 ftp，上传下载文件非常方便。XFTP 官方提供了教育版，只需要点击下方链接填写邮箱就会受到包含下载链接的邮件：</p>
+<p><a href="https://www.xshell.com/zh/free-for-home-school/">https://www.xshell.com/zh/free-for-home-school/</a></p>
+]]></content>
+      <categories>
+        <category>技术</category>
+      </categories>
+      <tags>
+        <tag>Linux</tag>
+        <tag>Ubuntu</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>类原生美化教程</title>
     <url>/2022/09/aospbeautify.html</url>
     <content><![CDATA[<blockquote>
@@ -2230,26 +2313,6 @@
       </tags>
   </entry>
   <entry>
-    <title>纪念第一次打通深渊</title>
-    <url>/2023/01/genshinshenyuanfirst.html</url>
-    <content><![CDATA[<p>去年也是这个时候入的坑，当时看泠鸢 yousa 在直播这个游戏，然后里面的派蒙和七七很可爱，就下载试着玩了一下，然后……就玩到了现在~</p>
-<p>作为一个剧情党和 xp 党，当然是以剧情为主要，抽卡以喜欢的角色为前提，因此也是深渊困难户。</p>
-<p><img data-src="https://img.fufu.ink/VAGfzC.webp"></p>
-<p>现在练度上来一些了，队伍也有点伤害了，本来原来抽到雷神后打算组个雷国来打，不过后面发现绝缘本出货率感人，同时早听说过万达的爆炸性伤害，正好去年 11 份垫池子 30 多发出了鸭鸭，就想着练一下。不得不说双扩的方法实在是太多了，因此光是学习双扩就让人头大，后面学会偷懒了，就把怪的状态都打到一个状态后再进行双扩流程，就不同分不同的元素附着情况了。</p>
-<p>当然，现在公子离毕业、万达离毕业还很远，不过作为一个萌新，看到 21w 一刀的伤害，还是很激动的，果然在满足 xp 后追求的就是强度(bushi。</p>
-<p><img data-src="https://img.fufu.ink/uP19xG.webp"></p>
-<p>主要是没拉岩系，第二间黄金王兽打不出来伤害，就靠我的零命草神在 c，雷神相当于挂雷工具人，另外两个一个奶，一个用来破盾，因此全队只有一个打伤害，很难打过去，之前练过一段时间凝光，正好凝光也 3 命了，可以试着拉一下，后面看看能不能凹过去。</p>
-<p>现在就等草神复刻补命座了，补一个二命伤害能更高。雷神也可以拉一下。现在版本答案是种门，我也可以拉一下「纳行久」，组一个下半配队。</p>
-]]></content>
-      <categories>
-        <category>游戏</category>
-      </categories>
-      <tags>
-        <tag>原神</tag>
-        <tag>游戏</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>老婆 16 岁生日快乐</title>
     <url>/2023/08/miku16sai.html</url>
     <content><![CDATA[<p>与ミクたん相遇已有 10 年啦！</p>
@@ -2296,76 +2359,6 @@
       <tags>
         <tag>原神</tag>
         <tag>游戏</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>萌新的 PC 计划</title>
-    <url>/2023/02/computercompose.html</url>
-    <content><![CDATA[<p>因为原来的电脑是轻薄本，用的 r5 5500u 核显，玩个原神只能开 0.8 精度，还经常掉帧，正好过年了，就想拿着压岁钱和寒假打工的钱组一台台式机（不买游戏本是因为预算不足）。预算为 6000 元左右，经过群友的建议，组出的配置如下：<span id="more"></span></p>
-<table>
-<thead>
-<tr>
-<th align="center">组件</th>
-<th align="center">型号</th>
-<th align="center">预计价格</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center">CPU</td>
-<td align="center">i5 12400F 散片</td>
-<td align="center">935</td>
-</tr>
-<tr>
-<td align="center">主板</td>
-<td align="center">华硕Prime H610M-K</td>
-<td align="center">679</td>
-</tr>
-<tr>
-<td align="center">显卡</td>
-<td align="center">七彩虹 RTX 3060</td>
-<td align="center">2649</td>
-</tr>
-<tr>
-<td align="center">散热</td>
-<td align="center">乔思伯 CR-1200E</td>
-<td align="center">35</td>
-</tr>
-<tr>
-<td align="center">内存</td>
-<td align="center">威刚 XPG DDR4 8G 3200 * 2</td>
-<td align="center">289</td>
-</tr>
-<tr>
-<td align="center">硬盘</td>
-<td align="center">西数 SN570 1T</td>
-<td align="center">499</td>
-</tr>
-<tr>
-<td align="center">机箱</td>
-<td align="center">先马平头哥 M1</td>
-<td align="center">150</td>
-</tr>
-<tr>
-<td align="center">电源</td>
-<td align="center">鑫谷 GP600G</td>
-<td align="center">239</td>
-</tr>
-<tr>
-<td align="center">总计</td>
-<td align="center">————————————</td>
-<td align="center">5475</td>
-</tr>
-</tbody></table>
-<p>现在的问题是要在学校宿舍使用，宿舍是限制功率的，光 500w 的电源就不知道能不能带得动（当然是满载状态下）。问了下学校的贴吧，是有组台式用 3060 的，也可以正常使用，不过还有点担心，就先观望一下。</p>
-<hr>
-<p>刚刚又看了一下，还是决定暂时观望，30 系显卡最近降价了，但是矿卡的可能性很大，毕竟矿老板已经赚翻了等着<del>臭打游戏的</del>接盘呢。等到 3 月份再看看，暂时也不急着换电脑。</p>
-]]></content>
-      <categories>
-        <category>日常</category>
-      </categories>
-      <tags>
-        <tag>生活</tag>
-        <tag>计算机</tag>
       </tags>
   </entry>
   <entry>
@@ -2549,6 +2542,76 @@
       </categories>
       <tags>
         <tag>Linux</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>萌新的 PC 计划</title>
+    <url>/2023/02/computercompose.html</url>
+    <content><![CDATA[<p>因为原来的电脑是轻薄本，用的 r5 5500u 核显，玩个原神只能开 0.8 精度，还经常掉帧，正好过年了，就想拿着压岁钱和寒假打工的钱组一台台式机（不买游戏本是因为预算不足）。预算为 6000 元左右，经过群友的建议，组出的配置如下：<span id="more"></span></p>
+<table>
+<thead>
+<tr>
+<th align="center">组件</th>
+<th align="center">型号</th>
+<th align="center">预计价格</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">CPU</td>
+<td align="center">i5 12400F 散片</td>
+<td align="center">935</td>
+</tr>
+<tr>
+<td align="center">主板</td>
+<td align="center">华硕Prime H610M-K</td>
+<td align="center">679</td>
+</tr>
+<tr>
+<td align="center">显卡</td>
+<td align="center">七彩虹 RTX 3060</td>
+<td align="center">2649</td>
+</tr>
+<tr>
+<td align="center">散热</td>
+<td align="center">乔思伯 CR-1200E</td>
+<td align="center">35</td>
+</tr>
+<tr>
+<td align="center">内存</td>
+<td align="center">威刚 XPG DDR4 8G 3200 * 2</td>
+<td align="center">289</td>
+</tr>
+<tr>
+<td align="center">硬盘</td>
+<td align="center">西数 SN570 1T</td>
+<td align="center">499</td>
+</tr>
+<tr>
+<td align="center">机箱</td>
+<td align="center">先马平头哥 M1</td>
+<td align="center">150</td>
+</tr>
+<tr>
+<td align="center">电源</td>
+<td align="center">鑫谷 GP600G</td>
+<td align="center">239</td>
+</tr>
+<tr>
+<td align="center">总计</td>
+<td align="center">————————————</td>
+<td align="center">5475</td>
+</tr>
+</tbody></table>
+<p>现在的问题是要在学校宿舍使用，宿舍是限制功率的，光 500w 的电源就不知道能不能带得动（当然是满载状态下）。问了下学校的贴吧，是有组台式用 3060 的，也可以正常使用，不过还有点担心，就先观望一下。</p>
+<hr>
+<p>刚刚又看了一下，还是决定暂时观望，30 系显卡最近降价了，但是矿卡的可能性很大，毕竟矿老板已经赚翻了等着<del>臭打游戏的</del>接盘呢。等到 3 月份再看看，暂时也不急着换电脑。</p>
+]]></content>
+      <categories>
+        <category>日常</category>
+      </categories>
+      <tags>
+        <tag>生活</tag>
+        <tag>计算机</tag>
       </tags>
   </entry>
   <entry>
