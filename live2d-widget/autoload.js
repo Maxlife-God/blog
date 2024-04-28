@@ -32,6 +32,10 @@ if (screen.width >= 768) {
 		loadExternalResource(live2d_path + "waifu-tips.js", "js")
 	]).then(() => {
 		// 配置选项的具体用法见 README.md
+		live2d_settings['canSwitchModel'] = false;
+		live2d_settings['modelId'] = 1;
+		live2d_settings['modelTexturesId'] = 48;
+		live2d_settings['aboutPageUrl'] = '{/about/}';
 		initWidget({
 			waifuPath: live2d_path + "waifu-tips.json",
 			apiPath: "https://live2d.fufu.ink/",

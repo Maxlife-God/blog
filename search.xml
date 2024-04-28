@@ -66,6 +66,53 @@
       </tags>
   </entry>
   <entry>
+    <title>Next 主题添加说说</title>
+    <url>/2024/04/nextaddessay.html</url>
+    <content><![CDATA[<p>看见洪哥的即刻页面很好看，想 Copy 过来，可惜技术不行，写不来瀑布流，就只能搞个简单的 flex 布局。</p>
+<p>原理和友链页面是一样的，模版文件遍历 <code>hexo/source/_data</code> 文件夹下的 yml 然后循环生成结构。</p>
+<p>在这里感谢好朋友 <a href="https://miku.show/">@OrzMiku</a> 的帮助，修改该博客过程中，很多问题都是通过大佬耐心解答才得以解决 Orz</p>
+<p>废话不多说，直接 <code>Ctrl + C / V</code> 走起</p>
+<span id="more"></span>
+
+<p>在 <code>hexo/themes/next/layout/</code> 下创建 <code>essay.njk</code> 并写入以下内容</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">    &#123;##################&#125;</span><br><span class="line">    &#123;### ESSAY BLOCK ###&#125;</span><br><span class="line">    &#123;##################&#125;</span><br><span class="line"></span><br><span class="line">&lt;style&gt;</span><br><span class="line">#bber * &#123;</span><br><span class="line">  box-sizing: border-box;</span><br><span class="line">&#125;</span><br><span class="line">ul#waterfall &#123;</span><br><span class="line">    display: flex;</span><br><span class="line">    flex-wrap: wrap;</span><br><span class="line">    justify-content: space-between;</span><br><span class="line">    list-style: none;</span><br><span class="line">    margin: 0;</span><br><span class="line">    padding: 0;</span><br><span class="line">&#125;</span><br><span class="line">li.item &#123;</span><br><span class="line">    display: flex;</span><br><span class="line">    flex-direction: column;</span><br><span class="line">    flex-wrap: nowrap;</span><br><span class="line">    justify-content: flex-end;</span><br><span class="line">    align-items: flex-start;</span><br><span class="line">    border: 1px solid #e3e8f7;</span><br><span class="line">    padding: 20px;</span><br><span class="line">    margin: 10px;</span><br><span class="line">    flex-basis: 100%;</span><br><span class="line">    border-radius: 12px;</span><br><span class="line">&#125;</span><br><span class="line">.bber-content &#123;</span><br><span class="line">    display: flex;</span><br><span class="line">    flex-wrap: wrap;</span><br><span class="line">    justify-content: space-between;</span><br><span class="line">&#125;</span><br><span class="line">div#bber-tips &#123;</span><br><span class="line">    display: flex;</span><br><span class="line">    justify-content: center;</span><br><span class="line">&#125;</span><br><span class="line">#bber p &#123;</span><br><span class="line">  margin: 0px;</span><br><span class="line">  padding: 0px;</span><br><span class="line">&#125;</span><br><span class="line">.item hr &#123;</span><br><span class="line">  border: 1px dashed #4259ef23;</span><br><span class="line">  height: 0px;</span><br><span class="line">  margin: 8px 0px;</span><br><span class="line">  display: flex;</span><br><span class="line">  width: 100%;</span><br><span class="line">&#125;</span><br><span class="line">.bber-container-img &#123;</span><br><span class="line">    display: flex;</span><br><span class="line">    gap: 3px;</span><br><span class="line">    margin-bottom: 3px;</span><br><span class="line">&#125;</span><br><span class="line">a.fancybox &#123;</span><br><span class="line">    flex: 1;</span><br><span class="line">&#125;</span><br><span class="line">.bber-info, .bber-info-time, .bber-content-link &#123;</span><br><span class="line">    display: inline-block;</span><br><span class="line">&#125;</span><br><span class="line">.bber-content-link &#123;</span><br><span class="line">    margin-left: 15px;</span><br><span class="line">&#125;</span><br><span class="line">.bber-bottom &#123;</span><br><span class="line">    width: 100%;</span><br><span class="line">&#125;</span><br><span class="line">.bber-info-time, .bber-content-link &#123;</span><br><span class="line">    background-color: rgba(153,153,153,0.169);</span><br><span class="line">    border-radius: 20px;</span><br><span class="line">    padding: 0 8px;</span><br><span class="line">    font-size: .9rem;</span><br><span class="line">    color: var(--text-color);</span><br><span class="line">&#125;</span><br><span class="line">&lt;/style&gt;</span><br><span class="line"></span><br><span class="line">&lt;div id=&quot;bber&quot;&gt;</span><br><span class="line">  &lt;section class=&quot;timeline page-1&quot;&gt;</span><br><span class="line">    &lt;ul id=&quot;waterfall&quot; class=&quot;list&quot;&gt;</span><br><span class="line">      &#123;% for i in site.data.essay %&#125;</span><br><span class="line">        &#123;% for item in i.essay_list %&#125;</span><br><span class="line">            &lt;li class=&quot;item&quot;&gt;</span><br><span class="line">              &lt;div class=&quot;bber-content&quot;&gt;</span><br><span class="line">                &lt;p class=&quot;datacont&quot;&gt;&#123;&#123; item.content &#125;&#125;&lt;/p&gt;</span><br><span class="line">                &#123;% if item.image %&#125;</span><br><span class="line">                  &lt;div class=&quot;bber-container-img&quot;&gt;</span><br><span class="line">                    &#123;% for indey in item.image %&#125;</span><br><span class="line">                      &lt;img src=&quot;&#123;&#123; indey &#125;&#125;&quot; style=&quot;margin-bottom: 0px;&quot; /&gt;</span><br><span class="line">                    &#123;% endfor %&#125;</span><br><span class="line">                  &lt;/div&gt;</span><br><span class="line">                &#123;% endif %&#125;</span><br><span class="line">              &lt;/div&gt;</span><br><span class="line">              &lt;hr&gt;</span><br><span class="line">              &lt;div class=&quot;bber-bottom&quot;&gt;</span><br><span class="line">                &lt;div class=&quot;bber-info&quot;&gt;</span><br><span class="line">                  &lt;div class=&quot;bber-info-time&quot;&gt;</span><br><span class="line">                    &lt;i class=&quot;far fa-clock&quot;&gt;&lt;/i&gt;</span><br><span class="line">                    &lt;time class=&quot;datatime&quot; datetime=&quot;&#123;&#123; item.date &#125;&#125;&quot;&gt;&#123;&#123; date(item.date, &quot;YYYY/M/D&quot;) &#125;&#125;&lt;/time&gt;</span><br><span class="line">                  &lt;/div&gt;</span><br><span class="line">                  &#123;% if item.link %&#125;</span><br><span class="line">                    &lt;a href=&quot;&#123;&#123; item.link &#125;&#125;&quot; class=&quot;bber-content-link&quot; target=&quot;_blank&quot; title=&quot;跳转到短文指引的链接&quot;&gt;</span><br><span class="line">                      &lt;i class=&quot;fas fa-link&quot;&gt;&lt;/i&gt;</span><br><span class="line">                      链接</span><br><span class="line">                    &lt;/a&gt;</span><br><span class="line">                  &#123;% endif %&#125;</span><br><span class="line">                &lt;/div&gt;</span><br><span class="line">              &lt;/div&gt;</span><br><span class="line">            &lt;/li&gt;</span><br><span class="line">        &#123;% endfor %&#125;</span><br><span class="line">      &#123;% endfor %&#125;</span><br><span class="line">    &lt;/ul&gt;</span><br><span class="line">  &lt;/section&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line"></span><br><span class="line">    &#123;######################&#125;</span><br><span class="line">    &#123;### END ESSAY BLOCK ###&#125;</span><br><span class="line">    &#123;######################&#125;</span><br></pre></td></tr></table></figure>
+<p>然后打开 <code>hexo/themes/next/layout/page.njk</code>，在 <code>&#123;% block title %&#125;&#123;% endblock %&#125;</code> 内的 <code>&#123;%- else %&#125;</code> 前添加</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&#123;%- if page.type === &#x27;categories&#x27; and not page.title %&#125;</span><br><span class="line">    &#123;&#123;- __(&#x27;title.category&#x27;) + page_title_suffix &#125;&#125;</span><br><span class="line">&#123;%- elif page.type === &#x27;tags&#x27; and not page.title %&#125;</span><br><span class="line">    &#123;&#123;- __(&#x27;title.tag&#x27;) + page_title_suffix &#125;&#125;</span><br><span class="line">&#123;%- elif page.type === &#x27;schedule&#x27; and not page.title %&#125;</span><br><span class="line">    &#123;&#123;- __(&#x27;title.schedule&#x27;) + page_title_suffix &#125;&#125;</span><br><span class="line">+&#123;%- elif page.type === &#x27;essay&#x27; and not page.title %&#125;</span><br><span class="line">+    &#123;&#123;- __(&#x27;title.essay&#x27;) + page_title_suffix &#125;&#125;</span><br><span class="line">&#123;%- else %&#125;</span><br></pre></td></tr></table></figure>
+
+<p>以下为方便复制版本</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&#123;%- elif page.type === &#x27;essay&#x27; and not page.title %&#125;</span><br><span class="line">    &#123;&#123;- __(&#x27;title.essay&#x27;) + page_title_suffix &#125;&#125;</span><br></pre></td></tr></table></figure>
+
+<p>然后在下面的 <code>block content</code> 里的 <code>PAGE BODY</code> 内的 <code>&#123;% else %&#125;</code> 前，插入</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&#123;%- if page.type === &#x27;tags&#x27; %&#125;</span><br><span class="line">  &#123;%- include &#x27;_partials/page/tags.njk&#x27; -%&#125;</span><br><span class="line">&#123;% elif page.type === &#x27;categories&#x27; %&#125;</span><br><span class="line">  &#123;%- include &#x27;_partials/page/categories.njk&#x27; -%&#125;</span><br><span class="line">&#123;% elif page.type === &#x27;schedule&#x27; %&#125;</span><br><span class="line">  &#123;%- include &#x27;_partials/page/schedule.njk&#x27; -%&#125;</span><br><span class="line">+&#123;% elif page.type === &#x27;essay&#x27; %&#125;</span><br><span class="line">+  &#123;%- include &#x27;essay.njk&#x27; -%&#125;</span><br><span class="line">&#123;% else %&#125;</span><br></pre></td></tr></table></figure>
+
+<p>以下为方便复制版本</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&#123;% elif page.type === &#x27;essay&#x27; %&#125;</span><br><span class="line">  &#123;%- include &#x27;essay.njk&#x27; -%&#125;</span><br></pre></td></tr></table></figure>
+
+<p>然后在 <code>hexo/source/_data/</code> 下创建 <code>essay.yml</code>，写入以下内容</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">- class_name: 说说</span><br><span class="line">  essay_list:</span><br><span class="line">    - content: #（必须）内容</span><br><span class="line">      date: #（必须）日期 格式：年-月-日（月与日必须是 2 位数，如2024年3月9号为 2024-03-09）</span><br><span class="line">      link: #（可选）链接，可以在下方插入一条链接</span><br><span class="line">      image: #（可选），插入图片，可插入多张，写法如下，注意缩进</span><br><span class="line">        - #图片路径</span><br><span class="line">        - #图片路径</span><br><span class="line">        - #图片路径</span><br><span class="line">    - content:</span><br><span class="line">      date:</span><br><span class="line">    - content:</span><br><span class="line">      date:</span><br></pre></td></tr></table></figure>
+
+<p>运行 <code>hexo new page &quot;essay&quot;</code> 创建 <code>hexo/source/essay/index.md</code> 文件，设置标题日期，type 要设置为 <code>&quot;essay&quot;</code></p>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">title: 说说</span><br><span class="line">date: 2023-09-26 11:18:28</span><br><span class="line">type: &quot;essay&quot;</span><br></pre></td></tr></table></figure>
+
+<p>打开 <code>_config.next.yml</code>，在 <code>menu</code> 中添加</p>
+<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="attr">menu:</span></span><br><span class="line">  <span class="attr">essay:</span> <span class="string">/essay/</span> <span class="string">||</span> <span class="string">fas</span> <span class="string">fa-pen</span></span><br></pre></td></tr></table></figure>
+
+<p>打开 <code>hexo/themes/next/languages/zh-CN.yml</code>，在 <code>menu</code> 中添加</p>
+<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="attr">menu:</span></span><br><span class="line">  <span class="attr">essay:</span> <span class="string">说说</span></span><br></pre></td></tr></table></figure>
+
+<p>之后在 <code>hexo/source/_data/essay.yml</code> 更新内容就可以了，需要注意的是，内容的先后顺序与渲染出来的结果是一致的，即越写在上面的，在渲染结果中也就越排在上方</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">- content: 因为在最上面，所以网页中在最上方</span><br><span class="line">  date: 2024-03-09</span><br><span class="line">- content: 因为排在下方，所以网页中排在后面</span><br><span class="line">  date: 2024-03-09</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>技术</category>
+      </categories>
+      <tags>
+        <tag>教程</tag>
+        <tag>技术</tag>
+        <tag>Hexo</tag>
+        <tag>Next</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Next 主题添加公告栏</title>
     <url>/2024/04/nextaddnotice.html</url>
     <content><![CDATA[<p>字面意思，给 Next 主题添加个公告栏，不过由于 Next 侧边栏只在宽屏上显示，在手机上是看不到的。</p>
@@ -121,53 +168,6 @@
         <tag>技术</tag>
         <tag>Hexo</tag>
         <tag>JavaScript</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Next 主题添加说说</title>
-    <url>/2024/04/nextaddessay.html</url>
-    <content><![CDATA[<p>看见洪哥的即刻页面很好看，想 Copy 过来，可惜技术不行，写不来瀑布流，就只能搞个简单的 flex 布局。</p>
-<p>原理和友链页面是一样的，模版文件遍历 <code>hexo/source/_data</code> 文件夹下的 yml 然后循环生成结构。</p>
-<p>在这里感谢好朋友 <a href="https://miku.show/">@OrzMiku</a> 的帮助，修改该博客过程中，很多问题都是通过大佬耐心解答才得以解决 Orz</p>
-<p>废话不多说，直接 <code>Ctrl + C / V</code> 走起</p>
-<span id="more"></span>
-
-<p>在 <code>hexo/themes/next/layout/</code> 下创建 <code>essay.njk</code> 并写入以下内容</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">    &#123;##################&#125;</span><br><span class="line">    &#123;### ESSAY BLOCK ###&#125;</span><br><span class="line">    &#123;##################&#125;</span><br><span class="line"></span><br><span class="line">&lt;style&gt;</span><br><span class="line">#bber * &#123;</span><br><span class="line">  box-sizing: border-box;</span><br><span class="line">&#125;</span><br><span class="line">ul#waterfall &#123;</span><br><span class="line">    display: flex;</span><br><span class="line">    flex-wrap: wrap;</span><br><span class="line">    justify-content: space-between;</span><br><span class="line">    list-style: none;</span><br><span class="line">    margin: 0;</span><br><span class="line">    padding: 0;</span><br><span class="line">&#125;</span><br><span class="line">li.item &#123;</span><br><span class="line">    display: flex;</span><br><span class="line">    flex-direction: column;</span><br><span class="line">    flex-wrap: nowrap;</span><br><span class="line">    justify-content: flex-end;</span><br><span class="line">    align-items: flex-start;</span><br><span class="line">    border: 1px solid #e3e8f7;</span><br><span class="line">    padding: 20px;</span><br><span class="line">    margin: 10px;</span><br><span class="line">    flex-basis: 100%;</span><br><span class="line">    border-radius: 12px;</span><br><span class="line">&#125;</span><br><span class="line">.bber-content &#123;</span><br><span class="line">    display: flex;</span><br><span class="line">    flex-wrap: wrap;</span><br><span class="line">    justify-content: space-between;</span><br><span class="line">&#125;</span><br><span class="line">div#bber-tips &#123;</span><br><span class="line">    display: flex;</span><br><span class="line">    justify-content: center;</span><br><span class="line">&#125;</span><br><span class="line">#bber p &#123;</span><br><span class="line">  margin: 0px;</span><br><span class="line">  padding: 0px;</span><br><span class="line">&#125;</span><br><span class="line">.item hr &#123;</span><br><span class="line">  border: 1px dashed #4259ef23;</span><br><span class="line">  height: 0px;</span><br><span class="line">  margin: 8px 0px;</span><br><span class="line">  display: flex;</span><br><span class="line">  width: 100%;</span><br><span class="line">&#125;</span><br><span class="line">.bber-container-img &#123;</span><br><span class="line">    display: flex;</span><br><span class="line">    gap: 3px;</span><br><span class="line">    margin-bottom: 3px;</span><br><span class="line">&#125;</span><br><span class="line">a.fancybox &#123;</span><br><span class="line">    flex: 1;</span><br><span class="line">&#125;</span><br><span class="line">.bber-info, .bber-info-time, .bber-content-link &#123;</span><br><span class="line">    display: inline-block;</span><br><span class="line">&#125;</span><br><span class="line">.bber-content-link &#123;</span><br><span class="line">    margin-left: 15px;</span><br><span class="line">&#125;</span><br><span class="line">.bber-bottom &#123;</span><br><span class="line">    width: 100%;</span><br><span class="line">&#125;</span><br><span class="line">.bber-info-time, .bber-content-link &#123;</span><br><span class="line">    background-color: rgba(153,153,153,0.169);</span><br><span class="line">    border-radius: 20px;</span><br><span class="line">    padding: 0 8px;</span><br><span class="line">    font-size: .9rem;</span><br><span class="line">    color: var(--text-color);</span><br><span class="line">&#125;</span><br><span class="line">&lt;/style&gt;</span><br><span class="line"></span><br><span class="line">&lt;div id=&quot;bber&quot;&gt;</span><br><span class="line">  &lt;section class=&quot;timeline page-1&quot;&gt;</span><br><span class="line">    &lt;ul id=&quot;waterfall&quot; class=&quot;list&quot;&gt;</span><br><span class="line">      &#123;% for i in site.data.essay %&#125;</span><br><span class="line">        &#123;% for item in i.essay_list %&#125;</span><br><span class="line">            &lt;li class=&quot;item&quot;&gt;</span><br><span class="line">              &lt;div class=&quot;bber-content&quot;&gt;</span><br><span class="line">                &lt;p class=&quot;datacont&quot;&gt;&#123;&#123; item.content &#125;&#125;&lt;/p&gt;</span><br><span class="line">                &#123;% if item.image %&#125;</span><br><span class="line">                  &lt;div class=&quot;bber-container-img&quot;&gt;</span><br><span class="line">                    &#123;% for indey in item.image %&#125;</span><br><span class="line">                      &lt;img src=&quot;&#123;&#123; indey &#125;&#125;&quot; style=&quot;margin-bottom: 0px;&quot; /&gt;</span><br><span class="line">                    &#123;% endfor %&#125;</span><br><span class="line">                  &lt;/div&gt;</span><br><span class="line">                &#123;% endif %&#125;</span><br><span class="line">              &lt;/div&gt;</span><br><span class="line">              &lt;hr&gt;</span><br><span class="line">              &lt;div class=&quot;bber-bottom&quot;&gt;</span><br><span class="line">                &lt;div class=&quot;bber-info&quot;&gt;</span><br><span class="line">                  &lt;div class=&quot;bber-info-time&quot;&gt;</span><br><span class="line">                    &lt;i class=&quot;far fa-clock&quot;&gt;&lt;/i&gt;</span><br><span class="line">                    &lt;time class=&quot;datatime&quot; datetime=&quot;&#123;&#123; item.date &#125;&#125;&quot;&gt;&#123;&#123; date(item.date, &quot;YYYY/M/D&quot;) &#125;&#125;&lt;/time&gt;</span><br><span class="line">                  &lt;/div&gt;</span><br><span class="line">                  &#123;% if item.link %&#125;</span><br><span class="line">                    &lt;a href=&quot;&#123;&#123; item.link &#125;&#125;&quot; class=&quot;bber-content-link&quot; target=&quot;_blank&quot; title=&quot;跳转到短文指引的链接&quot;&gt;</span><br><span class="line">                      &lt;i class=&quot;fas fa-link&quot;&gt;&lt;/i&gt;</span><br><span class="line">                      链接</span><br><span class="line">                    &lt;/a&gt;</span><br><span class="line">                  &#123;% endif %&#125;</span><br><span class="line">                &lt;/div&gt;</span><br><span class="line">              &lt;/div&gt;</span><br><span class="line">            &lt;/li&gt;</span><br><span class="line">        &#123;% endfor %&#125;</span><br><span class="line">      &#123;% endfor %&#125;</span><br><span class="line">    &lt;/ul&gt;</span><br><span class="line">  &lt;/section&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line"></span><br><span class="line">    &#123;######################&#125;</span><br><span class="line">    &#123;### END ESSAY BLOCK ###&#125;</span><br><span class="line">    &#123;######################&#125;</span><br></pre></td></tr></table></figure>
-<p>然后打开 <code>hexo/themes/next/layout/page.njk</code>，在 <code>&#123;% block title %&#125;&#123;% endblock %&#125;</code> 内的 <code>&#123;%- else %&#125;</code> 前添加</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&#123;%- if page.type === &#x27;categories&#x27; and not page.title %&#125;</span><br><span class="line">    &#123;&#123;- __(&#x27;title.category&#x27;) + page_title_suffix &#125;&#125;</span><br><span class="line">&#123;%- elif page.type === &#x27;tags&#x27; and not page.title %&#125;</span><br><span class="line">    &#123;&#123;- __(&#x27;title.tag&#x27;) + page_title_suffix &#125;&#125;</span><br><span class="line">&#123;%- elif page.type === &#x27;schedule&#x27; and not page.title %&#125;</span><br><span class="line">    &#123;&#123;- __(&#x27;title.schedule&#x27;) + page_title_suffix &#125;&#125;</span><br><span class="line">+&#123;%- elif page.type === &#x27;essay&#x27; and not page.title %&#125;</span><br><span class="line">+    &#123;&#123;- __(&#x27;title.essay&#x27;) + page_title_suffix &#125;&#125;</span><br><span class="line">&#123;%- else %&#125;</span><br></pre></td></tr></table></figure>
-
-<p>以下为方便复制版本</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&#123;%- elif page.type === &#x27;essay&#x27; and not page.title %&#125;</span><br><span class="line">    &#123;&#123;- __(&#x27;title.essay&#x27;) + page_title_suffix &#125;&#125;</span><br></pre></td></tr></table></figure>
-
-<p>然后在下面的 <code>block content</code> 里的 <code>PAGE BODY</code> 内的 <code>&#123;% else %&#125;</code> 前，插入</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&#123;%- if page.type === &#x27;tags&#x27; %&#125;</span><br><span class="line">  &#123;%- include &#x27;_partials/page/tags.njk&#x27; -%&#125;</span><br><span class="line">&#123;% elif page.type === &#x27;categories&#x27; %&#125;</span><br><span class="line">  &#123;%- include &#x27;_partials/page/categories.njk&#x27; -%&#125;</span><br><span class="line">&#123;% elif page.type === &#x27;schedule&#x27; %&#125;</span><br><span class="line">  &#123;%- include &#x27;_partials/page/schedule.njk&#x27; -%&#125;</span><br><span class="line">+&#123;% elif page.type === &#x27;essay&#x27; %&#125;</span><br><span class="line">+  &#123;%- include &#x27;essay.njk&#x27; -%&#125;</span><br><span class="line">&#123;% else %&#125;</span><br></pre></td></tr></table></figure>
-
-<p>以下为方便复制版本</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&#123;% elif page.type === &#x27;essay&#x27; %&#125;</span><br><span class="line">  &#123;%- include &#x27;essay.njk&#x27; -%&#125;</span><br></pre></td></tr></table></figure>
-
-<p>然后在 <code>hexo/source/_data/</code> 下创建 <code>essay.yml</code>，写入以下内容</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">- class_name: 说说</span><br><span class="line">  essay_list:</span><br><span class="line">    - content: #（必须）内容</span><br><span class="line">      date: #（必须）日期 格式：年-月-日（月与日必须是 2 位数，如2024年3月9号为 2024-03-09）</span><br><span class="line">      link: #（可选）链接，可以在下方插入一条链接</span><br><span class="line">      image: #（可选），插入图片，可插入多张，写法如下，注意缩进</span><br><span class="line">        - #图片路径</span><br><span class="line">        - #图片路径</span><br><span class="line">        - #图片路径</span><br><span class="line">    - content:</span><br><span class="line">      date:</span><br><span class="line">    - content:</span><br><span class="line">      date:</span><br></pre></td></tr></table></figure>
-
-<p>运行 <code>hexo new page &quot;essay&quot;</code> 创建 <code>hexo/source/essay/index.md</code> 文件，设置标题日期，type 要设置为 <code>&quot;essay&quot;</code></p>
-<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">title: 说说</span><br><span class="line">date: 2023-09-26 11:18:28</span><br><span class="line">type: &quot;essay&quot;</span><br></pre></td></tr></table></figure>
-
-<p>打开 <code>_config.next.yml</code>，在 <code>menu</code> 中添加</p>
-<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="attr">menu:</span></span><br><span class="line">  <span class="attr">essay:</span> <span class="string">/essay/</span> <span class="string">||</span> <span class="string">fas</span> <span class="string">fa-pen</span></span><br></pre></td></tr></table></figure>
-
-<p>打开 <code>hexo/themes/next/languages/zh-CN.yml</code>，在 <code>menu</code> 中添加</p>
-<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="attr">menu:</span></span><br><span class="line">  <span class="attr">essay:</span> <span class="string">说说</span></span><br></pre></td></tr></table></figure>
-
-<p>之后在 <code>hexo/source/_data/essay.yml</code> 更新内容就可以了，需要注意的是，内容的先后顺序与渲染出来的结果是一致的，即越写在上面的，在渲染结果中也就越排在上方</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">- content: 因为在最上面，所以网页中在最上方</span><br><span class="line">  date: 2024-03-09</span><br><span class="line">- content: 因为排在下方，所以网页中排在后面</span><br><span class="line">  date: 2024-03-09</span><br></pre></td></tr></table></figure>]]></content>
-      <categories>
-        <category>技术</category>
-      </categories>
-      <tags>
-        <tag>教程</tag>
-        <tag>技术</tag>
-        <tag>Hexo</tag>
-        <tag>Next</tag>
       </tags>
   </entry>
   <entry>
@@ -1408,21 +1408,6 @@
       </tags>
   </entry>
   <entry>
-    <title>四月一日君寻生日快乐</title>
-    <url>/2023/04/watanukitanjyoubi.html</url>
-    <content><![CDATA[<p>4 月 1 日，在很多人看来是愚人节，在我看来，这也是作品『<a href="https://www.bilibili.com/bangumi/play/ss1239?spm_id_from=333.337.0.0">xxxholic</a>』中「<ruby>四月一日君尋<rt>わたぬききみひろ</rt></ruby>」的生日。</p>
-<p>clamp 这个名字可能有人没有听过，不过大多数人一定听说过她的一部作品『魔卡少女樱』。clamp 的作品都有一个相同的、巨大的世界观，各个作品之间也有着千丝万缕的联系。『xxxholic』是发生在与魔卡的世界平行的一个世界中的故事，主角四月一日君尋从小由于体制原因容易吸引鬼怪，在一次「偶然」中进入了被称为「异世界的魔女」的侑子小姐的「能够实现愿望的店」。在经历了许多事情后，四月一日在侑子消失后继续留在店中等待着她的「归来」。——这么解释没看过的小伙伴肯定是听不懂的，不过这个也不是一两句话能够讲清的，比四月一日的产生原因，侑子又是谁，又为什么会消失等，都得小伙伴自己去看一看才能够明白，而且只看『xxxholic』还不足够，还得看了与之相关的作品『<a href="https://www.bilibili.com/bangumi/play/ss1463?spm_id_from=333.337.0.0">翼·年代记</a>』等才能搞清了。</p>
-<p>扯远了，总之，今天是可爱的四月一日的生日，是写作「4 月 1 日」的「わたぬき」！虽然咱不喜欢安利自己喜欢的作品给别人，因为口味不一样，自己觉得很好的在别人看来可能很一般，不过，这部作品我是十分推荐去看的，不过，请不要吐槽画风，因为 clamp 的作品的风格是这样的，如果你坚持看下去，你会发现它的剧情真的很精彩！</p>
-]]></content>
-      <categories>
-        <category>日常</category>
-      </categories>
-      <tags>
-        <tag>节日</tag>
-        <tag>二次元</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>在追求「快」的时代，我们该何去何从</title>
     <url>/2023/05/fastjidaidedousurebaii.html</url>
     <content><![CDATA[<p>不知从什么时候开始，「快」这个概念频繁地出现在我的视野中。周围的人似乎都在不断地追求着它。<span id="more"></span></p>
@@ -1503,20 +1488,18 @@
       </tags>
   </entry>
   <entry>
-    <title>小号常驻又出小提了</title>
-    <url>/2023/05/genshinchangzhuxiaoti.html</url>
-    <content><![CDATA[<p>前几天 up 池双黄了，出了莫娜和甘雨，今天又出小提了。</p>
-<p>之前玩大号的时候不怎么玩弓箭手，虽然公子武器是弓箭啦，毕竟战斗时使用的都是近战模式。再加上手柄不好进行瞄准操作…</p>
-<p>不过小号出了甘雨后，才发现玩狙击手是真的舒服，即使只靠平 a，也能打出很高的伤害（话说弓箭手的普攻倍率就是所有角色中最高的）。这小号比大号开荒时要舒服很多，主要是因为大号刚入坑时想在常驻池捞 77，把所有原石都用来抽常驻了，结果 120 发都没出 77，倒是把香班给抽得快满命了。</p>
-<p>接下来就要围绕着甘雨和小提两个主 c 来配队了。</p>
-<p><img data-src="https://img.fufu.ink/ayuNM2.webp" alt="常驻池43抽·小提"></p>
+    <title>四月一日君寻生日快乐</title>
+    <url>/2023/04/watanukitanjyoubi.html</url>
+    <content><![CDATA[<p>4 月 1 日，在很多人看来是愚人节，在我看来，这也是作品『<a href="https://www.bilibili.com/bangumi/play/ss1239?spm_id_from=333.337.0.0">xxxholic</a>』中「<ruby>四月一日君尋<rt>わたぬききみひろ</rt></ruby>」的生日。</p>
+<p>clamp 这个名字可能有人没有听过，不过大多数人一定听说过她的一部作品『魔卡少女樱』。clamp 的作品都有一个相同的、巨大的世界观，各个作品之间也有着千丝万缕的联系。『xxxholic』是发生在与魔卡的世界平行的一个世界中的故事，主角四月一日君尋从小由于体制原因容易吸引鬼怪，在一次「偶然」中进入了被称为「异世界的魔女」的侑子小姐的「能够实现愿望的店」。在经历了许多事情后，四月一日在侑子消失后继续留在店中等待着她的「归来」。——这么解释没看过的小伙伴肯定是听不懂的，不过这个也不是一两句话能够讲清的，比四月一日的产生原因，侑子又是谁，又为什么会消失等，都得小伙伴自己去看一看才能够明白，而且只看『xxxholic』还不足够，还得看了与之相关的作品『<a href="https://www.bilibili.com/bangumi/play/ss1463?spm_id_from=333.337.0.0">翼·年代记</a>』等才能搞清了。</p>
+<p>扯远了，总之，今天是可爱的四月一日的生日，是写作「4 月 1 日」的「わたぬき」！虽然咱不喜欢安利自己喜欢的作品给别人，因为口味不一样，自己觉得很好的在别人看来可能很一般，不过，这部作品我是十分推荐去看的，不过，请不要吐槽画风，因为 clamp 的作品的风格是这样的，如果你坚持看下去，你会发现它的剧情真的很精彩！</p>
 ]]></content>
       <categories>
-        <category>游戏</category>
+        <category>日常</category>
       </categories>
       <tags>
-        <tag>原神</tag>
-        <tag>游戏</tag>
+        <tag>节日</tag>
+        <tag>二次元</tag>
       </tags>
   </entry>
   <entry>
@@ -1536,15 +1519,13 @@
       </tags>
   </entry>
   <entry>
-    <title>打通深渊后半个月，我又第一次满星深渊！</title>
-    <url>/2023/02/genshinshenyuanmanxing.html</url>
-    <content><![CDATA[<p>上个月打通了深渊，但因为没练岩队，过不去黄金龙兽，然后万达的练度也拉。最近一直在研究万达的圣遗物搭配，看了把子哥的万达教学，把几个之前刷草神圣遗物拉起来的被我当作狗粮的圣遗物丢给公子，之前公子是 30&#x2F;160 的双爆，现在变成 78&#x2F;140 了，结果小助手一查，初步毕业了？然后去打深渊，把雷神之前的垃圾双爆圣遗物换成了精通狗粮，上半组了一支「瑶秋妲雷」，大招放完草神站场，没想到效果还挺好，相比于原来的「雷妲七主」只打超激化，现在多了超绽放的伤害，种门！（手不自觉地合上了~）然后就满星了！我都不知道为什么，猜测是之前 30 暴击的公子次次不暴击导致的……</p>
-<blockquote>
-<p>「说实话，当公子拥有 100% 暴击率，爆伤多少已经无所谓了」—— b站@这把我们就遇到高手</p>
-</blockquote>
-<p>315 天的萌新，xp 党，终于也满星深渊了~</p>
-<p><img data-src="https://img.fufu.ink/dz3OYE.webp" alt="第一次深渊满星"></p>
-<p>接下来准备攒着原石，等草神复刻，补 2 命，虽然大部分观点不认可非 6 命草神站场输出，但是我不管，我就希望她能够站场！继续坐牢绝缘本，给香菱刷圣遗物，狗粮就用来合成水套，毕竟很多公子的水套都是合成台毕业的。咱们也要打造一支「哪里亮了点哪里」也能够打通深渊的万达！</p>
+    <title>小号常驻又出小提了</title>
+    <url>/2023/05/genshinchangzhuxiaoti.html</url>
+    <content><![CDATA[<p>前几天 up 池双黄了，出了莫娜和甘雨，今天又出小提了。</p>
+<p>之前玩大号的时候不怎么玩弓箭手，虽然公子武器是弓箭啦，毕竟战斗时使用的都是近战模式。再加上手柄不好进行瞄准操作…</p>
+<p>不过小号出了甘雨后，才发现玩狙击手是真的舒服，即使只靠平 a，也能打出很高的伤害（话说弓箭手的普攻倍率就是所有角色中最高的）。这小号比大号开荒时要舒服很多，主要是因为大号刚入坑时想在常驻池捞 77，把所有原石都用来抽常驻了，结果 120 发都没出 77，倒是把香班给抽得快满命了。</p>
+<p>接下来就要围绕着甘雨和小提两个主 c 来配队了。</p>
+<p><img data-src="https://img.fufu.ink/ayuNM2.webp" alt="常驻池43抽·小提"></p>
 ]]></content>
       <categories>
         <category>游戏</category>
@@ -1577,6 +1558,66 @@
       <tags>
         <tag>原神</tag>
         <tag>游戏</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>打通深渊后半个月，我又第一次满星深渊！</title>
+    <url>/2023/02/genshinshenyuanmanxing.html</url>
+    <content><![CDATA[<p>上个月打通了深渊，但因为没练岩队，过不去黄金龙兽，然后万达的练度也拉。最近一直在研究万达的圣遗物搭配，看了把子哥的万达教学，把几个之前刷草神圣遗物拉起来的被我当作狗粮的圣遗物丢给公子，之前公子是 30&#x2F;160 的双爆，现在变成 78&#x2F;140 了，结果小助手一查，初步毕业了？然后去打深渊，把雷神之前的垃圾双爆圣遗物换成了精通狗粮，上半组了一支「瑶秋妲雷」，大招放完草神站场，没想到效果还挺好，相比于原来的「雷妲七主」只打超激化，现在多了超绽放的伤害，种门！（手不自觉地合上了~）然后就满星了！我都不知道为什么，猜测是之前 30 暴击的公子次次不暴击导致的……</p>
+<blockquote>
+<p>「说实话，当公子拥有 100% 暴击率，爆伤多少已经无所谓了」—— b站@这把我们就遇到高手</p>
+</blockquote>
+<p>315 天的萌新，xp 党，终于也满星深渊了~</p>
+<p><img data-src="https://img.fufu.ink/dz3OYE.webp" alt="第一次深渊满星"></p>
+<p>接下来准备攒着原石，等草神复刻，补 2 命，虽然大部分观点不认可非 6 命草神站场输出，但是我不管，我就希望她能够站场！继续坐牢绝缘本，给香菱刷圣遗物，狗粮就用来合成水套，毕竟很多公子的水套都是合成台毕业的。咱们也要打造一支「哪里亮了点哪里」也能够打通深渊的万达！</p>
+]]></content>
+      <categories>
+        <category>游戏</category>
+      </categories>
+      <tags>
+        <tag>原神</tag>
+        <tag>游戏</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>改进 Next 主题友链书写方式</title>
+    <url>/2023/05/improvefdlinks.html</url>
+    <content><![CDATA[<blockquote>
+<p>声明：友链的设计源于主题 handsome，主题链接：<a href="https://www.ihewro.com/archives/489/">https://www.ihewro.com/archives/489/</a> 本文仅模仿了其风格，若造成侵权，请联系我删除。</p>
+</blockquote>
+<p>首先在 <code>next主题文件夹/layout/</code> 下新建 <code>links.njk</code>，写入以下内容：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">    &#123;##################&#125;</span><br><span class="line">    &#123;### LINKS BLOCK ###&#125;</span><br><span class="line">    &#123;##################&#125;</span><br><span class="line"></span><br><span class="line">&lt;style&gt;</span><br><span class="line">    @media (min-width: 768px) &#123;</span><br><span class="line">        .link-card &#123;</span><br><span class="line">            width: 50%;</span><br><span class="line">            float: left;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    .link-card&#123;</span><br><span class="line">        position: relative;</span><br><span class="line">        min-height: 1px;</span><br><span class="line">        padding-right: 15px;</span><br><span class="line">        padding-left: 15px;</span><br><span class="line">        box-sizing: border-box;</span><br><span class="line">    &#125;</span><br><span class="line">    .link-user-list&#123;</span><br><span class="line">        margin-bottom: 5px;</span><br><span class="line">        border-radius: 3px;</span><br><span class="line">        padding: 15px;</span><br><span class="line">        display: block;</span><br><span class="line">        box-shadow: 0 2px 6px rgba(0,0,0,.1);</span><br><span class="line">        position: relative;</span><br><span class="line">    &#125;</span><br><span class="line">    .link-user-list:hover&#123;</span><br><span class="line">        background-color: #f6f8f8;</span><br><span class="line">        text-decoration: none;</span><br><span class="line">    &#125;</span><br><span class="line">    #link-container a&#123;</span><br><span class="line">        border: none;</span><br><span class="line">    &#125;</span><br><span class="line">    .user-avatar img&#123;</span><br><span class="line">        border: 2px solid #fff;</span><br><span class="line">        height: auto;</span><br><span class="line">        vertical-align: middle;</span><br><span class="line">        width: 100%;</span><br><span class="line">        border-radius: 20%;</span><br><span class="line">        max-width: 100%!important;</span><br><span class="line">        margin: 0px !important;</span><br><span class="line">    &#125;</span><br><span class="line">    .clearfix:after&#123;</span><br><span class="line">        content: &#x27; &#x27;; </span><br><span class="line">        display: block; </span><br><span class="line">        height: 0; </span><br><span class="line">        clear: both; </span><br><span class="line">        visibility: hidden;</span><br><span class="line">    &#125;</span><br><span class="line">    .text-ellipsis&#123;</span><br><span class="line">        display: block;</span><br><span class="line">        text-overflow: ellipsis;</span><br><span class="line">        overflow: hidden;</span><br><span class="line">        white-space: nowrap;</span><br><span class="line">        font-size: 13px;</span><br><span class="line">    &#125;</span><br><span class="line">    .user-message&#123;</span><br><span class="line">        display: block;</span><br><span class="line">        overflow: hidden;</span><br><span class="line">    &#125;</span><br><span class="line">    .user-description&#123;</span><br><span class="line">        color: #a0a0a0;</span><br><span class="line">    &#125;</span><br><span class="line">    .user-avatar&#123;</span><br><span class="line">        display: inline-block;</span><br><span class="line">        width: 52px;</span><br><span class="line">        height: auto;</span><br><span class="line">        float: left !important;</span><br><span class="line">        margin-right: 15px;</span><br><span class="line">        position: relative;</span><br><span class="line">        white-space: nowrap;</span><br><span class="line">    &#125;</span><br><span class="line">&lt;/style&gt;</span><br><span class="line">&lt;div id=&quot;link-container&quot;&gt;</span><br><span class="line">    &#123;% for link_config in site.data.links %&#125;</span><br><span class="line">    &#123;% if link_config.class_name %&#125;</span><br><span class="line">    &lt;h2 id=&quot;&#123;&#123; link_config.class_name &#125;&#125;&quot;&gt;</span><br><span class="line">        &lt;a href=&quot;#&#123;&#123; link_config.class_name &#125;&#125;&quot; class=&quot;headerlink&quot; title=&quot;&#123;&#123; link_config.class_name &#125;&#125;&quot;&gt;&lt;/a&gt;</span><br><span class="line">        &#123;&#123; link_config.class_name &#125;&#125;</span><br><span class="line">    &lt;/h2&gt;</span><br><span class="line">    &#123;% else %&#125;</span><br><span class="line">    &lt;hr&gt;</span><br><span class="line">    &#123;% endif %&#125;</span><br><span class="line">    &lt;div class=&quot;clearfix&quot;&gt;</span><br><span class="line">    &#123;% for link in link_config.link_list %&#125;</span><br><span class="line">    &lt;div class=&quot;link-card&quot;&gt;</span><br><span class="line">        &lt;a href=&quot;&#123;&#123; link.site &#125;&#125;&quot; target=&quot;_blank&quot; class=&quot;link-user-list&quot;&gt;</span><br><span class="line">            &lt;span class=&quot;user-avatar&quot;&gt;</span><br><span class="line">                &lt;img src=&quot;&#123;&#123; link.avatar &#125;&#125;&quot; class=&quot;nofancybox&quot;&gt;</span><br><span class="line">            &lt;/span&gt;</span><br><span class="line">            &lt;span class=&quot;user-message&quot;&gt;</span><br><span class="line">                &lt;span class=&quot;text-ellipsis&quot;&gt;&#123;&#123; link.nickname &#125;&#125;&lt;/span&gt;</span><br><span class="line">                &lt;span class=&quot;user-description text-ellipsis&quot;&gt;&#123;&#123; link.info &#125;&#125;&lt;/span&gt;</span><br><span class="line">            &lt;/span&gt;</span><br><span class="line">        &lt;/a&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">    &#123;% endfor %&#125;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">    &#123;% endfor %&#125;</span><br><span class="line"></span><br><span class="line">    &lt;div&gt;</span><br><span class="line">    &#123;&#123; page.content &#125;&#125;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line">    &#123;######################&#125;</span><br><span class="line">    &#123;### END LINKS BLOCK ###&#125;</span><br><span class="line">    &#123;######################&#125;</span><br></pre></td></tr></table></figure>
+
+<p>接下来打开 <code>next主题文件夹/layout/page.njk</code>，在 <code>block title</code> 区域中某个 <code>elif</code> 语句后添加上</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&#123;% block title %&#125;</span><br><span class="line">  &#123;%- set page_title_suffix = &#x27; | &#x27; + title %&#125;</span><br><span class="line"></span><br><span class="line">  &#123;%- if page.type === &#x27;categories&#x27; and not page.title %&#125;</span><br><span class="line">    &#123;&#123;- __(&#x27;title.category&#x27;) + page_title_suffix &#125;&#125;</span><br><span class="line">  &#123;%- elif page.type === &#x27;tags&#x27; and not page.title %&#125;</span><br><span class="line">    &#123;&#123;- __(&#x27;title.tag&#x27;) + page_title_suffix &#125;&#125;</span><br><span class="line">  &#123;%- elif page.type === &#x27;schedule&#x27; and not page.title %&#125;</span><br><span class="line">    &#123;&#123;- __(&#x27;title.schedule&#x27;) + page_title_suffix &#125;&#125;</span><br><span class="line">+  &#123;%- elif page.type === &#x27;links&#x27; and not page.title %&#125;</span><br><span class="line">+    &#123;&#123;- __(&#x27;title.links&#x27;) + page_title_suffix &#125;&#125;</span><br><span class="line">  &#123;%- else %&#125;</span><br><span class="line">    &#123;&#123;- page.title + page_title_suffix &#125;&#125;</span><br><span class="line">  &#123;%- endif %&#125;</span><br><span class="line">&#123;% endblock %&#125;</span><br></pre></td></tr></table></figure>
+
+<p>接下来在下面的 <code>PAGE BODY</code> 中添加</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&#123;### PAGE BODY ###&#125;</span><br><span class="line">      &#123;#################&#125;</span><br><span class="line">      &lt;div class=&quot;post-body&#123;% if page.direction and page.direction.toLowerCase() === &#x27;rtl&#x27; %&#125; rtl&#123;% endif %&#125;&quot;&gt;</span><br><span class="line">        &#123;%- if page.type === &#x27;tags&#x27; %&#125;</span><br><span class="line">          &#123;%- include &#x27;_partials/page/tags.njk&#x27; -%&#125;</span><br><span class="line">        &#123;% elif page.type === &#x27;categories&#x27; %&#125;</span><br><span class="line">          &#123;%- include &#x27;_partials/page/categories.njk&#x27; -%&#125;</span><br><span class="line">        &#123;% elif page.type === &#x27;schedule&#x27; %&#125;</span><br><span class="line">          &#123;%- include &#x27;_partials/page/schedule.njk&#x27; -%&#125;</span><br><span class="line">+        &#123;% elif page.type === &#x27;links&#x27; %&#125;</span><br><span class="line">+          &#123;%- include &#x27;links.njk&#x27; -%&#125;</span><br><span class="line">        &#123;% else %&#125;</span><br><span class="line">          &#123;&#123; page.content &#125;&#125;</span><br><span class="line">        &#123;%- endif %&#125;</span><br><span class="line">      &lt;/div&gt;</span><br><span class="line">      &#123;#####################&#125;</span><br><span class="line">      &#123;### END PAGE BODY ###&#125;</span><br><span class="line">      &#123;#####################&#125;</span><br></pre></td></tr></table></figure>
+
+<p>接下来就是创建 <code>source/links/index.md</code>，配置好里面的友链申请信息了（<strong>注意 <code>front-matter</code> 的 type 的值必须为 <code>links</code>！</strong>）。</p>
+<p>然后打开 <code>_config.next.yml</code>，在 <code>menu</code> 中添加</p>
+<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="attr">menu:</span></span><br><span class="line">  <span class="attr">links:</span> <span class="string">/links/</span> <span class="string">||</span> <span class="string">fas</span> <span class="string">fa-link</span></span><br></pre></td></tr></table></figure>
+
+<p>打开 <code>hexo/themes/next/languages/zh-CN.yml</code>，在 <code>menu</code> 中添加</p>
+<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="attr">menu:</span></span><br><span class="line">  <span class="attr">links:</span> <span class="string">友链</span></span><br></pre></td></tr></table></figure>
+
+<p>最后在 <code>hexo根目录/source/_data/</code> 下创建 <code>links.yml</code> 并填入以下内容：</p>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 参数说明</span></span><br><span class="line"><span class="comment"># class_name 选填，可以理解为友链组的名字，如果不填则会在顶部生成一个分割线</span></span><br><span class="line"><span class="comment"># nickname 博客名称</span></span><br><span class="line"><span class="comment"># site 博客地址</span></span><br><span class="line"><span class="comment"># info 博客简介</span></span><br><span class="line"><span class="comment"># avatar 博客logo</span></span><br><span class="line"><span class="comment"># 填写时注意缩进！</span></span><br><span class="line"></span><br><span class="line"><span class="bullet">-</span> <span class="attr">class_name:</span></span><br><span class="line">  <span class="attr">link_list:</span></span><br><span class="line">    <span class="bullet">-</span> <span class="attr">nickname:</span></span><br><span class="line">      <span class="attr">site:</span></span><br><span class="line">      <span class="attr">info:</span></span><br><span class="line">      <span class="attr">avatar:</span></span><br><span class="line">    <span class="bullet">-</span> <span class="attr">nickname:</span></span><br><span class="line">      <span class="attr">site:</span></span><br><span class="line">      <span class="attr">info:</span></span><br><span class="line">      <span class="attr">avatar:</span></span><br><span class="line"></span><br><span class="line"><span class="bullet">-</span> <span class="attr">class_name:</span></span><br><span class="line">  <span class="attr">link_list:</span></span><br><span class="line">    <span class="bullet">-</span> <span class="attr">nickname:</span></span><br><span class="line">      <span class="attr">site:</span></span><br><span class="line">      <span class="attr">info:</span></span><br><span class="line">      <span class="attr">avatar:</span></span><br><span class="line">    <span class="bullet">-</span> <span class="attr">nickname:</span></span><br><span class="line">      <span class="attr">site:</span></span><br><span class="line">      <span class="attr">info:</span></span><br><span class="line">      <span class="attr">avatar:</span></span><br></pre></td></tr></table></figure>
+
+<p>本文参考：</p>
+<ul>
+<li><a href="https://only_ann.gitee.io/next/archives/48141.html">next主题添加自定义友链</a></li>
+<li><a href="https://github.com/next-theme/hexo-theme-next/discussions/660">之前显示有问题，去问了主题作者，感谢作者的耐心回答</a></li>
+<li><a href="https://blog.csdn.net/qq_35479468/article/details/107454287">Hexo+next主题自定义友情链接页面</a></li>
+</ul>
+]]></content>
+      <categories>
+        <category>技术</category>
+      </categories>
+      <tags>
+        <tag>技术</tag>
+        <tag>Hexo</tag>
+        <tag>CSS</tag>
       </tags>
   </entry>
   <entry>
@@ -1640,6 +1681,69 @@
         <tag>小说</tag>
         <tag>高中</tag>
         <tag>生活</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>服务器 Ubuntu 配置 ftp</title>
+    <url>/2022/11/ubuntuftp.html</url>
+    <content><![CDATA[<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p>更新软件包</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo apt upgrade</span><br></pre></td></tr></table></figure>
+
+<p>安装 vsftpd</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo apt-get install vsftpd</span><br></pre></td></tr></table></figure>
+
+<p>ftp 启动，停止，重启，查看状态指令</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">systemctl start vsftpd <span class="comment">#启动</span></span><br><span class="line"></span><br><span class="line">systemctl stop vsftpd <span class="comment">#停止</span></span><br><span class="line"></span><br><span class="line">systemctl restart vsftpd <span class="comment">#重启</span></span><br><span class="line"></span><br><span class="line">systemctl status vsftpd <span class="comment">#查看状态</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h2><p>编辑 &#x2F;etc&#x2F;vsftpd.conf 文件</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo vi /etc/vsftpd.conf</span><br></pre></td></tr></table></figure>
+
+<p>FTP 配置文件部分说明（需要修改的部分）：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 设置登录 FTP 欢迎信息</span></span><br><span class="line">ftpd_banner=Welcome to CHL FTP service. </span><br><span class="line"></span><br><span class="line">listen=YES               <span class="comment"># 服务器监听</span></span><br><span class="line">local_enable=YES         <span class="comment"># 是否允许本地用户访问</span></span><br><span class="line">write_enable=YES         <span class="comment"># 是否允许上传文件，不开启会报 550 permission denied</span></span><br><span class="line">anonymous_enable=NO      <span class="comment"># 匿名访问允许，默认不要开启</span></span><br><span class="line">anon_upload_enable=YES   <span class="comment"># 匿名上传允许，默认是 NO</span></span><br><span class="line">anon_mkdir_write_enable=YES  <span class="comment"># 匿名创建文件夹允许 </span></span><br><span class="line"></span><br><span class="line">local_umask=022    　　<span class="comment"># FTP 上本地的文件权限，默认是 077。此时 umask 为 022，则目录为 777-022=755，文件为 666-022=644。</span></span><br><span class="line">connect_from_port_20=YES   <span class="comment"># 启用 20 号端口作为数据传送的端口 </span></span><br><span class="line">data_connection_timeout=120    <span class="comment"># 设置数据连接超时时间</span></span><br><span class="line"></span><br><span class="line">utf8_filesystem=YES    <span class="comment"># vsftpd使用 utf8 文件系统</span></span><br><span class="line">use_localtime=YES</span><br><span class="line">xferlog_enable=YES         <span class="comment"># 激活上传和下传的日志 </span></span><br><span class="line">xferlog_file=/var/log/vsftpd.log    <span class="comment"># 设定系统维护记录FTP服务器上传和下载情况的日志文件</span></span><br><span class="line">xferlog_std_format=YES     <span class="comment"># 使用标准的日志格式 </span></span><br><span class="line"></span><br><span class="line">local_root=/home/ftp    <span class="comment"># 设置自定义的 ftp 根目录的位置</span></span><br><span class="line"></span><br><span class="line">allow_writeable_chroot=YES    <span class="comment"># 解决 &quot;500 OOPS: vsftpd: refusing to run with writable root inside chroot()&quot; 问题</span></span><br><span class="line">write_enable=YES    <span class="comment"># 允许向 FTP 服务器写入权限</span></span><br><span class="line">chown_uploads=YES    <span class="comment"># 设定是否允许改变上传文件的属主，与下面一个设定项配合使用</span></span><br><span class="line">chown_username=whoever    <span class="comment"># 设置想要改变的上传文件的属主，可设为 ftp</span></span><br><span class="line"></span><br><span class="line">ascii_upload_enable=YES    　<span class="comment"># 允许服务器以 ASCII 方式传输数据,但引起 &quot;SIZE /big/file&quot; 方式的 DoS 攻击</span></span><br><span class="line">ascii_download_enable=YES</span><br><span class="line"></span><br><span class="line"><span class="comment"># 在默认配置下，本地用户登入FTP后可以使用 cd 命令切换到其他目录，这样会对系统带来安全隐患,可配置如下</span></span><br><span class="line">chroot_list_enable=YES     <span class="comment"># 设置是否启用 chroot_list_file 配置项指定的用户列表文件。默认值为NO。</span></span><br><span class="line">chroot_local_user=YES      <span class="comment"># 用于指定用户列表文件中的用户是否允许切换到上级目录。默认值为NO。</span></span><br><span class="line">chroot_list_file=/etc/vsftpd.chroot_list    <span class="comment"># 禁用名单，用于指定用户列表，该文件用于控制哪些用户可以切换到 home 目录的上级目录。</span></span><br><span class="line"></span><br><span class="line">listen_port=6666 <span class="comment">#修改 ftp 服务器端口</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 配置为被动模式</span></span><br><span class="line">pasv_enable=YES</span><br><span class="line">pasv_min_port=6000 <span class="comment">#最小端口</span></span><br><span class="line">pasv_max_port=7000 <span class="comment">#最大端口</span></span><br></pre></td></tr></table></figure>
+
+<p><code>chroot_list_enable</code> <code>chroot_local_user</code> <code>chroot_list_file</code> 通过搭配能实现以下几种效果：</p>
+<ul>
+<li>当 chroot_list_enable&#x3D;YES，chroot_local_user&#x3D;YES 时，在 &#x2F;etc&#x2F;vsftpd.chroot_list 文件中列出的用户，可以切换到其他目录；未在文件中列出的用户，不能切换到其他目录。</li>
+<li>当 chroot_list_enable&#x3D;YES，chroot_local_user&#x3D;NO 时，在 &#x2F;etc&#x2F;vsftpd.chroot_list 文件中列出的用户，不能切换到其他目录；未在文件中列出的用户，可以切换到其他目录。</li>
+<li>当 chroot_list_enable&#x3D;NO，chroot_local_user&#x3D;YES 时，所有的用户均不能切换到其他目录。</li>
+<li>当 chroot_list_enable&#x3D;NO，chroot_local_user&#x3D;NO 时，所有的用户均可以切换到其他目录。</li>
+</ul>
+<p>通过终端访问 ftp（由于浏览器访问 ftp 在新版 chrome 与 edge 中皆已失效，在这里便不再列出）</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">ftp ip 端口</span><br></pre></td></tr></table></figure>
+
+<h2 id="创建-ftp-上传目录"><a href="#创建-ftp-上传目录" class="headerlink" title="创建 ftp 上传目录"></a>创建 ftp 上传目录</h2><p>需要与配置文件中的 <code>local_root</code> 指定的路径一致</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">mkdir</span> -p /home/ftp</span><br></pre></td></tr></table></figure>
+
+<h2 id="创建-ftp-用户"><a href="#创建-ftp-用户" class="headerlink" title="创建 ftp 用户"></a>创建 ftp 用户</h2><p>创建 vsftpd 用户组（若已存在请跳过该步）</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo groupadd vsftpd</span><br></pre></td></tr></table></figure>
+
+<p>创建 ftp 用户</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo useradd -g vsftpd -d /home/ftp -M username</span><br></pre></td></tr></table></figure>
+
+<p>参数说明：</p>
+<ul>
+<li>g：指定用户所属的组</li>
+<li>d：指定用户登入时的起始目录，这里即为 ftp 上传目录</li>
+<li>M：不创建用户的家目录</li>
+</ul>
+<p>设置 ftp 用户的密码：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo passwd username</span><br></pre></td></tr></table></figure>
+
+<p>设置 ftp 用户权限</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo <span class="built_in">chown</span> -R username:vsftpd /home/ftp</span><br></pre></td></tr></table></figure>
+
+<p>由于设置了 <code>chroot_list_enable</code> 这几个选项，需要将用户名写入 <code>/etc/vsftpd.chroot_list</code> 文件，并重启 ftp 服务</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo vi /etc/vsftpd.chroot_list</span><br><span class="line">sudo systemctl restart vsftpd</span><br></pre></td></tr></table></figure>
+
+<h2 id="连接-ftp"><a href="#连接-ftp" class="headerlink" title="连接 ftp"></a>连接 ftp</h2><p>这里推荐使用 XFTP 连接 ftp，上传下载文件非常方便。XFTP 官方提供了教育版，只需要点击下方链接填写邮箱就会受到包含下载链接的邮件：</p>
+<p><a href="https://www.xshell.com/zh/free-for-home-school/">https://www.xshell.com/zh/free-for-home-school/</a></p>
+]]></content>
+      <categories>
+        <category>技术</category>
+      </categories>
+      <tags>
+        <tag>Linux</tag>
+        <tag>Ubuntu</tag>
       </tags>
   </entry>
   <entry>
@@ -2092,107 +2196,29 @@
       </tags>
   </entry>
   <entry>
-    <title>改进 Next 主题友链书写方式</title>
-    <url>/2023/05/improvefdlinks.html</url>
-    <content><![CDATA[<blockquote>
-<p>声明：友链的设计源于主题 handsome，主题链接：<a href="https://www.ihewro.com/archives/489/">https://www.ihewro.com/archives/489/</a> 本文仅模仿了其风格，若造成侵权，请联系我删除。</p>
-</blockquote>
-<p>首先在 <code>next主题文件夹/layout/</code> 下新建 <code>links.njk</code>，写入以下内容：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">    &#123;##################&#125;</span><br><span class="line">    &#123;### LINKS BLOCK ###&#125;</span><br><span class="line">    &#123;##################&#125;</span><br><span class="line"></span><br><span class="line">&lt;style&gt;</span><br><span class="line">    @media (min-width: 768px) &#123;</span><br><span class="line">        .link-card &#123;</span><br><span class="line">            width: 50%;</span><br><span class="line">            float: left;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    .link-card&#123;</span><br><span class="line">        position: relative;</span><br><span class="line">        min-height: 1px;</span><br><span class="line">        padding-right: 15px;</span><br><span class="line">        padding-left: 15px;</span><br><span class="line">        box-sizing: border-box;</span><br><span class="line">    &#125;</span><br><span class="line">    .link-user-list&#123;</span><br><span class="line">        margin-bottom: 5px;</span><br><span class="line">        border-radius: 3px;</span><br><span class="line">        padding: 15px;</span><br><span class="line">        display: block;</span><br><span class="line">        box-shadow: 0 2px 6px rgba(0,0,0,.1);</span><br><span class="line">        position: relative;</span><br><span class="line">    &#125;</span><br><span class="line">    .link-user-list:hover&#123;</span><br><span class="line">        background-color: #f6f8f8;</span><br><span class="line">        text-decoration: none;</span><br><span class="line">    &#125;</span><br><span class="line">    #link-container a&#123;</span><br><span class="line">        border: none;</span><br><span class="line">    &#125;</span><br><span class="line">    .user-avatar img&#123;</span><br><span class="line">        border: 2px solid #fff;</span><br><span class="line">        height: auto;</span><br><span class="line">        vertical-align: middle;</span><br><span class="line">        width: 100%;</span><br><span class="line">        border-radius: 20%;</span><br><span class="line">        max-width: 100%!important;</span><br><span class="line">        margin: 0px !important;</span><br><span class="line">    &#125;</span><br><span class="line">    .clearfix:after&#123;</span><br><span class="line">        content: &#x27; &#x27;; </span><br><span class="line">        display: block; </span><br><span class="line">        height: 0; </span><br><span class="line">        clear: both; </span><br><span class="line">        visibility: hidden;</span><br><span class="line">    &#125;</span><br><span class="line">    .text-ellipsis&#123;</span><br><span class="line">        display: block;</span><br><span class="line">        text-overflow: ellipsis;</span><br><span class="line">        overflow: hidden;</span><br><span class="line">        white-space: nowrap;</span><br><span class="line">        font-size: 13px;</span><br><span class="line">    &#125;</span><br><span class="line">    .user-message&#123;</span><br><span class="line">        display: block;</span><br><span class="line">        overflow: hidden;</span><br><span class="line">    &#125;</span><br><span class="line">    .user-description&#123;</span><br><span class="line">        color: #a0a0a0;</span><br><span class="line">    &#125;</span><br><span class="line">    .user-avatar&#123;</span><br><span class="line">        display: inline-block;</span><br><span class="line">        width: 52px;</span><br><span class="line">        height: auto;</span><br><span class="line">        float: left !important;</span><br><span class="line">        margin-right: 15px;</span><br><span class="line">        position: relative;</span><br><span class="line">        white-space: nowrap;</span><br><span class="line">    &#125;</span><br><span class="line">&lt;/style&gt;</span><br><span class="line">&lt;div id=&quot;link-container&quot;&gt;</span><br><span class="line">    &#123;% for link_config in site.data.links %&#125;</span><br><span class="line">    &#123;% if link_config.class_name %&#125;</span><br><span class="line">    &lt;h2 id=&quot;&#123;&#123; link_config.class_name &#125;&#125;&quot;&gt;</span><br><span class="line">        &lt;a href=&quot;#&#123;&#123; link_config.class_name &#125;&#125;&quot; class=&quot;headerlink&quot; title=&quot;&#123;&#123; link_config.class_name &#125;&#125;&quot;&gt;&lt;/a&gt;</span><br><span class="line">        &#123;&#123; link_config.class_name &#125;&#125;</span><br><span class="line">    &lt;/h2&gt;</span><br><span class="line">    &#123;% else %&#125;</span><br><span class="line">    &lt;hr&gt;</span><br><span class="line">    &#123;% endif %&#125;</span><br><span class="line">    &lt;div class=&quot;clearfix&quot;&gt;</span><br><span class="line">    &#123;% for link in link_config.link_list %&#125;</span><br><span class="line">    &lt;div class=&quot;link-card&quot;&gt;</span><br><span class="line">        &lt;a href=&quot;&#123;&#123; link.site &#125;&#125;&quot; target=&quot;_blank&quot; class=&quot;link-user-list&quot;&gt;</span><br><span class="line">            &lt;span class=&quot;user-avatar&quot;&gt;</span><br><span class="line">                &lt;img src=&quot;&#123;&#123; link.avatar &#125;&#125;&quot; class=&quot;nofancybox&quot;&gt;</span><br><span class="line">            &lt;/span&gt;</span><br><span class="line">            &lt;span class=&quot;user-message&quot;&gt;</span><br><span class="line">                &lt;span class=&quot;text-ellipsis&quot;&gt;&#123;&#123; link.nickname &#125;&#125;&lt;/span&gt;</span><br><span class="line">                &lt;span class=&quot;user-description text-ellipsis&quot;&gt;&#123;&#123; link.info &#125;&#125;&lt;/span&gt;</span><br><span class="line">            &lt;/span&gt;</span><br><span class="line">        &lt;/a&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">    &#123;% endfor %&#125;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">    &#123;% endfor %&#125;</span><br><span class="line"></span><br><span class="line">    &lt;div&gt;</span><br><span class="line">    &#123;&#123; page.content &#125;&#125;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line">    &#123;######################&#125;</span><br><span class="line">    &#123;### END LINKS BLOCK ###&#125;</span><br><span class="line">    &#123;######################&#125;</span><br></pre></td></tr></table></figure>
-
-<p>接下来打开 <code>next主题文件夹/layout/page.njk</code>，在 <code>block title</code> 区域中某个 <code>elif</code> 语句后添加上</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&#123;% block title %&#125;</span><br><span class="line">  &#123;%- set page_title_suffix = &#x27; | &#x27; + title %&#125;</span><br><span class="line"></span><br><span class="line">  &#123;%- if page.type === &#x27;categories&#x27; and not page.title %&#125;</span><br><span class="line">    &#123;&#123;- __(&#x27;title.category&#x27;) + page_title_suffix &#125;&#125;</span><br><span class="line">  &#123;%- elif page.type === &#x27;tags&#x27; and not page.title %&#125;</span><br><span class="line">    &#123;&#123;- __(&#x27;title.tag&#x27;) + page_title_suffix &#125;&#125;</span><br><span class="line">  &#123;%- elif page.type === &#x27;schedule&#x27; and not page.title %&#125;</span><br><span class="line">    &#123;&#123;- __(&#x27;title.schedule&#x27;) + page_title_suffix &#125;&#125;</span><br><span class="line">+  &#123;%- elif page.type === &#x27;links&#x27; and not page.title %&#125;</span><br><span class="line">+    &#123;&#123;- __(&#x27;title.links&#x27;) + page_title_suffix &#125;&#125;</span><br><span class="line">  &#123;%- else %&#125;</span><br><span class="line">    &#123;&#123;- page.title + page_title_suffix &#125;&#125;</span><br><span class="line">  &#123;%- endif %&#125;</span><br><span class="line">&#123;% endblock %&#125;</span><br></pre></td></tr></table></figure>
-
-<p>接下来在下面的 <code>PAGE BODY</code> 中添加</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&#123;### PAGE BODY ###&#125;</span><br><span class="line">      &#123;#################&#125;</span><br><span class="line">      &lt;div class=&quot;post-body&#123;% if page.direction and page.direction.toLowerCase() === &#x27;rtl&#x27; %&#125; rtl&#123;% endif %&#125;&quot;&gt;</span><br><span class="line">        &#123;%- if page.type === &#x27;tags&#x27; %&#125;</span><br><span class="line">          &#123;%- include &#x27;_partials/page/tags.njk&#x27; -%&#125;</span><br><span class="line">        &#123;% elif page.type === &#x27;categories&#x27; %&#125;</span><br><span class="line">          &#123;%- include &#x27;_partials/page/categories.njk&#x27; -%&#125;</span><br><span class="line">        &#123;% elif page.type === &#x27;schedule&#x27; %&#125;</span><br><span class="line">          &#123;%- include &#x27;_partials/page/schedule.njk&#x27; -%&#125;</span><br><span class="line">+        &#123;% elif page.type === &#x27;links&#x27; %&#125;</span><br><span class="line">+          &#123;%- include &#x27;links.njk&#x27; -%&#125;</span><br><span class="line">        &#123;% else %&#125;</span><br><span class="line">          &#123;&#123; page.content &#125;&#125;</span><br><span class="line">        &#123;%- endif %&#125;</span><br><span class="line">      &lt;/div&gt;</span><br><span class="line">      &#123;#####################&#125;</span><br><span class="line">      &#123;### END PAGE BODY ###&#125;</span><br><span class="line">      &#123;#####################&#125;</span><br></pre></td></tr></table></figure>
-
-<p>接下来就是创建 <code>source/links/index.md</code>，配置好里面的友链申请信息了（<strong>注意 <code>front-matter</code> 的 type 的值必须为 <code>links</code>！</strong>）。</p>
-<p>然后打开 <code>_config.next.yml</code>，在 <code>menu</code> 中添加</p>
-<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="attr">menu:</span></span><br><span class="line">  <span class="attr">links:</span> <span class="string">/links/</span> <span class="string">||</span> <span class="string">fas</span> <span class="string">fa-link</span></span><br></pre></td></tr></table></figure>
-
-<p>打开 <code>hexo/themes/next/languages/zh-CN.yml</code>，在 <code>menu</code> 中添加</p>
-<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="attr">menu:</span></span><br><span class="line">  <span class="attr">links:</span> <span class="string">友链</span></span><br></pre></td></tr></table></figure>
-
-<p>最后在 <code>hexo根目录/source/_data/</code> 下创建 <code>links.yml</code> 并填入以下内容：</p>
-<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 参数说明</span></span><br><span class="line"><span class="comment"># class_name 选填，可以理解为友链组的名字，如果不填则会在顶部生成一个分割线</span></span><br><span class="line"><span class="comment"># nickname 博客名称</span></span><br><span class="line"><span class="comment"># site 博客地址</span></span><br><span class="line"><span class="comment"># info 博客简介</span></span><br><span class="line"><span class="comment"># avatar 博客logo</span></span><br><span class="line"><span class="comment"># 填写时注意缩进！</span></span><br><span class="line"></span><br><span class="line"><span class="bullet">-</span> <span class="attr">class_name:</span></span><br><span class="line">  <span class="attr">link_list:</span></span><br><span class="line">    <span class="bullet">-</span> <span class="attr">nickname:</span></span><br><span class="line">      <span class="attr">site:</span></span><br><span class="line">      <span class="attr">info:</span></span><br><span class="line">      <span class="attr">avatar:</span></span><br><span class="line">    <span class="bullet">-</span> <span class="attr">nickname:</span></span><br><span class="line">      <span class="attr">site:</span></span><br><span class="line">      <span class="attr">info:</span></span><br><span class="line">      <span class="attr">avatar:</span></span><br><span class="line"></span><br><span class="line"><span class="bullet">-</span> <span class="attr">class_name:</span></span><br><span class="line">  <span class="attr">link_list:</span></span><br><span class="line">    <span class="bullet">-</span> <span class="attr">nickname:</span></span><br><span class="line">      <span class="attr">site:</span></span><br><span class="line">      <span class="attr">info:</span></span><br><span class="line">      <span class="attr">avatar:</span></span><br><span class="line">    <span class="bullet">-</span> <span class="attr">nickname:</span></span><br><span class="line">      <span class="attr">site:</span></span><br><span class="line">      <span class="attr">info:</span></span><br><span class="line">      <span class="attr">avatar:</span></span><br></pre></td></tr></table></figure>
-
-<p>本文参考：</p>
+    <title>科目二过啦！</title>
+    <url>/2023/08/kemuerpass.html</url>
+    <content><![CDATA[<p>三战一把过！</p>
+<p>早上八点半就出发去考场了，等了三个小时才轮到我，因为之前已经花钱模拟过了，轻轻松松就过了~</p>
+<p>这里记录一下科二的点位。<span id="more"></span></p>
 <ul>
-<li><a href="https://only_ann.gitee.io/next/archives/48141.html">next主题添加自定义友链</a></li>
-<li><a href="https://github.com/next-theme/hexo-theme-next/discussions/660">之前显示有问题，去问了主题作者，感谢作者的耐心回答</a></li>
-<li><a href="https://blog.csdn.net/qq_35479468/article/details/107454287">Hexo+next主题自定义友情链接页面</a></li>
+<li>座位、后视镜：座位高低调整为<strong>头顶距车顶一拳距离</strong>，靠背调整为 <strong>90°</strong>，前后距离为<strong>靠在靠背上撑直双手，手腕能刚好搭在方向盘顶部，且左脚踩离合（手动挡）能踩到底，离合踩到底时小腿与大腿不能是完全一条线、而是呈一定角度的状态</strong>为最佳。左后视镜调法为将左后车门的门把手置于<strong>左后视镜的顶部的线条的一半处</strong>（注意需要能完全看到门把手），右后视镜则为将右后车门门把手置于<strong>右后视镜的顶部的线条的三分之一处（从左到右数）</strong>。</li>
+<li>倒库：进项目后使用仪表盘的罩子的顶部正中央去对<strong>第三根虚线的最左边</strong>，待肩部与虚线齐平时停车、挂倒挡开始倒车，当<strong>左</strong>后视镜的<strong>底部完全盖过虚线</strong>时（即左后视镜的底部与虚线的内边线齐平时）方向盘向右打死，开始<strong>看右后视镜</strong>，当车身盖过右后视镜中<strong>第三根虚线的一半</strong>时回半圈方向盘并观察预测是否车轮会压库角，若觉得可能会压则再多回点方向盘，当车身与边线<strong>平行</strong>时迅速回正方向盘，当左后视镜的底部完全盖过项目的右边的实线时停车，即完成了右倒库。开出车辆，当引擎盖盖过项目的左边的实线后方向盘向左打死，车身摆正后回正方向盘，继续行驶直到肩部与虚线齐平时停车、挂倒挡开始倒车，左库需要比右库<strong>早打</strong>方向盘，具体为当左后视镜底部<strong>触碰虚线</strong>时就向左打死方向盘，并观察<strong>左后视镜</strong>，后续步骤与倒右库时相差无几。关于看哪边镜子的口诀为「倒什么库就看哪边的镜子」。左库出来后引擎盖盖过边线即可方向盘右打死，待车身端正后回正方向盘行驶出项目。</li>
+<li>侧方停车：侧方停车可以说是我的痛点哩，两次都挂在这个项目上，不过换了教练、调整点位后就没问题了。具体为进项目后使用<strong>左雨刮器的垛子</strong>的最右边去对项目<strong>右边线的内边线</strong>，使其始终沿着内边线走，当右后视镜中出现库的<strong>前库角</strong>时停车、挂倒挡开始倒车，当右后视镜中<strong>前库角</strong>完全消失时方向盘向右打死，观察右后视镜中的<strong>后车门门把手</strong>，当门把手<strong>完全越过库的右边线</strong>时迅速回正方向盘继续倒车，观察左后视镜，当左后车轮压到虚线上时方向盘向左打死（因人身高而异，身高高的则可以晚一点再打方向盘，但不能太晚，否则右边会有出线的危险），待车身摆正后即可停车，<strong>方向盘不用回正！</strong>回空挡并<strong>打左转向灯</strong>，挂一档（先挂挡与先打灯并无先后顺序，但为避免忘记打灯导致挂了还是先打灯较好）开始出库，当<strong>右边的雨刮器的垛子</strong>与项目的<strong>右</strong>边线重合时回正方向盘继续行驶，当<strong>左边的雨刮器的垛子</strong>与项目的<strong>左</strong>边线重合时方向盘向右打一圈，待车身摆正后即可回正方向盘并驶出项目。</li>
+<li>直角转弯：本人认为直角转弯属实是科目二中最简单的一个项目了。进项目前就可以使用<strong>左雨刮器的垛子</strong>的最右边去对项目<strong>右边线的内边线</strong>（科目二的对线都是这个方法），虽然可能直角的线没有画得很长，但你可以想象那条线的延长线，使用垛子去与这条延长线对线，一定要保持车身是端正的！听到进入项目的语音提示后就可以开始打左转向灯了，待<strong>驾驶座的门把手的顶部与另一条直角边重合（由于身高原因，可以调整为门把手的前端、后端，根据个人情况调整即可）</strong>时方向盘向左打死，心中默数三秒后关掉转向灯（部分地区可能不要求拨回转向灯），当车身摆正后回正方向盘驶出项目。</li>
+<li>曲线行驶：说实话这个项目我也拿不准点位，之前一直使用的车子前面加装的小镜子来对线的，但去考场模拟后发现小镜子没了，便想象了个小镜子在那里对线，然后看后视镜开，还开过了！今天考试也是结合新教练教的新点位来和后视镜来开的。车身摆正，将入口划分为三份，将自己（即驾驶员）置于从左到右数的三分之一处进入项目，当<strong>左后视镜的左边缘与项目的左边线的内线重合时</strong>方向盘向左打一圈，观察左后视镜中车身与边线的距离并适当修一修方向盘，当挡风玻璃的左下角与左边线重合时回正方向盘，当右边雨刮器的垛子与左边线还有两指宽左右的距离时方向盘向右打一圈，并观察右后视镜并调整车身与边线的距离，尽量让线出现在镜子中并且保证车身与线保持一定距离，这样另一边就不会压线，一直到快出项目时即可回正方向盘出项目了（回正的时机得看具体实际，因为我在驾校跑了三次都在出项目时回正回早了导致压线了）。</li>
+<li>坡上起步：上坡时离合松至车身抖动时车子就会慢慢往上爬，稳住离合即可保持速度。使用老办法对线，一直到右边的雨刮器的垛子与杆子之间呈一定的距离时即可踩住刹车（<strong>注意！这个「一定距离」不是绝对的，会因为人的身高不同而不同，需要自己去寻找</strong>）。在起步时有个小技巧，即右脚踩刹车时，左脚离合还是保持半离合状态，不用踩到底，刹车一定要踩牢，拉、放手刹，松开刹车车子马上就可以开走了。不过使用的前提是踩离合的功底深厚，如果在踩刹车时离合也向下踩了，直接松开刹车会向后滑，就会扣分甚至挂科，如果真的滑了也不要急，马上踩刹车，并且慢慢松离合，直到车子抖动即可松开刹车继续行驶！</li>
 </ul>
+<p>以上就是我学了 26 节科二总结的经验。虽然我使用着没有问题，但并不代表就一定适用于所有人，<strong>请不要照搬！一定要找到适合自己的点位！</strong>科二就是考点位，点位一旦有偏差就会出错，考试时要将座位，镜子调整为与练习时一样。</p>
+<p>接下来我也要冲科三去啦！</p>
+<p>最后祝考科二的小伙伴们都一把过！</p>
 ]]></content>
       <categories>
-        <category>技术</category>
+        <category>日常</category>
       </categories>
       <tags>
-        <tag>技术</tag>
-        <tag>Hexo</tag>
-        <tag>CSS</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>服务器 Ubuntu 配置 ftp</title>
-    <url>/2022/11/ubuntuftp.html</url>
-    <content><![CDATA[<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p>更新软件包</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo apt upgrade</span><br></pre></td></tr></table></figure>
-
-<p>安装 vsftpd</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo apt-get install vsftpd</span><br></pre></td></tr></table></figure>
-
-<p>ftp 启动，停止，重启，查看状态指令</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">systemctl start vsftpd <span class="comment">#启动</span></span><br><span class="line"></span><br><span class="line">systemctl stop vsftpd <span class="comment">#停止</span></span><br><span class="line"></span><br><span class="line">systemctl restart vsftpd <span class="comment">#重启</span></span><br><span class="line"></span><br><span class="line">systemctl status vsftpd <span class="comment">#查看状态</span></span><br></pre></td></tr></table></figure>
-
-<h2 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h2><p>编辑 &#x2F;etc&#x2F;vsftpd.conf 文件</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo vi /etc/vsftpd.conf</span><br></pre></td></tr></table></figure>
-
-<p>FTP 配置文件部分说明（需要修改的部分）：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 设置登录 FTP 欢迎信息</span></span><br><span class="line">ftpd_banner=Welcome to CHL FTP service. </span><br><span class="line"></span><br><span class="line">listen=YES               <span class="comment"># 服务器监听</span></span><br><span class="line">local_enable=YES         <span class="comment"># 是否允许本地用户访问</span></span><br><span class="line">write_enable=YES         <span class="comment"># 是否允许上传文件，不开启会报 550 permission denied</span></span><br><span class="line">anonymous_enable=NO      <span class="comment"># 匿名访问允许，默认不要开启</span></span><br><span class="line">anon_upload_enable=YES   <span class="comment"># 匿名上传允许，默认是 NO</span></span><br><span class="line">anon_mkdir_write_enable=YES  <span class="comment"># 匿名创建文件夹允许 </span></span><br><span class="line"></span><br><span class="line">local_umask=022    　　<span class="comment"># FTP 上本地的文件权限，默认是 077。此时 umask 为 022，则目录为 777-022=755，文件为 666-022=644。</span></span><br><span class="line">connect_from_port_20=YES   <span class="comment"># 启用 20 号端口作为数据传送的端口 </span></span><br><span class="line">data_connection_timeout=120    <span class="comment"># 设置数据连接超时时间</span></span><br><span class="line"></span><br><span class="line">utf8_filesystem=YES    <span class="comment"># vsftpd使用 utf8 文件系统</span></span><br><span class="line">use_localtime=YES</span><br><span class="line">xferlog_enable=YES         <span class="comment"># 激活上传和下传的日志 </span></span><br><span class="line">xferlog_file=/var/log/vsftpd.log    <span class="comment"># 设定系统维护记录FTP服务器上传和下载情况的日志文件</span></span><br><span class="line">xferlog_std_format=YES     <span class="comment"># 使用标准的日志格式 </span></span><br><span class="line"></span><br><span class="line">local_root=/home/ftp    <span class="comment"># 设置自定义的 ftp 根目录的位置</span></span><br><span class="line"></span><br><span class="line">allow_writeable_chroot=YES    <span class="comment"># 解决 &quot;500 OOPS: vsftpd: refusing to run with writable root inside chroot()&quot; 问题</span></span><br><span class="line">write_enable=YES    <span class="comment"># 允许向 FTP 服务器写入权限</span></span><br><span class="line">chown_uploads=YES    <span class="comment"># 设定是否允许改变上传文件的属主，与下面一个设定项配合使用</span></span><br><span class="line">chown_username=whoever    <span class="comment"># 设置想要改变的上传文件的属主，可设为 ftp</span></span><br><span class="line"></span><br><span class="line">ascii_upload_enable=YES    　<span class="comment"># 允许服务器以 ASCII 方式传输数据,但引起 &quot;SIZE /big/file&quot; 方式的 DoS 攻击</span></span><br><span class="line">ascii_download_enable=YES</span><br><span class="line"></span><br><span class="line"><span class="comment"># 在默认配置下，本地用户登入FTP后可以使用 cd 命令切换到其他目录，这样会对系统带来安全隐患,可配置如下</span></span><br><span class="line">chroot_list_enable=YES     <span class="comment"># 设置是否启用 chroot_list_file 配置项指定的用户列表文件。默认值为NO。</span></span><br><span class="line">chroot_local_user=YES      <span class="comment"># 用于指定用户列表文件中的用户是否允许切换到上级目录。默认值为NO。</span></span><br><span class="line">chroot_list_file=/etc/vsftpd.chroot_list    <span class="comment"># 禁用名单，用于指定用户列表，该文件用于控制哪些用户可以切换到 home 目录的上级目录。</span></span><br><span class="line"></span><br><span class="line">listen_port=6666 <span class="comment">#修改 ftp 服务器端口</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 配置为被动模式</span></span><br><span class="line">pasv_enable=YES</span><br><span class="line">pasv_min_port=6000 <span class="comment">#最小端口</span></span><br><span class="line">pasv_max_port=7000 <span class="comment">#最大端口</span></span><br></pre></td></tr></table></figure>
-
-<p><code>chroot_list_enable</code> <code>chroot_local_user</code> <code>chroot_list_file</code> 通过搭配能实现以下几种效果：</p>
-<ul>
-<li>当 chroot_list_enable&#x3D;YES，chroot_local_user&#x3D;YES 时，在 &#x2F;etc&#x2F;vsftpd.chroot_list 文件中列出的用户，可以切换到其他目录；未在文件中列出的用户，不能切换到其他目录。</li>
-<li>当 chroot_list_enable&#x3D;YES，chroot_local_user&#x3D;NO 时，在 &#x2F;etc&#x2F;vsftpd.chroot_list 文件中列出的用户，不能切换到其他目录；未在文件中列出的用户，可以切换到其他目录。</li>
-<li>当 chroot_list_enable&#x3D;NO，chroot_local_user&#x3D;YES 时，所有的用户均不能切换到其他目录。</li>
-<li>当 chroot_list_enable&#x3D;NO，chroot_local_user&#x3D;NO 时，所有的用户均可以切换到其他目录。</li>
-</ul>
-<p>通过终端访问 ftp（由于浏览器访问 ftp 在新版 chrome 与 edge 中皆已失效，在这里便不再列出）</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">ftp ip 端口</span><br></pre></td></tr></table></figure>
-
-<h2 id="创建-ftp-上传目录"><a href="#创建-ftp-上传目录" class="headerlink" title="创建 ftp 上传目录"></a>创建 ftp 上传目录</h2><p>需要与配置文件中的 <code>local_root</code> 指定的路径一致</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">mkdir</span> -p /home/ftp</span><br></pre></td></tr></table></figure>
-
-<h2 id="创建-ftp-用户"><a href="#创建-ftp-用户" class="headerlink" title="创建 ftp 用户"></a>创建 ftp 用户</h2><p>创建 vsftpd 用户组（若已存在请跳过该步）</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo groupadd vsftpd</span><br></pre></td></tr></table></figure>
-
-<p>创建 ftp 用户</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo useradd -g vsftpd -d /home/ftp -M username</span><br></pre></td></tr></table></figure>
-
-<p>参数说明：</p>
-<ul>
-<li>g：指定用户所属的组</li>
-<li>d：指定用户登入时的起始目录，这里即为 ftp 上传目录</li>
-<li>M：不创建用户的家目录</li>
-</ul>
-<p>设置 ftp 用户的密码：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo passwd username</span><br></pre></td></tr></table></figure>
-
-<p>设置 ftp 用户权限</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo <span class="built_in">chown</span> -R username:vsftpd /home/ftp</span><br></pre></td></tr></table></figure>
-
-<p>由于设置了 <code>chroot_list_enable</code> 这几个选项，需要将用户名写入 <code>/etc/vsftpd.chroot_list</code> 文件，并重启 ftp 服务</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo vi /etc/vsftpd.chroot_list</span><br><span class="line">sudo systemctl restart vsftpd</span><br></pre></td></tr></table></figure>
-
-<h2 id="连接-ftp"><a href="#连接-ftp" class="headerlink" title="连接 ftp"></a>连接 ftp</h2><p>这里推荐使用 XFTP 连接 ftp，上传下载文件非常方便。XFTP 官方提供了教育版，只需要点击下方链接填写邮箱就会受到包含下载链接的邮件：</p>
-<p><a href="https://www.xshell.com/zh/free-for-home-school/">https://www.xshell.com/zh/free-for-home-school/</a></p>
-]]></content>
-      <categories>
-        <category>技术</category>
-      </categories>
-      <tags>
-        <tag>Linux</tag>
-        <tag>Ubuntu</tag>
+        <tag>生活</tag>
+        <tag>驾考</tag>
       </tags>
   </entry>
   <entry>
@@ -2267,57 +2293,6 @@
       </tags>
   </entry>
   <entry>
-    <title>科目二过啦！</title>
-    <url>/2023/08/kemuerpass.html</url>
-    <content><![CDATA[<p>三战一把过！</p>
-<p>早上八点半就出发去考场了，等了三个小时才轮到我，因为之前已经花钱模拟过了，轻轻松松就过了~</p>
-<p>这里记录一下科二的点位。<span id="more"></span></p>
-<ul>
-<li>座位、后视镜：座位高低调整为<strong>头顶距车顶一拳距离</strong>，靠背调整为 <strong>90°</strong>，前后距离为<strong>靠在靠背上撑直双手，手腕能刚好搭在方向盘顶部，且左脚踩离合（手动挡）能踩到底，离合踩到底时小腿与大腿不能是完全一条线、而是呈一定角度的状态</strong>为最佳。左后视镜调法为将左后车门的门把手置于<strong>左后视镜的顶部的线条的一半处</strong>（注意需要能完全看到门把手），右后视镜则为将右后车门门把手置于<strong>右后视镜的顶部的线条的三分之一处（从左到右数）</strong>。</li>
-<li>倒库：进项目后使用仪表盘的罩子的顶部正中央去对<strong>第三根虚线的最左边</strong>，待肩部与虚线齐平时停车、挂倒挡开始倒车，当<strong>左</strong>后视镜的<strong>底部完全盖过虚线</strong>时（即左后视镜的底部与虚线的内边线齐平时）方向盘向右打死，开始<strong>看右后视镜</strong>，当车身盖过右后视镜中<strong>第三根虚线的一半</strong>时回半圈方向盘并观察预测是否车轮会压库角，若觉得可能会压则再多回点方向盘，当车身与边线<strong>平行</strong>时迅速回正方向盘，当左后视镜的底部完全盖过项目的右边的实线时停车，即完成了右倒库。开出车辆，当引擎盖盖过项目的左边的实线后方向盘向左打死，车身摆正后回正方向盘，继续行驶直到肩部与虚线齐平时停车、挂倒挡开始倒车，左库需要比右库<strong>早打</strong>方向盘，具体为当左后视镜底部<strong>触碰虚线</strong>时就向左打死方向盘，并观察<strong>左后视镜</strong>，后续步骤与倒右库时相差无几。关于看哪边镜子的口诀为「倒什么库就看哪边的镜子」。左库出来后引擎盖盖过边线即可方向盘右打死，待车身端正后回正方向盘行驶出项目。</li>
-<li>侧方停车：侧方停车可以说是我的痛点哩，两次都挂在这个项目上，不过换了教练、调整点位后就没问题了。具体为进项目后使用<strong>左雨刮器的垛子</strong>的最右边去对项目<strong>右边线的内边线</strong>，使其始终沿着内边线走，当右后视镜中出现库的<strong>前库角</strong>时停车、挂倒挡开始倒车，当右后视镜中<strong>前库角</strong>完全消失时方向盘向右打死，观察右后视镜中的<strong>后车门门把手</strong>，当门把手<strong>完全越过库的右边线</strong>时迅速回正方向盘继续倒车，观察左后视镜，当左后车轮压到虚线上时方向盘向左打死（因人身高而异，身高高的则可以晚一点再打方向盘，但不能太晚，否则右边会有出线的危险），待车身摆正后即可停车，<strong>方向盘不用回正！</strong>回空挡并<strong>打左转向灯</strong>，挂一档（先挂挡与先打灯并无先后顺序，但为避免忘记打灯导致挂了还是先打灯较好）开始出库，当<strong>右边的雨刮器的垛子</strong>与项目的<strong>右</strong>边线重合时回正方向盘继续行驶，当<strong>左边的雨刮器的垛子</strong>与项目的<strong>左</strong>边线重合时方向盘向右打一圈，待车身摆正后即可回正方向盘并驶出项目。</li>
-<li>直角转弯：本人认为直角转弯属实是科目二中最简单的一个项目了。进项目前就可以使用<strong>左雨刮器的垛子</strong>的最右边去对项目<strong>右边线的内边线</strong>（科目二的对线都是这个方法），虽然可能直角的线没有画得很长，但你可以想象那条线的延长线，使用垛子去与这条延长线对线，一定要保持车身是端正的！听到进入项目的语音提示后就可以开始打左转向灯了，待<strong>驾驶座的门把手的顶部与另一条直角边重合（由于身高原因，可以调整为门把手的前端、后端，根据个人情况调整即可）</strong>时方向盘向左打死，心中默数三秒后关掉转向灯（部分地区可能不要求拨回转向灯），当车身摆正后回正方向盘驶出项目。</li>
-<li>曲线行驶：说实话这个项目我也拿不准点位，之前一直使用的车子前面加装的小镜子来对线的，但去考场模拟后发现小镜子没了，便想象了个小镜子在那里对线，然后看后视镜开，还开过了！今天考试也是结合新教练教的新点位来和后视镜来开的。车身摆正，将入口划分为三份，将自己（即驾驶员）置于从左到右数的三分之一处进入项目，当<strong>左后视镜的左边缘与项目的左边线的内线重合时</strong>方向盘向左打一圈，观察左后视镜中车身与边线的距离并适当修一修方向盘，当挡风玻璃的左下角与左边线重合时回正方向盘，当右边雨刮器的垛子与左边线还有两指宽左右的距离时方向盘向右打一圈，并观察右后视镜并调整车身与边线的距离，尽量让线出现在镜子中并且保证车身与线保持一定距离，这样另一边就不会压线，一直到快出项目时即可回正方向盘出项目了（回正的时机得看具体实际，因为我在驾校跑了三次都在出项目时回正回早了导致压线了）。</li>
-<li>坡上起步：上坡时离合松至车身抖动时车子就会慢慢往上爬，稳住离合即可保持速度。使用老办法对线，一直到右边的雨刮器的垛子与杆子之间呈一定的距离时即可踩住刹车（<strong>注意！这个「一定距离」不是绝对的，会因为人的身高不同而不同，需要自己去寻找</strong>）。在起步时有个小技巧，即右脚踩刹车时，左脚离合还是保持半离合状态，不用踩到底，刹车一定要踩牢，拉、放手刹，松开刹车车子马上就可以开走了。不过使用的前提是踩离合的功底深厚，如果在踩刹车时离合也向下踩了，直接松开刹车会向后滑，就会扣分甚至挂科，如果真的滑了也不要急，马上踩刹车，并且慢慢松离合，直到车子抖动即可松开刹车继续行驶！</li>
-</ul>
-<p>以上就是我学了 26 节科二总结的经验。虽然我使用着没有问题，但并不代表就一定适用于所有人，<strong>请不要照搬！一定要找到适合自己的点位！</strong>科二就是考点位，点位一旦有偏差就会出错，考试时要将座位，镜子调整为与练习时一样。</p>
-<p>接下来我也要冲科三去啦！</p>
-<p>最后祝考科二的小伙伴们都一把过！</p>
-]]></content>
-      <categories>
-        <category>日常</category>
-      </categories>
-      <tags>
-        <tag>生活</tag>
-        <tag>驾考</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>草神 2 加 1 了</title>
-    <url>/2023/04/nahidaniinochi.html</url>
-    <content><![CDATA[<p>4 月 12 号，草神复刻。</p>
-<p>去年 11 月已经抽了一次了，准备攒二命，从 12 月的雷神池后就没下过池子了。准备了 250+ 的粉球。</p>
-<p>由室友抽的，歪了 3 次，不过都是提前金，也不算亏吧，甚至有点欧~</p>
-<p><img data-src="https://img.fufu.ink/aX68do.webp" alt="up池"></p>
-<p><img data-src="https://img.fufu.ink/xjn9oQ.webp" alt="武器池"></p>
-<p>第一个小保底歪了一个刻晴，不过种门也需要，也算是丰富 box 了吧。好在后面的小保底就没歪了(●’◡’●)</p>
-<p>武器池都歪了〒▽〒，不过好在 100 抽就吃满了定轨。当天把新图肝完了，又充了 198，领了 10 多天月卡，终于拿到夜壶了！</p>
-<p><img data-src="https://img.fufu.ink/ETxrxf.webp" alt="夜壶"></p>
-<p>伤害虽然比原来降了 6000，原因是因为我之前用的赌狗乐章，面板是 <ruby>50&#x2F;190&#x2F;580<rt>暴率&#x2F;爆伤&#x2F;精通</rt></ruby>，换成专武后成为了 <ruby>56&#x2F;133&#x2F;760<rt>暴率&#x2F;爆伤&#x2F;精通</rt></ruby>，不过专武补充了精通，能为队伍整体带来更好的收益（虽然我一直是把草神当主 C 来养的，经典一带三）</p>
-<p>去年的面板为「三精赌狗，也没有换上好一点的精通杯，190 爆伤的面板的是最近一个月才有的」，这是现在的面板：</p>
-<p><img data-src="https://img.fufu.ink/27qmRl.webp" alt="新面板"></p>
-<p>打深渊是够用了，虽然用来 PVP 还是差远了，毕竟别的不说，就认识的一个网友的面板是精精爆都能有 <ruby>40&#x2F;160&#x2F;800<rt>暴率&#x2F;爆伤&#x2F;精通</rt></ruby>。可惜我没有好的草套爆伤头，其余圣遗物的爆率词条也太少了，仍旧达不到这样的程度＞︿＜</p>
-<p>后面就继续草本坐牢吧，直到哪天出了好沙漏、杯子、头，就能达到毕业了⊙﹏⊙∥</p>
-]]></content>
-      <categories>
-        <category>游戏</category>
-      </categories>
-      <tags>
-        <tag>原神</tag>
-        <tag>游戏</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>纪念第一次打通深渊</title>
     <url>/2023/01/genshinshenyuanfirst.html</url>
     <content><![CDATA[<p>去年也是这个时候入的坑，当时看泠鸢 yousa 在直播这个游戏，然后里面的派蒙和七七很可爱，就下载试着玩了一下，然后……就玩到了现在~</p>
@@ -2359,6 +2334,31 @@
       <tags>
         <tag>节日</tag>
         <tag>miku</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>草神 2 加 1 了</title>
+    <url>/2023/04/nahidaniinochi.html</url>
+    <content><![CDATA[<p>4 月 12 号，草神复刻。</p>
+<p>去年 11 月已经抽了一次了，准备攒二命，从 12 月的雷神池后就没下过池子了。准备了 250+ 的粉球。</p>
+<p>由室友抽的，歪了 3 次，不过都是提前金，也不算亏吧，甚至有点欧~</p>
+<p><img data-src="https://img.fufu.ink/aX68do.webp" alt="up池"></p>
+<p><img data-src="https://img.fufu.ink/xjn9oQ.webp" alt="武器池"></p>
+<p>第一个小保底歪了一个刻晴，不过种门也需要，也算是丰富 box 了吧。好在后面的小保底就没歪了(●’◡’●)</p>
+<p>武器池都歪了〒▽〒，不过好在 100 抽就吃满了定轨。当天把新图肝完了，又充了 198，领了 10 多天月卡，终于拿到夜壶了！</p>
+<p><img data-src="https://img.fufu.ink/ETxrxf.webp" alt="夜壶"></p>
+<p>伤害虽然比原来降了 6000，原因是因为我之前用的赌狗乐章，面板是 <ruby>50&#x2F;190&#x2F;580<rt>暴率&#x2F;爆伤&#x2F;精通</rt></ruby>，换成专武后成为了 <ruby>56&#x2F;133&#x2F;760<rt>暴率&#x2F;爆伤&#x2F;精通</rt></ruby>，不过专武补充了精通，能为队伍整体带来更好的收益（虽然我一直是把草神当主 C 来养的，经典一带三）</p>
+<p>去年的面板为「三精赌狗，也没有换上好一点的精通杯，190 爆伤的面板的是最近一个月才有的」，这是现在的面板：</p>
+<p><img data-src="https://img.fufu.ink/27qmRl.webp" alt="新面板"></p>
+<p>打深渊是够用了，虽然用来 PVP 还是差远了，毕竟别的不说，就认识的一个网友的面板是精精爆都能有 <ruby>40&#x2F;160&#x2F;800<rt>暴率&#x2F;爆伤&#x2F;精通</rt></ruby>。可惜我没有好的草套爆伤头，其余圣遗物的爆率词条也太少了，仍旧达不到这样的程度＞︿＜</p>
+<p>后面就继续草本坐牢吧，直到哪天出了好沙漏、杯子、头，就能达到毕业了⊙﹏⊙∥</p>
+]]></content>
+      <categories>
+        <category>游戏</category>
+      </categories>
+      <tags>
+        <tag>原神</tag>
+        <tag>游戏</tag>
       </tags>
   </entry>
   <entry>

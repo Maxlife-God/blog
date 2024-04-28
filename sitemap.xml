@@ -811,6 +811,13 @@
   </url>
   
   <url>
+    <loc>https://blog.fufu.ink/tags/%E9%A9%BE%E8%80%83/</loc>
+    <lastmod>2024-04-28</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>https://blog.fufu.ink/tags/%E7%B1%BB%E5%8E%9F%E7%94%9F/</loc>
     <lastmod>2024-04-28</lastmod>
     <changefreq>weekly</changefreq>
@@ -819,13 +826,6 @@
   
   <url>
     <loc>https://blog.fufu.ink/tags/Android/</loc>
-    <lastmod>2024-04-28</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.fufu.ink/tags/%E9%A9%BE%E8%80%83/</loc>
     <lastmod>2024-04-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
