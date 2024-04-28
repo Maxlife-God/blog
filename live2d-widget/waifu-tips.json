@@ -183,6 +183,18 @@
 	}, {
 		"selector": ".vsubmit",
 		"text": ["输入验证码就可以提交评论啦～"]
+	}, {
+		"selector": ".menu-item-gallery",
+		"text": ["要看看相册吗？"]
+	}, {
+		"selector": ".menu-item-essay",
+		"text": ["小秘密被你发现啦！Σ(゜ロ゜;)"]
+	}, {
+		"selector": ".menu-item-links",
+		"text": ["要去看看我的朋友们吗？"]
+	}, {
+		"selector": ".site-title",
+		"text": ["小站名为「空想笔记」！"]
 	}],
 	"seasons": [{
 		"date": "01/01",
