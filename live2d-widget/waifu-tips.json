@@ -24,6 +24,9 @@
 		"selector": "#waifu-tool-quit",
 		"text": ["到了要说再见的时候了吗？", "呜呜 QAQ 后会有期……", "不要抛弃我呀……", "我们，还能再见面吗……", "哼，你会后悔的！"]
 	}, {
+		"selector": ".site-title",
+		"text": ["小站名为「空想笔记」！"]
+	}, {
 		"selector": ".menu-item-home a",
 		"text": ["点击前往首页，想回到上一页可以使用浏览器的后退功能哦。", "点它就可以回到首页啦！", "回首页看看吧。"]
 	}, {
@@ -44,6 +47,15 @@
 	}, {
 		"selector": ".menu-item-search a",
 		"text": ["找不到想看的内容？搜索看看吧！", "在找什么东西呢，需要帮忙吗？"]
+	}, {
+		"selector": ".menu-item-gallery",
+		"text": ["要看看相册吗？"]
+	}, {
+		"selector": ".menu-item-essay",
+		"text": ["小秘密被你发现啦！Σ(゜ロ゜;)"]
+	}, {
+		"selector": ".menu-item-links",
+		"text": ["要去看看我的朋友们吗？"]
 	}, {
 		"selector": ".menu-item a",
 		"text": ["快看看这里都有什么呢？"]
@@ -183,18 +195,6 @@
 	}, {
 		"selector": ".vsubmit",
 		"text": ["输入验证码就可以提交评论啦～"]
-	}, {
-		"selector": ".menu-item-gallery",
-		"text": ["要看看相册吗？"]
-	}, {
-		"selector": ".menu-item-essay",
-		"text": ["小秘密被你发现啦！Σ(゜ロ゜;)"]
-	}, {
-		"selector": ".menu-item-links",
-		"text": ["要去看看我的朋友们吗？"]
-	}, {
-		"selector": ".site-title",
-		"text": ["小站名为「空想笔记」！"]
 	}],
 	"seasons": [{
 		"date": "01/01",
