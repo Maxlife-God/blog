@@ -6,7 +6,7 @@
   <link href="https://blog.fufu.ink/atom.xml" rel="self"/>
   
   <link href="https://blog.fufu.ink/"/>
-  <updated>2024-04-27T02:56:22.000Z</updated>
+  <updated>2024-04-28T12:49:30.000Z</updated>
   <id>https://blog.fufu.ink/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>一点碎碎念</title>
+    <link href="https://blog.fufu.ink/2024/04/monku.html"/>
+    <id>https://blog.fufu.ink/2024/04/monku.html</id>
+    <published>2024-04-28T12:49:30.000Z</published>
+    <updated>2024-04-28T12:49:30.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>最近又有点沉迷博客美化了，明明自己能力不行，也不去学 js，甚至 css 也只学了半截，结果就是事倍功半，花了大量时间想给说说加个翻页功能，后面在朋友（永远让我保持理智的好兄弟）<a href="https://miku.show/">@OrzMiku</a> 的点拨下才醒悟，那些人博客的翻页是有链接跳转的，我的页面内翻页反而是愚蠢的想法。于是两天不仅耽误了大量学习时间，还啥也没搞出来。</p><p>然后这两三天看了<a href="https://www.himiku.com/">「初之音」</a>的博客，受到启发，又把关于页面的内容改了一次，耗费了一天。今昨两天又想把 live2d 搞回来了，之前用的<a href="https://www.itggg.cn/">「爆胎博客」</a>提供的 api，但其域名很早前就到期了，因此很长一段时间没有重新搞这个。前几天无意中刷到了 next 主题的作者也写了一款 live2d，正好自己现在也在用 next 主题，就想着部署一下，而且尽量全都部署在本地。于是今天花了一天把看板娘弄回来了，部署其实很快，主要是跨域问题上费了很大的力气，好在最后还是解决了。然后模型的参数的初始化也花了挺久的时间，虽然现在自己也没啥后悔的感觉。尽管知道自己的竞争对手现在正在努力，就在我搞这些玩意儿的时候，但还是忍不住去弄。</p><p>这下博客外观什么的都基本定型了，后期应该不会再做大的变动了。虽然好多次想换回 typecho 去用之前用的 handsome，最终都放弃了。因为舍不得自己费了很长时间搞出来的样式，而且总是设想自己换了设备的话，更新方面动态博客可能会比静态博客方便，但其实这种假设是成立不了的，因为我根本不会换设备，还是老老实实用静态博客的好。</p><p>最后想说一说评论，首先是开评论的问题，因为原则上个人备案是不允许开交互式功能的，所以评论是不被允许的，但这不是主要原因。个人认为主要原因有两个方面，一是这个 1ip 的博客本身流量也不大，开了半年评论实际上也没几条留言，还占着服务器资源，每天还要备份数据库，实在是没必要；另一方面是想回归自己当初建立博客的初心，说得好听点是建立一个远离朋友圈，QQ空间的，属于自己的空间，说的简单点就是单纯的记录，说得难听的话，就是当成了自己的情绪的垃圾桶。但如若从内心中吐露出来的东西对一些人有益，那属于意想不到的收获。开了评论后，就会变得时不时想要看一看有没有留言，心里总是期待着邮件通知的赶来，然后为了得到留言而写作，我正在慢慢变成这样，但这是不对的，这与我的初心背道而驰了，于是关闭了评论。</p>]]></content>
+    
+    
+    <summary type="html">算是对这几天王逛（川话，不做正事，或游手好闲、瞎晃悠）的自己的自我批评</summary>
+    
+    
+    
+    <category term="日常" scheme="https://blog.fufu.ink/categories/%E6%97%A5%E5%B8%B8/"/>
+    
+    
+    <category term="生活" scheme="https://blog.fufu.ink/tags/%E7%94%9F%E6%B4%BB/"/>
+    
+    <category term="博客" scheme="https://blog.fufu.ink/tags/%E5%8D%9A%E5%AE%A2/"/>
+    
+    <category term="随笔" scheme="https://blog.fufu.ink/tags/%E9%9A%8F%E7%AC%94/"/>
+    
+  </entry>
   
   <entry>
     <title>无题（一）</title>
@@ -35,11 +60,11 @@
     <category term="日常" scheme="https://blog.fufu.ink/categories/%E6%97%A5%E5%B8%B8/"/>
     
     
+    <category term="生活" scheme="https://blog.fufu.ink/tags/%E7%94%9F%E6%B4%BB/"/>
+    
     <category term="小说" scheme="https://blog.fufu.ink/tags/%E5%B0%8F%E8%AF%B4/"/>
     
     <category term="高中" scheme="https://blog.fufu.ink/tags/%E9%AB%98%E4%B8%AD/"/>
-    
-    <category term="生活" scheme="https://blog.fufu.ink/tags/%E7%94%9F%E6%B4%BB/"/>
     
   </entry>
   
@@ -498,27 +523,6 @@
     <category term="古典日语" scheme="https://blog.fufu.ink/tags/%E5%8F%A4%E5%85%B8%E6%97%A5%E8%AF%AD/"/>
     
     <category term="语法" scheme="https://blog.fufu.ink/tags/%E8%AF%AD%E6%B3%95/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>【每日语法】N1 易混语法总结</title>
-    <link href="https://blog.fufu.ink/2024/03/mnnhgbp6.html"/>
-    <id>https://blog.fufu.ink/2024/03/mnnhgbp6.html</id>
-    <published>2024-03-02T11:02:04.000Z</published>
-    <updated>2024-03-02T11:02:04.000Z</updated>
-    
-    <content type="html"><![CDATA[<details class="note default no-icon"><summary><p><strong>自不必说</strong>的表达，后常续「も」「さえ」「まで」等</p></summary><p>～はもちろん、～</p><p>～は言うまでもなく、～</p><p>～は言わずもがな、～</p><p>～どころか、～</p><p>～もさることながら、～</p><p>～は言うに及ばず、～</p></details><details class="note default no-icon"><summary><p><strong>姑且不论</strong>（部分句子可译为「如果……的话，还情有可原，但……」）的表达</p></summary><p>～ならいざしらず、～</p><p>～なら&#x2F;はともかく、～</p><p>～なら&#x2F;は別だが、～</p><p>～なら&#x2F;はまだしも、～</p><p>～はさておき&#x2F;はさておいて～</p></details>]]></content>
-    
-    
-    <summary type="html">总结日语 N1 易混语法，部分为个人观点，也许不标准，请见谅</summary>
-    
-    
-    
-    <category term="日语" scheme="https://blog.fufu.ink/categories/%E6%97%A5%E8%AF%AD/"/>
-    
-    
-    <category term="日语" scheme="https://blog.fufu.ink/tags/%E6%97%A5%E8%AF%AD/"/>
     
   </entry>
   
