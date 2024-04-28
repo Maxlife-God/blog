@@ -1,5 +1,5 @@
 // live2d_path 参数建议使用绝对路径
-const live2d_path = "https://blog.fufu.ink/live2d-widget/";
+const live2d_path = "/live2d-widget/";
 //const live2d_path = "/live2d-widget/";
 
 // 封装异步加载资源的方法
@@ -36,7 +36,7 @@ if (screen.width >= 768) {
 			waifuPath: live2d_path + "waifu-tips.json",
 			apiPath: "https://live2d.fufu.ink/",
 			//cdnPath: "https://fastly.jsdelivr.net/gh/fghrsh/live2d_api/",
-			tools: ["hitokoto", "asteroids", "switch-model", "switch-texture", "photo", "info", "quit"]
+			tools: ["hitokoto", "asteroids", "switch-texture", "photo", "info", "quit"]
 		});
 	});
 }
