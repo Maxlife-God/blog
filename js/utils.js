@@ -194,7 +194,7 @@ NexT.utils = {
     backToTop && backToTop.addEventListener('click', () => {
       window.anime({
         targets  : document.scrollingElement,
-        duration : 300,
+        duration : 500,
         easing   : 'linear',
         scrollTop: 0
       });
