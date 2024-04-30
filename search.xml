@@ -1,58 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>39 快乐</title>
-    <url>/2023/03/sankyuomedetou.html</url>
-    <content><![CDATA[<p>日语中，3 音读读作「さん」，而训读读作「み」；9 音读读作「きゅう」，而训读读作「く」。39 按照训读即为「みく」，也就是「miku」；按照音读读作「さんきゅう」，即为英语中的 thank you（谢谢）。更巧合的是，miku 的生日 8 月 31 日，月份和日期加起来刚好为 39。这一切都和 miku 联系了起来，因此 3 月 9 日这天也被术术人们称为「39感谢日」或者「mikuの日」。</p>
-<p>祝所有的术术人 39 快乐！</p>
-]]></content>
-      <categories>
-        <category>日常</category>
-      </categories>
-      <tags>
-        <tag>节日</tag>
-        <tag>二次元</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>MinecraftBDS 修改材质包和行为包教程</title>
-    <url>/2022/07/mcbdsbeautify.html</url>
-    <content><![CDATA[<blockquote>
-<p>本文使用的服务器为基岩版官服 BDS，教程可能仅适用于该类服务器</p>
-</blockquote>
-<h2 id="材质包修改教程"><a href="#材质包修改教程" class="headerlink" title="材质包修改教程"></a>材质包修改教程</h2><p>在 BDS 的根目录找到文件夹 resource_packs 并进入。这里我使用宝塔面板进行演示。</p>
-<p><img data-src="https://img.fufu.ink/NmX8b5.webp" alt="resources_packs"></p>
-<p>将材质包扩展名改为 <code>.zip</code> 后上传到该文件夹中并解压。进入解压后的文件夹一般会有以下文件：</p>
-<p><img data-src="https://img.fufu.ink/39iM8F.webp" alt="材质包文件"></p>
-<p>打开 <code>manifest.json</code> 文件并复制其中的 <code>name</code>、<code>uuid</code> 和 <code>version</code> 几个的值。接下来进入到根目录的 <code>worlds</code> 文件夹中，找到需要加材质包的地图的文件夹，进入并创建四个文件</p>
-<figure class="highlight pgsql"><table><tr><td class="code"><pre><span class="line">world_behavior_pack_history.json</span><br><span class="line">world_behavior_packs.json</span><br><span class="line">world_resource_pack_history.json</span><br><span class="line">world_resource_packs.json</span><br></pre></td></tr></table></figure>
-
-<p>含 behavior 的为行为包，resource 的为材质包。我们打开 <code>world_resource_pack_history.json</code> 并粘贴如下代码：</p>
-<figure class="highlight json"><table><tr><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span><span class="attr">&quot;packs&quot;</span><span class="punctuation">:</span><span class="punctuation">[</span><span class="punctuation">&#123;</span><span class="attr">&quot;can_be_redownloaded&quot;</span><span class="punctuation">:</span><span class="literal"><span class="keyword">true</span></span><span class="punctuation">,</span><span class="attr">&quot;name&quot;</span><span class="punctuation">:</span><span class="string">&quot; 上面的name的值 &quot;</span><span class="punctuation">,</span><span class="attr">&quot;uuid&quot;</span><span class="punctuation">:</span><span class="string">&quot; 上面的uuid的值 &quot;</span><span class="punctuation">,</span><span class="attr">&quot;version&quot;</span><span class="punctuation">:</span><span class="punctuation">[</span> 上面的version的值 <span class="punctuation">]</span><span class="punctuation">&#125;</span><span class="punctuation">]</span><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
-
-<p>一个材质包的参数使用 <code>&#123;&#125;</code> 括起来，如有多个材质包，则需要使用英文符号 <code>,</code> 分隔，比如：</p>
-<figure class="highlight json"><table><tr><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span><span class="attr">&quot;packs&quot;</span><span class="punctuation">:</span><span class="punctuation">[</span><span class="punctuation">&#123;</span><span class="attr">&quot;can_be_redownloaded&quot;</span><span class="punctuation">:</span><span class="literal"><span class="keyword">true</span></span><span class="punctuation">,</span><span class="attr">&quot;name&quot;</span><span class="punctuation">:</span><span class="string">&quot; 第一个材质的name的值 &quot;</span><span class="punctuation">,</span><span class="attr">&quot;uuid&quot;</span><span class="punctuation">:</span><span class="string">&quot; 第一个材质的uuid的值 &quot;</span><span class="punctuation">,</span><span class="attr">&quot;version&quot;</span><span class="punctuation">:</span><span class="punctuation">[</span> 第一个材质的version的值 <span class="punctuation">]</span><span class="punctuation">&#125;</span><span class="punctuation">,</span><span class="punctuation">&#123;</span><span class="attr">&quot;can_be_redownloaded&quot;</span><span class="punctuation">:</span><span class="literal"><span class="keyword">true</span></span><span class="punctuation">,</span><span class="attr">&quot;name&quot;</span><span class="punctuation">:</span><span class="string">&quot; 第二个材质的name的值 &quot;</span><span class="punctuation">,</span><span class="attr">&quot;uuid&quot;</span><span class="punctuation">:</span><span class="string">&quot; 第二个材质的uuid的值 &quot;</span><span class="punctuation">,</span><span class="attr">&quot;version&quot;</span><span class="punctuation">:</span><span class="punctuation">[</span> 第二个材质的version的值 <span class="punctuation">]</span><span class="punctuation">&#125;</span><span class="punctuation">]</span><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
-
-<p><code>can_be_redownloaded</code> 的值为 <code>true</code> 和 <code>false</code>，表示是否能够重新下载该材质包。</p>
-<p>接下来打开 <code>world_resource_packs.json</code>，并粘贴如下代码：</p>
-<figure class="highlight json"><table><tr><td class="code"><pre><span class="line"><span class="punctuation">[</span>	</span><br><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">		<span class="attr">&quot;pack_id&quot;</span> <span class="punctuation">:</span> <span class="string">&quot; 上面的uuid的值 &quot;</span><span class="punctuation">,</span></span><br><span class="line">		<span class="attr">&quot;version&quot;</span> <span class="punctuation">:</span> <span class="punctuation">[</span> 上面的version的值 <span class="punctuation">]</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br><span class="line">	<span class="punctuation">]</span></span><br></pre></td></tr></table></figure>
-
-<p>一个材质包由 <code>&#123;&#125;</code> 括起来，如有多个材质包，则需使用则需要使用英文符号 <code>,</code> 分隔。一个材质包的这几个参数需要同时填入以上两个文件才会生效。</p>
-<h2 id="行为包"><a href="#行为包" class="headerlink" title="行为包"></a>行为包</h2><p>行为包操作方法与材质包差不多，首先在根目录找到 <code>behavior_packs</code> 文件夹并将行为包的扩展名改为 <code>.zip</code> 上传到该目录中，解压后获取 <code>manifest.json</code> 的那三个值，将值填入 <code>world_behavior_pack_history.json</code> 和 <code>world_behavior_packs.json</code> 中。带 <code>history</code> 与材质包带 history 的内容一致，不带的与不带的内容一致。</p>
-<h2 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h2><p>1.更换材质包和行为包和需要重启服务端才会生效。<br>2.若之前已从服务器下载过材质包，现在更换新的材质包后没有弹出下载提示窗口，请去游戏的<code>设置——存储——缓存数据</code>中清除对应材质包的缓存之后再次进入服务器。</p>
-]]></content>
-      <categories>
-        <category>游戏</category>
-      </categories>
-      <tags>
-        <tag>Minecraft</tag>
-        <tag>材质包</tag>
-        <tag>行为包</tag>
-        <tag>教程</tag>
-        <tag>技术</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Handsome 美化补充</title>
     <url>/2021/12/handsomebeautify.html</url>
     <content><![CDATA[<p>由于在网上找到的 handsome 主题的首页文章圆角的 css 代码只选择了首页的大头图版式，小头图和图片版式均无圆角和鼠标停留上浮效果，在这里分享下我加了这两个版式之后的代码，将其粘贴到 handsome 主题开发者设置的自定义 css 中即可。</p>
@@ -87,10 +35,78 @@
         <category>技术</category>
       </categories>
       <tags>
-        <tag>教程</tag>
-        <tag>技术</tag>
         <tag>Hexo</tag>
+        <tag>技术</tag>
+        <tag>教程</tag>
         <tag>Next</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>MinecraftBDS 修改材质包和行为包教程</title>
+    <url>/2022/07/mcbdsbeautify.html</url>
+    <content><![CDATA[<blockquote>
+<p>本文使用的服务器为基岩版官服 BDS，教程可能仅适用于该类服务器</p>
+</blockquote>
+<h2 id="材质包修改教程"><a href="#材质包修改教程" class="headerlink" title="材质包修改教程"></a>材质包修改教程</h2><p>在 BDS 的根目录找到文件夹 resource_packs 并进入。这里我使用宝塔面板进行演示。</p>
+<p><img data-src="https://img.fufu.ink/NmX8b5.webp" alt="resources_packs"></p>
+<p>将材质包扩展名改为 <code>.zip</code> 后上传到该文件夹中并解压。进入解压后的文件夹一般会有以下文件：</p>
+<p><img data-src="https://img.fufu.ink/39iM8F.webp" alt="材质包文件"></p>
+<p>打开 <code>manifest.json</code> 文件并复制其中的 <code>name</code>、<code>uuid</code> 和 <code>version</code> 几个的值。接下来进入到根目录的 <code>worlds</code> 文件夹中，找到需要加材质包的地图的文件夹，进入并创建四个文件</p>
+<figure class="highlight pgsql"><table><tr><td class="code"><pre><span class="line">world_behavior_pack_history.json</span><br><span class="line">world_behavior_packs.json</span><br><span class="line">world_resource_pack_history.json</span><br><span class="line">world_resource_packs.json</span><br></pre></td></tr></table></figure>
+
+<p>含 behavior 的为行为包，resource 的为材质包。我们打开 <code>world_resource_pack_history.json</code> 并粘贴如下代码：</p>
+<figure class="highlight json"><table><tr><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span><span class="attr">&quot;packs&quot;</span><span class="punctuation">:</span><span class="punctuation">[</span><span class="punctuation">&#123;</span><span class="attr">&quot;can_be_redownloaded&quot;</span><span class="punctuation">:</span><span class="literal"><span class="keyword">true</span></span><span class="punctuation">,</span><span class="attr">&quot;name&quot;</span><span class="punctuation">:</span><span class="string">&quot; 上面的name的值 &quot;</span><span class="punctuation">,</span><span class="attr">&quot;uuid&quot;</span><span class="punctuation">:</span><span class="string">&quot; 上面的uuid的值 &quot;</span><span class="punctuation">,</span><span class="attr">&quot;version&quot;</span><span class="punctuation">:</span><span class="punctuation">[</span> 上面的version的值 <span class="punctuation">]</span><span class="punctuation">&#125;</span><span class="punctuation">]</span><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
+
+<p>一个材质包的参数使用 <code>&#123;&#125;</code> 括起来，如有多个材质包，则需要使用英文符号 <code>,</code> 分隔，比如：</p>
+<figure class="highlight json"><table><tr><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span><span class="attr">&quot;packs&quot;</span><span class="punctuation">:</span><span class="punctuation">[</span><span class="punctuation">&#123;</span><span class="attr">&quot;can_be_redownloaded&quot;</span><span class="punctuation">:</span><span class="literal"><span class="keyword">true</span></span><span class="punctuation">,</span><span class="attr">&quot;name&quot;</span><span class="punctuation">:</span><span class="string">&quot; 第一个材质的name的值 &quot;</span><span class="punctuation">,</span><span class="attr">&quot;uuid&quot;</span><span class="punctuation">:</span><span class="string">&quot; 第一个材质的uuid的值 &quot;</span><span class="punctuation">,</span><span class="attr">&quot;version&quot;</span><span class="punctuation">:</span><span class="punctuation">[</span> 第一个材质的version的值 <span class="punctuation">]</span><span class="punctuation">&#125;</span><span class="punctuation">,</span><span class="punctuation">&#123;</span><span class="attr">&quot;can_be_redownloaded&quot;</span><span class="punctuation">:</span><span class="literal"><span class="keyword">true</span></span><span class="punctuation">,</span><span class="attr">&quot;name&quot;</span><span class="punctuation">:</span><span class="string">&quot; 第二个材质的name的值 &quot;</span><span class="punctuation">,</span><span class="attr">&quot;uuid&quot;</span><span class="punctuation">:</span><span class="string">&quot; 第二个材质的uuid的值 &quot;</span><span class="punctuation">,</span><span class="attr">&quot;version&quot;</span><span class="punctuation">:</span><span class="punctuation">[</span> 第二个材质的version的值 <span class="punctuation">]</span><span class="punctuation">&#125;</span><span class="punctuation">]</span><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
+
+<p><code>can_be_redownloaded</code> 的值为 <code>true</code> 和 <code>false</code>，表示是否能够重新下载该材质包。</p>
+<p>接下来打开 <code>world_resource_packs.json</code>，并粘贴如下代码：</p>
+<figure class="highlight json"><table><tr><td class="code"><pre><span class="line"><span class="punctuation">[</span>	</span><br><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">		<span class="attr">&quot;pack_id&quot;</span> <span class="punctuation">:</span> <span class="string">&quot; 上面的uuid的值 &quot;</span><span class="punctuation">,</span></span><br><span class="line">		<span class="attr">&quot;version&quot;</span> <span class="punctuation">:</span> <span class="punctuation">[</span> 上面的version的值 <span class="punctuation">]</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br><span class="line">	<span class="punctuation">]</span></span><br></pre></td></tr></table></figure>
+
+<p>一个材质包由 <code>&#123;&#125;</code> 括起来，如有多个材质包，则需使用则需要使用英文符号 <code>,</code> 分隔。一个材质包的这几个参数需要同时填入以上两个文件才会生效。</p>
+<h2 id="行为包"><a href="#行为包" class="headerlink" title="行为包"></a>行为包</h2><p>行为包操作方法与材质包差不多，首先在根目录找到 <code>behavior_packs</code> 文件夹并将行为包的扩展名改为 <code>.zip</code> 上传到该目录中，解压后获取 <code>manifest.json</code> 的那三个值，将值填入 <code>world_behavior_pack_history.json</code> 和 <code>world_behavior_packs.json</code> 中。带 <code>history</code> 与材质包带 history 的内容一致，不带的与不带的内容一致。</p>
+<h2 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h2><p>1.更换材质包和行为包和需要重启服务端才会生效。<br>2.若之前已从服务器下载过材质包，现在更换新的材质包后没有弹出下载提示窗口，请去游戏的<code>设置——存储——缓存数据</code>中清除对应材质包的缓存之后再次进入服务器。</p>
+]]></content>
+      <categories>
+        <category>游戏</category>
+      </categories>
+      <tags>
+        <tag>技术</tag>
+        <tag>教程</tag>
+        <tag>Minecraft</tag>
+        <tag>材质包</tag>
+        <tag>行为包</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Next 主题部分图片禁用 FancyBox</title>
+    <url>/2023/04/nextthemefancyboxdisabled.html</url>
+    <content><![CDATA[<p>之前用的主题有 fancybox 功能的都有部分图片禁用 fancybox 的功能，看了一遍文档却发现没有这个选项，去 issue 中和 discusstion 中也没找到相关的信息。<span id="more"></span>于是 google 了一下，发现真有<a href="https://blog.csdn.net/cddchina/article/details/79764432">相关教程</a>，不过是 18 年的了，现在 next 主题已经变了很多，fancybox 的 js 代码也没在 utils.js 文件中了。找了一下，发现 fancybox 的相关 js 代码已经单独写在了主题文件夹下的 <code>\source\js\third-party\fancybox.js</code> 中了。</p>
+<p>接着又在网上找到了一篇博客，发现插入的代码较也改进了一下，修改了当鼠标悬浮在已经被禁用 fancybox 效果的图片上时的状态，原文链接：<a href="https://kevin1061517.github.io/blog/posts/Hexo/2721/">https://kevin1061517.github.io/blog/posts/Hexo/2721/</a></p>
+<p>结合两篇博文，最终即为在 <code>\source\js\third-party\fancybox.js</code> 文件中的 <code>const $image = $(element);</code> 这一行与 <code>const imageLink = $image.attr(&#39;data-src&#39;) || $image.attr(&#39;src&#39;);</code> 之间添加以下代码</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">     <span class="keyword">const</span> $image = $(element);</span><br><span class="line">+    <span class="keyword">if</span> ($(element).<span class="title function_">hasClass</span>(<span class="string">&#x27;nofancybox&#x27;</span>))&#123;  <span class="comment">//是否有包含自己定义的nofancybox属性，有就return true</span></span><br><span class="line">+        $(element).<span class="title function_">css</span>(<span class="string">&quot;cursor&quot;</span>,<span class="string">&quot;default&quot;</span>);    <span class="comment">//将碰到图片的鼠标从放大镜变成default模式</span></span><br><span class="line">+        <span class="keyword">return</span>;	<span class="comment">//不进行下面的fancybox的配置</span></span><br><span class="line">+      &#125;</span><br><span class="line">     <span class="keyword">const</span> imageLink = $image.<span class="title function_">attr</span>(<span class="string">&#x27;data-src&#x27;</span>) || $image.<span class="title function_">attr</span>(<span class="string">&#x27;src&#x27;</span>);</span><br></pre></td></tr></table></figure>
+
+<p>以下为方便复制的代码</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">if</span> ($(element).<span class="title function_">hasClass</span>(<span class="string">&#x27;nofancybox&#x27;</span>))&#123;  <span class="comment">//是否有包含自己定义的nofancybox属性，有就return true</span></span><br><span class="line">    $(element).<span class="title function_">css</span>(<span class="string">&quot;cursor&quot;</span>,<span class="string">&quot;default&quot;</span>);    <span class="comment">//将碰到图片的鼠标从放大镜变成default模式</span></span><br><span class="line">    <span class="keyword">return</span>;	<span class="comment">//不进行下面的fancybox的配置</span></span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+
+<p>之后只要给不想有 fancybox 效果的 <code>&lt;img&gt;</code> 元素增加 <code>class=&quot;nofancybox&quot;</code> 即可。</p>
+<hr>
+<p>后续更新来了，上面的代码是 jQuery 版的 Fancybox 的，现主题最新版本已完全去除 jQuery 的依赖且更新到了 Fancybox 5，上面的代码自然也就失效了。虽然不会 js，还是试着在 Google 和 Chatgpt 的帮助下改了一下代码。可以适配最新版本了。</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="variable language_">document</span>.<span class="title function_">querySelectorAll</span>(<span class="string">&#x27;.post-body :not(a) &gt; img, .post-body &gt; img&#x27;</span>).<span class="title function_">forEach</span>(<span class="function"><span class="params">image</span> =&gt;</span> &#123;</span><br><span class="line">+    <span class="keyword">if</span> (image.<span class="property">classList</span>.<span class="title function_">contains</span>(<span class="string">&#x27;nofancybox&#x27;</span>))&#123;  <span class="comment">//是否有包含自己定义的nofancybox属性，有就return true</span></span><br><span class="line">+      image.<span class="property">style</span>.<span class="property">cursor</span> = <span class="string">&#x27;default&#x27;</span>;    <span class="comment">//将碰到图片的鼠标从放大镜变成default模式</span></span><br><span class="line">+      <span class="keyword">return</span>;	<span class="comment">//不进行下面的fancybox的配置</span></span><br><span class="line">+    &#125;</span><br><span class="line">    <span class="keyword">const</span> imageLink = image.<span class="property">dataset</span>.<span class="property">src</span> || image.<span class="property">src</span>;</span><br></pre></td></tr></table></figure>
+
+<p>方便复制的版本</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">if</span> (image.<span class="property">classList</span>.<span class="title function_">contains</span>(<span class="string">&#x27;nofancybox&#x27;</span>))&#123;  <span class="comment">//是否有包含自己定义的nofancybox属性，有就return true</span></span><br><span class="line">  image.<span class="property">style</span>.<span class="property">cursor</span> = <span class="string">&#x27;default&#x27;</span>;    <span class="comment">//将碰到图片的鼠标从放大镜变成default模式</span></span><br><span class="line">  <span class="keyword">return</span>;	<span class="comment">//不进行下面的fancybox的配置</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>同样的，只要给不想有 fancybox 效果的 <code>&lt;img&gt;</code> 元素增加 <code>class=&quot;nofancybox&quot;</code> 即可。</p>
+]]></content>
+      <categories>
+        <category>技术</category>
+      </categories>
+      <tags>
+        <tag>Hexo</tag>
+        <tag>技术</tag>
+        <tag>JavaScript</tag>
       </tags>
   </entry>
   <entry>
@@ -134,40 +150,10 @@
         <category>技术</category>
       </categories>
       <tags>
+        <tag>Hexo</tag>
+        <tag>技术</tag>
         <tag>教程</tag>
-        <tag>技术</tag>
-        <tag>Hexo</tag>
         <tag>Next</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Next 主题部分图片禁用 FancyBox</title>
-    <url>/2023/04/nextthemefancyboxdisabled.html</url>
-    <content><![CDATA[<p>之前用的主题有 fancybox 功能的都有部分图片禁用 fancybox 的功能，看了一遍文档却发现没有这个选项，去 issue 中和 discusstion 中也没找到相关的信息。<span id="more"></span>于是 google 了一下，发现真有<a href="https://blog.csdn.net/cddchina/article/details/79764432">相关教程</a>，不过是 18 年的了，现在 next 主题已经变了很多，fancybox 的 js 代码也没在 utils.js 文件中了。找了一下，发现 fancybox 的相关 js 代码已经单独写在了主题文件夹下的 <code>\source\js\third-party\fancybox.js</code> 中了。</p>
-<p>接着又在网上找到了一篇博客，发现插入的代码较也改进了一下，修改了当鼠标悬浮在已经被禁用 fancybox 效果的图片上时的状态，原文链接：<a href="https://kevin1061517.github.io/blog/posts/Hexo/2721/">https://kevin1061517.github.io/blog/posts/Hexo/2721/</a></p>
-<p>结合两篇博文，最终即为在 <code>\source\js\third-party\fancybox.js</code> 文件中的 <code>const $image = $(element);</code> 这一行与 <code>const imageLink = $image.attr(&#39;data-src&#39;) || $image.attr(&#39;src&#39;);</code> 之间添加以下代码</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">     <span class="keyword">const</span> $image = $(element);</span><br><span class="line">+    <span class="keyword">if</span> ($(element).<span class="title function_">hasClass</span>(<span class="string">&#x27;nofancybox&#x27;</span>))&#123;  <span class="comment">//是否有包含自己定义的nofancybox属性，有就return true</span></span><br><span class="line">+        $(element).<span class="title function_">css</span>(<span class="string">&quot;cursor&quot;</span>,<span class="string">&quot;default&quot;</span>);    <span class="comment">//将碰到图片的鼠标从放大镜变成default模式</span></span><br><span class="line">+        <span class="keyword">return</span>;	<span class="comment">//不进行下面的fancybox的配置</span></span><br><span class="line">+      &#125;</span><br><span class="line">     <span class="keyword">const</span> imageLink = $image.<span class="title function_">attr</span>(<span class="string">&#x27;data-src&#x27;</span>) || $image.<span class="title function_">attr</span>(<span class="string">&#x27;src&#x27;</span>);</span><br></pre></td></tr></table></figure>
-
-<p>以下为方便复制的代码</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">if</span> ($(element).<span class="title function_">hasClass</span>(<span class="string">&#x27;nofancybox&#x27;</span>))&#123;  <span class="comment">//是否有包含自己定义的nofancybox属性，有就return true</span></span><br><span class="line">    $(element).<span class="title function_">css</span>(<span class="string">&quot;cursor&quot;</span>,<span class="string">&quot;default&quot;</span>);    <span class="comment">//将碰到图片的鼠标从放大镜变成default模式</span></span><br><span class="line">    <span class="keyword">return</span>;	<span class="comment">//不进行下面的fancybox的配置</span></span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
-
-<p>之后只要给不想有 fancybox 效果的 <code>&lt;img&gt;</code> 元素增加 <code>class=&quot;nofancybox&quot;</code> 即可。</p>
-<hr>
-<p>后续更新来了，上面的代码是 jQuery 版的 Fancybox 的，现主题最新版本已完全去除 jQuery 的依赖且更新到了 Fancybox 5，上面的代码自然也就失效了。虽然不会 js，还是试着在 Google 和 Chatgpt 的帮助下改了一下代码。可以适配最新版本了。</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="variable language_">document</span>.<span class="title function_">querySelectorAll</span>(<span class="string">&#x27;.post-body :not(a) &gt; img, .post-body &gt; img&#x27;</span>).<span class="title function_">forEach</span>(<span class="function"><span class="params">image</span> =&gt;</span> &#123;</span><br><span class="line">+    <span class="keyword">if</span> (image.<span class="property">classList</span>.<span class="title function_">contains</span>(<span class="string">&#x27;nofancybox&#x27;</span>))&#123;  <span class="comment">//是否有包含自己定义的nofancybox属性，有就return true</span></span><br><span class="line">+      image.<span class="property">style</span>.<span class="property">cursor</span> = <span class="string">&#x27;default&#x27;</span>;    <span class="comment">//将碰到图片的鼠标从放大镜变成default模式</span></span><br><span class="line">+      <span class="keyword">return</span>;	<span class="comment">//不进行下面的fancybox的配置</span></span><br><span class="line">+    &#125;</span><br><span class="line">    <span class="keyword">const</span> imageLink = image.<span class="property">dataset</span>.<span class="property">src</span> || image.<span class="property">src</span>;</span><br></pre></td></tr></table></figure>
-
-<p>方便复制的版本</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">if</span> (image.<span class="property">classList</span>.<span class="title function_">contains</span>(<span class="string">&#x27;nofancybox&#x27;</span>))&#123;  <span class="comment">//是否有包含自己定义的nofancybox属性，有就return true</span></span><br><span class="line">  image.<span class="property">style</span>.<span class="property">cursor</span> = <span class="string">&#x27;default&#x27;</span>;    <span class="comment">//将碰到图片的鼠标从放大镜变成default模式</span></span><br><span class="line">  <span class="keyword">return</span>;	<span class="comment">//不进行下面的fancybox的配置</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>同样的，只要给不想有 fancybox 效果的 <code>&lt;img&gt;</code> 元素增加 <code>class=&quot;nofancybox&quot;</code> 即可。</p>
-]]></content>
-      <categories>
-        <category>技术</category>
-      </categories>
-      <tags>
-        <tag>技术</tag>
-        <tag>Hexo</tag>
-        <tag>JavaScript</tag>
       </tags>
   </entry>
   <entry>
@@ -200,54 +186,11 @@
         <category>技术</category>
       </categories>
       <tags>
-        <tag>教程</tag>
-        <tag>技术</tag>
         <tag>Hexo</tag>
+        <tag>技术</tag>
+        <tag>教程</tag>
         <tag>Next</tag>
         <tag>CSS</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Waline 美化教程</title>
-    <url>/2023/04/walinedecoration.html</url>
-    <content><![CDATA[<p>起因是看到许多博客使用的 twikoo 评论系统，觉得 twikoo 的前端样式很好看，与之相对的正在用的 waline 的默认样式是真的不好看，本来打算直接换到 twikoo 的，转念一想，既然是属于样式的东西，为什么不直接用 css 解决呢，没有必要为了一个效果而去换插件。博主的 css 不行，只会 <kbd>F12</kbd> 找到哪个元素改哪个。至于定位元素之类的完全不行＞﹏＜。只要最后好看了就 ok 了！（bushi</p>
-<p>以下为代码部分（部分选择器需要根据实际更换）</p>
-<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="comment">/* 修改waline样式 */</span></span><br><span class="line"><span class="comment">/* 修改评论框外观 */</span></span><br><span class="line"><span class="selector-class">.wl-panel</span> &#123;</span><br><span class="line">    <span class="attribute">border-radius</span>: <span class="number">4px</span> <span class="meta">!important</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-pseudo">:root</span> &#123;</span><br><span class="line">    <span class="attr">--waline-bgcolor-light</span>: transparent <span class="meta">!important</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.wl-btn</span> &#123;</span><br><span class="line">    <span class="attribute">border-radius</span>: <span class="number">0.3em</span> <span class="meta">!important</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* 添加miku的gif为输入区域背景 */</span></span><br><span class="line"><span class="selector-id">#wl-edit</span> &#123;</span><br><span class="line">    <span class="attribute">background</span>: <span class="built_in">url</span>(<span class="string">&quot;/img/wl-bg-mikuchan.gif&quot;</span>) <span class="number">100%</span> <span class="number">100%</span> no-repeat;</span><br><span class="line">    <span class="attribute">background-size</span>: contain <span class="meta">!important</span>;</span><br><span class="line">    <span class="attribute">background-repeat</span>: no-repeat <span class="meta">!important</span>;</span><br><span class="line">    <span class="attribute">background-position</span>: right bottom <span class="meta">!important</span>; </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-id">#waline-wrap</span> <span class="selector-tag">textarea</span><span class="selector-pseudo">:focus</span> &#123;</span><br><span class="line">    <span class="attribute">background</span>: <span class="built_in">url</span>(<span class="string">&quot;/img/wl-bg-mikuchan.gif&quot;</span>) <span class="number">100%</span> <span class="number">100%</span> no-repeat;</span><br><span class="line">    <span class="attribute">background-position</span>-y: <span class="number">78px</span> <span class="meta">!important</span>;</span><br><span class="line">    <span class="attribute">transition</span>: all <span class="number">0.25s</span> ease-in-out <span class="number">0s</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* 修改评论区内容背景 */</span></span><br><span class="line"><span class="selector-class">.wl-card</span> <span class="selector-class">.wl-content</span> &#123;</span><br><span class="line">    <span class="attribute">background</span>: <span class="number">#f5f5f5</span>;</span><br><span class="line">    <span class="attribute">padding</span>: <span class="number">16px</span> <span class="meta">!important</span>;</span><br><span class="line">    <span class="attribute">margin</span>: <span class="number">12px</span> <span class="number">0</span> <span class="number">8px</span> <span class="meta">!important</span>;</span><br><span class="line">    <span class="attribute">border-radius</span>: <span class="number">3px</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.wl-card</span> &#123;</span><br><span class="line">    <span class="attribute">border-bottom</span>: none <span class="meta">!important</span>;</span><br><span class="line">    <span class="attribute">padding-bottom</span>: <span class="number">0px</span> <span class="meta">!important</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.wl-cards</span> <span class="selector-class">.wl-item</span>&#123;</span><br><span class="line">    <span class="attribute">padding</span>: .<span class="number">5em</span> .<span class="number">5em</span> <span class="number">0px</span> <span class="meta">!important</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>效果图如下（因图片是截取自评论区而打了码，头像这些不属于以上代码，后面可以考虑改一下默认头像）</p>
-<p><img data-src="https://img.fufu.ink/iTcakI.webp" alt="Waline评论框美化效果"></p>
-<p><img data-src="https://img.fufu.ink/JDVkhh.webp" alt="Waline评论区美化效果"></p>
-<p>其中评论框的背景 gif 需要自己下载下来放到 <code>/source/img/</code> 下即可（记得重命名），别直接用我的博客的地址！（就这么点大小的图片就别直接挂别人的链接了吧，虽然我也不会做防盗链…）</p>
-<p>修改文本输入框中的提示文字需要到主题的配置文件中找到 waline 的配置项，在其中添加 <code>locale: &#123;placeholder: &#39;提示文字&#39;&#125;</code> 即可，以主题 butterfly 为例，则需要在 option 中添加该行代码，需要注意缩进，如下所示</p>
-<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">waline:</span></span><br><span class="line">  <span class="attr">serverURL:</span> <span class="comment"># Waline server address url</span></span><br><span class="line">  <span class="attr">bg:</span> <span class="comment"># waline background</span></span><br><span class="line">  <span class="attr">pageview:</span> <span class="literal">false</span></span><br><span class="line">  <span class="attr">option:</span></span><br><span class="line">    <span class="attr">locale:</span> &#123;<span class="attr">placeholder:</span> <span class="string">&#x27;提示文字&#x27;</span>&#125;</span><br></pre></td></tr></table></figure>
-
-<p>最后就是上面效果图的样子啦！</p>
-]]></content>
-      <categories>
-        <category>技术</category>
-      </categories>
-      <tags>
-        <tag>教程</tag>
-        <tag>技术</tag>
-        <tag>Hexo</tag>
-        <tag>CSS</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>【每日语法】~さえ~ば</title>
-    <url>/2023/05/mnnhgbp5.html</url>
-    <content><![CDATA[<p>接续：</p>
-<blockquote>
-<p>N + さえ + 假定形<br>A（く形）&#x2F; NA（て形）+ さえあれば<br>V（ます形）&#x2F; サ变动词词干 + さえすれば</p>
-</blockquote>
-<p>意为「只要···就···」。关于假定形的变形方法，请参考<a href="/2023/04/mnnhgbp1.html">『【每日语法】~ば~ほど』</a>的文末表格。</p>
-<p>例句：やすくさえあれば、買いましょう。<br>译：只要便宜的话就买吧！</p>
-]]></content>
-      <categories>
-        <category>日语</category>
-      </categories>
-      <tags>
-        <tag>日语</tag>
       </tags>
   </entry>
   <entry>
@@ -277,6 +220,20 @@
         <tag>书摘</tag>
         <tag>局外人</tag>
         <tag>堕落</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>39 快乐</title>
+    <url>/2023/03/sankyuomedetou.html</url>
+    <content><![CDATA[<p>日语中，3 音读读作「さん」，而训读读作「み」；9 音读读作「きゅう」，而训读读作「く」。39 按照训读即为「みく」，也就是「miku」；按照音读读作「さんきゅう」，即为英语中的 thank you（谢谢）。更巧合的是，miku 的生日 8 月 31 日，月份和日期加起来刚好为 39。这一切都和 miku 联系了起来，因此 3 月 9 日这天也被术术人们称为「39感谢日」或者「mikuの日」。</p>
+<p>祝所有的术术人 39 快乐！</p>
+]]></content>
+      <categories>
+        <category>日常</category>
+      </categories>
+      <tags>
+        <tag>节日</tag>
+        <tag>二次元</tag>
       </tags>
   </entry>
   <entry>
@@ -318,6 +275,49 @@
         <tag>维荣之妻</tag>
         <tag>斜阳</tag>
         <tag>太宰治</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Waline 美化教程</title>
+    <url>/2023/04/walinedecoration.html</url>
+    <content><![CDATA[<p>起因是看到许多博客使用的 twikoo 评论系统，觉得 twikoo 的前端样式很好看，与之相对的正在用的 waline 的默认样式是真的不好看，本来打算直接换到 twikoo 的，转念一想，既然是属于样式的东西，为什么不直接用 css 解决呢，没有必要为了一个效果而去换插件。博主的 css 不行，只会 <kbd>F12</kbd> 找到哪个元素改哪个。至于定位元素之类的完全不行＞﹏＜。只要最后好看了就 ok 了！（bushi</p>
+<p>以下为代码部分（部分选择器需要根据实际更换）</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="comment">/* 修改waline样式 */</span></span><br><span class="line"><span class="comment">/* 修改评论框外观 */</span></span><br><span class="line"><span class="selector-class">.wl-panel</span> &#123;</span><br><span class="line">    <span class="attribute">border-radius</span>: <span class="number">4px</span> <span class="meta">!important</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-pseudo">:root</span> &#123;</span><br><span class="line">    <span class="attr">--waline-bgcolor-light</span>: transparent <span class="meta">!important</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.wl-btn</span> &#123;</span><br><span class="line">    <span class="attribute">border-radius</span>: <span class="number">0.3em</span> <span class="meta">!important</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* 添加miku的gif为输入区域背景 */</span></span><br><span class="line"><span class="selector-id">#wl-edit</span> &#123;</span><br><span class="line">    <span class="attribute">background</span>: <span class="built_in">url</span>(<span class="string">&quot;/img/wl-bg-mikuchan.gif&quot;</span>) <span class="number">100%</span> <span class="number">100%</span> no-repeat;</span><br><span class="line">    <span class="attribute">background-size</span>: contain <span class="meta">!important</span>;</span><br><span class="line">    <span class="attribute">background-repeat</span>: no-repeat <span class="meta">!important</span>;</span><br><span class="line">    <span class="attribute">background-position</span>: right bottom <span class="meta">!important</span>; </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-id">#waline-wrap</span> <span class="selector-tag">textarea</span><span class="selector-pseudo">:focus</span> &#123;</span><br><span class="line">    <span class="attribute">background</span>: <span class="built_in">url</span>(<span class="string">&quot;/img/wl-bg-mikuchan.gif&quot;</span>) <span class="number">100%</span> <span class="number">100%</span> no-repeat;</span><br><span class="line">    <span class="attribute">background-position</span>-y: <span class="number">78px</span> <span class="meta">!important</span>;</span><br><span class="line">    <span class="attribute">transition</span>: all <span class="number">0.25s</span> ease-in-out <span class="number">0s</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* 修改评论区内容背景 */</span></span><br><span class="line"><span class="selector-class">.wl-card</span> <span class="selector-class">.wl-content</span> &#123;</span><br><span class="line">    <span class="attribute">background</span>: <span class="number">#f5f5f5</span>;</span><br><span class="line">    <span class="attribute">padding</span>: <span class="number">16px</span> <span class="meta">!important</span>;</span><br><span class="line">    <span class="attribute">margin</span>: <span class="number">12px</span> <span class="number">0</span> <span class="number">8px</span> <span class="meta">!important</span>;</span><br><span class="line">    <span class="attribute">border-radius</span>: <span class="number">3px</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.wl-card</span> &#123;</span><br><span class="line">    <span class="attribute">border-bottom</span>: none <span class="meta">!important</span>;</span><br><span class="line">    <span class="attribute">padding-bottom</span>: <span class="number">0px</span> <span class="meta">!important</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.wl-cards</span> <span class="selector-class">.wl-item</span>&#123;</span><br><span class="line">    <span class="attribute">padding</span>: .<span class="number">5em</span> .<span class="number">5em</span> <span class="number">0px</span> <span class="meta">!important</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>效果图如下（因图片是截取自评论区而打了码，头像这些不属于以上代码，后面可以考虑改一下默认头像）</p>
+<p><img data-src="https://img.fufu.ink/iTcakI.webp" alt="Waline评论框美化效果"></p>
+<p><img data-src="https://img.fufu.ink/JDVkhh.webp" alt="Waline评论区美化效果"></p>
+<p>其中评论框的背景 gif 需要自己下载下来放到 <code>/source/img/</code> 下即可（记得重命名），别直接用我的博客的地址！（就这么点大小的图片就别直接挂别人的链接了吧，虽然我也不会做防盗链…）</p>
+<p>修改文本输入框中的提示文字需要到主题的配置文件中找到 waline 的配置项，在其中添加 <code>locale: &#123;placeholder: &#39;提示文字&#39;&#125;</code> 即可，以主题 butterfly 为例，则需要在 option 中添加该行代码，需要注意缩进，如下所示</p>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">waline:</span></span><br><span class="line">  <span class="attr">serverURL:</span> <span class="comment"># Waline server address url</span></span><br><span class="line">  <span class="attr">bg:</span> <span class="comment"># waline background</span></span><br><span class="line">  <span class="attr">pageview:</span> <span class="literal">false</span></span><br><span class="line">  <span class="attr">option:</span></span><br><span class="line">    <span class="attr">locale:</span> &#123;<span class="attr">placeholder:</span> <span class="string">&#x27;提示文字&#x27;</span>&#125;</span><br></pre></td></tr></table></figure>
+
+<p>最后就是上面效果图的样子啦！</p>
+]]></content>
+      <categories>
+        <category>技术</category>
+      </categories>
+      <tags>
+        <tag>Hexo</tag>
+        <tag>技术</tag>
+        <tag>教程</tag>
+        <tag>CSS</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>【每日语法】~さえ~ば</title>
+    <url>/2023/05/mnnhgbp5.html</url>
+    <content><![CDATA[<p>接续：</p>
+<blockquote>
+<p>N + さえ + 假定形<br>A（く形）&#x2F; NA（て形）+ さえあれば<br>V（ます形）&#x2F; サ变动词词干 + さえすれば</p>
+</blockquote>
+<p>意为「只要···就···」。关于假定形的变形方法，请参考<a href="/2023/04/mnnhgbp1.html">『【每日语法】~ば~ほど』</a>的文末表格。</p>
+<p>例句：やすくさえあれば、買いましょう。<br>译：只要便宜的话就买吧！</p>
+]]></content>
+      <categories>
+        <category>日语</category>
+      </categories>
+      <tags>
+        <tag>日语</tag>
       </tags>
   </entry>
   <entry>
@@ -378,6 +378,121 @@
       </tags>
   </entry>
   <entry>
+    <title>【每日语法】N1 易混语法总结</title>
+    <url>/2024/03/mnnhgbp6.html</url>
+    <content><![CDATA[<details class="note default no-icon"><summary><p><strong>自不必说</strong>的表达，后常续「も」「さえ」「まで」等</p>
+</summary>
+<p>～はもちろん、～</p>
+<p>～は言うまでもなく、～</p>
+<p>～は言わずもがな、～</p>
+<p>～どころか、～</p>
+<p>～もさることながら、～</p>
+<p>～は言うに及ばず、～</p>
+
+</details>
+
+<details class="note default no-icon"><summary><p><strong>姑且不论</strong>（部分句子可译为「如果……的话，还情有可原，但……」）的表达</p>
+</summary>
+<p>～ならいざしらず、～</p>
+<p>～なら&#x2F;はともかく、～</p>
+<p>～なら&#x2F;は別だが、～</p>
+<p>～なら&#x2F;はまだしも、～</p>
+<p>～はさておき&#x2F;はさておいて～</p>
+
+</details>
+]]></content>
+      <categories>
+        <category>日语</category>
+      </categories>
+      <tags>
+        <tag>日语</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>【每日语法】てある及相似语法的对比</title>
+    <url>/2023/05/mnnhgbp4.html</url>
+    <content><![CDATA[<h2 id="意思一"><a href="#意思一" class="headerlink" title="意思一"></a>意思一</h2><blockquote>
+<p>接续：V（他动词，て形）+ ある</p>
+</blockquote>
+<p>表示动作结果的存续，该语法只涉及动作的对象，不涉及动作的主体。该句型有着「某个人做了某个动作，导致了这样的状态，但是这个人是谁并不重要」这样的意思。简单点说就是<strong>他动词的状态的持续</strong>。需要注意的是动词虽然为他动词，但动作的对象却要用<strong>「が」</strong>来表示。</p>
+<p>同样表示状态的持续的语法还有「ている」，那么他俩有什么区别呢？</p>
+<p>在对比前我们先回顾一下「ている」这个语法</p>
+<ul>
+<li>当动词为<strong>他动词</strong>时，表示动作的正在进行，意为「正在…」，比如「手紙を書いている」意为「我正在写信」</li>
+<li>当动词为<strong>自动词</strong>时，表示状态的持续，例如「鈴木さんは今出かけていますが…」，意为「铃木现在出去了…」</li>
+<li>表示动作的反复，常用于习惯或自然现象等</li>
+<li>表示性质或状态，比如「この機械の性能が<ruby>優<rt>すぐ</rt>れている</ruby>」意为「这台机器性能好」</li>
+</ul>
+<p>可以看到，表示状态的持续时，「ている」的前面的动词为自动词，而「てある」则为他动词。并且「ている」只是表示状态的持续，并不包含状态产生的原因，这个状态可以是人为造成的，也可以是自然而然发生的；但「てある」的状态一定是<strong>人为</strong>的，即一定是某个人去做了某个动作才产生了这样的状态。</p>
+<p>补充说明，当「てある」前面的动词为<strong>被动态</strong>时，能够更让人能够感受到这个做动作的人的存在。</p>
+<h2 id="意思二"><a href="#意思二" class="headerlink" title="意思二"></a>意思二</h2><blockquote>
+<p>接续：V（て形）+ ある</p>
+</blockquote>
+<p>这里表示<strong>已经提前做好某事的状态</strong>，自、他动词均可使用，意为「已经提前…」。</p>
+<p>例句：論文を書くために、資料をたくさん集めてある。<br>译：为了写论文，已经提前收集好了许多资料。</p>
+<p>同样，表示提前做好某事的意思的语法还有「ておく」，那么这两个语法之间有什么区别呢？</p>
+<p>首先回忆一下「ておく」这个语法：</p>
+<ul>
+<li>表示提前做好某事，以备不时之需</li>
+<li>表示保持状态不变，听之任之</li>
+<li>表示放任不管</li>
+</ul>
+<p>注意，「ておく」的「提前做好某事」具体点说是「<strong>将要</strong>提前做好某事」，实际现在还没有做，强调的是「提前做好」这个<strong>动作性</strong>；「てある」则表示的是「<strong>已经</strong>提前做好某事」，强调的是「提前做好」这个动作完成后的<strong>状态的持续</strong>。</p>
+<p>对比例句：</p>
+<ul>
+<li>この提案を一応考えてある。（已经事先考虑过这个提案。）</li>
+<li>この提案を一応考えておく。（将会事先考虑一下这个提案。）</li>
+</ul>
+<p>当「ておく」变为过去时，与「てある」的意思就更为相似，更加难以区分，比如下面两句：</p>
+<ul>
+<li>ビールをたくさん買っておいたが、人が多いので、もうなくなってしまった。（○）</li>
+<li>ビールをたくさん買ってあるが、人が多いので、もうなくなってしまった。（×）</li>
+</ul>
+<p>因为「買っておいた」只表示「提前买好」这一过去的动作，而「買ってある」则表示「提前买好」这一状态且该状态持续到了说话时，按此逻辑，如果买好了许多酒的状态持续到了说话时，后文却又说因为人多已经没酒了，就出现了前后意思的矛盾，因此这里只能用「買っておいた」。</p>
+<h2 id="意思三"><a href="#意思三" class="headerlink" title="意思三"></a>意思三</h2><blockquote>
+<p>接续：V（て形）+ ある</p>
+</blockquote>
+<p>表示<strong>放任或允许的状态</strong>。常常和自动词<strong>使役态</strong>搭配使用。</p>
+<p>例句：娘を日本語学校に通わせてある。<br>译：让女儿去日语学校上学。</p>
+<p>相似的还有「ておく」，其也有放任不管，听之任之的意思。</p>
+<p><strong>注：本文部分解释与例句来源于『日语语法教程——讲义与练习』一书，如造成侵权，请联系删除。</strong></p>
+]]></content>
+      <categories>
+        <category>日语</category>
+      </categories>
+      <tags>
+        <tag>日语</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>【笔记·古典日语】五十音和发音</title>
+    <url>/2024/04/kobun1.html</url>
+    <content><![CDATA[<p>五十音图与现代日语区别如下：</p>
+<p><img data-src="https://img.fufu.ink/OmfFKP.webp"></p>
+<p>ワ行的发音为「wa，i，u，e，o」</p>
+<p><strong>需要注意 ゐ 与 ゑ 的写法</strong></p>
+<p>然后是过去与现在的读法的不同，有五个种类</p>
+<p>第一种，は行的音读作ワ行的发音（当该音位于词头时就そのまま读出来，不需要变音），注意只是读音对应，并非写法对应</p>
+<p><img data-src="https://img.fufu.ink/WC3e6D.webp"></p>
+<p>第二种，元音重叠的读法</p>
+<p><img data-src="https://img.fufu.ink/1Q0YU9.webp"></p>
+<p>第三种，「てふ」与「けふ」的发音，由前两种方法可以推导出发音来</p>
+<p><img data-src="https://img.fufu.ink/Ctqkfh.webp"></p>
+<p>第四种，ゐ，ゑ，を的发音</p>
+<p><img data-src="https://img.fufu.ink/v6Fwjk.webp"></p>
+<p>第五种，「む」发成「ん」的音</p>
+<p><img data-src="https://img.fufu.ink/P4VCRG.webp"></p>
+]]></content>
+      <categories>
+        <category>日语</category>
+      </categories>
+      <tags>
+        <tag>日语</tag>
+        <tag>古典日语</tag>
+        <tag>语法</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>【每日语法】「既然~就~」的表达方法</title>
     <url>/2023/04/mnnhgbp3.html</url>
     <content><![CDATA[<blockquote>
@@ -433,65 +548,6 @@
       </categories>
       <tags>
         <tag>日语</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>【每日语法】N1 易混语法总结</title>
-    <url>/2024/03/mnnhgbp6.html</url>
-    <content><![CDATA[<details class="note default no-icon"><summary><p><strong>自不必说</strong>的表达，后常续「も」「さえ」「まで」等</p>
-</summary>
-<p>～はもちろん、～</p>
-<p>～は言うまでもなく、～</p>
-<p>～は言わずもがな、～</p>
-<p>～どころか、～</p>
-<p>～もさることながら、～</p>
-<p>～は言うに及ばず、～</p>
-
-</details>
-
-<details class="note default no-icon"><summary><p><strong>姑且不论</strong>（部分句子可译为「如果……的话，还情有可原，但……」）的表达</p>
-</summary>
-<p>～ならいざしらず、～</p>
-<p>～なら&#x2F;はともかく、～</p>
-<p>～なら&#x2F;は別だが、～</p>
-<p>～なら&#x2F;はまだしも、～</p>
-<p>～はさておき&#x2F;はさておいて～</p>
-
-</details>
-]]></content>
-      <categories>
-        <category>日语</category>
-      </categories>
-      <tags>
-        <tag>日语</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>【笔记·古典日语】五十音和发音</title>
-    <url>/2024/04/kobun1.html</url>
-    <content><![CDATA[<p>五十音图与现代日语区别如下：</p>
-<p><img data-src="https://img.fufu.ink/OmfFKP.webp"></p>
-<p>ワ行的发音为「wa，i，u，e，o」</p>
-<p><strong>需要注意 ゐ 与 ゑ 的写法</strong></p>
-<p>然后是过去与现在的读法的不同，有五个种类</p>
-<p>第一种，は行的音读作ワ行的发音（当该音位于词头时就そのまま读出来，不需要变音），注意只是读音对应，并非写法对应</p>
-<p><img data-src="https://img.fufu.ink/WC3e6D.webp"></p>
-<p>第二种，元音重叠的读法</p>
-<p><img data-src="https://img.fufu.ink/1Q0YU9.webp"></p>
-<p>第三种，「てふ」与「けふ」的发音，由前两种方法可以推导出发音来</p>
-<p><img data-src="https://img.fufu.ink/Ctqkfh.webp"></p>
-<p>第四种，ゐ，ゑ，を的发音</p>
-<p><img data-src="https://img.fufu.ink/v6Fwjk.webp"></p>
-<p>第五种，「む」发成「ん」的音</p>
-<p><img data-src="https://img.fufu.ink/P4VCRG.webp"></p>
-]]></content>
-      <categories>
-        <category>日语</category>
-      </categories>
-      <tags>
-        <tag>日语</tag>
-        <tag>古典日语</tag>
-        <tag>语法</tag>
       </tags>
   </entry>
   <entry>
@@ -621,6 +677,33 @@
       </tags>
   </entry>
   <entry>
+    <title>【笔记·古典日语】助动词「す·さす·しむ」</title>
+    <url>/2024/04/kobun11.html</url>
+    <content><![CDATA[<h2 id="活用·接续"><a href="#活用·接续" class="headerlink" title="活用·接续"></a>活用·接续</h2><p>活用方式与下二段动词一致</p>
+<p>接续：前接<strong>未然形</strong>。す前续四段动词，ナ变动词，ラ变动词的未然形，さす前续<strong>非</strong>「四段动词，ナ变动词，ラ变动词」的未然形，しむ则没有限制，只要是活用语的未然形都可以接</p>
+<p><img data-src="https://img.fufu.ink/xXjTYD.webp"></p>
+<h2 id="作用"><a href="#作用" class="headerlink" title="作用"></a>作用</h2><p>作用有两个</p>
+<ul>
+<li>使役，可译为「せる・させる」</li>
+<li>尊敬，可译为「なさる・お～になる」。表示尊敬的时候的「す・さす・しむ」本身不翻译，而是和表示尊敬的词一起译为现在表示尊敬的说法</li>
+</ul>
+<h2 id="判断方法"><a href="#判断方法" class="headerlink" title="判断方法"></a>判断方法</h2><p>首先，先看「す・さす・しむ」后面有没有出现表示尊敬的词</p>
+<ul>
+<li>后面没有出现表示尊敬的词，为<strong>表示使役</strong></li>
+<li>后面出现了表示尊敬的补助动词<strong>「おはす・おはします」</strong>时，<strong>表示尊敬</strong></li>
+<li>后面出现助动词「給ふ・らる」时，<strong>既可以表示尊敬，也可以表示使役，也可以同时表示两者</strong>，需根据实际语境进行判断</li>
+</ul>
+]]></content>
+      <categories>
+        <category>日语</category>
+      </categories>
+      <tags>
+        <tag>日语</tag>
+        <tag>古典日语</tag>
+        <tag>语法</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>【笔记·古典日语】助动词「たり·り」</title>
     <url>/2024/04/kobun14.html</url>
     <content><![CDATA[<h2 id="活用·接续"><a href="#活用·接续" class="headerlink" title="活用·接续"></a>活用·接续</h2><p>たり・り的活用符合ラ変型</p>
@@ -687,33 +770,6 @@
       </tags>
   </entry>
   <entry>
-    <title>【笔记·古典日语】助动词「す·さす·しむ」</title>
-    <url>/2024/04/kobun11.html</url>
-    <content><![CDATA[<h2 id="活用·接续"><a href="#活用·接续" class="headerlink" title="活用·接续"></a>活用·接续</h2><p>活用方式与下二段动词一致</p>
-<p>接续：前接<strong>未然形</strong>。す前续四段动词，ナ变动词，ラ变动词的未然形，さす前续<strong>非</strong>「四段动词，ナ变动词，ラ变动词」的未然形，しむ则没有限制，只要是活用语的未然形都可以接</p>
-<p><img data-src="https://img.fufu.ink/xXjTYD.webp"></p>
-<h2 id="作用"><a href="#作用" class="headerlink" title="作用"></a>作用</h2><p>作用有两个</p>
-<ul>
-<li>使役，可译为「せる・させる」</li>
-<li>尊敬，可译为「なさる・お～になる」。表示尊敬的时候的「す・さす・しむ」本身不翻译，而是和表示尊敬的词一起译为现在表示尊敬的说法</li>
-</ul>
-<h2 id="判断方法"><a href="#判断方法" class="headerlink" title="判断方法"></a>判断方法</h2><p>首先，先看「す・さす・しむ」后面有没有出现表示尊敬的词</p>
-<ul>
-<li>后面没有出现表示尊敬的词，为<strong>表示使役</strong></li>
-<li>后面出现了表示尊敬的补助动词<strong>「おはす・おはします」</strong>时，<strong>表示尊敬</strong></li>
-<li>后面出现助动词「給ふ・らる」时，<strong>既可以表示尊敬，也可以表示使役，也可以同时表示两者</strong>，需根据实际语境进行判断</li>
-</ul>
-]]></content>
-      <categories>
-        <category>日语</category>
-      </categories>
-      <tags>
-        <tag>日语</tag>
-        <tag>古典日语</tag>
-        <tag>语法</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>【笔记·古典日语】助动词「つ·ぬ」</title>
     <url>/2024/04/kobun13.html</url>
     <content><![CDATA[<h2 id="活用·接续"><a href="#活用·接续" class="headerlink" title="活用·接续"></a>活用·接续</h2><p>つ的活用符合下二段动词的活用方式，需要注意ぬ的活用</p>
@@ -768,61 +824,6 @@
 </ul>
 <p>后续表示<strong>推量</strong>的助动词「べし・む」等时，表示<strong>加强语气（強意）</strong>，全部形式如下</p>
 <p><img data-src="https://img.fufu.ink/a4luFx.webp"></p>
-]]></content>
-      <categories>
-        <category>日语</category>
-      </categories>
-      <tags>
-        <tag>日语</tag>
-        <tag>古典日语</tag>
-        <tag>语法</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>【笔记·古典日语】助动词「らむ」</title>
-    <url>/2024/04/kobun16.html</url>
-    <content><![CDATA[<h2 id="活用·接续"><a href="#活用·接续" class="headerlink" title="活用·接续"></a>活用·接续</h2><p>接续：终止形 + らむ</p>
-<p>特殊：ラ変動詞・ラ変型的<strong>连体形</strong> + らむ</p>
-<table>
-<thead>
-<tr>
-<th align="center">活用</th>
-<th align="center">らむ</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center">未然形</td>
-<td align="center"></td>
-</tr>
-<tr>
-<td align="center">连用形</td>
-<td align="center"></td>
-</tr>
-<tr>
-<td align="center">终止形</td>
-<td align="center">らむ</td>
-</tr>
-<tr>
-<td align="center">连体形</td>
-<td align="center">らむ</td>
-</tr>
-<tr>
-<td align="center">已然形</td>
-<td align="center">らめ</td>
-</tr>
-<tr>
-<td align="center">命令形</td>
-<td align="center"></td>
-</tr>
-</tbody></table>
-<h2 id="作用"><a href="#作用" class="headerlink" title="作用"></a>作用</h2><p>らむ有 4 个作用</p>
-<ul>
-<li>現在推量：对现在<strong>看不见</strong>的事情进行推测。现代日语可译为「今ごろは～ているだろう」</li>
-<li>現在の<strong>原因</strong>推量：就现在<strong>看见的</strong>事情（眼前发生的事情）或自己的事情，对其发生的<strong>原因进行推测</strong>。现代日语可译为「～（ている）のだろう」。</li>
-<li>現在の婉曲：委婉，现代日语可译为「～ような」。特征为<strong>「らむ + N」</strong>，即らむ作连体形</li>
-<li>現在の伝聞：现代日语可译为「～とかいう」。特征也为<strong>「らむ + N」</strong></li>
-</ul>
-<p>表示委婉和传闻的特征一致，都为<strong>「らむ + N」</strong>，因此具体是表示哪个需要根据语境进行判断。</p>
 ]]></content>
       <categories>
         <category>日语</category>
@@ -901,6 +902,61 @@
       </tags>
   </entry>
   <entry>
+    <title>【笔记·古典日语】助动词「らむ」</title>
+    <url>/2024/04/kobun16.html</url>
+    <content><![CDATA[<h2 id="活用·接续"><a href="#活用·接续" class="headerlink" title="活用·接续"></a>活用·接续</h2><p>接续：终止形 + らむ</p>
+<p>特殊：ラ変動詞・ラ変型的<strong>连体形</strong> + らむ</p>
+<table>
+<thead>
+<tr>
+<th align="center">活用</th>
+<th align="center">らむ</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">未然形</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">连用形</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">终止形</td>
+<td align="center">らむ</td>
+</tr>
+<tr>
+<td align="center">连体形</td>
+<td align="center">らむ</td>
+</tr>
+<tr>
+<td align="center">已然形</td>
+<td align="center">らめ</td>
+</tr>
+<tr>
+<td align="center">命令形</td>
+<td align="center"></td>
+</tr>
+</tbody></table>
+<h2 id="作用"><a href="#作用" class="headerlink" title="作用"></a>作用</h2><p>らむ有 4 个作用</p>
+<ul>
+<li>現在推量：对现在<strong>看不见</strong>的事情进行推测。现代日语可译为「今ごろは～ているだろう」</li>
+<li>現在の<strong>原因</strong>推量：就现在<strong>看见的</strong>事情（眼前发生的事情）或自己的事情，对其发生的<strong>原因进行推测</strong>。现代日语可译为「～（ている）のだろう」。</li>
+<li>現在の婉曲：委婉，现代日语可译为「～ような」。特征为<strong>「らむ + N」</strong>，即らむ作连体形</li>
+<li>現在の伝聞：现代日语可译为「～とかいう」。特征也为<strong>「らむ + N」</strong></li>
+</ul>
+<p>表示委婉和传闻的特征一致，都为<strong>「らむ + N」</strong>，因此具体是表示哪个需要根据语境进行判断。</p>
+]]></content>
+      <categories>
+        <category>日语</category>
+      </categories>
+      <tags>
+        <tag>日语</tag>
+        <tag>古典日语</tag>
+        <tag>语法</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>【笔记·古典日语】助动词「る·らる」</title>
     <url>/2024/04/kobun10.html</url>
     <content><![CDATA[<p>活用及接续</p>
@@ -914,6 +970,25 @@
 <li>尊敬，主语多为身份地位较高的人</li>
 </ul>
 <div class="group-picture"><div class="group-picture-row"><div class="group-picture-column"><img data-src="https://img.fufu.ink/OnN4A2.webp"></div><div class="group-picture-column"><img data-src="https://img.fufu.ink/HA09JZ.webp"></div><div class="group-picture-column"><img data-src="https://img.fufu.ink/3ALgAR.webp"></div></div><div class="group-picture-row"><div class="group-picture-column"><img data-src="https://img.fufu.ink/6I3oZ0.webp"></div></div></div>
+]]></content>
+      <categories>
+        <category>日语</category>
+      </categories>
+      <tags>
+        <tag>日语</tag>
+        <tag>古典日语</tag>
+        <tag>语法</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>【笔记·古典日语】形容动词</title>
+    <url>/2024/04/kobun6.html</url>
+    <content><![CDATA[<p>形容动词有「なり」「たり」两种活用，两种活用除了「と」「に」的连用形较为特殊，其余均与ラ变动词「あり」的活用方式一致，因此活用词尾「たり」「なり」属于<strong>ラ变形</strong></p>
+<p><img data-src="https://img.fufu.ink/XLaWr8.webp"></p>
+<p>使用「なり」「たり」的不同情况。有「々」这样表示重复的符号的为「たり」活用，其余为「なり」活用，可以记一下常见的「なり」前的形式</p>
+<p><img data-src="https://img.fufu.ink/oJpKxK.webp"></p>
+<p>连用形「に」使用的情况</p>
+<p><img data-src="https://img.fufu.ink/syAnm5.webp"></p>
 ]]></content>
       <categories>
         <category>日语</category>
@@ -945,14 +1020,40 @@
       </tags>
   </entry>
   <entry>
-    <title>【笔记·古典日语】形容动词</title>
-    <url>/2024/04/kobun6.html</url>
-    <content><![CDATA[<p>形容动词有「なり」「たり」两种活用，两种活用除了「と」「に」的连用形较为特殊，其余均与ラ变动词「あり」的活用方式一致，因此活用词尾「たり」「なり」属于<strong>ラ变形</strong></p>
-<p><img data-src="https://img.fufu.ink/XLaWr8.webp"></p>
-<p>使用「なり」「たり」的不同情况。有「々」这样表示重复的符号的为「たり」活用，其余为「なり」活用，可以记一下常见的「なり」前的形式</p>
-<p><img data-src="https://img.fufu.ink/oJpKxK.webp"></p>
-<p>连用形「に」使用的情况</p>
-<p><img data-src="https://img.fufu.ink/syAnm5.webp"></p>
+    <title>【笔记·古典日语】形容词</title>
+    <url>/2024/04/kobun5.html</url>
+    <content><![CDATA[<p>形容词分为两类，通过「なる」的接续判断</p>
+<p><img data-src="https://img.fufu.ink/S6lKGs.webp"></p>
+<p><img data-src="https://img.fufu.ink/rrXv0C.webp"></p>
+<p>两者除了终止形变形方式不同，其余变形方式一致。补助活用的活用词尾的活用方式与ラ变动词「あり」的活用方式一致，因此属于<strong>ラ变形</strong></p>
+<p><img data-src="https://img.fufu.ink/U2aUwf.webp"></p>
+<p>补助活用一般后续助动词，本活用一般后续助词或其他</p>
+<p>特例：</p>
+<p><img data-src="https://img.fufu.ink/skZm8P.webp"></p>
+]]></content>
+      <categories>
+        <category>日语</category>
+      </categories>
+      <tags>
+        <tag>日语</tag>
+        <tag>古典日语</tag>
+        <tag>语法</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>【笔记·古典日语】活用形及接续</title>
+    <url>/2024/04/kobun3.html</url>
+    <content><![CDATA[<p>6 种活用形</p>
+<p><img data-src="https://img.fufu.ink/YHh61r.webp"></p>
+<p>活用语：活用的单词。是动词，形容词，形容动词，助动词的总称。</p>
+<p>一些助词和助动词的接续</p>
+<p><img data-src="https://img.fufu.ink/9wRJmG.webp"></p>
+<p>一些助动词的接续（注意括号中的条件，比如り前面接的虽然是已然形，但仅限于四段动词，即り前面接<strong>四段动词的已然形</strong>）</p>
+<p><img data-src="https://img.fufu.ink/HpGciD.webp"></p>
+<p>ラ变动词及ラ变型（非标准定义，个人理解）</p>
+<p>ラ变<strong>动词</strong>：在ラ行上进行活用的，即活用词尾为（ら·り·り·る·れ·れ）形式的动词。ラ变动词只有<strong>「あり」「をり」「はべり」「いまそかり」</strong>四个。</p>
+<p>ラ变<strong>型</strong>：像ラ变动词一样进行活用，即活用词尾也为（ら·り·り·る·れ·れ）形式的<strong>活用语</strong>，如下图</p>
+<p><img data-src="https://img.fufu.ink/EXKIlJ.webp"></p>
 ]]></content>
       <categories>
         <category>日语</category>
@@ -994,86 +1095,6 @@
         <tag>日语</tag>
         <tag>古典日语</tag>
         <tag>语法</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>【笔记·古典日语】活用形及接续</title>
-    <url>/2024/04/kobun3.html</url>
-    <content><![CDATA[<p>6 种活用形</p>
-<p><img data-src="https://img.fufu.ink/YHh61r.webp"></p>
-<p>活用语：活用的单词。是动词，形容词，形容动词，助动词的总称。</p>
-<p>一些助词和助动词的接续</p>
-<p><img data-src="https://img.fufu.ink/9wRJmG.webp"></p>
-<p>一些助动词的接续（注意括号中的条件，比如り前面接的虽然是已然形，但仅限于四段动词，即り前面接<strong>四段动词的已然形</strong>）</p>
-<p><img data-src="https://img.fufu.ink/HpGciD.webp"></p>
-<p>ラ变动词及ラ变型（非标准定义，个人理解）</p>
-<p>ラ变<strong>动词</strong>：在ラ行上进行活用的，即活用词尾为（ら·り·り·る·れ·れ）形式的动词。ラ变动词只有<strong>「あり」「をり」「はべり」「いまそかり」</strong>四个。</p>
-<p>ラ变<strong>型</strong>：像ラ变动词一样进行活用，即活用词尾也为（ら·り·り·る·れ·れ）形式的<strong>活用语</strong>，如下图</p>
-<p><img data-src="https://img.fufu.ink/EXKIlJ.webp"></p>
-]]></content>
-      <categories>
-        <category>日语</category>
-      </categories>
-      <tags>
-        <tag>日语</tag>
-        <tag>古典日语</tag>
-        <tag>语法</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>【每日语法】てある及相似语法的对比</title>
-    <url>/2023/05/mnnhgbp4.html</url>
-    <content><![CDATA[<h2 id="意思一"><a href="#意思一" class="headerlink" title="意思一"></a>意思一</h2><blockquote>
-<p>接续：V（他动词，て形）+ ある</p>
-</blockquote>
-<p>表示动作结果的存续，该语法只涉及动作的对象，不涉及动作的主体。该句型有着「某个人做了某个动作，导致了这样的状态，但是这个人是谁并不重要」这样的意思。简单点说就是<strong>他动词的状态的持续</strong>。需要注意的是动词虽然为他动词，但动作的对象却要用<strong>「が」</strong>来表示。</p>
-<p>同样表示状态的持续的语法还有「ている」，那么他俩有什么区别呢？</p>
-<p>在对比前我们先回顾一下「ている」这个语法</p>
-<ul>
-<li>当动词为<strong>他动词</strong>时，表示动作的正在进行，意为「正在…」，比如「手紙を書いている」意为「我正在写信」</li>
-<li>当动词为<strong>自动词</strong>时，表示状态的持续，例如「鈴木さんは今出かけていますが…」，意为「铃木现在出去了…」</li>
-<li>表示动作的反复，常用于习惯或自然现象等</li>
-<li>表示性质或状态，比如「この機械の性能が<ruby>優<rt>すぐ</rt>れている</ruby>」意为「这台机器性能好」</li>
-</ul>
-<p>可以看到，表示状态的持续时，「ている」的前面的动词为自动词，而「てある」则为他动词。并且「ている」只是表示状态的持续，并不包含状态产生的原因，这个状态可以是人为造成的，也可以是自然而然发生的；但「てある」的状态一定是<strong>人为</strong>的，即一定是某个人去做了某个动作才产生了这样的状态。</p>
-<p>补充说明，当「てある」前面的动词为<strong>被动态</strong>时，能够更让人能够感受到这个做动作的人的存在。</p>
-<h2 id="意思二"><a href="#意思二" class="headerlink" title="意思二"></a>意思二</h2><blockquote>
-<p>接续：V（て形）+ ある</p>
-</blockquote>
-<p>这里表示<strong>已经提前做好某事的状态</strong>，自、他动词均可使用，意为「已经提前…」。</p>
-<p>例句：論文を書くために、資料をたくさん集めてある。<br>译：为了写论文，已经提前收集好了许多资料。</p>
-<p>同样，表示提前做好某事的意思的语法还有「ておく」，那么这两个语法之间有什么区别呢？</p>
-<p>首先回忆一下「ておく」这个语法：</p>
-<ul>
-<li>表示提前做好某事，以备不时之需</li>
-<li>表示保持状态不变，听之任之</li>
-<li>表示放任不管</li>
-</ul>
-<p>注意，「ておく」的「提前做好某事」具体点说是「<strong>将要</strong>提前做好某事」，实际现在还没有做，强调的是「提前做好」这个<strong>动作性</strong>；「てある」则表示的是「<strong>已经</strong>提前做好某事」，强调的是「提前做好」这个动作完成后的<strong>状态的持续</strong>。</p>
-<p>对比例句：</p>
-<ul>
-<li>この提案を一応考えてある。（已经事先考虑过这个提案。）</li>
-<li>この提案を一応考えておく。（将会事先考虑一下这个提案。）</li>
-</ul>
-<p>当「ておく」变为过去时，与「てある」的意思就更为相似，更加难以区分，比如下面两句：</p>
-<ul>
-<li>ビールをたくさん買っておいたが、人が多いので、もうなくなってしまった。（○）</li>
-<li>ビールをたくさん買ってあるが、人が多いので、もうなくなってしまった。（×）</li>
-</ul>
-<p>因为「買っておいた」只表示「提前买好」这一过去的动作，而「買ってある」则表示「提前买好」这一状态且该状态持续到了说话时，按此逻辑，如果买好了许多酒的状态持续到了说话时，后文却又说因为人多已经没酒了，就出现了前后意思的矛盾，因此这里只能用「買っておいた」。</p>
-<h2 id="意思三"><a href="#意思三" class="headerlink" title="意思三"></a>意思三</h2><blockquote>
-<p>接续：V（て形）+ ある</p>
-</blockquote>
-<p>表示<strong>放任或允许的状态</strong>。常常和自动词<strong>使役态</strong>搭配使用。</p>
-<p>例句：娘を日本語学校に通わせてある。<br>译：让女儿去日语学校上学。</p>
-<p>相似的还有「ておく」，其也有放任不管，听之任之的意思。</p>
-<p><strong>注：本文部分解释与例句来源于『日语语法教程——讲义与练习』一书，如造成侵权，请联系删除。</strong></p>
-]]></content>
-      <categories>
-        <category>日语</category>
-      </categories>
-      <tags>
-        <tag>日语</tag>
       </tags>
   </entry>
   <entry>
@@ -1313,27 +1334,6 @@
       </tags>
   </entry>
   <entry>
-    <title>【笔记·古典日语】形容词</title>
-    <url>/2024/04/kobun5.html</url>
-    <content><![CDATA[<p>形容词分为两类，通过「なる」的接续判断</p>
-<p><img data-src="https://img.fufu.ink/S6lKGs.webp"></p>
-<p><img data-src="https://img.fufu.ink/rrXv0C.webp"></p>
-<p>两者除了终止形变形方式不同，其余变形方式一致。补助活用的活用词尾的活用方式与ラ变动词「あり」的活用方式一致，因此属于<strong>ラ变形</strong></p>
-<p><img data-src="https://img.fufu.ink/U2aUwf.webp"></p>
-<p>补助活用一般后续助动词，本活用一般后续助词或其他</p>
-<p>特例：</p>
-<p><img data-src="https://img.fufu.ink/skZm8P.webp"></p>
-]]></content>
-      <categories>
-        <category>日语</category>
-      </categories>
-      <tags>
-        <tag>日语</tag>
-        <tag>古典日语</tag>
-        <tag>语法</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>不断变强的万达</title>
     <url>/2023/08/genshinwandatsuyoi.html</url>
     <content><![CDATA[<p>去年垫池子抽到了达达鸭，今年 1 月份开始练万达国际，入坑一年以来首次打通了深渊（<a href="/2023/01/genshinshenyuanfirst.html">见『纪念第一次打通深渊』</a>），当时的面板没有截图。</p>
@@ -1408,25 +1408,6 @@
       </tags>
   </entry>
   <entry>
-    <title>在追求「快」的时代，我们该何去何从</title>
-    <url>/2023/05/fastjidaidedousurebaii.html</url>
-    <content><![CDATA[<p>不知从什么时候开始，「快」这个概念频繁地出现在我的视野中。周围的人似乎都在不断地追求着它。<span id="more"></span></p>
-<p>最典型的例子就是各大视频软件开始推出「短视频」服务，大家越来越适应不了慢节奏的视频。曾几何时，看见过一个 b 站的评论，大概意思是只有缩短视频时长，才有更大的机会上首页推荐，上首页的都是五分钟内的视频，而那些十多分钟甚至几十分钟的视频却被埋没了，其中不乏许多优质的内容。在我所见到的番剧这一边，许多番剧因为前期铺垫过长而被诟病，以动画『命运石之门』举例，提到这部作品，熟悉的人都知道是一部神作，许多人却因为前部分「剧情推进过慢」「日常太多」而放弃继续追番。再比如『原神』这款游戏，无聊之际点开社区看看，却发现充斥着大量的「剧情又臭又长」「剧情能不能加个跳过按钮」诸如此类的言论。但剧情不正是这款游戏吸引人的一部分吗，我在内心如此发问道。</p>
-<p>以上是从我的视角看见的「快」，但这个信息时代，在更多的我看不见的地方仍然在追求着「快」。</p>
-<p>这个时代很浮躁——这是我的结论。</p>
-<p>我曾向自己发问，自己有多久没有静下心来好好读一本书了，有多久没有钻在一个问题上好好研究过了。尽管我自己是反对这种盲目追求「快节奏」的，但耐心好像也在慢慢地变少，自己也在慢慢的融入这种快节奏的生活，大概也有相当一部分的人也是如此吧，尽管也想慢下来，却被身后的狂潮向前推动，身不由己地变「快」了。</p>
-<p>在这种「快」的狂潮面前，我无能为力，却也不想被其推动，就像飘在海洋上的小船在逆着海风前行一般（也许这个比喻并不恰当）。</p>
-<p>写到这里写不下去了，就这么收尾了罢。借用一句『原神』中的话——「旅行者，当你重新踏上旅途之后，一定要记住旅途本身的意义」。愿你我在这个快节奏的时代能够找到一件能够安下心来做的事情，愿你我不会在「快」的狂潮中迷失了方向，随波逐流。</p>
-]]></content>
-      <categories>
-        <category>日常</category>
-      </categories>
-      <tags>
-        <tag>随笔</tag>
-        <tag>吐槽</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>叕出神子啦加深渊终于凹满了</title>
     <url>/2023/06/genshinkamikoaru.html</url>
     <content><![CDATA[<p>先说说深渊，博主在今年 2 月之前是无论如何都打不过深渊的，2 月后开始练万达国际，学会双扩后，队伍养得差不多后就在 2 月 18 日第一次凹过 12 层，见<a href="/2023/02/genshinshenyuanmanxing.html">『打通深渊后半个月，我又第一次满星深渊！』</a>。此后除了第一期沙虫因为「草行九」练度不够，没有满星之外，每一期都能做到满星了！不过近来几期深渊越来越难，大量的「挤模型」「多动症」「厚盾」「拖时间」的机制怪出现，属实是恶心人。之前圣骸兽博主一直是用「草行九瑶」过的，不过这次由于 12-3 下半是「深罪浸礼者」，队伍中必须有「火 草&#x2F;冰 水」，「草行九」自然就成了选择，再加上了前几天出的宵宫用以破冰盾。问题就是上半该用什么队伍，一开始认为万达打圣骸兽也许很麻烦，就想试着用雷国，可惜博主没怎么练雷神，故试了多种配队后还是决定使用万达。最后是 2 分钟打完了四只圣骸兽，用了剩下 1 分钟过了深罪浸礼者（很险···6分59秒打完的，系统判定为 3 星）。</p>
@@ -1434,22 +1415,6 @@
 <p><img data-src="https://img.fufu.ink/ZDM6sI.webp" alt="下次还填非常简单！"></p>
 <p>然后是垫池子垫出了神子，抽前算的垫了 20 抽了，本来不抱什么希望地单抽了一下，想着不可能这么早出的吧，结果竟然金了，还没歪！</p>
 <p><img data-src="https://img.fufu.ink/4o04wz.webp" alt="21 抽拿下！"></p>
-]]></content>
-      <categories>
-        <category>游戏</category>
-      </categories>
-      <tags>
-        <tag>原神</tag>
-        <tag>游戏</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>小号双黄了！</title>
-    <url>/2023/05/gsxhcjl.html</url>
-    <content><![CDATA[<p>这件事要从去年 11 月草神池刚出的时候说起，之前一直玩的号只抽中了草神（大保底），武器却歪了「飞雷」，于是创了个小号。想着小号前期资源多，肝一肝能在版本结束前拿个 0+1，结果后面发生了一系列事情，最终导致许久没登小号。今年2、3月份重新上了下号，把剧情推到璃月了，攒出了 74 抽，结果歪了莫娜（血的教训！一定不要边肝边抽，必歪！！！），当即下号。</p>
-<p>今天闲来无事，想起了这个号，上号后拿着版本送的原石单抽了一发，本来以为出紫了，结果出金了！于是甘雨拿下~</p>
-<p><img data-src="https://img.fufu.ink/p1lG81.webp" alt="双黄"></p>
-<p>这又让我燃起了对小号培养的热情，本来都打算让这个号废了，毕竟第一个金就歪了，连新手保护期都没了，结果双黄来了，那它就还有被培养的理由！</p>
 ]]></content>
       <categories>
         <category>游戏</category>
@@ -1472,6 +1437,58 @@
       <tags>
         <tag>节日</tag>
         <tag>二次元</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>小号双黄了！</title>
+    <url>/2023/05/gsxhcjl.html</url>
+    <content><![CDATA[<p>这件事要从去年 11 月草神池刚出的时候说起，之前一直玩的号只抽中了草神（大保底），武器却歪了「飞雷」，于是创了个小号。想着小号前期资源多，肝一肝能在版本结束前拿个 0+1，结果后面发生了一系列事情，最终导致许久没登小号。今年2、3月份重新上了下号，把剧情推到璃月了，攒出了 74 抽，结果歪了莫娜（血的教训！一定不要边肝边抽，必歪！！！），当即下号。</p>
+<p>今天闲来无事，想起了这个号，上号后拿着版本送的原石单抽了一发，本来以为出紫了，结果出金了！于是甘雨拿下~</p>
+<p><img data-src="https://img.fufu.ink/p1lG81.webp" alt="双黄"></p>
+<p>这又让我燃起了对小号培养的热情，本来都打算让这个号废了，毕竟第一个金就歪了，连新手保护期都没了，结果双黄来了，那它就还有被培养的理由！</p>
+]]></content>
+      <categories>
+        <category>游戏</category>
+      </categories>
+      <tags>
+        <tag>原神</tag>
+        <tag>游戏</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>在追求「快」的时代，我们该何去何从</title>
+    <url>/2023/05/fastjidaidedousurebaii.html</url>
+    <content><![CDATA[<p>不知从什么时候开始，「快」这个概念频繁地出现在我的视野中。周围的人似乎都在不断地追求着它。<span id="more"></span></p>
+<p>最典型的例子就是各大视频软件开始推出「短视频」服务，大家越来越适应不了慢节奏的视频。曾几何时，看见过一个 b 站的评论，大概意思是只有缩短视频时长，才有更大的机会上首页推荐，上首页的都是五分钟内的视频，而那些十多分钟甚至几十分钟的视频却被埋没了，其中不乏许多优质的内容。在我所见到的番剧这一边，许多番剧因为前期铺垫过长而被诟病，以动画『命运石之门』举例，提到这部作品，熟悉的人都知道是一部神作，许多人却因为前部分「剧情推进过慢」「日常太多」而放弃继续追番。再比如『原神』这款游戏，无聊之际点开社区看看，却发现充斥着大量的「剧情又臭又长」「剧情能不能加个跳过按钮」诸如此类的言论。但剧情不正是这款游戏吸引人的一部分吗，我在内心如此发问道。</p>
+<p>以上是从我的视角看见的「快」，但这个信息时代，在更多的我看不见的地方仍然在追求着「快」。</p>
+<p>这个时代很浮躁——这是我的结论。</p>
+<p>我曾向自己发问，自己有多久没有静下心来好好读一本书了，有多久没有钻在一个问题上好好研究过了。尽管我自己是反对这种盲目追求「快节奏」的，但耐心好像也在慢慢地变少，自己也在慢慢的融入这种快节奏的生活，大概也有相当一部分的人也是如此吧，尽管也想慢下来，却被身后的狂潮向前推动，身不由己地变「快」了。</p>
+<p>在这种「快」的狂潮面前，我无能为力，却也不想被其推动，就像飘在海洋上的小船在逆着海风前行一般（也许这个比喻并不恰当）。</p>
+<p>写到这里写不下去了，就这么收尾了罢。借用一句『原神』中的话——「旅行者，当你重新踏上旅途之后，一定要记住旅途本身的意义」。愿你我在这个快节奏的时代能够找到一件能够安下心来做的事情，愿你我不会在「快」的狂潮中迷失了方向，随波逐流。</p>
+]]></content>
+      <categories>
+        <category>日常</category>
+      </categories>
+      <tags>
+        <tag>随笔</tag>
+        <tag>吐槽</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>小号常驻又出小提了</title>
+    <url>/2023/05/genshinchangzhuxiaoti.html</url>
+    <content><![CDATA[<p>前几天 up 池双黄了，出了莫娜和甘雨，今天又出小提了。</p>
+<p>之前玩大号的时候不怎么玩弓箭手，虽然公子武器是弓箭啦，毕竟战斗时使用的都是近战模式。再加上手柄不好进行瞄准操作…</p>
+<p>不过小号出了甘雨后，才发现玩狙击手是真的舒服，即使只靠平 a，也能打出很高的伤害（话说弓箭手的普攻倍率就是所有角色中最高的）。这小号比大号开荒时要舒服很多，主要是因为大号刚入坑时想在常驻池捞 77，把所有原石都用来抽常驻了，结果 120 发都没出 77，倒是把香班给抽得快满命了。</p>
+<p>接下来就要围绕着甘雨和小提两个主 c 来配队了。</p>
+<p><img data-src="https://img.fufu.ink/ayuNM2.webp" alt="常驻池43抽·小提"></p>
+]]></content>
+      <categories>
+        <category>游戏</category>
+      </categories>
+      <tags>
+        <tag>原神</tag>
+        <tag>游戏</tag>
       </tags>
   </entry>
   <entry>
@@ -1531,25 +1548,8 @@
         <category>技术</category>
       </categories>
       <tags>
-        <tag>技术</tag>
         <tag>Hexo</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>小号常驻又出小提了</title>
-    <url>/2023/05/genshinchangzhuxiaoti.html</url>
-    <content><![CDATA[<p>前几天 up 池双黄了，出了莫娜和甘雨，今天又出小提了。</p>
-<p>之前玩大号的时候不怎么玩弓箭手，虽然公子武器是弓箭啦，毕竟战斗时使用的都是近战模式。再加上手柄不好进行瞄准操作…</p>
-<p>不过小号出了甘雨后，才发现玩狙击手是真的舒服，即使只靠平 a，也能打出很高的伤害（话说弓箭手的普攻倍率就是所有角色中最高的）。这小号比大号开荒时要舒服很多，主要是因为大号刚入坑时想在常驻池捞 77，把所有原石都用来抽常驻了，结果 120 发都没出 77，倒是把香班给抽得快满命了。</p>
-<p>接下来就要围绕着甘雨和小提两个主 c 来配队了。</p>
-<p><img data-src="https://img.fufu.ink/ayuNM2.webp" alt="常驻池43抽·小提"></p>
-]]></content>
-      <categories>
-        <category>游戏</category>
-      </categories>
-      <tags>
-        <tag>原神</tag>
-        <tag>游戏</tag>
+        <tag>技术</tag>
       </tags>
   </entry>
   <entry>
@@ -1632,72 +1632,9 @@
         <category>技术</category>
       </categories>
       <tags>
-        <tag>技术</tag>
         <tag>Hexo</tag>
+        <tag>技术</tag>
         <tag>CSS</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>无题（一）</title>
-    <url>/2024/04/mudai1.html</url>
-    <content><![CDATA[<p>他又在打瞌睡了。</p>
-<p>自从早上来到教室，他就一动不动地趴在那里。</p>
-<p>尽管周围充斥着读书声和同学间的笑谈声，但他似乎置若罔闻，仍旧保持着那副姿势。<span id="more"></span></p>
-<p>终于，上课铃响了。然而，他仍然没有动弹。于是，旁边的同学推了推他。</p>
-<p>“嘿，上课了！”</p>
-<p>“嗯……嗯？”</p>
-<p>他终于醒了过来，揉了揉眼睛，茫然地看着走上讲台的教师。</p>
-<p>这节课是数学课，数学老师是一个矮小精悍的老头。老头大概已有 60 岁了，头发黑白相间，总是穿着一身西服，但不知为何，他总是给人一种永远不会消退的精神气质</p>
-<p>“上课啦——安静！”</p>
-<p>学委提高了声音，试图压过尚未平息的嘈杂声。</p>
-<p>最终，教室恢复了安静，老师打开书，开始了授课。</p>
-<p>他的目光重新投向书本，看着那些熟悉的文字，这些内容在暑假的初升高衔接班上已经讲过了，不过他那时也是这副样子，只是记住了一些文字，而对其意义一窍不通。渐渐地，他开始觉得这些文字变得模糊起来。</p>
-<p>他开始垂着脑袋，点起头来，而且很有规律的，当脖子弯曲到接近 90 度时，忽然又抬起头来，然后又开始缓缓下垂，如此反复。渐渐地，他的身体也晃了起来。</p>
-<p>突然，他朝左侧倒了下去，靠在了旁边女生的身上。</p>
-<p>“哎呀！你干什么！”</p>
-<p>“啊！对不起，睡迷糊了”</p>
-<p>女生一脸无语地看了他一眼。他却是低着头朝她说了一句后，马上又侧过脸去，没看到她的表情。</p>
-<p>经历了刚才这出，他终于是醒过来了。但课程已经进行了一半，早已不知老师讲到了何处。反正也是无聊，于是他拿出一本小说看了起来。</p>
-<p>那是一本科幻小说。他已经看了这个作者写的数本书了，有长篇也有短篇，但都很吸引人，或量子力学，或外星文明，或多维宇宙，他很喜欢这些题材，看完后还常常将书借给同样喜欢科幻的 W。</p>
-<p>刚读了不到一页，老头的声音戛然而止，一只手突然出现在他眼前，遮住了书上的文字。</p>
-<p>他抬起头，面无表情地看着眼前的老头，老头却是一脸担忧的神色。</p>
-<p>“要好好听课啊……”</p>
-<p>他没有做出回应，甚至连头也没点一下，只是一动不动地看着老头。</p>
-<p>老头见状也就作罢，转身回到讲台，继续如同巫师念咒一般地讲着他无法理解的那些数字、字母、符号组成的公式。</p>
-<p>这下书是看不成了，于是他环顾四周，希望找点能够打发这漫长的上课时间的事情。结果，往左一转头，他找到了。</p>
-<p>他的同桌，刚才的那个女生，此刻也像他一样，开始不断地“点头”。</p>
-<p>“诶！诶！醒醒！醒醒！”</p>
-<p>本着还人情的想法，他也推了推她，把她也叫醒了。</p>
-<p>“笑死我了，怎么你也睡了？”</p>
-<p>“哎呀，别吵我，困死了！”</p>
-<p>这个女生叫 X，在他看来，她是个和自己一样上课不听讲，光睡觉的家伙，也经常迟到，被班主任责问时，便露出带有歉意的，腼腆的微笑。每到这时，班主任便气不打一处来，言语中却又带着些无奈。</p>
-<p>“笑，还笑，这有什么好笑的。下次别再迟到了！”</p>
-<p>说罢便让她回到了座位上。这是每隔两三天便会上演一次的戏码，她永远都能够找到合适的理由来为自己开脱，而每次班主任也只好叮嘱，便作罢。</p>
-<p>对他来说，这样的事情倒是给他无聊的生活增添了些许乐趣。毕竟他就是喜欢看别人倒霉的人，他无法容忍别人比他优秀，又蔑视那些不如他的人，看到他人遭遇不幸，他反而觉得心里舒畅。</p>
-<p>”叮——“</p>
-<p>第一节课终于结束了。</p>
-<p>他又趴了下去，老头走到他面前，拍了拍他。</p>
-<p>“D，你上课要听啊……”</p>
-<p>他只是点了点头，便又趴下了，老头只好无奈地走出了教室。</p>
-<p>之后的事情他都不清楚了，再次醒来时，已经接近下午一点了。</p>
-<p>“已经是这个时间点了吗？得去吃饭了。”</p>
-<p>食堂里人不多，毕竟人流高峰期是刚下课的时候，也就是 12 点 10 分左右，此时只有零零散散的几张桌子坐着几个人，一些还是结束了中午的工作，从厨房中走出来的厨师。开着的窗口也不多了，他犹豫了片刻，最终还是选择了位于二楼楼梯拐角处的卖汤面的窗口。这家店的特色是面可以无限添，还可以选择是汤面还是拌面。</p>
-<p>他点了一份拌面，独自一人静静地吃了起来。他喜欢拌面，加入数勺辣子油和酱油、醋搅拌后，光是看着那一碗红油，就充满了食欲。</p>
-<p>吃碗面，他又回到了教室。教室里只剩下几个男女，他们都是不良学生，这一点从入学的时候他就知道了。虽然他也承认自己也是上课不听讲，成天好吃懒做的“不良”学生，但他认为这种“不良”和他们的“不良”是有本质区别的。他们有一种看上去就让人觉得是社会混混的“痞气”，但外表还是学生，便只能归类于“不良”。他是打心里畏惧着这些人，同时心里也瞧不起这些人，对他们总是退避三舍。</p>
-<p>但他不能把这种态度太明显地表现出来，于是他随着他们中的一个名为 Q 的高个子，称似乎是老大的名为 Z 的人为 Z 哥，借此与他们套近乎。</p>
-<p>他们口中充满了对老师与学校的不满，说出的是粗鄙之言，做出的是不堪之举，他们内心总是躁动着，似乎想通过对外界的破坏来将这些不满与躁动发泄出来。</p>
-<p>其中一个叫 L 的胖子，从课桌中抽出一个短的金属筒状物，握住尾端黑色的部分，向斜下方用力一甩，筒状物一下子就伸长了，外形如同鱼竿，圆筒的半径从手握的黑色部分到最前端逐渐缩短，到了前端变成了一个金属小球，这是他们口中的“甩棍”！胖子拿着甩棍走到教室的后面，那里摆放了一排的储物柜，是给学生放书用的。胖子一边嘴里骂着什么，一边用甩棍用力地敲打着储物柜的门。整个教室回荡着巨大的响声，遭受这无妄之灾的金属门最终是承受不了甩棍无情的摧残，变瘪了。</p>
-<p>他埋头趴在桌子上，每一次巨大的敲击声，都仿佛穿透了他的身体一般，使他不由得发抖。不知道过去了多久，敲击声消失了，交谈声也慢慢变远，最后不知所踪，他们终于是离开了。</p>
-<p>下午第一节是化学课，由于记不住化学方程式，他被老师叫到了教室后面罚站听课。化学是他的薄弱项，这一点从初中开始就是，当时老师甚至让同学在课堂上自习，专门让他上讲台给他讲解，但他还是无法理解。到了高中，许多知识点又讲了一遍，但他还是不会，或许他是真的不擅长理科。</p>
-<p>第二节是历史课，由之前提到的那位班主任负责教授。历史课上他倒没有打瞌睡了，但他向来对历史不感兴趣，在他看来，历史就是讲述什么时候发生了什么事情，教材上不就是这么写的吗？还要去分析什么根本原因，什么直接原因、间接原因，简直麻烦死了。于是，没事干的他陷入了回忆。</p>
-]]></content>
-      <categories>
-        <category>日常</category>
-      </categories>
-      <tags>
-        <tag>生活</tag>
-        <tag>小说</tag>
-        <tag>高中</tag>
       </tags>
   </entry>
   <entry>
@@ -1761,6 +1698,69 @@
       <tags>
         <tag>Linux</tag>
         <tag>Ubuntu</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>无题（一）</title>
+    <url>/2024/04/mudai1.html</url>
+    <content><![CDATA[<p>他又在打瞌睡了。</p>
+<p>自从早上来到教室，他就一动不动地趴在那里。</p>
+<p>尽管周围充斥着读书声和同学间的笑谈声，但他似乎置若罔闻，仍旧保持着那副姿势。<span id="more"></span></p>
+<p>终于，上课铃响了。然而，他仍然没有动弹。于是，旁边的同学推了推他。</p>
+<p>“嘿，上课了！”</p>
+<p>“嗯……嗯？”</p>
+<p>他终于醒了过来，揉了揉眼睛，茫然地看着走上讲台的教师。</p>
+<p>这节课是数学课，数学老师是一个矮小精悍的老头。老头大概已有 60 岁了，头发黑白相间，总是穿着一身西服，但不知为何，他总是给人一种永远不会消退的精神气质</p>
+<p>“上课啦——安静！”</p>
+<p>学委提高了声音，试图压过尚未平息的嘈杂声。</p>
+<p>最终，教室恢复了安静，老师打开书，开始了授课。</p>
+<p>他的目光重新投向书本，看着那些熟悉的文字，这些内容在暑假的初升高衔接班上已经讲过了，不过他那时也是这副样子，只是记住了一些文字，而对其意义一窍不通。渐渐地，他开始觉得这些文字变得模糊起来。</p>
+<p>他开始垂着脑袋，点起头来，而且很有规律的，当脖子弯曲到接近 90 度时，忽然又抬起头来，然后又开始缓缓下垂，如此反复。渐渐地，他的身体也晃了起来。</p>
+<p>突然，他朝左侧倒了下去，靠在了旁边女生的身上。</p>
+<p>“哎呀！你干什么！”</p>
+<p>“啊！对不起，睡迷糊了”</p>
+<p>女生一脸无语地看了他一眼。他却是低着头朝她说了一句后，马上又侧过脸去，没看到她的表情。</p>
+<p>经历了刚才这出，他终于是醒过来了。但课程已经进行了一半，早已不知老师讲到了何处。反正也是无聊，于是他拿出一本小说看了起来。</p>
+<p>那是一本科幻小说。他已经看了这个作者写的数本书了，有长篇也有短篇，但都很吸引人，或量子力学，或外星文明，或多维宇宙，他很喜欢这些题材，看完后还常常将书借给同样喜欢科幻的 W。</p>
+<p>刚读了不到一页，老头的声音戛然而止，一只手突然出现在他眼前，遮住了书上的文字。</p>
+<p>他抬起头，面无表情地看着眼前的老头，老头却是一脸担忧的神色。</p>
+<p>“要好好听课啊……”</p>
+<p>他没有做出回应，甚至连头也没点一下，只是一动不动地看着老头。</p>
+<p>老头见状也就作罢，转身回到讲台，继续如同巫师念咒一般地讲着他无法理解的那些数字、字母、符号组成的公式。</p>
+<p>这下书是看不成了，于是他环顾四周，希望找点能够打发这漫长的上课时间的事情。结果，往左一转头，他找到了。</p>
+<p>他的同桌，刚才的那个女生，此刻也像他一样，开始不断地“点头”。</p>
+<p>“诶！诶！醒醒！醒醒！”</p>
+<p>本着还人情的想法，他也推了推她，把她也叫醒了。</p>
+<p>“笑死我了，怎么你也睡了？”</p>
+<p>“哎呀，别吵我，困死了！”</p>
+<p>这个女生叫 X，在他看来，她是个和自己一样上课不听讲，光睡觉的家伙，也经常迟到，被班主任责问时，便露出带有歉意的，腼腆的微笑。每到这时，班主任便气不打一处来，言语中却又带着些无奈。</p>
+<p>“笑，还笑，这有什么好笑的。下次别再迟到了！”</p>
+<p>说罢便让她回到了座位上。这是每隔两三天便会上演一次的戏码，她永远都能够找到合适的理由来为自己开脱，而每次班主任也只好叮嘱，便作罢。</p>
+<p>对他来说，这样的事情倒是给他无聊的生活增添了些许乐趣。毕竟他就是喜欢看别人倒霉的人，他无法容忍别人比他优秀，又蔑视那些不如他的人，看到他人遭遇不幸，他反而觉得心里舒畅。</p>
+<p>”叮——“</p>
+<p>第一节课终于结束了。</p>
+<p>他又趴了下去，老头走到他面前，拍了拍他。</p>
+<p>“D，你上课要听啊……”</p>
+<p>他只是点了点头，便又趴下了，老头只好无奈地走出了教室。</p>
+<p>之后的事情他都不清楚了，再次醒来时，已经接近下午一点了。</p>
+<p>“已经是这个时间点了吗？得去吃饭了。”</p>
+<p>食堂里人不多，毕竟人流高峰期是刚下课的时候，也就是 12 点 10 分左右，此时只有零零散散的几张桌子坐着几个人，一些还是结束了中午的工作，从厨房中走出来的厨师。开着的窗口也不多了，他犹豫了片刻，最终还是选择了位于二楼楼梯拐角处的卖汤面的窗口。这家店的特色是面可以无限添，还可以选择是汤面还是拌面。</p>
+<p>他点了一份拌面，独自一人静静地吃了起来。他喜欢拌面，加入数勺辣子油和酱油、醋搅拌后，光是看着那一碗红油，就充满了食欲。</p>
+<p>吃碗面，他又回到了教室。教室里只剩下几个男女，他们都是不良学生，这一点从入学的时候他就知道了。虽然他也承认自己也是上课不听讲，成天好吃懒做的“不良”学生，但他认为这种“不良”和他们的“不良”是有本质区别的。他们有一种看上去就让人觉得是社会混混的“痞气”，但外表还是学生，便只能归类于“不良”。他是打心里畏惧着这些人，同时心里也瞧不起这些人，对他们总是退避三舍。</p>
+<p>但他不能把这种态度太明显地表现出来，于是他随着他们中的一个名为 Q 的高个子，称似乎是老大的名为 Z 的人为 Z 哥，借此与他们套近乎。</p>
+<p>他们口中充满了对老师与学校的不满，说出的是粗鄙之言，做出的是不堪之举，他们内心总是躁动着，似乎想通过对外界的破坏来将这些不满与躁动发泄出来。</p>
+<p>其中一个叫 L 的胖子，从课桌中抽出一个短的金属筒状物，握住尾端黑色的部分，向斜下方用力一甩，筒状物一下子就伸长了，外形如同鱼竿，圆筒的半径从手握的黑色部分到最前端逐渐缩短，到了前端变成了一个金属小球，这是他们口中的“甩棍”！胖子拿着甩棍走到教室的后面，那里摆放了一排的储物柜，是给学生放书用的。胖子一边嘴里骂着什么，一边用甩棍用力地敲打着储物柜的门。整个教室回荡着巨大的响声，遭受这无妄之灾的金属门最终是承受不了甩棍无情的摧残，变瘪了。</p>
+<p>他埋头趴在桌子上，每一次巨大的敲击声，都仿佛穿透了他的身体一般，使他不由得发抖。不知道过去了多久，敲击声消失了，交谈声也慢慢变远，最后不知所踪，他们终于是离开了。</p>
+<p>下午第一节是化学课，由于记不住化学方程式，他被老师叫到了教室后面罚站听课。化学是他的薄弱项，这一点从初中开始就是，当时老师甚至让同学在课堂上自习，专门让他上讲台给他讲解，但他还是无法理解。到了高中，许多知识点又讲了一遍，但他还是不会，或许他是真的不擅长理科。</p>
+<p>第二节是历史课，由之前提到的那位班主任负责教授。历史课上他倒没有打瞌睡了，但他向来对历史不感兴趣，在他看来，历史就是讲述什么时候发生了什么事情，教材上不就是这么写的吗？还要去分析什么根本原因，什么直接原因、间接原因，简直麻烦死了。于是，没事干的他陷入了回忆。</p>
+]]></content>
+      <categories>
+        <category>日常</category>
+      </categories>
+      <tags>
+        <tag>生活</tag>
+        <tag>小说</tag>
+        <tag>高中</tag>
       </tags>
   </entry>
   <entry>
@@ -2310,26 +2310,6 @@
       </tags>
   </entry>
   <entry>
-    <title>纪念第一次打通深渊</title>
-    <url>/2023/01/genshinshenyuanfirst.html</url>
-    <content><![CDATA[<p>去年也是这个时候入的坑，当时看泠鸢 yousa 在直播这个游戏，然后里面的派蒙和七七很可爱，就下载试着玩了一下，然后……就玩到了现在~</p>
-<p>作为一个剧情党和 xp 党，当然是以剧情为主要，抽卡以喜欢的角色为前提，因此也是深渊困难户。</p>
-<p><img data-src="https://img.fufu.ink/VAGfzC.webp"></p>
-<p>现在练度上来一些了，队伍也有点伤害了，本来原来抽到雷神后打算组个雷国来打，不过后面发现绝缘本出货率感人，同时早听说过万达的爆炸性伤害，正好去年 11 份垫池子 30 多发出了鸭鸭，就想着练一下。不得不说双扩的方法实在是太多了，因此光是学习双扩就让人头大，后面学会偷懒了，就把怪的状态都打到一个状态后再进行双扩流程，就不同分不同的元素附着情况了。</p>
-<p>当然，现在公子离毕业、万达离毕业还很远，不过作为一个萌新，看到 21w 一刀的伤害，还是很激动的，果然在满足 xp 后追求的就是强度(bushi。</p>
-<p><img data-src="https://img.fufu.ink/uP19xG.webp"></p>
-<p>主要是没拉岩系，第二间黄金王兽打不出来伤害，就靠我的零命草神在 c，雷神相当于挂雷工具人，另外两个一个奶，一个用来破盾，因此全队只有一个打伤害，很难打过去，之前练过一段时间凝光，正好凝光也 3 命了，可以试着拉一下，后面看看能不能凹过去。</p>
-<p>现在就等草神复刻补命座了，补一个二命伤害能更高。雷神也可以拉一下。现在版本答案是种门，我也可以拉一下「纳行久」，组一个下半配队。</p>
-]]></content>
-      <categories>
-        <category>游戏</category>
-      </categories>
-      <tags>
-        <tag>原神</tag>
-        <tag>游戏</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>老婆 16 岁生日快乐</title>
     <url>/2023/08/miku16sai.html</url>
     <content><![CDATA[<p>与ミクたん相遇已有 10 年啦！</p>
@@ -2351,6 +2331,26 @@
       <tags>
         <tag>节日</tag>
         <tag>miku</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>纪念第一次打通深渊</title>
+    <url>/2023/01/genshinshenyuanfirst.html</url>
+    <content><![CDATA[<p>去年也是这个时候入的坑，当时看泠鸢 yousa 在直播这个游戏，然后里面的派蒙和七七很可爱，就下载试着玩了一下，然后……就玩到了现在~</p>
+<p>作为一个剧情党和 xp 党，当然是以剧情为主要，抽卡以喜欢的角色为前提，因此也是深渊困难户。</p>
+<p><img data-src="https://img.fufu.ink/VAGfzC.webp"></p>
+<p>现在练度上来一些了，队伍也有点伤害了，本来原来抽到雷神后打算组个雷国来打，不过后面发现绝缘本出货率感人，同时早听说过万达的爆炸性伤害，正好去年 11 份垫池子 30 多发出了鸭鸭，就想着练一下。不得不说双扩的方法实在是太多了，因此光是学习双扩就让人头大，后面学会偷懒了，就把怪的状态都打到一个状态后再进行双扩流程，就不同分不同的元素附着情况了。</p>
+<p>当然，现在公子离毕业、万达离毕业还很远，不过作为一个萌新，看到 21w 一刀的伤害，还是很激动的，果然在满足 xp 后追求的就是强度(bushi。</p>
+<p><img data-src="https://img.fufu.ink/uP19xG.webp"></p>
+<p>主要是没拉岩系，第二间黄金王兽打不出来伤害，就靠我的零命草神在 c，雷神相当于挂雷工具人，另外两个一个奶，一个用来破盾，因此全队只有一个打伤害，很难打过去，之前练过一段时间凝光，正好凝光也 3 命了，可以试着拉一下，后面看看能不能凹过去。</p>
+<p>现在就等草神复刻补命座了，补一个二命伤害能更高。雷神也可以拉一下。现在版本答案是种门，我也可以拉一下「纳行久」，组一个下半配队。</p>
+]]></content>
+      <categories>
+        <category>游戏</category>
+      </categories>
+      <tags>
+        <tag>原神</tag>
+        <tag>游戏</tag>
       </tags>
   </entry>
   <entry>
@@ -2507,6 +2507,57 @@
       </tags>
   </entry>
   <entry>
+    <title>论打造文化背景下日本美食文化中日双语科普介绍平台的可行性</title>
+    <url>/2022/05/dachuangzuoye.html</url>
+    <content><![CDATA[<blockquote>
+<p>日本料理（和食）：人类非物质文化遗产代表作之一，因其兼具精致的美感与可口的味道而世界闻名。</p>
+</blockquote>
+<p>所以我们决定发起项目——《跨文化背景下日本美食文化中日双语科普介绍平台打造》，致力于通过国人的视角探索发现日本的美食，在国内市场打造宣传分享平台，服务对象为对和食有兴趣的个人，以及国内各大餐饮企业等群体和组织。这样一个项目是否具有可行性？我将通过以下说明来论证。</p>
+<p>首先，我们具有明确的投资方向，大致为网站平台建设、运营、维护和推广，微信公众号、小程序的开发与推广，移动端的开发，市场开拓以及团队建设。通过提高平台流量，培养用户黏性，最终达到打造平台品牌的目标。为此，项目需要分以下几个阶段进行：</p>
+<ul>
+<li>平台初步建立期（1~2 个月）：初步建立起网站平台，微信公众号、小程序平台，完善网页前端以及用户交互功能。每天保证一定量的内容的录入，提高网站的信息量。微信平台与网页平台保持同步更新。目标：保证网页的基本运行，网站具有一定内容。</li>
+<li>平台试运营期（2~3 个月）：初步推广平台，收集用户意见，提高前端用户交互体验，优化平台性能，保持平台内容的增加速度逐渐上升。目标：吸引流量，聚集用户。</li>
+<li>平台运营中期：（6 个月）：网站已经具备一定流量，需着手进行业务拓展，开通网站会员服务，让用户参与进平台的创作群体。继续收集用户意见，优化网站。开始接受一些线上的合作，比如网页广告，产品推广。目标：提高用户转化率，增加会员用户，继续提高用户黏性。</li>
+<li>平台运营后期（4 个月）：这个阶段开始重点打造品牌，平台已经积累了较多的用户，在继续提高网站流量的同时，要开始着手拓展网站产品。而移动端的开发可以作为拓展产品的一个突破口，移动端可以提供更加丰富的功能。同时要分析网站数据，完善网站功能。可以开始尝试和一些小型餐饮企业公司进行合作，同时邀请一些日本的美食家进行线上采访。目标：拓展市场，为占领市场做准备。</li>
+</ul>
+<p>其次，我们的项目具有以下独特性：</p>
+<ul>
+<li>平台多样性：市面上现存的美食科普大多数为单一平台，要么只有一个网站，要么只有一个公众号，而我们的项目全面覆盖了电脑端和移动端，包括了多个平台。</li>
+<li>双语介绍：文章采用中日双语介绍，用户可自由切换展示模式，适用于不仅对日料感兴趣，同时也对日语感兴趣的用户。</li>
+</ul>
+<p>我们也具有较大的竞争优势：</p>
+<ul>
+<li>核心竞争力：我们团队中具有1名熟练掌握多门开发语言的网络技术工程师，能够负责网站、微信公众号平台、小程序的开发与维护。我们顶层的团队都具有较高的日语水平，对日本的历史文化具有较深的了解，而我们广大的会员用户，也属于我们的创作团体，用户越多，我们的内容就越多，信息的来源就越广，竞争优势也就越大。</li>
+<li>市场空白：市面上没有一个集中的平台将喜好日料的用户集中起来，集中的用户不仅增加的具有相同的爱好的人群间的联系、互动，这些用户也是平台的创作源泉之一。</li>
+<li>顺应市场：据市面上的公开资料整理，我国的日本料理餐厅数量保持稳步增长趋势，我们的服务可以与他们进行对接。</li>
+</ul>
+<p>再次，我们有多种推广模式：</p>
+<ul>
+<li>BBS 广告：BBS 广告是流量的一大来源，投放本站链接在一些论坛，为自己导流。利用论坛的高人气，能够提高自己的营销传达效率。</li>
+<li>视频广告：现在很多人的手机里都装着各大影视软件，如腾讯、爱奇艺等等，没有开会员的情况下会有一段很长的广告。因此我们在视频开头投放广告，以起到推广作用。</li>
+<li>搜索引擎推广（SEM）：SEM 是 Search Engine Marketing 的缩写，中文意思是查找引擎营销。通过付费让搜索引擎做广告推广，当一些人使用搜索引擎搜索一些关键词时，我们的网站将以广告的形式出现在搜索结果前几名中</li>
+<li>SEO：SEO 是 Search Engine Optimization 的缩写，汉译为搜索引擎优化，是一种利用搜索引擎的规则提高网站在有关搜索引擎内的自然排名的手段。我们的工程师将对网站进行有针对性的优化，做好 SEO 技术，吸引更多的用户访问网站，提高网站的访问量。</li>
+<li>博客网络推广：找名气较大的博主，与博主沟通，将我们的网站做成友情链接，推广我们的品牌广告。博客网络广告低成本、贴近群众，往往会构成众人的议论，到达很好的二次传达作用，很适合我们的网站的推广。</li>
+<li>各社交媒体平台推广：网络社交平台是互联网中的中心圈，我们会入驻国内各大社交平台，在这些地方，我们可以把我们的平台与各社交媒体平台联合起来。在网站中放入自己各个媒体平台的按钮链接，让用户能多方位了解我们，让网站带来的互联网流量转为我们的私域流量。</li>
+</ul>
+<p>最后，我们有多方面的盈利模式：</p>
+<ul>
+<li>会员机制：在平台发展到具有一定流量的阶段，我们会开放订阅会员机制，即会员只要持续订阅作者，就可以一直享受到平台提供的一些特权服务，而这部分订阅的费用会按一定比例分给作者和平台。只要有作者产出内容并被订阅，平台就持续有收入，受到激励的作者也能更努力地创作出新的作品，从而与作者实现共赢。</li>
+<li>产品推广、广告收入：我们会与一些地方日料餐饮企业开展线上合作，即我们为他们在网站推广菜品，投放广告，这些也是一笔可观的收入</li>
+<li>课程售卖：我们将开设一些日料相关的付费课程，课程定价上分为两大类型，一类是整个课程一次性付费，另一类则是按集付费。平台还会参与付费内容分销实现盈利，与其他平台开展合作，促进二次销售。</li>
+</ul>
+<p>综上，我们的平台在投资上有明确的方向，在执行上有明确的、可行的计划，我们也有多方面的竞争优势，同时，我们在运营过程中能够以较低的成本获得可观的收益，多种推广模式齐头并进，快速带来平台的流量，因此，跨文化背景下日本美食文化中日双语科普介绍平台的打造具有一定的可行性。</p>
+]]></content>
+      <categories>
+        <category>日常</category>
+      </categories>
+      <tags>
+        <tag>中外交流</tag>
+        <tag>美食文化</tag>
+        <tag>创业创新</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>记录一些常用 LINUX 指令</title>
     <url>/2022/10/linuxcommand.html</url>
     <content><![CDATA[<h2 id="iptables"><a href="#iptables" class="headerlink" title="iptables"></a>iptables</h2><blockquote>
@@ -2644,57 +2695,6 @@
       </categories>
       <tags>
         <tag>生活</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>论打造文化背景下日本美食文化中日双语科普介绍平台的可行性</title>
-    <url>/2022/05/dachuangzuoye.html</url>
-    <content><![CDATA[<blockquote>
-<p>日本料理（和食）：人类非物质文化遗产代表作之一，因其兼具精致的美感与可口的味道而世界闻名。</p>
-</blockquote>
-<p>所以我们决定发起项目——《跨文化背景下日本美食文化中日双语科普介绍平台打造》，致力于通过国人的视角探索发现日本的美食，在国内市场打造宣传分享平台，服务对象为对和食有兴趣的个人，以及国内各大餐饮企业等群体和组织。这样一个项目是否具有可行性？我将通过以下说明来论证。</p>
-<p>首先，我们具有明确的投资方向，大致为网站平台建设、运营、维护和推广，微信公众号、小程序的开发与推广，移动端的开发，市场开拓以及团队建设。通过提高平台流量，培养用户黏性，最终达到打造平台品牌的目标。为此，项目需要分以下几个阶段进行：</p>
-<ul>
-<li>平台初步建立期（1~2 个月）：初步建立起网站平台，微信公众号、小程序平台，完善网页前端以及用户交互功能。每天保证一定量的内容的录入，提高网站的信息量。微信平台与网页平台保持同步更新。目标：保证网页的基本运行，网站具有一定内容。</li>
-<li>平台试运营期（2~3 个月）：初步推广平台，收集用户意见，提高前端用户交互体验，优化平台性能，保持平台内容的增加速度逐渐上升。目标：吸引流量，聚集用户。</li>
-<li>平台运营中期：（6 个月）：网站已经具备一定流量，需着手进行业务拓展，开通网站会员服务，让用户参与进平台的创作群体。继续收集用户意见，优化网站。开始接受一些线上的合作，比如网页广告，产品推广。目标：提高用户转化率，增加会员用户，继续提高用户黏性。</li>
-<li>平台运营后期（4 个月）：这个阶段开始重点打造品牌，平台已经积累了较多的用户，在继续提高网站流量的同时，要开始着手拓展网站产品。而移动端的开发可以作为拓展产品的一个突破口，移动端可以提供更加丰富的功能。同时要分析网站数据，完善网站功能。可以开始尝试和一些小型餐饮企业公司进行合作，同时邀请一些日本的美食家进行线上采访。目标：拓展市场，为占领市场做准备。</li>
-</ul>
-<p>其次，我们的项目具有以下独特性：</p>
-<ul>
-<li>平台多样性：市面上现存的美食科普大多数为单一平台，要么只有一个网站，要么只有一个公众号，而我们的项目全面覆盖了电脑端和移动端，包括了多个平台。</li>
-<li>双语介绍：文章采用中日双语介绍，用户可自由切换展示模式，适用于不仅对日料感兴趣，同时也对日语感兴趣的用户。</li>
-</ul>
-<p>我们也具有较大的竞争优势：</p>
-<ul>
-<li>核心竞争力：我们团队中具有1名熟练掌握多门开发语言的网络技术工程师，能够负责网站、微信公众号平台、小程序的开发与维护。我们顶层的团队都具有较高的日语水平，对日本的历史文化具有较深的了解，而我们广大的会员用户，也属于我们的创作团体，用户越多，我们的内容就越多，信息的来源就越广，竞争优势也就越大。</li>
-<li>市场空白：市面上没有一个集中的平台将喜好日料的用户集中起来，集中的用户不仅增加的具有相同的爱好的人群间的联系、互动，这些用户也是平台的创作源泉之一。</li>
-<li>顺应市场：据市面上的公开资料整理，我国的日本料理餐厅数量保持稳步增长趋势，我们的服务可以与他们进行对接。</li>
-</ul>
-<p>再次，我们有多种推广模式：</p>
-<ul>
-<li>BBS 广告：BBS 广告是流量的一大来源，投放本站链接在一些论坛，为自己导流。利用论坛的高人气，能够提高自己的营销传达效率。</li>
-<li>视频广告：现在很多人的手机里都装着各大影视软件，如腾讯、爱奇艺等等，没有开会员的情况下会有一段很长的广告。因此我们在视频开头投放广告，以起到推广作用。</li>
-<li>搜索引擎推广（SEM）：SEM 是 Search Engine Marketing 的缩写，中文意思是查找引擎营销。通过付费让搜索引擎做广告推广，当一些人使用搜索引擎搜索一些关键词时，我们的网站将以广告的形式出现在搜索结果前几名中</li>
-<li>SEO：SEO 是 Search Engine Optimization 的缩写，汉译为搜索引擎优化，是一种利用搜索引擎的规则提高网站在有关搜索引擎内的自然排名的手段。我们的工程师将对网站进行有针对性的优化，做好 SEO 技术，吸引更多的用户访问网站，提高网站的访问量。</li>
-<li>博客网络推广：找名气较大的博主，与博主沟通，将我们的网站做成友情链接，推广我们的品牌广告。博客网络广告低成本、贴近群众，往往会构成众人的议论，到达很好的二次传达作用，很适合我们的网站的推广。</li>
-<li>各社交媒体平台推广：网络社交平台是互联网中的中心圈，我们会入驻国内各大社交平台，在这些地方，我们可以把我们的平台与各社交媒体平台联合起来。在网站中放入自己各个媒体平台的按钮链接，让用户能多方位了解我们，让网站带来的互联网流量转为我们的私域流量。</li>
-</ul>
-<p>最后，我们有多方面的盈利模式：</p>
-<ul>
-<li>会员机制：在平台发展到具有一定流量的阶段，我们会开放订阅会员机制，即会员只要持续订阅作者，就可以一直享受到平台提供的一些特权服务，而这部分订阅的费用会按一定比例分给作者和平台。只要有作者产出内容并被订阅，平台就持续有收入，受到激励的作者也能更努力地创作出新的作品，从而与作者实现共赢。</li>
-<li>产品推广、广告收入：我们会与一些地方日料餐饮企业开展线上合作，即我们为他们在网站推广菜品，投放广告，这些也是一笔可观的收入</li>
-<li>课程售卖：我们将开设一些日料相关的付费课程，课程定价上分为两大类型，一类是整个课程一次性付费，另一类则是按集付费。平台还会参与付费内容分销实现盈利，与其他平台开展合作，促进二次销售。</li>
-</ul>
-<p>综上，我们的平台在投资上有明确的方向，在执行上有明确的、可行的计划，我们也有多方面的竞争优势，同时，我们在运营过程中能够以较低的成本获得可观的收益，多种推广模式齐头并进，快速带来平台的流量，因此，跨文化背景下日本美食文化中日双语科普介绍平台的打造具有一定的可行性。</p>
-]]></content>
-      <categories>
-        <category>日常</category>
-      </categories>
-      <tags>
-        <tag>中外交流</tag>
-        <tag>美食文化</tag>
-        <tag>创业创新</tag>
       </tags>
   </entry>
 </search>
