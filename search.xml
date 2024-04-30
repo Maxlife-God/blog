@@ -28,33 +28,41 @@
       </tags>
   </entry>
   <entry>
-    <title>Next 主题部分图片禁用 FancyBox</title>
-    <url>/2023/04/nextthemefancyboxdisabled.html</url>
-    <content><![CDATA[<p>之前用的主题有 fancybox 功能的都有部分图片禁用 fancybox 的功能，看了一遍文档却发现没有这个选项，去 issue 中和 discusstion 中也没找到相关的信息。<span id="more"></span>于是 google 了一下，发现真有<a href="https://blog.csdn.net/cddchina/article/details/79764432">相关教程</a>，不过是 18 年的了，现在 next 主题已经变了很多，fancybox 的 js 代码也没在 utils.js 文件中了。找了一下，发现 fancybox 的相关 js 代码已经单独写在了主题文件夹下的 <code>\source\js\third-party\fancybox.js</code> 中了。</p>
-<p>接着又在网上找到了一篇博客，发现插入的代码较也改进了一下，修改了当鼠标悬浮在已经被禁用 fancybox 效果的图片上时的状态，原文链接：<a href="https://kevin1061517.github.io/blog/posts/Hexo/2721/">https://kevin1061517.github.io/blog/posts/Hexo/2721/</a></p>
-<p>结合两篇博文，最终即为在 <code>\source\js\third-party\fancybox.js</code> 文件中的 <code>const $image = $(element);</code> 这一行与 <code>const imageLink = $image.attr(&#39;data-src&#39;) || $image.attr(&#39;src&#39;);</code> 之间添加以下代码</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">     <span class="keyword">const</span> $image = $(element);</span><br><span class="line">+    <span class="keyword">if</span> ($(element).<span class="title function_">hasClass</span>(<span class="string">&#x27;nofancybox&#x27;</span>))&#123;  <span class="comment">//是否有包含自己定义的nofancybox属性，有就return true</span></span><br><span class="line">+        $(element).<span class="title function_">css</span>(<span class="string">&quot;cursor&quot;</span>,<span class="string">&quot;default&quot;</span>);    <span class="comment">//将碰到图片的鼠标从放大镜变成default模式</span></span><br><span class="line">+        <span class="keyword">return</span>;	<span class="comment">//不进行下面的fancybox的配置</span></span><br><span class="line">+      &#125;</span><br><span class="line">     <span class="keyword">const</span> imageLink = $image.<span class="title function_">attr</span>(<span class="string">&#x27;data-src&#x27;</span>) || $image.<span class="title function_">attr</span>(<span class="string">&#x27;src&#x27;</span>);</span><br></pre></td></tr></table></figure>
+    <title>MinecraftBDS 修改材质包和行为包教程</title>
+    <url>/2022/07/mcbdsbeautify.html</url>
+    <content><![CDATA[<blockquote>
+<p>本文使用的服务器为基岩版官服 BDS，教程可能仅适用于该类服务器</p>
+</blockquote>
+<h2 id="材质包修改教程"><a href="#材质包修改教程" class="headerlink" title="材质包修改教程"></a>材质包修改教程</h2><p>在 BDS 的根目录找到文件夹 resource_packs 并进入。这里我使用宝塔面板进行演示。</p>
+<p><img data-src="https://img.fufu.ink/NmX8b5.webp" alt="resources_packs"></p>
+<p>将材质包扩展名改为 <code>.zip</code> 后上传到该文件夹中并解压。进入解压后的文件夹一般会有以下文件：</p>
+<p><img data-src="https://img.fufu.ink/39iM8F.webp" alt="材质包文件"></p>
+<p>打开 <code>manifest.json</code> 文件并复制其中的 <code>name</code>、<code>uuid</code> 和 <code>version</code> 几个的值。接下来进入到根目录的 <code>worlds</code> 文件夹中，找到需要加材质包的地图的文件夹，进入并创建四个文件</p>
+<figure class="highlight pgsql"><table><tr><td class="code"><pre><span class="line">world_behavior_pack_history.json</span><br><span class="line">world_behavior_packs.json</span><br><span class="line">world_resource_pack_history.json</span><br><span class="line">world_resource_packs.json</span><br></pre></td></tr></table></figure>
 
-<p>以下为方便复制的代码</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">if</span> ($(element).<span class="title function_">hasClass</span>(<span class="string">&#x27;nofancybox&#x27;</span>))&#123;  <span class="comment">//是否有包含自己定义的nofancybox属性，有就return true</span></span><br><span class="line">    $(element).<span class="title function_">css</span>(<span class="string">&quot;cursor&quot;</span>,<span class="string">&quot;default&quot;</span>);    <span class="comment">//将碰到图片的鼠标从放大镜变成default模式</span></span><br><span class="line">    <span class="keyword">return</span>;	<span class="comment">//不进行下面的fancybox的配置</span></span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+<p>含 behavior 的为行为包，resource 的为材质包。我们打开 <code>world_resource_pack_history.json</code> 并粘贴如下代码：</p>
+<figure class="highlight json"><table><tr><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span><span class="attr">&quot;packs&quot;</span><span class="punctuation">:</span><span class="punctuation">[</span><span class="punctuation">&#123;</span><span class="attr">&quot;can_be_redownloaded&quot;</span><span class="punctuation">:</span><span class="literal"><span class="keyword">true</span></span><span class="punctuation">,</span><span class="attr">&quot;name&quot;</span><span class="punctuation">:</span><span class="string">&quot; 上面的name的值 &quot;</span><span class="punctuation">,</span><span class="attr">&quot;uuid&quot;</span><span class="punctuation">:</span><span class="string">&quot; 上面的uuid的值 &quot;</span><span class="punctuation">,</span><span class="attr">&quot;version&quot;</span><span class="punctuation">:</span><span class="punctuation">[</span> 上面的version的值 <span class="punctuation">]</span><span class="punctuation">&#125;</span><span class="punctuation">]</span><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
 
-<p>之后只要给不想有 fancybox 效果的 <code>&lt;img&gt;</code> 元素增加 <code>class=&quot;nofancybox&quot;</code> 即可。</p>
-<hr>
-<p>后续更新来了，上面的代码是 jQuery 版的 Fancybox 的，现主题最新版本已完全去除 jQuery 的依赖且更新到了 Fancybox 5，上面的代码自然也就失效了。虽然不会 js，还是试着在 Google 和 Chatgpt 的帮助下改了一下代码。可以适配最新版本了。</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="variable language_">document</span>.<span class="title function_">querySelectorAll</span>(<span class="string">&#x27;.post-body :not(a) &gt; img, .post-body &gt; img&#x27;</span>).<span class="title function_">forEach</span>(<span class="function"><span class="params">image</span> =&gt;</span> &#123;</span><br><span class="line">+    <span class="keyword">if</span> (image.<span class="property">classList</span>.<span class="title function_">contains</span>(<span class="string">&#x27;nofancybox&#x27;</span>))&#123;  <span class="comment">//是否有包含自己定义的nofancybox属性，有就return true</span></span><br><span class="line">+      image.<span class="property">style</span>.<span class="property">cursor</span> = <span class="string">&#x27;default&#x27;</span>;    <span class="comment">//将碰到图片的鼠标从放大镜变成default模式</span></span><br><span class="line">+      <span class="keyword">return</span>;	<span class="comment">//不进行下面的fancybox的配置</span></span><br><span class="line">+    &#125;</span><br><span class="line">    <span class="keyword">const</span> imageLink = image.<span class="property">dataset</span>.<span class="property">src</span> || image.<span class="property">src</span>;</span><br></pre></td></tr></table></figure>
+<p>一个材质包的参数使用 <code>&#123;&#125;</code> 括起来，如有多个材质包，则需要使用英文符号 <code>,</code> 分隔，比如：</p>
+<figure class="highlight json"><table><tr><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span><span class="attr">&quot;packs&quot;</span><span class="punctuation">:</span><span class="punctuation">[</span><span class="punctuation">&#123;</span><span class="attr">&quot;can_be_redownloaded&quot;</span><span class="punctuation">:</span><span class="literal"><span class="keyword">true</span></span><span class="punctuation">,</span><span class="attr">&quot;name&quot;</span><span class="punctuation">:</span><span class="string">&quot; 第一个材质的name的值 &quot;</span><span class="punctuation">,</span><span class="attr">&quot;uuid&quot;</span><span class="punctuation">:</span><span class="string">&quot; 第一个材质的uuid的值 &quot;</span><span class="punctuation">,</span><span class="attr">&quot;version&quot;</span><span class="punctuation">:</span><span class="punctuation">[</span> 第一个材质的version的值 <span class="punctuation">]</span><span class="punctuation">&#125;</span><span class="punctuation">,</span><span class="punctuation">&#123;</span><span class="attr">&quot;can_be_redownloaded&quot;</span><span class="punctuation">:</span><span class="literal"><span class="keyword">true</span></span><span class="punctuation">,</span><span class="attr">&quot;name&quot;</span><span class="punctuation">:</span><span class="string">&quot; 第二个材质的name的值 &quot;</span><span class="punctuation">,</span><span class="attr">&quot;uuid&quot;</span><span class="punctuation">:</span><span class="string">&quot; 第二个材质的uuid的值 &quot;</span><span class="punctuation">,</span><span class="attr">&quot;version&quot;</span><span class="punctuation">:</span><span class="punctuation">[</span> 第二个材质的version的值 <span class="punctuation">]</span><span class="punctuation">&#125;</span><span class="punctuation">]</span><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
 
-<p>方便复制的版本</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">if</span> (image.<span class="property">classList</span>.<span class="title function_">contains</span>(<span class="string">&#x27;nofancybox&#x27;</span>))&#123;  <span class="comment">//是否有包含自己定义的nofancybox属性，有就return true</span></span><br><span class="line">  image.<span class="property">style</span>.<span class="property">cursor</span> = <span class="string">&#x27;default&#x27;</span>;    <span class="comment">//将碰到图片的鼠标从放大镜变成default模式</span></span><br><span class="line">  <span class="keyword">return</span>;	<span class="comment">//不进行下面的fancybox的配置</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><code>can_be_redownloaded</code> 的值为 <code>true</code> 和 <code>false</code>，表示是否能够重新下载该材质包。</p>
+<p>接下来打开 <code>world_resource_packs.json</code>，并粘贴如下代码：</p>
+<figure class="highlight json"><table><tr><td class="code"><pre><span class="line"><span class="punctuation">[</span>	</span><br><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">		<span class="attr">&quot;pack_id&quot;</span> <span class="punctuation">:</span> <span class="string">&quot; 上面的uuid的值 &quot;</span><span class="punctuation">,</span></span><br><span class="line">		<span class="attr">&quot;version&quot;</span> <span class="punctuation">:</span> <span class="punctuation">[</span> 上面的version的值 <span class="punctuation">]</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br><span class="line">	<span class="punctuation">]</span></span><br></pre></td></tr></table></figure>
 
-<p>同样的，只要给不想有 fancybox 效果的 <code>&lt;img&gt;</code> 元素增加 <code>class=&quot;nofancybox&quot;</code> 即可。</p>
+<p>一个材质包由 <code>&#123;&#125;</code> 括起来，如有多个材质包，则需使用则需要使用英文符号 <code>,</code> 分隔。一个材质包的这几个参数需要同时填入以上两个文件才会生效。</p>
+<h2 id="行为包"><a href="#行为包" class="headerlink" title="行为包"></a>行为包</h2><p>行为包操作方法与材质包差不多，首先在根目录找到 <code>behavior_packs</code> 文件夹并将行为包的扩展名改为 <code>.zip</code> 上传到该目录中，解压后获取 <code>manifest.json</code> 的那三个值，将值填入 <code>world_behavior_pack_history.json</code> 和 <code>world_behavior_packs.json</code> 中。带 <code>history</code> 与材质包带 history 的内容一致，不带的与不带的内容一致。</p>
+<h2 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h2><p>1.更换材质包和行为包和需要重启服务端才会生效。<br>2.若之前已从服务器下载过材质包，现在更换新的材质包后没有弹出下载提示窗口，请去游戏的<code>设置——存储——缓存数据</code>中清除对应材质包的缓存之后再次进入服务器。</p>
 ]]></content>
       <categories>
-        <category>技术</category>
+        <category>游戏</category>
       </categories>
       <tags>
-        <tag>Hexo</tag>
+        <tag>Minecraft</tag>
+        <tag>材质包</tag>
+        <tag>行为包</tag>
+        <tag>教程</tag>
         <tag>技术</tag>
-        <tag>JavaScript</tag>
       </tags>
   </entry>
   <entry>
@@ -98,9 +106,9 @@
         <category>技术</category>
       </categories>
       <tags>
-        <tag>Hexo</tag>
-        <tag>技术</tag>
         <tag>教程</tag>
+        <tag>技术</tag>
+        <tag>Hexo</tag>
         <tag>Next</tag>
       </tags>
   </entry>
@@ -134,11 +142,41 @@
         <category>技术</category>
       </categories>
       <tags>
-        <tag>Hexo</tag>
-        <tag>技术</tag>
         <tag>教程</tag>
+        <tag>技术</tag>
+        <tag>Hexo</tag>
         <tag>Next</tag>
         <tag>CSS</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Next 主题部分图片禁用 FancyBox</title>
+    <url>/2023/04/nextthemefancyboxdisabled.html</url>
+    <content><![CDATA[<p>之前用的主题有 fancybox 功能的都有部分图片禁用 fancybox 的功能，看了一遍文档却发现没有这个选项，去 issue 中和 discusstion 中也没找到相关的信息。<span id="more"></span>于是 google 了一下，发现真有<a href="https://blog.csdn.net/cddchina/article/details/79764432">相关教程</a>，不过是 18 年的了，现在 next 主题已经变了很多，fancybox 的 js 代码也没在 utils.js 文件中了。找了一下，发现 fancybox 的相关 js 代码已经单独写在了主题文件夹下的 <code>\source\js\third-party\fancybox.js</code> 中了。</p>
+<p>接着又在网上找到了一篇博客，发现插入的代码较也改进了一下，修改了当鼠标悬浮在已经被禁用 fancybox 效果的图片上时的状态，原文链接：<a href="https://kevin1061517.github.io/blog/posts/Hexo/2721/">https://kevin1061517.github.io/blog/posts/Hexo/2721/</a></p>
+<p>结合两篇博文，最终即为在 <code>\source\js\third-party\fancybox.js</code> 文件中的 <code>const $image = $(element);</code> 这一行与 <code>const imageLink = $image.attr(&#39;data-src&#39;) || $image.attr(&#39;src&#39;);</code> 之间添加以下代码</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">     <span class="keyword">const</span> $image = $(element);</span><br><span class="line">+    <span class="keyword">if</span> ($(element).<span class="title function_">hasClass</span>(<span class="string">&#x27;nofancybox&#x27;</span>))&#123;  <span class="comment">//是否有包含自己定义的nofancybox属性，有就return true</span></span><br><span class="line">+        $(element).<span class="title function_">css</span>(<span class="string">&quot;cursor&quot;</span>,<span class="string">&quot;default&quot;</span>);    <span class="comment">//将碰到图片的鼠标从放大镜变成default模式</span></span><br><span class="line">+        <span class="keyword">return</span>;	<span class="comment">//不进行下面的fancybox的配置</span></span><br><span class="line">+      &#125;</span><br><span class="line">     <span class="keyword">const</span> imageLink = $image.<span class="title function_">attr</span>(<span class="string">&#x27;data-src&#x27;</span>) || $image.<span class="title function_">attr</span>(<span class="string">&#x27;src&#x27;</span>);</span><br></pre></td></tr></table></figure>
+
+<p>以下为方便复制的代码</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">if</span> ($(element).<span class="title function_">hasClass</span>(<span class="string">&#x27;nofancybox&#x27;</span>))&#123;  <span class="comment">//是否有包含自己定义的nofancybox属性，有就return true</span></span><br><span class="line">    $(element).<span class="title function_">css</span>(<span class="string">&quot;cursor&quot;</span>,<span class="string">&quot;default&quot;</span>);    <span class="comment">//将碰到图片的鼠标从放大镜变成default模式</span></span><br><span class="line">    <span class="keyword">return</span>;	<span class="comment">//不进行下面的fancybox的配置</span></span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+
+<p>之后只要给不想有 fancybox 效果的 <code>&lt;img&gt;</code> 元素增加 <code>class=&quot;nofancybox&quot;</code> 即可。</p>
+<hr>
+<p>后续更新来了，上面的代码是 jQuery 版的 Fancybox 的，现主题最新版本已完全去除 jQuery 的依赖且更新到了 Fancybox 5，上面的代码自然也就失效了。虽然不会 js，还是试着在 Google 和 Chatgpt 的帮助下改了一下代码。可以适配最新版本了。</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="variable language_">document</span>.<span class="title function_">querySelectorAll</span>(<span class="string">&#x27;.post-body :not(a) &gt; img, .post-body &gt; img&#x27;</span>).<span class="title function_">forEach</span>(<span class="function"><span class="params">image</span> =&gt;</span> &#123;</span><br><span class="line">+    <span class="keyword">if</span> (image.<span class="property">classList</span>.<span class="title function_">contains</span>(<span class="string">&#x27;nofancybox&#x27;</span>))&#123;  <span class="comment">//是否有包含自己定义的nofancybox属性，有就return true</span></span><br><span class="line">+      image.<span class="property">style</span>.<span class="property">cursor</span> = <span class="string">&#x27;default&#x27;</span>;    <span class="comment">//将碰到图片的鼠标从放大镜变成default模式</span></span><br><span class="line">+      <span class="keyword">return</span>;	<span class="comment">//不进行下面的fancybox的配置</span></span><br><span class="line">+    &#125;</span><br><span class="line">    <span class="keyword">const</span> imageLink = image.<span class="property">dataset</span>.<span class="property">src</span> || image.<span class="property">src</span>;</span><br></pre></td></tr></table></figure>
+
+<p>方便复制的版本</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">if</span> (image.<span class="property">classList</span>.<span class="title function_">contains</span>(<span class="string">&#x27;nofancybox&#x27;</span>))&#123;  <span class="comment">//是否有包含自己定义的nofancybox属性，有就return true</span></span><br><span class="line">  image.<span class="property">style</span>.<span class="property">cursor</span> = <span class="string">&#x27;default&#x27;</span>;    <span class="comment">//将碰到图片的鼠标从放大镜变成default模式</span></span><br><span class="line">  <span class="keyword">return</span>;	<span class="comment">//不进行下面的fancybox的配置</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>同样的，只要给不想有 fancybox 效果的 <code>&lt;img&gt;</code> 元素增加 <code>class=&quot;nofancybox&quot;</code> 即可。</p>
+]]></content>
+      <categories>
+        <category>技术</category>
+      </categories>
+      <tags>
+        <tag>技术</tag>
+        <tag>Hexo</tag>
+        <tag>JavaScript</tag>
       </tags>
   </entry>
   <entry>
@@ -163,9 +201,9 @@
         <category>技术</category>
       </categories>
       <tags>
-        <tag>Hexo</tag>
-        <tag>技术</tag>
         <tag>教程</tag>
+        <tag>技术</tag>
+        <tag>Hexo</tag>
         <tag>Next</tag>
       </tags>
   </entry>
@@ -189,51 +227,10 @@
         <category>技术</category>
       </categories>
       <tags>
-        <tag>Hexo</tag>
-        <tag>技术</tag>
         <tag>教程</tag>
+        <tag>技术</tag>
+        <tag>Hexo</tag>
         <tag>CSS</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>【书摘】无赖派太宰治充满颓废气息的作品</title>
-    <url>/2024/02/excerpt2.html</url>
-    <content><![CDATA[<p>花了一段时间，将太宰治的三部代表作品——『人间失格』『维荣之妻』『斜阳』都看完了，由于熬夜看书，经常看着看着就睡着了，再看部分段落时已想不起看过，只得再读过一遍，因此看得很慢，不过总算是看完了。但或许是太宰さん的精神世界太复杂了，我难以理解。<span id="more"></span>只知从『人间失格』主人公身上能看到太宰治的身影（毕竟是太宰治以自身的经历为蓝本写的），而『维荣之妻』中的大谷和阿佐则分别代表了日本「二战」后的男性和女性，男性软弱而女性坚强，形成了光与影明暗的人生对比。一向风格颓废的太宰治，通过阿佐形象，带给读者「活着的希望」。（2017，杨晔，『人间失格』）。最后则是『斜阳』，或许是故事性更加强，也或许是读得更仔细，较于『人间失格』，个人更喜『斜阳』。以第一人称女子口吻的叙述，讲述二战后贵族和子一家逐渐没落的故事，和子、直治、上原等，他们都在用自己的方式与传统道德抗争，都成为了「二战」后道德过渡期的牺牲者。文章中充满了颓废气息，直治为了融入与自己不同阶层的群体，让自己变得粗俗，却仍然无法「挣脱贵族的阴影」，只能更加颓废，只能以这样的方式抗争下去。实属悲剧，我能感受都文章中蕴含的悲伤，甚至几乎哭出来，但我仍无法理解。但太宰治无疑将人性，将社会都看得太透彻了。</p>
-<p>『人间失格』</p>
-<ul>
-<li>对于他们来说，或许有饭吃就能化解他们的痛苦，而这才是最大的痛苦。</li>
-<li>胆小鬼连幸福都怕，碰到棉花都会受伤，有时还会被幸福所伤。</li>
-<li>世人是人与人的争斗，而且是现场之争，人活着就是为了在争斗中取胜。人绝不会屈从于他人，即便是奴隶，也会用自己卑微的方式进行反击。所以，人除了现场决出胜负之外，便没有其他生存之道了。尽管标榜堂而皇之的正义，但他们努力的目标仍是个人的，超越一个人之后，还要迎战下一个人。</li>
-<li>不幸的人总是对他人的不幸格外敏感。</li>
-<li>我在所谓的人类世界里，过着如阿鼻地狱般痛苦煎熬生活的日子，我感到唯一具有真理的话就是这句话了。<br>  一切都终将会过去的。</li>
-<li>「我们认识的阿叶，个性率真，风趣幽默，要是不酗酒的话，不，就是他酗酒，他也是个天使一样的好孩子。」</li>
-</ul>
-<p>『维荣之妻』</p>
-<ul>
-<li>可常言道，人生就如地狱，经常是道高一尺魔高一丈。人们在得到一丝幸福的同时，往往会有成倍的坏事降临。一年有三百六十五天，要是有一天能无忧无虑的话，啊不，就半天，那就是很幸运的了。</li>
-<li>文明的结果是滑稽。</li>
-</ul>
-<p>『斜阳』</p>
-<ul>
-<li>社会法则，说到底维护的还是法则本身，不爱活生生的人。</li>
-<li>在金钱和女人面前，社会法则会羞怯地匆匆溜走。历史、哲学、教育、宗教、法律、政治、经济、社会。这些学问统统加起来，也不如处女的微笑来得可贵。浮士德博士已经勇敢地证实过这一结论了。</li>
-<li>学问是虚荣的别名，它努力使人泯灭人性。</li>
-<li>人在撒谎时定会摆出一副一本正经的样子。</li>
-<li>我伪装早熟，人们便风传我早熟。我伪装成懒汉，人们便风传我是个懒汉。我伪装写不出小说来，人们便风传我不会写小说。我伪装撒谎，人们便风传我是个撒谎的人。我伪装有钱，人们便风传我是个有钱人。我伪装冷淡，人们便风传我是个冷淡的人。不过，当我真正因为痛苦而发出呻吟时，人们却说我伪装痛苦。</li>
-<li>幼鹤生下目已盲，岁月如梭渐长成，羽翼丰满成大鸟，叫声依旧满悲伤。</li>
-<li>总之，人只要是活在这世上，就肯定会做出些见不得人的勾当。</li>
-<li>我无法忍受海港内滞积着的令人窒息的空气了，就算海港外狂风暴雨，我也要扬帆起航。歇着的帆毫无例外都是肮脏的，那些嘲笑我的人都是歇着的帆，他们什么事情都不会做。</li>
-</ul>
-]]></content>
-      <categories>
-        <category>日常</category>
-      </categories>
-      <tags>
-        <tag>书摘</tag>
-        <tag>人间失格</tag>
-        <tag>维荣之妻</tag>
-        <tag>斜阳</tag>
-        <tag>太宰治</tag>
       </tags>
   </entry>
   <entry>
@@ -307,19 +304,61 @@
       </tags>
   </entry>
   <entry>
-    <title>【每日语法】~も~ば~も~</title>
-    <url>/2023/04/mnnhgbp2.html</url>
-    <content><![CDATA[<p><strong>语法：N + も + V（假定形）+ N + も + V（原形）</strong></p>
-<p>意为「既…又…」。其中的动词为同一动词。</p>
-<p>例句：コンビニにたくさんの商品がある。食べ物もあれば、生活に欠かせないものもある。</p>
-<p>译：便利店中有很多商品，既有食品，也有生活中不可或缺的物品。</p>
-<p>与之相似的语法还有「かと思えば」，接续方式为前接<strong>动词原形</strong>。关于假定形的变形方法，在上一篇中已经提过，这里就不再赘述，有需要了解的小伙伴可以<a href="/2023/04/mnnhgbp1.html">点击这里</a>返回上文查看。</p>
+    <title>【每日语法】~さえ~ば</title>
+    <url>/2023/05/mnnhgbp5.html</url>
+    <content><![CDATA[<p>接续：</p>
+<blockquote>
+<p>N + さえ + 假定形<br>A（く形）&#x2F; NA（て形）+ さえあれば<br>V（ます形）&#x2F; サ变动词词干 + さえすれば</p>
+</blockquote>
+<p>意为「只要···就···」。关于假定形的变形方法，请参考<a href="/2023/04/mnnhgbp1.html">『【每日语法】~ば~ほど』</a>的文末表格。</p>
+<p>例句：やすくさえあれば、買いましょう。<br>译：只要便宜的话就买吧！</p>
 ]]></content>
       <categories>
         <category>日语</category>
       </categories>
       <tags>
         <tag>日语</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>【书摘】无赖派太宰治充满颓废气息的作品</title>
+    <url>/2024/02/excerpt2.html</url>
+    <content><![CDATA[<p>花了一段时间，将太宰治的三部代表作品——『人间失格』『维荣之妻』『斜阳』都看完了，由于熬夜看书，经常看着看着就睡着了，再看部分段落时已想不起看过，只得再读过一遍，因此看得很慢，不过总算是看完了。但或许是太宰さん的精神世界太复杂了，我难以理解。<span id="more"></span>只知从『人间失格』主人公身上能看到太宰治的身影（毕竟是太宰治以自身的经历为蓝本写的），而『维荣之妻』中的大谷和阿佐则分别代表了日本「二战」后的男性和女性，男性软弱而女性坚强，形成了光与影明暗的人生对比。一向风格颓废的太宰治，通过阿佐形象，带给读者「活着的希望」。（2017，杨晔，『人间失格』）。最后则是『斜阳』，或许是故事性更加强，也或许是读得更仔细，较于『人间失格』，个人更喜『斜阳』。以第一人称女子口吻的叙述，讲述二战后贵族和子一家逐渐没落的故事，和子、直治、上原等，他们都在用自己的方式与传统道德抗争，都成为了「二战」后道德过渡期的牺牲者。文章中充满了颓废气息，直治为了融入与自己不同阶层的群体，让自己变得粗俗，却仍然无法「挣脱贵族的阴影」，只能更加颓废，只能以这样的方式抗争下去。实属悲剧，我能感受都文章中蕴含的悲伤，甚至几乎哭出来，但我仍无法理解。但太宰治无疑将人性，将社会都看得太透彻了。</p>
+<p>『人间失格』</p>
+<ul>
+<li>对于他们来说，或许有饭吃就能化解他们的痛苦，而这才是最大的痛苦。</li>
+<li>胆小鬼连幸福都怕，碰到棉花都会受伤，有时还会被幸福所伤。</li>
+<li>世人是人与人的争斗，而且是现场之争，人活着就是为了在争斗中取胜。人绝不会屈从于他人，即便是奴隶，也会用自己卑微的方式进行反击。所以，人除了现场决出胜负之外，便没有其他生存之道了。尽管标榜堂而皇之的正义，但他们努力的目标仍是个人的，超越一个人之后，还要迎战下一个人。</li>
+<li>不幸的人总是对他人的不幸格外敏感。</li>
+<li>我在所谓的人类世界里，过着如阿鼻地狱般痛苦煎熬生活的日子，我感到唯一具有真理的话就是这句话了。<br>  一切都终将会过去的。</li>
+<li>「我们认识的阿叶，个性率真，风趣幽默，要是不酗酒的话，不，就是他酗酒，他也是个天使一样的好孩子。」</li>
+</ul>
+<p>『维荣之妻』</p>
+<ul>
+<li>可常言道，人生就如地狱，经常是道高一尺魔高一丈。人们在得到一丝幸福的同时，往往会有成倍的坏事降临。一年有三百六十五天，要是有一天能无忧无虑的话，啊不，就半天，那就是很幸运的了。</li>
+<li>文明的结果是滑稽。</li>
+</ul>
+<p>『斜阳』</p>
+<ul>
+<li>社会法则，说到底维护的还是法则本身，不爱活生生的人。</li>
+<li>在金钱和女人面前，社会法则会羞怯地匆匆溜走。历史、哲学、教育、宗教、法律、政治、经济、社会。这些学问统统加起来，也不如处女的微笑来得可贵。浮士德博士已经勇敢地证实过这一结论了。</li>
+<li>学问是虚荣的别名，它努力使人泯灭人性。</li>
+<li>人在撒谎时定会摆出一副一本正经的样子。</li>
+<li>我伪装早熟，人们便风传我早熟。我伪装成懒汉，人们便风传我是个懒汉。我伪装写不出小说来，人们便风传我不会写小说。我伪装撒谎，人们便风传我是个撒谎的人。我伪装有钱，人们便风传我是个有钱人。我伪装冷淡，人们便风传我是个冷淡的人。不过，当我真正因为痛苦而发出呻吟时，人们却说我伪装痛苦。</li>
+<li>幼鹤生下目已盲，岁月如梭渐长成，羽翼丰满成大鸟，叫声依旧满悲伤。</li>
+<li>总之，人只要是活在这世上，就肯定会做出些见不得人的勾当。</li>
+<li>我无法忍受海港内滞积着的令人窒息的空气了，就算海港外狂风暴雨，我也要扬帆起航。歇着的帆毫无例外都是肮脏的，那些嘲笑我的人都是歇着的帆，他们什么事情都不会做。</li>
+</ul>
+]]></content>
+      <categories>
+        <category>日常</category>
+      </categories>
+      <tags>
+        <tag>书摘</tag>
+        <tag>人间失格</tag>
+        <tag>维荣之妻</tag>
+        <tag>斜阳</tag>
+        <tag>太宰治</tag>
       </tags>
   </entry>
   <entry>
@@ -354,52 +393,13 @@
       </tags>
   </entry>
   <entry>
-    <title>MinecraftBDS 修改材质包和行为包教程</title>
-    <url>/2022/07/mcbdsbeautify.html</url>
-    <content><![CDATA[<blockquote>
-<p>本文使用的服务器为基岩版官服 BDS，教程可能仅适用于该类服务器</p>
-</blockquote>
-<h2 id="材质包修改教程"><a href="#材质包修改教程" class="headerlink" title="材质包修改教程"></a>材质包修改教程</h2><p>在 BDS 的根目录找到文件夹 resource_packs 并进入。这里我使用宝塔面板进行演示。</p>
-<p><img data-src="https://img.fufu.ink/NmX8b5.webp" alt="resources_packs"></p>
-<p>将材质包扩展名改为 <code>.zip</code> 后上传到该文件夹中并解压。进入解压后的文件夹一般会有以下文件：</p>
-<p><img data-src="https://img.fufu.ink/39iM8F.webp" alt="材质包文件"></p>
-<p>打开 <code>manifest.json</code> 文件并复制其中的 <code>name</code>、<code>uuid</code> 和 <code>version</code> 几个的值。接下来进入到根目录的 <code>worlds</code> 文件夹中，找到需要加材质包的地图的文件夹，进入并创建四个文件</p>
-<figure class="highlight pgsql"><table><tr><td class="code"><pre><span class="line">world_behavior_pack_history.json</span><br><span class="line">world_behavior_packs.json</span><br><span class="line">world_resource_pack_history.json</span><br><span class="line">world_resource_packs.json</span><br></pre></td></tr></table></figure>
-
-<p>含 behavior 的为行为包，resource 的为材质包。我们打开 <code>world_resource_pack_history.json</code> 并粘贴如下代码：</p>
-<figure class="highlight json"><table><tr><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span><span class="attr">&quot;packs&quot;</span><span class="punctuation">:</span><span class="punctuation">[</span><span class="punctuation">&#123;</span><span class="attr">&quot;can_be_redownloaded&quot;</span><span class="punctuation">:</span><span class="literal"><span class="keyword">true</span></span><span class="punctuation">,</span><span class="attr">&quot;name&quot;</span><span class="punctuation">:</span><span class="string">&quot; 上面的name的值 &quot;</span><span class="punctuation">,</span><span class="attr">&quot;uuid&quot;</span><span class="punctuation">:</span><span class="string">&quot; 上面的uuid的值 &quot;</span><span class="punctuation">,</span><span class="attr">&quot;version&quot;</span><span class="punctuation">:</span><span class="punctuation">[</span> 上面的version的值 <span class="punctuation">]</span><span class="punctuation">&#125;</span><span class="punctuation">]</span><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
-
-<p>一个材质包的参数使用 <code>&#123;&#125;</code> 括起来，如有多个材质包，则需要使用英文符号 <code>,</code> 分隔，比如：</p>
-<figure class="highlight json"><table><tr><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span><span class="attr">&quot;packs&quot;</span><span class="punctuation">:</span><span class="punctuation">[</span><span class="punctuation">&#123;</span><span class="attr">&quot;can_be_redownloaded&quot;</span><span class="punctuation">:</span><span class="literal"><span class="keyword">true</span></span><span class="punctuation">,</span><span class="attr">&quot;name&quot;</span><span class="punctuation">:</span><span class="string">&quot; 第一个材质的name的值 &quot;</span><span class="punctuation">,</span><span class="attr">&quot;uuid&quot;</span><span class="punctuation">:</span><span class="string">&quot; 第一个材质的uuid的值 &quot;</span><span class="punctuation">,</span><span class="attr">&quot;version&quot;</span><span class="punctuation">:</span><span class="punctuation">[</span> 第一个材质的version的值 <span class="punctuation">]</span><span class="punctuation">&#125;</span><span class="punctuation">,</span><span class="punctuation">&#123;</span><span class="attr">&quot;can_be_redownloaded&quot;</span><span class="punctuation">:</span><span class="literal"><span class="keyword">true</span></span><span class="punctuation">,</span><span class="attr">&quot;name&quot;</span><span class="punctuation">:</span><span class="string">&quot; 第二个材质的name的值 &quot;</span><span class="punctuation">,</span><span class="attr">&quot;uuid&quot;</span><span class="punctuation">:</span><span class="string">&quot; 第二个材质的uuid的值 &quot;</span><span class="punctuation">,</span><span class="attr">&quot;version&quot;</span><span class="punctuation">:</span><span class="punctuation">[</span> 第二个材质的version的值 <span class="punctuation">]</span><span class="punctuation">&#125;</span><span class="punctuation">]</span><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
-
-<p><code>can_be_redownloaded</code> 的值为 <code>true</code> 和 <code>false</code>，表示是否能够重新下载该材质包。</p>
-<p>接下来打开 <code>world_resource_packs.json</code>，并粘贴如下代码：</p>
-<figure class="highlight json"><table><tr><td class="code"><pre><span class="line"><span class="punctuation">[</span>	</span><br><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">		<span class="attr">&quot;pack_id&quot;</span> <span class="punctuation">:</span> <span class="string">&quot; 上面的uuid的值 &quot;</span><span class="punctuation">,</span></span><br><span class="line">		<span class="attr">&quot;version&quot;</span> <span class="punctuation">:</span> <span class="punctuation">[</span> 上面的version的值 <span class="punctuation">]</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br><span class="line">	<span class="punctuation">]</span></span><br></pre></td></tr></table></figure>
-
-<p>一个材质包由 <code>&#123;&#125;</code> 括起来，如有多个材质包，则需使用则需要使用英文符号 <code>,</code> 分隔。一个材质包的这几个参数需要同时填入以上两个文件才会生效。</p>
-<h2 id="行为包"><a href="#行为包" class="headerlink" title="行为包"></a>行为包</h2><p>行为包操作方法与材质包差不多，首先在根目录找到 <code>behavior_packs</code> 文件夹并将行为包的扩展名改为 <code>.zip</code> 上传到该目录中，解压后获取 <code>manifest.json</code> 的那三个值，将值填入 <code>world_behavior_pack_history.json</code> 和 <code>world_behavior_packs.json</code> 中。带 <code>history</code> 与材质包带 history 的内容一致，不带的与不带的内容一致。</p>
-<h2 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h2><p>1.更换材质包和行为包和需要重启服务端才会生效。<br>2.若之前已从服务器下载过材质包，现在更换新的材质包后没有弹出下载提示窗口，请去游戏的<code>设置——存储——缓存数据</code>中清除对应材质包的缓存之后再次进入服务器。</p>
-]]></content>
-      <categories>
-        <category>游戏</category>
-      </categories>
-      <tags>
-        <tag>技术</tag>
-        <tag>教程</tag>
-        <tag>Minecraft</tag>
-        <tag>材质包</tag>
-        <tag>行为包</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>【每日语法】~さえ~ば</title>
-    <url>/2023/05/mnnhgbp5.html</url>
-    <content><![CDATA[<p>接续：</p>
-<blockquote>
-<p>N + さえ + 假定形<br>A（く形）&#x2F; NA（て形）+ さえあれば<br>V（ます形）&#x2F; サ变动词词干 + さえすれば</p>
-</blockquote>
-<p>意为「只要···就···」。关于假定形的变形方法，请参考<a href="/2023/04/mnnhgbp1.html">『【每日语法】~ば~ほど』</a>的文末表格。</p>
-<p>例句：やすくさえあれば、買いましょう。<br>译：只要便宜的话就买吧！</p>
+    <title>【每日语法】~も~ば~も~</title>
+    <url>/2023/04/mnnhgbp2.html</url>
+    <content><![CDATA[<p><strong>语法：N + も + V（假定形）+ N + も + V（原形）</strong></p>
+<p>意为「既…又…」。其中的动词为同一动词。</p>
+<p>例句：コンビニにたくさんの商品がある。食べ物もあれば、生活に欠かせないものもある。</p>
+<p>译：便利店中有很多商品，既有食品，也有生活中不可或缺的物品。</p>
+<p>与之相似的语法还有「かと思えば」，接续方式为前接<strong>动词原形</strong>。关于假定形的变形方法，在上一篇中已经提过，这里就不再赘述，有需要了解的小伙伴可以<a href="/2023/04/mnnhgbp1.html">点击这里</a>返回上文查看。</p>
 ]]></content>
       <categories>
         <category>日语</category>
@@ -837,6 +837,61 @@
       </tags>
   </entry>
   <entry>
+    <title>【笔记·古典日语】助动词「らむ」</title>
+    <url>/2024/04/kobun16.html</url>
+    <content><![CDATA[<h2 id="活用·接续"><a href="#活用·接续" class="headerlink" title="活用·接续"></a>活用·接续</h2><p>接续：终止形 + らむ</p>
+<p>特殊：ラ変動詞・ラ変型的<strong>连体形</strong> + らむ</p>
+<table>
+<thead>
+<tr>
+<th align="center">活用</th>
+<th align="center">らむ</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">未然形</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">连用形</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">终止形</td>
+<td align="center">らむ</td>
+</tr>
+<tr>
+<td align="center">连体形</td>
+<td align="center">らむ</td>
+</tr>
+<tr>
+<td align="center">已然形</td>
+<td align="center">らめ</td>
+</tr>
+<tr>
+<td align="center">命令形</td>
+<td align="center"></td>
+</tr>
+</tbody></table>
+<h2 id="作用"><a href="#作用" class="headerlink" title="作用"></a>作用</h2><p>らむ有 4 个作用</p>
+<ul>
+<li>現在推量：对现在<strong>看不见</strong>的事情进行推测。现代日语可译为「今ごろは～ているだろう」</li>
+<li>現在の<strong>原因</strong>推量：就现在<strong>看见的</strong>事情（眼前发生的事情）或自己的事情，对其发生的<strong>原因进行推测</strong>。现代日语可译为「～（ている）のだろう」。</li>
+<li>現在の婉曲：委婉，现代日语可译为「～ような」。特征为<strong>「らむ + N」</strong>，即らむ作连体形</li>
+<li>現在の伝聞：现代日语可译为「～とかいう」。特征也为<strong>「らむ + N」</strong></li>
+</ul>
+<p>表示委婉和传闻的特征一致，都为<strong>「らむ + N」</strong>，因此具体是表示哪个需要根据语境进行判断。</p>
+]]></content>
+      <categories>
+        <category>日语</category>
+      </categories>
+      <tags>
+        <tag>日语</tag>
+        <tag>古典日语</tag>
+        <tag>语法</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>【笔记·古典日语】助动词「つ·ぬ」</title>
     <url>/2024/04/kobun13.html</url>
     <content><![CDATA[<h2 id="活用·接续"><a href="#活用·接续" class="headerlink" title="活用·接续"></a>活用·接续</h2><p>つ的活用符合下二段动词的活用方式，需要注意ぬ的活用</p>
@@ -902,50 +957,19 @@
       </tags>
   </entry>
   <entry>
-    <title>【笔记·古典日语】助动词「らむ」</title>
-    <url>/2024/04/kobun16.html</url>
-    <content><![CDATA[<h2 id="活用·接续"><a href="#活用·接续" class="headerlink" title="活用·接续"></a>活用·接续</h2><p>接续：终止形 + らむ</p>
-<p>特殊：ラ変動詞・ラ変型的<strong>连体形</strong> + らむ</p>
-<table>
-<thead>
-<tr>
-<th align="center">活用</th>
-<th align="center">らむ</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center">未然形</td>
-<td align="center"></td>
-</tr>
-<tr>
-<td align="center">连用形</td>
-<td align="center"></td>
-</tr>
-<tr>
-<td align="center">终止形</td>
-<td align="center">らむ</td>
-</tr>
-<tr>
-<td align="center">连体形</td>
-<td align="center">らむ</td>
-</tr>
-<tr>
-<td align="center">已然形</td>
-<td align="center">らめ</td>
-</tr>
-<tr>
-<td align="center">命令形</td>
-<td align="center"></td>
-</tr>
-</tbody></table>
-<h2 id="作用"><a href="#作用" class="headerlink" title="作用"></a>作用</h2><p>らむ有 4 个作用</p>
+    <title>【笔记·古典日语】助动词「る·らる」</title>
+    <url>/2024/04/kobun10.html</url>
+    <content><![CDATA[<p>活用及接续</p>
+<p>活用方式符合下二段动词的活用</p>
+<p><img data-src="https://img.fufu.ink/icyUgg.webp"></p>
+<p>作用</p>
 <ul>
-<li>現在推量：对现在<strong>看不见</strong>的事情进行推测。现代日语可译为「今ごろは～ているだろう」</li>
-<li>現在の<strong>原因</strong>推量：就现在<strong>看见的</strong>事情（眼前发生的事情）或自己的事情，对其发生的<strong>原因进行推测</strong>。现代日语可译为「～（ている）のだろう」。</li>
-<li>現在の婉曲：委婉，现代日语可译为「～ような」。特征为<strong>「らむ + N」</strong>，即らむ作连体形</li>
-<li>現在の伝聞：现代日语可译为「～とかいう」。特征也为<strong>「らむ + N」</strong></li>
+<li>自发，翻译为现代日语为黄色部分，前面多续心情语</li>
+<li>被动，通过观察有无表示被的对象的「に」来判断是否是表示被动</li>
+<li>可能，表示可能的意思时，后项多续<strong>否定</strong>表达</li>
+<li>尊敬，主语多为身份地位较高的人</li>
 </ul>
-<p>表示委婉和传闻的特征一致，都为<strong>「らむ + N」</strong>，因此具体是表示哪个需要根据语境进行判断。</p>
+<div class="group-picture"><div class="group-picture-row"><div class="group-picture-column"><img data-src="https://img.fufu.ink/OnN4A2.webp"></div><div class="group-picture-column"><img data-src="https://img.fufu.ink/HA09JZ.webp"></div><div class="group-picture-column"><img data-src="https://img.fufu.ink/3ALgAR.webp"></div></div><div class="group-picture-row"><div class="group-picture-column"><img data-src="https://img.fufu.ink/6I3oZ0.webp"></div></div></div>
 ]]></content>
       <categories>
         <category>日语</category>
@@ -966,6 +990,25 @@
 <li>加ネ</li>
 <li>找到自立语，在自立语前分割</li>
 </ul>
+]]></content>
+      <categories>
+        <category>日语</category>
+      </categories>
+      <tags>
+        <tag>日语</tag>
+        <tag>古典日语</tag>
+        <tag>语法</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>【笔记·古典日语】形容动词</title>
+    <url>/2024/04/kobun6.html</url>
+    <content><![CDATA[<p>形容动词有「なり」「たり」两种活用，两种活用除了「と」「に」的连用形较为特殊，其余均与ラ变动词「あり」的活用方式一致，因此活用词尾「たり」「なり」属于<strong>ラ变形</strong></p>
+<p><img data-src="https://img.fufu.ink/XLaWr8.webp"></p>
+<p>使用「なり」「たり」的不同情况。有「々」这样表示重复的符号的为「たり」活用，其余为「なり」活用，可以记一下常见的「なり」前的形式</p>
+<p><img data-src="https://img.fufu.ink/oJpKxK.webp"></p>
+<p>连用形「に」使用的情况</p>
+<p><img data-src="https://img.fufu.ink/syAnm5.webp"></p>
 ]]></content>
       <categories>
         <category>日语</category>
@@ -1022,19 +1065,29 @@
       </tags>
   </entry>
   <entry>
-    <title>【笔记·古典日语】助动词「る·らる」</title>
-    <url>/2024/04/kobun10.html</url>
-    <content><![CDATA[<p>活用及接续</p>
-<p>活用方式符合下二段动词的活用</p>
-<p><img data-src="https://img.fufu.ink/icyUgg.webp"></p>
-<p>作用</p>
-<ul>
-<li>自发，翻译为现代日语为黄色部分，前面多续心情语</li>
-<li>被动，通过观察有无表示被的对象的「に」来判断是否是表示被动</li>
-<li>可能，表示可能的意思时，后项多续<strong>否定</strong>表达</li>
-<li>尊敬，主语多为身份地位较高的人</li>
-</ul>
-<div class="group-picture"><div class="group-picture-row"><div class="group-picture-column"><img data-src="https://img.fufu.ink/OnN4A2.webp"></div><div class="group-picture-column"><img data-src="https://img.fufu.ink/HA09JZ.webp"></div><div class="group-picture-column"><img data-src="https://img.fufu.ink/3ALgAR.webp"></div></div><div class="group-picture-row"><div class="group-picture-column"><img data-src="https://img.fufu.ink/6I3oZ0.webp"></div></div></div>
+    <title>【笔记·古典日语】系结的规则</title>
+    <url>/2024/04/kobun9.html</url>
+    <content><![CDATA[<p>系结现象</p>
+<p>定义：受到句中的系助词（ぞ・なむ・や・か・こそ）的影响而将句尾的活用语改变为<strong>连体形</strong>或<strong>已然形</strong>的现象</p>
+<p><img data-src="https://img.fufu.ink/YJLoPV.webp"></p>
+<h2 id="规则"><a href="#规则" class="headerlink" title="规则"></a>规则</h2><p>第一种，规则如图</p>
+<p>表示强调，强调系助词前的内容，作用类似于「が」，翻译成现代日语时将系助词看作「が」即可</p>
+<div class="group-picture"><div class="group-picture-row"><div class="group-picture-column"><img data-src="https://img.fufu.ink/5wtmnE.webp"></div><div class="group-picture-column"><img data-src="https://img.fufu.ink/6zLHYS.webp"></div></div></div>
+
+<p>第二种</p>
+<p>表示疑问·反问</p>
+<p>翻译成现代日语即为黄色字体部分</p>
+<p>具体是疑问还是反问需要根据语境判断</p>
+<div class="group-picture"><div class="group-picture-row"><div class="group-picture-column"><img data-src="https://img.fufu.ink/V688M1.webp"></div><div class="group-picture-column"><img data-src="https://img.fufu.ink/6tCDMu.webp"></div></div></div>
+
+<h2 id="注意点"><a href="#注意点" class="headerlink" title="注意点"></a>注意点</h2><ol>
+<li>省略：有时会出现系助词的部分保留，后面活用语部分省略的现象</li>
+<li>转折：以「～こそー已然形、～」形式出现，即该部分位于句中时，除了本身表示强调的作用外，还带有转折的意思，即「けれど」</li>
+<li>表示「如果…就不好了」</li>
+<li>「やは」「かは」多表示<strong>反问</strong></li>
+</ol>
+<div class="group-picture"><div class="group-picture-row"><div class="group-picture-column"><img data-src="https://img.fufu.ink/lMcKky.webp" alt="解释对应上方序号"></div><div class="group-picture-column"><img data-src="https://img.fufu.ink/YDNZHZ.webp" alt="解释对应上方序号"></div></div></div>
+
 ]]></content>
       <categories>
         <category>日语</category>
@@ -1079,40 +1132,6 @@
       </tags>
   </entry>
   <entry>
-    <title>【笔记·古典日语】系结的规则</title>
-    <url>/2024/04/kobun9.html</url>
-    <content><![CDATA[<p>系结现象</p>
-<p>定义：受到句中的系助词（ぞ・なむ・や・か・こそ）的影响而将句尾的活用语改变为<strong>连体形</strong>或<strong>已然形</strong>的现象</p>
-<p><img data-src="https://img.fufu.ink/YJLoPV.webp"></p>
-<h2 id="规则"><a href="#规则" class="headerlink" title="规则"></a>规则</h2><p>第一种，规则如图</p>
-<p>表示强调，强调系助词前的内容，作用类似于「が」，翻译成现代日语时将系助词看作「が」即可</p>
-<div class="group-picture"><div class="group-picture-row"><div class="group-picture-column"><img data-src="https://img.fufu.ink/5wtmnE.webp"></div><div class="group-picture-column"><img data-src="https://img.fufu.ink/6zLHYS.webp"></div></div></div>
-
-<p>第二种</p>
-<p>表示疑问·反问</p>
-<p>翻译成现代日语即为黄色字体部分</p>
-<p>具体是疑问还是反问需要根据语境判断</p>
-<div class="group-picture"><div class="group-picture-row"><div class="group-picture-column"><img data-src="https://img.fufu.ink/V688M1.webp"></div><div class="group-picture-column"><img data-src="https://img.fufu.ink/6tCDMu.webp"></div></div></div>
-
-<h2 id="注意点"><a href="#注意点" class="headerlink" title="注意点"></a>注意点</h2><ol>
-<li>省略：有时会出现系助词的部分保留，后面活用语部分省略的现象</li>
-<li>转折：以「～こそー已然形、～」形式出现，即该部分位于句中时，除了本身表示强调的作用外，还带有转折的意思，即「けれど」</li>
-<li>表示「如果…就不好了」</li>
-<li>「やは」「かは」多表示<strong>反问</strong></li>
-</ol>
-<div class="group-picture"><div class="group-picture-row"><div class="group-picture-column"><img data-src="https://img.fufu.ink/lMcKky.webp" alt="解释对应上方序号"></div><div class="group-picture-column"><img data-src="https://img.fufu.ink/YDNZHZ.webp" alt="解释对应上方序号"></div></div></div>
-
-]]></content>
-      <categories>
-        <category>日语</category>
-      </categories>
-      <tags>
-        <tag>日语</tag>
-        <tag>古典日语</tag>
-        <tag>语法</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>【笔记·古典日语】词干的作用</title>
     <url>/2024/04/kobun7.html</url>
     <content><![CDATA[<p>形容词·形容动词的词干的用法</p>
@@ -1136,6 +1155,23 @@
         <tag>日语</tag>
         <tag>古典日语</tag>
         <tag>语法</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>一点碎碎念</title>
+    <url>/2024/04/monku.html</url>
+    <content><![CDATA[<p>最近又有点沉迷博客美化了，明明自己能力不行，也不去学 js，甚至 css 也只学了半截，结果就是事倍功半，花了大量时间想给说说加个翻页功能，后面在朋友（永远让我保持理智的好兄弟）<a href="https://miku.show/">@OrzMiku</a> 的点拨下才醒悟，那些人博客的翻页是有链接跳转的，我的页面内翻页反而是愚蠢的想法。于是两天不仅耽误了大量学习时间，还啥也没搞出来。</p>
+<p>然后这两三天看了<a href="https://www.himiku.com/">「初之音」</a>的博客，受到启发，又把关于页面的内容改了一次，耗费了一天。今昨两天又想把 live2d 搞回来了，之前用的<a href="https://www.itggg.cn/">「爆胎博客」</a>提供的 api，但其域名很早前就到期了，因此很长一段时间没有重新搞这个。前几天无意中刷到了 next 主题的作者也写了一款 live2d，正好自己现在也在用 next 主题，就想着部署一下，而且尽量全都部署在本地。于是今天花了一天把看板娘弄回来了，部署其实很快，主要是跨域问题上费了很大的力气，好在最后还是解决了。然后模型的参数的初始化也花了挺久的时间，虽然现在自己也没啥后悔的感觉。尽管知道自己的竞争对手现在正在努力，就在我搞这些玩意儿的时候，但还是忍不住去弄。</p>
+<p>这下博客外观什么的都基本定型了，后期应该不会再做大的变动了。虽然好多次想换回 typecho 去用之前用的 handsome，最终都放弃了。因为舍不得自己费了很长时间搞出来的样式，而且总是设想自己换了设备的话，更新方面动态博客可能会比静态博客方便，但其实这种假设是成立不了的，因为我根本不会换设备，还是老老实实用静态博客的好。</p>
+<p>最后想说一说评论，首先是开评论的问题，因为原则上个人备案是不允许开交互式功能的，所以评论是不被允许的，但这不是主要原因。个人认为主要原因有两个方面，一是这个 1ip 的博客本身流量也不大，开了半年评论实际上也没几条留言，还占着服务器资源，每天还要备份数据库，实在是没必要；另一方面是想回归自己当初建立博客的初心，说得好听点是建立一个远离朋友圈，QQ空间的，属于自己的空间，说的简单点就是单纯的记录，说得难听的话，就是当成了自己的情绪的垃圾桶。但如若从内心中吐露出来的东西对一些人有益，那属于意想不到的收获。开了评论后，就会变得时不时想要看一看有没有留言，心里总是期待着邮件通知的赶来，然后为了得到留言而写作，我正在慢慢变成这样，但这是不对的，这与我的初心背道而驰了，于是关闭了评论。</p>
+]]></content>
+      <categories>
+        <category>日常</category>
+      </categories>
+      <tags>
+        <tag>生活</tag>
+        <tag>博客</tag>
+        <tag>随笔</tag>
       </tags>
   </entry>
   <entry>
@@ -1298,42 +1334,6 @@
       </tags>
   </entry>
   <entry>
-    <title>【笔记·古典日语】形容动词</title>
-    <url>/2024/04/kobun6.html</url>
-    <content><![CDATA[<p>形容动词有「なり」「たり」两种活用，两种活用除了「と」「に」的连用形较为特殊，其余均与ラ变动词「あり」的活用方式一致，因此活用词尾「たり」「なり」属于<strong>ラ变形</strong></p>
-<p><img data-src="https://img.fufu.ink/XLaWr8.webp"></p>
-<p>使用「なり」「たり」的不同情况。有「々」这样表示重复的符号的为「たり」活用，其余为「なり」活用，可以记一下常见的「なり」前的形式</p>
-<p><img data-src="https://img.fufu.ink/oJpKxK.webp"></p>
-<p>连用形「に」使用的情况</p>
-<p><img data-src="https://img.fufu.ink/syAnm5.webp"></p>
-]]></content>
-      <categories>
-        <category>日语</category>
-      </categories>
-      <tags>
-        <tag>日语</tag>
-        <tag>古典日语</tag>
-        <tag>语法</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>一点碎碎念</title>
-    <url>/2024/04/monku.html</url>
-    <content><![CDATA[<p>最近又有点沉迷博客美化了，明明自己能力不行，也不去学 js，甚至 css 也只学了半截，结果就是事倍功半，花了大量时间想给说说加个翻页功能，后面在朋友（永远让我保持理智的好兄弟）<a href="https://miku.show/">@OrzMiku</a> 的点拨下才醒悟，那些人博客的翻页是有链接跳转的，我的页面内翻页反而是愚蠢的想法。于是两天不仅耽误了大量学习时间，还啥也没搞出来。</p>
-<p>然后这两三天看了<a href="https://www.himiku.com/">「初之音」</a>的博客，受到启发，又把关于页面的内容改了一次，耗费了一天。今昨两天又想把 live2d 搞回来了，之前用的<a href="https://www.itggg.cn/">「爆胎博客」</a>提供的 api，但其域名很早前就到期了，因此很长一段时间没有重新搞这个。前几天无意中刷到了 next 主题的作者也写了一款 live2d，正好自己现在也在用 next 主题，就想着部署一下，而且尽量全都部署在本地。于是今天花了一天把看板娘弄回来了，部署其实很快，主要是跨域问题上费了很大的力气，好在最后还是解决了。然后模型的参数的初始化也花了挺久的时间，虽然现在自己也没啥后悔的感觉。尽管知道自己的竞争对手现在正在努力，就在我搞这些玩意儿的时候，但还是忍不住去弄。</p>
-<p>这下博客外观什么的都基本定型了，后期应该不会再做大的变动了。虽然好多次想换回 typecho 去用之前用的 handsome，最终都放弃了。因为舍不得自己费了很长时间搞出来的样式，而且总是设想自己换了设备的话，更新方面动态博客可能会比静态博客方便，但其实这种假设是成立不了的，因为我根本不会换设备，还是老老实实用静态博客的好。</p>
-<p>最后想说一说评论，首先是开评论的问题，因为原则上个人备案是不允许开交互式功能的，所以评论是不被允许的，但这不是主要原因。个人认为主要原因有两个方面，一是这个 1ip 的博客本身流量也不大，开了半年评论实际上也没几条留言，还占着服务器资源，每天还要备份数据库，实在是没必要；另一方面是想回归自己当初建立博客的初心，说得好听点是建立一个远离朋友圈，QQ空间的，属于自己的空间，说的简单点就是单纯的记录，说得难听的话，就是当成了自己的情绪的垃圾桶。但如若从内心中吐露出来的东西对一些人有益，那属于意想不到的收获。开了评论后，就会变得时不时想要看一看有没有留言，心里总是期待着邮件通知的赶来，然后为了得到留言而写作，我正在慢慢变成这样，但这是不对的，这与我的初心背道而驰了，于是关闭了评论。</p>
-]]></content>
-      <categories>
-        <category>日常</category>
-      </categories>
-      <tags>
-        <tag>生活</tag>
-        <tag>博客</tag>
-        <tag>随笔</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>不断变强的万达</title>
     <url>/2023/08/genshinwandatsuyoi.html</url>
     <content><![CDATA[<p>去年垫池子抽到了达达鸭，今年 1 月份开始练万达国际，入坑一年以来首次打通了深渊（<a href="/2023/01/genshinshenyuanfirst.html">见『纪念第一次打通深渊』</a>），当时的面板没有截图。</p>
@@ -1408,21 +1408,6 @@
       </tags>
   </entry>
   <entry>
-    <title>四月一日君寻生日快乐</title>
-    <url>/2023/04/watanukitanjyoubi.html</url>
-    <content><![CDATA[<p>4 月 1 日，在很多人看来是愚人节，在我看来，这也是作品『<a href="https://www.bilibili.com/bangumi/play/ss1239?spm_id_from=333.337.0.0">xxxholic</a>』中「<ruby>四月一日君尋<rt>わたぬききみひろ</rt></ruby>」的生日。</p>
-<p>clamp 这个名字可能有人没有听过，不过大多数人一定听说过她的一部作品『魔卡少女樱』。clamp 的作品都有一个相同的、巨大的世界观，各个作品之间也有着千丝万缕的联系。『xxxholic』是发生在与魔卡的世界平行的一个世界中的故事，主角四月一日君尋从小由于体制原因容易吸引鬼怪，在一次「偶然」中进入了被称为「异世界的魔女」的侑子小姐的「能够实现愿望的店」。在经历了许多事情后，四月一日在侑子消失后继续留在店中等待着她的「归来」。——这么解释没看过的小伙伴肯定是听不懂的，不过这个也不是一两句话能够讲清的，比四月一日的产生原因，侑子又是谁，又为什么会消失等，都得小伙伴自己去看一看才能够明白，而且只看『xxxholic』还不足够，还得看了与之相关的作品『<a href="https://www.bilibili.com/bangumi/play/ss1463?spm_id_from=333.337.0.0">翼·年代记</a>』等才能搞清了。</p>
-<p>扯远了，总之，今天是可爱的四月一日的生日，是写作「4 月 1 日」的「わたぬき」！虽然咱不喜欢安利自己喜欢的作品给别人，因为口味不一样，自己觉得很好的在别人看来可能很一般，不过，这部作品我是十分推荐去看的，不过，请不要吐槽画风，因为 clamp 的作品的风格是这样的，如果你坚持看下去，你会发现它的剧情真的很精彩！</p>
-]]></content>
-      <categories>
-        <category>日常</category>
-      </categories>
-      <tags>
-        <tag>节日</tag>
-        <tag>二次元</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>叕出神子啦加深渊终于凹满了</title>
     <url>/2023/06/genshinkamikoaru.html</url>
     <content><![CDATA[<p>先说说深渊，博主在今年 2 月之前是无论如何都打不过深渊的，2 月后开始练万达国际，学会双扩后，队伍养得差不多后就在 2 月 18 日第一次凹过 12 层，见<a href="/2023/02/genshinshenyuanmanxing.html">『打通深渊后半个月，我又第一次满星深渊！』</a>。此后除了第一期沙虫因为「草行九」练度不够，没有满星之外，每一期都能做到满星了！不过近来几期深渊越来越难，大量的「挤模型」「多动症」「厚盾」「拖时间」的机制怪出现，属实是恶心人。之前圣骸兽博主一直是用「草行九瑶」过的，不过这次由于 12-3 下半是「深罪浸礼者」，队伍中必须有「火 草&#x2F;冰 水」，「草行九」自然就成了选择，再加上了前几天出的宵宫用以破冰盾。问题就是上半该用什么队伍，一开始认为万达打圣骸兽也许很麻烦，就想试着用雷国，可惜博主没怎么练雷神，故试了多种配队后还是决定使用万达。最后是 2 分钟打完了四只圣骸兽，用了剩下 1 分钟过了深罪浸礼者（很险···6分59秒打完的，系统判定为 3 星）。</p>
@@ -1437,6 +1422,21 @@
       <tags>
         <tag>原神</tag>
         <tag>游戏</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>四月一日君寻生日快乐</title>
+    <url>/2023/04/watanukitanjyoubi.html</url>
+    <content><![CDATA[<p>4 月 1 日，在很多人看来是愚人节，在我看来，这也是作品『<a href="https://www.bilibili.com/bangumi/play/ss1239?spm_id_from=333.337.0.0">xxxholic</a>』中「<ruby>四月一日君尋<rt>わたぬききみひろ</rt></ruby>」的生日。</p>
+<p>clamp 这个名字可能有人没有听过，不过大多数人一定听说过她的一部作品『魔卡少女樱』。clamp 的作品都有一个相同的、巨大的世界观，各个作品之间也有着千丝万缕的联系。『xxxholic』是发生在与魔卡的世界平行的一个世界中的故事，主角四月一日君尋从小由于体制原因容易吸引鬼怪，在一次「偶然」中进入了被称为「异世界的魔女」的侑子小姐的「能够实现愿望的店」。在经历了许多事情后，四月一日在侑子消失后继续留在店中等待着她的「归来」。——这么解释没看过的小伙伴肯定是听不懂的，不过这个也不是一两句话能够讲清的，比四月一日的产生原因，侑子又是谁，又为什么会消失等，都得小伙伴自己去看一看才能够明白，而且只看『xxxholic』还不足够，还得看了与之相关的作品『<a href="https://www.bilibili.com/bangumi/play/ss1463?spm_id_from=333.337.0.0">翼·年代记</a>』等才能搞清了。</p>
+<p>扯远了，总之，今天是可爱的四月一日的生日，是写作「4 月 1 日」的「わたぬき」！虽然咱不喜欢安利自己喜欢的作品给别人，因为口味不一样，自己觉得很好的在别人看来可能很一般，不过，这部作品我是十分推荐去看的，不过，请不要吐槽画风，因为 clamp 的作品的风格是这样的，如果你坚持看下去，你会发现它的剧情真的很精彩！</p>
+]]></content>
+      <categories>
+        <category>日常</category>
+      </categories>
+      <tags>
+        <tag>节日</tag>
+        <tag>二次元</tag>
       </tags>
   </entry>
   <entry>
@@ -1456,124 +1456,6 @@
       <tags>
         <tag>随笔</tag>
         <tag>吐槽</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>小号双黄了！</title>
-    <url>/2023/05/gsxhcjl.html</url>
-    <content><![CDATA[<p>这件事要从去年 11 月草神池刚出的时候说起，之前一直玩的号只抽中了草神（大保底），武器却歪了「飞雷」，于是创了个小号。想着小号前期资源多，肝一肝能在版本结束前拿个 0+1，结果后面发生了一系列事情，最终导致许久没登小号。今年2、3月份重新上了下号，把剧情推到璃月了，攒出了 74 抽，结果歪了莫娜（血的教训！一定不要边肝边抽，必歪！！！），当即下号。</p>
-<p>今天闲来无事，想起了这个号，上号后拿着版本送的原石单抽了一发，本来以为出紫了，结果出金了！于是甘雨拿下~</p>
-<p><img data-src="https://img.fufu.ink/p1lG81.webp" alt="双黄"></p>
-<p>这又让我燃起了对小号培养的热情，本来都打算让这个号废了，毕竟第一个金就歪了，连新手保护期都没了，结果双黄来了，那它就还有被培养的理由！</p>
-]]></content>
-      <categories>
-        <category>游戏</category>
-      </categories>
-      <tags>
-        <tag>原神</tag>
-        <tag>游戏</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>小号常驻又出小提了</title>
-    <url>/2023/05/genshinchangzhuxiaoti.html</url>
-    <content><![CDATA[<p>前几天 up 池双黄了，出了莫娜和甘雨，今天又出小提了。</p>
-<p>之前玩大号的时候不怎么玩弓箭手，虽然公子武器是弓箭啦，毕竟战斗时使用的都是近战模式。再加上手柄不好进行瞄准操作…</p>
-<p>不过小号出了甘雨后，才发现玩狙击手是真的舒服，即使只靠平 a，也能打出很高的伤害（话说弓箭手的普攻倍率就是所有角色中最高的）。这小号比大号开荒时要舒服很多，主要是因为大号刚入坑时想在常驻池捞 77，把所有原石都用来抽常驻了，结果 120 发都没出 77，倒是把香班给抽得快满命了。</p>
-<p>接下来就要围绕着甘雨和小提两个主 c 来配队了。</p>
-<p><img data-src="https://img.fufu.ink/ayuNM2.webp" alt="常驻池43抽·小提"></p>
-]]></content>
-      <categories>
-        <category>游戏</category>
-      </categories>
-      <tags>
-        <tag>原神</tag>
-        <tag>游戏</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>打通深渊后半个月，我又第一次满星深渊！</title>
-    <url>/2023/02/genshinshenyuanmanxing.html</url>
-    <content><![CDATA[<p>上个月打通了深渊，但因为没练岩队，过不去黄金龙兽，然后万达的练度也拉。最近一直在研究万达的圣遗物搭配，看了把子哥的万达教学，把几个之前刷草神圣遗物拉起来的被我当作狗粮的圣遗物丢给公子，之前公子是 30&#x2F;160 的双爆，现在变成 78&#x2F;140 了，结果小助手一查，初步毕业了？然后去打深渊，把雷神之前的垃圾双爆圣遗物换成了精通狗粮，上半组了一支「瑶秋妲雷」，大招放完草神站场，没想到效果还挺好，相比于原来的「雷妲七主」只打超激化，现在多了超绽放的伤害，种门！（手不自觉地合上了~）然后就满星了！我都不知道为什么，猜测是之前 30 暴击的公子次次不暴击导致的……</p>
-<blockquote>
-<p>「说实话，当公子拥有 100% 暴击率，爆伤多少已经无所谓了」—— b站@这把我们就遇到高手</p>
-</blockquote>
-<p>315 天的萌新，xp 党，终于也满星深渊了~</p>
-<p><img data-src="https://img.fufu.ink/dz3OYE.webp" alt="第一次深渊满星"></p>
-<p>接下来准备攒着原石，等草神复刻，补 2 命，虽然大部分观点不认可非 6 命草神站场输出，但是我不管，我就希望她能够站场！继续坐牢绝缘本，给香菱刷圣遗物，狗粮就用来合成水套，毕竟很多公子的水套都是合成台毕业的。咱们也要打造一支「哪里亮了点哪里」也能够打通深渊的万达！</p>
-]]></content>
-      <categories>
-        <category>游戏</category>
-      </categories>
-      <tags>
-        <tag>原神</tag>
-        <tag>游戏</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>小草神小毕业纪念</title>
-    <url>/2022/11/genshicaoshen.html</url>
-    <content><![CDATA[<p>刷了快 3 周，终于小毕业了。精通没有凑到 1000，不过 900 多也够用了，因为不出暴击头和草伤杯，只能用爆伤头代替 ~<span id="more"></span></p>
-<p><img data-src="https://img.fufu.ink/suLB7X.webp" alt="理之冠"></p>
-<p><img data-src="https://img.fufu.ink/eaOsZU.webp" alt="天赋"></p>
-<p><img data-src="https://img.fufu.ink/icLWGs.webp" alt="时之沙"></p>
-<p><img data-src="https://img.fufu.ink/0Vk67h.webp" alt="空之杯"></p>
-<p><img data-src="https://img.fufu.ink/qF8I9w.webp" alt="死之羽"></p>
-<p><img data-src="https://img.fufu.ink/DWqEbR.webp" alt="生之花"></p>
-<p><img data-src="https://img.fufu.ink/6h6hNZ.webp" alt="练度"></p>
-<p><img data-src="https://img.fufu.ink/c4yy64.webp" alt="圣遗物"></p>
-<p><img data-src="https://img.fufu.ink/HqcUjN.webp" alt="伤害"></p>
-<p>还好，零命打出这样的伤害，我很满意了，毕竟非强度党 ~</p>
-<p>等剩下两周把异梦溶媒给刷出来或者散兵池里多出几个悬丝，把 e 和 q 都升到 9 级，伤害还能上一层，差不多就能毕业了……</p>
-<p>这期没抽神子，抽的武器池，56 发了还没有出，不过大概率还是能够拿下神子专武给纳西妲用用的（绝对不是因为纳西妲专武池歪飞雷了……）</p>
-]]></content>
-      <categories>
-        <category>游戏</category>
-      </categories>
-      <tags>
-        <tag>原神</tag>
-        <tag>游戏</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>改进 Next 主题友链书写方式</title>
-    <url>/2023/05/improvefdlinks.html</url>
-    <content><![CDATA[<blockquote>
-<p>声明：友链的设计源于主题 handsome，主题链接：<a href="https://www.ihewro.com/archives/489/">https://www.ihewro.com/archives/489/</a> 本文仅模仿了其风格，若造成侵权，请联系我删除。</p>
-</blockquote>
-<p>首先在 <code>next主题文件夹/layout/</code> 下新建 <code>links.njk</code>，写入以下内容：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">    &#123;##################&#125;</span><br><span class="line">    &#123;### LINKS BLOCK ###&#125;</span><br><span class="line">    &#123;##################&#125;</span><br><span class="line"></span><br><span class="line">&lt;style&gt;</span><br><span class="line">    @media (min-width: 768px) &#123;</span><br><span class="line">        .link-card &#123;</span><br><span class="line">            width: 50%;</span><br><span class="line">            float: left;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    .link-card&#123;</span><br><span class="line">        position: relative;</span><br><span class="line">        min-height: 1px;</span><br><span class="line">        padding-right: 15px;</span><br><span class="line">        padding-left: 15px;</span><br><span class="line">        box-sizing: border-box;</span><br><span class="line">    &#125;</span><br><span class="line">    .link-user-list&#123;</span><br><span class="line">        margin-bottom: 5px;</span><br><span class="line">        border-radius: 3px;</span><br><span class="line">        padding: 15px;</span><br><span class="line">        display: block;</span><br><span class="line">        box-shadow: 0 2px 6px rgba(0,0,0,.1);</span><br><span class="line">        position: relative;</span><br><span class="line">    &#125;</span><br><span class="line">    .link-user-list:hover&#123;</span><br><span class="line">        background-color: #f6f8f8;</span><br><span class="line">        text-decoration: none;</span><br><span class="line">    &#125;</span><br><span class="line">    #link-container a&#123;</span><br><span class="line">        border: none;</span><br><span class="line">    &#125;</span><br><span class="line">    .user-avatar img&#123;</span><br><span class="line">        border: 2px solid #fff;</span><br><span class="line">        height: auto;</span><br><span class="line">        vertical-align: middle;</span><br><span class="line">        width: 100%;</span><br><span class="line">        border-radius: 20%;</span><br><span class="line">        max-width: 100%!important;</span><br><span class="line">        margin: 0px !important;</span><br><span class="line">    &#125;</span><br><span class="line">    .clearfix:after&#123;</span><br><span class="line">        content: &#x27; &#x27;; </span><br><span class="line">        display: block; </span><br><span class="line">        height: 0; </span><br><span class="line">        clear: both; </span><br><span class="line">        visibility: hidden;</span><br><span class="line">    &#125;</span><br><span class="line">    .text-ellipsis&#123;</span><br><span class="line">        display: block;</span><br><span class="line">        text-overflow: ellipsis;</span><br><span class="line">        overflow: hidden;</span><br><span class="line">        white-space: nowrap;</span><br><span class="line">        font-size: 13px;</span><br><span class="line">    &#125;</span><br><span class="line">    .user-message&#123;</span><br><span class="line">        display: block;</span><br><span class="line">        overflow: hidden;</span><br><span class="line">    &#125;</span><br><span class="line">    .user-description&#123;</span><br><span class="line">        color: #a0a0a0;</span><br><span class="line">    &#125;</span><br><span class="line">    .user-avatar&#123;</span><br><span class="line">        display: inline-block;</span><br><span class="line">        width: 52px;</span><br><span class="line">        height: auto;</span><br><span class="line">        float: left !important;</span><br><span class="line">        margin-right: 15px;</span><br><span class="line">        position: relative;</span><br><span class="line">        white-space: nowrap;</span><br><span class="line">    &#125;</span><br><span class="line">&lt;/style&gt;</span><br><span class="line">&lt;div id=&quot;link-container&quot;&gt;</span><br><span class="line">    &#123;% for link_config in site.data.links %&#125;</span><br><span class="line">    &#123;% if link_config.class_name %&#125;</span><br><span class="line">    &lt;h2 id=&quot;&#123;&#123; link_config.class_name &#125;&#125;&quot;&gt;</span><br><span class="line">        &lt;a href=&quot;#&#123;&#123; link_config.class_name &#125;&#125;&quot; class=&quot;headerlink&quot; title=&quot;&#123;&#123; link_config.class_name &#125;&#125;&quot;&gt;&lt;/a&gt;</span><br><span class="line">        &#123;&#123; link_config.class_name &#125;&#125;</span><br><span class="line">    &lt;/h2&gt;</span><br><span class="line">    &#123;% else %&#125;</span><br><span class="line">    &lt;hr&gt;</span><br><span class="line">    &#123;% endif %&#125;</span><br><span class="line">    &lt;div class=&quot;clearfix&quot;&gt;</span><br><span class="line">    &#123;% for link in link_config.link_list %&#125;</span><br><span class="line">    &lt;div class=&quot;link-card&quot;&gt;</span><br><span class="line">        &lt;a href=&quot;&#123;&#123; link.site &#125;&#125;&quot; target=&quot;_blank&quot; class=&quot;link-user-list&quot;&gt;</span><br><span class="line">            &lt;span class=&quot;user-avatar&quot;&gt;</span><br><span class="line">                &lt;img src=&quot;&#123;&#123; link.avatar &#125;&#125;&quot; class=&quot;nofancybox&quot;&gt;</span><br><span class="line">            &lt;/span&gt;</span><br><span class="line">            &lt;span class=&quot;user-message&quot;&gt;</span><br><span class="line">                &lt;span class=&quot;text-ellipsis&quot;&gt;&#123;&#123; link.nickname &#125;&#125;&lt;/span&gt;</span><br><span class="line">                &lt;span class=&quot;user-description text-ellipsis&quot;&gt;&#123;&#123; link.info &#125;&#125;&lt;/span&gt;</span><br><span class="line">            &lt;/span&gt;</span><br><span class="line">        &lt;/a&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">    &#123;% endfor %&#125;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">    &#123;% endfor %&#125;</span><br><span class="line"></span><br><span class="line">    &lt;div&gt;</span><br><span class="line">    &#123;&#123; page.content &#125;&#125;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line">    &#123;######################&#125;</span><br><span class="line">    &#123;### END LINKS BLOCK ###&#125;</span><br><span class="line">    &#123;######################&#125;</span><br></pre></td></tr></table></figure>
-
-<p>接下来打开 <code>next主题文件夹/layout/page.njk</code>，在 <code>block title</code> 区域中某个 <code>elif</code> 语句后添加上</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&#123;% block title %&#125;</span><br><span class="line">  &#123;%- set page_title_suffix = &#x27; | &#x27; + title %&#125;</span><br><span class="line"></span><br><span class="line">  &#123;%- if page.type === &#x27;categories&#x27; and not page.title %&#125;</span><br><span class="line">    &#123;&#123;- __(&#x27;title.category&#x27;) + page_title_suffix &#125;&#125;</span><br><span class="line">  &#123;%- elif page.type === &#x27;tags&#x27; and not page.title %&#125;</span><br><span class="line">    &#123;&#123;- __(&#x27;title.tag&#x27;) + page_title_suffix &#125;&#125;</span><br><span class="line">  &#123;%- elif page.type === &#x27;schedule&#x27; and not page.title %&#125;</span><br><span class="line">    &#123;&#123;- __(&#x27;title.schedule&#x27;) + page_title_suffix &#125;&#125;</span><br><span class="line">+  &#123;%- elif page.type === &#x27;links&#x27; and not page.title %&#125;</span><br><span class="line">+    &#123;&#123;- __(&#x27;title.links&#x27;) + page_title_suffix &#125;&#125;</span><br><span class="line">  &#123;%- else %&#125;</span><br><span class="line">    &#123;&#123;- page.title + page_title_suffix &#125;&#125;</span><br><span class="line">  &#123;%- endif %&#125;</span><br><span class="line">&#123;% endblock %&#125;</span><br></pre></td></tr></table></figure>
-
-<p>接下来在下面的 <code>PAGE BODY</code> 中添加</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&#123;### PAGE BODY ###&#125;</span><br><span class="line">      &#123;#################&#125;</span><br><span class="line">      &lt;div class=&quot;post-body&#123;% if page.direction and page.direction.toLowerCase() === &#x27;rtl&#x27; %&#125; rtl&#123;% endif %&#125;&quot;&gt;</span><br><span class="line">        &#123;%- if page.type === &#x27;tags&#x27; %&#125;</span><br><span class="line">          &#123;%- include &#x27;_partials/page/tags.njk&#x27; -%&#125;</span><br><span class="line">        &#123;% elif page.type === &#x27;categories&#x27; %&#125;</span><br><span class="line">          &#123;%- include &#x27;_partials/page/categories.njk&#x27; -%&#125;</span><br><span class="line">        &#123;% elif page.type === &#x27;schedule&#x27; %&#125;</span><br><span class="line">          &#123;%- include &#x27;_partials/page/schedule.njk&#x27; -%&#125;</span><br><span class="line">+        &#123;% elif page.type === &#x27;links&#x27; %&#125;</span><br><span class="line">+          &#123;%- include &#x27;links.njk&#x27; -%&#125;</span><br><span class="line">        &#123;% else %&#125;</span><br><span class="line">          &#123;&#123; page.content &#125;&#125;</span><br><span class="line">        &#123;%- endif %&#125;</span><br><span class="line">      &lt;/div&gt;</span><br><span class="line">      &#123;#####################&#125;</span><br><span class="line">      &#123;### END PAGE BODY ###&#125;</span><br><span class="line">      &#123;#####################&#125;</span><br></pre></td></tr></table></figure>
-
-<p>接下来就是创建 <code>source/links/index.md</code>，配置好里面的友链申请信息了（<strong>注意 <code>front-matter</code> 的 type 的值必须为 <code>links</code>！</strong>）。</p>
-<p>然后打开 <code>_config.next.yml</code>，在 <code>menu</code> 中添加</p>
-<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="attr">menu:</span></span><br><span class="line">  <span class="attr">links:</span> <span class="string">/links/</span> <span class="string">||</span> <span class="string">fas</span> <span class="string">fa-link</span></span><br></pre></td></tr></table></figure>
-
-<p>打开 <code>hexo/themes/next/languages/zh-CN.yml</code>，在 <code>menu</code> 中添加</p>
-<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="attr">menu:</span></span><br><span class="line">  <span class="attr">links:</span> <span class="string">友链</span></span><br></pre></td></tr></table></figure>
-
-<p>最后在 <code>hexo根目录/source/_data/</code> 下创建 <code>links.yml</code> 并填入以下内容：</p>
-<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 参数说明</span></span><br><span class="line"><span class="comment"># class_name 选填，可以理解为友链组的名字，如果不填则会在顶部生成一个分割线</span></span><br><span class="line"><span class="comment"># nickname 博客名称</span></span><br><span class="line"><span class="comment"># site 博客地址</span></span><br><span class="line"><span class="comment"># info 博客简介</span></span><br><span class="line"><span class="comment"># avatar 博客logo</span></span><br><span class="line"><span class="comment"># 填写时注意缩进！</span></span><br><span class="line"></span><br><span class="line"><span class="bullet">-</span> <span class="attr">class_name:</span></span><br><span class="line">  <span class="attr">link_list:</span></span><br><span class="line">    <span class="bullet">-</span> <span class="attr">nickname:</span></span><br><span class="line">      <span class="attr">site:</span></span><br><span class="line">      <span class="attr">info:</span></span><br><span class="line">      <span class="attr">avatar:</span></span><br><span class="line">    <span class="bullet">-</span> <span class="attr">nickname:</span></span><br><span class="line">      <span class="attr">site:</span></span><br><span class="line">      <span class="attr">info:</span></span><br><span class="line">      <span class="attr">avatar:</span></span><br><span class="line"></span><br><span class="line"><span class="bullet">-</span> <span class="attr">class_name:</span></span><br><span class="line">  <span class="attr">link_list:</span></span><br><span class="line">    <span class="bullet">-</span> <span class="attr">nickname:</span></span><br><span class="line">      <span class="attr">site:</span></span><br><span class="line">      <span class="attr">info:</span></span><br><span class="line">      <span class="attr">avatar:</span></span><br><span class="line">    <span class="bullet">-</span> <span class="attr">nickname:</span></span><br><span class="line">      <span class="attr">site:</span></span><br><span class="line">      <span class="attr">info:</span></span><br><span class="line">      <span class="attr">avatar:</span></span><br></pre></td></tr></table></figure>
-
-<p>本文参考：</p>
-<ul>
-<li><a href="https://only_ann.gitee.io/next/archives/48141.html">next主题添加自定义友链</a></li>
-<li><a href="https://github.com/next-theme/hexo-theme-next/discussions/660">之前显示有问题，去问了主题作者，感谢作者的耐心回答</a></li>
-<li><a href="https://blog.csdn.net/qq_35479468/article/details/107454287">Hexo+next主题自定义友情链接页面</a></li>
-</ul>
-]]></content>
-      <categories>
-        <category>技术</category>
-      </categories>
-      <tags>
-        <tag>Hexo</tag>
-        <tag>技术</tag>
-        <tag>CSS</tag>
       </tags>
   </entry>
   <entry>
@@ -1633,71 +1515,126 @@
         <category>技术</category>
       </categories>
       <tags>
-        <tag>Hexo</tag>
         <tag>技术</tag>
+        <tag>Hexo</tag>
       </tags>
   </entry>
   <entry>
-    <title>无题（一）</title>
-    <url>/2024/04/mudai1.html</url>
-    <content><![CDATA[<p>他又在打瞌睡了。</p>
-<p>自从早上来到教室，他就一动不动地趴在那里。</p>
-<p>尽管周围充斥着读书声和同学间的笑谈声，但他似乎置若罔闻，仍旧保持着那副姿势。<span id="more"></span></p>
-<p>终于，上课铃响了。然而，他仍然没有动弹。于是，旁边的同学推了推他。</p>
-<p>“嘿，上课了！”</p>
-<p>“嗯……嗯？”</p>
-<p>他终于醒了过来，揉了揉眼睛，茫然地看着走上讲台的教师。</p>
-<p>这节课是数学课，数学老师是一个矮小精悍的老头。老头大概已有 60 岁了，头发黑白相间，总是穿着一身西服，但不知为何，他总是给人一种永远不会消退的精神气质</p>
-<p>“上课啦——安静！”</p>
-<p>学委提高了声音，试图压过尚未平息的嘈杂声。</p>
-<p>最终，教室恢复了安静，老师打开书，开始了授课。</p>
-<p>他的目光重新投向书本，看着那些熟悉的文字，这些内容在暑假的初升高衔接班上已经讲过了，不过他那时也是这副样子，只是记住了一些文字，而对其意义一窍不通。渐渐地，他开始觉得这些文字变得模糊起来。</p>
-<p>他开始垂着脑袋，点起头来，而且很有规律的，当脖子弯曲到接近 90 度时，忽然又抬起头来，然后又开始缓缓下垂，如此反复。渐渐地，他的身体也晃了起来。</p>
-<p>突然，他朝左侧倒了下去，靠在了旁边女生的身上。</p>
-<p>“哎呀！你干什么！”</p>
-<p>“啊！对不起，睡迷糊了”</p>
-<p>女生一脸无语地看了他一眼。他却是低着头朝她说了一句后，马上又侧过脸去，没看到她的表情。</p>
-<p>经历了刚才这出，他终于是醒过来了。但课程已经进行了一半，早已不知老师讲到了何处。反正也是无聊，于是他拿出一本小说看了起来。</p>
-<p>那是一本科幻小说。他已经看了这个作者写的数本书了，有长篇也有短篇，但都很吸引人，或量子力学，或外星文明，或多维宇宙，他很喜欢这些题材，看完后还常常将书借给同样喜欢科幻的 W。</p>
-<p>刚读了不到一页，老头的声音戛然而止，一只手突然出现在他眼前，遮住了书上的文字。</p>
-<p>他抬起头，面无表情地看着眼前的老头，老头却是一脸担忧的神色。</p>
-<p>“要好好听课啊……”</p>
-<p>他没有做出回应，甚至连头也没点一下，只是一动不动地看着老头。</p>
-<p>老头见状也就作罢，转身回到讲台，继续如同巫师念咒一般地讲着他无法理解的那些数字、字母、符号组成的公式。</p>
-<p>这下书是看不成了，于是他环顾四周，希望找点能够打发这漫长的上课时间的事情。结果，往左一转头，他找到了。</p>
-<p>他的同桌，刚才的那个女生，此刻也像他一样，开始不断地“点头”。</p>
-<p>“诶！诶！醒醒！醒醒！”</p>
-<p>本着还人情的想法，他也推了推她，把她也叫醒了。</p>
-<p>“笑死我了，怎么你也睡了？”</p>
-<p>“哎呀，别吵我，困死了！”</p>
-<p>这个女生叫 X，在他看来，她是个和自己一样上课不听讲，光睡觉的家伙，也经常迟到，被班主任责问时，便露出带有歉意的，腼腆的微笑。每到这时，班主任便气不打一处来，言语中却又带着些无奈。</p>
-<p>“笑，还笑，这有什么好笑的。下次别再迟到了！”</p>
-<p>说罢便让她回到了座位上。这是每隔两三天便会上演一次的戏码，她永远都能够找到合适的理由来为自己开脱，而每次班主任也只好叮嘱，便作罢。</p>
-<p>对他来说，这样的事情倒是给他无聊的生活增添了些许乐趣。毕竟他就是喜欢看别人倒霉的人，他无法容忍别人比他优秀，又蔑视那些不如他的人，看到他人遭遇不幸，他反而觉得心里舒畅。</p>
-<p>”叮——“</p>
-<p>第一节课终于结束了。</p>
-<p>他又趴了下去，老头走到他面前，拍了拍他。</p>
-<p>“D，你上课要听啊……”</p>
-<p>他只是点了点头，便又趴下了，老头只好无奈地走出了教室。</p>
-<p>之后的事情他都不清楚了，再次醒来时，已经接近下午一点了。</p>
-<p>“已经是这个时间点了吗？得去吃饭了。”</p>
-<p>食堂里人不多，毕竟人流高峰期是刚下课的时候，也就是 12 点 10 分左右，此时只有零零散散的几张桌子坐着几个人，一些还是结束了中午的工作，从厨房中走出来的厨师。开着的窗口也不多了，他犹豫了片刻，最终还是选择了位于二楼楼梯拐角处的卖汤面的窗口。这家店的特色是面可以无限添，还可以选择是汤面还是拌面。</p>
-<p>他点了一份拌面，独自一人静静地吃了起来。他喜欢拌面，加入数勺辣子油和酱油、醋搅拌后，光是看着那一碗红油，就充满了食欲。</p>
-<p>吃碗面，他又回到了教室。教室里只剩下几个男女，他们都是不良学生，这一点从入学的时候他就知道了。虽然他也承认自己也是上课不听讲，成天好吃懒做的“不良”学生，但他认为这种“不良”和他们的“不良”是有本质区别的。他们有一种看上去就让人觉得是社会混混的“痞气”，但外表还是学生，便只能归类于“不良”。他是打心里畏惧着这些人，同时心里也瞧不起这些人，对他们总是退避三舍。</p>
-<p>但他不能把这种态度太明显地表现出来，于是他随着他们中的一个名为 Q 的高个子，称似乎是老大的名为 Z 的人为 Z 哥，借此与他们套近乎。</p>
-<p>他们口中充满了对老师与学校的不满，说出的是粗鄙之言，做出的是不堪之举，他们内心总是躁动着，似乎想通过对外界的破坏来将这些不满与躁动发泄出来。</p>
-<p>其中一个叫 L 的胖子，从课桌中抽出一个短的金属筒状物，握住尾端黑色的部分，向斜下方用力一甩，筒状物一下子就伸长了，外形如同鱼竿，圆筒的半径从手握的黑色部分到最前端逐渐缩短，到了前端变成了一个金属小球，这是他们口中的“甩棍”！胖子拿着甩棍走到教室的后面，那里摆放了一排的储物柜，是给学生放书用的。胖子一边嘴里骂着什么，一边用甩棍用力地敲打着储物柜的门。整个教室回荡着巨大的响声，遭受这无妄之灾的金属门最终是承受不了甩棍无情的摧残，变瘪了。</p>
-<p>他埋头趴在桌子上，每一次巨大的敲击声，都仿佛穿透了他的身体一般，使他不由得发抖。不知道过去了多久，敲击声消失了，交谈声也慢慢变远，最后不知所踪，他们终于是离开了。</p>
-<p>下午第一节是化学课，由于记不住化学方程式，他被老师叫到了教室后面罚站听课。化学是他的薄弱项，这一点从初中开始就是，当时老师甚至让同学在课堂上自习，专门让他上讲台给他讲解，但他还是无法理解。到了高中，许多知识点又讲了一遍，但他还是不会，或许他是真的不擅长理科。</p>
-<p>第二节是历史课，由之前提到的那位班主任负责教授。历史课上他倒没有打瞌睡了，但他向来对历史不感兴趣，在他看来，历史就是讲述什么时候发生了什么事情，教材上不就是这么写的吗？还要去分析什么根本原因，什么直接原因、间接原因，简直麻烦死了。于是，没事干的他陷入了回忆。</p>
+    <title>小号常驻又出小提了</title>
+    <url>/2023/05/genshinchangzhuxiaoti.html</url>
+    <content><![CDATA[<p>前几天 up 池双黄了，出了莫娜和甘雨，今天又出小提了。</p>
+<p>之前玩大号的时候不怎么玩弓箭手，虽然公子武器是弓箭啦，毕竟战斗时使用的都是近战模式。再加上手柄不好进行瞄准操作…</p>
+<p>不过小号出了甘雨后，才发现玩狙击手是真的舒服，即使只靠平 a，也能打出很高的伤害（话说弓箭手的普攻倍率就是所有角色中最高的）。这小号比大号开荒时要舒服很多，主要是因为大号刚入坑时想在常驻池捞 77，把所有原石都用来抽常驻了，结果 120 发都没出 77，倒是把香班给抽得快满命了。</p>
+<p>接下来就要围绕着甘雨和小提两个主 c 来配队了。</p>
+<p><img data-src="https://img.fufu.ink/ayuNM2.webp" alt="常驻池43抽·小提"></p>
 ]]></content>
       <categories>
-        <category>日常</category>
+        <category>游戏</category>
       </categories>
       <tags>
-        <tag>生活</tag>
-        <tag>小说</tag>
-        <tag>高中</tag>
+        <tag>原神</tag>
+        <tag>游戏</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>小号双黄了！</title>
+    <url>/2023/05/gsxhcjl.html</url>
+    <content><![CDATA[<p>这件事要从去年 11 月草神池刚出的时候说起，之前一直玩的号只抽中了草神（大保底），武器却歪了「飞雷」，于是创了个小号。想着小号前期资源多，肝一肝能在版本结束前拿个 0+1，结果后面发生了一系列事情，最终导致许久没登小号。今年2、3月份重新上了下号，把剧情推到璃月了，攒出了 74 抽，结果歪了莫娜（血的教训！一定不要边肝边抽，必歪！！！），当即下号。</p>
+<p>今天闲来无事，想起了这个号，上号后拿着版本送的原石单抽了一发，本来以为出紫了，结果出金了！于是甘雨拿下~</p>
+<p><img data-src="https://img.fufu.ink/p1lG81.webp" alt="双黄"></p>
+<p>这又让我燃起了对小号培养的热情，本来都打算让这个号废了，毕竟第一个金就歪了，连新手保护期都没了，结果双黄来了，那它就还有被培养的理由！</p>
+]]></content>
+      <categories>
+        <category>游戏</category>
+      </categories>
+      <tags>
+        <tag>原神</tag>
+        <tag>游戏</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>小草神小毕业纪念</title>
+    <url>/2022/11/genshicaoshen.html</url>
+    <content><![CDATA[<p>刷了快 3 周，终于小毕业了。精通没有凑到 1000，不过 900 多也够用了，因为不出暴击头和草伤杯，只能用爆伤头代替 ~<span id="more"></span></p>
+<p><img data-src="https://img.fufu.ink/suLB7X.webp" alt="理之冠"></p>
+<p><img data-src="https://img.fufu.ink/eaOsZU.webp" alt="天赋"></p>
+<p><img data-src="https://img.fufu.ink/icLWGs.webp" alt="时之沙"></p>
+<p><img data-src="https://img.fufu.ink/0Vk67h.webp" alt="空之杯"></p>
+<p><img data-src="https://img.fufu.ink/qF8I9w.webp" alt="死之羽"></p>
+<p><img data-src="https://img.fufu.ink/DWqEbR.webp" alt="生之花"></p>
+<p><img data-src="https://img.fufu.ink/6h6hNZ.webp" alt="练度"></p>
+<p><img data-src="https://img.fufu.ink/c4yy64.webp" alt="圣遗物"></p>
+<p><img data-src="https://img.fufu.ink/HqcUjN.webp" alt="伤害"></p>
+<p>还好，零命打出这样的伤害，我很满意了，毕竟非强度党 ~</p>
+<p>等剩下两周把异梦溶媒给刷出来或者散兵池里多出几个悬丝，把 e 和 q 都升到 9 级，伤害还能上一层，差不多就能毕业了……</p>
+<p>这期没抽神子，抽的武器池，56 发了还没有出，不过大概率还是能够拿下神子专武给纳西妲用用的（绝对不是因为纳西妲专武池歪飞雷了……）</p>
+]]></content>
+      <categories>
+        <category>游戏</category>
+      </categories>
+      <tags>
+        <tag>原神</tag>
+        <tag>游戏</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>打通深渊后半个月，我又第一次满星深渊！</title>
+    <url>/2023/02/genshinshenyuanmanxing.html</url>
+    <content><![CDATA[<p>上个月打通了深渊，但因为没练岩队，过不去黄金龙兽，然后万达的练度也拉。最近一直在研究万达的圣遗物搭配，看了把子哥的万达教学，把几个之前刷草神圣遗物拉起来的被我当作狗粮的圣遗物丢给公子，之前公子是 30&#x2F;160 的双爆，现在变成 78&#x2F;140 了，结果小助手一查，初步毕业了？然后去打深渊，把雷神之前的垃圾双爆圣遗物换成了精通狗粮，上半组了一支「瑶秋妲雷」，大招放完草神站场，没想到效果还挺好，相比于原来的「雷妲七主」只打超激化，现在多了超绽放的伤害，种门！（手不自觉地合上了~）然后就满星了！我都不知道为什么，猜测是之前 30 暴击的公子次次不暴击导致的……</p>
+<blockquote>
+<p>「说实话，当公子拥有 100% 暴击率，爆伤多少已经无所谓了」—— b站@这把我们就遇到高手</p>
+</blockquote>
+<p>315 天的萌新，xp 党，终于也满星深渊了~</p>
+<p><img data-src="https://img.fufu.ink/dz3OYE.webp" alt="第一次深渊满星"></p>
+<p>接下来准备攒着原石，等草神复刻，补 2 命，虽然大部分观点不认可非 6 命草神站场输出，但是我不管，我就希望她能够站场！继续坐牢绝缘本，给香菱刷圣遗物，狗粮就用来合成水套，毕竟很多公子的水套都是合成台毕业的。咱们也要打造一支「哪里亮了点哪里」也能够打通深渊的万达！</p>
+]]></content>
+      <categories>
+        <category>游戏</category>
+      </categories>
+      <tags>
+        <tag>原神</tag>
+        <tag>游戏</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>改进 Next 主题友链书写方式</title>
+    <url>/2023/05/improvefdlinks.html</url>
+    <content><![CDATA[<blockquote>
+<p>声明：友链的设计源于主题 handsome，主题链接：<a href="https://www.ihewro.com/archives/489/">https://www.ihewro.com/archives/489/</a> 本文仅模仿了其风格，若造成侵权，请联系我删除。</p>
+</blockquote>
+<p>首先在 <code>next主题文件夹/layout/</code> 下新建 <code>links.njk</code>，写入以下内容：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">    &#123;##################&#125;</span><br><span class="line">    &#123;### LINKS BLOCK ###&#125;</span><br><span class="line">    &#123;##################&#125;</span><br><span class="line"></span><br><span class="line">&lt;style&gt;</span><br><span class="line">    @media (min-width: 768px) &#123;</span><br><span class="line">        .link-card &#123;</span><br><span class="line">            width: 50%;</span><br><span class="line">            float: left;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    .link-card&#123;</span><br><span class="line">        position: relative;</span><br><span class="line">        min-height: 1px;</span><br><span class="line">        padding-right: 15px;</span><br><span class="line">        padding-left: 15px;</span><br><span class="line">        box-sizing: border-box;</span><br><span class="line">    &#125;</span><br><span class="line">    .link-user-list&#123;</span><br><span class="line">        margin-bottom: 5px;</span><br><span class="line">        border-radius: 3px;</span><br><span class="line">        padding: 15px;</span><br><span class="line">        display: block;</span><br><span class="line">        box-shadow: 0 2px 6px rgba(0,0,0,.1);</span><br><span class="line">        position: relative;</span><br><span class="line">    &#125;</span><br><span class="line">    .link-user-list:hover&#123;</span><br><span class="line">        background-color: #f6f8f8;</span><br><span class="line">        text-decoration: none;</span><br><span class="line">    &#125;</span><br><span class="line">    #link-container a&#123;</span><br><span class="line">        border: none;</span><br><span class="line">    &#125;</span><br><span class="line">    .user-avatar img&#123;</span><br><span class="line">        border: 2px solid #fff;</span><br><span class="line">        height: auto;</span><br><span class="line">        vertical-align: middle;</span><br><span class="line">        width: 100%;</span><br><span class="line">        border-radius: 20%;</span><br><span class="line">        max-width: 100%!important;</span><br><span class="line">        margin: 0px !important;</span><br><span class="line">    &#125;</span><br><span class="line">    .clearfix:after&#123;</span><br><span class="line">        content: &#x27; &#x27;; </span><br><span class="line">        display: block; </span><br><span class="line">        height: 0; </span><br><span class="line">        clear: both; </span><br><span class="line">        visibility: hidden;</span><br><span class="line">    &#125;</span><br><span class="line">    .text-ellipsis&#123;</span><br><span class="line">        display: block;</span><br><span class="line">        text-overflow: ellipsis;</span><br><span class="line">        overflow: hidden;</span><br><span class="line">        white-space: nowrap;</span><br><span class="line">        font-size: 13px;</span><br><span class="line">    &#125;</span><br><span class="line">    .user-message&#123;</span><br><span class="line">        display: block;</span><br><span class="line">        overflow: hidden;</span><br><span class="line">    &#125;</span><br><span class="line">    .user-description&#123;</span><br><span class="line">        color: #a0a0a0;</span><br><span class="line">    &#125;</span><br><span class="line">    .user-avatar&#123;</span><br><span class="line">        display: inline-block;</span><br><span class="line">        width: 52px;</span><br><span class="line">        height: auto;</span><br><span class="line">        float: left !important;</span><br><span class="line">        margin-right: 15px;</span><br><span class="line">        position: relative;</span><br><span class="line">        white-space: nowrap;</span><br><span class="line">    &#125;</span><br><span class="line">&lt;/style&gt;</span><br><span class="line">&lt;div id=&quot;link-container&quot;&gt;</span><br><span class="line">    &#123;% for link_config in site.data.links %&#125;</span><br><span class="line">    &#123;% if link_config.class_name %&#125;</span><br><span class="line">    &lt;h2 id=&quot;&#123;&#123; link_config.class_name &#125;&#125;&quot;&gt;</span><br><span class="line">        &lt;a href=&quot;#&#123;&#123; link_config.class_name &#125;&#125;&quot; class=&quot;headerlink&quot; title=&quot;&#123;&#123; link_config.class_name &#125;&#125;&quot;&gt;&lt;/a&gt;</span><br><span class="line">        &#123;&#123; link_config.class_name &#125;&#125;</span><br><span class="line">    &lt;/h2&gt;</span><br><span class="line">    &#123;% else %&#125;</span><br><span class="line">    &lt;hr&gt;</span><br><span class="line">    &#123;% endif %&#125;</span><br><span class="line">    &lt;div class=&quot;clearfix&quot;&gt;</span><br><span class="line">    &#123;% for link in link_config.link_list %&#125;</span><br><span class="line">    &lt;div class=&quot;link-card&quot;&gt;</span><br><span class="line">        &lt;a href=&quot;&#123;&#123; link.site &#125;&#125;&quot; target=&quot;_blank&quot; class=&quot;link-user-list&quot;&gt;</span><br><span class="line">            &lt;span class=&quot;user-avatar&quot;&gt;</span><br><span class="line">                &lt;img src=&quot;&#123;&#123; link.avatar &#125;&#125;&quot; class=&quot;nofancybox&quot;&gt;</span><br><span class="line">            &lt;/span&gt;</span><br><span class="line">            &lt;span class=&quot;user-message&quot;&gt;</span><br><span class="line">                &lt;span class=&quot;text-ellipsis&quot;&gt;&#123;&#123; link.nickname &#125;&#125;&lt;/span&gt;</span><br><span class="line">                &lt;span class=&quot;user-description text-ellipsis&quot;&gt;&#123;&#123; link.info &#125;&#125;&lt;/span&gt;</span><br><span class="line">            &lt;/span&gt;</span><br><span class="line">        &lt;/a&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">    &#123;% endfor %&#125;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">    &#123;% endfor %&#125;</span><br><span class="line"></span><br><span class="line">    &lt;div&gt;</span><br><span class="line">    &#123;&#123; page.content &#125;&#125;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line">    &#123;######################&#125;</span><br><span class="line">    &#123;### END LINKS BLOCK ###&#125;</span><br><span class="line">    &#123;######################&#125;</span><br></pre></td></tr></table></figure>
+
+<p>接下来打开 <code>next主题文件夹/layout/page.njk</code>，在 <code>block title</code> 区域中某个 <code>elif</code> 语句后添加上</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&#123;% block title %&#125;</span><br><span class="line">  &#123;%- set page_title_suffix = &#x27; | &#x27; + title %&#125;</span><br><span class="line"></span><br><span class="line">  &#123;%- if page.type === &#x27;categories&#x27; and not page.title %&#125;</span><br><span class="line">    &#123;&#123;- __(&#x27;title.category&#x27;) + page_title_suffix &#125;&#125;</span><br><span class="line">  &#123;%- elif page.type === &#x27;tags&#x27; and not page.title %&#125;</span><br><span class="line">    &#123;&#123;- __(&#x27;title.tag&#x27;) + page_title_suffix &#125;&#125;</span><br><span class="line">  &#123;%- elif page.type === &#x27;schedule&#x27; and not page.title %&#125;</span><br><span class="line">    &#123;&#123;- __(&#x27;title.schedule&#x27;) + page_title_suffix &#125;&#125;</span><br><span class="line">+  &#123;%- elif page.type === &#x27;links&#x27; and not page.title %&#125;</span><br><span class="line">+    &#123;&#123;- __(&#x27;title.links&#x27;) + page_title_suffix &#125;&#125;</span><br><span class="line">  &#123;%- else %&#125;</span><br><span class="line">    &#123;&#123;- page.title + page_title_suffix &#125;&#125;</span><br><span class="line">  &#123;%- endif %&#125;</span><br><span class="line">&#123;% endblock %&#125;</span><br></pre></td></tr></table></figure>
+
+<p>接下来在下面的 <code>PAGE BODY</code> 中添加</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&#123;### PAGE BODY ###&#125;</span><br><span class="line">      &#123;#################&#125;</span><br><span class="line">      &lt;div class=&quot;post-body&#123;% if page.direction and page.direction.toLowerCase() === &#x27;rtl&#x27; %&#125; rtl&#123;% endif %&#125;&quot;&gt;</span><br><span class="line">        &#123;%- if page.type === &#x27;tags&#x27; %&#125;</span><br><span class="line">          &#123;%- include &#x27;_partials/page/tags.njk&#x27; -%&#125;</span><br><span class="line">        &#123;% elif page.type === &#x27;categories&#x27; %&#125;</span><br><span class="line">          &#123;%- include &#x27;_partials/page/categories.njk&#x27; -%&#125;</span><br><span class="line">        &#123;% elif page.type === &#x27;schedule&#x27; %&#125;</span><br><span class="line">          &#123;%- include &#x27;_partials/page/schedule.njk&#x27; -%&#125;</span><br><span class="line">+        &#123;% elif page.type === &#x27;links&#x27; %&#125;</span><br><span class="line">+          &#123;%- include &#x27;links.njk&#x27; -%&#125;</span><br><span class="line">        &#123;% else %&#125;</span><br><span class="line">          &#123;&#123; page.content &#125;&#125;</span><br><span class="line">        &#123;%- endif %&#125;</span><br><span class="line">      &lt;/div&gt;</span><br><span class="line">      &#123;#####################&#125;</span><br><span class="line">      &#123;### END PAGE BODY ###&#125;</span><br><span class="line">      &#123;#####################&#125;</span><br></pre></td></tr></table></figure>
+
+<p>接下来就是创建 <code>source/links/index.md</code>，配置好里面的友链申请信息了（<strong>注意 <code>front-matter</code> 的 type 的值必须为 <code>links</code>！</strong>）。</p>
+<p>然后打开 <code>_config.next.yml</code>，在 <code>menu</code> 中添加</p>
+<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="attr">menu:</span></span><br><span class="line">  <span class="attr">links:</span> <span class="string">/links/</span> <span class="string">||</span> <span class="string">fas</span> <span class="string">fa-link</span></span><br></pre></td></tr></table></figure>
+
+<p>打开 <code>hexo/themes/next/languages/zh-CN.yml</code>，在 <code>menu</code> 中添加</p>
+<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="attr">menu:</span></span><br><span class="line">  <span class="attr">links:</span> <span class="string">友链</span></span><br></pre></td></tr></table></figure>
+
+<p>最后在 <code>hexo根目录/source/_data/</code> 下创建 <code>links.yml</code> 并填入以下内容：</p>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 参数说明</span></span><br><span class="line"><span class="comment"># class_name 选填，可以理解为友链组的名字，如果不填则会在顶部生成一个分割线</span></span><br><span class="line"><span class="comment"># nickname 博客名称</span></span><br><span class="line"><span class="comment"># site 博客地址</span></span><br><span class="line"><span class="comment"># info 博客简介</span></span><br><span class="line"><span class="comment"># avatar 博客logo</span></span><br><span class="line"><span class="comment"># 填写时注意缩进！</span></span><br><span class="line"></span><br><span class="line"><span class="bullet">-</span> <span class="attr">class_name:</span></span><br><span class="line">  <span class="attr">link_list:</span></span><br><span class="line">    <span class="bullet">-</span> <span class="attr">nickname:</span></span><br><span class="line">      <span class="attr">site:</span></span><br><span class="line">      <span class="attr">info:</span></span><br><span class="line">      <span class="attr">avatar:</span></span><br><span class="line">    <span class="bullet">-</span> <span class="attr">nickname:</span></span><br><span class="line">      <span class="attr">site:</span></span><br><span class="line">      <span class="attr">info:</span></span><br><span class="line">      <span class="attr">avatar:</span></span><br><span class="line"></span><br><span class="line"><span class="bullet">-</span> <span class="attr">class_name:</span></span><br><span class="line">  <span class="attr">link_list:</span></span><br><span class="line">    <span class="bullet">-</span> <span class="attr">nickname:</span></span><br><span class="line">      <span class="attr">site:</span></span><br><span class="line">      <span class="attr">info:</span></span><br><span class="line">      <span class="attr">avatar:</span></span><br><span class="line">    <span class="bullet">-</span> <span class="attr">nickname:</span></span><br><span class="line">      <span class="attr">site:</span></span><br><span class="line">      <span class="attr">info:</span></span><br><span class="line">      <span class="attr">avatar:</span></span><br></pre></td></tr></table></figure>
+
+<p>本文参考：</p>
+<ul>
+<li><a href="https://only_ann.gitee.io/next/archives/48141.html">next主题添加自定义友链</a></li>
+<li><a href="https://github.com/next-theme/hexo-theme-next/discussions/660">之前显示有问题，去问了主题作者，感谢作者的耐心回答</a></li>
+<li><a href="https://blog.csdn.net/qq_35479468/article/details/107454287">Hexo+next主题自定义友情链接页面</a></li>
+</ul>
+]]></content>
+      <categories>
+        <category>技术</category>
+      </categories>
+      <tags>
+        <tag>技术</tag>
+        <tag>Hexo</tag>
+        <tag>CSS</tag>
       </tags>
   </entry>
   <entry>
@@ -2213,6 +2150,69 @@
       </tags>
   </entry>
   <entry>
+    <title>无题（一）</title>
+    <url>/2024/04/mudai1.html</url>
+    <content><![CDATA[<p>他又在打瞌睡了。</p>
+<p>自从早上来到教室，他就一动不动地趴在那里。</p>
+<p>尽管周围充斥着读书声和同学间的笑谈声，但他似乎置若罔闻，仍旧保持着那副姿势。<span id="more"></span></p>
+<p>终于，上课铃响了。然而，他仍然没有动弹。于是，旁边的同学推了推他。</p>
+<p>“嘿，上课了！”</p>
+<p>“嗯……嗯？”</p>
+<p>他终于醒了过来，揉了揉眼睛，茫然地看着走上讲台的教师。</p>
+<p>这节课是数学课，数学老师是一个矮小精悍的老头。老头大概已有 60 岁了，头发黑白相间，总是穿着一身西服，但不知为何，他总是给人一种永远不会消退的精神气质</p>
+<p>“上课啦——安静！”</p>
+<p>学委提高了声音，试图压过尚未平息的嘈杂声。</p>
+<p>最终，教室恢复了安静，老师打开书，开始了授课。</p>
+<p>他的目光重新投向书本，看着那些熟悉的文字，这些内容在暑假的初升高衔接班上已经讲过了，不过他那时也是这副样子，只是记住了一些文字，而对其意义一窍不通。渐渐地，他开始觉得这些文字变得模糊起来。</p>
+<p>他开始垂着脑袋，点起头来，而且很有规律的，当脖子弯曲到接近 90 度时，忽然又抬起头来，然后又开始缓缓下垂，如此反复。渐渐地，他的身体也晃了起来。</p>
+<p>突然，他朝左侧倒了下去，靠在了旁边女生的身上。</p>
+<p>“哎呀！你干什么！”</p>
+<p>“啊！对不起，睡迷糊了”</p>
+<p>女生一脸无语地看了他一眼。他却是低着头朝她说了一句后，马上又侧过脸去，没看到她的表情。</p>
+<p>经历了刚才这出，他终于是醒过来了。但课程已经进行了一半，早已不知老师讲到了何处。反正也是无聊，于是他拿出一本小说看了起来。</p>
+<p>那是一本科幻小说。他已经看了这个作者写的数本书了，有长篇也有短篇，但都很吸引人，或量子力学，或外星文明，或多维宇宙，他很喜欢这些题材，看完后还常常将书借给同样喜欢科幻的 W。</p>
+<p>刚读了不到一页，老头的声音戛然而止，一只手突然出现在他眼前，遮住了书上的文字。</p>
+<p>他抬起头，面无表情地看着眼前的老头，老头却是一脸担忧的神色。</p>
+<p>“要好好听课啊……”</p>
+<p>他没有做出回应，甚至连头也没点一下，只是一动不动地看着老头。</p>
+<p>老头见状也就作罢，转身回到讲台，继续如同巫师念咒一般地讲着他无法理解的那些数字、字母、符号组成的公式。</p>
+<p>这下书是看不成了，于是他环顾四周，希望找点能够打发这漫长的上课时间的事情。结果，往左一转头，他找到了。</p>
+<p>他的同桌，刚才的那个女生，此刻也像他一样，开始不断地“点头”。</p>
+<p>“诶！诶！醒醒！醒醒！”</p>
+<p>本着还人情的想法，他也推了推她，把她也叫醒了。</p>
+<p>“笑死我了，怎么你也睡了？”</p>
+<p>“哎呀，别吵我，困死了！”</p>
+<p>这个女生叫 X，在他看来，她是个和自己一样上课不听讲，光睡觉的家伙，也经常迟到，被班主任责问时，便露出带有歉意的，腼腆的微笑。每到这时，班主任便气不打一处来，言语中却又带着些无奈。</p>
+<p>“笑，还笑，这有什么好笑的。下次别再迟到了！”</p>
+<p>说罢便让她回到了座位上。这是每隔两三天便会上演一次的戏码，她永远都能够找到合适的理由来为自己开脱，而每次班主任也只好叮嘱，便作罢。</p>
+<p>对他来说，这样的事情倒是给他无聊的生活增添了些许乐趣。毕竟他就是喜欢看别人倒霉的人，他无法容忍别人比他优秀，又蔑视那些不如他的人，看到他人遭遇不幸，他反而觉得心里舒畅。</p>
+<p>”叮——“</p>
+<p>第一节课终于结束了。</p>
+<p>他又趴了下去，老头走到他面前，拍了拍他。</p>
+<p>“D，你上课要听啊……”</p>
+<p>他只是点了点头，便又趴下了，老头只好无奈地走出了教室。</p>
+<p>之后的事情他都不清楚了，再次醒来时，已经接近下午一点了。</p>
+<p>“已经是这个时间点了吗？得去吃饭了。”</p>
+<p>食堂里人不多，毕竟人流高峰期是刚下课的时候，也就是 12 点 10 分左右，此时只有零零散散的几张桌子坐着几个人，一些还是结束了中午的工作，从厨房中走出来的厨师。开着的窗口也不多了，他犹豫了片刻，最终还是选择了位于二楼楼梯拐角处的卖汤面的窗口。这家店的特色是面可以无限添，还可以选择是汤面还是拌面。</p>
+<p>他点了一份拌面，独自一人静静地吃了起来。他喜欢拌面，加入数勺辣子油和酱油、醋搅拌后，光是看着那一碗红油，就充满了食欲。</p>
+<p>吃碗面，他又回到了教室。教室里只剩下几个男女，他们都是不良学生，这一点从入学的时候他就知道了。虽然他也承认自己也是上课不听讲，成天好吃懒做的“不良”学生，但他认为这种“不良”和他们的“不良”是有本质区别的。他们有一种看上去就让人觉得是社会混混的“痞气”，但外表还是学生，便只能归类于“不良”。他是打心里畏惧着这些人，同时心里也瞧不起这些人，对他们总是退避三舍。</p>
+<p>但他不能把这种态度太明显地表现出来，于是他随着他们中的一个名为 Q 的高个子，称似乎是老大的名为 Z 的人为 Z 哥，借此与他们套近乎。</p>
+<p>他们口中充满了对老师与学校的不满，说出的是粗鄙之言，做出的是不堪之举，他们内心总是躁动着，似乎想通过对外界的破坏来将这些不满与躁动发泄出来。</p>
+<p>其中一个叫 L 的胖子，从课桌中抽出一个短的金属筒状物，握住尾端黑色的部分，向斜下方用力一甩，筒状物一下子就伸长了，外形如同鱼竿，圆筒的半径从手握的黑色部分到最前端逐渐缩短，到了前端变成了一个金属小球，这是他们口中的“甩棍”！胖子拿着甩棍走到教室的后面，那里摆放了一排的储物柜，是给学生放书用的。胖子一边嘴里骂着什么，一边用甩棍用力地敲打着储物柜的门。整个教室回荡着巨大的响声，遭受这无妄之灾的金属门最终是承受不了甩棍无情的摧残，变瘪了。</p>
+<p>他埋头趴在桌子上，每一次巨大的敲击声，都仿佛穿透了他的身体一般，使他不由得发抖。不知道过去了多久，敲击声消失了，交谈声也慢慢变远，最后不知所踪，他们终于是离开了。</p>
+<p>下午第一节是化学课，由于记不住化学方程式，他被老师叫到了教室后面罚站听课。化学是他的薄弱项，这一点从初中开始就是，当时老师甚至让同学在课堂上自习，专门让他上讲台给他讲解，但他还是无法理解。到了高中，许多知识点又讲了一遍，但他还是不会，或许他是真的不擅长理科。</p>
+<p>第二节是历史课，由之前提到的那位班主任负责教授。历史课上他倒没有打瞌睡了，但他向来对历史不感兴趣，在他看来，历史就是讲述什么时候发生了什么事情，教材上不就是这么写的吗？还要去分析什么根本原因，什么直接原因、间接原因，简直麻烦死了。于是，没事干的他陷入了回忆。</p>
+]]></content>
+      <categories>
+        <category>日常</category>
+      </categories>
+      <tags>
+        <tag>生活</tag>
+        <tag>小说</tag>
+        <tag>高中</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>科目二过啦！</title>
     <url>/2023/08/kemuerpass.html</url>
     <content><![CDATA[<p>三战一把过！</p>
@@ -2354,6 +2354,31 @@
       </tags>
   </entry>
   <entry>
+    <title>草神 2 加 1 了</title>
+    <url>/2023/04/nahidaniinochi.html</url>
+    <content><![CDATA[<p>4 月 12 号，草神复刻。</p>
+<p>去年 11 月已经抽了一次了，准备攒二命，从 12 月的雷神池后就没下过池子了。准备了 250+ 的粉球。</p>
+<p>由室友抽的，歪了 3 次，不过都是提前金，也不算亏吧，甚至有点欧~</p>
+<p><img data-src="https://img.fufu.ink/aX68do.webp" alt="up池"></p>
+<p><img data-src="https://img.fufu.ink/xjn9oQ.webp" alt="武器池"></p>
+<p>第一个小保底歪了一个刻晴，不过种门也需要，也算是丰富 box 了吧。好在后面的小保底就没歪了(●’◡’●)</p>
+<p>武器池都歪了〒▽〒，不过好在 100 抽就吃满了定轨。当天把新图肝完了，又充了 198，领了 10 多天月卡，终于拿到夜壶了！</p>
+<p><img data-src="https://img.fufu.ink/ETxrxf.webp" alt="夜壶"></p>
+<p>伤害虽然比原来降了 6000，原因是因为我之前用的赌狗乐章，面板是 <ruby>50&#x2F;190&#x2F;580<rt>暴率&#x2F;爆伤&#x2F;精通</rt></ruby>，换成专武后成为了 <ruby>56&#x2F;133&#x2F;760<rt>暴率&#x2F;爆伤&#x2F;精通</rt></ruby>，不过专武补充了精通，能为队伍整体带来更好的收益（虽然我一直是把草神当主 C 来养的，经典一带三）</p>
+<p>去年的面板为「三精赌狗，也没有换上好一点的精通杯，190 爆伤的面板的是最近一个月才有的」，这是现在的面板：</p>
+<p><img data-src="https://img.fufu.ink/27qmRl.webp" alt="新面板"></p>
+<p>打深渊是够用了，虽然用来 PVP 还是差远了，毕竟别的不说，就认识的一个网友的面板是精精爆都能有 <ruby>40&#x2F;160&#x2F;800<rt>暴率&#x2F;爆伤&#x2F;精通</rt></ruby>。可惜我没有好的草套爆伤头，其余圣遗物的爆率词条也太少了，仍旧达不到这样的程度＞︿＜</p>
+<p>后面就继续草本坐牢吧，直到哪天出了好沙漏、杯子、头，就能达到毕业了⊙﹏⊙∥</p>
+]]></content>
+      <categories>
+        <category>游戏</category>
+      </categories>
+      <tags>
+        <tag>原神</tag>
+        <tag>游戏</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>萌新的 PC 计划</title>
     <url>/2023/02/computercompose.html</url>
     <content><![CDATA[<p>因为原来的电脑是轻薄本，用的 r5 5500u 核显，玩个原神只能开 0.8 精度，还经常掉帧，正好过年了，就想拿着压岁钱和寒假打工的钱组一台台式机（不买游戏本是因为预算不足）。预算为 6000 元左右，经过群友的建议，组出的配置如下：<span id="more"></span></p>
@@ -2424,31 +2449,6 @@
       </tags>
   </entry>
   <entry>
-    <title>草神 2 加 1 了</title>
-    <url>/2023/04/nahidaniinochi.html</url>
-    <content><![CDATA[<p>4 月 12 号，草神复刻。</p>
-<p>去年 11 月已经抽了一次了，准备攒二命，从 12 月的雷神池后就没下过池子了。准备了 250+ 的粉球。</p>
-<p>由室友抽的，歪了 3 次，不过都是提前金，也不算亏吧，甚至有点欧~</p>
-<p><img data-src="https://img.fufu.ink/aX68do.webp" alt="up池"></p>
-<p><img data-src="https://img.fufu.ink/xjn9oQ.webp" alt="武器池"></p>
-<p>第一个小保底歪了一个刻晴，不过种门也需要，也算是丰富 box 了吧。好在后面的小保底就没歪了(●’◡’●)</p>
-<p>武器池都歪了〒▽〒，不过好在 100 抽就吃满了定轨。当天把新图肝完了，又充了 198，领了 10 多天月卡，终于拿到夜壶了！</p>
-<p><img data-src="https://img.fufu.ink/ETxrxf.webp" alt="夜壶"></p>
-<p>伤害虽然比原来降了 6000，原因是因为我之前用的赌狗乐章，面板是 <ruby>50&#x2F;190&#x2F;580<rt>暴率&#x2F;爆伤&#x2F;精通</rt></ruby>，换成专武后成为了 <ruby>56&#x2F;133&#x2F;760<rt>暴率&#x2F;爆伤&#x2F;精通</rt></ruby>，不过专武补充了精通，能为队伍整体带来更好的收益（虽然我一直是把草神当主 C 来养的，经典一带三）</p>
-<p>去年的面板为「三精赌狗，也没有换上好一点的精通杯，190 爆伤的面板的是最近一个月才有的」，这是现在的面板：</p>
-<p><img data-src="https://img.fufu.ink/27qmRl.webp" alt="新面板"></p>
-<p>打深渊是够用了，虽然用来 PVP 还是差远了，毕竟别的不说，就认识的一个网友的面板是精精爆都能有 <ruby>40&#x2F;160&#x2F;800<rt>暴率&#x2F;爆伤&#x2F;精通</rt></ruby>。可惜我没有好的草套爆伤头，其余圣遗物的爆率词条也太少了，仍旧达不到这样的程度＞︿＜</p>
-<p>后面就继续草本坐牢吧，直到哪天出了好沙漏、杯子、头，就能达到毕业了⊙﹏⊙∥</p>
-]]></content>
-      <categories>
-        <category>游戏</category>
-      </categories>
-      <tags>
-        <tag>原神</tag>
-        <tag>游戏</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>计算机网络结课作业</title>
     <url>/2022/05/computerhomework.html</url>
     <content><![CDATA[<h2 id="第一题——家庭拓扑结构"><a href="#第一题——家庭拓扑结构" class="headerlink" title="第一题——家庭拓扑结构"></a>第一题——家庭拓扑结构</h2><p>一、结构规划</p>
@@ -2504,72 +2504,6 @@
       <tags>
         <tag>计算机</tag>
         <tag>网络</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>论打造文化背景下日本美食文化中日双语科普介绍平台的可行性</title>
-    <url>/2022/05/dachuangzuoye.html</url>
-    <content><![CDATA[<blockquote>
-<p>日本料理（和食）：人类非物质文化遗产代表作之一，因其兼具精致的美感与可口的味道而世界闻名。</p>
-</blockquote>
-<p>所以我们决定发起项目——《跨文化背景下日本美食文化中日双语科普介绍平台打造》，致力于通过国人的视角探索发现日本的美食，在国内市场打造宣传分享平台，服务对象为对和食有兴趣的个人，以及国内各大餐饮企业等群体和组织。这样一个项目是否具有可行性？我将通过以下说明来论证。</p>
-<p>首先，我们具有明确的投资方向，大致为网站平台建设、运营、维护和推广，微信公众号、小程序的开发与推广，移动端的开发，市场开拓以及团队建设。通过提高平台流量，培养用户黏性，最终达到打造平台品牌的目标。为此，项目需要分以下几个阶段进行：</p>
-<ul>
-<li>平台初步建立期（1~2 个月）：初步建立起网站平台，微信公众号、小程序平台，完善网页前端以及用户交互功能。每天保证一定量的内容的录入，提高网站的信息量。微信平台与网页平台保持同步更新。目标：保证网页的基本运行，网站具有一定内容。</li>
-<li>平台试运营期（2~3 个月）：初步推广平台，收集用户意见，提高前端用户交互体验，优化平台性能，保持平台内容的增加速度逐渐上升。目标：吸引流量，聚集用户。</li>
-<li>平台运营中期：（6 个月）：网站已经具备一定流量，需着手进行业务拓展，开通网站会员服务，让用户参与进平台的创作群体。继续收集用户意见，优化网站。开始接受一些线上的合作，比如网页广告，产品推广。目标：提高用户转化率，增加会员用户，继续提高用户黏性。</li>
-<li>平台运营后期（4 个月）：这个阶段开始重点打造品牌，平台已经积累了较多的用户，在继续提高网站流量的同时，要开始着手拓展网站产品。而移动端的开发可以作为拓展产品的一个突破口，移动端可以提供更加丰富的功能。同时要分析网站数据，完善网站功能。可以开始尝试和一些小型餐饮企业公司进行合作，同时邀请一些日本的美食家进行线上采访。目标：拓展市场，为占领市场做准备。</li>
-</ul>
-<p>其次，我们的项目具有以下独特性：</p>
-<ul>
-<li>平台多样性：市面上现存的美食科普大多数为单一平台，要么只有一个网站，要么只有一个公众号，而我们的项目全面覆盖了电脑端和移动端，包括了多个平台。</li>
-<li>双语介绍：文章采用中日双语介绍，用户可自由切换展示模式，适用于不仅对日料感兴趣，同时也对日语感兴趣的用户。</li>
-</ul>
-<p>我们也具有较大的竞争优势：</p>
-<ul>
-<li>核心竞争力：我们团队中具有1名熟练掌握多门开发语言的网络技术工程师，能够负责网站、微信公众号平台、小程序的开发与维护。我们顶层的团队都具有较高的日语水平，对日本的历史文化具有较深的了解，而我们广大的会员用户，也属于我们的创作团体，用户越多，我们的内容就越多，信息的来源就越广，竞争优势也就越大。</li>
-<li>市场空白：市面上没有一个集中的平台将喜好日料的用户集中起来，集中的用户不仅增加的具有相同的爱好的人群间的联系、互动，这些用户也是平台的创作源泉之一。</li>
-<li>顺应市场：据市面上的公开资料整理，我国的日本料理餐厅数量保持稳步增长趋势，我们的服务可以与他们进行对接。</li>
-</ul>
-<p>再次，我们有多种推广模式：</p>
-<ul>
-<li>BBS 广告：BBS 广告是流量的一大来源，投放本站链接在一些论坛，为自己导流。利用论坛的高人气，能够提高自己的营销传达效率。</li>
-<li>视频广告：现在很多人的手机里都装着各大影视软件，如腾讯、爱奇艺等等，没有开会员的情况下会有一段很长的广告。因此我们在视频开头投放广告，以起到推广作用。</li>
-<li>搜索引擎推广（SEM）：SEM 是 Search Engine Marketing 的缩写，中文意思是查找引擎营销。通过付费让搜索引擎做广告推广，当一些人使用搜索引擎搜索一些关键词时，我们的网站将以广告的形式出现在搜索结果前几名中</li>
-<li>SEO：SEO 是 Search Engine Optimization 的缩写，汉译为搜索引擎优化，是一种利用搜索引擎的规则提高网站在有关搜索引擎内的自然排名的手段。我们的工程师将对网站进行有针对性的优化，做好 SEO 技术，吸引更多的用户访问网站，提高网站的访问量。</li>
-<li>博客网络推广：找名气较大的博主，与博主沟通，将我们的网站做成友情链接，推广我们的品牌广告。博客网络广告低成本、贴近群众，往往会构成众人的议论，到达很好的二次传达作用，很适合我们的网站的推广。</li>
-<li>各社交媒体平台推广：网络社交平台是互联网中的中心圈，我们会入驻国内各大社交平台，在这些地方，我们可以把我们的平台与各社交媒体平台联合起来。在网站中放入自己各个媒体平台的按钮链接，让用户能多方位了解我们，让网站带来的互联网流量转为我们的私域流量。</li>
-</ul>
-<p>最后，我们有多方面的盈利模式：</p>
-<ul>
-<li>会员机制：在平台发展到具有一定流量的阶段，我们会开放订阅会员机制，即会员只要持续订阅作者，就可以一直享受到平台提供的一些特权服务，而这部分订阅的费用会按一定比例分给作者和平台。只要有作者产出内容并被订阅，平台就持续有收入，受到激励的作者也能更努力地创作出新的作品，从而与作者实现共赢。</li>
-<li>产品推广、广告收入：我们会与一些地方日料餐饮企业开展线上合作，即我们为他们在网站推广菜品，投放广告，这些也是一笔可观的收入</li>
-<li>课程售卖：我们将开设一些日料相关的付费课程，课程定价上分为两大类型，一类是整个课程一次性付费，另一类则是按集付费。平台还会参与付费内容分销实现盈利，与其他平台开展合作，促进二次销售。</li>
-</ul>
-<p>综上，我们的平台在投资上有明确的方向，在执行上有明确的、可行的计划，我们也有多方面的竞争优势，同时，我们在运营过程中能够以较低的成本获得可观的收益，多种推广模式齐头并进，快速带来平台的流量，因此，跨文化背景下日本美食文化中日双语科普介绍平台的打造具有一定的可行性。</p>
-]]></content>
-      <categories>
-        <category>日常</category>
-      </categories>
-      <tags>
-        <tag>中外交流</tag>
-        <tag>美食文化</tag>
-        <tag>创业创新</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>诈尸更新一下最近状态</title>
-    <url>/2023/07/natsuyasumijyoutai.html</url>
-    <content><![CDATA[<p>一个月没更新力。</p>
-<p>主要是没啥想法，每天宅在家里，打游戏，追番（这一个月可追了不少番——齐木楠雄的灾难，别当欧尼酱了，鬼灭，文豪野犬，因为太怕痛就全点防御力了，无职转生，无神世界中的神明活动，僵尸百分百，魔禁……算是把高中以来没怎么看番的时间全补回来了）。</p>
-<p>科二因为挂两回了，拖了两年了，明年要过期了，最近又开始练了。今天去考场中模拟了一个小时，除了最后一圈坡上起步因为边线距离扣了 10 分，都是 100 分，感觉下次考试应该问题不大了，现在开始准备科三了。科三打算 C1 转 C2 了，因为不用在意档位的变换，科三考试可以更稳地通过，现在主要是要求暑假结束前拿到驾照，否则拖到寒假就容易过期了。至于 C1 和 C2 的区别，上网查了一下，似乎是 C1 可以开蓝牌车，但 C2 只能开小型驾驶车？嘛，以后我也不会有机会去开手动挡啦，驾照这东西不就是图个方便么，怎么快速方便怎么来，没必要死磕个手动挡为难自己。</p>
-<p>家里躺了三周了，得开始准备下半年的 N1 了，虽然上个月的专四大概率挂了，但是 N1 还是得拿的，拿了就可以开始接一些小的翻译工作赚点零花钱了！</p>
-]]></content>
-      <categories>
-        <category>日常</category>
-      </categories>
-      <tags>
-        <tag>生活</tag>
       </tags>
   </entry>
   <entry>
@@ -2695,6 +2629,72 @@
       </categories>
       <tags>
         <tag>Linux</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>诈尸更新一下最近状态</title>
+    <url>/2023/07/natsuyasumijyoutai.html</url>
+    <content><![CDATA[<p>一个月没更新力。</p>
+<p>主要是没啥想法，每天宅在家里，打游戏，追番（这一个月可追了不少番——齐木楠雄的灾难，别当欧尼酱了，鬼灭，文豪野犬，因为太怕痛就全点防御力了，无职转生，无神世界中的神明活动，僵尸百分百，魔禁……算是把高中以来没怎么看番的时间全补回来了）。</p>
+<p>科二因为挂两回了，拖了两年了，明年要过期了，最近又开始练了。今天去考场中模拟了一个小时，除了最后一圈坡上起步因为边线距离扣了 10 分，都是 100 分，感觉下次考试应该问题不大了，现在开始准备科三了。科三打算 C1 转 C2 了，因为不用在意档位的变换，科三考试可以更稳地通过，现在主要是要求暑假结束前拿到驾照，否则拖到寒假就容易过期了。至于 C1 和 C2 的区别，上网查了一下，似乎是 C1 可以开蓝牌车，但 C2 只能开小型驾驶车？嘛，以后我也不会有机会去开手动挡啦，驾照这东西不就是图个方便么，怎么快速方便怎么来，没必要死磕个手动挡为难自己。</p>
+<p>家里躺了三周了，得开始准备下半年的 N1 了，虽然上个月的专四大概率挂了，但是 N1 还是得拿的，拿了就可以开始接一些小的翻译工作赚点零花钱了！</p>
+]]></content>
+      <categories>
+        <category>日常</category>
+      </categories>
+      <tags>
+        <tag>生活</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>论打造文化背景下日本美食文化中日双语科普介绍平台的可行性</title>
+    <url>/2022/05/dachuangzuoye.html</url>
+    <content><![CDATA[<blockquote>
+<p>日本料理（和食）：人类非物质文化遗产代表作之一，因其兼具精致的美感与可口的味道而世界闻名。</p>
+</blockquote>
+<p>所以我们决定发起项目——《跨文化背景下日本美食文化中日双语科普介绍平台打造》，致力于通过国人的视角探索发现日本的美食，在国内市场打造宣传分享平台，服务对象为对和食有兴趣的个人，以及国内各大餐饮企业等群体和组织。这样一个项目是否具有可行性？我将通过以下说明来论证。</p>
+<p>首先，我们具有明确的投资方向，大致为网站平台建设、运营、维护和推广，微信公众号、小程序的开发与推广，移动端的开发，市场开拓以及团队建设。通过提高平台流量，培养用户黏性，最终达到打造平台品牌的目标。为此，项目需要分以下几个阶段进行：</p>
+<ul>
+<li>平台初步建立期（1~2 个月）：初步建立起网站平台，微信公众号、小程序平台，完善网页前端以及用户交互功能。每天保证一定量的内容的录入，提高网站的信息量。微信平台与网页平台保持同步更新。目标：保证网页的基本运行，网站具有一定内容。</li>
+<li>平台试运营期（2~3 个月）：初步推广平台，收集用户意见，提高前端用户交互体验，优化平台性能，保持平台内容的增加速度逐渐上升。目标：吸引流量，聚集用户。</li>
+<li>平台运营中期：（6 个月）：网站已经具备一定流量，需着手进行业务拓展，开通网站会员服务，让用户参与进平台的创作群体。继续收集用户意见，优化网站。开始接受一些线上的合作，比如网页广告，产品推广。目标：提高用户转化率，增加会员用户，继续提高用户黏性。</li>
+<li>平台运营后期（4 个月）：这个阶段开始重点打造品牌，平台已经积累了较多的用户，在继续提高网站流量的同时，要开始着手拓展网站产品。而移动端的开发可以作为拓展产品的一个突破口，移动端可以提供更加丰富的功能。同时要分析网站数据，完善网站功能。可以开始尝试和一些小型餐饮企业公司进行合作，同时邀请一些日本的美食家进行线上采访。目标：拓展市场，为占领市场做准备。</li>
+</ul>
+<p>其次，我们的项目具有以下独特性：</p>
+<ul>
+<li>平台多样性：市面上现存的美食科普大多数为单一平台，要么只有一个网站，要么只有一个公众号，而我们的项目全面覆盖了电脑端和移动端，包括了多个平台。</li>
+<li>双语介绍：文章采用中日双语介绍，用户可自由切换展示模式，适用于不仅对日料感兴趣，同时也对日语感兴趣的用户。</li>
+</ul>
+<p>我们也具有较大的竞争优势：</p>
+<ul>
+<li>核心竞争力：我们团队中具有1名熟练掌握多门开发语言的网络技术工程师，能够负责网站、微信公众号平台、小程序的开发与维护。我们顶层的团队都具有较高的日语水平，对日本的历史文化具有较深的了解，而我们广大的会员用户，也属于我们的创作团体，用户越多，我们的内容就越多，信息的来源就越广，竞争优势也就越大。</li>
+<li>市场空白：市面上没有一个集中的平台将喜好日料的用户集中起来，集中的用户不仅增加的具有相同的爱好的人群间的联系、互动，这些用户也是平台的创作源泉之一。</li>
+<li>顺应市场：据市面上的公开资料整理，我国的日本料理餐厅数量保持稳步增长趋势，我们的服务可以与他们进行对接。</li>
+</ul>
+<p>再次，我们有多种推广模式：</p>
+<ul>
+<li>BBS 广告：BBS 广告是流量的一大来源，投放本站链接在一些论坛，为自己导流。利用论坛的高人气，能够提高自己的营销传达效率。</li>
+<li>视频广告：现在很多人的手机里都装着各大影视软件，如腾讯、爱奇艺等等，没有开会员的情况下会有一段很长的广告。因此我们在视频开头投放广告，以起到推广作用。</li>
+<li>搜索引擎推广（SEM）：SEM 是 Search Engine Marketing 的缩写，中文意思是查找引擎营销。通过付费让搜索引擎做广告推广，当一些人使用搜索引擎搜索一些关键词时，我们的网站将以广告的形式出现在搜索结果前几名中</li>
+<li>SEO：SEO 是 Search Engine Optimization 的缩写，汉译为搜索引擎优化，是一种利用搜索引擎的规则提高网站在有关搜索引擎内的自然排名的手段。我们的工程师将对网站进行有针对性的优化，做好 SEO 技术，吸引更多的用户访问网站，提高网站的访问量。</li>
+<li>博客网络推广：找名气较大的博主，与博主沟通，将我们的网站做成友情链接，推广我们的品牌广告。博客网络广告低成本、贴近群众，往往会构成众人的议论，到达很好的二次传达作用，很适合我们的网站的推广。</li>
+<li>各社交媒体平台推广：网络社交平台是互联网中的中心圈，我们会入驻国内各大社交平台，在这些地方，我们可以把我们的平台与各社交媒体平台联合起来。在网站中放入自己各个媒体平台的按钮链接，让用户能多方位了解我们，让网站带来的互联网流量转为我们的私域流量。</li>
+</ul>
+<p>最后，我们有多方面的盈利模式：</p>
+<ul>
+<li>会员机制：在平台发展到具有一定流量的阶段，我们会开放订阅会员机制，即会员只要持续订阅作者，就可以一直享受到平台提供的一些特权服务，而这部分订阅的费用会按一定比例分给作者和平台。只要有作者产出内容并被订阅，平台就持续有收入，受到激励的作者也能更努力地创作出新的作品，从而与作者实现共赢。</li>
+<li>产品推广、广告收入：我们会与一些地方日料餐饮企业开展线上合作，即我们为他们在网站推广菜品，投放广告，这些也是一笔可观的收入</li>
+<li>课程售卖：我们将开设一些日料相关的付费课程，课程定价上分为两大类型，一类是整个课程一次性付费，另一类则是按集付费。平台还会参与付费内容分销实现盈利，与其他平台开展合作，促进二次销售。</li>
+</ul>
+<p>综上，我们的平台在投资上有明确的方向，在执行上有明确的、可行的计划，我们也有多方面的竞争优势，同时，我们在运营过程中能够以较低的成本获得可观的收益，多种推广模式齐头并进，快速带来平台的流量，因此，跨文化背景下日本美食文化中日双语科普介绍平台的打造具有一定的可行性。</p>
+]]></content>
+      <categories>
+        <category>日常</category>
+      </categories>
+      <tags>
+        <tag>中外交流</tag>
+        <tag>美食文化</tag>
+        <tag>创业创新</tag>
       </tags>
   </entry>
 </search>
