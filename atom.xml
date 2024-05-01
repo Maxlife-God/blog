@@ -33,11 +33,11 @@
     <category term="日常" scheme="https://blog.fufu.ink/categories/%E6%97%A5%E5%B8%B8/"/>
     
     
-    <category term="随笔" scheme="https://blog.fufu.ink/tags/%E9%9A%8F%E7%AC%94/"/>
-    
     <category term="生活" scheme="https://blog.fufu.ink/tags/%E7%94%9F%E6%B4%BB/"/>
     
     <category term="博客" scheme="https://blog.fufu.ink/tags/%E5%8D%9A%E5%AE%A2/"/>
+    
+    <category term="随笔" scheme="https://blog.fufu.ink/tags/%E9%9A%8F%E7%AC%94/"/>
     
   </entry>
   
@@ -60,11 +60,11 @@
     <category term="日常" scheme="https://blog.fufu.ink/categories/%E6%97%A5%E5%B8%B8/"/>
     
     
+    <category term="生活" scheme="https://blog.fufu.ink/tags/%E7%94%9F%E6%B4%BB/"/>
+    
     <category term="小说" scheme="https://blog.fufu.ink/tags/%E5%B0%8F%E8%AF%B4/"/>
     
     <category term="高中" scheme="https://blog.fufu.ink/tags/%E9%AB%98%E4%B8%AD/"/>
-    
-    <category term="生活" scheme="https://blog.fufu.ink/tags/%E7%94%9F%E6%B4%BB/"/>
     
   </entry>
   
@@ -388,11 +388,11 @@
     <category term="技术" scheme="https://blog.fufu.ink/categories/%E6%8A%80%E6%9C%AF/"/>
     
     
-    <category term="教程" scheme="https://blog.fufu.ink/tags/%E6%95%99%E7%A8%8B/"/>
+    <category term="Hexo" scheme="https://blog.fufu.ink/tags/Hexo/"/>
     
     <category term="技术" scheme="https://blog.fufu.ink/tags/%E6%8A%80%E6%9C%AF/"/>
     
-    <category term="Hexo" scheme="https://blog.fufu.ink/tags/Hexo/"/>
+    <category term="教程" scheme="https://blog.fufu.ink/tags/%E6%95%99%E7%A8%8B/"/>
     
     <category term="Next" scheme="https://blog.fufu.ink/tags/Next/"/>
     
@@ -416,11 +416,11 @@
     <category term="技术" scheme="https://blog.fufu.ink/categories/%E6%8A%80%E6%9C%AF/"/>
     
     
-    <category term="教程" scheme="https://blog.fufu.ink/tags/%E6%95%99%E7%A8%8B/"/>
+    <category term="Hexo" scheme="https://blog.fufu.ink/tags/Hexo/"/>
     
     <category term="技术" scheme="https://blog.fufu.ink/tags/%E6%8A%80%E6%9C%AF/"/>
     
-    <category term="Hexo" scheme="https://blog.fufu.ink/tags/Hexo/"/>
+    <category term="教程" scheme="https://blog.fufu.ink/tags/%E6%95%99%E7%A8%8B/"/>
     
     <category term="Next" scheme="https://blog.fufu.ink/tags/Next/"/>
     
