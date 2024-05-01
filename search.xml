@@ -1,6 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>Handsome 美化补充</title>
+    <url>/2021/12/handsomebeautify.html</url>
+    <content><![CDATA[<p>由于在网上找到的 handsome 主题的首页文章圆角的 css 代码只选择了首页的大头图版式，小头图和图片版式均无圆角和鼠标停留上浮效果，在这里分享下我加了这两个版式之后的代码，将其粘贴到 handsome 主题开发者设置的自定义 css 中即可。</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="comment">/*首页文章列表悬停上浮*/</span></span><br><span class="line"><span class="selector-class">.blog-post</span> <span class="selector-class">.panel-small</span><span class="selector-pseudo">:not</span>(<span class="selector-tag">article</span>),</span><br><span class="line"><span class="selector-class">.blog-post</span> <span class="selector-class">.panel</span><span class="selector-pseudo">:not</span>(<span class="selector-tag">article</span>), <span class="selector-class">.panel-picture</span> &#123;</span><br><span class="line">    <span class="attribute">transition</span>: all <span class="number">0.3s</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.blog-post</span> <span class="selector-class">.panel-small</span><span class="selector-pseudo">:not</span>(<span class="selector-tag">article</span>)<span class="selector-pseudo">:hover</span>,</span><br><span class="line"><span class="selector-class">.blog-post</span> <span class="selector-class">.panel</span><span class="selector-pseudo">:not</span>(<span class="selector-tag">article</span>)<span class="selector-pseudo">:hover</span>, <span class="selector-class">.panel-picture</span><span class="selector-pseudo">:hover</span> &#123;</span><br><span class="line">    <span class="attribute">transform</span>: <span class="built_in">translateY</span>(-<span class="number">10px</span>);</span><br><span class="line">    <span class="attribute">box-shadow</span>: <span class="number">0</span> <span class="number">8px</span> <span class="number">10px</span> <span class="built_in">rgba</span>(<span class="number">73</span>, <span class="number">90</span>, <span class="number">47</span>, <span class="number">0.47</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/*首页文章版式圆角化*/</span></span><br><span class="line"><span class="selector-class">.panel</span>&#123;</span><br><span class="line">    <span class="attribute">border</span>: none <span class="meta">!important</span>;</span><br><span class="line">    <span class="attribute">border-radius</span>: <span class="number">15px</span> <span class="meta">!important</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.panel-small</span>&#123;</span><br><span class="line">    <span class="attribute">border</span>: none;</span><br><span class="line">    <span class="attribute">border-radius</span>: <span class="number">15px</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.item-thumb</span>&#123;</span><br><span class="line">    <span class="attribute">border-radius</span>: <span class="number">15px</span> <span class="number">15px</span> <span class="number">0</span> <span class="number">0</span>;  </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.border-radius-6</span> &#123;</span><br><span class="line"><span class="attribute">border-radius</span>: <span class="number">15px</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>技术</category>
+      </categories>
+      <tags>
+        <tag>handsome</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>39 快乐</title>
     <url>/2023/03/sankyuomedetou.html</url>
     <content><![CDATA[<p>日语中，3 音读读作「さん」，而训读读作「み」；9 音读读作「きゅう」，而训读读作「く」。39 按照训读即为「みく」，也就是「miku」；按照音读读作「さんきゅう」，即为英语中的 thank you（谢谢）。更巧合的是，miku 的生日 8 月 31 日，月份和日期加起来刚好为 39。这一切都和 miku 联系了起来，因此 3 月 9 日这天也被术术人们称为「39感谢日」或者「mikuの日」。</p>
@@ -12,19 +25,6 @@
       <tags>
         <tag>节日</tag>
         <tag>二次元</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Handsome 美化补充</title>
-    <url>/2021/12/handsomebeautify.html</url>
-    <content><![CDATA[<p>由于在网上找到的 handsome 主题的首页文章圆角的 css 代码只选择了首页的大头图版式，小头图和图片版式均无圆角和鼠标停留上浮效果，在这里分享下我加了这两个版式之后的代码，将其粘贴到 handsome 主题开发者设置的自定义 css 中即可。</p>
-<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="comment">/*首页文章列表悬停上浮*/</span></span><br><span class="line"><span class="selector-class">.blog-post</span> <span class="selector-class">.panel-small</span><span class="selector-pseudo">:not</span>(<span class="selector-tag">article</span>),</span><br><span class="line"><span class="selector-class">.blog-post</span> <span class="selector-class">.panel</span><span class="selector-pseudo">:not</span>(<span class="selector-tag">article</span>), <span class="selector-class">.panel-picture</span> &#123;</span><br><span class="line">    <span class="attribute">transition</span>: all <span class="number">0.3s</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.blog-post</span> <span class="selector-class">.panel-small</span><span class="selector-pseudo">:not</span>(<span class="selector-tag">article</span>)<span class="selector-pseudo">:hover</span>,</span><br><span class="line"><span class="selector-class">.blog-post</span> <span class="selector-class">.panel</span><span class="selector-pseudo">:not</span>(<span class="selector-tag">article</span>)<span class="selector-pseudo">:hover</span>, <span class="selector-class">.panel-picture</span><span class="selector-pseudo">:hover</span> &#123;</span><br><span class="line">    <span class="attribute">transform</span>: <span class="built_in">translateY</span>(-<span class="number">10px</span>);</span><br><span class="line">    <span class="attribute">box-shadow</span>: <span class="number">0</span> <span class="number">8px</span> <span class="number">10px</span> <span class="built_in">rgba</span>(<span class="number">73</span>, <span class="number">90</span>, <span class="number">47</span>, <span class="number">0.47</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/*首页文章版式圆角化*/</span></span><br><span class="line"><span class="selector-class">.panel</span>&#123;</span><br><span class="line">    <span class="attribute">border</span>: none <span class="meta">!important</span>;</span><br><span class="line">    <span class="attribute">border-radius</span>: <span class="number">15px</span> <span class="meta">!important</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.panel-small</span>&#123;</span><br><span class="line">    <span class="attribute">border</span>: none;</span><br><span class="line">    <span class="attribute">border-radius</span>: <span class="number">15px</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.item-thumb</span>&#123;</span><br><span class="line">    <span class="attribute">border-radius</span>: <span class="number">15px</span> <span class="number">15px</span> <span class="number">0</span> <span class="number">0</span>;  </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.border-radius-6</span> &#123;</span><br><span class="line"><span class="attribute">border-radius</span>: <span class="number">15px</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>技术</category>
-      </categories>
-      <tags>
-        <tag>handsome</tag>
       </tags>
   </entry>
   <entry>
@@ -63,6 +63,34 @@
         <tag>行为包</tag>
         <tag>教程</tag>
         <tag>技术</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Next 主题添加公告栏</title>
+    <url>/2024/04/nextaddnotice.html</url>
+    <content><![CDATA[<p>字面意思，给 Next 主题添加个公告栏，不过由于 Next 侧边栏只在宽屏上显示，在手机上是看不到的。</p>
+<p>适用范围：Next·Pisces 主题</p>
+<span id="more"></span>
+
+<p>打开 <code>hexo/themes/next/layout/_macro/sidebar.njk</code>，在 <code>&lt;/aside&gt;</code> 与最后一个 <code>&#123;%- endif %&#125;</code> 之间添加以下代码</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&#123;%- if theme.related_posts.enable %&#125;</span><br><span class="line">      &#123;%- if theme.pjax %&#125;</span><br><span class="line">        &lt;div class=&quot;pjax&quot;&gt;</span><br><span class="line">      &#123;%- endif %&#125;</span><br><span class="line">      &#123;%- if page.related_posts and page.related_posts.length &gt; 0 %&#125;</span><br><span class="line">        &lt;div class=&quot;sidebar-inner sidebar-post-related&quot;&gt;</span><br><span class="line">          &lt;div class=&quot;animated&quot;&gt;</span><br><span class="line">            &#123;&#123; partial(&#x27;_partials/post/post-related.njk&#x27;) &#125;&#125;</span><br><span class="line">          &lt;/div&gt;</span><br><span class="line">        &lt;/div&gt;</span><br><span class="line">      &#123;%- endif %&#125;</span><br><span class="line">      &#123;%- if theme.pjax %&#125;</span><br><span class="line">        &lt;/div&gt;</span><br><span class="line">      &#123;%- endif %&#125;</span><br><span class="line">    &#123;%- endif %&#125;</span><br><span class="line"></span><br><span class="line">+    &#123;%- if theme.notice.enable %&#125;</span><br><span class="line">+      &#123;%- if theme.pjax %&#125;</span><br><span class="line">+        &lt;div class=&quot;pjax&quot;&gt;</span><br><span class="line">+      &#123;%- endif %&#125;</span><br><span class="line">+      &#123;%- if theme.notice.content.length &gt; 0 %&#125;</span><br><span class="line">+        &lt;div class=&quot;sidebar-inner notice&quot; style=&quot;padding: 18px;&quot;&gt;</span><br><span class="line">+          &lt;div class=&quot;notice-title&quot; style=&quot;font-size: 1.2em;text-align: left;&quot;&gt;</span><br><span class="line">+            &lt;i class=&quot;fa-solid fa-bullhorn&quot;&gt;&lt;/i&gt;</span><br><span class="line">+            &lt;span style=&quot;margin-left: 6px;&quot;&gt;公告&lt;/span&gt;</span><br><span class="line">+          &lt;/div&gt;</span><br><span class="line">+          &lt;div class=&quot;notice-content&quot; style=&quot;text-align: justify;&quot;&gt;</span><br><span class="line">+            &#123;&#123; theme.notice.content &#125;&#125;</span><br><span class="line">+          &lt;/div&gt;</span><br><span class="line">+        &lt;/div&gt;</span><br><span class="line">+      &#123;%- endif %&#125;</span><br><span class="line">+      &#123;%- if theme.pjax %&#125;</span><br><span class="line">+        &lt;/div&gt;</span><br><span class="line">+      &#123;%- endif %&#125;</span><br><span class="line">+    &#123;%- endif %&#125;</span><br><span class="line">	&lt;/aside&gt;</span><br><span class="line">&#123;% endmacro %&#125;</span><br></pre></td></tr></table></figure>
+
+<p>以下为方便复制的版本</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&#123;%- if theme.notice.enable %&#125;</span><br><span class="line">      &#123;%- if theme.pjax %&#125;</span><br><span class="line">        &lt;div class=&quot;pjax&quot;&gt;</span><br><span class="line">      &#123;%- endif %&#125;</span><br><span class="line">      &#123;%- if theme.notice.content.length &gt; 0 %&#125;</span><br><span class="line">        &lt;div class=&quot;sidebar-inner notice&quot; style=&quot;padding: 18px;&quot;&gt;</span><br><span class="line">          &lt;div class=&quot;notice-title&quot; style=&quot;font-size: 1.2em;text-align: left;&quot;&gt;</span><br><span class="line">            &lt;i class=&quot;fa-solid fa-bullhorn&quot;&gt;&lt;/i&gt;</span><br><span class="line">            &lt;span style=&quot;margin-left: 6px;&quot;&gt;公告&lt;/span&gt;</span><br><span class="line">          &lt;/div&gt;</span><br><span class="line">          &lt;div class=&quot;notice-content&quot; style=&quot;text-align: justify;&quot;&gt;</span><br><span class="line">            &#123;&#123; theme.notice.content &#125;&#125;</span><br><span class="line">          &lt;/div&gt;</span><br><span class="line">        &lt;/div&gt;</span><br><span class="line">      &#123;%- endif %&#125;</span><br><span class="line">      &#123;%- if theme.pjax %&#125;</span><br><span class="line">        &lt;/div&gt;</span><br><span class="line">      &#123;%- endif %&#125;</span><br><span class="line">&#123;%- endif %&#125;</span><br></pre></td></tr></table></figure>
+
+<p>然后在主题配置 <code>_config.next.yml</code> 中添加以下内容</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">notice:</span><br><span class="line">  enable: true</span><br><span class="line">  content: #公告内容</span><br></pre></td></tr></table></figure>
+
+<p>样式写的很简单，如有需要请自行更改。</p>
+]]></content>
+      <categories>
+        <category>技术</category>
+      </categories>
+      <tags>
+        <tag>教程</tag>
+        <tag>技术</tag>
+        <tag>Hexo</tag>
+        <tag>Next</tag>
       </tags>
   </entry>
   <entry>
@@ -150,6 +178,32 @@
       </tags>
   </entry>
   <entry>
+    <title>Waline 美化教程</title>
+    <url>/2023/04/walinedecoration.html</url>
+    <content><![CDATA[<p>起因是看到许多博客使用的 twikoo 评论系统，觉得 twikoo 的前端样式很好看，与之相对的正在用的 waline 的默认样式是真的不好看，本来打算直接换到 twikoo 的，转念一想，既然是属于样式的东西，为什么不直接用 css 解决呢，没有必要为了一个效果而去换插件。博主的 css 不行，只会 <kbd>F12</kbd> 找到哪个元素改哪个。至于定位元素之类的完全不行＞﹏＜。只要最后好看了就 ok 了！（bushi</p>
+<p>以下为代码部分（部分选择器需要根据实际更换）</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="comment">/* 修改waline样式 */</span></span><br><span class="line"><span class="comment">/* 修改评论框外观 */</span></span><br><span class="line"><span class="selector-class">.wl-panel</span> &#123;</span><br><span class="line">    <span class="attribute">border-radius</span>: <span class="number">4px</span> <span class="meta">!important</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-pseudo">:root</span> &#123;</span><br><span class="line">    <span class="attr">--waline-bgcolor-light</span>: transparent <span class="meta">!important</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.wl-btn</span> &#123;</span><br><span class="line">    <span class="attribute">border-radius</span>: <span class="number">0.3em</span> <span class="meta">!important</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* 添加miku的gif为输入区域背景 */</span></span><br><span class="line"><span class="selector-id">#wl-edit</span> &#123;</span><br><span class="line">    <span class="attribute">background</span>: <span class="built_in">url</span>(<span class="string">&quot;/img/wl-bg-mikuchan.gif&quot;</span>) <span class="number">100%</span> <span class="number">100%</span> no-repeat;</span><br><span class="line">    <span class="attribute">background-size</span>: contain <span class="meta">!important</span>;</span><br><span class="line">    <span class="attribute">background-repeat</span>: no-repeat <span class="meta">!important</span>;</span><br><span class="line">    <span class="attribute">background-position</span>: right bottom <span class="meta">!important</span>; </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-id">#waline-wrap</span> <span class="selector-tag">textarea</span><span class="selector-pseudo">:focus</span> &#123;</span><br><span class="line">    <span class="attribute">background</span>: <span class="built_in">url</span>(<span class="string">&quot;/img/wl-bg-mikuchan.gif&quot;</span>) <span class="number">100%</span> <span class="number">100%</span> no-repeat;</span><br><span class="line">    <span class="attribute">background-position</span>-y: <span class="number">78px</span> <span class="meta">!important</span>;</span><br><span class="line">    <span class="attribute">transition</span>: all <span class="number">0.25s</span> ease-in-out <span class="number">0s</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* 修改评论区内容背景 */</span></span><br><span class="line"><span class="selector-class">.wl-card</span> <span class="selector-class">.wl-content</span> &#123;</span><br><span class="line">    <span class="attribute">background</span>: <span class="number">#f5f5f5</span>;</span><br><span class="line">    <span class="attribute">padding</span>: <span class="number">16px</span> <span class="meta">!important</span>;</span><br><span class="line">    <span class="attribute">margin</span>: <span class="number">12px</span> <span class="number">0</span> <span class="number">8px</span> <span class="meta">!important</span>;</span><br><span class="line">    <span class="attribute">border-radius</span>: <span class="number">3px</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.wl-card</span> &#123;</span><br><span class="line">    <span class="attribute">border-bottom</span>: none <span class="meta">!important</span>;</span><br><span class="line">    <span class="attribute">padding-bottom</span>: <span class="number">0px</span> <span class="meta">!important</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.wl-cards</span> <span class="selector-class">.wl-item</span>&#123;</span><br><span class="line">    <span class="attribute">padding</span>: .<span class="number">5em</span> .<span class="number">5em</span> <span class="number">0px</span> <span class="meta">!important</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>效果图如下（因图片是截取自评论区而打了码，头像这些不属于以上代码，后面可以考虑改一下默认头像）</p>
+<p><img data-src="https://img.fufu.ink/iTcakI.webp" alt="Waline评论框美化效果"></p>
+<p><img data-src="https://img.fufu.ink/JDVkhh.webp" alt="Waline评论区美化效果"></p>
+<p>其中评论框的背景 gif 需要自己下载下来放到 <code>/source/img/</code> 下即可（记得重命名），别直接用我的博客的地址！（就这么点大小的图片就别直接挂别人的链接了吧，虽然我也不会做防盗链…）</p>
+<p>修改文本输入框中的提示文字需要到主题的配置文件中找到 waline 的配置项，在其中添加 <code>locale: &#123;placeholder: &#39;提示文字&#39;&#125;</code> 即可，以主题 butterfly 为例，则需要在 option 中添加该行代码，需要注意缩进，如下所示</p>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">waline:</span></span><br><span class="line">  <span class="attr">serverURL:</span> <span class="comment"># Waline server address url</span></span><br><span class="line">  <span class="attr">bg:</span> <span class="comment"># waline background</span></span><br><span class="line">  <span class="attr">pageview:</span> <span class="literal">false</span></span><br><span class="line">  <span class="attr">option:</span></span><br><span class="line">    <span class="attr">locale:</span> &#123;<span class="attr">placeholder:</span> <span class="string">&#x27;提示文字&#x27;</span>&#125;</span><br></pre></td></tr></table></figure>
+
+<p>最后就是上面效果图的样子啦！</p>
+]]></content>
+      <categories>
+        <category>技术</category>
+      </categories>
+      <tags>
+        <tag>教程</tag>
+        <tag>技术</tag>
+        <tag>Hexo</tag>
+        <tag>CSS</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Next 主题部分图片禁用 FancyBox</title>
     <url>/2023/04/nextthemefancyboxdisabled.html</url>
     <content><![CDATA[<p>之前用的主题有 fancybox 功能的都有部分图片禁用 fancybox 的功能，看了一遍文档却发现没有这个选项，去 issue 中和 discusstion 中也没找到相关的信息。<span id="more"></span>于是 google 了一下，发现真有<a href="https://blog.csdn.net/cddchina/article/details/79764432">相关教程</a>，不过是 18 年的了，现在 next 主题已经变了很多，fancybox 的 js 代码也没在 utils.js 文件中了。找了一下，发现 fancybox 的相关 js 代码已经单独写在了主题文件夹下的 <code>\source\js\third-party\fancybox.js</code> 中了。</p>
@@ -177,147 +231,6 @@
         <tag>技术</tag>
         <tag>Hexo</tag>
         <tag>JavaScript</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Next 主题添加公告栏</title>
-    <url>/2024/04/nextaddnotice.html</url>
-    <content><![CDATA[<p>字面意思，给 Next 主题添加个公告栏，不过由于 Next 侧边栏只在宽屏上显示，在手机上是看不到的。</p>
-<p>适用范围：Next·Pisces 主题</p>
-<span id="more"></span>
-
-<p>打开 <code>hexo/themes/next/layout/_macro/sidebar.njk</code>，在 <code>&lt;/aside&gt;</code> 与最后一个 <code>&#123;%- endif %&#125;</code> 之间添加以下代码</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&#123;%- if theme.related_posts.enable %&#125;</span><br><span class="line">      &#123;%- if theme.pjax %&#125;</span><br><span class="line">        &lt;div class=&quot;pjax&quot;&gt;</span><br><span class="line">      &#123;%- endif %&#125;</span><br><span class="line">      &#123;%- if page.related_posts and page.related_posts.length &gt; 0 %&#125;</span><br><span class="line">        &lt;div class=&quot;sidebar-inner sidebar-post-related&quot;&gt;</span><br><span class="line">          &lt;div class=&quot;animated&quot;&gt;</span><br><span class="line">            &#123;&#123; partial(&#x27;_partials/post/post-related.njk&#x27;) &#125;&#125;</span><br><span class="line">          &lt;/div&gt;</span><br><span class="line">        &lt;/div&gt;</span><br><span class="line">      &#123;%- endif %&#125;</span><br><span class="line">      &#123;%- if theme.pjax %&#125;</span><br><span class="line">        &lt;/div&gt;</span><br><span class="line">      &#123;%- endif %&#125;</span><br><span class="line">    &#123;%- endif %&#125;</span><br><span class="line"></span><br><span class="line">+    &#123;%- if theme.notice.enable %&#125;</span><br><span class="line">+      &#123;%- if theme.pjax %&#125;</span><br><span class="line">+        &lt;div class=&quot;pjax&quot;&gt;</span><br><span class="line">+      &#123;%- endif %&#125;</span><br><span class="line">+      &#123;%- if theme.notice.content.length &gt; 0 %&#125;</span><br><span class="line">+        &lt;div class=&quot;sidebar-inner notice&quot; style=&quot;padding: 18px;&quot;&gt;</span><br><span class="line">+          &lt;div class=&quot;notice-title&quot; style=&quot;font-size: 1.2em;text-align: left;&quot;&gt;</span><br><span class="line">+            &lt;i class=&quot;fa-solid fa-bullhorn&quot;&gt;&lt;/i&gt;</span><br><span class="line">+            &lt;span style=&quot;margin-left: 6px;&quot;&gt;公告&lt;/span&gt;</span><br><span class="line">+          &lt;/div&gt;</span><br><span class="line">+          &lt;div class=&quot;notice-content&quot; style=&quot;text-align: justify;&quot;&gt;</span><br><span class="line">+            &#123;&#123; theme.notice.content &#125;&#125;</span><br><span class="line">+          &lt;/div&gt;</span><br><span class="line">+        &lt;/div&gt;</span><br><span class="line">+      &#123;%- endif %&#125;</span><br><span class="line">+      &#123;%- if theme.pjax %&#125;</span><br><span class="line">+        &lt;/div&gt;</span><br><span class="line">+      &#123;%- endif %&#125;</span><br><span class="line">+    &#123;%- endif %&#125;</span><br><span class="line">	&lt;/aside&gt;</span><br><span class="line">&#123;% endmacro %&#125;</span><br></pre></td></tr></table></figure>
-
-<p>以下为方便复制的版本</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&#123;%- if theme.notice.enable %&#125;</span><br><span class="line">      &#123;%- if theme.pjax %&#125;</span><br><span class="line">        &lt;div class=&quot;pjax&quot;&gt;</span><br><span class="line">      &#123;%- endif %&#125;</span><br><span class="line">      &#123;%- if theme.notice.content.length &gt; 0 %&#125;</span><br><span class="line">        &lt;div class=&quot;sidebar-inner notice&quot; style=&quot;padding: 18px;&quot;&gt;</span><br><span class="line">          &lt;div class=&quot;notice-title&quot; style=&quot;font-size: 1.2em;text-align: left;&quot;&gt;</span><br><span class="line">            &lt;i class=&quot;fa-solid fa-bullhorn&quot;&gt;&lt;/i&gt;</span><br><span class="line">            &lt;span style=&quot;margin-left: 6px;&quot;&gt;公告&lt;/span&gt;</span><br><span class="line">          &lt;/div&gt;</span><br><span class="line">          &lt;div class=&quot;notice-content&quot; style=&quot;text-align: justify;&quot;&gt;</span><br><span class="line">            &#123;&#123; theme.notice.content &#125;&#125;</span><br><span class="line">          &lt;/div&gt;</span><br><span class="line">        &lt;/div&gt;</span><br><span class="line">      &#123;%- endif %&#125;</span><br><span class="line">      &#123;%- if theme.pjax %&#125;</span><br><span class="line">        &lt;/div&gt;</span><br><span class="line">      &#123;%- endif %&#125;</span><br><span class="line">&#123;%- endif %&#125;</span><br></pre></td></tr></table></figure>
-
-<p>然后在主题配置 <code>_config.next.yml</code> 中添加以下内容</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">notice:</span><br><span class="line">  enable: true</span><br><span class="line">  content: #公告内容</span><br></pre></td></tr></table></figure>
-
-<p>样式写的很简单，如有需要请自行更改。</p>
-]]></content>
-      <categories>
-        <category>技术</category>
-      </categories>
-      <tags>
-        <tag>教程</tag>
-        <tag>技术</tag>
-        <tag>Hexo</tag>
-        <tag>Next</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Waline 美化教程</title>
-    <url>/2023/04/walinedecoration.html</url>
-    <content><![CDATA[<p>起因是看到许多博客使用的 twikoo 评论系统，觉得 twikoo 的前端样式很好看，与之相对的正在用的 waline 的默认样式是真的不好看，本来打算直接换到 twikoo 的，转念一想，既然是属于样式的东西，为什么不直接用 css 解决呢，没有必要为了一个效果而去换插件。博主的 css 不行，只会 <kbd>F12</kbd> 找到哪个元素改哪个。至于定位元素之类的完全不行＞﹏＜。只要最后好看了就 ok 了！（bushi</p>
-<p>以下为代码部分（部分选择器需要根据实际更换）</p>
-<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="comment">/* 修改waline样式 */</span></span><br><span class="line"><span class="comment">/* 修改评论框外观 */</span></span><br><span class="line"><span class="selector-class">.wl-panel</span> &#123;</span><br><span class="line">    <span class="attribute">border-radius</span>: <span class="number">4px</span> <span class="meta">!important</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-pseudo">:root</span> &#123;</span><br><span class="line">    <span class="attr">--waline-bgcolor-light</span>: transparent <span class="meta">!important</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.wl-btn</span> &#123;</span><br><span class="line">    <span class="attribute">border-radius</span>: <span class="number">0.3em</span> <span class="meta">!important</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* 添加miku的gif为输入区域背景 */</span></span><br><span class="line"><span class="selector-id">#wl-edit</span> &#123;</span><br><span class="line">    <span class="attribute">background</span>: <span class="built_in">url</span>(<span class="string">&quot;/img/wl-bg-mikuchan.gif&quot;</span>) <span class="number">100%</span> <span class="number">100%</span> no-repeat;</span><br><span class="line">    <span class="attribute">background-size</span>: contain <span class="meta">!important</span>;</span><br><span class="line">    <span class="attribute">background-repeat</span>: no-repeat <span class="meta">!important</span>;</span><br><span class="line">    <span class="attribute">background-position</span>: right bottom <span class="meta">!important</span>; </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-id">#waline-wrap</span> <span class="selector-tag">textarea</span><span class="selector-pseudo">:focus</span> &#123;</span><br><span class="line">    <span class="attribute">background</span>: <span class="built_in">url</span>(<span class="string">&quot;/img/wl-bg-mikuchan.gif&quot;</span>) <span class="number">100%</span> <span class="number">100%</span> no-repeat;</span><br><span class="line">    <span class="attribute">background-position</span>-y: <span class="number">78px</span> <span class="meta">!important</span>;</span><br><span class="line">    <span class="attribute">transition</span>: all <span class="number">0.25s</span> ease-in-out <span class="number">0s</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* 修改评论区内容背景 */</span></span><br><span class="line"><span class="selector-class">.wl-card</span> <span class="selector-class">.wl-content</span> &#123;</span><br><span class="line">    <span class="attribute">background</span>: <span class="number">#f5f5f5</span>;</span><br><span class="line">    <span class="attribute">padding</span>: <span class="number">16px</span> <span class="meta">!important</span>;</span><br><span class="line">    <span class="attribute">margin</span>: <span class="number">12px</span> <span class="number">0</span> <span class="number">8px</span> <span class="meta">!important</span>;</span><br><span class="line">    <span class="attribute">border-radius</span>: <span class="number">3px</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.wl-card</span> &#123;</span><br><span class="line">    <span class="attribute">border-bottom</span>: none <span class="meta">!important</span>;</span><br><span class="line">    <span class="attribute">padding-bottom</span>: <span class="number">0px</span> <span class="meta">!important</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.wl-cards</span> <span class="selector-class">.wl-item</span>&#123;</span><br><span class="line">    <span class="attribute">padding</span>: .<span class="number">5em</span> .<span class="number">5em</span> <span class="number">0px</span> <span class="meta">!important</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>效果图如下（因图片是截取自评论区而打了码，头像这些不属于以上代码，后面可以考虑改一下默认头像）</p>
-<p><img data-src="https://img.fufu.ink/iTcakI.webp" alt="Waline评论框美化效果"></p>
-<p><img data-src="https://img.fufu.ink/JDVkhh.webp" alt="Waline评论区美化效果"></p>
-<p>其中评论框的背景 gif 需要自己下载下来放到 <code>/source/img/</code> 下即可（记得重命名），别直接用我的博客的地址！（就这么点大小的图片就别直接挂别人的链接了吧，虽然我也不会做防盗链…）</p>
-<p>修改文本输入框中的提示文字需要到主题的配置文件中找到 waline 的配置项，在其中添加 <code>locale: &#123;placeholder: &#39;提示文字&#39;&#125;</code> 即可，以主题 butterfly 为例，则需要在 option 中添加该行代码，需要注意缩进，如下所示</p>
-<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">waline:</span></span><br><span class="line">  <span class="attr">serverURL:</span> <span class="comment"># Waline server address url</span></span><br><span class="line">  <span class="attr">bg:</span> <span class="comment"># waline background</span></span><br><span class="line">  <span class="attr">pageview:</span> <span class="literal">false</span></span><br><span class="line">  <span class="attr">option:</span></span><br><span class="line">    <span class="attr">locale:</span> &#123;<span class="attr">placeholder:</span> <span class="string">&#x27;提示文字&#x27;</span>&#125;</span><br></pre></td></tr></table></figure>
-
-<p>最后就是上面效果图的样子啦！</p>
-]]></content>
-      <categories>
-        <category>技术</category>
-      </categories>
-      <tags>
-        <tag>教程</tag>
-        <tag>技术</tag>
-        <tag>Hexo</tag>
-        <tag>CSS</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>【书摘】加缪笔下的晦涩文字</title>
-    <url>/2024/01/excerpt1.html</url>
-    <content><![CDATA[<p>两天左右看完加缪的『局外人』和『堕落』了，说实话，对我来说，文字过于晦涩了。看完『局外人』还能大致明白讲了个什么故事，看『堕落』时就仿佛在看我的期末复习资料一样，很难坚持看下去，可能是因为我很少看独白类型的小说吧，不过最终还是看完了。<span id="more"></span>说起看他的书的缘由，是因为之前玩酷安时关注过一位名为汪畅的自由译者，他翻译了这本『局外人』，由此产生了兴趣。书是囫囵吞枣看完的，说得好听一点就是不求甚解，因为没有了解过「存在主义」，到网络上搜索才大概得知『局外人』所要表达的大致意思，这是一段来自小红书用户<a href="https://www.xiaohongshu.com/user/profile/5969aadb82ec3963573feee9?xhsshare=CopyLink&appuid=64b671510000000014034c75&apptime=1706022345">蓝桔子</a>的评论「人生会因为死亡迟早到来而失去所有意义。默尔索漠视那些社会赋予的道德准则和价值等级，所以他不想在母亲葬礼时哭不出来也要装哭，也不想假装信仰上帝。他经常做出一些不符合大众常理的事情，但他并非完全冷漠，只是人生而不同，用一套准则要求所有人本质上也是一种冷漠，我在我姥姥去世时也哭不出来，亲人的离去更像一场漫长的潮湿，在余生都让我隐隐作痛，但不会在那一瞬间让我痛哭，他不冷漠，他比任何人都通透，比任何人都痛苦，比任何人都更爱这个世界」。看完以上评论才顿时开悟。</p>
-<p>以下是从两书中摘出的一些句子</p>
-<ul>
-<li>妈妈距离死亡如此之近，但她一定也因此得到了一种重获新生的解脱。我想，这个世界上没有任何人有权为她哭泣。现在，我做好了相同的准备，我也要像妈妈一样，重新活一遍。——『局外人』</li>
-</ul>
-<p>『堕落』</p>
-<ul>
-<li>当身体难过时，心也会逐渐枯萎。</li>
-<li>没有人在享乐时是伪君子。</li>
-<li>毫无疑问，他们认为我有着圆满的生活，整天都在寻欢作乐中度过。这在他们眼里是不可原谅的。这也不难理解，毕竟当一头驴看到一位头顶桂冠的人，也会发出愤愤不平的哼叫。</li>
-<li>如果一个人想要他人谅解自己的幸福与成功，就必须慷慨地和他人分享；但如果一个人想要快乐，就不应该过分照顾他人的感受。要知道，一旦在乎他人，就走上了一条没有尽头的死路。</li>
-<li>为了不被他人批判，人们总会抢先批评他人。</li>
-<li>我们很少向比自己优秀的人吐露心声；不仅如此，我们还会尽力避免与他们为伍。与之相反的是，在大多数时候，我们会容易与彼此相似或者同病相怜的人成为心腹之交。也就是说，我们既不愿意自我纠正，也不愿意自我完善。我们必须被人批判，才能发现自身的不足，但在人生的道路上，我们最需要的就是他人的怜悯与鼓励。简而言之，我们一边希望免除洁身自好的麻烦，一边希望自己不会因此而内疚。长此以往，我们既不能放浪形骸之外，也不能静以修身，俭以养德；我们既非恶贯满盈之徒，也非乐善好施之士。</li>
-<li>当所有的人都在说你的好话时，倒霉的事情就会发生！</li>
-<li>实际上，嫉妒之情完全是丰富的想象在作祟，也是自我贬低的结果。</li>
-</ul>
-]]></content>
-      <categories>
-        <category>日常</category>
-      </categories>
-      <tags>
-        <tag>书摘</tag>
-        <tag>局外人</tag>
-        <tag>堕落</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>【每日语法】~ば~ほど</title>
-    <url>/2023/04/mnnhgbp1.html</url>
-    <content><![CDATA[<p><strong>语法：V（假定形）+ V（原形）+ ほど</strong></p>
-<p>意为「越…越…」。</p>
-<p>例句：</p>
-<p>日语：この本は読めば読むほど面白いと思う。</p>
-<p>译：这本书越读越觉得有趣。</p>
-<p>假定形变形规则：</p>
-<table>
-<thead>
-<tr>
-<th align="center">词类</th>
-<th align="center">规则</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center">动词</td>
-<td align="center">词尾假名变为同行的「え」段假名，再加「ば」</td>
-</tr>
-<tr>
-<td align="center">形容词</td>
-<td align="center">词尾「い」变「ければ」</td>
-</tr>
-<tr>
-<td align="center">形容动词</td>
-<td align="center">词干加「ならば」或者「であれば」</td>
-</tr>
-<tr>
-<td align="center">名词</td>
-<td align="center">加「ならば」或者「であれば」</td>
-</tr>
-</tbody></table>
-]]></content>
-      <categories>
-        <category>日语</category>
-      </categories>
-      <tags>
-        <tag>日语</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>【每日语法】~さえ~ば</title>
-    <url>/2023/05/mnnhgbp5.html</url>
-    <content><![CDATA[<p>接续：</p>
-<blockquote>
-<p>N + さえ + 假定形<br>A（く形）&#x2F; NA（て形）+ さえあれば<br>V（ます形）&#x2F; サ变动词词干 + さえすれば</p>
-</blockquote>
-<p>意为「只要···就···」。关于假定形的变形方法，请参考<a href="/2023/04/mnnhgbp1.html">『【每日语法】~ば~ほど』</a>的文末表格。</p>
-<p>例句：やすくさえあれば、買いましょう。<br>译：只要便宜的话就买吧！</p>
-]]></content>
-      <categories>
-        <category>日语</category>
-      </categories>
-      <tags>
-        <tag>日语</tag>
       </tags>
   </entry>
   <entry>
@@ -362,6 +275,109 @@
       </tags>
   </entry>
   <entry>
+    <title>【书摘】加缪笔下的晦涩文字</title>
+    <url>/2024/01/excerpt1.html</url>
+    <content><![CDATA[<p>两天左右看完加缪的『局外人』和『堕落』了，说实话，对我来说，文字过于晦涩了。看完『局外人』还能大致明白讲了个什么故事，看『堕落』时就仿佛在看我的期末复习资料一样，很难坚持看下去，可能是因为我很少看独白类型的小说吧，不过最终还是看完了。<span id="more"></span>说起看他的书的缘由，是因为之前玩酷安时关注过一位名为汪畅的自由译者，他翻译了这本『局外人』，由此产生了兴趣。书是囫囵吞枣看完的，说得好听一点就是不求甚解，因为没有了解过「存在主义」，到网络上搜索才大概得知『局外人』所要表达的大致意思，这是一段来自小红书用户<a href="https://www.xiaohongshu.com/user/profile/5969aadb82ec3963573feee9?xhsshare=CopyLink&appuid=64b671510000000014034c75&apptime=1706022345">蓝桔子</a>的评论「人生会因为死亡迟早到来而失去所有意义。默尔索漠视那些社会赋予的道德准则和价值等级，所以他不想在母亲葬礼时哭不出来也要装哭，也不想假装信仰上帝。他经常做出一些不符合大众常理的事情，但他并非完全冷漠，只是人生而不同，用一套准则要求所有人本质上也是一种冷漠，我在我姥姥去世时也哭不出来，亲人的离去更像一场漫长的潮湿，在余生都让我隐隐作痛，但不会在那一瞬间让我痛哭，他不冷漠，他比任何人都通透，比任何人都痛苦，比任何人都更爱这个世界」。看完以上评论才顿时开悟。</p>
+<p>以下是从两书中摘出的一些句子</p>
+<ul>
+<li>妈妈距离死亡如此之近，但她一定也因此得到了一种重获新生的解脱。我想，这个世界上没有任何人有权为她哭泣。现在，我做好了相同的准备，我也要像妈妈一样，重新活一遍。——『局外人』</li>
+</ul>
+<p>『堕落』</p>
+<ul>
+<li>当身体难过时，心也会逐渐枯萎。</li>
+<li>没有人在享乐时是伪君子。</li>
+<li>毫无疑问，他们认为我有着圆满的生活，整天都在寻欢作乐中度过。这在他们眼里是不可原谅的。这也不难理解，毕竟当一头驴看到一位头顶桂冠的人，也会发出愤愤不平的哼叫。</li>
+<li>如果一个人想要他人谅解自己的幸福与成功，就必须慷慨地和他人分享；但如果一个人想要快乐，就不应该过分照顾他人的感受。要知道，一旦在乎他人，就走上了一条没有尽头的死路。</li>
+<li>为了不被他人批判，人们总会抢先批评他人。</li>
+<li>我们很少向比自己优秀的人吐露心声；不仅如此，我们还会尽力避免与他们为伍。与之相反的是，在大多数时候，我们会容易与彼此相似或者同病相怜的人成为心腹之交。也就是说，我们既不愿意自我纠正，也不愿意自我完善。我们必须被人批判，才能发现自身的不足，但在人生的道路上，我们最需要的就是他人的怜悯与鼓励。简而言之，我们一边希望免除洁身自好的麻烦，一边希望自己不会因此而内疚。长此以往，我们既不能放浪形骸之外，也不能静以修身，俭以养德；我们既非恶贯满盈之徒，也非乐善好施之士。</li>
+<li>当所有的人都在说你的好话时，倒霉的事情就会发生！</li>
+<li>实际上，嫉妒之情完全是丰富的想象在作祟，也是自我贬低的结果。</li>
+</ul>
+]]></content>
+      <categories>
+        <category>日常</category>
+      </categories>
+      <tags>
+        <tag>书摘</tag>
+        <tag>局外人</tag>
+        <tag>堕落</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>【每日语法】~さえ~ば</title>
+    <url>/2023/05/mnnhgbp5.html</url>
+    <content><![CDATA[<p>接续：</p>
+<blockquote>
+<p>N + さえ + 假定形<br>A（く形）&#x2F; NA（て形）+ さえあれば<br>V（ます形）&#x2F; サ变动词词干 + さえすれば</p>
+</blockquote>
+<p>意为「只要···就···」。关于假定形的变形方法，请参考<a href="/2023/04/mnnhgbp1.html">『【每日语法】~ば~ほど』</a>的文末表格。</p>
+<p>例句：やすくさえあれば、買いましょう。<br>译：只要便宜的话就买吧！</p>
+]]></content>
+      <categories>
+        <category>日语</category>
+      </categories>
+      <tags>
+        <tag>日语</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>【每日语法】~ば~ほど</title>
+    <url>/2023/04/mnnhgbp1.html</url>
+    <content><![CDATA[<p><strong>语法：V（假定形）+ V（原形）+ ほど</strong></p>
+<p>意为「越…越…」。</p>
+<p>例句：</p>
+<p>日语：この本は読めば読むほど面白いと思う。</p>
+<p>译：这本书越读越觉得有趣。</p>
+<p>假定形变形规则：</p>
+<table>
+<thead>
+<tr>
+<th align="center">词类</th>
+<th align="center">规则</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">动词</td>
+<td align="center">词尾假名变为同行的「え」段假名，再加「ば」</td>
+</tr>
+<tr>
+<td align="center">形容词</td>
+<td align="center">词尾「い」变「ければ」</td>
+</tr>
+<tr>
+<td align="center">形容动词</td>
+<td align="center">词干加「ならば」或者「であれば」</td>
+</tr>
+<tr>
+<td align="center">名词</td>
+<td align="center">加「ならば」或者「であれば」</td>
+</tr>
+</tbody></table>
+]]></content>
+      <categories>
+        <category>日语</category>
+      </categories>
+      <tags>
+        <tag>日语</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>【每日语法】~も~ば~も~</title>
+    <url>/2023/04/mnnhgbp2.html</url>
+    <content><![CDATA[<p><strong>语法：N + も + V（假定形）+ N + も + V（原形）</strong></p>
+<p>意为「既…又…」。其中的动词为同一动词。</p>
+<p>例句：コンビニにたくさんの商品がある。食べ物もあれば、生活に欠かせないものもある。</p>
+<p>译：便利店中有很多商品，既有食品，也有生活中不可或缺的物品。</p>
+<p>与之相似的语法还有「かと思えば」，接续方式为前接<strong>动词原形</strong>。关于假定形的变形方法，在上一篇中已经提过，这里就不再赘述，有需要了解的小伙伴可以<a href="/2023/04/mnnhgbp1.html">点击这里</a>返回上文查看。</p>
+]]></content>
+      <categories>
+        <category>日语</category>
+      </categories>
+      <tags>
+        <tag>日语</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>【每日语法】N1 易混语法总结</title>
     <url>/2024/03/mnnhgbp6.html</url>
     <content><![CDATA[<details class="note default no-icon"><summary><p><strong>自不必说</strong>的表达，后常续「も」「さえ」「まで」等</p>
@@ -384,22 +400,6 @@
 <p>～はさておき&#x2F;はさておいて～</p>
 
 </details>
-]]></content>
-      <categories>
-        <category>日语</category>
-      </categories>
-      <tags>
-        <tag>日语</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>【每日语法】~も~ば~も~</title>
-    <url>/2023/04/mnnhgbp2.html</url>
-    <content><![CDATA[<p><strong>语法：N + も + V（假定形）+ N + も + V（原形）</strong></p>
-<p>意为「既…又…」。其中的动词为同一动词。</p>
-<p>例句：コンビニにたくさんの商品がある。食べ物もあれば、生活に欠かせないものもある。</p>
-<p>译：便利店中有很多商品，既有食品，也有生活中不可或缺的物品。</p>
-<p>与之相似的语法还有「かと思えば」，接续方式为前接<strong>动词原形</strong>。关于假定形的变形方法，在上一篇中已经提过，这里就不再赘述，有需要了解的小伙伴可以<a href="/2023/04/mnnhgbp1.html">点击这里</a>返回上文查看。</p>
 ]]></content>
       <categories>
         <category>日语</category>
@@ -467,34 +467,6 @@
       </tags>
   </entry>
   <entry>
-    <title>【笔记·古典日语】五十音和发音</title>
-    <url>/2024/04/kobun1.html</url>
-    <content><![CDATA[<p>五十音图与现代日语区别如下：</p>
-<p><img data-src="https://img.fufu.ink/OmfFKP.webp"></p>
-<p>ワ行的发音为「wa，i，u，e，o」</p>
-<p><strong>需要注意 ゐ 与 ゑ 的写法</strong></p>
-<p>然后是过去与现在的读法的不同，有五个种类</p>
-<p>第一种，は行的音读作ワ行的发音（当该音位于词头时就そのまま读出来，不需要变音），注意只是读音对应，并非写法对应</p>
-<p><img data-src="https://img.fufu.ink/WC3e6D.webp"></p>
-<p>第二种，元音重叠的读法</p>
-<p><img data-src="https://img.fufu.ink/1Q0YU9.webp"></p>
-<p>第三种，「てふ」与「けふ」的发音，由前两种方法可以推导出发音来</p>
-<p><img data-src="https://img.fufu.ink/Ctqkfh.webp"></p>
-<p>第四种，ゐ，ゑ，を的发音</p>
-<p><img data-src="https://img.fufu.ink/v6Fwjk.webp"></p>
-<p>第五种，「む」发成「ん」的音</p>
-<p><img data-src="https://img.fufu.ink/P4VCRG.webp"></p>
-]]></content>
-      <categories>
-        <category>日语</category>
-      </categories>
-      <tags>
-        <tag>日语</tag>
-        <tag>古典日语</tag>
-        <tag>语法</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>【每日语法】てある及相似语法的对比</title>
     <url>/2023/05/mnnhgbp4.html</url>
     <content><![CDATA[<h2 id="意思一"><a href="#意思一" class="headerlink" title="意思一"></a>意思一</h2><blockquote>
@@ -548,6 +520,34 @@
       </categories>
       <tags>
         <tag>日语</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>【笔记·古典日语】五十音和发音</title>
+    <url>/2024/04/kobun1.html</url>
+    <content><![CDATA[<p>五十音图与现代日语区别如下：</p>
+<p><img data-src="https://img.fufu.ink/OmfFKP.webp"></p>
+<p>ワ行的发音为「wa，i，u，e，o」</p>
+<p><strong>需要注意 ゐ 与 ゑ 的写法</strong></p>
+<p>然后是过去与现在的读法的不同，有五个种类</p>
+<p>第一种，は行的音读作ワ行的发音（当该音位于词头时就そのまま读出来，不需要变音），注意只是读音对应，并非写法对应</p>
+<p><img data-src="https://img.fufu.ink/WC3e6D.webp"></p>
+<p>第二种，元音重叠的读法</p>
+<p><img data-src="https://img.fufu.ink/1Q0YU9.webp"></p>
+<p>第三种，「てふ」与「けふ」的发音，由前两种方法可以推导出发音来</p>
+<p><img data-src="https://img.fufu.ink/Ctqkfh.webp"></p>
+<p>第四种，ゐ，ゑ，を的发音</p>
+<p><img data-src="https://img.fufu.ink/v6Fwjk.webp"></p>
+<p>第五种，「む」发成「ん」的音</p>
+<p><img data-src="https://img.fufu.ink/P4VCRG.webp"></p>
+]]></content>
+      <categories>
+        <category>日语</category>
+      </categories>
+      <tags>
+        <tag>日语</tag>
+        <tag>古典日语</tag>
+        <tag>语法</tag>
       </tags>
   </entry>
   <entry>
@@ -770,6 +770,71 @@
       </tags>
   </entry>
   <entry>
+    <title>【笔记·古典日语】助动词「つ·ぬ」</title>
+    <url>/2024/04/kobun13.html</url>
+    <content><![CDATA[<h2 id="活用·接续"><a href="#活用·接续" class="headerlink" title="活用·接续"></a>活用·接续</h2><p>つ的活用符合下二段动词的活用方式，需要注意ぬ的活用</p>
+<p>接续：连用形 + つ・ぬ</p>
+<table>
+<thead>
+<tr>
+<th align="center">活用</th>
+<th align="center">つ</th>
+<th align="center">ぬ</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">未然形</td>
+<td align="center">て</td>
+<td align="center">な</td>
+</tr>
+<tr>
+<td align="center">连用形</td>
+<td align="center">て</td>
+<td align="center">に</td>
+</tr>
+<tr>
+<td align="center">终止形</td>
+<td align="center">つ</td>
+<td align="center">ぬ</td>
+</tr>
+<tr>
+<td align="center">连体形</td>
+<td align="center">つる</td>
+<td align="center">ぬる</td>
+</tr>
+<tr>
+<td align="center">已然形</td>
+<td align="center">つれ</td>
+<td align="center">ぬれ</td>
+</tr>
+<tr>
+<td align="center">命令形</td>
+<td align="center">てよ</td>
+<td align="center">ね</td>
+</tr>
+</tbody></table>
+<h2 id="作用"><a href="#作用" class="headerlink" title="作用"></a>作用</h2><p>つ・ぬ有三个作用</p>
+<ul>
+<li><p>完了：完成，可译为「～た・～てしまった」。つ・ぬ常常后续表示过去的助动词「き・けり」，以「連用形＋てき・てけり・にき・にきり」的形式出现，其中的つ・ぬ表示完成，翻译成现代日语即为「～た・～てしまった」</p>
+</li>
+<li><p>強意：加强语气，可译为「きっと～・はやく～」。</p>
+</li>
+<li><p>並列：并列，相当于「～たり、～たり」。常常以<strong>成对</strong>的形式，如「～つ、～つ」「～ぬ、～ぬ」出现，其中的つ・ぬ属于<strong>终止形</strong></p>
+</li>
+</ul>
+<p>后续表示<strong>推量</strong>的助动词「べし・む」等时，表示<strong>加强语气（強意）</strong>，全部形式如下</p>
+<p><img data-src="https://img.fufu.ink/a4luFx.webp"></p>
+]]></content>
+      <categories>
+        <category>日语</category>
+      </categories>
+      <tags>
+        <tag>日语</tag>
+        <tag>古典日语</tag>
+        <tag>语法</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>【笔记·古典日语】助动词「む·むず」</title>
     <url>/2024/04/kobun15.html</url>
     <content><![CDATA[<h2 id="活用·接续"><a href="#活用·接续" class="headerlink" title="活用·接续"></a>活用·接续</h2><p>活用表</p>
@@ -881,71 +946,6 @@
 <li>現在の伝聞：现代日语可译为「～とかいう」。特征也为<strong>「らむ + N」</strong></li>
 </ul>
 <p>表示委婉和传闻的特征一致，都为<strong>「らむ + N」</strong>，因此具体是表示哪个需要根据语境进行判断。</p>
-]]></content>
-      <categories>
-        <category>日语</category>
-      </categories>
-      <tags>
-        <tag>日语</tag>
-        <tag>古典日语</tag>
-        <tag>语法</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>【笔记·古典日语】助动词「つ·ぬ」</title>
-    <url>/2024/04/kobun13.html</url>
-    <content><![CDATA[<h2 id="活用·接续"><a href="#活用·接续" class="headerlink" title="活用·接续"></a>活用·接续</h2><p>つ的活用符合下二段动词的活用方式，需要注意ぬ的活用</p>
-<p>接续：连用形 + つ・ぬ</p>
-<table>
-<thead>
-<tr>
-<th align="center">活用</th>
-<th align="center">つ</th>
-<th align="center">ぬ</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center">未然形</td>
-<td align="center">て</td>
-<td align="center">な</td>
-</tr>
-<tr>
-<td align="center">连用形</td>
-<td align="center">て</td>
-<td align="center">に</td>
-</tr>
-<tr>
-<td align="center">终止形</td>
-<td align="center">つ</td>
-<td align="center">ぬ</td>
-</tr>
-<tr>
-<td align="center">连体形</td>
-<td align="center">つる</td>
-<td align="center">ぬる</td>
-</tr>
-<tr>
-<td align="center">已然形</td>
-<td align="center">つれ</td>
-<td align="center">ぬれ</td>
-</tr>
-<tr>
-<td align="center">命令形</td>
-<td align="center">てよ</td>
-<td align="center">ね</td>
-</tr>
-</tbody></table>
-<h2 id="作用"><a href="#作用" class="headerlink" title="作用"></a>作用</h2><p>つ・ぬ有三个作用</p>
-<ul>
-<li><p>完了：完成，可译为「～た・～てしまった」。つ・ぬ常常后续表示过去的助动词「き・けり」，以「連用形＋てき・てけり・にき・にきり」的形式出现，其中的つ・ぬ表示完成，翻译成现代日语即为「～た・～てしまった」</p>
-</li>
-<li><p>強意：加强语气，可译为「きっと～・はやく～」。</p>
-</li>
-<li><p>並列：并列，相当于「～たり、～たり」。常常以<strong>成对</strong>的形式，如「～つ、～つ」「～ぬ、～ぬ」出现，其中的つ・ぬ属于<strong>终止形</strong></p>
-</li>
-</ul>
-<p>后续表示<strong>推量</strong>的助动词「べし・む」等时，表示<strong>加强语气（強意）</strong>，全部形式如下</p>
-<p><img data-src="https://img.fufu.ink/a4luFx.webp"></p>
 ]]></content>
       <categories>
         <category>日语</category>
@@ -1155,23 +1155,6 @@
         <tag>日语</tag>
         <tag>古典日语</tag>
         <tag>语法</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>一点碎碎念</title>
-    <url>/2024/04/monku.html</url>
-    <content><![CDATA[<p>最近又有点沉迷博客美化了，明明自己能力不行，也不去学 js，甚至 css 也只学了半截，结果就是事倍功半，花了大量时间想给说说加个翻页功能，后面在朋友（永远让我保持理智的好兄弟）<a href="https://miku.show/">@OrzMiku</a> 的点拨下才醒悟，那些人博客的翻页是有链接跳转的，我的页面内翻页反而是愚蠢的想法。于是两天不仅耽误了大量学习时间，还啥也没搞出来。</p>
-<p>然后这两三天看了<a href="https://www.himiku.com/">「初之音」</a>的博客，受到启发，又把关于页面的内容改了一次，耗费了一天。今昨两天又想把 live2d 搞回来了，之前用的<a href="https://www.itggg.cn/">「爆胎博客」</a>提供的 api，但其域名很早前就到期了，因此很长一段时间没有重新搞这个。前几天无意中刷到了 next 主题的作者也写了一款 live2d，正好自己现在也在用 next 主题，就想着部署一下，而且尽量全都部署在本地。于是今天花了一天把看板娘弄回来了，部署其实很快，主要是跨域问题上费了很大的力气，好在最后还是解决了。然后模型的参数的初始化也花了挺久的时间，虽然现在自己也没啥后悔的感觉。尽管知道自己的竞争对手现在正在努力，就在我搞这些玩意儿的时候，但还是忍不住去弄。</p>
-<p>这下博客外观什么的都基本定型了，后期应该不会再做大的变动了。虽然好多次想换回 typecho 去用之前用的 handsome，最终都放弃了。因为舍不得自己费了很长时间搞出来的样式，而且总是设想自己换了设备的话，更新方面动态博客可能会比静态博客方便，但其实这种假设是成立不了的，因为我根本不会换设备，还是老老实实用静态博客的好。</p>
-<p>最后想说一说评论，首先是开评论的问题，因为原则上个人备案是不允许开交互式功能的，所以评论是不被允许的，但这不是主要原因。个人认为主要原因有两个方面，一是这个 1ip 的博客本身流量也不大，开了半年评论实际上也没几条留言，还占着服务器资源，每天还要备份数据库，实在是没必要；另一方面是想回归自己当初建立博客的初心，说得好听点是建立一个远离朋友圈，QQ空间的，属于自己的空间，说的简单点就是单纯的记录，说得难听的话，就是当成了自己的情绪的垃圾桶。但如若从内心中吐露出来的东西对一些人有益，那属于意想不到的收获。开了评论后，就会变得时不时想要看一看有没有留言，心里总是期待着邮件通知的赶来，然后为了得到留言而写作，我正在慢慢变成这样，但这是不对的，这与我的初心背道而驰了，于是关闭了评论。</p>
-]]></content>
-      <categories>
-        <category>日常</category>
-      </categories>
-      <tags>
-        <tag>生活</tag>
-        <tag>博客</tag>
-        <tag>随笔</tag>
       </tags>
   </entry>
   <entry>
@@ -1520,13 +1503,12 @@
       </tags>
   </entry>
   <entry>
-    <title>小号常驻又出小提了</title>
-    <url>/2023/05/genshinchangzhuxiaoti.html</url>
-    <content><![CDATA[<p>前几天 up 池双黄了，出了莫娜和甘雨，今天又出小提了。</p>
-<p>之前玩大号的时候不怎么玩弓箭手，虽然公子武器是弓箭啦，毕竟战斗时使用的都是近战模式。再加上手柄不好进行瞄准操作…</p>
-<p>不过小号出了甘雨后，才发现玩狙击手是真的舒服，即使只靠平 a，也能打出很高的伤害（话说弓箭手的普攻倍率就是所有角色中最高的）。这小号比大号开荒时要舒服很多，主要是因为大号刚入坑时想在常驻池捞 77，把所有原石都用来抽常驻了，结果 120 发都没出 77，倒是把香班给抽得快满命了。</p>
-<p>接下来就要围绕着甘雨和小提两个主 c 来配队了。</p>
-<p><img data-src="https://img.fufu.ink/ayuNM2.webp" alt="常驻池43抽·小提"></p>
+    <title>小号双黄了！</title>
+    <url>/2023/05/gsxhcjl.html</url>
+    <content><![CDATA[<p>这件事要从去年 11 月草神池刚出的时候说起，之前一直玩的号只抽中了草神（大保底），武器却歪了「飞雷」，于是创了个小号。想着小号前期资源多，肝一肝能在版本结束前拿个 0+1，结果后面发生了一系列事情，最终导致许久没登小号。今年2、3月份重新上了下号，把剧情推到璃月了，攒出了 74 抽，结果歪了莫娜（血的教训！一定不要边肝边抽，必歪！！！），当即下号。</p>
+<p>今天闲来无事，想起了这个号，上号后拿着版本送的原石单抽了一发，本来以为出紫了，结果出金了！于是甘雨拿下~</p>
+<p><img data-src="https://img.fufu.ink/p1lG81.webp" alt="双黄"></p>
+<p>这又让我燃起了对小号培养的热情，本来都打算让这个号废了，毕竟第一个金就歪了，连新手保护期都没了，结果双黄来了，那它就还有被培养的理由！</p>
 ]]></content>
       <categories>
         <category>游戏</category>
@@ -1537,12 +1519,13 @@
       </tags>
   </entry>
   <entry>
-    <title>小号双黄了！</title>
-    <url>/2023/05/gsxhcjl.html</url>
-    <content><![CDATA[<p>这件事要从去年 11 月草神池刚出的时候说起，之前一直玩的号只抽中了草神（大保底），武器却歪了「飞雷」，于是创了个小号。想着小号前期资源多，肝一肝能在版本结束前拿个 0+1，结果后面发生了一系列事情，最终导致许久没登小号。今年2、3月份重新上了下号，把剧情推到璃月了，攒出了 74 抽，结果歪了莫娜（血的教训！一定不要边肝边抽，必歪！！！），当即下号。</p>
-<p>今天闲来无事，想起了这个号，上号后拿着版本送的原石单抽了一发，本来以为出紫了，结果出金了！于是甘雨拿下~</p>
-<p><img data-src="https://img.fufu.ink/p1lG81.webp" alt="双黄"></p>
-<p>这又让我燃起了对小号培养的热情，本来都打算让这个号废了，毕竟第一个金就歪了，连新手保护期都没了，结果双黄来了，那它就还有被培养的理由！</p>
+    <title>小号常驻又出小提了</title>
+    <url>/2023/05/genshinchangzhuxiaoti.html</url>
+    <content><![CDATA[<p>前几天 up 池双黄了，出了莫娜和甘雨，今天又出小提了。</p>
+<p>之前玩大号的时候不怎么玩弓箭手，虽然公子武器是弓箭啦，毕竟战斗时使用的都是近战模式。再加上手柄不好进行瞄准操作…</p>
+<p>不过小号出了甘雨后，才发现玩狙击手是真的舒服，即使只靠平 a，也能打出很高的伤害（话说弓箭手的普攻倍率就是所有角色中最高的）。这小号比大号开荒时要舒服很多，主要是因为大号刚入坑时想在常驻池捞 77，把所有原石都用来抽常驻了，结果 120 发都没出 77，倒是把香班给抽得快满命了。</p>
+<p>接下来就要围绕着甘雨和小提两个主 c 来配队了。</p>
+<p><img data-src="https://img.fufu.ink/ayuNM2.webp" alt="常驻池43抽·小提"></p>
 ]]></content>
       <categories>
         <category>游戏</category>
@@ -1698,6 +1681,69 @@
       <tags>
         <tag>Linux</tag>
         <tag>Ubuntu</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>无题（一）</title>
+    <url>/2024/04/mudai1.html</url>
+    <content><![CDATA[<p>他又在打瞌睡了。</p>
+<p>自从早上来到教室，他就一动不动地趴在那里。</p>
+<p>尽管周围充斥着读书声和同学间的笑谈声，但他似乎置若罔闻，仍旧保持着那副姿势。<span id="more"></span></p>
+<p>终于，上课铃响了。然而，他仍然没有动弹。于是，旁边的同学推了推他。</p>
+<p>“嘿，上课了！”</p>
+<p>“嗯……嗯？”</p>
+<p>他终于醒了过来，揉了揉眼睛，茫然地看着走上讲台的教师。</p>
+<p>这节课是数学课，数学老师是一个矮小精悍的老头。老头大概已有 60 岁了，头发黑白相间，总是穿着一身西服，但不知为何，他总是给人一种永远不会消退的精神气质</p>
+<p>“上课啦——安静！”</p>
+<p>学委提高了声音，试图压过尚未平息的嘈杂声。</p>
+<p>最终，教室恢复了安静，老师打开书，开始了授课。</p>
+<p>他的目光重新投向书本，看着那些熟悉的文字，这些内容在暑假的初升高衔接班上已经讲过了，不过他那时也是这副样子，只是记住了一些文字，而对其意义一窍不通。渐渐地，他开始觉得这些文字变得模糊起来。</p>
+<p>他开始垂着脑袋，点起头来，而且很有规律的，当脖子弯曲到接近 90 度时，忽然又抬起头来，然后又开始缓缓下垂，如此反复。渐渐地，他的身体也晃了起来。</p>
+<p>突然，他朝左侧倒了下去，靠在了旁边女生的身上。</p>
+<p>“哎呀！你干什么！”</p>
+<p>“啊！对不起，睡迷糊了”</p>
+<p>女生一脸无语地看了他一眼。他却是低着头朝她说了一句后，马上又侧过脸去，没看到她的表情。</p>
+<p>经历了刚才这出，他终于是醒过来了。但课程已经进行了一半，早已不知老师讲到了何处。反正也是无聊，于是他拿出一本小说看了起来。</p>
+<p>那是一本科幻小说。他已经看了这个作者写的数本书了，有长篇也有短篇，但都很吸引人，或量子力学，或外星文明，或多维宇宙，他很喜欢这些题材，看完后还常常将书借给同样喜欢科幻的 W。</p>
+<p>刚读了不到一页，老头的声音戛然而止，一只手突然出现在他眼前，遮住了书上的文字。</p>
+<p>他抬起头，面无表情地看着眼前的老头，老头却是一脸担忧的神色。</p>
+<p>“要好好听课啊……”</p>
+<p>他没有做出回应，甚至连头也没点一下，只是一动不动地看着老头。</p>
+<p>老头见状也就作罢，转身回到讲台，继续如同巫师念咒一般地讲着他无法理解的那些数字、字母、符号组成的公式。</p>
+<p>这下书是看不成了，于是他环顾四周，希望找点能够打发这漫长的上课时间的事情。结果，往左一转头，他找到了。</p>
+<p>他的同桌，刚才的那个女生，此刻也像他一样，开始不断地“点头”。</p>
+<p>“诶！诶！醒醒！醒醒！”</p>
+<p>本着还人情的想法，他也推了推她，把她也叫醒了。</p>
+<p>“笑死我了，怎么你也睡了？”</p>
+<p>“哎呀，别吵我，困死了！”</p>
+<p>这个女生叫 X，在他看来，她是个和自己一样上课不听讲，光睡觉的家伙，也经常迟到，被班主任责问时，便露出带有歉意的，腼腆的微笑。每到这时，班主任便气不打一处来，言语中却又带着些无奈。</p>
+<p>“笑，还笑，这有什么好笑的。下次别再迟到了！”</p>
+<p>说罢便让她回到了座位上。这是每隔两三天便会上演一次的戏码，她永远都能够找到合适的理由来为自己开脱，而每次班主任也只好叮嘱，便作罢。</p>
+<p>对他来说，这样的事情倒是给他无聊的生活增添了些许乐趣。毕竟他就是喜欢看别人倒霉的人，他无法容忍别人比他优秀，又蔑视那些不如他的人，看到他人遭遇不幸，他反而觉得心里舒畅。</p>
+<p>”叮——“</p>
+<p>第一节课终于结束了。</p>
+<p>他又趴了下去，老头走到他面前，拍了拍他。</p>
+<p>“D，你上课要听啊……”</p>
+<p>他只是点了点头，便又趴下了，老头只好无奈地走出了教室。</p>
+<p>之后的事情他都不清楚了，再次醒来时，已经接近下午一点了。</p>
+<p>“已经是这个时间点了吗？得去吃饭了。”</p>
+<p>食堂里人不多，毕竟人流高峰期是刚下课的时候，也就是 12 点 10 分左右，此时只有零零散散的几张桌子坐着几个人，一些还是结束了中午的工作，从厨房中走出来的厨师。开着的窗口也不多了，他犹豫了片刻，最终还是选择了位于二楼楼梯拐角处的卖汤面的窗口。这家店的特色是面可以无限添，还可以选择是汤面还是拌面。</p>
+<p>他点了一份拌面，独自一人静静地吃了起来。他喜欢拌面，加入数勺辣子油和酱油、醋搅拌后，光是看着那一碗红油，就充满了食欲。</p>
+<p>吃碗面，他又回到了教室。教室里只剩下几个男女，他们都是不良学生，这一点从入学的时候他就知道了。虽然他也承认自己也是上课不听讲，成天好吃懒做的“不良”学生，但他认为这种“不良”和他们的“不良”是有本质区别的。他们有一种看上去就让人觉得是社会混混的“痞气”，但外表还是学生，便只能归类于“不良”。他是打心里畏惧着这些人，同时心里也瞧不起这些人，对他们总是退避三舍。</p>
+<p>但他不能把这种态度太明显地表现出来，于是他随着他们中的一个名为 Q 的高个子，称似乎是老大的名为 Z 的人为 Z 哥，借此与他们套近乎。</p>
+<p>他们口中充满了对老师与学校的不满，说出的是粗鄙之言，做出的是不堪之举，他们内心总是躁动着，似乎想通过对外界的破坏来将这些不满与躁动发泄出来。</p>
+<p>其中一个叫 L 的胖子，从课桌中抽出一个短的金属筒状物，握住尾端黑色的部分，向斜下方用力一甩，筒状物一下子就伸长了，外形如同鱼竿，圆筒的半径从手握的黑色部分到最前端逐渐缩短，到了前端变成了一个金属小球，这是他们口中的“甩棍”！胖子拿着甩棍走到教室的后面，那里摆放了一排的储物柜，是给学生放书用的。胖子一边嘴里骂着什么，一边用甩棍用力地敲打着储物柜的门。整个教室回荡着巨大的响声，遭受这无妄之灾的金属门最终是承受不了甩棍无情的摧残，变瘪了。</p>
+<p>他埋头趴在桌子上，每一次巨大的敲击声，都仿佛穿透了他的身体一般，使他不由得发抖。不知道过去了多久，敲击声消失了，交谈声也慢慢变远，最后不知所踪，他们终于是离开了。</p>
+<p>下午第一节是化学课，由于记不住化学方程式，他被老师叫到了教室后面罚站听课。化学是他的薄弱项，这一点从初中开始就是，当时老师甚至让同学在课堂上自习，专门让他上讲台给他讲解，但他还是无法理解。到了高中，许多知识点又讲了一遍，但他还是不会，或许他是真的不擅长理科。</p>
+<p>第二节是历史课，由之前提到的那位班主任负责教授。历史课上他倒没有打瞌睡了，但他向来对历史不感兴趣，在他看来，历史就是讲述什么时候发生了什么事情，教材上不就是这么写的吗？还要去分析什么根本原因，什么直接原因、间接原因，简直麻烦死了。于是，没事干的他陷入了回忆。</p>
+]]></content>
+      <categories>
+        <category>日常</category>
+      </categories>
+      <tags>
+        <tag>小说</tag>
+        <tag>高中</tag>
+        <tag>生活</tag>
       </tags>
   </entry>
   <entry>
@@ -2150,69 +2196,6 @@
       </tags>
   </entry>
   <entry>
-    <title>无题（一）</title>
-    <url>/2024/04/mudai1.html</url>
-    <content><![CDATA[<p>他又在打瞌睡了。</p>
-<p>自从早上来到教室，他就一动不动地趴在那里。</p>
-<p>尽管周围充斥着读书声和同学间的笑谈声，但他似乎置若罔闻，仍旧保持着那副姿势。<span id="more"></span></p>
-<p>终于，上课铃响了。然而，他仍然没有动弹。于是，旁边的同学推了推他。</p>
-<p>“嘿，上课了！”</p>
-<p>“嗯……嗯？”</p>
-<p>他终于醒了过来，揉了揉眼睛，茫然地看着走上讲台的教师。</p>
-<p>这节课是数学课，数学老师是一个矮小精悍的老头。老头大概已有 60 岁了，头发黑白相间，总是穿着一身西服，但不知为何，他总是给人一种永远不会消退的精神气质</p>
-<p>“上课啦——安静！”</p>
-<p>学委提高了声音，试图压过尚未平息的嘈杂声。</p>
-<p>最终，教室恢复了安静，老师打开书，开始了授课。</p>
-<p>他的目光重新投向书本，看着那些熟悉的文字，这些内容在暑假的初升高衔接班上已经讲过了，不过他那时也是这副样子，只是记住了一些文字，而对其意义一窍不通。渐渐地，他开始觉得这些文字变得模糊起来。</p>
-<p>他开始垂着脑袋，点起头来，而且很有规律的，当脖子弯曲到接近 90 度时，忽然又抬起头来，然后又开始缓缓下垂，如此反复。渐渐地，他的身体也晃了起来。</p>
-<p>突然，他朝左侧倒了下去，靠在了旁边女生的身上。</p>
-<p>“哎呀！你干什么！”</p>
-<p>“啊！对不起，睡迷糊了”</p>
-<p>女生一脸无语地看了他一眼。他却是低着头朝她说了一句后，马上又侧过脸去，没看到她的表情。</p>
-<p>经历了刚才这出，他终于是醒过来了。但课程已经进行了一半，早已不知老师讲到了何处。反正也是无聊，于是他拿出一本小说看了起来。</p>
-<p>那是一本科幻小说。他已经看了这个作者写的数本书了，有长篇也有短篇，但都很吸引人，或量子力学，或外星文明，或多维宇宙，他很喜欢这些题材，看完后还常常将书借给同样喜欢科幻的 W。</p>
-<p>刚读了不到一页，老头的声音戛然而止，一只手突然出现在他眼前，遮住了书上的文字。</p>
-<p>他抬起头，面无表情地看着眼前的老头，老头却是一脸担忧的神色。</p>
-<p>“要好好听课啊……”</p>
-<p>他没有做出回应，甚至连头也没点一下，只是一动不动地看着老头。</p>
-<p>老头见状也就作罢，转身回到讲台，继续如同巫师念咒一般地讲着他无法理解的那些数字、字母、符号组成的公式。</p>
-<p>这下书是看不成了，于是他环顾四周，希望找点能够打发这漫长的上课时间的事情。结果，往左一转头，他找到了。</p>
-<p>他的同桌，刚才的那个女生，此刻也像他一样，开始不断地“点头”。</p>
-<p>“诶！诶！醒醒！醒醒！”</p>
-<p>本着还人情的想法，他也推了推她，把她也叫醒了。</p>
-<p>“笑死我了，怎么你也睡了？”</p>
-<p>“哎呀，别吵我，困死了！”</p>
-<p>这个女生叫 X，在他看来，她是个和自己一样上课不听讲，光睡觉的家伙，也经常迟到，被班主任责问时，便露出带有歉意的，腼腆的微笑。每到这时，班主任便气不打一处来，言语中却又带着些无奈。</p>
-<p>“笑，还笑，这有什么好笑的。下次别再迟到了！”</p>
-<p>说罢便让她回到了座位上。这是每隔两三天便会上演一次的戏码，她永远都能够找到合适的理由来为自己开脱，而每次班主任也只好叮嘱，便作罢。</p>
-<p>对他来说，这样的事情倒是给他无聊的生活增添了些许乐趣。毕竟他就是喜欢看别人倒霉的人，他无法容忍别人比他优秀，又蔑视那些不如他的人，看到他人遭遇不幸，他反而觉得心里舒畅。</p>
-<p>”叮——“</p>
-<p>第一节课终于结束了。</p>
-<p>他又趴了下去，老头走到他面前，拍了拍他。</p>
-<p>“D，你上课要听啊……”</p>
-<p>他只是点了点头，便又趴下了，老头只好无奈地走出了教室。</p>
-<p>之后的事情他都不清楚了，再次醒来时，已经接近下午一点了。</p>
-<p>“已经是这个时间点了吗？得去吃饭了。”</p>
-<p>食堂里人不多，毕竟人流高峰期是刚下课的时候，也就是 12 点 10 分左右，此时只有零零散散的几张桌子坐着几个人，一些还是结束了中午的工作，从厨房中走出来的厨师。开着的窗口也不多了，他犹豫了片刻，最终还是选择了位于二楼楼梯拐角处的卖汤面的窗口。这家店的特色是面可以无限添，还可以选择是汤面还是拌面。</p>
-<p>他点了一份拌面，独自一人静静地吃了起来。他喜欢拌面，加入数勺辣子油和酱油、醋搅拌后，光是看着那一碗红油，就充满了食欲。</p>
-<p>吃碗面，他又回到了教室。教室里只剩下几个男女，他们都是不良学生，这一点从入学的时候他就知道了。虽然他也承认自己也是上课不听讲，成天好吃懒做的“不良”学生，但他认为这种“不良”和他们的“不良”是有本质区别的。他们有一种看上去就让人觉得是社会混混的“痞气”，但外表还是学生，便只能归类于“不良”。他是打心里畏惧着这些人，同时心里也瞧不起这些人，对他们总是退避三舍。</p>
-<p>但他不能把这种态度太明显地表现出来，于是他随着他们中的一个名为 Q 的高个子，称似乎是老大的名为 Z 的人为 Z 哥，借此与他们套近乎。</p>
-<p>他们口中充满了对老师与学校的不满，说出的是粗鄙之言，做出的是不堪之举，他们内心总是躁动着，似乎想通过对外界的破坏来将这些不满与躁动发泄出来。</p>
-<p>其中一个叫 L 的胖子，从课桌中抽出一个短的金属筒状物，握住尾端黑色的部分，向斜下方用力一甩，筒状物一下子就伸长了，外形如同鱼竿，圆筒的半径从手握的黑色部分到最前端逐渐缩短，到了前端变成了一个金属小球，这是他们口中的“甩棍”！胖子拿着甩棍走到教室的后面，那里摆放了一排的储物柜，是给学生放书用的。胖子一边嘴里骂着什么，一边用甩棍用力地敲打着储物柜的门。整个教室回荡着巨大的响声，遭受这无妄之灾的金属门最终是承受不了甩棍无情的摧残，变瘪了。</p>
-<p>他埋头趴在桌子上，每一次巨大的敲击声，都仿佛穿透了他的身体一般，使他不由得发抖。不知道过去了多久，敲击声消失了，交谈声也慢慢变远，最后不知所踪，他们终于是离开了。</p>
-<p>下午第一节是化学课，由于记不住化学方程式，他被老师叫到了教室后面罚站听课。化学是他的薄弱项，这一点从初中开始就是，当时老师甚至让同学在课堂上自习，专门让他上讲台给他讲解，但他还是无法理解。到了高中，许多知识点又讲了一遍，但他还是不会，或许他是真的不擅长理科。</p>
-<p>第二节是历史课，由之前提到的那位班主任负责教授。历史课上他倒没有打瞌睡了，但他向来对历史不感兴趣，在他看来，历史就是讲述什么时候发生了什么事情，教材上不就是这么写的吗？还要去分析什么根本原因，什么直接原因、间接原因，简直麻烦死了。于是，没事干的他陷入了回忆。</p>
-]]></content>
-      <categories>
-        <category>日常</category>
-      </categories>
-      <tags>
-        <tag>生活</tag>
-        <tag>小说</tag>
-        <tag>高中</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>科目二过啦！</title>
     <url>/2023/08/kemuerpass.html</url>
     <content><![CDATA[<p>三战一把过！</p>
@@ -2376,76 +2359,6 @@
       <tags>
         <tag>原神</tag>
         <tag>游戏</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>萌新的 PC 计划</title>
-    <url>/2023/02/computercompose.html</url>
-    <content><![CDATA[<p>因为原来的电脑是轻薄本，用的 r5 5500u 核显，玩个原神只能开 0.8 精度，还经常掉帧，正好过年了，就想拿着压岁钱和寒假打工的钱组一台台式机（不买游戏本是因为预算不足）。预算为 6000 元左右，经过群友的建议，组出的配置如下：<span id="more"></span></p>
-<table>
-<thead>
-<tr>
-<th align="center">组件</th>
-<th align="center">型号</th>
-<th align="center">预计价格</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center">CPU</td>
-<td align="center">i5 12400F 散片</td>
-<td align="center">935</td>
-</tr>
-<tr>
-<td align="center">主板</td>
-<td align="center">华硕Prime H610M-K</td>
-<td align="center">679</td>
-</tr>
-<tr>
-<td align="center">显卡</td>
-<td align="center">七彩虹 RTX 3060</td>
-<td align="center">2649</td>
-</tr>
-<tr>
-<td align="center">散热</td>
-<td align="center">乔思伯 CR-1200E</td>
-<td align="center">35</td>
-</tr>
-<tr>
-<td align="center">内存</td>
-<td align="center">威刚 XPG DDR4 8G 3200 * 2</td>
-<td align="center">289</td>
-</tr>
-<tr>
-<td align="center">硬盘</td>
-<td align="center">西数 SN570 1T</td>
-<td align="center">499</td>
-</tr>
-<tr>
-<td align="center">机箱</td>
-<td align="center">先马平头哥 M1</td>
-<td align="center">150</td>
-</tr>
-<tr>
-<td align="center">电源</td>
-<td align="center">鑫谷 GP600G</td>
-<td align="center">239</td>
-</tr>
-<tr>
-<td align="center">总计</td>
-<td align="center">————————————</td>
-<td align="center">5475</td>
-</tr>
-</tbody></table>
-<p>现在的问题是要在学校宿舍使用，宿舍是限制功率的，光 500w 的电源就不知道能不能带得动（当然是满载状态下）。问了下学校的贴吧，是有组台式用 3060 的，也可以正常使用，不过还有点担心，就先观望一下。</p>
-<hr>
-<p>刚刚又看了一下，还是决定暂时观望，30 系显卡最近降价了，但是矿卡的可能性很大，毕竟矿老板已经赚翻了等着<del>臭打游戏的</del>接盘呢。等到 3 月份再看看，暂时也不急着换电脑。</p>
-]]></content>
-      <categories>
-        <category>日常</category>
-      </categories>
-      <tags>
-        <tag>生活</tag>
-        <tag>计算机</tag>
       </tags>
   </entry>
   <entry>
@@ -2632,21 +2545,6 @@
       </tags>
   </entry>
   <entry>
-    <title>诈尸更新一下最近状态</title>
-    <url>/2023/07/natsuyasumijyoutai.html</url>
-    <content><![CDATA[<p>一个月没更新力。</p>
-<p>主要是没啥想法，每天宅在家里，打游戏，追番（这一个月可追了不少番——齐木楠雄的灾难，别当欧尼酱了，鬼灭，文豪野犬，因为太怕痛就全点防御力了，无职转生，无神世界中的神明活动，僵尸百分百，魔禁……算是把高中以来没怎么看番的时间全补回来了）。</p>
-<p>科二因为挂两回了，拖了两年了，明年要过期了，最近又开始练了。今天去考场中模拟了一个小时，除了最后一圈坡上起步因为边线距离扣了 10 分，都是 100 分，感觉下次考试应该问题不大了，现在开始准备科三了。科三打算 C1 转 C2 了，因为不用在意档位的变换，科三考试可以更稳地通过，现在主要是要求暑假结束前拿到驾照，否则拖到寒假就容易过期了。至于 C1 和 C2 的区别，上网查了一下，似乎是 C1 可以开蓝牌车，但 C2 只能开小型驾驶车？嘛，以后我也不会有机会去开手动挡啦，驾照这东西不就是图个方便么，怎么快速方便怎么来，没必要死磕个手动挡为难自己。</p>
-<p>家里躺了三周了，得开始准备下半年的 N1 了，虽然上个月的专四大概率挂了，但是 N1 还是得拿的，拿了就可以开始接一些小的翻译工作赚点零花钱了！</p>
-]]></content>
-      <categories>
-        <category>日常</category>
-      </categories>
-      <tags>
-        <tag>生活</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>论打造文化背景下日本美食文化中日双语科普介绍平台的可行性</title>
     <url>/2022/05/dachuangzuoye.html</url>
     <content><![CDATA[<blockquote>
@@ -2695,6 +2593,108 @@
         <tag>中外交流</tag>
         <tag>美食文化</tag>
         <tag>创业创新</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>诈尸更新一下最近状态</title>
+    <url>/2023/07/natsuyasumijyoutai.html</url>
+    <content><![CDATA[<p>一个月没更新力。</p>
+<p>主要是没啥想法，每天宅在家里，打游戏，追番（这一个月可追了不少番——齐木楠雄的灾难，别当欧尼酱了，鬼灭，文豪野犬，因为太怕痛就全点防御力了，无职转生，无神世界中的神明活动，僵尸百分百，魔禁……算是把高中以来没怎么看番的时间全补回来了）。</p>
+<p>科二因为挂两回了，拖了两年了，明年要过期了，最近又开始练了。今天去考场中模拟了一个小时，除了最后一圈坡上起步因为边线距离扣了 10 分，都是 100 分，感觉下次考试应该问题不大了，现在开始准备科三了。科三打算 C1 转 C2 了，因为不用在意档位的变换，科三考试可以更稳地通过，现在主要是要求暑假结束前拿到驾照，否则拖到寒假就容易过期了。至于 C1 和 C2 的区别，上网查了一下，似乎是 C1 可以开蓝牌车，但 C2 只能开小型驾驶车？嘛，以后我也不会有机会去开手动挡啦，驾照这东西不就是图个方便么，怎么快速方便怎么来，没必要死磕个手动挡为难自己。</p>
+<p>家里躺了三周了，得开始准备下半年的 N1 了，虽然上个月的专四大概率挂了，但是 N1 还是得拿的，拿了就可以开始接一些小的翻译工作赚点零花钱了！</p>
+]]></content>
+      <categories>
+        <category>日常</category>
+      </categories>
+      <tags>
+        <tag>生活</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>一点碎碎念</title>
+    <url>/2024/04/monku.html</url>
+    <content><![CDATA[<p>最近又有点沉迷博客美化了，明明自己能力不行，也不去学 js，甚至 css 也只学了半截，结果就是事倍功半，花了大量时间想给说说加个翻页功能，后面在朋友（永远让我保持理智的好兄弟）<a href="https://miku.show/">@OrzMiku</a> 的点拨下才醒悟，那些人博客的翻页是有链接跳转的，我的页面内翻页反而是愚蠢的想法。于是两天不仅耽误了大量学习时间，还啥也没搞出来。</p>
+<p>然后这两三天看了<a href="https://www.himiku.com/">「初之音」</a>的博客，受到启发，又把关于页面的内容改了一次，耗费了一天。今昨两天又想把 live2d 搞回来了，之前用的<a href="https://www.itggg.cn/">「爆胎博客」</a>提供的 api，但其域名很早前就到期了，因此很长一段时间没有重新搞这个。前几天无意中刷到了 next 主题的作者也写了一款 live2d，正好自己现在也在用 next 主题，就想着部署一下，而且尽量全都部署在本地。于是今天花了一天把看板娘弄回来了，部署其实很快，主要是跨域问题上费了很大的力气，好在最后还是解决了。然后模型的参数的初始化也花了挺久的时间，虽然现在自己也没啥后悔的感觉。尽管知道自己的竞争对手现在正在努力，就在我搞这些玩意儿的时候，但还是忍不住去弄。</p>
+<p>这下博客外观什么的都基本定型了，后期应该不会再做大的变动了。虽然好多次想换回 typecho 去用之前用的 handsome，最终都放弃了。因为舍不得自己费了很长时间搞出来的样式，而且总是设想自己换了设备的话，更新方面动态博客可能会比静态博客方便，但其实这种假设是成立不了的，因为我根本不会换设备，还是老老实实用静态博客的好。</p>
+<p>最后想说一说评论，首先是开评论的问题，因为原则上个人备案是不允许开交互式功能的，所以评论是不被允许的，但这不是主要原因。个人认为主要原因有两个方面，一是这个 1ip 的博客本身流量也不大，开了半年评论实际上也没几条留言，还占着服务器资源，每天还要备份数据库，实在是没必要；另一方面是想回归自己当初建立博客的初心，说得好听点是建立一个远离朋友圈，QQ空间的，属于自己的空间，说的简单点就是单纯的记录，说得难听的话，就是当成了自己的情绪的垃圾桶。但如若从内心中吐露出来的东西对一些人有益，那属于意想不到的收获。开了评论后，就会变得时不时想要看一看有没有留言，心里总是期待着邮件通知的赶来，然后为了得到留言而写作，我正在慢慢变成这样，但这是不对的，这与我的初心背道而驰了，于是关闭了评论。</p>
+]]></content>
+      <categories>
+        <category>日常</category>
+      </categories>
+      <tags>
+        <tag>随笔</tag>
+        <tag>生活</tag>
+        <tag>博客</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>萌新的 PC 计划</title>
+    <url>/2023/02/computercompose.html</url>
+    <content><![CDATA[<p>因为原来的电脑是轻薄本，用的 r5 5500u 核显，玩个原神只能开 0.8 精度，还经常掉帧，正好过年了，就想拿着压岁钱和寒假打工的钱组一台台式机（不买游戏本是因为预算不足）。预算为 6000 元左右，经过群友的建议，组出的配置如下：<span id="more"></span></p>
+<table>
+<thead>
+<tr>
+<th align="center">组件</th>
+<th align="center">型号</th>
+<th align="center">预计价格</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">CPU</td>
+<td align="center">i5 12400F 散片</td>
+<td align="center">935</td>
+</tr>
+<tr>
+<td align="center">主板</td>
+<td align="center">华硕Prime H610M-K</td>
+<td align="center">679</td>
+</tr>
+<tr>
+<td align="center">显卡</td>
+<td align="center">七彩虹 RTX 3060</td>
+<td align="center">2649</td>
+</tr>
+<tr>
+<td align="center">散热</td>
+<td align="center">乔思伯 CR-1200E</td>
+<td align="center">35</td>
+</tr>
+<tr>
+<td align="center">内存</td>
+<td align="center">威刚 XPG DDR4 8G 3200 * 2</td>
+<td align="center">289</td>
+</tr>
+<tr>
+<td align="center">硬盘</td>
+<td align="center">西数 SN570 1T</td>
+<td align="center">499</td>
+</tr>
+<tr>
+<td align="center">机箱</td>
+<td align="center">先马平头哥 M1</td>
+<td align="center">150</td>
+</tr>
+<tr>
+<td align="center">电源</td>
+<td align="center">鑫谷 GP600G</td>
+<td align="center">239</td>
+</tr>
+<tr>
+<td align="center">总计</td>
+<td align="center">————————————</td>
+<td align="center">5475</td>
+</tr>
+</tbody></table>
+<p>现在的问题是要在学校宿舍使用，宿舍是限制功率的，光 500w 的电源就不知道能不能带得动（当然是满载状态下）。问了下学校的贴吧，是有组台式用 3060 的，也可以正常使用，不过还有点担心，就先观望一下。</p>
+<hr>
+<p>刚刚又看了一下，还是决定暂时观望，30 系显卡最近降价了，但是矿卡的可能性很大，毕竟矿老板已经赚翻了等着<del>臭打游戏的</del>接盘呢。等到 3 月份再看看，暂时也不急着换电脑。</p>
+]]></content>
+      <categories>
+        <category>日常</category>
+      </categories>
+      <tags>
+        <tag>生活</tag>
+        <tag>计算机</tag>
       </tags>
   </entry>
 </search>
