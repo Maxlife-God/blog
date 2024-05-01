@@ -6,7 +6,7 @@
   <link href="https://blog.fufu.ink/atom.xml" rel="self"/>
   
   <link href="https://blog.fufu.ink/"/>
-  <updated>2024-04-28T12:49:30.000Z</updated>
+  <updated>2024-05-01T10:15:41.000Z</updated>
   <id>https://blog.fufu.ink/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>【笔记·古典日语】助动词「けむ」</title>
+    <link href="https://blog.fufu.ink/2024/05/kobun17.html"/>
+    <id>https://blog.fufu.ink/2024/05/kobun17.html</id>
+    <published>2024-05-01T10:15:41.000Z</published>
+    <updated>2024-05-01T10:15:41.000Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="活用·接续"><a href="#活用·接续" class="headerlink" title="活用·接续"></a>活用·接续</h2><p>活用</p><table><thead><tr><th align="center">活用</th><th align="center">けむ</th></tr></thead><tbody><tr><td align="center">未然形</td><td align="center"></td></tr><tr><td align="center">连用形</td><td align="center"></td></tr><tr><td align="center">终止形</td><td align="center">けむ</td></tr><tr><td align="center">连体形</td><td align="center">けむ</td></tr><tr><td align="center">已然形</td><td align="center">けめ</td></tr><tr><td align="center">命令形</td><td align="center"></td></tr></tbody></table><p>接续：连用形 + けむ</p><h2 id="作用"><a href="#作用" class="headerlink" title="作用"></a>作用</h2><p>有四个，对比「らむ」进行记忆</p><ul><li>過去の推量：对<strong>过去</strong>发生的事情进行推测，可翻译成现代日语「～ただろう・たのだろう」</li><li>過去の原因推量：就<strong>过去</strong>发生的事情，对其发生的<strong>原因</strong>进行推测。特征为<strong>疑问词</strong>或<strong>表示原因</strong>的句子。翻译为「～たのだろう」</li><li>過去の婉曲：过去的委婉。翻译为「～たような」。特征为<strong>「らむ + N」</strong></li><li>過去の伝聞：过去的传闻。翻译为「～たとかいう」。特征为<strong>「らむ + N」</strong></li></ul><p>同样，需根据情况判断「委婉」与「传闻」。</p><h2 id="对比"><a href="#对比" class="headerlink" title="对比"></a>对比</h2><p>む・らむ・けむ 表示<strong>推量</strong>时的对比</p><table><thead><tr><th align="center">助动词</th><th align="center">作用</th></tr></thead><tbody><tr><td align="center">む</td><td align="center">（现在·未来）推量</td></tr><tr><td align="center">らむ</td><td align="center">现在推量</td></tr><tr><td align="center">けむ</td><td align="center">过去推量</td></tr></tbody></table>]]></content>
+    
+    
+    <summary type="html">摆烂了一段时间，得重新拿起来了，不能停下来！</summary>
+    
+    
+    
+    <category term="日语" scheme="https://blog.fufu.ink/categories/%E6%97%A5%E8%AF%AD/"/>
+    
+    
+    <category term="日语" scheme="https://blog.fufu.ink/tags/%E6%97%A5%E8%AF%AD/"/>
+    
+    <category term="古典日语" scheme="https://blog.fufu.ink/tags/%E5%8F%A4%E5%85%B8%E6%97%A5%E8%AF%AD/"/>
+    
+    <category term="语法" scheme="https://blog.fufu.ink/tags/%E8%AF%AD%E6%B3%95/"/>
+    
+  </entry>
   
   <entry>
     <title>一点碎碎念</title>
@@ -75,7 +100,7 @@
     <published>2024-04-25T10:23:23.000Z</published>
     <updated>2024-04-25T10:23:23.000Z</updated>
     
-    <content type="html"><![CDATA[<h2 id="活用·接续"><a href="#活用·接续" class="headerlink" title="活用·接续"></a>活用·接续</h2><p>接续：终止形 + らむ</p><p>特殊：ラ変動詞・ラ変型的<strong>连体形</strong> + らむ</p><table><thead><tr><th align="center">活用</th><th align="center">らむ</th></tr></thead><tbody><tr><td align="center">未然形</td><td align="center"></td></tr><tr><td align="center">连用形</td><td align="center"></td></tr><tr><td align="center">终止形</td><td align="center">らむ</td></tr><tr><td align="center">连体形</td><td align="center">らむ</td></tr><tr><td align="center">已然形</td><td align="center">らめ</td></tr><tr><td align="center">命令形</td><td align="center"></td></tr></tbody></table><h2 id="作用"><a href="#作用" class="headerlink" title="作用"></a>作用</h2><p>らむ有 4 个作用</p><ul><li>現在推量：对现在<strong>看不见</strong>的事情进行推测。现代日语可译为「今ごろは～ているだろう」</li><li>現在の<strong>原因</strong>推量：就现在<strong>看见的</strong>事情（眼前发生的事情）或自己的事情，对其发生的<strong>原因进行推测</strong>。现代日语可译为「～（ている）のだろう」。</li><li>現在の婉曲：委婉，现代日语可译为「～ような」。特征为<strong>「らむ + N」</strong>，即らむ作连体形</li><li>現在の伝聞：现代日语可译为「～とかいう」。特征也为<strong>「らむ + N」</strong></li></ul><p>表示委婉和传闻的特征一致，都为<strong>「らむ + N」</strong>，因此具体是表示哪个需要根据语境进行判断。</p>]]></content>
+    <content type="html"><![CDATA[<h2 id="活用·接续"><a href="#活用·接续" class="headerlink" title="活用·接续"></a>活用·接续</h2><p>接续：终止形 + らむ</p><p>特殊：ラ変動詞・ラ変型的<strong>连体形</strong> + らむ</p><table><thead><tr><th align="center">活用</th><th align="center">らむ</th></tr></thead><tbody><tr><td align="center">未然形</td><td align="center"></td></tr><tr><td align="center">连用形</td><td align="center"></td></tr><tr><td align="center">终止形</td><td align="center">らむ</td></tr><tr><td align="center">连体形</td><td align="center">らむ</td></tr><tr><td align="center">已然形</td><td align="center">らめ</td></tr><tr><td align="center">命令形</td><td align="center"></td></tr></tbody></table><h2 id="作用"><a href="#作用" class="headerlink" title="作用"></a>作用</h2><p>らむ有 4 个作用</p><ul><li>現在推量：对现在<strong>看不见</strong>的事情进行推测。现代日语可译为「今ごろは～ているだろう」</li><li>現在の<strong>原因</strong>推量：就现在<strong>看见的</strong>事情（眼前发生的事情）或自己的事情，对其发生的<strong>原因进行推测</strong>。现代日语可译为「～（ている）のだろう」。特征为<strong>疑问词</strong>或<strong>表示原因</strong>的句子。</li><li>現在の婉曲：委婉，现代日语可译为「～ような」。特征为<strong>「らむ + N」</strong>，即らむ作连体形</li><li>現在の伝聞：现代日语可译为「～とかいう」。特征也为<strong>「らむ + N」</strong></li></ul><p>表示委婉和传闻的特征一致，都为<strong>「らむ + N」</strong>，因此具体是表示哪个需要根据语境进行判断。</p>]]></content>
     
     
     <summary type="html">作用有「現在推量・現在の原因推量・現在の婉曲・現在の伝聞」</summary>
@@ -388,11 +413,11 @@
     <category term="技术" scheme="https://blog.fufu.ink/categories/%E6%8A%80%E6%9C%AF/"/>
     
     
-    <category term="Hexo" scheme="https://blog.fufu.ink/tags/Hexo/"/>
+    <category term="教程" scheme="https://blog.fufu.ink/tags/%E6%95%99%E7%A8%8B/"/>
     
     <category term="技术" scheme="https://blog.fufu.ink/tags/%E6%8A%80%E6%9C%AF/"/>
     
-    <category term="教程" scheme="https://blog.fufu.ink/tags/%E6%95%99%E7%A8%8B/"/>
+    <category term="Hexo" scheme="https://blog.fufu.ink/tags/Hexo/"/>
     
     <category term="Next" scheme="https://blog.fufu.ink/tags/Next/"/>
     
@@ -416,11 +441,11 @@
     <category term="技术" scheme="https://blog.fufu.ink/categories/%E6%8A%80%E6%9C%AF/"/>
     
     
-    <category term="Hexo" scheme="https://blog.fufu.ink/tags/Hexo/"/>
+    <category term="教程" scheme="https://blog.fufu.ink/tags/%E6%95%99%E7%A8%8B/"/>
     
     <category term="技术" scheme="https://blog.fufu.ink/tags/%E6%8A%80%E6%9C%AF/"/>
     
-    <category term="教程" scheme="https://blog.fufu.ink/tags/%E6%95%99%E7%A8%8B/"/>
+    <category term="Hexo" scheme="https://blog.fufu.ink/tags/Hexo/"/>
     
     <category term="Next" scheme="https://blog.fufu.ink/tags/Next/"/>
     
@@ -487,31 +512,6 @@
     
     
     <summary type="html">可以</summary>
-    
-    
-    
-    <category term="日语" scheme="https://blog.fufu.ink/categories/%E6%97%A5%E8%AF%AD/"/>
-    
-    
-    <category term="日语" scheme="https://blog.fufu.ink/tags/%E6%97%A5%E8%AF%AD/"/>
-    
-    <category term="古典日语" scheme="https://blog.fufu.ink/tags/%E5%8F%A4%E5%85%B8%E6%97%A5%E8%AF%AD/"/>
-    
-    <category term="语法" scheme="https://blog.fufu.ink/tags/%E8%AF%AD%E6%B3%95/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>【笔记·古典日语】五十音和发音</title>
-    <link href="https://blog.fufu.ink/2024/04/kobun1.html"/>
-    <id>https://blog.fufu.ink/2024/04/kobun1.html</id>
-    <published>2024-04-14T10:18:13.000Z</published>
-    <updated>2024-04-14T10:18:13.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>五十音图与现代日语区别如下：</p><p><img data-src="https://img.fufu.ink/OmfFKP.webp"></p><p>ワ行的发音为「wa，i，u，e，o」</p><p><strong>需要注意 ゐ 与 ゑ 的写法</strong></p><p>然后是过去与现在的读法的不同，有五个种类</p><p>第一种，は行的音读作ワ行的发音（当该音位于词头时就そのまま读出来，不需要变音），注意只是读音对应，并非写法对应</p><p><img data-src="https://img.fufu.ink/WC3e6D.webp"></p><p>第二种，元音重叠的读法</p><p><img data-src="https://img.fufu.ink/1Q0YU9.webp"></p><p>第三种，「てふ」与「けふ」的发音，由前两种方法可以推导出发音来</p><p><img data-src="https://img.fufu.ink/Ctqkfh.webp"></p><p>第四种，ゐ，ゑ，を的发音</p><p><img data-src="https://img.fufu.ink/v6Fwjk.webp"></p><p>第五种，「む」发成「ん」的音</p><p><img data-src="https://img.fufu.ink/P4VCRG.webp"></p>]]></content>
-    
-    
-    <summary type="html">还行，挺简单的</summary>
     
     
     
