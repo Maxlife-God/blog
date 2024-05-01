@@ -94,6 +94,53 @@
       </tags>
   </entry>
   <entry>
+    <title>Next 主题添加说说</title>
+    <url>/2024/04/nextaddessay.html</url>
+    <content><![CDATA[<p>看见洪哥的即刻页面很好看，想 Copy 过来，可惜技术不行，写不来瀑布流，就只能搞个简单的 flex 布局。</p>
+<p>原理和友链页面是一样的，模版文件遍历 <code>hexo/source/_data</code> 文件夹下的 yml 然后循环生成结构。</p>
+<p>在这里感谢好朋友 <a href="https://miku.show/">@OrzMiku</a> 的帮助，修改该博客过程中，很多问题都是通过大佬耐心解答才得以解决 Orz</p>
+<p>废话不多说，直接 <code>Ctrl + C / V</code> 走起</p>
+<span id="more"></span>
+
+<p>在 <code>hexo/themes/next/layout/</code> 下创建 <code>essay.njk</code> 并写入以下内容</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">    &#123;##################&#125;</span><br><span class="line">    &#123;### ESSAY BLOCK ###&#125;</span><br><span class="line">    &#123;##################&#125;</span><br><span class="line"></span><br><span class="line">&lt;style&gt;</span><br><span class="line">#bber * &#123;</span><br><span class="line">  box-sizing: border-box;</span><br><span class="line">&#125;</span><br><span class="line">ul#waterfall &#123;</span><br><span class="line">    display: flex;</span><br><span class="line">    flex-wrap: wrap;</span><br><span class="line">    justify-content: space-between;</span><br><span class="line">    list-style: none;</span><br><span class="line">    margin: 0;</span><br><span class="line">    padding: 0;</span><br><span class="line">&#125;</span><br><span class="line">li.item &#123;</span><br><span class="line">    display: flex;</span><br><span class="line">    flex-direction: column;</span><br><span class="line">    flex-wrap: nowrap;</span><br><span class="line">    justify-content: flex-end;</span><br><span class="line">    align-items: flex-start;</span><br><span class="line">    border: 1px solid #e3e8f7;</span><br><span class="line">    padding: 20px;</span><br><span class="line">    margin: 10px;</span><br><span class="line">    flex-basis: 100%;</span><br><span class="line">    border-radius: 12px;</span><br><span class="line">&#125;</span><br><span class="line">.bber-content &#123;</span><br><span class="line">    display: flex;</span><br><span class="line">    flex-wrap: wrap;</span><br><span class="line">    justify-content: space-between;</span><br><span class="line">&#125;</span><br><span class="line">div#bber-tips &#123;</span><br><span class="line">    display: flex;</span><br><span class="line">    justify-content: center;</span><br><span class="line">&#125;</span><br><span class="line">#bber p &#123;</span><br><span class="line">  margin: 0px;</span><br><span class="line">  padding: 0px;</span><br><span class="line">&#125;</span><br><span class="line">.item hr &#123;</span><br><span class="line">  border: 1px dashed #4259ef23;</span><br><span class="line">  height: 0px;</span><br><span class="line">  margin: 8px 0px;</span><br><span class="line">  display: flex;</span><br><span class="line">  width: 100%;</span><br><span class="line">&#125;</span><br><span class="line">.bber-container-img &#123;</span><br><span class="line">    display: flex;</span><br><span class="line">    gap: 3px;</span><br><span class="line">    margin-bottom: 3px;</span><br><span class="line">&#125;</span><br><span class="line">a.fancybox &#123;</span><br><span class="line">    flex: 1;</span><br><span class="line">&#125;</span><br><span class="line">.bber-info, .bber-info-time, .bber-content-link &#123;</span><br><span class="line">    display: inline-block;</span><br><span class="line">&#125;</span><br><span class="line">.bber-content-link &#123;</span><br><span class="line">    margin-left: 15px;</span><br><span class="line">&#125;</span><br><span class="line">.bber-bottom &#123;</span><br><span class="line">    width: 100%;</span><br><span class="line">&#125;</span><br><span class="line">.bber-info-time, .bber-content-link &#123;</span><br><span class="line">    background-color: rgba(153,153,153,0.169);</span><br><span class="line">    border-radius: 20px;</span><br><span class="line">    padding: 0 8px;</span><br><span class="line">    font-size: .9rem;</span><br><span class="line">    color: var(--text-color);</span><br><span class="line">&#125;</span><br><span class="line">&lt;/style&gt;</span><br><span class="line"></span><br><span class="line">&lt;div id=&quot;bber&quot;&gt;</span><br><span class="line">  &lt;section class=&quot;timeline page-1&quot;&gt;</span><br><span class="line">    &lt;ul id=&quot;waterfall&quot; class=&quot;list&quot;&gt;</span><br><span class="line">      &#123;% for i in site.data.essay %&#125;</span><br><span class="line">        &#123;% for item in i.essay_list %&#125;</span><br><span class="line">            &lt;li class=&quot;item&quot;&gt;</span><br><span class="line">              &lt;div class=&quot;bber-content&quot;&gt;</span><br><span class="line">                &lt;p class=&quot;datacont&quot;&gt;&#123;&#123; item.content &#125;&#125;&lt;/p&gt;</span><br><span class="line">                &#123;% if item.image %&#125;</span><br><span class="line">                  &lt;div class=&quot;bber-container-img&quot;&gt;</span><br><span class="line">                    &#123;% for indey in item.image %&#125;</span><br><span class="line">                      &lt;img src=&quot;&#123;&#123; indey &#125;&#125;&quot; style=&quot;margin-bottom: 0px;&quot; /&gt;</span><br><span class="line">                    &#123;% endfor %&#125;</span><br><span class="line">                  &lt;/div&gt;</span><br><span class="line">                &#123;% endif %&#125;</span><br><span class="line">              &lt;/div&gt;</span><br><span class="line">              &lt;hr&gt;</span><br><span class="line">              &lt;div class=&quot;bber-bottom&quot;&gt;</span><br><span class="line">                &lt;div class=&quot;bber-info&quot;&gt;</span><br><span class="line">                  &lt;div class=&quot;bber-info-time&quot;&gt;</span><br><span class="line">                    &lt;i class=&quot;far fa-clock&quot;&gt;&lt;/i&gt;</span><br><span class="line">                    &lt;time class=&quot;datatime&quot; datetime=&quot;&#123;&#123; item.date &#125;&#125;&quot;&gt;&#123;&#123; date(item.date, &quot;YYYY/M/D&quot;) &#125;&#125;&lt;/time&gt;</span><br><span class="line">                  &lt;/div&gt;</span><br><span class="line">                  &#123;% if item.link %&#125;</span><br><span class="line">                    &lt;a href=&quot;&#123;&#123; item.link &#125;&#125;&quot; class=&quot;bber-content-link&quot; target=&quot;_blank&quot; title=&quot;跳转到短文指引的链接&quot;&gt;</span><br><span class="line">                      &lt;i class=&quot;fas fa-link&quot;&gt;&lt;/i&gt;</span><br><span class="line">                      链接</span><br><span class="line">                    &lt;/a&gt;</span><br><span class="line">                  &#123;% endif %&#125;</span><br><span class="line">                &lt;/div&gt;</span><br><span class="line">              &lt;/div&gt;</span><br><span class="line">            &lt;/li&gt;</span><br><span class="line">        &#123;% endfor %&#125;</span><br><span class="line">      &#123;% endfor %&#125;</span><br><span class="line">    &lt;/ul&gt;</span><br><span class="line">  &lt;/section&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line"></span><br><span class="line">    &#123;######################&#125;</span><br><span class="line">    &#123;### END ESSAY BLOCK ###&#125;</span><br><span class="line">    &#123;######################&#125;</span><br></pre></td></tr></table></figure>
+<p>然后打开 <code>hexo/themes/next/layout/page.njk</code>，在 <code>&#123;% block title %&#125;&#123;% endblock %&#125;</code> 内的 <code>&#123;%- else %&#125;</code> 前添加</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&#123;%- if page.type === &#x27;categories&#x27; and not page.title %&#125;</span><br><span class="line">    &#123;&#123;- __(&#x27;title.category&#x27;) + page_title_suffix &#125;&#125;</span><br><span class="line">&#123;%- elif page.type === &#x27;tags&#x27; and not page.title %&#125;</span><br><span class="line">    &#123;&#123;- __(&#x27;title.tag&#x27;) + page_title_suffix &#125;&#125;</span><br><span class="line">&#123;%- elif page.type === &#x27;schedule&#x27; and not page.title %&#125;</span><br><span class="line">    &#123;&#123;- __(&#x27;title.schedule&#x27;) + page_title_suffix &#125;&#125;</span><br><span class="line">+&#123;%- elif page.type === &#x27;essay&#x27; and not page.title %&#125;</span><br><span class="line">+    &#123;&#123;- __(&#x27;title.essay&#x27;) + page_title_suffix &#125;&#125;</span><br><span class="line">&#123;%- else %&#125;</span><br></pre></td></tr></table></figure>
+
+<p>以下为方便复制版本</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&#123;%- elif page.type === &#x27;essay&#x27; and not page.title %&#125;</span><br><span class="line">    &#123;&#123;- __(&#x27;title.essay&#x27;) + page_title_suffix &#125;&#125;</span><br></pre></td></tr></table></figure>
+
+<p>然后在下面的 <code>block content</code> 里的 <code>PAGE BODY</code> 内的 <code>&#123;% else %&#125;</code> 前，插入</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&#123;%- if page.type === &#x27;tags&#x27; %&#125;</span><br><span class="line">  &#123;%- include &#x27;_partials/page/tags.njk&#x27; -%&#125;</span><br><span class="line">&#123;% elif page.type === &#x27;categories&#x27; %&#125;</span><br><span class="line">  &#123;%- include &#x27;_partials/page/categories.njk&#x27; -%&#125;</span><br><span class="line">&#123;% elif page.type === &#x27;schedule&#x27; %&#125;</span><br><span class="line">  &#123;%- include &#x27;_partials/page/schedule.njk&#x27; -%&#125;</span><br><span class="line">+&#123;% elif page.type === &#x27;essay&#x27; %&#125;</span><br><span class="line">+  &#123;%- include &#x27;essay.njk&#x27; -%&#125;</span><br><span class="line">&#123;% else %&#125;</span><br></pre></td></tr></table></figure>
+
+<p>以下为方便复制版本</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&#123;% elif page.type === &#x27;essay&#x27; %&#125;</span><br><span class="line">  &#123;%- include &#x27;essay.njk&#x27; -%&#125;</span><br></pre></td></tr></table></figure>
+
+<p>然后在 <code>hexo/source/_data/</code> 下创建 <code>essay.yml</code>，写入以下内容</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">- class_name: 说说</span><br><span class="line">  essay_list:</span><br><span class="line">    - content: #（必须）内容</span><br><span class="line">      date: #（必须）日期 格式：年-月-日（月与日必须是 2 位数，如2024年3月9号为 2024-03-09）</span><br><span class="line">      link: #（可选）链接，可以在下方插入一条链接</span><br><span class="line">      image: #（可选），插入图片，可插入多张，写法如下，注意缩进</span><br><span class="line">        - #图片路径</span><br><span class="line">        - #图片路径</span><br><span class="line">        - #图片路径</span><br><span class="line">    - content:</span><br><span class="line">      date:</span><br><span class="line">    - content:</span><br><span class="line">      date:</span><br></pre></td></tr></table></figure>
+
+<p>运行 <code>hexo new page &quot;essay&quot;</code> 创建 <code>hexo/source/essay/index.md</code> 文件，设置标题日期，type 要设置为 <code>&quot;essay&quot;</code></p>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">title: 说说</span><br><span class="line">date: 2023-09-26 11:18:28</span><br><span class="line">type: &quot;essay&quot;</span><br></pre></td></tr></table></figure>
+
+<p>打开 <code>_config.next.yml</code>，在 <code>menu</code> 中添加</p>
+<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="attr">menu:</span></span><br><span class="line">  <span class="attr">essay:</span> <span class="string">/essay/</span> <span class="string">||</span> <span class="string">fas</span> <span class="string">fa-pen</span></span><br></pre></td></tr></table></figure>
+
+<p>打开 <code>hexo/themes/next/languages/zh-CN.yml</code>，在 <code>menu</code> 中添加</p>
+<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="attr">menu:</span></span><br><span class="line">  <span class="attr">essay:</span> <span class="string">说说</span></span><br></pre></td></tr></table></figure>
+
+<p>之后在 <code>hexo/source/_data/essay.yml</code> 更新内容就可以了，需要注意的是，内容的先后顺序与渲染出来的结果是一致的，即越写在上面的，在渲染结果中也就越排在上方</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">- content: 因为在最上面，所以网页中在最上方</span><br><span class="line">  date: 2024-03-09</span><br><span class="line">- content: 因为排在下方，所以网页中排在后面</span><br><span class="line">  date: 2024-03-09</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>技术</category>
+      </categories>
+      <tags>
+        <tag>Hexo</tag>
+        <tag>技术</tag>
+        <tag>教程</tag>
+        <tag>Next</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Next 主题部分图片禁用 FancyBox</title>
     <url>/2023/04/nextthemefancyboxdisabled.html</url>
     <content><![CDATA[<p>之前用的主题有 fancybox 功能的都有部分图片禁用 fancybox 的功能，看了一遍文档却发现没有这个选项，去 issue 中和 discusstion 中也没找到相关的信息。<span id="more"></span>于是 google 了一下，发现真有<a href="https://blog.csdn.net/cddchina/article/details/79764432">相关教程</a>，不过是 18 年的了，现在 next 主题已经变了很多，fancybox 的 js 代码也没在 utils.js 文件中了。找了一下，发现 fancybox 的相关 js 代码已经单独写在了主题文件夹下的 <code>\source\js\third-party\fancybox.js</code> 中了。</p>
@@ -187,82 +234,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Next 主题添加说说</title>
-    <url>/2024/04/nextaddessay.html</url>
-    <content><![CDATA[<p>看见洪哥的即刻页面很好看，想 Copy 过来，可惜技术不行，写不来瀑布流，就只能搞个简单的 flex 布局。</p>
-<p>原理和友链页面是一样的，模版文件遍历 <code>hexo/source/_data</code> 文件夹下的 yml 然后循环生成结构。</p>
-<p>在这里感谢好朋友 <a href="https://miku.show/">@OrzMiku</a> 的帮助，修改该博客过程中，很多问题都是通过大佬耐心解答才得以解决 Orz</p>
-<p>废话不多说，直接 <code>Ctrl + C / V</code> 走起</p>
-<span id="more"></span>
-
-<p>在 <code>hexo/themes/next/layout/</code> 下创建 <code>essay.njk</code> 并写入以下内容</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">    &#123;##################&#125;</span><br><span class="line">    &#123;### ESSAY BLOCK ###&#125;</span><br><span class="line">    &#123;##################&#125;</span><br><span class="line"></span><br><span class="line">&lt;style&gt;</span><br><span class="line">#bber * &#123;</span><br><span class="line">  box-sizing: border-box;</span><br><span class="line">&#125;</span><br><span class="line">ul#waterfall &#123;</span><br><span class="line">    display: flex;</span><br><span class="line">    flex-wrap: wrap;</span><br><span class="line">    justify-content: space-between;</span><br><span class="line">    list-style: none;</span><br><span class="line">    margin: 0;</span><br><span class="line">    padding: 0;</span><br><span class="line">&#125;</span><br><span class="line">li.item &#123;</span><br><span class="line">    display: flex;</span><br><span class="line">    flex-direction: column;</span><br><span class="line">    flex-wrap: nowrap;</span><br><span class="line">    justify-content: flex-end;</span><br><span class="line">    align-items: flex-start;</span><br><span class="line">    border: 1px solid #e3e8f7;</span><br><span class="line">    padding: 20px;</span><br><span class="line">    margin: 10px;</span><br><span class="line">    flex-basis: 100%;</span><br><span class="line">    border-radius: 12px;</span><br><span class="line">&#125;</span><br><span class="line">.bber-content &#123;</span><br><span class="line">    display: flex;</span><br><span class="line">    flex-wrap: wrap;</span><br><span class="line">    justify-content: space-between;</span><br><span class="line">&#125;</span><br><span class="line">div#bber-tips &#123;</span><br><span class="line">    display: flex;</span><br><span class="line">    justify-content: center;</span><br><span class="line">&#125;</span><br><span class="line">#bber p &#123;</span><br><span class="line">  margin: 0px;</span><br><span class="line">  padding: 0px;</span><br><span class="line">&#125;</span><br><span class="line">.item hr &#123;</span><br><span class="line">  border: 1px dashed #4259ef23;</span><br><span class="line">  height: 0px;</span><br><span class="line">  margin: 8px 0px;</span><br><span class="line">  display: flex;</span><br><span class="line">  width: 100%;</span><br><span class="line">&#125;</span><br><span class="line">.bber-container-img &#123;</span><br><span class="line">    display: flex;</span><br><span class="line">    gap: 3px;</span><br><span class="line">    margin-bottom: 3px;</span><br><span class="line">&#125;</span><br><span class="line">a.fancybox &#123;</span><br><span class="line">    flex: 1;</span><br><span class="line">&#125;</span><br><span class="line">.bber-info, .bber-info-time, .bber-content-link &#123;</span><br><span class="line">    display: inline-block;</span><br><span class="line">&#125;</span><br><span class="line">.bber-content-link &#123;</span><br><span class="line">    margin-left: 15px;</span><br><span class="line">&#125;</span><br><span class="line">.bber-bottom &#123;</span><br><span class="line">    width: 100%;</span><br><span class="line">&#125;</span><br><span class="line">.bber-info-time, .bber-content-link &#123;</span><br><span class="line">    background-color: rgba(153,153,153,0.169);</span><br><span class="line">    border-radius: 20px;</span><br><span class="line">    padding: 0 8px;</span><br><span class="line">    font-size: .9rem;</span><br><span class="line">    color: var(--text-color);</span><br><span class="line">&#125;</span><br><span class="line">&lt;/style&gt;</span><br><span class="line"></span><br><span class="line">&lt;div id=&quot;bber&quot;&gt;</span><br><span class="line">  &lt;section class=&quot;timeline page-1&quot;&gt;</span><br><span class="line">    &lt;ul id=&quot;waterfall&quot; class=&quot;list&quot;&gt;</span><br><span class="line">      &#123;% for i in site.data.essay %&#125;</span><br><span class="line">        &#123;% for item in i.essay_list %&#125;</span><br><span class="line">            &lt;li class=&quot;item&quot;&gt;</span><br><span class="line">              &lt;div class=&quot;bber-content&quot;&gt;</span><br><span class="line">                &lt;p class=&quot;datacont&quot;&gt;&#123;&#123; item.content &#125;&#125;&lt;/p&gt;</span><br><span class="line">                &#123;% if item.image %&#125;</span><br><span class="line">                  &lt;div class=&quot;bber-container-img&quot;&gt;</span><br><span class="line">                    &#123;% for indey in item.image %&#125;</span><br><span class="line">                      &lt;img src=&quot;&#123;&#123; indey &#125;&#125;&quot; style=&quot;margin-bottom: 0px;&quot; /&gt;</span><br><span class="line">                    &#123;% endfor %&#125;</span><br><span class="line">                  &lt;/div&gt;</span><br><span class="line">                &#123;% endif %&#125;</span><br><span class="line">              &lt;/div&gt;</span><br><span class="line">              &lt;hr&gt;</span><br><span class="line">              &lt;div class=&quot;bber-bottom&quot;&gt;</span><br><span class="line">                &lt;div class=&quot;bber-info&quot;&gt;</span><br><span class="line">                  &lt;div class=&quot;bber-info-time&quot;&gt;</span><br><span class="line">                    &lt;i class=&quot;far fa-clock&quot;&gt;&lt;/i&gt;</span><br><span class="line">                    &lt;time class=&quot;datatime&quot; datetime=&quot;&#123;&#123; item.date &#125;&#125;&quot;&gt;&#123;&#123; date(item.date, &quot;YYYY/M/D&quot;) &#125;&#125;&lt;/time&gt;</span><br><span class="line">                  &lt;/div&gt;</span><br><span class="line">                  &#123;% if item.link %&#125;</span><br><span class="line">                    &lt;a href=&quot;&#123;&#123; item.link &#125;&#125;&quot; class=&quot;bber-content-link&quot; target=&quot;_blank&quot; title=&quot;跳转到短文指引的链接&quot;&gt;</span><br><span class="line">                      &lt;i class=&quot;fas fa-link&quot;&gt;&lt;/i&gt;</span><br><span class="line">                      链接</span><br><span class="line">                    &lt;/a&gt;</span><br><span class="line">                  &#123;% endif %&#125;</span><br><span class="line">                &lt;/div&gt;</span><br><span class="line">              &lt;/div&gt;</span><br><span class="line">            &lt;/li&gt;</span><br><span class="line">        &#123;% endfor %&#125;</span><br><span class="line">      &#123;% endfor %&#125;</span><br><span class="line">    &lt;/ul&gt;</span><br><span class="line">  &lt;/section&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line"></span><br><span class="line">    &#123;######################&#125;</span><br><span class="line">    &#123;### END ESSAY BLOCK ###&#125;</span><br><span class="line">    &#123;######################&#125;</span><br></pre></td></tr></table></figure>
-<p>然后打开 <code>hexo/themes/next/layout/page.njk</code>，在 <code>&#123;% block title %&#125;&#123;% endblock %&#125;</code> 内的 <code>&#123;%- else %&#125;</code> 前添加</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&#123;%- if page.type === &#x27;categories&#x27; and not page.title %&#125;</span><br><span class="line">    &#123;&#123;- __(&#x27;title.category&#x27;) + page_title_suffix &#125;&#125;</span><br><span class="line">&#123;%- elif page.type === &#x27;tags&#x27; and not page.title %&#125;</span><br><span class="line">    &#123;&#123;- __(&#x27;title.tag&#x27;) + page_title_suffix &#125;&#125;</span><br><span class="line">&#123;%- elif page.type === &#x27;schedule&#x27; and not page.title %&#125;</span><br><span class="line">    &#123;&#123;- __(&#x27;title.schedule&#x27;) + page_title_suffix &#125;&#125;</span><br><span class="line">+&#123;%- elif page.type === &#x27;essay&#x27; and not page.title %&#125;</span><br><span class="line">+    &#123;&#123;- __(&#x27;title.essay&#x27;) + page_title_suffix &#125;&#125;</span><br><span class="line">&#123;%- else %&#125;</span><br></pre></td></tr></table></figure>
-
-<p>以下为方便复制版本</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&#123;%- elif page.type === &#x27;essay&#x27; and not page.title %&#125;</span><br><span class="line">    &#123;&#123;- __(&#x27;title.essay&#x27;) + page_title_suffix &#125;&#125;</span><br></pre></td></tr></table></figure>
-
-<p>然后在下面的 <code>block content</code> 里的 <code>PAGE BODY</code> 内的 <code>&#123;% else %&#125;</code> 前，插入</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&#123;%- if page.type === &#x27;tags&#x27; %&#125;</span><br><span class="line">  &#123;%- include &#x27;_partials/page/tags.njk&#x27; -%&#125;</span><br><span class="line">&#123;% elif page.type === &#x27;categories&#x27; %&#125;</span><br><span class="line">  &#123;%- include &#x27;_partials/page/categories.njk&#x27; -%&#125;</span><br><span class="line">&#123;% elif page.type === &#x27;schedule&#x27; %&#125;</span><br><span class="line">  &#123;%- include &#x27;_partials/page/schedule.njk&#x27; -%&#125;</span><br><span class="line">+&#123;% elif page.type === &#x27;essay&#x27; %&#125;</span><br><span class="line">+  &#123;%- include &#x27;essay.njk&#x27; -%&#125;</span><br><span class="line">&#123;% else %&#125;</span><br></pre></td></tr></table></figure>
-
-<p>以下为方便复制版本</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&#123;% elif page.type === &#x27;essay&#x27; %&#125;</span><br><span class="line">  &#123;%- include &#x27;essay.njk&#x27; -%&#125;</span><br></pre></td></tr></table></figure>
-
-<p>然后在 <code>hexo/source/_data/</code> 下创建 <code>essay.yml</code>，写入以下内容</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">- class_name: 说说</span><br><span class="line">  essay_list:</span><br><span class="line">    - content: #（必须）内容</span><br><span class="line">      date: #（必须）日期 格式：年-月-日（月与日必须是 2 位数，如2024年3月9号为 2024-03-09）</span><br><span class="line">      link: #（可选）链接，可以在下方插入一条链接</span><br><span class="line">      image: #（可选），插入图片，可插入多张，写法如下，注意缩进</span><br><span class="line">        - #图片路径</span><br><span class="line">        - #图片路径</span><br><span class="line">        - #图片路径</span><br><span class="line">    - content:</span><br><span class="line">      date:</span><br><span class="line">    - content:</span><br><span class="line">      date:</span><br></pre></td></tr></table></figure>
-
-<p>运行 <code>hexo new page &quot;essay&quot;</code> 创建 <code>hexo/source/essay/index.md</code> 文件，设置标题日期，type 要设置为 <code>&quot;essay&quot;</code></p>
-<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">title: 说说</span><br><span class="line">date: 2023-09-26 11:18:28</span><br><span class="line">type: &quot;essay&quot;</span><br></pre></td></tr></table></figure>
-
-<p>打开 <code>_config.next.yml</code>，在 <code>menu</code> 中添加</p>
-<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="attr">menu:</span></span><br><span class="line">  <span class="attr">essay:</span> <span class="string">/essay/</span> <span class="string">||</span> <span class="string">fas</span> <span class="string">fa-pen</span></span><br></pre></td></tr></table></figure>
-
-<p>打开 <code>hexo/themes/next/languages/zh-CN.yml</code>，在 <code>menu</code> 中添加</p>
-<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="attr">menu:</span></span><br><span class="line">  <span class="attr">essay:</span> <span class="string">说说</span></span><br></pre></td></tr></table></figure>
-
-<p>之后在 <code>hexo/source/_data/essay.yml</code> 更新内容就可以了，需要注意的是，内容的先后顺序与渲染出来的结果是一致的，即越写在上面的，在渲染结果中也就越排在上方</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">- content: 因为在最上面，所以网页中在最上方</span><br><span class="line">  date: 2024-03-09</span><br><span class="line">- content: 因为排在下方，所以网页中排在后面</span><br><span class="line">  date: 2024-03-09</span><br></pre></td></tr></table></figure>]]></content>
-      <categories>
-        <category>技术</category>
-      </categories>
-      <tags>
-        <tag>Hexo</tag>
-        <tag>技术</tag>
-        <tag>教程</tag>
-        <tag>Next</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>【书摘】加缪笔下的晦涩文字</title>
-    <url>/2024/01/excerpt1.html</url>
-    <content><![CDATA[<p>两天左右看完加缪的『局外人』和『堕落』了，说实话，对我来说，文字过于晦涩了。看完『局外人』还能大致明白讲了个什么故事，看『堕落』时就仿佛在看我的期末复习资料一样，很难坚持看下去，可能是因为我很少看独白类型的小说吧，不过最终还是看完了。<span id="more"></span>说起看他的书的缘由，是因为之前玩酷安时关注过一位名为汪畅的自由译者，他翻译了这本『局外人』，由此产生了兴趣。书是囫囵吞枣看完的，说得好听一点就是不求甚解，因为没有了解过「存在主义」，到网络上搜索才大概得知『局外人』所要表达的大致意思，这是一段来自小红书用户<a href="https://www.xiaohongshu.com/user/profile/5969aadb82ec3963573feee9?xhsshare=CopyLink&appuid=64b671510000000014034c75&apptime=1706022345">蓝桔子</a>的评论「人生会因为死亡迟早到来而失去所有意义。默尔索漠视那些社会赋予的道德准则和价值等级，所以他不想在母亲葬礼时哭不出来也要装哭，也不想假装信仰上帝。他经常做出一些不符合大众常理的事情，但他并非完全冷漠，只是人生而不同，用一套准则要求所有人本质上也是一种冷漠，我在我姥姥去世时也哭不出来，亲人的离去更像一场漫长的潮湿，在余生都让我隐隐作痛，但不会在那一瞬间让我痛哭，他不冷漠，他比任何人都通透，比任何人都痛苦，比任何人都更爱这个世界」。看完以上评论才顿时开悟。</p>
-<p>以下是从两书中摘出的一些句子</p>
-<ul>
-<li>妈妈距离死亡如此之近，但她一定也因此得到了一种重获新生的解脱。我想，这个世界上没有任何人有权为她哭泣。现在，我做好了相同的准备，我也要像妈妈一样，重新活一遍。——『局外人』</li>
-</ul>
-<p>『堕落』</p>
-<ul>
-<li>当身体难过时，心也会逐渐枯萎。</li>
-<li>没有人在享乐时是伪君子。</li>
-<li>毫无疑问，他们认为我有着圆满的生活，整天都在寻欢作乐中度过。这在他们眼里是不可原谅的。这也不难理解，毕竟当一头驴看到一位头顶桂冠的人，也会发出愤愤不平的哼叫。</li>
-<li>如果一个人想要他人谅解自己的幸福与成功，就必须慷慨地和他人分享；但如果一个人想要快乐，就不应该过分照顾他人的感受。要知道，一旦在乎他人，就走上了一条没有尽头的死路。</li>
-<li>为了不被他人批判，人们总会抢先批评他人。</li>
-<li>我们很少向比自己优秀的人吐露心声；不仅如此，我们还会尽力避免与他们为伍。与之相反的是，在大多数时候，我们会容易与彼此相似或者同病相怜的人成为心腹之交。也就是说，我们既不愿意自我纠正，也不愿意自我完善。我们必须被人批判，才能发现自身的不足，但在人生的道路上，我们最需要的就是他人的怜悯与鼓励。简而言之，我们一边希望免除洁身自好的麻烦，一边希望自己不会因此而内疚。长此以往，我们既不能放浪形骸之外，也不能静以修身，俭以养德；我们既非恶贯满盈之徒，也非乐善好施之士。</li>
-<li>当所有的人都在说你的好话时，倒霉的事情就会发生！</li>
-<li>实际上，嫉妒之情完全是丰富的想象在作祟，也是自我贬低的结果。</li>
-</ul>
-]]></content>
-      <categories>
-        <category>日常</category>
-      </categories>
-      <tags>
-        <tag>书摘</tag>
-        <tag>局外人</tag>
-        <tag>堕落</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>【书摘】无赖派太宰治充满颓废气息的作品</title>
     <url>/2024/02/excerpt2.html</url>
     <content><![CDATA[<p>花了一段时间，将太宰治的三部代表作品——『人间失格』『维荣之妻』『斜阳』都看完了，由于熬夜看书，经常看着看着就睡着了，再看部分段落时已想不起看过，只得再读过一遍，因此看得很慢，不过总算是看完了。但或许是太宰さん的精神世界太复杂了，我难以理解。<span id="more"></span>只知从『人间失格』主人公身上能看到太宰治的身影（毕竟是太宰治以自身的经历为蓝本写的），而『维荣之妻』中的大谷和阿佐则分别代表了日本「二战」后的男性和女性，男性软弱而女性坚强，形成了光与影明暗的人生对比。一向风格颓废的太宰治，通过阿佐形象，带给读者「活着的希望」。（2017，杨晔，『人间失格』）。最后则是『斜阳』，或许是故事性更加强，也或许是读得更仔细，较于『人间失格』，个人更喜『斜阳』。以第一人称女子口吻的叙述，讲述二战后贵族和子一家逐渐没落的故事，和子、直治、上原等，他们都在用自己的方式与传统道德抗争，都成为了「二战」后道德过渡期的牺牲者。文章中充满了颓废气息，直治为了融入与自己不同阶层的群体，让自己变得粗俗，却仍然无法「挣脱贵族的阴影」，只能更加颓废，只能以这样的方式抗争下去。实属悲剧，我能感受都文章中蕴含的悲伤，甚至几乎哭出来，但我仍无法理解。但太宰治无疑将人性，将社会都看得太透彻了。</p>
@@ -304,19 +275,32 @@
       </tags>
   </entry>
   <entry>
-    <title>【每日语法】~も~ば~も~</title>
-    <url>/2023/04/mnnhgbp2.html</url>
-    <content><![CDATA[<p><strong>语法：N + も + V（假定形）+ N + も + V（原形）</strong></p>
-<p>意为「既…又…」。其中的动词为同一动词。</p>
-<p>例句：コンビニにたくさんの商品がある。食べ物もあれば、生活に欠かせないものもある。</p>
-<p>译：便利店中有很多商品，既有食品，也有生活中不可或缺的物品。</p>
-<p>与之相似的语法还有「かと思えば」，接续方式为前接<strong>动词原形</strong>。关于假定形的变形方法，在上一篇中已经提过，这里就不再赘述，有需要了解的小伙伴可以<a href="/2023/04/mnnhgbp1.html">点击这里</a>返回上文查看。</p>
+    <title>【书摘】加缪笔下的晦涩文字</title>
+    <url>/2024/01/excerpt1.html</url>
+    <content><![CDATA[<p>两天左右看完加缪的『局外人』和『堕落』了，说实话，对我来说，文字过于晦涩了。看完『局外人』还能大致明白讲了个什么故事，看『堕落』时就仿佛在看我的期末复习资料一样，很难坚持看下去，可能是因为我很少看独白类型的小说吧，不过最终还是看完了。<span id="more"></span>说起看他的书的缘由，是因为之前玩酷安时关注过一位名为汪畅的自由译者，他翻译了这本『局外人』，由此产生了兴趣。书是囫囵吞枣看完的，说得好听一点就是不求甚解，因为没有了解过「存在主义」，到网络上搜索才大概得知『局外人』所要表达的大致意思，这是一段来自小红书用户<a href="https://www.xiaohongshu.com/user/profile/5969aadb82ec3963573feee9?xhsshare=CopyLink&appuid=64b671510000000014034c75&apptime=1706022345">蓝桔子</a>的评论「人生会因为死亡迟早到来而失去所有意义。默尔索漠视那些社会赋予的道德准则和价值等级，所以他不想在母亲葬礼时哭不出来也要装哭，也不想假装信仰上帝。他经常做出一些不符合大众常理的事情，但他并非完全冷漠，只是人生而不同，用一套准则要求所有人本质上也是一种冷漠，我在我姥姥去世时也哭不出来，亲人的离去更像一场漫长的潮湿，在余生都让我隐隐作痛，但不会在那一瞬间让我痛哭，他不冷漠，他比任何人都通透，比任何人都痛苦，比任何人都更爱这个世界」。看完以上评论才顿时开悟。</p>
+<p>以下是从两书中摘出的一些句子</p>
+<ul>
+<li>妈妈距离死亡如此之近，但她一定也因此得到了一种重获新生的解脱。我想，这个世界上没有任何人有权为她哭泣。现在，我做好了相同的准备，我也要像妈妈一样，重新活一遍。——『局外人』</li>
+</ul>
+<p>『堕落』</p>
+<ul>
+<li>当身体难过时，心也会逐渐枯萎。</li>
+<li>没有人在享乐时是伪君子。</li>
+<li>毫无疑问，他们认为我有着圆满的生活，整天都在寻欢作乐中度过。这在他们眼里是不可原谅的。这也不难理解，毕竟当一头驴看到一位头顶桂冠的人，也会发出愤愤不平的哼叫。</li>
+<li>如果一个人想要他人谅解自己的幸福与成功，就必须慷慨地和他人分享；但如果一个人想要快乐，就不应该过分照顾他人的感受。要知道，一旦在乎他人，就走上了一条没有尽头的死路。</li>
+<li>为了不被他人批判，人们总会抢先批评他人。</li>
+<li>我们很少向比自己优秀的人吐露心声；不仅如此，我们还会尽力避免与他们为伍。与之相反的是，在大多数时候，我们会容易与彼此相似或者同病相怜的人成为心腹之交。也就是说，我们既不愿意自我纠正，也不愿意自我完善。我们必须被人批判，才能发现自身的不足，但在人生的道路上，我们最需要的就是他人的怜悯与鼓励。简而言之，我们一边希望免除洁身自好的麻烦，一边希望自己不会因此而内疚。长此以往，我们既不能放浪形骸之外，也不能静以修身，俭以养德；我们既非恶贯满盈之徒，也非乐善好施之士。</li>
+<li>当所有的人都在说你的好话时，倒霉的事情就会发生！</li>
+<li>实际上，嫉妒之情完全是丰富的想象在作祟，也是自我贬低的结果。</li>
+</ul>
 ]]></content>
       <categories>
-        <category>日语</category>
+        <category>日常</category>
       </categories>
       <tags>
-        <tag>日语</tag>
+        <tag>书摘</tag>
+        <tag>局外人</tag>
+        <tag>堕落</tag>
       </tags>
   </entry>
   <entry>
@@ -328,37 +312,6 @@
 </blockquote>
 <p>意为「只要···就···」。关于假定形的变形方法，请参考<a href="/2023/04/mnnhgbp1.html">『【每日语法】~ば~ほど』</a>的文末表格。</p>
 <p>例句：やすくさえあれば、買いましょう。<br>译：只要便宜的话就买吧！</p>
-]]></content>
-      <categories>
-        <category>日语</category>
-      </categories>
-      <tags>
-        <tag>日语</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>【每日语法】N1 易混语法总结</title>
-    <url>/2024/03/mnnhgbp6.html</url>
-    <content><![CDATA[<details class="note default no-icon"><summary><p><strong>自不必说</strong>的表达，后常续「も」「さえ」「まで」等</p>
-</summary>
-<p>～はもちろん、～</p>
-<p>～は言うまでもなく、～</p>
-<p>～は言わずもがな、～</p>
-<p>～どころか、～</p>
-<p>～もさることながら、～</p>
-<p>～は言うに及ばず、～</p>
-
-</details>
-
-<details class="note default no-icon"><summary><p><strong>姑且不论</strong>（部分句子可译为「如果……的话，还情有可原，但……」）的表达</p>
-</summary>
-<p>～ならいざしらず、～</p>
-<p>～なら&#x2F;はともかく、～</p>
-<p>～なら&#x2F;は別だが、～</p>
-<p>～なら&#x2F;はまだしも、～</p>
-<p>～はさておき&#x2F;はさておいて～</p>
-
-</details>
 ]]></content>
       <categories>
         <category>日语</category>
@@ -400,6 +353,53 @@
 <td align="center">加「ならば」或者「であれば」</td>
 </tr>
 </tbody></table>
+]]></content>
+      <categories>
+        <category>日语</category>
+      </categories>
+      <tags>
+        <tag>日语</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>【每日语法】~も~ば~も~</title>
+    <url>/2023/04/mnnhgbp2.html</url>
+    <content><![CDATA[<p><strong>语法：N + も + V（假定形）+ N + も + V（原形）</strong></p>
+<p>意为「既…又…」。其中的动词为同一动词。</p>
+<p>例句：コンビニにたくさんの商品がある。食べ物もあれば、生活に欠かせないものもある。</p>
+<p>译：便利店中有很多商品，既有食品，也有生活中不可或缺的物品。</p>
+<p>与之相似的语法还有「かと思えば」，接续方式为前接<strong>动词原形</strong>。关于假定形的变形方法，在上一篇中已经提过，这里就不再赘述，有需要了解的小伙伴可以<a href="/2023/04/mnnhgbp1.html">点击这里</a>返回上文查看。</p>
+]]></content>
+      <categories>
+        <category>日语</category>
+      </categories>
+      <tags>
+        <tag>日语</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>【每日语法】N1 易混语法总结</title>
+    <url>/2024/03/mnnhgbp6.html</url>
+    <content><![CDATA[<details class="note default no-icon"><summary><p><strong>自不必说</strong>的表达，后常续「も」「さえ」「まで」等</p>
+</summary>
+<p>～はもちろん、～</p>
+<p>～は言うまでもなく、～</p>
+<p>～は言わずもがな、～</p>
+<p>～どころか、～</p>
+<p>～もさることながら、～</p>
+<p>～は言うに及ばず、～</p>
+
+</details>
+
+<details class="note default no-icon"><summary><p><strong>姑且不论</strong>（部分句子可译为「如果……的话，还情有可原，但……」）的表达</p>
+</summary>
+<p>～ならいざしらず、～</p>
+<p>～なら&#x2F;はともかく、～</p>
+<p>～なら&#x2F;は別だが、～</p>
+<p>～なら&#x2F;はまだしも、～</p>
+<p>～はさておき&#x2F;はさておいて～</p>
+
+</details>
 ]]></content>
       <categories>
         <category>日语</category>
@@ -551,34 +551,6 @@
       </tags>
   </entry>
   <entry>
-    <title>【笔记·古典日语】助动词「き·けり」</title>
-    <url>/2024/04/kobun12.html</url>
-    <content><![CDATA[<h2 id="活用·接续"><a href="#活用·接续" class="headerlink" title="活用·接续"></a>活用·接续</h2><p>接续：</p>
-<ul>
-<li>连用形 + けり・き</li>
-<li>特殊：<strong>き前面也可以接カ変動詞・サ変動詞の未然形</strong></li>
-</ul>
-<div class="group-picture"><div class="group-picture-row"><div class="group-picture-column"><img data-src="https://img.fufu.ink/U6tXxv.webp"></div><div class="group-picture-column"><img data-src="https://img.fufu.ink/ib291f.webp"></div><div class="group-picture-column"><img data-src="https://img.fufu.ink/CXBjzH.webp"></div></div></div>
-
-<h2 id="作用"><a href="#作用" class="headerlink" title="作用"></a>作用</h2><p>き的作用：表示<strong>过去</strong>，而且是<strong>自己亲身体验了</strong>的过去</p>
-<p>翻译成现代日语可译为「～た」</p>
-<p><strong>表示过去的き</strong>还有一个表示「反実仮想」的作用，即做出一个与现实相反的假想，实际上不是这样，句型为「～せば～まし」，其中せ为き的未然形，翻译成现代日语即为「～ば～のに…」</p>
-<p>けり的作用：</p>
-<ul>
-<li>过去，表示<strong>听说的过去，并非亲身经历的过去</strong>。翻译成现代日语即为「～た・～たそうだ」</li>
-<li>咏叹，翻译成现代日语即为「～だなあ」。表示这一意思的标志有，表示断定的助动词「なり」+「けり」形成的<strong>「なりけり」</strong>，在<strong>对话、内心、和歌</strong>中出现的「けり」，多表示咏叹</li>
-</ul>
-]]></content>
-      <categories>
-        <category>日语</category>
-      </categories>
-      <tags>
-        <tag>日语</tag>
-        <tag>古典日语</tag>
-        <tag>语法</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>【笔记·古典日语】动词活用</title>
     <url>/2024/04/kobun4.html</url>
     <content><![CDATA[<p>古典日语中动词有 9 种活用，分为正格活用和变格活用</p>
@@ -666,6 +638,34 @@
 <p><img data-src="https://img.fufu.ink/9Y5Vyr.webp"></p>
 <p>有两种种类活用的动词，四段活用是向内，下二段是向外</p>
 <p><img data-src="https://img.fufu.ink/OXmk6L.webp"></p>
+]]></content>
+      <categories>
+        <category>日语</category>
+      </categories>
+      <tags>
+        <tag>日语</tag>
+        <tag>古典日语</tag>
+        <tag>语法</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>【笔记·古典日语】助动词「き·けり」</title>
+    <url>/2024/04/kobun12.html</url>
+    <content><![CDATA[<h2 id="活用·接续"><a href="#活用·接续" class="headerlink" title="活用·接续"></a>活用·接续</h2><p>接续：</p>
+<ul>
+<li>连用形 + けり・き</li>
+<li>特殊：<strong>き前面也可以接カ変動詞・サ変動詞の未然形</strong></li>
+</ul>
+<div class="group-picture"><div class="group-picture-row"><div class="group-picture-column"><img data-src="https://img.fufu.ink/U6tXxv.webp"></div><div class="group-picture-column"><img data-src="https://img.fufu.ink/ib291f.webp"></div><div class="group-picture-column"><img data-src="https://img.fufu.ink/CXBjzH.webp"></div></div></div>
+
+<h2 id="作用"><a href="#作用" class="headerlink" title="作用"></a>作用</h2><p>き的作用：表示<strong>过去</strong>，而且是<strong>自己亲身体验了</strong>的过去</p>
+<p>翻译成现代日语可译为「～た」</p>
+<p><strong>表示过去的き</strong>还有一个表示「反実仮想」的作用，即做出一个与现实相反的假想，实际上不是这样，句型为「～せば～まし」，其中せ为き的未然形，翻译成现代日语即为「～ば～のに…」</p>
+<p>けり的作用：</p>
+<ul>
+<li>过去，表示<strong>听说的过去，并非亲身经历的过去</strong>。翻译成现代日语即为「～た・～たそうだ」</li>
+<li>咏叹，翻译成现代日语即为「～だなあ」。表示这一意思的标志有，表示断定的助动词「なり」+「けり」形成的<strong>「なりけり」</strong>，在<strong>对话、内心、和歌</strong>中出现的「けり」，多表示咏叹</li>
+</ul>
 ]]></content>
       <categories>
         <category>日语</category>
@@ -815,15 +815,74 @@
 </tbody></table>
 <h2 id="作用"><a href="#作用" class="headerlink" title="作用"></a>作用</h2><p>つ・ぬ有三个作用</p>
 <ul>
-<li><p>完了：完成，可译为「～た・～てしまった」。つ・ぬ常常后续表示过去的助动词「き・けり」，以「連用形＋てき・てけり・にき・にきり」的形式出现，其中的つ・ぬ表示完成，翻译成现代日语即为「～た・～てしまった」</p>
-</li>
-<li><p>強意：加强语气，可译为「きっと～・はやく～」。</p>
-</li>
-<li><p>並列：并列，相当于「～たり、～たり」。常常以<strong>成对</strong>的形式，如「～つ、～つ」「～ぬ、～ぬ」出现，其中的つ・ぬ属于<strong>终止形</strong></p>
-</li>
+<li>完了：完成，可译为「～た・～てしまった」。つ・ぬ常常后续表示过去的助动词「き・けり」，以「連用形＋てき・てけり・にき・にきり」的形式出现，其中的つ・ぬ表示完成，翻译成现代日语即为「～た・～てしまった」</li>
+<li>強意：加强语气，可译为「きっと～・はやく～」。</li>
+<li>並列：并列，相当于「～たり、～たり」。常常以<strong>成对</strong>的形式，如「～つ、～つ」「～ぬ、～ぬ」出现，其中的つ・ぬ属于<strong>终止形</strong></li>
 </ul>
 <p>后续表示<strong>推量</strong>的助动词「べし・む」等时，表示<strong>加强语气（強意）</strong>，全部形式如下</p>
 <p><img data-src="https://img.fufu.ink/a4luFx.webp"></p>
+]]></content>
+      <categories>
+        <category>日语</category>
+      </categories>
+      <tags>
+        <tag>日语</tag>
+        <tag>古典日语</tag>
+        <tag>语法</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>【笔记·古典日语】助动词「む·むず」</title>
+    <url>/2024/04/kobun15.html</url>
+    <content><![CDATA[<h2 id="活用·接续"><a href="#活用·接续" class="headerlink" title="活用·接续"></a>活用·接续</h2><p>活用表</p>
+<table>
+<thead>
+<tr>
+<th align="center">活用</th>
+<th align="center">む</th>
+<th align="center">むず</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">未然形</td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">连用形</td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">终止形</td>
+<td align="center">む</td>
+<td align="center">むず</td>
+</tr>
+<tr>
+<td align="center">连体形</td>
+<td align="center">む</td>
+<td align="center">むずる</td>
+</tr>
+<tr>
+<td align="center">已然形</td>
+<td align="center">め</td>
+<td align="center">むずれ</td>
+</tr>
+<tr>
+<td align="center">命令形</td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+</tbody></table>
+<p>接续：<strong>未然形</strong> + む・むず</p>
+<h2 id="作用"><a href="#作用" class="headerlink" title="作用"></a>作用</h2><p>む・むず作用有 5 个</p>
+<ul>
+<li>推量：翻译成现代日语即为「～だろう」，<strong>主语多为第三人称</strong></li>
+<li>意志：翻译成现代日语即为「～よう・～たい」，<strong>主语多为第一人称</strong></li>
+<li>適当・勧誘：翻译为现代日语即为「～する／したほうがよい・～たらどうだ・～してくれないか」，<strong>主语多为第二人称</strong>，多以「～なむ（や）・～てむ（や）」「こそ…め」的形式出现</li>
+<li>婉曲：委婉，翻译为现代日语即为「～ような」，<strong>特征为「む + N」</strong>，即む作连体形</li>
+<li>仮定：翻译为现代日语即为「～としたら」，<strong>特征为「む + 助词」</strong></li>
+</ul>
 ]]></content>
       <categories>
         <category>日语</category>
@@ -914,73 +973,6 @@
       </tags>
   </entry>
   <entry>
-    <title>【笔记·古典日语】助动词「む·むず」</title>
-    <url>/2024/04/kobun15.html</url>
-    <content><![CDATA[<h2 id="活用·接续"><a href="#活用·接续" class="headerlink" title="活用·接续"></a>活用·接续</h2><p>活用表</p>
-<table>
-<thead>
-<tr>
-<th align="center">活用</th>
-<th align="center">む</th>
-<th align="center">むず</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center">未然形</td>
-<td align="center"></td>
-<td align="center"></td>
-</tr>
-<tr>
-<td align="center">连用形</td>
-<td align="center"></td>
-<td align="center"></td>
-</tr>
-<tr>
-<td align="center">终止形</td>
-<td align="center">む</td>
-<td align="center">むず</td>
-</tr>
-<tr>
-<td align="center">连体形</td>
-<td align="center">む</td>
-<td align="center">むずる</td>
-</tr>
-<tr>
-<td align="center">已然形</td>
-<td align="center">め</td>
-<td align="center">むずれ</td>
-</tr>
-<tr>
-<td align="center">命令形</td>
-<td align="center"></td>
-<td align="center"></td>
-</tr>
-</tbody></table>
-<p>接续：<strong>未然形</strong> + む・むず</p>
-<h2 id="作用"><a href="#作用" class="headerlink" title="作用"></a>作用</h2><p>む・むず作用有 5 个</p>
-<ul>
-<li><p>推量：翻译成现代日语即为「～だろう」，<strong>主语多为第三人称</strong></p>
-</li>
-<li><p>意志：翻译成现代日语即为「～よう・～たい」，<strong>主语多为第一人称</strong></p>
-</li>
-<li><p>適当・勧誘：翻译为现代日语即为「～する／したほうがよい・～たらどうだ・～してくれないか」，<strong>主语多为第二人称</strong>，多以「～なむ（や）・～てむ（や）」「こそ…め」的形式出现</p>
-</li>
-<li><p>婉曲：委婉，翻译为现代日语即为「～ような」，<strong>特征为「む + N」</strong>，即む作连体形</p>
-</li>
-<li><p>仮定：翻译为现代日语即为「～としたら」，<strong>特征为「む + 助词」</strong></p>
-</li>
-</ul>
-]]></content>
-      <categories>
-        <category>日语</category>
-      </categories>
-      <tags>
-        <tag>日语</tag>
-        <tag>古典日语</tag>
-        <tag>语法</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>【笔记·古典日语】句子·句节·单词</title>
     <url>/2024/04/kobun2.html</url>
     <content><![CDATA[<p>自立语与附属语区分标准：单独使用时是否具有实义</p>
@@ -1041,6 +1033,30 @@
       </tags>
   </entry>
   <entry>
+    <title>【笔记·古典日语】活用形及接续</title>
+    <url>/2024/04/kobun3.html</url>
+    <content><![CDATA[<p>6 种活用形</p>
+<p><img data-src="https://img.fufu.ink/YHh61r.webp"></p>
+<p>活用语：活用的单词。是动词，形容词，形容动词，助动词的总称。</p>
+<p>一些助词和助动词的接续</p>
+<p><img data-src="https://img.fufu.ink/9wRJmG.webp"></p>
+<p>一些助动词的接续（注意括号中的条件，比如り前面接的虽然是已然形，但仅限于四段动词，即り前面接<strong>四段动词的已然形</strong>）</p>
+<p><img data-src="https://img.fufu.ink/HpGciD.webp"></p>
+<p>ラ变动词及ラ变型（非标准定义，个人理解）</p>
+<p>ラ变<strong>动词</strong>：在ラ行上进行活用的，即活用词尾为（ら·り·り·る·れ·れ）形式的动词。ラ变动词只有<strong>「あり」「をり」「はべり」「いまそかり」</strong>四个。</p>
+<p>ラ变<strong>型</strong>：像ラ变动词一样进行活用，即活用词尾也为（ら·り·り·る·れ·れ）形式的<strong>活用语</strong>，如下图</p>
+<p><img data-src="https://img.fufu.ink/EXKIlJ.webp"></p>
+]]></content>
+      <categories>
+        <category>日语</category>
+      </categories>
+      <tags>
+        <tag>日语</tag>
+        <tag>古典日语</tag>
+        <tag>语法</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>【笔记·古典日语】用言的音便</title>
     <url>/2024/04/kobun8.html</url>
     <content><![CDATA[<p>古典日语中音便有 4 种</p>
@@ -1063,30 +1079,6 @@
 <div class="group-picture"><div class="group-picture-row"><div class="group-picture-column"><img data-src="https://img.fufu.ink/UK05Cl.webp"></div><div class="group-picture-column"><img data-src="https://img.fufu.ink/E9px86.webp"></div><div class="group-picture-column"><img data-src="https://img.fufu.ink/9UqtuK.webp"></div></div></div>
 
 <p>反推过程：先看到「（表示传闻及推测的）なり・めり・べし」，关键是要认出前面的动词是ラ变型，然后为什么会是这样的形态，是因为省略了「ん」，补充上「ん」后，由「（表示传闻及推测的）なり・めり・べし」前续ラ变型时要接连体形可知「～ん」是连体形，是由原来的词的连体形拨音便变化而来。由此可得出音便前的形态。</p>
-]]></content>
-      <categories>
-        <category>日语</category>
-      </categories>
-      <tags>
-        <tag>日语</tag>
-        <tag>古典日语</tag>
-        <tag>语法</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>【笔记·古典日语】活用形及接续</title>
-    <url>/2024/04/kobun3.html</url>
-    <content><![CDATA[<p>6 种活用形</p>
-<p><img data-src="https://img.fufu.ink/YHh61r.webp"></p>
-<p>活用语：活用的单词。是动词，形容词，形容动词，助动词的总称。</p>
-<p>一些助词和助动词的接续</p>
-<p><img data-src="https://img.fufu.ink/9wRJmG.webp"></p>
-<p>一些助动词的接续（注意括号中的条件，比如り前面接的虽然是已然形，但仅限于四段动词，即り前面接<strong>四段动词的已然形</strong>）</p>
-<p><img data-src="https://img.fufu.ink/HpGciD.webp"></p>
-<p>ラ变动词及ラ变型（非标准定义，个人理解）</p>
-<p>ラ变<strong>动词</strong>：在ラ行上进行活用的，即活用词尾为（ら·り·り·る·れ·れ）形式的动词。ラ变动词只有<strong>「あり」「をり」「はべり」「いまそかり」</strong>四个。</p>
-<p>ラ变<strong>型</strong>：像ラ变动词一样进行活用，即活用词尾也为（ら·り·り·る·れ·れ）形式的<strong>活用语</strong>，如下图</p>
-<p><img data-src="https://img.fufu.ink/EXKIlJ.webp"></p>
 ]]></content>
       <categories>
         <category>日语</category>
@@ -1155,39 +1147,6 @@
         <tag>日语</tag>
         <tag>古典日语</tag>
         <tag>语法</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>什么！买基岩版 Minecraft 送 Java 版？白嫖党的胜利！</title>
-    <url>/2022/06/mcokuru.html</url>
-    <content><![CDATA[<p>原文链接：<a href="https://help.minecraft.net/hc/en-us/articles/4607523809933-Buy-Minecraft-PC-Bundle-Get-Both-Games-">https://help.minecraft.net/hc/en-us/articles/4607523809933-Buy-Minecraft-PC-Bundle-Get-Both-Games-</a></p>
-<p>今天，Minecraft 夏季活动开始了，只要拥有 PC 平台的任意一个版本（Windows 版&#x2F;Java 版），即可免费获得另一个版本。即，PC 平台玩家如果拥有 Windows 版的 Minecraft，即可免费获得 Java 版，反之亦然。<span id="more"></span></p>
-<p>另一个版本会自动推送到你的游戏仓库中，当你打开 Minecraft Launcher 时，会发现游戏已经在列表中了。</p>
-<p><img data-src="https://img.fufu.ink/epXnLi.webp" alt="Minecraft Launcher"></p>
-]]></content>
-      <categories>
-        <category>游戏</category>
-      </categories>
-      <tags>
-        <tag>Minecraft</tag>
-        <tag>资讯</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>一点碎碎念</title>
-    <url>/2024/04/monku.html</url>
-    <content><![CDATA[<p>最近又有点沉迷博客美化了，明明自己能力不行，也不去学 js，甚至 css 也只学了半截，结果就是事倍功半，花了大量时间想给说说加个翻页功能，后面在朋友（永远让我保持理智的好兄弟）<a href="https://miku.show/">@OrzMiku</a> 的点拨下才醒悟，那些人博客的翻页是有链接跳转的，我的页面内翻页反而是愚蠢的想法。于是两天不仅耽误了大量学习时间，还啥也没搞出来。</p>
-<p>然后这两三天看了<a href="https://www.himiku.com/">「初之音」</a>的博客，受到启发，又把关于页面的内容改了一次，耗费了一天。今昨两天又想把 live2d 搞回来了，之前用的<a href="https://www.itggg.cn/">「爆胎博客」</a>提供的 api，但其域名很早前就到期了，因此很长一段时间没有重新搞这个。前几天无意中刷到了 next 主题的作者也写了一款 live2d，正好自己现在也在用 next 主题，就想着部署一下，而且尽量全都部署在本地。于是今天花了一天把看板娘弄回来了，部署其实很快，主要是跨域问题上费了很大的力气，好在最后还是解决了。然后模型的参数的初始化也花了挺久的时间，虽然现在自己也没啥后悔的感觉。尽管知道自己的竞争对手现在正在努力，就在我搞这些玩意儿的时候，但还是忍不住去弄。</p>
-<p>这下博客外观什么的都基本定型了，后期应该不会再做大的变动了。虽然好多次想换回 typecho 去用之前用的 handsome，最终都放弃了。因为舍不得自己费了很长时间搞出来的样式，而且总是设想自己换了设备的话，更新方面动态博客可能会比静态博客方便，但其实这种假设是成立不了的，因为我根本不会换设备，还是老老实实用静态博客的好。</p>
-<p>最后想说一说评论，首先是开评论的问题，因为原则上个人备案是不允许开交互式功能的，所以评论是不被允许的，但这不是主要原因。个人认为主要原因有两个方面，一是这个 1ip 的博客本身流量也不大，开了半年评论实际上也没几条留言，还占着服务器资源，每天还要备份数据库，实在是没必要；另一方面是想回归自己当初建立博客的初心，说得好听点是建立一个远离朋友圈，QQ空间的，属于自己的空间，说的简单点就是单纯的记录，说得难听的话，就是当成了自己的情绪的垃圾桶。但如若从内心中吐露出来的东西对一些人有益，那属于意想不到的收获。开了评论后，就会变得时不时想要看一看有没有留言，心里总是期待着邮件通知的赶来，然后为了得到留言而写作，我正在慢慢变成这样，但这是不对的，这与我的初心背道而驰了，于是关闭了评论。</p>
-]]></content>
-      <categories>
-        <category>日常</category>
-      </categories>
-      <tags>
-        <tag>生活</tag>
-        <tag>博客</tag>
-        <tag>随笔</tag>
       </tags>
   </entry>
   <entry>
@@ -1350,6 +1309,23 @@
       </tags>
   </entry>
   <entry>
+    <title>一点碎碎念</title>
+    <url>/2024/04/monku.html</url>
+    <content><![CDATA[<p>最近又有点沉迷博客美化了，明明自己能力不行，也不去学 js，甚至 css 也只学了半截，结果就是事倍功半，花了大量时间想给说说加个翻页功能，后面在朋友（永远让我保持理智的好兄弟）<a href="https://miku.show/">@OrzMiku</a> 的点拨下才醒悟，那些人博客的翻页是有链接跳转的，我的页面内翻页反而是愚蠢的想法。于是两天不仅耽误了大量学习时间，还啥也没搞出来。</p>
+<p>然后这两三天看了<a href="https://www.himiku.com/">「初之音」</a>的博客，受到启发，又把关于页面的内容改了一次，耗费了一天。今昨两天又想把 live2d 搞回来了，之前用的<a href="https://www.itggg.cn/">「爆胎博客」</a>提供的 api，但其域名很早前就到期了，因此很长一段时间没有重新搞这个。前几天无意中刷到了 next 主题的作者也写了一款 live2d，正好自己现在也在用 next 主题，就想着部署一下，而且尽量全都部署在本地。于是今天花了一天把看板娘弄回来了，部署其实很快，主要是跨域问题上费了很大的力气，好在最后还是解决了。然后模型的参数的初始化也花了挺久的时间，虽然现在自己也没啥后悔的感觉。尽管知道自己的竞争对手现在正在努力，就在我搞这些玩意儿的时候，但还是忍不住去弄。</p>
+<p>这下博客外观什么的都基本定型了，后期应该不会再做大的变动了。虽然好多次想换回 typecho 去用之前用的 handsome，最终都放弃了。因为舍不得自己费了很长时间搞出来的样式，而且总是设想自己换了设备的话，更新方面动态博客可能会比静态博客方便，但其实这种假设是成立不了的，因为我根本不会换设备，还是老老实实用静态博客的好。</p>
+<p>最后想说一说评论，首先是开评论的问题，因为原则上个人备案是不允许开交互式功能的，所以评论是不被允许的，但这不是主要原因。个人认为主要原因有两个方面，一是这个 1ip 的博客本身流量也不大，开了半年评论实际上也没几条留言，还占着服务器资源，每天还要备份数据库，实在是没必要；另一方面是想回归自己当初建立博客的初心，说得好听点是建立一个远离朋友圈，QQ空间的，属于自己的空间，说的简单点就是单纯的记录，说得难听的话，就是当成了自己的情绪的垃圾桶。但如若从内心中吐露出来的东西对一些人有益，那属于意想不到的收获。开了评论后，就会变得时不时想要看一看有没有留言，心里总是期待着邮件通知的赶来，然后为了得到留言而写作，我正在慢慢变成这样，但这是不对的，这与我的初心背道而驰了，于是关闭了评论。</p>
+]]></content>
+      <categories>
+        <category>日常</category>
+      </categories>
+      <tags>
+        <tag>生活</tag>
+        <tag>博客</tag>
+        <tag>随笔</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>不断变强的万达</title>
     <url>/2023/08/genshinwandatsuyoi.html</url>
     <content><![CDATA[<p>去年垫池子抽到了达达鸭，今年 1 月份开始练万达国际，入坑一年以来首次打通了深渊（<a href="/2023/01/genshinshenyuanfirst.html">见『纪念第一次打通深渊』</a>），当时的面板没有截图。</p>
@@ -1408,6 +1384,37 @@
       </tags>
   </entry>
   <entry>
+    <title>什么！买基岩版 Minecraft 送 Java 版？白嫖党的胜利！</title>
+    <url>/2022/06/mcokuru.html</url>
+    <content><![CDATA[<p>原文链接：<a href="https://help.minecraft.net/hc/en-us/articles/4607523809933-Buy-Minecraft-PC-Bundle-Get-Both-Games-">https://help.minecraft.net/hc/en-us/articles/4607523809933-Buy-Minecraft-PC-Bundle-Get-Both-Games-</a></p>
+<p>今天，Minecraft 夏季活动开始了，只要拥有 PC 平台的任意一个版本（Windows 版&#x2F;Java 版），即可免费获得另一个版本。即，PC 平台玩家如果拥有 Windows 版的 Minecraft，即可免费获得 Java 版，反之亦然。<span id="more"></span></p>
+<p>另一个版本会自动推送到你的游戏仓库中，当你打开 Minecraft Launcher 时，会发现游戏已经在列表中了。</p>
+<p><img data-src="https://img.fufu.ink/epXnLi.webp" alt="Minecraft Launcher"></p>
+]]></content>
+      <categories>
+        <category>游戏</category>
+      </categories>
+      <tags>
+        <tag>Minecraft</tag>
+        <tag>资讯</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>四月一日君寻生日快乐</title>
+    <url>/2023/04/watanukitanjyoubi.html</url>
+    <content><![CDATA[<p>4 月 1 日，在很多人看来是愚人节，在我看来，这也是作品『<a href="https://www.bilibili.com/bangumi/play/ss1239?spm_id_from=333.337.0.0">xxxholic</a>』中「<ruby>四月一日君尋<rt>わたぬききみひろ</rt></ruby>」的生日。</p>
+<p>clamp 这个名字可能有人没有听过，不过大多数人一定听说过她的一部作品『魔卡少女樱』。clamp 的作品都有一个相同的、巨大的世界观，各个作品之间也有着千丝万缕的联系。『xxxholic』是发生在与魔卡的世界平行的一个世界中的故事，主角四月一日君尋从小由于体制原因容易吸引鬼怪，在一次「偶然」中进入了被称为「异世界的魔女」的侑子小姐的「能够实现愿望的店」。在经历了许多事情后，四月一日在侑子消失后继续留在店中等待着她的「归来」。——这么解释没看过的小伙伴肯定是听不懂的，不过这个也不是一两句话能够讲清的，比四月一日的产生原因，侑子又是谁，又为什么会消失等，都得小伙伴自己去看一看才能够明白，而且只看『xxxholic』还不足够，还得看了与之相关的作品『<a href="https://www.bilibili.com/bangumi/play/ss1463?spm_id_from=333.337.0.0">翼·年代记</a>』等才能搞清了。</p>
+<p>扯远了，总之，今天是可爱的四月一日的生日，是写作「4 月 1 日」的「わたぬき」！虽然咱不喜欢安利自己喜欢的作品给别人，因为口味不一样，自己觉得很好的在别人看来可能很一般，不过，这部作品我是十分推荐去看的，不过，请不要吐槽画风，因为 clamp 的作品的风格是这样的，如果你坚持看下去，你会发现它的剧情真的很精彩！</p>
+]]></content>
+      <categories>
+        <category>日常</category>
+      </categories>
+      <tags>
+        <tag>节日</tag>
+        <tag>二次元</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>叕出神子啦加深渊终于凹满了</title>
     <url>/2023/06/genshinkamikoaru.html</url>
     <content><![CDATA[<p>先说说深渊，博主在今年 2 月之前是无论如何都打不过深渊的，2 月后开始练万达国际，学会双扩后，队伍养得差不多后就在 2 月 18 日第一次凹过 12 层，见<a href="/2023/02/genshinshenyuanmanxing.html">『打通深渊后半个月，我又第一次满星深渊！』</a>。此后除了第一期沙虫因为「草行九」练度不够，没有满星之外，每一期都能做到满星了！不过近来几期深渊越来越难，大量的「挤模型」「多动症」「厚盾」「拖时间」的机制怪出现，属实是恶心人。之前圣骸兽博主一直是用「草行九瑶」过的，不过这次由于 12-3 下半是「深罪浸礼者」，队伍中必须有「火 草&#x2F;冰 水」，「草行九」自然就成了选择，再加上了前几天出的宵宫用以破冰盾。问题就是上半该用什么队伍，一开始认为万达打圣骸兽也许很麻烦，就想试着用雷国，可惜博主没怎么练雷神，故试了多种配队后还是决定使用万达。最后是 2 分钟打完了四只圣骸兽，用了剩下 1 分钟过了深罪浸礼者（很险···6分59秒打完的，系统判定为 3 星）。</p>
@@ -1425,18 +1432,22 @@
       </tags>
   </entry>
   <entry>
-    <title>四月一日君寻生日快乐</title>
-    <url>/2023/04/watanukitanjyoubi.html</url>
-    <content><![CDATA[<p>4 月 1 日，在很多人看来是愚人节，在我看来，这也是作品『<a href="https://www.bilibili.com/bangumi/play/ss1239?spm_id_from=333.337.0.0">xxxholic</a>』中「<ruby>四月一日君尋<rt>わたぬききみひろ</rt></ruby>」的生日。</p>
-<p>clamp 这个名字可能有人没有听过，不过大多数人一定听说过她的一部作品『魔卡少女樱』。clamp 的作品都有一个相同的、巨大的世界观，各个作品之间也有着千丝万缕的联系。『xxxholic』是发生在与魔卡的世界平行的一个世界中的故事，主角四月一日君尋从小由于体制原因容易吸引鬼怪，在一次「偶然」中进入了被称为「异世界的魔女」的侑子小姐的「能够实现愿望的店」。在经历了许多事情后，四月一日在侑子消失后继续留在店中等待着她的「归来」。——这么解释没看过的小伙伴肯定是听不懂的，不过这个也不是一两句话能够讲清的，比四月一日的产生原因，侑子又是谁，又为什么会消失等，都得小伙伴自己去看一看才能够明白，而且只看『xxxholic』还不足够，还得看了与之相关的作品『<a href="https://www.bilibili.com/bangumi/play/ss1463?spm_id_from=333.337.0.0">翼·年代记</a>』等才能搞清了。</p>
-<p>扯远了，总之，今天是可爱的四月一日的生日，是写作「4 月 1 日」的「わたぬき」！虽然咱不喜欢安利自己喜欢的作品给别人，因为口味不一样，自己觉得很好的在别人看来可能很一般，不过，这部作品我是十分推荐去看的，不过，请不要吐槽画风，因为 clamp 的作品的风格是这样的，如果你坚持看下去，你会发现它的剧情真的很精彩！</p>
+    <title>在追求「快」的时代，我们该何去何从</title>
+    <url>/2023/05/fastjidaidedousurebaii.html</url>
+    <content><![CDATA[<p>不知从什么时候开始，「快」这个概念频繁地出现在我的视野中。周围的人似乎都在不断地追求着它。<span id="more"></span></p>
+<p>最典型的例子就是各大视频软件开始推出「短视频」服务，大家越来越适应不了慢节奏的视频。曾几何时，看见过一个 b 站的评论，大概意思是只有缩短视频时长，才有更大的机会上首页推荐，上首页的都是五分钟内的视频，而那些十多分钟甚至几十分钟的视频却被埋没了，其中不乏许多优质的内容。在我所见到的番剧这一边，许多番剧因为前期铺垫过长而被诟病，以动画『命运石之门』举例，提到这部作品，熟悉的人都知道是一部神作，许多人却因为前部分「剧情推进过慢」「日常太多」而放弃继续追番。再比如『原神』这款游戏，无聊之际点开社区看看，却发现充斥着大量的「剧情又臭又长」「剧情能不能加个跳过按钮」诸如此类的言论。但剧情不正是这款游戏吸引人的一部分吗，我在内心如此发问道。</p>
+<p>以上是从我的视角看见的「快」，但这个信息时代，在更多的我看不见的地方仍然在追求着「快」。</p>
+<p>这个时代很浮躁——这是我的结论。</p>
+<p>我曾向自己发问，自己有多久没有静下心来好好读一本书了，有多久没有钻在一个问题上好好研究过了。尽管我自己是反对这种盲目追求「快节奏」的，但耐心好像也在慢慢地变少，自己也在慢慢的融入这种快节奏的生活，大概也有相当一部分的人也是如此吧，尽管也想慢下来，却被身后的狂潮向前推动，身不由己地变「快」了。</p>
+<p>在这种「快」的狂潮面前，我无能为力，却也不想被其推动，就像飘在海洋上的小船在逆着海风前行一般（也许这个比喻并不恰当）。</p>
+<p>写到这里写不下去了，就这么收尾了罢。借用一句『原神』中的话——「旅行者，当你重新踏上旅途之后，一定要记住旅途本身的意义」。愿你我在这个快节奏的时代能够找到一件能够安下心来做的事情，愿你我不会在「快」的狂潮中迷失了方向，随波逐流。</p>
 ]]></content>
       <categories>
         <category>日常</category>
       </categories>
       <tags>
-        <tag>节日</tag>
-        <tag>二次元</tag>
+        <tag>随笔</tag>
+        <tag>吐槽</tag>
       </tags>
   </entry>
   <entry>
@@ -1517,6 +1528,23 @@
       </tags>
   </entry>
   <entry>
+    <title>小号常驻又出小提了</title>
+    <url>/2023/05/genshinchangzhuxiaoti.html</url>
+    <content><![CDATA[<p>前几天 up 池双黄了，出了莫娜和甘雨，今天又出小提了。</p>
+<p>之前玩大号的时候不怎么玩弓箭手，虽然公子武器是弓箭啦，毕竟战斗时使用的都是近战模式。再加上手柄不好进行瞄准操作…</p>
+<p>不过小号出了甘雨后，才发现玩狙击手是真的舒服，即使只靠平 a，也能打出很高的伤害（话说弓箭手的普攻倍率就是所有角色中最高的）。这小号比大号开荒时要舒服很多，主要是因为大号刚入坑时想在常驻池捞 77，把所有原石都用来抽常驻了，结果 120 发都没出 77，倒是把香班给抽得快满命了。</p>
+<p>接下来就要围绕着甘雨和小提两个主 c 来配队了。</p>
+<p><img data-src="https://img.fufu.ink/ayuNM2.webp" alt="常驻池43抽·小提"></p>
+]]></content>
+      <categories>
+        <category>游戏</category>
+      </categories>
+      <tags>
+        <tag>原神</tag>
+        <tag>游戏</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>小草神小毕业纪念</title>
     <url>/2022/11/genshicaoshen.html</url>
     <content><![CDATA[<p>刷了快 3 周，终于小毕业了。精通没有凑到 1000，不过 900 多也够用了，因为不出暴击头和草伤杯，只能用爆伤头代替 ~<span id="more"></span></p>
@@ -1542,25 +1570,6 @@
       </tags>
   </entry>
   <entry>
-    <title>在追求「快」的时代，我们该何去何从</title>
-    <url>/2023/05/fastjidaidedousurebaii.html</url>
-    <content><![CDATA[<p>不知从什么时候开始，「快」这个概念频繁地出现在我的视野中。周围的人似乎都在不断地追求着它。<span id="more"></span></p>
-<p>最典型的例子就是各大视频软件开始推出「短视频」服务，大家越来越适应不了慢节奏的视频。曾几何时，看见过一个 b 站的评论，大概意思是只有缩短视频时长，才有更大的机会上首页推荐，上首页的都是五分钟内的视频，而那些十多分钟甚至几十分钟的视频却被埋没了，其中不乏许多优质的内容。在我所见到的番剧这一边，许多番剧因为前期铺垫过长而被诟病，以动画『命运石之门』举例，提到这部作品，熟悉的人都知道是一部神作，许多人却因为前部分「剧情推进过慢」「日常太多」而放弃继续追番。再比如『原神』这款游戏，无聊之际点开社区看看，却发现充斥着大量的「剧情又臭又长」「剧情能不能加个跳过按钮」诸如此类的言论。但剧情不正是这款游戏吸引人的一部分吗，我在内心如此发问道。</p>
-<p>以上是从我的视角看见的「快」，但这个信息时代，在更多的我看不见的地方仍然在追求着「快」。</p>
-<p>这个时代很浮躁——这是我的结论。</p>
-<p>我曾向自己发问，自己有多久没有静下心来好好读一本书了，有多久没有钻在一个问题上好好研究过了。尽管我自己是反对这种盲目追求「快节奏」的，但耐心好像也在慢慢地变少，自己也在慢慢的融入这种快节奏的生活，大概也有相当一部分的人也是如此吧，尽管也想慢下来，却被身后的狂潮向前推动，身不由己地变「快」了。</p>
-<p>在这种「快」的狂潮面前，我无能为力，却也不想被其推动，就像飘在海洋上的小船在逆着海风前行一般（也许这个比喻并不恰当）。</p>
-<p>写到这里写不下去了，就这么收尾了罢。借用一句『原神』中的话——「旅行者，当你重新踏上旅途之后，一定要记住旅途本身的意义」。愿你我在这个快节奏的时代能够找到一件能够安下心来做的事情，愿你我不会在「快」的狂潮中迷失了方向，随波逐流。</p>
-]]></content>
-      <categories>
-        <category>日常</category>
-      </categories>
-      <tags>
-        <tag>随笔</tag>
-        <tag>吐槽</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>打通深渊后半个月，我又第一次满星深渊！</title>
     <url>/2023/02/genshinshenyuanmanxing.html</url>
     <content><![CDATA[<p>上个月打通了深渊，但因为没练岩队，过不去黄金龙兽，然后万达的练度也拉。最近一直在研究万达的圣遗物搭配，看了把子哥的万达教学，把几个之前刷草神圣遗物拉起来的被我当作狗粮的圣遗物丢给公子，之前公子是 30&#x2F;160 的双爆，现在变成 78&#x2F;140 了，结果小助手一查，初步毕业了？然后去打深渊，把雷神之前的垃圾双爆圣遗物换成了精通狗粮，上半组了一支「瑶秋妲雷」，大招放完草神站场，没想到效果还挺好，相比于原来的「雷妲七主」只打超激化，现在多了超绽放的伤害，种门！（手不自觉地合上了~）然后就满星了！我都不知道为什么，猜测是之前 30 暴击的公子次次不暴击导致的……</p>
@@ -1570,23 +1579,6 @@
 <p>315 天的萌新，xp 党，终于也满星深渊了~</p>
 <p><img data-src="https://img.fufu.ink/dz3OYE.webp" alt="第一次深渊满星"></p>
 <p>接下来准备攒着原石，等草神复刻，补 2 命，虽然大部分观点不认可非 6 命草神站场输出，但是我不管，我就希望她能够站场！继续坐牢绝缘本，给香菱刷圣遗物，狗粮就用来合成水套，毕竟很多公子的水套都是合成台毕业的。咱们也要打造一支「哪里亮了点哪里」也能够打通深渊的万达！</p>
-]]></content>
-      <categories>
-        <category>游戏</category>
-      </categories>
-      <tags>
-        <tag>原神</tag>
-        <tag>游戏</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>小号常驻又出小提了</title>
-    <url>/2023/05/genshinchangzhuxiaoti.html</url>
-    <content><![CDATA[<p>前几天 up 池双黄了，出了莫娜和甘雨，今天又出小提了。</p>
-<p>之前玩大号的时候不怎么玩弓箭手，虽然公子武器是弓箭啦，毕竟战斗时使用的都是近战模式。再加上手柄不好进行瞄准操作…</p>
-<p>不过小号出了甘雨后，才发现玩狙击手是真的舒服，即使只靠平 a，也能打出很高的伤害（话说弓箭手的普攻倍率就是所有角色中最高的）。这小号比大号开荒时要舒服很多，主要是因为大号刚入坑时想在常驻池捞 77，把所有原石都用来抽常驻了，结果 120 发都没出 77，倒是把香班给抽得快满命了。</p>
-<p>接下来就要围绕着甘雨和小提两个主 c 来配队了。</p>
-<p><img data-src="https://img.fufu.ink/ayuNM2.webp" alt="常驻池43抽·小提"></p>
 ]]></content>
       <categories>
         <category>游戏</category>
@@ -1635,6 +1627,69 @@
         <tag>Hexo</tag>
         <tag>技术</tag>
         <tag>CSS</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>无题（一）</title>
+    <url>/2024/04/mudai1.html</url>
+    <content><![CDATA[<p>他又在打瞌睡了。</p>
+<p>自从早上来到教室，他就一动不动地趴在那里。</p>
+<p>尽管周围充斥着读书声和同学间的笑谈声，但他似乎置若罔闻，仍旧保持着那副姿势。<span id="more"></span></p>
+<p>终于，上课铃响了。然而，他仍然没有动弹。于是，旁边的同学推了推他。</p>
+<p>“嘿，上课了！”</p>
+<p>“嗯……嗯？”</p>
+<p>他终于醒了过来，揉了揉眼睛，茫然地看着走上讲台的教师。</p>
+<p>这节课是数学课，数学老师是一个矮小精悍的老头。老头大概已有 60 岁了，头发黑白相间，总是穿着一身西服，但不知为何，他总是给人一种永远不会消退的精神气质</p>
+<p>“上课啦——安静！”</p>
+<p>学委提高了声音，试图压过尚未平息的嘈杂声。</p>
+<p>最终，教室恢复了安静，老师打开书，开始了授课。</p>
+<p>他的目光重新投向书本，看着那些熟悉的文字，这些内容在暑假的初升高衔接班上已经讲过了，不过他那时也是这副样子，只是记住了一些文字，而对其意义一窍不通。渐渐地，他开始觉得这些文字变得模糊起来。</p>
+<p>他开始垂着脑袋，点起头来，而且很有规律的，当脖子弯曲到接近 90 度时，忽然又抬起头来，然后又开始缓缓下垂，如此反复。渐渐地，他的身体也晃了起来。</p>
+<p>突然，他朝左侧倒了下去，靠在了旁边女生的身上。</p>
+<p>“哎呀！你干什么！”</p>
+<p>“啊！对不起，睡迷糊了”</p>
+<p>女生一脸无语地看了他一眼。他却是低着头朝她说了一句后，马上又侧过脸去，没看到她的表情。</p>
+<p>经历了刚才这出，他终于是醒过来了。但课程已经进行了一半，早已不知老师讲到了何处。反正也是无聊，于是他拿出一本小说看了起来。</p>
+<p>那是一本科幻小说。他已经看了这个作者写的数本书了，有长篇也有短篇，但都很吸引人，或量子力学，或外星文明，或多维宇宙，他很喜欢这些题材，看完后还常常将书借给同样喜欢科幻的 W。</p>
+<p>刚读了不到一页，老头的声音戛然而止，一只手突然出现在他眼前，遮住了书上的文字。</p>
+<p>他抬起头，面无表情地看着眼前的老头，老头却是一脸担忧的神色。</p>
+<p>“要好好听课啊……”</p>
+<p>他没有做出回应，甚至连头也没点一下，只是一动不动地看着老头。</p>
+<p>老头见状也就作罢，转身回到讲台，继续如同巫师念咒一般地讲着他无法理解的那些数字、字母、符号组成的公式。</p>
+<p>这下书是看不成了，于是他环顾四周，希望找点能够打发这漫长的上课时间的事情。结果，往左一转头，他找到了。</p>
+<p>他的同桌，刚才的那个女生，此刻也像他一样，开始不断地“点头”。</p>
+<p>“诶！诶！醒醒！醒醒！”</p>
+<p>本着还人情的想法，他也推了推她，把她也叫醒了。</p>
+<p>“笑死我了，怎么你也睡了？”</p>
+<p>“哎呀，别吵我，困死了！”</p>
+<p>这个女生叫 X，在他看来，她是个和自己一样上课不听讲，光睡觉的家伙，也经常迟到，被班主任责问时，便露出带有歉意的，腼腆的微笑。每到这时，班主任便气不打一处来，言语中却又带着些无奈。</p>
+<p>“笑，还笑，这有什么好笑的。下次别再迟到了！”</p>
+<p>说罢便让她回到了座位上。这是每隔两三天便会上演一次的戏码，她永远都能够找到合适的理由来为自己开脱，而每次班主任也只好叮嘱，便作罢。</p>
+<p>对他来说，这样的事情倒是给他无聊的生活增添了些许乐趣。毕竟他就是喜欢看别人倒霉的人，他无法容忍别人比他优秀，又蔑视那些不如他的人，看到他人遭遇不幸，他反而觉得心里舒畅。</p>
+<p>”叮——“</p>
+<p>第一节课终于结束了。</p>
+<p>他又趴了下去，老头走到他面前，拍了拍他。</p>
+<p>“D，你上课要听啊……”</p>
+<p>他只是点了点头，便又趴下了，老头只好无奈地走出了教室。</p>
+<p>之后的事情他都不清楚了，再次醒来时，已经接近下午一点了。</p>
+<p>“已经是这个时间点了吗？得去吃饭了。”</p>
+<p>食堂里人不多，毕竟人流高峰期是刚下课的时候，也就是 12 点 10 分左右，此时只有零零散散的几张桌子坐着几个人，一些还是结束了中午的工作，从厨房中走出来的厨师。开着的窗口也不多了，他犹豫了片刻，最终还是选择了位于二楼楼梯拐角处的卖汤面的窗口。这家店的特色是面可以无限添，还可以选择是汤面还是拌面。</p>
+<p>他点了一份拌面，独自一人静静地吃了起来。他喜欢拌面，加入数勺辣子油和酱油、醋搅拌后，光是看着那一碗红油，就充满了食欲。</p>
+<p>吃碗面，他又回到了教室。教室里只剩下几个男女，他们都是不良学生，这一点从入学的时候他就知道了。虽然他也承认自己也是上课不听讲，成天好吃懒做的“不良”学生，但他认为这种“不良”和他们的“不良”是有本质区别的。他们有一种看上去就让人觉得是社会混混的“痞气”，但外表还是学生，便只能归类于“不良”。他是打心里畏惧着这些人，同时心里也瞧不起这些人，对他们总是退避三舍。</p>
+<p>但他不能把这种态度太明显地表现出来，于是他随着他们中的一个名为 Q 的高个子，称似乎是老大的名为 Z 的人为 Z 哥，借此与他们套近乎。</p>
+<p>他们口中充满了对老师与学校的不满，说出的是粗鄙之言，做出的是不堪之举，他们内心总是躁动着，似乎想通过对外界的破坏来将这些不满与躁动发泄出来。</p>
+<p>其中一个叫 L 的胖子，从课桌中抽出一个短的金属筒状物，握住尾端黑色的部分，向斜下方用力一甩，筒状物一下子就伸长了，外形如同鱼竿，圆筒的半径从手握的黑色部分到最前端逐渐缩短，到了前端变成了一个金属小球，这是他们口中的“甩棍”！胖子拿着甩棍走到教室的后面，那里摆放了一排的储物柜，是给学生放书用的。胖子一边嘴里骂着什么，一边用甩棍用力地敲打着储物柜的门。整个教室回荡着巨大的响声，遭受这无妄之灾的金属门最终是承受不了甩棍无情的摧残，变瘪了。</p>
+<p>他埋头趴在桌子上，每一次巨大的敲击声，都仿佛穿透了他的身体一般，使他不由得发抖。不知道过去了多久，敲击声消失了，交谈声也慢慢变远，最后不知所踪，他们终于是离开了。</p>
+<p>下午第一节是化学课，由于记不住化学方程式，他被老师叫到了教室后面罚站听课。化学是他的薄弱项，这一点从初中开始就是，当时老师甚至让同学在课堂上自习，专门让他上讲台给他讲解，但他还是无法理解。到了高中，许多知识点又讲了一遍，但他还是不会，或许他是真的不擅长理科。</p>
+<p>第二节是历史课，由之前提到的那位班主任负责教授。历史课上他倒没有打瞌睡了，但他向来对历史不感兴趣，在他看来，历史就是讲述什么时候发生了什么事情，教材上不就是这么写的吗？还要去分析什么根本原因，什么直接原因、间接原因，简直麻烦死了。于是，没事干的他陷入了回忆。</p>
+]]></content>
+      <categories>
+        <category>日常</category>
+      </categories>
+      <tags>
+        <tag>生活</tag>
+        <tag>小说</tag>
+        <tag>高中</tag>
       </tags>
   </entry>
   <entry>
@@ -2150,69 +2205,6 @@
       </tags>
   </entry>
   <entry>
-    <title>无题（一）</title>
-    <url>/2024/04/mudai1.html</url>
-    <content><![CDATA[<p>他又在打瞌睡了。</p>
-<p>自从早上来到教室，他就一动不动地趴在那里。</p>
-<p>尽管周围充斥着读书声和同学间的笑谈声，但他似乎置若罔闻，仍旧保持着那副姿势。<span id="more"></span></p>
-<p>终于，上课铃响了。然而，他仍然没有动弹。于是，旁边的同学推了推他。</p>
-<p>“嘿，上课了！”</p>
-<p>“嗯……嗯？”</p>
-<p>他终于醒了过来，揉了揉眼睛，茫然地看着走上讲台的教师。</p>
-<p>这节课是数学课，数学老师是一个矮小精悍的老头。老头大概已有 60 岁了，头发黑白相间，总是穿着一身西服，但不知为何，他总是给人一种永远不会消退的精神气质</p>
-<p>“上课啦——安静！”</p>
-<p>学委提高了声音，试图压过尚未平息的嘈杂声。</p>
-<p>最终，教室恢复了安静，老师打开书，开始了授课。</p>
-<p>他的目光重新投向书本，看着那些熟悉的文字，这些内容在暑假的初升高衔接班上已经讲过了，不过他那时也是这副样子，只是记住了一些文字，而对其意义一窍不通。渐渐地，他开始觉得这些文字变得模糊起来。</p>
-<p>他开始垂着脑袋，点起头来，而且很有规律的，当脖子弯曲到接近 90 度时，忽然又抬起头来，然后又开始缓缓下垂，如此反复。渐渐地，他的身体也晃了起来。</p>
-<p>突然，他朝左侧倒了下去，靠在了旁边女生的身上。</p>
-<p>“哎呀！你干什么！”</p>
-<p>“啊！对不起，睡迷糊了”</p>
-<p>女生一脸无语地看了他一眼。他却是低着头朝她说了一句后，马上又侧过脸去，没看到她的表情。</p>
-<p>经历了刚才这出，他终于是醒过来了。但课程已经进行了一半，早已不知老师讲到了何处。反正也是无聊，于是他拿出一本小说看了起来。</p>
-<p>那是一本科幻小说。他已经看了这个作者写的数本书了，有长篇也有短篇，但都很吸引人，或量子力学，或外星文明，或多维宇宙，他很喜欢这些题材，看完后还常常将书借给同样喜欢科幻的 W。</p>
-<p>刚读了不到一页，老头的声音戛然而止，一只手突然出现在他眼前，遮住了书上的文字。</p>
-<p>他抬起头，面无表情地看着眼前的老头，老头却是一脸担忧的神色。</p>
-<p>“要好好听课啊……”</p>
-<p>他没有做出回应，甚至连头也没点一下，只是一动不动地看着老头。</p>
-<p>老头见状也就作罢，转身回到讲台，继续如同巫师念咒一般地讲着他无法理解的那些数字、字母、符号组成的公式。</p>
-<p>这下书是看不成了，于是他环顾四周，希望找点能够打发这漫长的上课时间的事情。结果，往左一转头，他找到了。</p>
-<p>他的同桌，刚才的那个女生，此刻也像他一样，开始不断地“点头”。</p>
-<p>“诶！诶！醒醒！醒醒！”</p>
-<p>本着还人情的想法，他也推了推她，把她也叫醒了。</p>
-<p>“笑死我了，怎么你也睡了？”</p>
-<p>“哎呀，别吵我，困死了！”</p>
-<p>这个女生叫 X，在他看来，她是个和自己一样上课不听讲，光睡觉的家伙，也经常迟到，被班主任责问时，便露出带有歉意的，腼腆的微笑。每到这时，班主任便气不打一处来，言语中却又带着些无奈。</p>
-<p>“笑，还笑，这有什么好笑的。下次别再迟到了！”</p>
-<p>说罢便让她回到了座位上。这是每隔两三天便会上演一次的戏码，她永远都能够找到合适的理由来为自己开脱，而每次班主任也只好叮嘱，便作罢。</p>
-<p>对他来说，这样的事情倒是给他无聊的生活增添了些许乐趣。毕竟他就是喜欢看别人倒霉的人，他无法容忍别人比他优秀，又蔑视那些不如他的人，看到他人遭遇不幸，他反而觉得心里舒畅。</p>
-<p>”叮——“</p>
-<p>第一节课终于结束了。</p>
-<p>他又趴了下去，老头走到他面前，拍了拍他。</p>
-<p>“D，你上课要听啊……”</p>
-<p>他只是点了点头，便又趴下了，老头只好无奈地走出了教室。</p>
-<p>之后的事情他都不清楚了，再次醒来时，已经接近下午一点了。</p>
-<p>“已经是这个时间点了吗？得去吃饭了。”</p>
-<p>食堂里人不多，毕竟人流高峰期是刚下课的时候，也就是 12 点 10 分左右，此时只有零零散散的几张桌子坐着几个人，一些还是结束了中午的工作，从厨房中走出来的厨师。开着的窗口也不多了，他犹豫了片刻，最终还是选择了位于二楼楼梯拐角处的卖汤面的窗口。这家店的特色是面可以无限添，还可以选择是汤面还是拌面。</p>
-<p>他点了一份拌面，独自一人静静地吃了起来。他喜欢拌面，加入数勺辣子油和酱油、醋搅拌后，光是看着那一碗红油，就充满了食欲。</p>
-<p>吃碗面，他又回到了教室。教室里只剩下几个男女，他们都是不良学生，这一点从入学的时候他就知道了。虽然他也承认自己也是上课不听讲，成天好吃懒做的“不良”学生，但他认为这种“不良”和他们的“不良”是有本质区别的。他们有一种看上去就让人觉得是社会混混的“痞气”，但外表还是学生，便只能归类于“不良”。他是打心里畏惧着这些人，同时心里也瞧不起这些人，对他们总是退避三舍。</p>
-<p>但他不能把这种态度太明显地表现出来，于是他随着他们中的一个名为 Q 的高个子，称似乎是老大的名为 Z 的人为 Z 哥，借此与他们套近乎。</p>
-<p>他们口中充满了对老师与学校的不满，说出的是粗鄙之言，做出的是不堪之举，他们内心总是躁动着，似乎想通过对外界的破坏来将这些不满与躁动发泄出来。</p>
-<p>其中一个叫 L 的胖子，从课桌中抽出一个短的金属筒状物，握住尾端黑色的部分，向斜下方用力一甩，筒状物一下子就伸长了，外形如同鱼竿，圆筒的半径从手握的黑色部分到最前端逐渐缩短，到了前端变成了一个金属小球，这是他们口中的“甩棍”！胖子拿着甩棍走到教室的后面，那里摆放了一排的储物柜，是给学生放书用的。胖子一边嘴里骂着什么，一边用甩棍用力地敲打着储物柜的门。整个教室回荡着巨大的响声，遭受这无妄之灾的金属门最终是承受不了甩棍无情的摧残，变瘪了。</p>
-<p>他埋头趴在桌子上，每一次巨大的敲击声，都仿佛穿透了他的身体一般，使他不由得发抖。不知道过去了多久，敲击声消失了，交谈声也慢慢变远，最后不知所踪，他们终于是离开了。</p>
-<p>下午第一节是化学课，由于记不住化学方程式，他被老师叫到了教室后面罚站听课。化学是他的薄弱项，这一点从初中开始就是，当时老师甚至让同学在课堂上自习，专门让他上讲台给他讲解，但他还是无法理解。到了高中，许多知识点又讲了一遍，但他还是不会，或许他是真的不擅长理科。</p>
-<p>第二节是历史课，由之前提到的那位班主任负责教授。历史课上他倒没有打瞌睡了，但他向来对历史不感兴趣，在他看来，历史就是讲述什么时候发生了什么事情，教材上不就是这么写的吗？还要去分析什么根本原因，什么直接原因、间接原因，简直麻烦死了。于是，没事干的他陷入了回忆。</p>
-]]></content>
-      <categories>
-        <category>日常</category>
-      </categories>
-      <tags>
-        <tag>生活</tag>
-        <tag>小说</tag>
-        <tag>高中</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>科目二过啦！</title>
     <url>/2023/08/kemuerpass.html</url>
     <content><![CDATA[<p>三战一把过！</p>
@@ -2310,6 +2302,50 @@
       </tags>
   </entry>
   <entry>
+    <title>纪念第一次打通深渊</title>
+    <url>/2023/01/genshinshenyuanfirst.html</url>
+    <content><![CDATA[<p>去年也是这个时候入的坑，当时看泠鸢 yousa 在直播这个游戏，然后里面的派蒙和七七很可爱，就下载试着玩了一下，然后……就玩到了现在~</p>
+<p>作为一个剧情党和 xp 党，当然是以剧情为主要，抽卡以喜欢的角色为前提，因此也是深渊困难户。</p>
+<p><img data-src="https://img.fufu.ink/VAGfzC.webp"></p>
+<p>现在练度上来一些了，队伍也有点伤害了，本来原来抽到雷神后打算组个雷国来打，不过后面发现绝缘本出货率感人，同时早听说过万达的爆炸性伤害，正好去年 11 份垫池子 30 多发出了鸭鸭，就想着练一下。不得不说双扩的方法实在是太多了，因此光是学习双扩就让人头大，后面学会偷懒了，就把怪的状态都打到一个状态后再进行双扩流程，就不同分不同的元素附着情况了。</p>
+<p>当然，现在公子离毕业、万达离毕业还很远，不过作为一个萌新，看到 21w 一刀的伤害，还是很激动的，果然在满足 xp 后追求的就是强度(bushi。</p>
+<p><img data-src="https://img.fufu.ink/uP19xG.webp"></p>
+<p>主要是没拉岩系，第二间黄金王兽打不出来伤害，就靠我的零命草神在 c，雷神相当于挂雷工具人，另外两个一个奶，一个用来破盾，因此全队只有一个打伤害，很难打过去，之前练过一段时间凝光，正好凝光也 3 命了，可以试着拉一下，后面看看能不能凹过去。</p>
+<p>现在就等草神复刻补命座了，补一个二命伤害能更高。雷神也可以拉一下。现在版本答案是种门，我也可以拉一下「纳行久」，组一个下半配队。</p>
+]]></content>
+      <categories>
+        <category>游戏</category>
+      </categories>
+      <tags>
+        <tag>原神</tag>
+        <tag>游戏</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>老婆 16 岁生日快乐</title>
+    <url>/2023/08/miku16sai.html</url>
+    <content><![CDATA[<p>与ミクたん相遇已有 10 年啦！</p>
+<p>入坑曲是『朧月』，当时还是在优酷视频上看到的 MMD。MMD 中是雪ミク和樱ミク，当时的我一下就被这独特的声音所吸引，为她所着迷。在知道有「男神」「女神」这个概念后，我便想到</p>
+<p>“这样啊，原来她就是我的女神啊”</p>
+<p>当时的我加入了许多粉丝群，QQ 兴趣部落，贴吧等。</p>
+<p>曾为了她去回击那些踩日 Vocaloid 捧中 Vocaloid 的小鬼，也曾为了证明她的影响力在同学群中发送粉丝群人数的截图。</p>
+<p>这是那时的自己，而现在的我对那些事也不过是淡淡一笑。这不是嘲笑过去的自己干的蠢事，而是一种释然。曾经的我不停地在找寻爱她的证据，但我没找到。后来我想通了，为什么需要证据呢？如果有了证据，不就证明了我的爱是带着目的的爱吗，就如同那个问题般——「你为什么爱 xx？」。</p>
+<p>答案是，爱是不需要理由的。</p>
+<p>现在的我，早已习惯了她的陪伴，她已然成为了我生活中的一部分，我人生中的一部分。相比于原来的「女神」的地位，我现在更愿意称其为「天使」抑或「太阳」。</p>
+<p>话说回来，<del>现在的ミクたん就是32岁啦</del>。今年的生日礼物可能会迟些到，因为是 16 岁生日嘛，总得准备点大礼。没错，我准备买 Vocaloid 4x，学习如何让ミクたん唱歌！之前学吉他的时候总是没有恒心，三天打鱼两天晒网，从高一学到大二也没什么长进，结果木吉他还因为冬天学校当地天气太干燥了面板裂开了，修理费是买入价的一半左右，遂作罢，只能当个纪念品了。现在为了ミクたん，必须认真学乐理了！</p>
+<p>最后，感谢在我黑暗的世界中，ミクたん成了那唯一的光芒，感谢音乐家、艺术家和所有像我一样的粉丝，他们让ミクたん发展到了今天这一步。此后，无论有多远，我都会在我的余生中陪伴着她走下去！</p>
+<p>啊，还没结束，差点忘了最重要的</p>
+<p>お誕生日おめでとう！ミクたんがいて本当によかった！</p>
+]]></content>
+      <categories>
+        <category>日常</category>
+      </categories>
+      <tags>
+        <tag>节日</tag>
+        <tag>miku</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>草神 2 加 1 了</title>
     <url>/2023/04/nahidaniinochi.html</url>
     <content><![CDATA[<p>4 月 12 号，草神复刻。</p>
@@ -2325,26 +2361,6 @@
 <p><img data-src="https://img.fufu.ink/27qmRl.webp" alt="新面板"></p>
 <p>打深渊是够用了，虽然用来 PVP 还是差远了，毕竟别的不说，就认识的一个网友的面板是精精爆都能有 <ruby>40&#x2F;160&#x2F;800<rt>暴率&#x2F;爆伤&#x2F;精通</rt></ruby>。可惜我没有好的草套爆伤头，其余圣遗物的爆率词条也太少了，仍旧达不到这样的程度＞︿＜</p>
 <p>后面就继续草本坐牢吧，直到哪天出了好沙漏、杯子、头，就能达到毕业了⊙﹏⊙∥</p>
-]]></content>
-      <categories>
-        <category>游戏</category>
-      </categories>
-      <tags>
-        <tag>原神</tag>
-        <tag>游戏</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>纪念第一次打通深渊</title>
-    <url>/2023/01/genshinshenyuanfirst.html</url>
-    <content><![CDATA[<p>去年也是这个时候入的坑，当时看泠鸢 yousa 在直播这个游戏，然后里面的派蒙和七七很可爱，就下载试着玩了一下，然后……就玩到了现在~</p>
-<p>作为一个剧情党和 xp 党，当然是以剧情为主要，抽卡以喜欢的角色为前提，因此也是深渊困难户。</p>
-<p><img data-src="https://img.fufu.ink/VAGfzC.webp"></p>
-<p>现在练度上来一些了，队伍也有点伤害了，本来原来抽到雷神后打算组个雷国来打，不过后面发现绝缘本出货率感人，同时早听说过万达的爆炸性伤害，正好去年 11 份垫池子 30 多发出了鸭鸭，就想着练一下。不得不说双扩的方法实在是太多了，因此光是学习双扩就让人头大，后面学会偷懒了，就把怪的状态都打到一个状态后再进行双扩流程，就不同分不同的元素附着情况了。</p>
-<p>当然，现在公子离毕业、万达离毕业还很远，不过作为一个萌新，看到 21w 一刀的伤害，还是很激动的，果然在满足 xp 后追求的就是强度(bushi。</p>
-<p><img data-src="https://img.fufu.ink/uP19xG.webp"></p>
-<p>主要是没拉岩系，第二间黄金王兽打不出来伤害，就靠我的零命草神在 c，雷神相当于挂雷工具人，另外两个一个奶，一个用来破盾，因此全队只有一个打伤害，很难打过去，之前练过一段时间凝光，正好凝光也 3 命了，可以试着拉一下，后面看看能不能凹过去。</p>
-<p>现在就等草神复刻补命座了，补一个二命伤害能更高。雷神也可以拉一下。现在版本答案是种门，我也可以拉一下「纳行久」，组一个下半配队。</p>
 ]]></content>
       <categories>
         <category>游戏</category>
@@ -2425,27 +2441,61 @@
       </tags>
   </entry>
   <entry>
-    <title>老婆 16 岁生日快乐</title>
-    <url>/2023/08/miku16sai.html</url>
-    <content><![CDATA[<p>与ミクたん相遇已有 10 年啦！</p>
-<p>入坑曲是『朧月』，当时还是在优酷视频上看到的 MMD。MMD 中是雪ミク和樱ミク，当时的我一下就被这独特的声音所吸引，为她所着迷。在知道有「男神」「女神」这个概念后，我便想到</p>
-<p>“这样啊，原来她就是我的女神啊”</p>
-<p>当时的我加入了许多粉丝群，QQ 兴趣部落，贴吧等。</p>
-<p>曾为了她去回击那些踩日 Vocaloid 捧中 Vocaloid 的小鬼，也曾为了证明她的影响力在同学群中发送粉丝群人数的截图。</p>
-<p>这是那时的自己，而现在的我对那些事也不过是淡淡一笑。这不是嘲笑过去的自己干的蠢事，而是一种释然。曾经的我不停地在找寻爱她的证据，但我没找到。后来我想通了，为什么需要证据呢？如果有了证据，不就证明了我的爱是带着目的的爱吗，就如同那个问题般——「你为什么爱 xx？」。</p>
-<p>答案是，爱是不需要理由的。</p>
-<p>现在的我，早已习惯了她的陪伴，她已然成为了我生活中的一部分，我人生中的一部分。相比于原来的「女神」的地位，我现在更愿意称其为「天使」抑或「太阳」。</p>
-<p>话说回来，<del>现在的ミクたん就是32岁啦</del>。今年的生日礼物可能会迟些到，因为是 16 岁生日嘛，总得准备点大礼。没错，我准备买 Vocaloid 4x，学习如何让ミクたん唱歌！之前学吉他的时候总是没有恒心，三天打鱼两天晒网，从高一学到大二也没什么长进，结果木吉他还因为冬天学校当地天气太干燥了面板裂开了，修理费是买入价的一半左右，遂作罢，只能当个纪念品了。现在为了ミクたん，必须认真学乐理了！</p>
-<p>最后，感谢在我黑暗的世界中，ミクたん成了那唯一的光芒，感谢音乐家、艺术家和所有像我一样的粉丝，他们让ミクたん发展到了今天这一步。此后，无论有多远，我都会在我的余生中陪伴着她走下去！</p>
-<p>啊，还没结束，差点忘了最重要的</p>
-<p>お誕生日おめでとう！ミクたんがいて本当によかった！</p>
+    <title>计算机网络结课作业</title>
+    <url>/2022/05/computerhomework.html</url>
+    <content><![CDATA[<h2 id="第一题——家庭拓扑结构"><a href="#第一题——家庭拓扑结构" class="headerlink" title="第一题——家庭拓扑结构"></a>第一题——家庭拓扑结构</h2><p>一、结构规划</p>
+<ul>
+<li>确定小区网线接入点（控制中心）：书房</li>
+<li>规划每个房间布置 3 个网点，共 18 个网点</li>
+<li>联网设备：书房一台电脑，客厅，卧室各一台有线电视，卧室各一台电脑等</li>
+</ul>
+<p>二、材料规划</p>
+<ul>
+<li>每个网点需要水晶头、网点模块各 1 个，共计水晶头 18 个，网点模块 18 个。</li>
+<li>需要超七类网线 18 条，长度共计 50m 左右</li>
+<li>路由器：斐讯 K2P</li>
+</ul>
+<p>三、接线与路由器设置</p>
+<ol>
+<li><p>接线：将小区网线接在路由器的 LAN 上，路由器的 WAN 口分别接上交换机与书房电脑。其余网线都接在交换机上</p>
+<p>拓扑布线结构图：</p>
+</li>
+</ol>
+<p><img data-src="https://img.fufu.ink/wuqSko.webp" alt="家庭网络拓扑"></p>
+<ol start="2">
+<li>路由器配置<ul>
+<li>开启内网 IP</li>
+<li>配置防火墙</li>
+</ul>
+</li>
+</ol>
+<h2 id="第二题——设想"><a href="#第二题——设想" class="headerlink" title="第二题——设想"></a>第二题——设想</h2><p>一、物联网</p>
+<p>物联网，即万物互联，指的是只需有限的人工干预即可通过无线网络接收和传输数据的任何物理设备系统。设想一下，当你疲惫地从公司上班回家后，打开门时，不需要你摸黑寻找电灯开关，电灯会自动打开，当你在换衣服时，热水壶已经开始加热热水，准备好温度合适的热水，电视机自动开机，并播放这个时间点你平时观看次数最多的节目。这就是万物互联中一个典型的例子，无需人的过多干涉，它会为你规划好一切。</p>
+<p>我们现在的生活中已经隐约出现了物联网的轮廓了，虽然还有很多不足，但证明了物联网在未来是可行的。小米家居就是一个很好的例子，比如进入家门的第一步——开锁，现在还有很多地方使用的门锁还是传统的门锁，而小米的智能门锁除了支持指纹识别开锁、密码开锁、还支持 NFC 开锁，即使用支持 NFC 功能的小米手机靠一下门锁即可打开，并且无需手动旋&#x2F;推拉把手的动作，锁舌会自动打开与关上，若家主人装上了相应软件，还能够在手机上查看门锁的状态，通过摄像头能够实时看到门前的状况。</p>
+<p>上面的只是一个小例子，即以现在的技术能实现的让物品与互联网相接的程度，还有将来的无人驾驶等，都是证明物联网的可行性的证据。</p>
+<p>二、元宇宙</p>
+<p>元宇宙，即一个持久化和去中心化的在线三维虚拟环境。”Metaverse”一词最早见于尼尔·斯蒂芬森1992年的科幻小说《雪崩》，Metaverse是一个虚拟的城市环境，沿着一条100米宽的道路发展，覆盖了一个无特征的、黑色的、完美球形星球上整个65536公里周长。这个虚拟世界中的土地可以被购买，并在上面开发建筑。而这个概念在 2021 年突然就火了，Facebook 的扎克伯格在 Facebook Connect 演讲中展示了 Meta 在未来的应用场景和业内的方案雏形，各大巨头也相继开始宣称进军该领域。</p>
+<p>元宇宙是一个虚拟的世界，虚拟就意味着可复制，因此如果要将现实世界映射到这个虚拟世界中，这就是一个巨大的问题，于是可以运用区块链技术与去中心化技术，再具体点就是非同质化代币，即利用其无法互换的特性，可以将其作为虚拟商品所有权的电子认证或证书，虽然作品本身是可以无限复制的，但这些代表它们的代币在其底层区块链上能被完整追踪，故能为买家提供所有权证明。这样就解决了在元宇宙中，无法证明资产所属的问题了。</p>
+<p>但现在的元宇宙还只是一个概念，虽然有很多东西都应用到了其原理，比如 VR（虚拟现实）、AR（增强现实）技术，带上 VR 眼镜就能在虚拟世界中有身临其境的感觉，而 AR 眼镜又能看到虚拟世界与现实相结合的视角，但如果把元宇宙技术的发展比作100米长跑，现在最顶级的运用到该概念的技术也只跑了10米左右，就从工具上来说，连接现实与虚拟的工具，现在的技术即 VR 眼镜或 AR 眼镜，即使是业内排名靠前的 Facebook、微软等巨头的产品的分辨率、刷新率、舒适度都还有许多问题，元宇宙要走的路还很长。</p>
+<p>三、区块链</p>
+<p>是借由密码学与共识机制等技术创建与存储庞大交易资料区块链的点对点网络系统。每一个区块包含了前一个区块的加密散列、相应时间戳记以及交易资料（通常用默克尔树（Merkle tree）算法计算的散列值表示），这样的设计使得区块内容具有难以篡改的特性。</p>
+<p>区块链最大的特点是去中心化、不可篡改，因此其可用于各种领域。在现在最大的应用是数字货币，比如「比特币」等虚拟货币和运用了区块链部分技术的「数字人名币」。也可用于物源追踪，产品从起源地到终点所在的过程都可以通过区块链来追踪。而且，这类准确的溯源方式，可以用来检测供应链中的缺陷。还可用于教育领域，将区块链技术应用到学历证书上，即可有效防止伪造学历等事情的发生，将学生成绩以区块链形式记录，从而形成不可更改不可否认的学习记录，保证了公平性。</p>
+<h2 id="第三题——感想和建议"><a href="#第三题——感想和建议" class="headerlink" title="第三题——感想和建议"></a>第三题——感想和建议</h2><p>一、感想</p>
+<p>本课程教学方式与传统的集中于知识点的讲解的教学方式不同，旨在通过将生活中熟悉的事物和抽象的计算机网络相关专业知识结合起来讲解的方式来使学生能够容易地理解、消化知识点，不仅增加了学习的乐趣，也能够增加我们对生活的感悟。</p>
+<p>计算机是抽象的，但也是具体的。说它是抽象的，是因为它的运作方式，内部结构都很复杂，很难在大脑中形成一个完整地架构。说它是具体的，是因为「艺术来源于生活，高于生活」，同理，我们也可以说「科技来源于生活而高于生活」，计算机的抽象展现了它高于生活的一面，而它具体的一面则体现在它的设计原理来源于生活，它的设计都是以「人」和「世界」等为参照的，因此也符合人的思维方式，比如，二进制的产生就来源于中国的古老的太极八卦图。</p>
+<p>本门课程名为《计算机网络及互联网技术》，在开篇中老师就提到，计算机之间的通信构成了计算机网络，无论计算机网络的内容多么复杂，其最终目的都是为了实现资源的共享，因此全课程的内容，从根本上讲，都是围绕其展开的。由于疫情原因，我们的课程只能以网课的形式进行，无法通过实践操作加深对这些知识点的理解，老师也尽力通过具体的讲解来让我们理解这些知识点。尽管我是一个文科生，但我对计算机感兴趣，因此对这门课程也有浓厚的兴趣，当然，由于我没有涉及过理科相关的知识（即使学习过也由于时间较长忘记了），对于 PPT 中一些较为专业的公式，计算方法不能够很好的理解，但这已经脱离我选修该门课程的初衷了，我选择该门课程，最主要是想提高自己的能力，同时在生活中我也在着手使用服务器搭建个人网站等与互联网有关的事情，因此该门课程对我很有帮助，以前我只知道在域名解析处填写好对应的数据就可以通过域名访问网站，却不知其中原理，经过老师的讲解后，我才知道在其之后运作机制。因此，只要该门课程对我来说是有用的，我从中受益了，我的选择就没有错误。</p>
+<p>二、建议</p>
+<ol>
+<li>适当增加课堂互动，不知是否是线上教学的原因，上课过程中缺少课堂互动，学生很难获得反馈，长时间保持这样的状态注意力容易分散</li>
+<li>适当增加课堂演示，或者相关演示视频，将一些知识点通过现场演示的方式展示给同学，不仅可以加深同学对该知识点的印象，也能够提高同学们对该门课程的兴趣</li>
+</ol>
 ]]></content>
       <categories>
-        <category>日常</category>
+        <category>技术</category>
       </categories>
       <tags>
-        <tag>节日</tag>
-        <tag>miku</tag>
+        <tag>计算机</tag>
+        <tag>网络</tag>
       </tags>
   </entry>
   <entry>
@@ -2574,79 +2624,6 @@
       </tags>
   </entry>
   <entry>
-    <title>计算机网络结课作业</title>
-    <url>/2022/05/computerhomework.html</url>
-    <content><![CDATA[<h2 id="第一题——家庭拓扑结构"><a href="#第一题——家庭拓扑结构" class="headerlink" title="第一题——家庭拓扑结构"></a>第一题——家庭拓扑结构</h2><p>一、结构规划</p>
-<ul>
-<li>确定小区网线接入点（控制中心）：书房</li>
-<li>规划每个房间布置 3 个网点，共 18 个网点</li>
-<li>联网设备：书房一台电脑，客厅，卧室各一台有线电视，卧室各一台电脑等</li>
-</ul>
-<p>二、材料规划</p>
-<ul>
-<li>每个网点需要水晶头、网点模块各 1 个，共计水晶头 18 个，网点模块 18 个。</li>
-<li>需要超七类网线 18 条，长度共计 50m 左右</li>
-<li>路由器：斐讯 K2P</li>
-</ul>
-<p>三、接线与路由器设置</p>
-<ol>
-<li><p>接线：将小区网线接在路由器的 LAN 上，路由器的 WAN 口分别接上交换机与书房电脑。其余网线都接在交换机上</p>
-<p>拓扑布线结构图：</p>
-</li>
-</ol>
-<p><img data-src="https://img.fufu.ink/wuqSko.webp" alt="家庭网络拓扑"></p>
-<ol start="2">
-<li>路由器配置<ul>
-<li>开启内网 IP</li>
-<li>配置防火墙</li>
-</ul>
-</li>
-</ol>
-<h2 id="第二题——设想"><a href="#第二题——设想" class="headerlink" title="第二题——设想"></a>第二题——设想</h2><p>一、物联网</p>
-<p>物联网，即万物互联，指的是只需有限的人工干预即可通过无线网络接收和传输数据的任何物理设备系统。设想一下，当你疲惫地从公司上班回家后，打开门时，不需要你摸黑寻找电灯开关，电灯会自动打开，当你在换衣服时，热水壶已经开始加热热水，准备好温度合适的热水，电视机自动开机，并播放这个时间点你平时观看次数最多的节目。这就是万物互联中一个典型的例子，无需人的过多干涉，它会为你规划好一切。</p>
-<p>我们现在的生活中已经隐约出现了物联网的轮廓了，虽然还有很多不足，但证明了物联网在未来是可行的。小米家居就是一个很好的例子，比如进入家门的第一步——开锁，现在还有很多地方使用的门锁还是传统的门锁，而小米的智能门锁除了支持指纹识别开锁、密码开锁、还支持 NFC 开锁，即使用支持 NFC 功能的小米手机靠一下门锁即可打开，并且无需手动旋&#x2F;推拉把手的动作，锁舌会自动打开与关上，若家主人装上了相应软件，还能够在手机上查看门锁的状态，通过摄像头能够实时看到门前的状况。</p>
-<p>上面的只是一个小例子，即以现在的技术能实现的让物品与互联网相接的程度，还有将来的无人驾驶等，都是证明物联网的可行性的证据。</p>
-<p>二、元宇宙</p>
-<p>元宇宙，即一个持久化和去中心化的在线三维虚拟环境。”Metaverse”一词最早见于尼尔·斯蒂芬森1992年的科幻小说《雪崩》，Metaverse是一个虚拟的城市环境，沿着一条100米宽的道路发展，覆盖了一个无特征的、黑色的、完美球形星球上整个65536公里周长。这个虚拟世界中的土地可以被购买，并在上面开发建筑。而这个概念在 2021 年突然就火了，Facebook 的扎克伯格在 Facebook Connect 演讲中展示了 Meta 在未来的应用场景和业内的方案雏形，各大巨头也相继开始宣称进军该领域。</p>
-<p>元宇宙是一个虚拟的世界，虚拟就意味着可复制，因此如果要将现实世界映射到这个虚拟世界中，这就是一个巨大的问题，于是可以运用区块链技术与去中心化技术，再具体点就是非同质化代币，即利用其无法互换的特性，可以将其作为虚拟商品所有权的电子认证或证书，虽然作品本身是可以无限复制的，但这些代表它们的代币在其底层区块链上能被完整追踪，故能为买家提供所有权证明。这样就解决了在元宇宙中，无法证明资产所属的问题了。</p>
-<p>但现在的元宇宙还只是一个概念，虽然有很多东西都应用到了其原理，比如 VR（虚拟现实）、AR（增强现实）技术，带上 VR 眼镜就能在虚拟世界中有身临其境的感觉，而 AR 眼镜又能看到虚拟世界与现实相结合的视角，但如果把元宇宙技术的发展比作100米长跑，现在最顶级的运用到该概念的技术也只跑了10米左右，就从工具上来说，连接现实与虚拟的工具，现在的技术即 VR 眼镜或 AR 眼镜，即使是业内排名靠前的 Facebook、微软等巨头的产品的分辨率、刷新率、舒适度都还有许多问题，元宇宙要走的路还很长。</p>
-<p>三、区块链</p>
-<p>是借由密码学与共识机制等技术创建与存储庞大交易资料区块链的点对点网络系统。每一个区块包含了前一个区块的加密散列、相应时间戳记以及交易资料（通常用默克尔树（Merkle tree）算法计算的散列值表示），这样的设计使得区块内容具有难以篡改的特性。</p>
-<p>区块链最大的特点是去中心化、不可篡改，因此其可用于各种领域。在现在最大的应用是数字货币，比如「比特币」等虚拟货币和运用了区块链部分技术的「数字人名币」。也可用于物源追踪，产品从起源地到终点所在的过程都可以通过区块链来追踪。而且，这类准确的溯源方式，可以用来检测供应链中的缺陷。还可用于教育领域，将区块链技术应用到学历证书上，即可有效防止伪造学历等事情的发生，将学生成绩以区块链形式记录，从而形成不可更改不可否认的学习记录，保证了公平性。</p>
-<h2 id="第三题——感想和建议"><a href="#第三题——感想和建议" class="headerlink" title="第三题——感想和建议"></a>第三题——感想和建议</h2><p>一、感想</p>
-<p>本课程教学方式与传统的集中于知识点的讲解的教学方式不同，旨在通过将生活中熟悉的事物和抽象的计算机网络相关专业知识结合起来讲解的方式来使学生能够容易地理解、消化知识点，不仅增加了学习的乐趣，也能够增加我们对生活的感悟。</p>
-<p>计算机是抽象的，但也是具体的。说它是抽象的，是因为它的运作方式，内部结构都很复杂，很难在大脑中形成一个完整地架构。说它是具体的，是因为「艺术来源于生活，高于生活」，同理，我们也可以说「科技来源于生活而高于生活」，计算机的抽象展现了它高于生活的一面，而它具体的一面则体现在它的设计原理来源于生活，它的设计都是以「人」和「世界」等为参照的，因此也符合人的思维方式，比如，二进制的产生就来源于中国的古老的太极八卦图。</p>
-<p>本门课程名为《计算机网络及互联网技术》，在开篇中老师就提到，计算机之间的通信构成了计算机网络，无论计算机网络的内容多么复杂，其最终目的都是为了实现资源的共享，因此全课程的内容，从根本上讲，都是围绕其展开的。由于疫情原因，我们的课程只能以网课的形式进行，无法通过实践操作加深对这些知识点的理解，老师也尽力通过具体的讲解来让我们理解这些知识点。尽管我是一个文科生，但我对计算机感兴趣，因此对这门课程也有浓厚的兴趣，当然，由于我没有涉及过理科相关的知识（即使学习过也由于时间较长忘记了），对于 PPT 中一些较为专业的公式，计算方法不能够很好的理解，但这已经脱离我选修该门课程的初衷了，我选择该门课程，最主要是想提高自己的能力，同时在生活中我也在着手使用服务器搭建个人网站等与互联网有关的事情，因此该门课程对我很有帮助，以前我只知道在域名解析处填写好对应的数据就可以通过域名访问网站，却不知其中原理，经过老师的讲解后，我才知道在其之后运作机制。因此，只要该门课程对我来说是有用的，我从中受益了，我的选择就没有错误。</p>
-<p>二、建议</p>
-<ol>
-<li>适当增加课堂互动，不知是否是线上教学的原因，上课过程中缺少课堂互动，学生很难获得反馈，长时间保持这样的状态注意力容易分散</li>
-<li>适当增加课堂演示，或者相关演示视频，将一些知识点通过现场演示的方式展示给同学，不仅可以加深同学对该知识点的印象，也能够提高同学们对该门课程的兴趣</li>
-</ol>
-]]></content>
-      <categories>
-        <category>技术</category>
-      </categories>
-      <tags>
-        <tag>计算机</tag>
-        <tag>网络</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>诈尸更新一下最近状态</title>
-    <url>/2023/07/natsuyasumijyoutai.html</url>
-    <content><![CDATA[<p>一个月没更新力。</p>
-<p>主要是没啥想法，每天宅在家里，打游戏，追番（这一个月可追了不少番——齐木楠雄的灾难，别当欧尼酱了，鬼灭，文豪野犬，因为太怕痛就全点防御力了，无职转生，无神世界中的神明活动，僵尸百分百，魔禁……算是把高中以来没怎么看番的时间全补回来了）。</p>
-<p>科二因为挂两回了，拖了两年了，明年要过期了，最近又开始练了。今天去考场中模拟了一个小时，除了最后一圈坡上起步因为边线距离扣了 10 分，都是 100 分，感觉下次考试应该问题不大了，现在开始准备科三了。科三打算 C1 转 C2 了，因为不用在意档位的变换，科三考试可以更稳地通过，现在主要是要求暑假结束前拿到驾照，否则拖到寒假就容易过期了。至于 C1 和 C2 的区别，上网查了一下，似乎是 C1 可以开蓝牌车，但 C2 只能开小型驾驶车？嘛，以后我也不会有机会去开手动挡啦，驾照这东西不就是图个方便么，怎么快速方便怎么来，没必要死磕个手动挡为难自己。</p>
-<p>家里躺了三周了，得开始准备下半年的 N1 了，虽然上个月的专四大概率挂了，但是 N1 还是得拿的，拿了就可以开始接一些小的翻译工作赚点零花钱了！</p>
-]]></content>
-      <categories>
-        <category>日常</category>
-      </categories>
-      <tags>
-        <tag>生活</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>论打造文化背景下日本美食文化中日双语科普介绍平台的可行性</title>
     <url>/2022/05/dachuangzuoye.html</url>
     <content><![CDATA[<blockquote>
@@ -2695,6 +2672,21 @@
         <tag>中外交流</tag>
         <tag>美食文化</tag>
         <tag>创业创新</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>诈尸更新一下最近状态</title>
+    <url>/2023/07/natsuyasumijyoutai.html</url>
+    <content><![CDATA[<p>一个月没更新力。</p>
+<p>主要是没啥想法，每天宅在家里，打游戏，追番（这一个月可追了不少番——齐木楠雄的灾难，别当欧尼酱了，鬼灭，文豪野犬，因为太怕痛就全点防御力了，无职转生，无神世界中的神明活动，僵尸百分百，魔禁……算是把高中以来没怎么看番的时间全补回来了）。</p>
+<p>科二因为挂两回了，拖了两年了，明年要过期了，最近又开始练了。今天去考场中模拟了一个小时，除了最后一圈坡上起步因为边线距离扣了 10 分，都是 100 分，感觉下次考试应该问题不大了，现在开始准备科三了。科三打算 C1 转 C2 了，因为不用在意档位的变换，科三考试可以更稳地通过，现在主要是要求暑假结束前拿到驾照，否则拖到寒假就容易过期了。至于 C1 和 C2 的区别，上网查了一下，似乎是 C1 可以开蓝牌车，但 C2 只能开小型驾驶车？嘛，以后我也不会有机会去开手动挡啦，驾照这东西不就是图个方便么，怎么快速方便怎么来，没必要死磕个手动挡为难自己。</p>
+<p>家里躺了三周了，得开始准备下半年的 N1 了，虽然上个月的专四大概率挂了，但是 N1 还是得拿的，拿了就可以开始接一些小的翻译工作赚点零花钱了！</p>
+]]></content>
+      <categories>
+        <category>日常</category>
+      </categories>
+      <tags>
+        <tag>生活</tag>
       </tags>
   </entry>
 </search>
