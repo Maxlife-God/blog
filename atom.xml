@@ -6,7 +6,7 @@
   <link href="https://blog.fufu.ink/atom.xml" rel="self"/>
   
   <link href="https://blog.fufu.ink/"/>
-  <updated>2024-05-03T10:30:55.000Z</updated>
+  <updated>2024-05-03T13:50:55.000Z</updated>
   <id>https://blog.fufu.ink/</id>
   
   <author>
@@ -17,13 +17,63 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>【笔记·古典日语】助动词「まじ」</title>
+    <link href="https://blog.fufu.ink/2024/05/kobun21.html"/>
+    <id>https://blog.fufu.ink/2024/05/kobun21.html</id>
+    <published>2024-05-03T13:50:55.000Z</published>
+    <updated>2024-05-03T13:50:55.000Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="活用·接续"><a href="#活用·接续" class="headerlink" title="活用·接续"></a>活用·接续</h2><p>活用</p><p><img data-src="https://img.fufu.ink/PRKEST.webp"></p><p>接续：<strong>终止形 + まじ</strong></p><p>特殊：<strong>前续ラ变动词以及ラ变型时要接连体形！</strong></p><h2 id="作用"><a href="#作用" class="headerlink" title="作用"></a>作用</h2><p>作用有 5 个</p><ul><li>打消推量：否定的推量，翻译为现代日语即为「～ないだろう」，特征多为「主语为<strong>第三人称</strong>」</li><li>打消意志：否定的意志，翻译为现代日语即为「～ないつもりだ」「～まい（这里的 まい 表示<strong>否定的意志</strong>）」，特征多为「主语为<strong>第一人称</strong>」</li><li>不可能：翻译为现代日语即为「～できないだろう」「～できそうもない」</li><li>打消当然：表示否定的理所当然，翻译为现代日语即为「～べきではない」「～はずがない」</li><li>禁止・不適当：翻译为现代日语即为「～てはならない」「～しないほうがよい」，特征多为「主语为<strong>第二人称</strong>」</li></ul>]]></content>
+    
+    
+    <summary type="html">表示「否定的推量」「否定的意志」「不可能」「否定的理所当然」「禁止・不適当」</summary>
+    
+    
+    
+    <category term="日语" scheme="https://blog.fufu.ink/categories/%E6%97%A5%E8%AF%AD/"/>
+    
+    
+    <category term="日语" scheme="https://blog.fufu.ink/tags/%E6%97%A5%E8%AF%AD/"/>
+    
+    <category term="古典日语" scheme="https://blog.fufu.ink/tags/%E5%8F%A4%E5%85%B8%E6%97%A5%E8%AF%AD/"/>
+    
+    <category term="语法" scheme="https://blog.fufu.ink/tags/%E8%AF%AD%E6%B3%95/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>【笔记·古典日语】助动词「じ」</title>
+    <link href="https://blog.fufu.ink/2024/05/kobun20.html"/>
+    <id>https://blog.fufu.ink/2024/05/kobun20.html</id>
+    <published>2024-05-03T13:28:32.000Z</published>
+    <updated>2024-05-03T13:28:32.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>活用没有变化，和基本型一致</p><table><thead><tr><th align="center">活用</th><th align="center">じ</th></tr></thead><tbody><tr><td align="center">未然形</td><td align="center"></td></tr><tr><td align="center">连用形</td><td align="center"></td></tr><tr><td align="center">终止形</td><td align="center">じ</td></tr><tr><td align="center">连体形</td><td align="center">じ</td></tr><tr><td align="center">已然形</td><td align="center">じ</td></tr><tr><td align="center">命令形</td><td align="center"></td></tr></tbody></table><p>接续：<strong>未然形 + じ</strong></p><p>作用：</p><ul><li>打消推量：否定的推量，翻译为现代日语即为「～ないだろう」，特征多为「主语为<strong>第三人称</strong>」</li><li>打消意志：否定的意志，翻译为现代日语即为「～ないつもりだ」「～まい（这里的 まい 表示<strong>否定的意志</strong>）」，特征多为「主语为<strong>第一人称</strong>」</li></ul>]]></content>
+    
+    
+    <summary type="html">表示「否定的推量」和「否定的意志」</summary>
+    
+    
+    
+    <category term="日语" scheme="https://blog.fufu.ink/categories/%E6%97%A5%E8%AF%AD/"/>
+    
+    
+    <category term="日语" scheme="https://blog.fufu.ink/tags/%E6%97%A5%E8%AF%AD/"/>
+    
+    <category term="古典日语" scheme="https://blog.fufu.ink/tags/%E5%8F%A4%E5%85%B8%E6%97%A5%E8%AF%AD/"/>
+    
+    <category term="语法" scheme="https://blog.fufu.ink/tags/%E8%AF%AD%E6%B3%95/"/>
+    
+  </entry>
+  
+  <entry>
     <title>【笔记·古典日语】助动词「ず」</title>
     <link href="https://blog.fufu.ink/2024/05/kobn19.html"/>
     <id>https://blog.fufu.ink/2024/05/kobn19.html</id>
     <published>2024-05-03T10:30:55.000Z</published>
     <updated>2024-05-03T10:30:55.000Z</updated>
     
-    <content type="html"><![CDATA[<h2 id="活用·接续"><a href="#活用·接续" class="headerlink" title="活用·接续"></a>活用·接续</h2><p>活用</p><p><img data-src="https://img.fufu.ink/LsD41h.webp"></p><p>接续：未然形 + ず</p><p>作用：表示<strong>否定</strong>。翻译为现代日语即为「～ない」</p><p>需要注意的是「ずは」因为「は」的存在，表示的是<strong>假设</strong>，翻译为现代日语即为「～なければ・～ないならば」等</p>]]></content>
+    <content type="html"><![CDATA[<p>活用</p><p><img data-src="https://img.fufu.ink/LsD41h.webp"></p><p>接续：未然形 + ず</p><p>作用：表示<strong>否定</strong>。翻译为现代日语即为「～ない」</p><p>需要注意的是「ずは」因为「は」的存在，表示的是<strong>假设</strong>，翻译为现代日语即为「～なければ・～ないならば」等</p>]]></content>
     
     
     <summary type="html">只有一个意思——否定！</summary>
@@ -470,59 +520,6 @@
     <category term="Hexo" scheme="https://blog.fufu.ink/tags/Hexo/"/>
     
     <category term="Next" scheme="https://blog.fufu.ink/tags/Next/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Next 主题添加公告栏</title>
-    <link href="https://blog.fufu.ink/2024/04/nextaddnotice.html"/>
-    <id>https://blog.fufu.ink/2024/04/nextaddnotice.html</id>
-    <published>2024-04-19T08:13:33.000Z</published>
-    <updated>2024-04-19T08:13:33.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>字面意思，给 Next 主题添加个公告栏，不过由于 Next 侧边栏只在宽屏上显示，在手机上是看不到的。</p><p>适用范围：Next·Pisces 主题</p><span id="more"></span><p>打开 <code>hexo/themes/next/layout/_macro/sidebar.njk</code>，在 <code>&lt;/aside&gt;</code> 与最后一个 <code>&#123;%- endif %&#125;</code> 之间添加以下代码</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line">&#123;%- if theme.related_posts.enable %&#125;</span><br><span class="line">      &#123;%- if theme.pjax %&#125;</span><br><span class="line">        &lt;div class=&quot;pjax&quot;&gt;</span><br><span class="line">      &#123;%- endif %&#125;</span><br><span class="line">      &#123;%- if page.related_posts and page.related_posts.length &gt; 0 %&#125;</span><br><span class="line">        &lt;div class=&quot;sidebar-inner sidebar-post-related&quot;&gt;</span><br><span class="line">          &lt;div class=&quot;animated&quot;&gt;</span><br><span class="line">            &#123;&#123; partial(&#x27;_partials/post/post-related.njk&#x27;) &#125;&#125;</span><br><span class="line">          &lt;/div&gt;</span><br><span class="line">        &lt;/div&gt;</span><br><span class="line">      &#123;%- endif %&#125;</span><br><span class="line">      &#123;%- if theme.pjax %&#125;</span><br><span class="line">        &lt;/div&gt;</span><br><span class="line">      &#123;%- endif %&#125;</span><br><span class="line">    &#123;%- endif %&#125;</span><br><span class="line"></span><br><span class="line">+    &#123;%- if theme.notice.enable %&#125;</span><br><span class="line">+      &#123;%- if theme.pjax %&#125;</span><br><span class="line">+        &lt;div class=&quot;pjax&quot;&gt;</span><br><span class="line">+      &#123;%- endif %&#125;</span><br><span class="line">+      &#123;%- if theme.notice.content.length &gt; 0 %&#125;</span><br><span class="line">+        &lt;div class=&quot;sidebar-inner notice&quot; style=&quot;padding: 18px;&quot;&gt;</span><br><span class="line">+          &lt;div class=&quot;notice-title&quot; style=&quot;font-size: 1.2em;text-align: left;&quot;&gt;</span><br><span class="line">+            &lt;i class=&quot;fa-solid fa-bullhorn&quot;&gt;&lt;/i&gt;</span><br><span class="line">+            &lt;span style=&quot;margin-left: 6px;&quot;&gt;公告&lt;/span&gt;</span><br><span class="line">+          &lt;/div&gt;</span><br><span class="line">+          &lt;div class=&quot;notice-content&quot; style=&quot;text-align: justify;&quot;&gt;</span><br><span class="line">+            &#123;&#123; theme.notice.content &#125;&#125;</span><br><span class="line">+          &lt;/div&gt;</span><br><span class="line">+        &lt;/div&gt;</span><br><span class="line">+      &#123;%- endif %&#125;</span><br><span class="line">+      &#123;%- if theme.pjax %&#125;</span><br><span class="line">+        &lt;/div&gt;</span><br><span class="line">+      &#123;%- endif %&#125;</span><br><span class="line">+    &#123;%- endif %&#125;</span><br><span class="line">&lt;/aside&gt;</span><br><span class="line">&#123;% endmacro %&#125;</span><br></pre></td></tr></table></figure><p>以下为方便复制的版本</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">&#123;%- if theme.notice.enable %&#125;</span><br><span class="line">      &#123;%- if theme.pjax %&#125;</span><br><span class="line">        &lt;div class=&quot;pjax&quot;&gt;</span><br><span class="line">      &#123;%- endif %&#125;</span><br><span class="line">      &#123;%- if theme.notice.content.length &gt; 0 %&#125;</span><br><span class="line">        &lt;div class=&quot;sidebar-inner notice&quot; style=&quot;padding: 18px;&quot;&gt;</span><br><span class="line">          &lt;div class=&quot;notice-title&quot; style=&quot;font-size: 1.2em;text-align: left;&quot;&gt;</span><br><span class="line">            &lt;i class=&quot;fa-solid fa-bullhorn&quot;&gt;&lt;/i&gt;</span><br><span class="line">            &lt;span style=&quot;margin-left: 6px;&quot;&gt;公告&lt;/span&gt;</span><br><span class="line">          &lt;/div&gt;</span><br><span class="line">          &lt;div class=&quot;notice-content&quot; style=&quot;text-align: justify;&quot;&gt;</span><br><span class="line">            &#123;&#123; theme.notice.content &#125;&#125;</span><br><span class="line">          &lt;/div&gt;</span><br><span class="line">        &lt;/div&gt;</span><br><span class="line">      &#123;%- endif %&#125;</span><br><span class="line">      &#123;%- if theme.pjax %&#125;</span><br><span class="line">        &lt;/div&gt;</span><br><span class="line">      &#123;%- endif %&#125;</span><br><span class="line">&#123;%- endif %&#125;</span><br></pre></td></tr></table></figure><p>然后在主题配置 <code>_config.next.yml</code> 中添加以下内容</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">notice:</span><br><span class="line">  enable: true</span><br><span class="line">  content: #公告内容</span><br></pre></td></tr></table></figure><p>样式写的很简单，如有需要请自行更改。</p>]]></content>
-    
-    
-    <summary type="html">&lt;p&gt;字面意思，给 Next 主题添加个公告栏，不过由于 Next 侧边栏只在宽屏上显示，在手机上是看不到的。&lt;/p&gt;
-&lt;p&gt;适用范围：Next·Pisces 主题&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="技术" scheme="https://blog.fufu.ink/categories/%E6%8A%80%E6%9C%AF/"/>
-    
-    
-    <category term="教程" scheme="https://blog.fufu.ink/tags/%E6%95%99%E7%A8%8B/"/>
-    
-    <category term="技术" scheme="https://blog.fufu.ink/tags/%E6%8A%80%E6%9C%AF/"/>
-    
-    <category term="Hexo" scheme="https://blog.fufu.ink/tags/Hexo/"/>
-    
-    <category term="Next" scheme="https://blog.fufu.ink/tags/Next/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>【笔记·古典日语】动词活用</title>
-    <link href="https://blog.fufu.ink/2024/04/kobun4.html"/>
-    <id>https://blog.fufu.ink/2024/04/kobun4.html</id>
-    <published>2024-04-16T07:52:45.000Z</published>
-    <updated>2024-04-16T07:52:45.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>古典日语中动词有 9 种活用，分为正格活用和变格活用</p><p><img data-src="https://img.fufu.ink/WOpQGT.webp" alt="古典日语动词活用"></p><p>需要注意的是，动词的活用类型是由其活用词尾，即<strong>变化的部分</strong>来决定的，先确定行，然后确定段，加起来就是该动词的活用类型</p><h2 id="活用规则"><a href="#活用规则" class="headerlink" title="活用规则"></a>活用规则</h2><p>四段动词</p><div class="group-picture"><div class="group-picture-row"><div class="group-picture-column"><img data-src="https://img.fufu.ink/IiWGaF.webp" alt="被称为四段动词的原因"></div><div class="group-picture-column"><img data-src="https://img.fufu.ink/ShLlJy.webp" alt="四段动词活用-2"></div></div></div><p>总结：</p><ul><li>未然形：词尾变为ア段</li><li>连用形：词尾变为イ段</li><li>终止形：与基本形一致</li><li>连体形：与基本形一致</li><li>已然形：词尾变为ヘ段</li><li>命令形：词尾变为ヘ段</li></ul><p>上&#x2F;下一段动词·上&#x2F;下二段动词</p><div class="group-picture"><div class="group-picture-row"><div class="group-picture-column"><img data-src="https://img.fufu.ink/Y0xgFL.webp" alt="上一段动词-上二段动词活用规则"></div><div class="group-picture-column"><img data-src="https://img.fufu.ink/JP8212.webp" alt="下一段动词活用-下二段动词活用"></div></div></div><p>总结：</p><p>上·下一段动词：</p><ul><li>未然形：去掉词尾る</li><li>连用形：去掉词尾る</li><li>终止形：与基本形一致</li><li>连体形：与基本形一致</li><li>已然形：词尾变为エ段</li><li>命令形：去る加よ</li></ul><p>上二段动词：</p><ul><li>未然形：词尾变为イ段</li><li>连用形：词尾变为イ段</li><li>终止形：与基本形一致</li><li>连体形：加る</li><li>已然形：加れ</li><li>命令性：词尾变为イ段加よ</li></ul><p>下二段动词：</p><ul><li>未然形：词尾变为エ段</li><li>连用形：词尾变为エ段</li><li>终止形：与基本形一致</li><li>连体形：加る</li><li>已然形：加れ</li><li>命令性：词尾变为エ段加よ</li></ul><p>为什么「見る」被称为<strong>マ行上一段活用动词</strong>：首先，动词的活用类型是由变化的部分（活用词尾）决定的，見る无法分为词干和词尾，则将みる、みれ、みよ后面的る、れ、よ都忽略掉，可将变化的部分看作是み，み属于マ行，变化的部分只在イ段一个段上，因此叫做一段。若把ア·イ·ウ·エ·オ段的ウ段看作是这五个段的正中央的段的话，イ段就属于ウ段往上数一个段，因此叫上一段。因此「見る」的变化部分是在マ行的上一段，因此「見る」的活用类型为マ行上一段活用</p><p>为什么「過ぐ」是<strong>ガ行上二段活用动词</strong>：同理，变化的部分是词尾ぐ，ぐ属于ガ行，变化发生在イ段和ウ段 2 个段上，因此称为二段，且是以ウ段为中心向上数，因此称为上二段，因此「過ぐ」变化发生在ガ行的上二段，因此「過ぐ」是ガ行上二段活用动词</p><p>〇行下一&#x2F;二段动词定义同理，先由变化的部分所在的行确定发生变化的行这一部分，再看发生变化的段，下一段这里是变化发生在エ段，且只在エ段 1 段上变化，エ段在ウ段往下数一个段，因此称为下一段。下两段则为：变化发生在ウ·エ段 2 段上，且是从ウ段开始往下数两个段，因此称为下两段。</p><p><strong>下一段动词只有「蹴る」</strong></p><p>カ变动词——来（注意与现代日语不同的活用形式以及命令形是こ·こよ）</p><p><img data-src="https://img.fufu.ink/SCX8Hz.webp" alt="カ变动词活用"></p><p>サ变动词</p><p>サ变动词有两个：す、おはす（可以分为词干おは与词尾す，因此活用时只改变す部分）</p><p><img data-src="https://img.fufu.ink/sL2ucK.webp" alt="サ变动词活用"></p><p>ナ变动词</p><p>ナ变动词有两个：死ぬ、往（去）ぬ</p><p><img data-src="https://img.fufu.ink/YmHIwQ.webp" alt="ナ变动词活用"></p><p>ラ变动词</p><p>ラ变动词有四个：あり、をり、はべり、いまそかり</p><p><img data-src="https://img.fufu.ink/i9SFSX.webp" alt="ラ变动词活用"></p><h2 id="区分方法"><a href="#区分方法" class="headerlink" title="区分方法"></a>区分方法</h2><p>上一段动词与现代日语部分相似，即以る结尾，倒数第二个假名在イ段上</p><p>下一段动词只有「蹴る」一个</p><p>サ变动词：す、おはす</p><p>カ变动词：来</p><p>ナ变动词：死ぬ、往（去）ぬ</p><p>ラ变动词：あり、をり、はべり、いまそかり</p><p>不属于以上分类的：使用「V 未然形 + ず」进行判断</p><ul><li>若ず前面的假名在ア段上，则为<strong>四段动词</strong></li><li>若ず前面的假名在イ段上，则为<strong>上二段动词</strong></li><li>若ず前面的假名在エ段上，则为<strong>下二段动词</strong></li></ul><p>使用 ず 无法判断的特例：</p><p>四段动词：<ruby>借<rt>か</rt>る</ruby> <ruby>足<rt>た</rt>る</ruby> <ruby>飽<rt>あ</rt>く</ruby> </p><p>*但从现代日语的角度来说，三者均为五段动词，接 ず 时词尾确实是ア段，符合四段动词特征，视频中举的例子则为 借りる 足りる 飽きる，均为一段动词，因此有点不清楚为什么老师说容易弄错。</p><p><strong>マ行上二段动词：恨む</strong></p><p><img data-src="https://img.fufu.ink/kAUckn.webp"></p><p>ア行活用的只有「<ruby>得<rt>う</rt></ruby>」「<ruby>心得<rt>こころう</rt></ruby>」两个词汇，其他的都不是ア行的活用</p><div class="group-picture"><div class="group-picture-row"><div class="group-picture-column"><img data-src="https://img.fufu.ink/HSHPFA.webp"></div><div class="group-picture-column"><img data-src="https://img.fufu.ink/fVZn0r.webp"></div></div></div><p>终止形是一个字的动词</p><p><img data-src="https://img.fufu.ink/9Y5Vyr.webp"></p><p>有两种种类活用的动词，四段活用是向内，下二段是向外</p><p><img data-src="https://img.fufu.ink/OXmk6L.webp"></p>]]></content>
-    
-    
-    <summary type="html">努努力还能记住，就是记忆方法和之前有点区别，需要一些时间习惯</summary>
-    
-    
-    
-    <category term="日语" scheme="https://blog.fufu.ink/categories/%E6%97%A5%E8%AF%AD/"/>
-    
-    
-    <category term="日语" scheme="https://blog.fufu.ink/tags/%E6%97%A5%E8%AF%AD/"/>
-    
-    <category term="古典日语" scheme="https://blog.fufu.ink/tags/%E5%8F%A4%E5%85%B8%E6%97%A5%E8%AF%AD/"/>
-    
-    <category term="语法" scheme="https://blog.fufu.ink/tags/%E8%AF%AD%E6%B3%95/"/>
     
   </entry>
   
