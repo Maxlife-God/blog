@@ -79,8 +79,8 @@ https://blog.fufu.ink/tags/%E6%95%99%E7%A8%8B/
 https://blog.fufu.ink/tags/%E6%8A%80%E6%9C%AF/
 https://blog.fufu.ink/tags/Hexo/
 https://blog.fufu.ink/tags/Next/
-https://blog.fufu.ink/tags/JavaScript/
 https://blog.fufu.ink/tags/CSS/
+https://blog.fufu.ink/tags/JavaScript/
 https://blog.fufu.ink/tags/%E4%B9%A6%E6%91%98/
 https://blog.fufu.ink/tags/%E5%B1%80%E5%A4%96%E4%BA%BA/
 https://blog.fufu.ink/tags/%E5%A0%95%E8%90%BD/
