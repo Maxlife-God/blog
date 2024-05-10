@@ -6,7 +6,7 @@
   <link href="https://blog.fufu.ink/atom.xml" rel="self"/>
   
   <link href="https://blog.fufu.ink/"/>
-  <updated>2024-05-03T13:50:55.000Z</updated>
+  <updated>2024-05-10T13:53:16.000Z</updated>
   <id>https://blog.fufu.ink/</id>
   
   <author>
@@ -15,6 +15,56 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>【笔记·古典日语】助动词「めり」</title>
+    <link href="https://blog.fufu.ink/2024/05/kobun23.html"/>
+    <id>https://blog.fufu.ink/2024/05/kobun23.html</id>
+    <published>2024-05-10T13:53:16.000Z</published>
+    <updated>2024-05-10T13:53:16.000Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="活用·接续"><a href="#活用·接续" class="headerlink" title="活用·接续"></a>活用·接续</h2><p>活用符合ラ变型活用</p><table><thead><tr><th align="center">活用</th><th align="center">めり</th></tr></thead><tbody><tr><td align="center">未然形</td><td align="center"></td></tr><tr><td align="center">连用形</td><td align="center">めり</td></tr><tr><td align="center">终止形</td><td align="center">めり</td></tr><tr><td align="center">连体形</td><td align="center">める</td></tr><tr><td align="center">已然形</td><td align="center">めれ</td></tr><tr><td align="center">命令形</td><td align="center"></td></tr></tbody></table><p>接续：终止形 + めり</p><p>特殊：<strong>ラ变型的连体形 + めり</strong></p><h2 id="作用"><a href="#作用" class="headerlink" title="作用"></a>作用</h2><p>表示推测和委婉</p><ul><li>推定：翻译为现代日语即为「～ようだ」「～ように見える」。特征是「对<strong>眼睛看到的</strong>事情进行推测」，即只是说话人<strong>看</strong>到了，他认为如此，事实也许并非如此</li><li>婉曲：翻译为现代日语即为「～ようだ」。特征为「对<strong>眼前</strong>的事情，避开断定的表达，而使用较为迂回婉转的表达进行表述」</li></ul><p>与 <a href="/kobun22">なり（伝聞·推定）</a>进行区分：</p><ul><li>なり（伝聞·推定）是基于<strong>听觉</strong>进行推测</li><li>めり 是基于<strong>视觉</strong>进行推测</li></ul>]]></content>
+    
+    
+    <summary type="html">表示推测和委婉</summary>
+    
+    
+    
+    <category term="日语" scheme="https://blog.fufu.ink/categories/%E6%97%A5%E8%AF%AD/"/>
+    
+    
+    <category term="日语" scheme="https://blog.fufu.ink/tags/%E6%97%A5%E8%AF%AD/"/>
+    
+    <category term="古典日语" scheme="https://blog.fufu.ink/tags/%E5%8F%A4%E5%85%B8%E6%97%A5%E8%AF%AD/"/>
+    
+    <category term="语法" scheme="https://blog.fufu.ink/tags/%E8%AF%AD%E6%B3%95/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>【笔记·古典日语】助动词「なり（伝聞推定）」</title>
+    <link href="https://blog.fufu.ink/2024/05/kobun22.html"/>
+    <id>https://blog.fufu.ink/2024/05/kobun22.html</id>
+    <published>2024-05-10T12:43:29.000Z</published>
+    <updated>2024-05-10T12:43:29.000Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="活用·接续"><a href="#活用·接续" class="headerlink" title="活用·接续"></a>活用·接续</h2><p>活用符合ラ变型活用</p><table><thead><tr><th align="center">活用</th><th align="center">なり（伝聞・推定）</th></tr></thead><tbody><tr><td align="center">未然形</td><td align="center"></td></tr><tr><td align="center">连用形</td><td align="center">なり</td></tr><tr><td align="center">终止形</td><td align="center">なり</td></tr><tr><td align="center">连体形</td><td align="center">なる</td></tr><tr><td align="center">已然形</td><td align="center">なれ</td></tr><tr><td align="center">命令形</td><td align="center"></td></tr></tbody></table><p>接续：终止形 + なり</p><p>特殊：<strong>ラ变型的连体形 + なり</strong></p><h2 id="作用"><a href="#作用" class="headerlink" title="作用"></a>作用</h2><p>表示传闻和推测</p><ul><li>伝聞：翻译为现代日语即为「～ということだ」「～そうだ」。特征为「说话人将从别人那里听来的话再传达给听话人」，一般会出现「聞く」等词</li><li>推定：即推测，翻译为现代日语即为「～らしい・～ようだ・～の音（声）が聞こえる」。特征为「根据听到的<strong>声音</strong>进行判断和推测」</li></ul><p>与表示<strong>断定</strong>的 なり 的区分方法：</p><p>以下情况的 なり 均表示<strong>传闻·推测</strong></p><ul><li>消失的拨音便 + なり，如「あるなり→あんなり→あなり」，其中「あなり」的「なり」是表示<strong>传闻·推测</strong>的「なり」</li><li>係り結び 中的 結び 部分，即文末部分为「なる・なれ」，且「なる・なれ」作助动词（即前面接续活用语）时，如「（病気になったのは）例の御もののけとぞいふなる。」中作为 係り 的 ぞ 出现了，作为 結び 的 なり 的连体形 なる 的前面是动词「いふ」，此时的「なる」是表示<strong>传闻</strong>的「なる」</li></ul>]]></content>
+    
+    
+    <summary type="html">表示传闻与推测</summary>
+    
+    
+    
+    <category term="日语" scheme="https://blog.fufu.ink/categories/%E6%97%A5%E8%AF%AD/"/>
+    
+    
+    <category term="日语" scheme="https://blog.fufu.ink/tags/%E6%97%A5%E8%AF%AD/"/>
+    
+    <category term="古典日语" scheme="https://blog.fufu.ink/tags/%E5%8F%A4%E5%85%B8%E6%97%A5%E8%AF%AD/"/>
+    
+    <category term="语法" scheme="https://blog.fufu.ink/tags/%E8%AF%AD%E6%B3%95/"/>
+    
+  </entry>
   
   <entry>
     <title>【笔记·古典日语】助动词「まじ」</title>
@@ -465,61 +515,6 @@
     <category term="古典日语" scheme="https://blog.fufu.ink/tags/%E5%8F%A4%E5%85%B8%E6%97%A5%E8%AF%AD/"/>
     
     <category term="语法" scheme="https://blog.fufu.ink/tags/%E8%AF%AD%E6%B3%95/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>【笔记·古典日语】形容词</title>
-    <link href="https://blog.fufu.ink/2024/04/kobun5.html"/>
-    <id>https://blog.fufu.ink/2024/04/kobun5.html</id>
-    <published>2024-04-19T14:00:58.000Z</published>
-    <updated>2024-04-19T14:00:58.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>形容词分为两类，通过「なる」的接续判断</p><p><img data-src="https://img.fufu.ink/S6lKGs.webp"></p><p><img data-src="https://img.fufu.ink/rrXv0C.webp"></p><p>两者除了终止形变形方式不同，其余变形方式一致。补助活用的活用词尾的活用方式与ラ变动词「あり」的活用方式一致，因此属于<strong>ラ变形</strong></p><p><img data-src="https://img.fufu.ink/U2aUwf.webp"></p><p>补助活用一般后续助动词，本活用一般后续助词或其他</p><p>特例：</p><p><img data-src="https://img.fufu.ink/skZm8P.webp"></p>]]></content>
-    
-    
-    <summary type="html">好好好，更难了</summary>
-    
-    
-    
-    <category term="日语" scheme="https://blog.fufu.ink/categories/%E6%97%A5%E8%AF%AD/"/>
-    
-    
-    <category term="日语" scheme="https://blog.fufu.ink/tags/%E6%97%A5%E8%AF%AD/"/>
-    
-    <category term="古典日语" scheme="https://blog.fufu.ink/tags/%E5%8F%A4%E5%85%B8%E6%97%A5%E8%AF%AD/"/>
-    
-    <category term="语法" scheme="https://blog.fufu.ink/tags/%E8%AF%AD%E6%B3%95/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Next 主题添加说说</title>
-    <link href="https://blog.fufu.ink/2024/04/nextaddessay.html"/>
-    <id>https://blog.fufu.ink/2024/04/nextaddessay.html</id>
-    <published>2024-04-19T08:46:18.000Z</published>
-    <updated>2024-04-19T08:46:18.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>看见洪哥的即刻页面很好看，想 Copy 过来，可惜技术不行，写不来瀑布流，就只能搞个简单的 flex 布局。</p><p>原理和友链页面是一样的，模版文件遍历 <code>hexo/source/_data</code> 文件夹下的 yml 然后循环生成结构。</p><p>在这里感谢好朋友 <a href="https://miku.show/">@OrzMiku</a> 的帮助，修改该博客过程中，很多问题都是通过大佬耐心解答才得以解决 Orz</p><p>废话不多说，直接 <code>Ctrl + C / V</code> 走起</p><span id="more"></span><p>在 <code>hexo/themes/next/layout/</code> 下创建 <code>essay.njk</code> 并写入以下内容</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br></pre></td><td class="code"><pre><span class="line">    &#123;##################&#125;</span><br><span class="line">    &#123;### ESSAY BLOCK ###&#125;</span><br><span class="line">    &#123;##################&#125;</span><br><span class="line"></span><br><span class="line">&lt;style&gt;</span><br><span class="line">#bber * &#123;</span><br><span class="line">  box-sizing: border-box;</span><br><span class="line">&#125;</span><br><span class="line">ul#waterfall &#123;</span><br><span class="line">    display: flex;</span><br><span class="line">    flex-wrap: wrap;</span><br><span class="line">    justify-content: space-between;</span><br><span class="line">    list-style: none;</span><br><span class="line">    margin: 0;</span><br><span class="line">    padding: 0;</span><br><span class="line">&#125;</span><br><span class="line">li.item &#123;</span><br><span class="line">    display: flex;</span><br><span class="line">    flex-direction: column;</span><br><span class="line">    flex-wrap: nowrap;</span><br><span class="line">    justify-content: flex-end;</span><br><span class="line">    align-items: flex-start;</span><br><span class="line">    border: 1px solid #e3e8f7;</span><br><span class="line">    padding: 20px;</span><br><span class="line">    margin: 10px;</span><br><span class="line">    flex-basis: 100%;</span><br><span class="line">    border-radius: 12px;</span><br><span class="line">&#125;</span><br><span class="line">.bber-content &#123;</span><br><span class="line">    display: flex;</span><br><span class="line">    flex-wrap: wrap;</span><br><span class="line">    justify-content: space-between;</span><br><span class="line">&#125;</span><br><span class="line">div#bber-tips &#123;</span><br><span class="line">    display: flex;</span><br><span class="line">    justify-content: center;</span><br><span class="line">&#125;</span><br><span class="line">#bber p &#123;</span><br><span class="line">  margin: 0px;</span><br><span class="line">  padding: 0px;</span><br><span class="line">&#125;</span><br><span class="line">.item hr &#123;</span><br><span class="line">  border: 1px dashed #4259ef23;</span><br><span class="line">  height: 0px;</span><br><span class="line">  margin: 8px 0px;</span><br><span class="line">  display: flex;</span><br><span class="line">  width: 100%;</span><br><span class="line">&#125;</span><br><span class="line">.bber-container-img &#123;</span><br><span class="line">    display: flex;</span><br><span class="line">    gap: 3px;</span><br><span class="line">    margin-bottom: 3px;</span><br><span class="line">&#125;</span><br><span class="line">a.fancybox &#123;</span><br><span class="line">    flex: 1;</span><br><span class="line">&#125;</span><br><span class="line">.bber-info, .bber-info-time, .bber-content-link &#123;</span><br><span class="line">    display: inline-block;</span><br><span class="line">&#125;</span><br><span class="line">.bber-content-link &#123;</span><br><span class="line">    margin-left: 15px;</span><br><span class="line">&#125;</span><br><span class="line">.bber-bottom &#123;</span><br><span class="line">    width: 100%;</span><br><span class="line">&#125;</span><br><span class="line">.bber-info-time, .bber-content-link &#123;</span><br><span class="line">    background-color: rgba(153,153,153,0.169);</span><br><span class="line">    border-radius: 20px;</span><br><span class="line">    padding: 0 8px;</span><br><span class="line">    font-size: .9rem;</span><br><span class="line">    color: var(--text-color);</span><br><span class="line">&#125;</span><br><span class="line">&lt;/style&gt;</span><br><span class="line"></span><br><span class="line">&lt;div id=&quot;bber&quot;&gt;</span><br><span class="line">  &lt;section class=&quot;timeline page-1&quot;&gt;</span><br><span class="line">    &lt;ul id=&quot;waterfall&quot; class=&quot;list&quot;&gt;</span><br><span class="line">      &#123;% for i in site.data.essay %&#125;</span><br><span class="line">        &#123;% for item in i.essay_list %&#125;</span><br><span class="line">            &lt;li class=&quot;item&quot;&gt;</span><br><span class="line">              &lt;div class=&quot;bber-content&quot;&gt;</span><br><span class="line">                &lt;p class=&quot;datacont&quot;&gt;&#123;&#123; item.content &#125;&#125;&lt;/p&gt;</span><br><span class="line">                &#123;% if item.image %&#125;</span><br><span class="line">                  &lt;div class=&quot;bber-container-img&quot;&gt;</span><br><span class="line">                    &#123;% for indey in item.image %&#125;</span><br><span class="line">                      &lt;img src=&quot;&#123;&#123; indey &#125;&#125;&quot; style=&quot;margin-bottom: 0px;&quot; /&gt;</span><br><span class="line">                    &#123;% endfor %&#125;</span><br><span class="line">                  &lt;/div&gt;</span><br><span class="line">                &#123;% endif %&#125;</span><br><span class="line">              &lt;/div&gt;</span><br><span class="line">              &lt;hr&gt;</span><br><span class="line">              &lt;div class=&quot;bber-bottom&quot;&gt;</span><br><span class="line">                &lt;div class=&quot;bber-info&quot;&gt;</span><br><span class="line">                  &lt;div class=&quot;bber-info-time&quot;&gt;</span><br><span class="line">                    &lt;i class=&quot;far fa-clock&quot;&gt;&lt;/i&gt;</span><br><span class="line">                    &lt;time class=&quot;datatime&quot; datetime=&quot;&#123;&#123; item.date &#125;&#125;&quot;&gt;&#123;&#123; date(item.date, &quot;YYYY/M/D&quot;) &#125;&#125;&lt;/time&gt;</span><br><span class="line">                  &lt;/div&gt;</span><br><span class="line">                  &#123;% if item.link %&#125;</span><br><span class="line">                    &lt;a href=&quot;&#123;&#123; item.link &#125;&#125;&quot; class=&quot;bber-content-link&quot; target=&quot;_blank&quot; title=&quot;跳转到短文指引的链接&quot;&gt;</span><br><span class="line">                      &lt;i class=&quot;fas fa-link&quot;&gt;&lt;/i&gt;</span><br><span class="line">                      链接</span><br><span class="line">                    &lt;/a&gt;</span><br><span class="line">                  &#123;% endif %&#125;</span><br><span class="line">                &lt;/div&gt;</span><br><span class="line">              &lt;/div&gt;</span><br><span class="line">            &lt;/li&gt;</span><br><span class="line">        &#123;% endfor %&#125;</span><br><span class="line">      &#123;% endfor %&#125;</span><br><span class="line">    &lt;/ul&gt;</span><br><span class="line">  &lt;/section&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line"></span><br><span class="line">    &#123;######################&#125;</span><br><span class="line">    &#123;### END ESSAY BLOCK ###&#125;</span><br><span class="line">    &#123;######################&#125;</span><br></pre></td></tr></table></figure><p>然后打开 <code>hexo/themes/next/layout/page.njk</code>，在 <code>&#123;% block title %&#125;&#123;% endblock %&#125;</code> 内的 <code>&#123;%- else %&#125;</code> 前添加</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&#123;%- if page.type === &#x27;categories&#x27; and not page.title %&#125;</span><br><span class="line">    &#123;&#123;- __(&#x27;title.category&#x27;) + page_title_suffix &#125;&#125;</span><br><span class="line">&#123;%- elif page.type === &#x27;tags&#x27; and not page.title %&#125;</span><br><span class="line">    &#123;&#123;- __(&#x27;title.tag&#x27;) + page_title_suffix &#125;&#125;</span><br><span class="line">&#123;%- elif page.type === &#x27;schedule&#x27; and not page.title %&#125;</span><br><span class="line">    &#123;&#123;- __(&#x27;title.schedule&#x27;) + page_title_suffix &#125;&#125;</span><br><span class="line">+&#123;%- elif page.type === &#x27;essay&#x27; and not page.title %&#125;</span><br><span class="line">+    &#123;&#123;- __(&#x27;title.essay&#x27;) + page_title_suffix &#125;&#125;</span><br><span class="line">&#123;%- else %&#125;</span><br></pre></td></tr></table></figure><p>以下为方便复制版本</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&#123;%- elif page.type === &#x27;essay&#x27; and not page.title %&#125;</span><br><span class="line">    &#123;&#123;- __(&#x27;title.essay&#x27;) + page_title_suffix &#125;&#125;</span><br></pre></td></tr></table></figure><p>然后在下面的 <code>block content</code> 里的 <code>PAGE BODY</code> 内的 <code>&#123;% else %&#125;</code> 前，插入</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&#123;%- if page.type === &#x27;tags&#x27; %&#125;</span><br><span class="line">  &#123;%- include &#x27;_partials/page/tags.njk&#x27; -%&#125;</span><br><span class="line">&#123;% elif page.type === &#x27;categories&#x27; %&#125;</span><br><span class="line">  &#123;%- include &#x27;_partials/page/categories.njk&#x27; -%&#125;</span><br><span class="line">&#123;% elif page.type === &#x27;schedule&#x27; %&#125;</span><br><span class="line">  &#123;%- include &#x27;_partials/page/schedule.njk&#x27; -%&#125;</span><br><span class="line">+&#123;% elif page.type === &#x27;essay&#x27; %&#125;</span><br><span class="line">+  &#123;%- include &#x27;essay.njk&#x27; -%&#125;</span><br><span class="line">&#123;% else %&#125;</span><br></pre></td></tr></table></figure><p>以下为方便复制版本</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&#123;% elif page.type === &#x27;essay&#x27; %&#125;</span><br><span class="line">  &#123;%- include &#x27;essay.njk&#x27; -%&#125;</span><br></pre></td></tr></table></figure><p>然后在 <code>hexo/source/_data/</code> 下创建 <code>essay.yml</code>，写入以下内容</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">- class_name: 说说</span><br><span class="line">  essay_list:</span><br><span class="line">    - content: #（必须）内容</span><br><span class="line">      date: #（必须）日期 格式：年-月-日（月与日必须是 2 位数，如2024年3月9号为 2024-03-09）</span><br><span class="line">      link: #（可选）链接，可以在下方插入一条链接</span><br><span class="line">      image: #（可选），插入图片，可插入多张，写法如下，注意缩进</span><br><span class="line">        - #图片路径</span><br><span class="line">        - #图片路径</span><br><span class="line">        - #图片路径</span><br><span class="line">    - content:</span><br><span class="line">      date:</span><br><span class="line">    - content:</span><br><span class="line">      date:</span><br></pre></td></tr></table></figure><p>运行 <code>hexo new page &quot;essay&quot;</code> 创建 <code>hexo/source/essay/index.md</code> 文件，设置标题日期，type 要设置为 <code>&quot;essay&quot;</code></p><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">title: 说说</span><br><span class="line">date: 2023-09-26 11:18:28</span><br><span class="line">type: &quot;essay&quot;</span><br></pre></td></tr></table></figure><p>打开 <code>_config.next.yml</code>，在 <code>menu</code> 中添加</p><figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">menu:</span></span><br><span class="line">  <span class="attr">essay:</span> <span class="string">/essay/</span> <span class="string">||</span> <span class="string">fas</span> <span class="string">fa-pen</span></span><br></pre></td></tr></table></figure><p>打开 <code>hexo/themes/next/languages/zh-CN.yml</code>，在 <code>menu</code> 中添加</p><figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">menu:</span></span><br><span class="line">  <span class="attr">essay:</span> <span class="string">说说</span></span><br></pre></td></tr></table></figure><p>之后在 <code>hexo/source/_data/essay.yml</code> 更新内容就可以了，需要注意的是，内容的先后顺序与渲染出来的结果是一致的，即越写在上面的，在渲染结果中也就越排在上方</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">- content: 因为在最上面，所以网页中在最上方</span><br><span class="line">  date: 2024-03-09</span><br><span class="line">- content: 因为排在下方，所以网页中排在后面</span><br><span class="line">  date: 2024-03-09</span><br></pre></td></tr></table></figure>]]></content>
-    
-    
-    <summary type="html">&lt;p&gt;看见洪哥的即刻页面很好看，想 Copy 过来，可惜技术不行，写不来瀑布流，就只能搞个简单的 flex 布局。&lt;/p&gt;
-&lt;p&gt;原理和友链页面是一样的，模版文件遍历 &lt;code&gt;hexo/source/_data&lt;/code&gt; 文件夹下的 yml 然后循环生成结构。&lt;/p&gt;
-&lt;p&gt;在这里感谢好朋友 &lt;a href=&quot;https://miku.show/&quot;&gt;@OrzMiku&lt;/a&gt; 的帮助，修改该博客过程中，很多问题都是通过大佬耐心解答才得以解决 Orz&lt;/p&gt;
-&lt;p&gt;废话不多说，直接 &lt;code&gt;Ctrl + C / V&lt;/code&gt; 走起&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="技术" scheme="https://blog.fufu.ink/categories/%E6%8A%80%E6%9C%AF/"/>
-    
-    
-    <category term="教程" scheme="https://blog.fufu.ink/tags/%E6%95%99%E7%A8%8B/"/>
-    
-    <category term="技术" scheme="https://blog.fufu.ink/tags/%E6%8A%80%E6%9C%AF/"/>
-    
-    <category term="Hexo" scheme="https://blog.fufu.ink/tags/Hexo/"/>
-    
-    <category term="Next" scheme="https://blog.fufu.ink/tags/Next/"/>
     
   </entry>
   
