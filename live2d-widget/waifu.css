@@ -44,7 +44,7 @@
 	border-radius: 12px;
 	font-family: Lato, 'PingFang SC', 'Microsoft YaHei', sans-serif;
 	text-align: center;
-	font-size: 16px;
+	font-size: 14px;
 	line-height: 24px;
 	margin: -30px 20px;
 	min-height: 70px;
@@ -54,7 +54,7 @@
 	position: absolute;
 	text-overflow: ellipsis;
 	transition: opacity 1s;
-	width: 250px;
+	width: 200px;
 	word-break: break-all;
 }
 
@@ -69,9 +69,9 @@
 
 #live2d {
 	cursor: grab;
-	height: 300px;
+	height: 250px;
 	position: relative;
-	width: 300px;
+	width: 250px;
 }
 
 #live2d:active {

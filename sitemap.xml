@@ -708,13 +708,6 @@
   </url>
   
   <url>
-    <loc>https://blog.fufu.ink/tags/JavaScript/</loc>
-    <lastmod>2024-05-14</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://blog.fufu.ink/tags/Minecraft/</loc>
     <lastmod>2024-05-14</lastmod>
     <changefreq>weekly</changefreq>
@@ -730,6 +723,13 @@
   
   <url>
     <loc>https://blog.fufu.ink/tags/%E8%A1%8C%E4%B8%BA%E5%8C%85/</loc>
+    <lastmod>2024-05-14</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.fufu.ink/tags/JavaScript/</loc>
     <lastmod>2024-05-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -764,13 +764,6 @@
   </url>
   
   <url>
-    <loc>https://blog.fufu.ink/tags/%E6%97%A5%E8%AF%AD/</loc>
-    <lastmod>2024-05-14</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://blog.fufu.ink/tags/%E4%BA%BA%E9%97%B4%E5%A4%B1%E6%A0%BC/</loc>
     <lastmod>2024-05-14</lastmod>
     <changefreq>weekly</changefreq>
@@ -793,6 +786,13 @@
   
   <url>
     <loc>https://blog.fufu.ink/tags/%E5%A4%AA%E5%AE%B0%E6%B2%BB/</loc>
+    <lastmod>2024-05-14</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.fufu.ink/tags/%E6%97%A5%E8%AF%AD/</loc>
     <lastmod>2024-05-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -862,6 +862,20 @@
   </url>
   
   <url>
+    <loc>https://blog.fufu.ink/tags/%E5%B0%8F%E8%AF%B4/</loc>
+    <lastmod>2024-05-14</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.fufu.ink/tags/%E9%AB%98%E4%B8%AD/</loc>
+    <lastmod>2024-05-14</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>https://blog.fufu.ink/tags/%E9%A9%BE%E8%80%83/</loc>
     <lastmod>2024-05-14</lastmod>
     <changefreq>weekly</changefreq>
@@ -912,20 +926,6 @@
   
   <url>
     <loc>https://blog.fufu.ink/tags/%E7%BD%91%E7%BB%9C/</loc>
-    <lastmod>2024-05-14</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.fufu.ink/tags/%E5%B0%8F%E8%AF%B4/</loc>
-    <lastmod>2024-05-14</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.fufu.ink/tags/%E9%AB%98%E4%B8%AD/</loc>
     <lastmod>2024-05-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
