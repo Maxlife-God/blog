@@ -722,14 +722,14 @@
   </url>
   
   <url>
-    <loc>https://blog.fufu.ink/tags/JavaScript/</loc>
+    <loc>https://blog.fufu.ink/tags/Next/</loc>
     <lastmod>2024-05-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://blog.fufu.ink/tags/Next/</loc>
+    <loc>https://blog.fufu.ink/tags/JavaScript/</loc>
     <lastmod>2024-05-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -862,6 +862,20 @@
   </url>
   
   <url>
+    <loc>https://blog.fufu.ink/tags/Linux/</loc>
+    <lastmod>2024-05-14</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.fufu.ink/tags/Ubuntu/</loc>
+    <lastmod>2024-05-14</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>https://blog.fufu.ink/tags/%E5%B0%8F%E8%AF%B4/</loc>
     <lastmod>2024-05-14</lastmod>
     <changefreq>weekly</changefreq>
@@ -876,14 +890,7 @@
   </url>
   
   <url>
-    <loc>https://blog.fufu.ink/tags/Linux/</loc>
-    <lastmod>2024-05-14</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.fufu.ink/tags/Ubuntu/</loc>
+    <loc>https://blog.fufu.ink/tags/%E9%A9%BE%E8%80%83/</loc>
     <lastmod>2024-05-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -904,7 +911,7 @@
   </url>
   
   <url>
-    <loc>https://blog.fufu.ink/tags/%E9%A9%BE%E8%80%83/</loc>
+    <loc>https://blog.fufu.ink/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA/</loc>
     <lastmod>2024-05-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -912,13 +919,6 @@
   
   <url>
     <loc>https://blog.fufu.ink/tags/miku/</loc>
-    <lastmod>2024-05-14</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.fufu.ink/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA/</loc>
     <lastmod>2024-05-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
