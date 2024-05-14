@@ -680,34 +680,6 @@
   </url>
   
   <url>
-    <loc>https://blog.fufu.ink/tags/Hexo/</loc>
-    <lastmod>2024-05-14</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.fufu.ink/tags/%E6%8A%80%E6%9C%AF/</loc>
-    <lastmod>2024-05-14</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.fufu.ink/tags/%E6%95%99%E7%A8%8B/</loc>
-    <lastmod>2024-05-14</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.fufu.ink/tags/Next/</loc>
-    <lastmod>2024-05-14</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://blog.fufu.ink/tags/Minecraft/</loc>
     <lastmod>2024-05-14</lastmod>
     <changefreq>weekly</changefreq>
@@ -729,7 +701,35 @@
   </url>
   
   <url>
+    <loc>https://blog.fufu.ink/tags/%E6%95%99%E7%A8%8B/</loc>
+    <lastmod>2024-05-14</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.fufu.ink/tags/%E6%8A%80%E6%9C%AF/</loc>
+    <lastmod>2024-05-14</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.fufu.ink/tags/Hexo/</loc>
+    <lastmod>2024-05-14</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>https://blog.fufu.ink/tags/JavaScript/</loc>
+    <lastmod>2024-05-14</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.fufu.ink/tags/Next/</loc>
     <lastmod>2024-05-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -876,7 +876,14 @@
   </url>
   
   <url>
-    <loc>https://blog.fufu.ink/tags/%E9%A9%BE%E8%80%83/</loc>
+    <loc>https://blog.fufu.ink/tags/Linux/</loc>
+    <lastmod>2024-05-14</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.fufu.ink/tags/Ubuntu/</loc>
     <lastmod>2024-05-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -897,14 +904,7 @@
   </url>
   
   <url>
-    <loc>https://blog.fufu.ink/tags/Linux/</loc>
-    <lastmod>2024-05-14</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.fufu.ink/tags/Ubuntu/</loc>
+    <loc>https://blog.fufu.ink/tags/%E9%A9%BE%E8%80%83/</loc>
     <lastmod>2024-05-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
