@@ -309,7 +309,7 @@ NexT.utils = {
       // TOC item animation navigate.
       element.addEventListener('click', event => {
         event.preventDefault();
-        const offset = target.getBoundingClientRect().top + window.scrollY;
+        const offset = target.getBoundingClientRect().top + window.scrollY - 75;
         window.anime({
           targets  : document.scrollingElement,
           duration : 500,
