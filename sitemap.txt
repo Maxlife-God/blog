@@ -1,3 +1,4 @@
+https://blog.fufu.ink/2024/07/hoshishiro.html
 https://blog.fufu.ink/2024/07/senrenbankakansou.html
 https://blog.fufu.ink/2024/06/gakkikekkareport.html
 https://blog.fufu.ink/2024/05/kobun30.html
@@ -71,10 +72,10 @@ https://blog.fufu.ink/tags/%E6%95%99%E7%A8%8B/
 https://blog.fufu.ink/tags/%E6%8A%80%E6%9C%AF/
 https://blog.fufu.ink/tags/Hexo/
 https://blog.fufu.ink/tags/Next/
-https://blog.fufu.ink/tags/JavaScript/
 https://blog.fufu.ink/tags/CSS/
 https://blog.fufu.ink/tags/%E6%B8%B8%E6%88%8F/
 https://blog.fufu.ink/tags/%E5%8D%83%E6%81%8B%E4%B8%87%E8%8A%B1/
+https://blog.fufu.ink/tags/JavaScript/
 https://blog.fufu.ink/tags/%E4%B9%A6%E6%91%98/
 https://blog.fufu.ink/tags/%E5%B1%80%E5%A4%96%E4%BA%BA/
 https://blog.fufu.ink/tags/%E5%A0%95%E8%90%BD/
@@ -94,9 +95,10 @@ https://blog.fufu.ink/tags/%E5%B0%8F%E8%AF%B4/
 https://blog.fufu.ink/tags/%E9%AB%98%E4%B8%AD/
 https://blog.fufu.ink/tags/Linux/
 https://blog.fufu.ink/tags/Ubuntu/
+https://blog.fufu.ink/tags/%E9%A9%BE%E8%80%83/
+https://blog.fufu.ink/tags/%E6%98%9F%E7%99%BD/
 https://blog.fufu.ink/tags/%E7%B1%BB%E5%8E%9F%E7%94%9F/
 https://blog.fufu.ink/tags/Android/
-https://blog.fufu.ink/tags/%E9%A9%BE%E8%80%83/
 https://blog.fufu.ink/categories/%E6%8A%80%E6%9C%AF/
 https://blog.fufu.ink/categories/%E6%B8%B8%E6%88%8F/
 https://blog.fufu.ink/categories/%E6%97%A5%E5%B8%B8/
