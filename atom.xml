@@ -6,7 +6,7 @@
   <link href="https://blog.fufu.ink/atom.xml" rel="self"/>
   
   <link href="https://blog.fufu.ink/"/>
-  <updated>2024-07-25T04:30:58.000Z</updated>
+  <updated>2024-08-08T14:28:27.000Z</updated>
   <id>https://blog.fufu.ink/</id>
   
   <author>
@@ -15,6 +15,27 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>【Win】图片批量转换为 webp 格式脚本</title>
+    <link href="https://blog.fufu.ink/2024/08/webptransform.html"/>
+    <id>https://blog.fufu.ink/2024/08/webptransform.html</id>
+    <published>2024-08-08T14:28:27.000Z</published>
+    <updated>2024-08-08T14:28:27.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>让 ChatGPT 随便写的脚本，以防忘记内容，在这里备份一下。</p><p>系统要求：Windows</p><p>软件要求：Google 提供的<a href="https://developers.google.com/speed/webp/download?hl=zh-cn">「预编译 WebP 实用程序和库」</a></p><p>下载「预编译 WebP 实用程序和库」并解压到任意路径。</p><p>在任意位置新建文件夹，创建一个 txt 文件并粘贴以下内容。</p><figure class="highlight bat"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">@<span class="built_in">echo</span> off</span><br><span class="line"><span class="built_in">setlocal</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">rem 设置变量</span></span><br><span class="line"><span class="built_in">set</span> &quot;input_dir=<span class="variable">%cd%</span>&quot;</span><br><span class="line"><span class="built_in">set</span> &quot;output_dir=<span class="variable">%cd%</span>\webp_images&quot;</span><br><span class="line"><span class="built_in">set</span> &quot;cwebp_path=cwebp.exe&quot;</span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">rem 创建输出目录（如果不存在）</span></span><br><span class="line"><span class="keyword">if</span> <span class="keyword">not</span> <span class="keyword">exist</span> &quot;<span class="variable">%output_dir%</span>&quot; (</span><br><span class="line">    <span class="built_in">mkdir</span> &quot;<span class="variable">%output_dir%</span>&quot;</span><br><span class="line">)</span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">rem 查找并转换图片</span></span><br><span class="line"><span class="keyword">for</span> <span class="variable">%%i</span> <span class="keyword">in</span> (*.png *.jpg *.jpeg *.webp) <span class="keyword">do</span> (</span><br><span class="line">    &quot;<span class="variable">%cwebp_path%</span>&quot; &quot;<span class="variable">%%i</span>&quot; -q <span class="number">90</span> -o &quot;<span class="variable">%output_dir%</span>\<span class="variable">%%~</span>ni.webp&quot;</span><br><span class="line">    <span class="built_in">echo</span> Converted <span class="variable">%%i</span> to <span class="variable">%output_dir%</span>\<span class="variable">%%~</span>ni.webp</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="built_in">echo</span> All images have been converted to WebP <span class="built_in">format</span>.</span><br><span class="line"><span class="built_in">pause</span></span><br><span class="line"><span class="built_in">endlocal</span></span><br></pre></td></tr></table></figure><p>其中</p><p><code>input_dir</code> <strong>输入图片路径</strong>，默认为脚本所在文件夹（即上文新建的这个文件夹）</p><p><code>output_dir</code> <strong>输出图片路径</strong>，默认为 <code>当前文件夹\webp_images</code></p><p><code>cwebp_path</code> （必须修改）<strong>cwebp.exe 路径</strong>，请将值修改为上文解压出的文件夹中 <code>bin\cwebp.exe</code> 的路径</p><p><code>-q</code> 指定图片质量，值为 0-100，如果无损将 jpg 转换为 webp 图片体积反而会变大，此时建议稍微降低质量</p><p>保存文件后将扩展名改为 <code>.bat</code></p><p>使用方法：将需要转换的图片放在<strong>输入图片路径</strong>下，双击脚本文件，即可将此路径下所有 <code>png|jpg|jpeg|webp</code> 格式图片转换为 <code>webp</code> 格式并输出到<strong>输出图片路径</strong></p>]]></content>
+    
+    
+    <summary type="html">简简单单的一个脚本</summary>
+    
+    
+    
+    <category term="技术" scheme="https://blog.fufu.ink/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+    
+    <category term="技术" scheme="https://blog.fufu.ink/tags/%E6%8A%80%E6%9C%AF/"/>
+    
+  </entry>
   
   <entry>
     <title>简单谈谈『星空列车与白的旅行』</title>
@@ -484,31 +505,6 @@
     <category term="小说" scheme="https://blog.fufu.ink/tags/%E5%B0%8F%E8%AF%B4/"/>
     
     <category term="高中" scheme="https://blog.fufu.ink/tags/%E9%AB%98%E4%B8%AD/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>【笔记·古典日语】助动词「らむ」</title>
-    <link href="https://blog.fufu.ink/2024/04/kobun16.html"/>
-    <id>https://blog.fufu.ink/2024/04/kobun16.html</id>
-    <published>2024-04-25T10:23:23.000Z</published>
-    <updated>2024-04-25T10:23:23.000Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="活用·接续"><a href="#活用·接续" class="headerlink" title="活用·接续"></a>活用·接续</h2><p>接续：终止形 + らむ</p><p>特殊：ラ変動詞・ラ変型的<strong>连体形</strong> + らむ</p><table><thead><tr><th align="center">活用</th><th align="center">らむ</th></tr></thead><tbody><tr><td align="center">未然形</td><td align="center"></td></tr><tr><td align="center">连用形</td><td align="center"></td></tr><tr><td align="center">终止形</td><td align="center">らむ</td></tr><tr><td align="center">连体形</td><td align="center">らむ</td></tr><tr><td align="center">已然形</td><td align="center">らめ</td></tr><tr><td align="center">命令形</td><td align="center"></td></tr></tbody></table><h2 id="作用"><a href="#作用" class="headerlink" title="作用"></a>作用</h2><p>らむ有 4 个作用</p><ul><li>現在推量：对现在<strong>看不见</strong>的事情进行推测。现代日语可译为「今ごろは～ているだろう」</li><li>現在の<strong>原因</strong>推量：就现在<strong>看见的</strong>事情（眼前发生的事情）或自己的事情，对其发生的<strong>原因进行推测</strong>。现代日语可译为「～（ている）のだろう」。特征为<strong>疑问词</strong>或<strong>表示原因</strong>的句子。</li><li>現在の婉曲：委婉，现代日语可译为「～ような」。特征为<strong>「らむ + N」</strong>，即らむ作连体形</li><li>現在の伝聞：现代日语可译为「～とかいう」。特征也为<strong>「らむ + N」</strong></li></ul><p>表示委婉和传闻的特征一致，都为<strong>「らむ + N」</strong>，因此具体是表示哪个需要根据语境进行判断。</p>]]></content>
-    
-    
-    <summary type="html">作用有「現在推量・現在の原因推量・現在の婉曲・現在の伝聞」</summary>
-    
-    
-    
-    <category term="日语" scheme="https://blog.fufu.ink/categories/%E6%97%A5%E8%AF%AD/"/>
-    
-    
-    <category term="日语" scheme="https://blog.fufu.ink/tags/%E6%97%A5%E8%AF%AD/"/>
-    
-    <category term="古典日语" scheme="https://blog.fufu.ink/tags/%E5%8F%A4%E5%85%B8%E6%97%A5%E8%AF%AD/"/>
-    
-    <category term="语法" scheme="https://blog.fufu.ink/tags/%E8%AF%AD%E6%B3%95/"/>
     
   </entry>
   
