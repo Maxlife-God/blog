@@ -99,9 +99,9 @@ https://blog.fufu.ink/tags/Linux/
 https://blog.fufu.ink/tags/Ubuntu/
 https://blog.fufu.ink/tags/%E9%A9%BE%E8%80%83/
 https://blog.fufu.ink/tags/%E6%98%9F%E7%99%BD/
+https://blog.fufu.ink/tags/Noesis/
 https://blog.fufu.ink/tags/%E7%B1%BB%E5%8E%9F%E7%94%9F/
 https://blog.fufu.ink/tags/Android/
-https://blog.fufu.ink/tags/Noesis/
 https://blog.fufu.ink/categories/%E6%8A%80%E6%9C%AF/
 https://blog.fufu.ink/categories/%E6%B8%B8%E6%88%8F/
 https://blog.fufu.ink/categories/%E6%97%A5%E5%B8%B8/
