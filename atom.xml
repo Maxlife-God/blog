@@ -123,9 +123,9 @@
     <category term="日常" scheme="https://blog.fufu.ink/categories/%E6%97%A5%E5%B8%B8/"/>
     
     
-    <category term="生活" scheme="https://blog.fufu.ink/tags/%E7%94%9F%E6%B4%BB/"/>
-    
     <category term="随笔" scheme="https://blog.fufu.ink/tags/%E9%9A%8F%E7%AC%94/"/>
+    
+    <category term="生活" scheme="https://blog.fufu.ink/tags/%E7%94%9F%E6%B4%BB/"/>
     
   </entry>
   
@@ -496,11 +496,11 @@
     <category term="日常" scheme="https://blog.fufu.ink/categories/%E6%97%A5%E5%B8%B8/"/>
     
     
+    <category term="随笔" scheme="https://blog.fufu.ink/tags/%E9%9A%8F%E7%AC%94/"/>
+    
     <category term="生活" scheme="https://blog.fufu.ink/tags/%E7%94%9F%E6%B4%BB/"/>
     
     <category term="博客" scheme="https://blog.fufu.ink/tags/%E5%8D%9A%E5%AE%A2/"/>
-    
-    <category term="随笔" scheme="https://blog.fufu.ink/tags/%E9%9A%8F%E7%AC%94/"/>
     
   </entry>
   
