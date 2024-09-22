@@ -705,6 +705,20 @@
   </url>
   
   <url>
+    <loc>https://blog.fufu.ink/tags/outsider/</loc>
+    <lastmod>2024-09-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.fufu.ink/tags/daraku/</loc>
+    <lastmod>2024-09-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>https://blog.fufu.ink/tags/ningenshikkaku/</loc>
     <lastmod>2024-09-22</lastmod>
     <changefreq>weekly</changefreq>
@@ -727,20 +741,6 @@
   
   <url>
     <loc>https://blog.fufu.ink/tags/dazaiosamu/</loc>
-    <lastmod>2024-09-22</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.fufu.ink/tags/outsider/</loc>
-    <lastmod>2024-09-22</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.fufu.ink/tags/daraku/</loc>
     <lastmod>2024-09-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -817,13 +817,6 @@
   </url>
   
   <url>
-    <loc>https://blog.fufu.ink/tags/untenmenkyoshiken/</loc>
-    <lastmod>2024-09-22</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://blog.fufu.ink/tags/linux/</loc>
     <lastmod>2024-09-22</lastmod>
     <changefreq>weekly</changefreq>
@@ -846,6 +839,13 @@
   
   <url>
     <loc>https://blog.fufu.ink/tags/noesis/</loc>
+    <lastmod>2024-09-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.fufu.ink/tags/untenmenkyoshiken/</loc>
     <lastmod>2024-09-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
