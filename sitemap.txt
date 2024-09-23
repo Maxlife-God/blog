@@ -67,12 +67,12 @@ https://blog.fufu.ink/about/index.html
 https://blog.fufu.ink/categories/index.html
 https://blog.fufu.ink/tags/index.html
 https://blog.fufu.ink/
+https://blog.fufu.ink/tags/handsome/
 https://blog.fufu.ink/tags/minecraft/
 https://blog.fufu.ink/tags/resource-packs/
 https://blog.fufu.ink/tags/behavior-packs/
 https://blog.fufu.ink/tags/chishiki/
 https://blog.fufu.ink/tags/tech/
-https://blog.fufu.ink/tags/handsome/
 https://blog.fufu.ink/tags/hexo/
 https://blog.fufu.ink/tags/next/
 https://blog.fufu.ink/tags/js/
@@ -103,7 +103,7 @@ https://blog.fufu.ink/tags/hoshishiro/
 https://blog.fufu.ink/tags/noesis/
 https://blog.fufu.ink/tags/aosp/
 https://blog.fufu.ink/tags/android/
-https://blog.fufu.ink/categories/game/
 https://blog.fufu.ink/categories/tech/
+https://blog.fufu.ink/categories/game/
 https://blog.fufu.ink/categories/nichijou/
 https://blog.fufu.ink/categories/nihongo/
