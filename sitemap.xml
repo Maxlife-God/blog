@@ -2,6 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://blog.fufu.ink/vercel.json</loc>
+    
+    <lastmod>2024-09-23</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://blog.fufu.ink/2024/08/noesis.html</loc>
     
     <lastmod>2024-08-26</lastmod>
@@ -614,13 +623,6 @@
 
   
   <url>
-    <loc>https://blog.fufu.ink/tags/handsome/</loc>
-    <lastmod>2024-09-23</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://blog.fufu.ink/tags/minecraft/</loc>
     <lastmod>2024-09-23</lastmod>
     <changefreq>weekly</changefreq>
@@ -656,6 +658,13 @@
   </url>
   
   <url>
+    <loc>https://blog.fufu.ink/tags/handsome/</loc>
+    <lastmod>2024-09-23</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>https://blog.fufu.ink/tags/hexo/</loc>
     <lastmod>2024-09-23</lastmod>
     <changefreq>weekly</changefreq>
@@ -663,14 +672,14 @@
   </url>
   
   <url>
-    <loc>https://blog.fufu.ink/tags/js/</loc>
+    <loc>https://blog.fufu.ink/tags/next/</loc>
     <lastmod>2024-09-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://blog.fufu.ink/tags/next/</loc>
+    <loc>https://blog.fufu.ink/tags/js/</loc>
     <lastmod>2024-09-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -838,14 +847,14 @@
   </url>
   
   <url>
-    <loc>https://blog.fufu.ink/tags/noesis/</loc>
+    <loc>https://blog.fufu.ink/tags/hoshishiro/</loc>
     <lastmod>2024-09-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://blog.fufu.ink/tags/hoshishiro/</loc>
+    <loc>https://blog.fufu.ink/tags/noesis/</loc>
     <lastmod>2024-09-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -868,14 +877,14 @@
 
   
   <url>
-    <loc>https://blog.fufu.ink/categories/tech/</loc>
+    <loc>https://blog.fufu.ink/categories/game/</loc>
     <lastmod>2024-09-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://blog.fufu.ink/categories/game/</loc>
+    <loc>https://blog.fufu.ink/categories/tech/</loc>
     <lastmod>2024-09-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
