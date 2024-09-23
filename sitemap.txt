@@ -73,8 +73,8 @@ https://blog.fufu.ink/tags/behavior-packs/
 https://blog.fufu.ink/tags/chishiki/
 https://blog.fufu.ink/tags/tech/
 https://blog.fufu.ink/tags/hexo/
-https://blog.fufu.ink/tags/next/
 https://blog.fufu.ink/tags/js/
+https://blog.fufu.ink/tags/next/
 https://blog.fufu.ink/tags/css/
 https://blog.fufu.ink/tags/game/
 https://blog.fufu.ink/tags/senrenbanka/
@@ -97,9 +97,9 @@ https://blog.fufu.ink/tags/shousetsu/
 https://blog.fufu.ink/tags/koukou/
 https://blog.fufu.ink/tags/linux/
 https://blog.fufu.ink/tags/ubuntu/
-https://blog.fufu.ink/tags/hoshishiro/
-https://blog.fufu.ink/tags/noesis/
 https://blog.fufu.ink/tags/untenmenkyoshiken/
+https://blog.fufu.ink/tags/noesis/
+https://blog.fufu.ink/tags/hoshishiro/
 https://blog.fufu.ink/tags/aosp/
 https://blog.fufu.ink/tags/android/
 https://blog.fufu.ink/categories/tech/
