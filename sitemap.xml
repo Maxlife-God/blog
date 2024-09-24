@@ -623,13 +623,6 @@
 
   
   <url>
-    <loc>https://blog.fufu.ink/tags/handsome/</loc>
-    <lastmod>2024-09-24</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://blog.fufu.ink/tags/hexo/</loc>
     <lastmod>2024-09-24</lastmod>
     <changefreq>weekly</changefreq>
@@ -673,6 +666,13 @@
   
   <url>
     <loc>https://blog.fufu.ink/tags/behavior-packs/</loc>
+    <lastmod>2024-09-24</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.fufu.ink/tags/handsome/</loc>
     <lastmod>2024-09-24</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -728,13 +728,6 @@
   </url>
   
   <url>
-    <loc>https://blog.fufu.ink/tags/nihongo/</loc>
-    <lastmod>2024-09-24</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://blog.fufu.ink/tags/ningenshikkaku/</loc>
     <lastmod>2024-09-24</lastmod>
     <changefreq>weekly</changefreq>
@@ -763,6 +756,13 @@
   </url>
   
   <url>
+    <loc>https://blog.fufu.ink/tags/nihongo/</loc>
+    <lastmod>2024-09-24</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>https://blog.fufu.ink/tags/kobun/</loc>
     <lastmod>2024-09-24</lastmod>
     <changefreq>weekly</changefreq>
@@ -771,13 +771,6 @@
   
   <url>
     <loc>https://blog.fufu.ink/tags/bunpou/</loc>
-    <lastmod>2024-09-24</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.fufu.ink/tags/genshin/</loc>
     <lastmod>2024-09-24</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -805,6 +798,20 @@
   </url>
   
   <url>
+    <loc>https://blog.fufu.ink/tags/tsukkomi/</loc>
+    <lastmod>2024-09-24</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.fufu.ink/tags/genshin/</loc>
+    <lastmod>2024-09-24</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>https://blog.fufu.ink/tags/shousetsu/</loc>
     <lastmod>2024-09-24</lastmod>
     <changefreq>weekly</changefreq>
@@ -813,13 +820,6 @@
   
   <url>
     <loc>https://blog.fufu.ink/tags/koukou/</loc>
-    <lastmod>2024-09-24</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.fufu.ink/tags/tsukkomi/</loc>
     <lastmod>2024-09-24</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
