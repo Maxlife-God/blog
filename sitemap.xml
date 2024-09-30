@@ -693,6 +693,20 @@
   </url>
   
   <url>
+    <loc>https://blog.fufu.ink/tags/game/</loc>
+    <lastmod>2024-09-30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.fufu.ink/tags/senrenbanka/</loc>
+    <lastmod>2024-09-30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>https://blog.fufu.ink/tags/excerpt/</loc>
     <lastmod>2024-09-30</lastmod>
     <changefreq>weekly</changefreq>
@@ -708,20 +722,6 @@
   
   <url>
     <loc>https://blog.fufu.ink/tags/daraku/</loc>
-    <lastmod>2024-09-30</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.fufu.ink/tags/game/</loc>
-    <lastmod>2024-09-30</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.fufu.ink/tags/senrenbanka/</loc>
     <lastmod>2024-09-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -798,14 +798,14 @@
   </url>
   
   <url>
-    <loc>https://blog.fufu.ink/tags/genshin/</loc>
+    <loc>https://blog.fufu.ink/tags/tsukkomi/</loc>
     <lastmod>2024-09-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://blog.fufu.ink/tags/tsukkomi/</loc>
+    <loc>https://blog.fufu.ink/tags/genshin/</loc>
     <lastmod>2024-09-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -840,6 +840,13 @@
   </url>
   
   <url>
+    <loc>https://blog.fufu.ink/tags/hoshishiro/</loc>
+    <lastmod>2024-09-30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>https://blog.fufu.ink/tags/untenmenkyoshiken/</loc>
     <lastmod>2024-09-30</lastmod>
     <changefreq>weekly</changefreq>
@@ -848,13 +855,6 @@
   
   <url>
     <loc>https://blog.fufu.ink/tags/Noesis/</loc>
-    <lastmod>2024-09-30</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.fufu.ink/tags/hoshishiro/</loc>
     <lastmod>2024-09-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
