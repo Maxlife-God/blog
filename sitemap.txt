@@ -74,8 +74,8 @@ https://blog.fufu.ink/tags/behavior-packs/
 https://blog.fufu.ink/tags/chishiki/
 https://blog.fufu.ink/tags/tech/
 https://blog.fufu.ink/tags/Hexo/
-https://blog.fufu.ink/tags/Next/
 https://blog.fufu.ink/tags/JavaScript/
+https://blog.fufu.ink/tags/Next/
 https://blog.fufu.ink/tags/CSS/
 https://blog.fufu.ink/tags/game/
 https://blog.fufu.ink/tags/senrenbanka/
