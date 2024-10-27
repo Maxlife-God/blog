@@ -33,17 +33,17 @@
     <category term="日常" scheme="https://blog.fufu.ink/categories/nichijou/"/>
     
     
-    <category term="感想" scheme="https://blog.fufu.ink/tags/kansou/"/>
+    <category term="感想" scheme="https://blog.fufu.ink/tags/%E6%84%9F%E6%83%B3/"/>
     
-    <category term="随笔" scheme="https://blog.fufu.ink/tags/essay/"/>
+    <category term="随笔" scheme="https://blog.fufu.ink/tags/%E9%9A%8F%E7%AC%94/"/>
     
-    <category term="考研" scheme="https://blog.fufu.ink/tags/kaoyan/"/>
+    <category term="考研" scheme="https://blog.fufu.ink/tags/%E8%80%83%E7%A0%94/"/>
     
-    <category term="租房" scheme="https://blog.fufu.ink/tags/guesthouse/"/>
+    <category term="租房" scheme="https://blog.fufu.ink/tags/%E7%A7%9F%E6%88%BF/"/>
     
-    <category term="美食" scheme="https://blog.fufu.ink/tags/bishoku/"/>
+    <category term="美食" scheme="https://blog.fufu.ink/tags/%E7%BE%8E%E9%A3%9F/"/>
     
-    <category term="日语" scheme="https://blog.fufu.ink/tags/nihongo/"/>
+    <category term="日语" scheme="https://blog.fufu.ink/tags/%E6%97%A5%E8%AF%AD/"/>
     
   </entry>
   
@@ -64,9 +64,9 @@
     <category term="游戏" scheme="https://blog.fufu.ink/categories/game/"/>
     
     
-    <category term="感想" scheme="https://blog.fufu.ink/tags/kansou/"/>
-    
     <category term="galgame" scheme="https://blog.fufu.ink/tags/galgame/"/>
+    
+    <category term="感想" scheme="https://blog.fufu.ink/tags/%E6%84%9F%E6%83%B3/"/>
     
     <category term="Noesis" scheme="https://blog.fufu.ink/tags/Noesis/"/>
     
@@ -89,7 +89,7 @@
     <category term="技术" scheme="https://blog.fufu.ink/categories/tech/"/>
     
     
-    <category term="脚本" scheme="https://blog.fufu.ink/tags/scripting-language/"/>
+    <category term="脚本" scheme="https://blog.fufu.ink/tags/%E8%84%9A%E6%9C%AC/"/>
     
     <category term="WebP" scheme="https://blog.fufu.ink/tags/WebP/"/>
     
@@ -112,11 +112,11 @@
     <category term="游戏" scheme="https://blog.fufu.ink/categories/game/"/>
     
     
-    <category term="感想" scheme="https://blog.fufu.ink/tags/kansou/"/>
-    
     <category term="galgame" scheme="https://blog.fufu.ink/tags/galgame/"/>
     
-    <category term="星白" scheme="https://blog.fufu.ink/tags/hoshishiro/"/>
+    <category term="感想" scheme="https://blog.fufu.ink/tags/%E6%84%9F%E6%83%B3/"/>
+    
+    <category term="星白" scheme="https://blog.fufu.ink/tags/%E6%98%9F%E7%99%BD/"/>
     
   </entry>
   
@@ -137,11 +137,11 @@
     <category term="游戏" scheme="https://blog.fufu.ink/categories/game/"/>
     
     
-    <category term="感想" scheme="https://blog.fufu.ink/tags/kansou/"/>
-    
-    <category term="千恋万花" scheme="https://blog.fufu.ink/tags/senrenbanka/"/>
+    <category term="千恋万花" scheme="https://blog.fufu.ink/tags/%E5%8D%83%E6%81%8B%E4%B8%87%E8%8A%B1/"/>
     
     <category term="galgame" scheme="https://blog.fufu.ink/tags/galgame/"/>
+    
+    <category term="感想" scheme="https://blog.fufu.ink/tags/%E6%84%9F%E6%83%B3/"/>
     
   </entry>
   
@@ -162,11 +162,11 @@
     <category term="日常" scheme="https://blog.fufu.ink/categories/nichijou/"/>
     
     
-    <category term="感想" scheme="https://blog.fufu.ink/tags/kansou/"/>
+    <category term="感想" scheme="https://blog.fufu.ink/tags/%E6%84%9F%E6%83%B3/"/>
     
-    <category term="生活" scheme="https://blog.fufu.ink/tags/seikatsu/"/>
+    <category term="生活" scheme="https://blog.fufu.ink/tags/%E7%94%9F%E6%B4%BB/"/>
     
-    <category term="随笔" scheme="https://blog.fufu.ink/tags/essay/"/>
+    <category term="随笔" scheme="https://blog.fufu.ink/tags/%E9%9A%8F%E7%AC%94/"/>
     
   </entry>
   
@@ -187,9 +187,9 @@
     <category term="日语" scheme="https://blog.fufu.ink/categories/nihongo/"/>
     
     
-    <category term="古典日语" scheme="https://blog.fufu.ink/tags/kobun/"/>
+    <category term="古典日语" scheme="https://blog.fufu.ink/tags/%E5%8F%A4%E5%85%B8%E6%97%A5%E8%AF%AD/"/>
     
-    <category term="语法" scheme="https://blog.fufu.ink/tags/bunpou/"/>
+    <category term="语法" scheme="https://blog.fufu.ink/tags/%E8%AF%AD%E6%B3%95/"/>
     
   </entry>
   
@@ -210,9 +210,9 @@
     <category term="日语" scheme="https://blog.fufu.ink/categories/nihongo/"/>
     
     
-    <category term="古典日语" scheme="https://blog.fufu.ink/tags/kobun/"/>
+    <category term="古典日语" scheme="https://blog.fufu.ink/tags/%E5%8F%A4%E5%85%B8%E6%97%A5%E8%AF%AD/"/>
     
-    <category term="语法" scheme="https://blog.fufu.ink/tags/bunpou/"/>
+    <category term="语法" scheme="https://blog.fufu.ink/tags/%E8%AF%AD%E6%B3%95/"/>
     
   </entry>
   
@@ -233,9 +233,9 @@
     <category term="日语" scheme="https://blog.fufu.ink/categories/nihongo/"/>
     
     
-    <category term="古典日语" scheme="https://blog.fufu.ink/tags/kobun/"/>
+    <category term="古典日语" scheme="https://blog.fufu.ink/tags/%E5%8F%A4%E5%85%B8%E6%97%A5%E8%AF%AD/"/>
     
-    <category term="语法" scheme="https://blog.fufu.ink/tags/bunpou/"/>
+    <category term="语法" scheme="https://blog.fufu.ink/tags/%E8%AF%AD%E6%B3%95/"/>
     
   </entry>
   
@@ -256,9 +256,9 @@
     <category term="日语" scheme="https://blog.fufu.ink/categories/nihongo/"/>
     
     
-    <category term="古典日语" scheme="https://blog.fufu.ink/tags/kobun/"/>
+    <category term="古典日语" scheme="https://blog.fufu.ink/tags/%E5%8F%A4%E5%85%B8%E6%97%A5%E8%AF%AD/"/>
     
-    <category term="语法" scheme="https://blog.fufu.ink/tags/bunpou/"/>
+    <category term="语法" scheme="https://blog.fufu.ink/tags/%E8%AF%AD%E6%B3%95/"/>
     
   </entry>
   
@@ -279,9 +279,9 @@
     <category term="日语" scheme="https://blog.fufu.ink/categories/nihongo/"/>
     
     
-    <category term="古典日语" scheme="https://blog.fufu.ink/tags/kobun/"/>
+    <category term="古典日语" scheme="https://blog.fufu.ink/tags/%E5%8F%A4%E5%85%B8%E6%97%A5%E8%AF%AD/"/>
     
-    <category term="语法" scheme="https://blog.fufu.ink/tags/bunpou/"/>
+    <category term="语法" scheme="https://blog.fufu.ink/tags/%E8%AF%AD%E6%B3%95/"/>
     
   </entry>
   
@@ -302,9 +302,9 @@
     <category term="日语" scheme="https://blog.fufu.ink/categories/nihongo/"/>
     
     
-    <category term="古典日语" scheme="https://blog.fufu.ink/tags/kobun/"/>
+    <category term="古典日语" scheme="https://blog.fufu.ink/tags/%E5%8F%A4%E5%85%B8%E6%97%A5%E8%AF%AD/"/>
     
-    <category term="语法" scheme="https://blog.fufu.ink/tags/bunpou/"/>
+    <category term="语法" scheme="https://blog.fufu.ink/tags/%E8%AF%AD%E6%B3%95/"/>
     
   </entry>
   
@@ -325,9 +325,9 @@
     <category term="日语" scheme="https://blog.fufu.ink/categories/nihongo/"/>
     
     
-    <category term="古典日语" scheme="https://blog.fufu.ink/tags/kobun/"/>
+    <category term="古典日语" scheme="https://blog.fufu.ink/tags/%E5%8F%A4%E5%85%B8%E6%97%A5%E8%AF%AD/"/>
     
-    <category term="语法" scheme="https://blog.fufu.ink/tags/bunpou/"/>
+    <category term="语法" scheme="https://blog.fufu.ink/tags/%E8%AF%AD%E6%B3%95/"/>
     
   </entry>
   
@@ -348,9 +348,9 @@
     <category term="日语" scheme="https://blog.fufu.ink/categories/nihongo/"/>
     
     
-    <category term="古典日语" scheme="https://blog.fufu.ink/tags/kobun/"/>
+    <category term="古典日语" scheme="https://blog.fufu.ink/tags/%E5%8F%A4%E5%85%B8%E6%97%A5%E8%AF%AD/"/>
     
-    <category term="语法" scheme="https://blog.fufu.ink/tags/bunpou/"/>
+    <category term="语法" scheme="https://blog.fufu.ink/tags/%E8%AF%AD%E6%B3%95/"/>
     
   </entry>
   
@@ -371,9 +371,9 @@
     <category term="日语" scheme="https://blog.fufu.ink/categories/nihongo/"/>
     
     
-    <category term="古典日语" scheme="https://blog.fufu.ink/tags/kobun/"/>
+    <category term="古典日语" scheme="https://blog.fufu.ink/tags/%E5%8F%A4%E5%85%B8%E6%97%A5%E8%AF%AD/"/>
     
-    <category term="语法" scheme="https://blog.fufu.ink/tags/bunpou/"/>
+    <category term="语法" scheme="https://blog.fufu.ink/tags/%E8%AF%AD%E6%B3%95/"/>
     
   </entry>
   
@@ -394,9 +394,9 @@
     <category term="日语" scheme="https://blog.fufu.ink/categories/nihongo/"/>
     
     
-    <category term="古典日语" scheme="https://blog.fufu.ink/tags/kobun/"/>
+    <category term="古典日语" scheme="https://blog.fufu.ink/tags/%E5%8F%A4%E5%85%B8%E6%97%A5%E8%AF%AD/"/>
     
-    <category term="语法" scheme="https://blog.fufu.ink/tags/bunpou/"/>
+    <category term="语法" scheme="https://blog.fufu.ink/tags/%E8%AF%AD%E6%B3%95/"/>
     
   </entry>
   
@@ -417,9 +417,9 @@
     <category term="日语" scheme="https://blog.fufu.ink/categories/nihongo/"/>
     
     
-    <category term="古典日语" scheme="https://blog.fufu.ink/tags/kobun/"/>
+    <category term="古典日语" scheme="https://blog.fufu.ink/tags/%E5%8F%A4%E5%85%B8%E6%97%A5%E8%AF%AD/"/>
     
-    <category term="语法" scheme="https://blog.fufu.ink/tags/bunpou/"/>
+    <category term="语法" scheme="https://blog.fufu.ink/tags/%E8%AF%AD%E6%B3%95/"/>
     
   </entry>
   
@@ -440,9 +440,9 @@
     <category term="日语" scheme="https://blog.fufu.ink/categories/nihongo/"/>
     
     
-    <category term="古典日语" scheme="https://blog.fufu.ink/tags/kobun/"/>
+    <category term="古典日语" scheme="https://blog.fufu.ink/tags/%E5%8F%A4%E5%85%B8%E6%97%A5%E8%AF%AD/"/>
     
-    <category term="语法" scheme="https://blog.fufu.ink/tags/bunpou/"/>
+    <category term="语法" scheme="https://blog.fufu.ink/tags/%E8%AF%AD%E6%B3%95/"/>
     
   </entry>
   
@@ -463,9 +463,9 @@
     <category term="日语" scheme="https://blog.fufu.ink/categories/nihongo/"/>
     
     
-    <category term="古典日语" scheme="https://blog.fufu.ink/tags/kobun/"/>
+    <category term="古典日语" scheme="https://blog.fufu.ink/tags/%E5%8F%A4%E5%85%B8%E6%97%A5%E8%AF%AD/"/>
     
-    <category term="语法" scheme="https://blog.fufu.ink/tags/bunpou/"/>
+    <category term="语法" scheme="https://blog.fufu.ink/tags/%E8%AF%AD%E6%B3%95/"/>
     
   </entry>
   
@@ -486,9 +486,9 @@
     <category term="日语" scheme="https://blog.fufu.ink/categories/nihongo/"/>
     
     
-    <category term="古典日语" scheme="https://blog.fufu.ink/tags/kobun/"/>
+    <category term="古典日语" scheme="https://blog.fufu.ink/tags/%E5%8F%A4%E5%85%B8%E6%97%A5%E8%AF%AD/"/>
     
-    <category term="语法" scheme="https://blog.fufu.ink/tags/bunpou/"/>
+    <category term="语法" scheme="https://blog.fufu.ink/tags/%E8%AF%AD%E6%B3%95/"/>
     
   </entry>
   
