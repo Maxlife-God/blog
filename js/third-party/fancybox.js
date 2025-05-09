@@ -2,6 +2,11 @@
 
 document.addEventListener('page:loaded', () => {
 
+  if (typeof Fancybox !== 'undefined') {
+    Fancybox.defaults.Hash = false;
+    Fancybox.defaults.Thumbs = false;
+  }
+
   /**
    * Wrap images with fancybox.
    */

@@ -13,11 +13,7 @@ HTMLElement.prototype.wrap = function(wrapper) {
     })
   );
 
-  if (document.readyState === 'loading') {
-    document.addEventListener('readystatechange', onPageLoaded, { once: true });
-  } else {
-    onPageLoaded();
-  }
+  document.addEventListener('DOMContentLoaded', onPageLoaded);
   document.addEventListener('pjax:success', onPageLoaded);
 })();
 
@@ -449,7 +445,6 @@ NexT.utils = {
       condition = false,
       attributes: {
         id = '',
-        async = false,
         defer = false,
         crossOrigin = '',
         dataset = {},
@@ -457,6 +452,7 @@ NexT.utils = {
       } = {},
       parentNode = null
     } = options;
+    const async = options.async ?? false;
     return new Promise((resolve, reject) => {
       if (condition) {
         resolve();
