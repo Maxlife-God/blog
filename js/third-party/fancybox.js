@@ -42,4 +42,6 @@ document.addEventListener('page:loaded', () => {
   });
 
   Fancybox.bind('[data-fancybox]');
+
+  Fancybox.bind('#waline .wl-content img');
 });
