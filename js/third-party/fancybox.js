@@ -41,7 +41,6 @@ document.addEventListener('page:loaded', () => {
     image.wrap(imageWrapLink);
   });
 
-  Fancybox.bind('[data-fancybox]');
+  Fancybox.bind('[data-fancybox], #waline .wl-content img');
 
-  Fancybox.bind('#waline .wl-content img');
 });
