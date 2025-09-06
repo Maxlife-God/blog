@@ -46,7 +46,7 @@
         textarea.scrollIntoView({ behavior: 'smooth', block: 'center' });
 
         // 自动填充引用文本
-        textarea.value = `> ${momentText}\n`;
+        textarea.value = `> ${momentText}\n\n`;
         textarea.focus();
       });
     });
