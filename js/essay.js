@@ -1,4 +1,4 @@
-(function () {
+(function() {
   // ----------------------
   // 相对时间功能
   // ----------------------
@@ -29,75 +29,41 @@
   }
 
   // ----------------------
-  // Waline 评论逻辑 (仿 Butterfly)
+  // 评论按钮跳转 Waline 功能
   // ----------------------
-  window.addCommentToEssay = function (event) {
-    const btn = event.target.closest('.essay-comment-btn');
-    if (!btn) return;
+  function getWalineTextarea() {
+    return document.querySelector('#waline textarea') || document.querySelector('#waline input[type="text"]');
+  }
 
-    const card = btn.closest('.card');
-    if (!card) return;
+  function bindCommentButtons(container = document) {
+    container.querySelectorAll('.essay-comment-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const momentText = btn.getAttribute('data-moment-text');
+        const textarea = getWalineTextarea();
+        if (!textarea) return;
 
-    // 找到或创建评论容器
-    let container = card.querySelector('.essay-comment-wrap');
-    const isHidden = !container;
+        // 滚动到评论框
+        textarea.scrollIntoView({ behavior: 'smooth', block: 'center' });
 
-    // 先销毁其他评论框
-    document.querySelectorAll('.essay-comment-wrap').forEach(wrap => {
-      wrap.remove();
+        // 自动填充引用文本
+        textarea.value = `> ${momentText}\n\n`;
+        textarea.focus();
+      });
     });
-
-    if (isHidden) {
-      // 插入评论容器 DOM
-      container = document.createElement('div');
-      container.className = 'essay-comment-wrap';
-      container.innerHTML = `
-        <hr class="custom-hr"/>
-        <div id="waline-${card.dataset.key}" class="waline-container"></div>
-      `;
-      card.appendChild(container);
-
-      // 构造唯一 path 作为 key
-      const uniquePath = `${location.pathname}?moment=${card.dataset.key}`;
-
-      // 初始化 Waline
-      if (window.Waline) {
-        Waline.init(Object.assign({}, CONFIG.waline, {
-          el: `#waline-${card.dataset.key}`,
-          path: uniquePath
-        }));
-
-        // 自动在输入框插入引用文本
-        setTimeout(() => {
-          const textarea = container.querySelector('textarea');
-          if (textarea) {
-            const text = btn.getAttribute('data-moment-text') || '';
-            textarea.value = `> ${text}\n\n`;
-            textarea.focus();
-          }
-        }, 500);
-      } else {
-        console.error('Waline is not defined');
-      }
-    }
-  };
+  }
 
   // ----------------------
   // 初始化函数
   // ----------------------
   function init(container = document) {
     updateRelativeTime(container);
-
-    container.querySelectorAll('.essay-comment-btn').forEach(btn => {
-      btn.removeEventListener('click', window.addCommentToEssay);
-      btn.addEventListener('click', window.addCommentToEssay);
-    });
+    bindCommentButtons(container);
   }
 
   // 页面首次加载
   init(document);
 
-  // PJAX 兼容
+  // PJAX 切换后重新初始化
   document.addEventListener('pjax:success', () => {
     init(document);
   });
