@@ -1,7 +1,7 @@
-(function() {
-  // =====================
-  // 时间转换：微信朋友圈风格
-  // =====================
+(function () {
+  // ----------------------
+  // 相对时间功能
+  // ----------------------
   function formatRelativeTime(dateStr) {
     const now = new Date();
     const past = new Date(dateStr);
@@ -15,7 +15,10 @@
     const year = past.getFullYear();
     const month = past.getMonth() + 1;
     const day = past.getDate();
-    return `${year}年${month}月${day}日`;
+    if (year !== now.getFullYear()) {
+      return `${year}年${month}月${day}日`;
+    }
+    return `${month}月${day}日`;
   }
 
   function updateRelativeTime(container = document) {
@@ -25,118 +28,77 @@
     });
   }
 
-  // =====================
-  // Waline 懒加载封装
-  // =====================
-  function loadWaline() {
-    return new Promise((resolve, reject) => {
-      if (window.Waline) return resolve(window.Waline);
+  // ----------------------
+  // Waline 评论逻辑 (仿 Butterfly)
+  // ----------------------
+  window.addCommentToEssay = function (event) {
+    const btn = event.target.closest('.essay-comment-btn');
+    if (!btn) return;
 
-      if (document.getElementById("waline-script")) {
-        document.getElementById("waline-script").addEventListener("load", () => {
-          resolve(window.Waline);
-        });
-        return;
-      }
+    const card = btn.closest('.card');
+    if (!card) return;
 
-      const script = document.createElement("script");
-      script.id = "waline-script";
-      script.src = "https://waline.fufu.ink"; // 替换成你的 Waline 地址
-      script.onload = () => resolve(window.Waline);
-      script.onerror = reject;
-      document.head.appendChild(script);
+    // 找到或创建评论容器
+    let container = card.querySelector('.essay-comment-wrap');
+    const isHidden = !container;
+
+    // 先销毁其他评论框
+    document.querySelectorAll('.essay-comment-wrap').forEach(wrap => {
+      wrap.remove();
     });
-  }
 
-  // =====================
-  // 初始化指定说说的评论区
-  // =====================
-  function initWalineForMoment(momentId, quoteText) {
-    loadWaline().then(Waline => {
-      const walineInstance = Waline.init({
-        el: `#comment-container-${momentId}`,
-        serverURL: "https://waline.fufu.ink",
-        path: `/essay/${momentId}`,
-        comment: true,
-        pageview: false
-      });
+    if (isHidden) {
+      // 插入评论容器 DOM
+      container = document.createElement('div');
+      container.className = 'essay-comment-wrap';
+      container.innerHTML = `
+        <hr class="custom-hr"/>
+        <div id="waline-${card.dataset.key}" class="waline-container"></div>
+      `;
+      card.appendChild(container);
 
-      if (quoteText) {
-        walineInstance.commentBox.value = `> "${quoteText}"\n`;
-        walineInstance.commentBox.focus();
-      }
-    }).catch(err => {
-      console.error("加载 Waline 失败：", err);
-    });
-  }
+      // 构造唯一 path 作为 key
+      const uniquePath = `${location.pathname}?moment=${card.dataset.key}`;
 
-  // =====================
-  // 绑定按钮事件（单一评论框展开 + 引用）
-  // =====================
-  function bindCommentButtons() {
-    document.querySelectorAll(".essay-comment-btn").forEach(btn => {
-      btn.addEventListener("click", e => {
-        const momentId = btn.dataset.momentId;
-        const quoteText = btn.dataset.momentText;
-        let container = document.querySelector(`#comment-container-${momentId}`);
+      // 初始化 Waline
+      if (window.Waline) {
+        Waline.init(Object.assign({}, CONFIG.waline, {
+          el: `#waline-${card.dataset.key}`,
+          path: uniquePath
+        }));
 
-        // ---------------------
-        // 自动收起其他评论框
-        // ---------------------
-        document.querySelectorAll("[id^='comment-container-']").forEach(c => {
-          if (c.id !== `comment-container-${momentId}`) {
-            c.style.display = "none";
+        // 自动在输入框插入引用文本
+        setTimeout(() => {
+          const textarea = container.querySelector('textarea');
+          if (textarea) {
+            const text = btn.getAttribute('data-moment-text') || '';
+            textarea.value = `> ${text}\n\n`;
+            textarea.focus();
           }
-        });
+        }, 500);
+      } else {
+        console.error('Waline is not defined');
+      }
+    }
+  };
 
-        // ---------------------
-        // 创建评论容器
-        // ---------------------
-        if (!container) {
-          container = document.createElement("div");
-          container.id = `comment-container-${momentId}`;
-          container.style.marginTop = "10px";
-          btn.closest(".card-content").appendChild(container);
-        }
-
-        // ---------------------
-        // 展示或初始化评论
-        // ---------------------
-        if (container.style.display === "none" || !container.hasChildNodes()) {
-          container.style.display = "block";
-          if (!container.hasChildNodes()) {
-            initWalineForMoment(momentId, quoteText);
-          } else if (quoteText) {
-            const commentBox = container.querySelector(".wl-textarea");
-            if (commentBox) {
-              commentBox.value = `> "${quoteText}"\n`;
-              commentBox.focus();
-            }
-          }
-        } else {
-          container.style.display = "none";
-        }
-
-        // 平滑滚动到评论框
-        container.scrollIntoView({ behavior: "smooth", block: "start" });
-      });
-    });
-  }
-
-  // =====================
+  // ----------------------
   // 初始化函数
-  // =====================
+  // ----------------------
   function init(container = document) {
     updateRelativeTime(container);
-    bindCommentButtons();
+
+    container.querySelectorAll('.essay-comment-btn').forEach(btn => {
+      btn.removeEventListener('click', window.addCommentToEssay);
+      btn.addEventListener('click', window.addCommentToEssay);
+    });
   }
 
   // 页面首次加载
   init(document);
 
-  // PJAX 切换页面兼容
+  // PJAX 兼容
   document.addEventListener('pjax:success', () => {
     init(document);
   });
-
 })();
