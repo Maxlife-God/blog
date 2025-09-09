@@ -45,8 +45,9 @@
         // 滚动到评论框
         textarea.scrollIntoView({ behavior: 'smooth', block: 'center' });
 
-        // 自动填充引用文本
+        // 自动填充引用文本，并触发 input 事件通知 Waline
         textarea.value = `> ${momentText}\n\n`;
+        textarea.dispatchEvent(new Event('input', { bubbles: true }));
         textarea.focus();
       });
     });
