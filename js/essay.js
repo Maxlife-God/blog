@@ -4,8 +4,8 @@
   // ----------------------
   function formatRelativeTime(dateStr) {
     const now = new Date();
-    const past = new Date(dateStr.replace("Z", ""));
-    const diff = (now.getTime() - past.getTime()) / 1000; // 秒
+    const past = new Date(dateStr);
+    const diff = (now - past) / 1000; // 秒
 
     if (diff < 60) return `${Math.floor(diff)}秒前`;
     if (diff < 3600) return `${Math.floor(diff / 60)}分钟前`;
