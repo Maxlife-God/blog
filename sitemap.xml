@@ -777,6 +777,27 @@
   </url>
   
   <url>
+    <loc>https://blog.fufu.ink/tags/%E6%B8%B8%E6%88%8F/</loc>
+    <lastmod>2025-09-10</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.fufu.ink/tags/%E7%BB%AA%E5%B1%B1%E7%9C%9F%E5%AF%BB/</loc>
+    <lastmod>2025-09-10</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.fufu.ink/tags/onimai/</loc>
+    <lastmod>2025-09-10</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>https://blog.fufu.ink/tags/%E5%8D%83%E6%81%8B%E4%B8%87%E8%8A%B1/</loc>
     <lastmod>2025-09-10</lastmod>
     <changefreq>weekly</changefreq>
@@ -806,27 +827,6 @@
   
   <url>
     <loc>https://blog.fufu.ink/tags/WebP/</loc>
-    <lastmod>2025-09-10</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.fufu.ink/tags/%E6%B8%B8%E6%88%8F/</loc>
-    <lastmod>2025-09-10</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.fufu.ink/tags/%E7%BB%AA%E5%B1%B1%E7%9C%9F%E5%AF%BB/</loc>
-    <lastmod>2025-09-10</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.fufu.ink/tags/onimai/</loc>
     <lastmod>2025-09-10</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -1029,14 +1029,14 @@
   </url>
   
   <url>
-    <loc>https://blog.fufu.ink/tags/%E6%98%9F%E7%99%BD/</loc>
+    <loc>https://blog.fufu.ink/tags/Noesis/</loc>
     <lastmod>2025-09-10</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://blog.fufu.ink/tags/Noesis/</loc>
+    <loc>https://blog.fufu.ink/tags/%E6%98%9F%E7%99%BD/</loc>
     <lastmod>2025-09-10</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
