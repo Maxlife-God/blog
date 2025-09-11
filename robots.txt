@@ -1,0 +1,9 @@
+User-agent: *
+Allow: /
+Allow: /archives/
+Allow: /categories/
+Allow: /essay/
+Allow: /tags/
+Allow: /about/
+
+Sitemap: https://blog.fufu.ink/sitemap.xml
