@@ -33,9 +33,9 @@
     <category term="技术" scheme="https://blog.fufu.ink/categories/tech/"/>
     
     
-    <category term="博客" scheme="https://blog.fufu.ink/tags/%E5%8D%9A%E5%AE%A2/"/>
-    
     <category term="教程" scheme="https://blog.fufu.ink/tags/%E6%95%99%E7%A8%8B/"/>
+    
+    <category term="博客" scheme="https://blog.fufu.ink/tags/%E5%8D%9A%E5%AE%A2/"/>
     
     <category term="Hexo" scheme="https://blog.fufu.ink/tags/Hexo/"/>
     
@@ -95,9 +95,9 @@
     
     <category term="Minecraft" scheme="https://blog.fufu.ink/tags/Minecraft/"/>
     
-    <category term="感想" scheme="https://blog.fufu.ink/tags/%E6%84%9F%E6%83%B3/"/>
-    
     <category term="游戏" scheme="https://blog.fufu.ink/tags/%E6%B8%B8%E6%88%8F/"/>
+    
+    <category term="感想" scheme="https://blog.fufu.ink/tags/%E6%84%9F%E6%83%B3/"/>
     
     <category term="随笔" scheme="https://blog.fufu.ink/tags/%E9%9A%8F%E7%AC%94/"/>
     
